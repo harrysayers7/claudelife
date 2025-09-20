@@ -1,0 +1,29 @@
+{
+  "project": {
+    "name": "Mok Music",
+    "type": "creative",
+    "priority": "medium",
+    "domain": "music_production",
+    "focus": "creative_workflows"
+  },
+  "context": {
+    "load_priority": 3,
+    "max_tokens": 8000,
+    "key_files": [
+      "CLAUDE.md",
+      "context/tools.md",
+      "context/projects.md",
+      "context/workflows.md"
+    ]
+  },
+  "automation": {
+    "creative_reminders": true,
+    "session_tracking": true,
+    "backup_reminders": true
+  },
+  "integrations": {
+    "linear": false,
+    "calendar": true,
+    "daw": true
+  }
+}

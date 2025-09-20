@@ -1,0 +1,93 @@
+{
+	"meta": {
+		"generatedAt": "2025-09-20T06:32:50.124Z",
+		"tasksAnalyzed": 10,
+		"totalTasks": 10,
+		"analysisCount": 10,
+		"thresholdScore": 5,
+		"projectName": "Taskmaster",
+		"usedResearch": false
+	},
+	"complexityAnalysis": [
+		{
+			"taskId": 1,
+			"taskTitle": "Project Compartmentalization System Setup",
+			"complexityScore": 7,
+			"recommendedSubtasks": 5,
+			"expansionPrompt": "Break down the Project Compartmentalization System Setup into 5 detailed subtasks, focusing on directory structure creation, project-specific configuration, git worktree implementation, project switching mechanism, and context loading strategy. For each subtask, provide a clear title, detailed description, implementation steps, and acceptance criteria.",
+			"reasoning": "This task involves setting up the foundational architecture for the entire system with multiple components including directory structures, git worktrees, project switching, and context management. The complexity comes from designing a system that properly isolates projects while enabling efficient switching between them. It requires both file system operations and configuration management."
+		},
+		{
+			"taskId": 2,
+			"taskTitle": "Task Master Integration",
+			"complexityScore": 8,
+			"recommendedSubtasks": 6,
+			"expansionPrompt": "Break down the Task Master Integration into 6 detailed subtasks, focusing on task data structure design, CRUD operations implementation, priority-based selection algorithm, progress tracking mechanisms, dependency management, and automated task generation from notes. For each subtask, provide implementation details, data models, and test cases.",
+			"reasoning": "This task involves creating a sophisticated task management system that works across multiple projects. It requires designing data structures, algorithms for priority-based selection, dependency tracking, and natural language processing for task generation from notes. The complexity is high due to the need for consistent state management across projects and the algorithmic components."
+		},
+		{
+			"taskId": 3,
+			"taskTitle": "AI Agent Framework Development",
+			"complexityScore": 9,
+			"recommendedSubtasks": 7,
+			"expansionPrompt": "Break down the AI Agent Framework Development into 7 detailed subtasks, focusing on base Agent class implementation, specialized agent types, agent orchestration system, communication patterns, error handling mechanisms, performance tracking, and context management. For each subtask, provide class diagrams, interface definitions, and example implementations.",
+			"reasoning": "This is one of the most complex tasks as it involves designing an extensible framework for AI agents with different capabilities. It requires object-oriented design principles, orchestration patterns, error handling strategies, and integration with the context management system. The complexity comes from creating a system that can handle various agent types while maintaining consistent interfaces and communication protocols."
+		},
+		{
+			"taskId": 4,
+			"taskTitle": "Command & Automation System",
+			"complexityScore": 7,
+			"recommendedSubtasks": 5,
+			"expansionPrompt": "Break down the Command & Automation System into 5 detailed subtasks, focusing on command registry and parser implementation, slash command handlers for common workflows, automation for routine tasks, parameter validation and error handling, and command history system. For each subtask, provide interface definitions, parsing algorithms, and example command implementations.",
+			"reasoning": "This task involves creating a command system with parsing, validation, and execution capabilities. The complexity comes from designing a flexible command registry that supports aliases, parameter validation, and error handling. It also requires implementing automation for routine tasks which adds another layer of complexity."
+		},
+		{
+			"taskId": 5,
+			"taskTitle": "Context Management System",
+			"complexityScore": 8,
+			"recommendedSubtasks": 6,
+			"expansionPrompt": "Break down the Context Management System into 6 detailed subtasks, focusing on Context class implementation, token-aware loading strategy, context compression, checkpoint system, smart context switching, and context visualization tools. For each subtask, provide algorithms, data structures, and token optimization strategies.",
+			"reasoning": "This task involves creating a sophisticated system for managing context with token awareness, which is critical for AI interactions. The complexity comes from implementing token estimation, priority-based context optimization, and checkpoint mechanisms. It requires careful algorithm design to ensure efficient token usage while maintaining relevant context."
+		},
+		{
+			"taskId": 6,
+			"taskTitle": "Trigger.dev Integration",
+			"complexityScore": 6,
+			"recommendedSubtasks": 4,
+			"expansionPrompt": "Break down the Trigger.dev Integration into 4 detailed subtasks, focusing on API integration setup, background job handlers, webhook implementation, and monitoring/logging system. For each subtask, provide API integration details, job handler implementations, and error handling strategies.",
+			"reasoning": "This task involves integrating with an external service (Trigger.dev) for scheduled tasks and webhooks. While it requires understanding the Trigger.dev API and implementing job handlers, it's more straightforward than some other tasks because it leverages an existing platform rather than building functionality from scratch."
+		},
+		{
+			"taskId": 7,
+			"taskTitle": "Learning & Optimization System",
+			"complexityScore": 8,
+			"recommendedSubtasks": 5,
+			"expansionPrompt": "Break down the Learning & Optimization System into 5 detailed subtasks, focusing on learning journal implementation, pattern recognition algorithms, performance metrics tracking, knowledge base creation, and recommendation system. For each subtask, provide data models, analysis algorithms, and visualization approaches.",
+			"reasoning": "This task involves creating a system that can learn from past activities and optimize future processes. The complexity comes from implementing pattern recognition algorithms, building a knowledge base, and creating a recommendation system. It requires data analysis capabilities and machine learning concepts to identify patterns and generate meaningful recommendations."
+		},
+		{
+			"taskId": 8,
+			"taskTitle": "Linear Integration",
+			"complexityScore": 6,
+			"recommendedSubtasks": 4,
+			"expansionPrompt": "Break down the Linear Integration into 4 detailed subtasks, focusing on API integration implementation, two-way sync between Task Master and Linear, webhook handlers for Linear events, and command interfaces for Linear operations. For each subtask, provide API endpoints, data mapping strategies, and synchronization algorithms.",
+			"reasoning": "This task involves integrating with the Linear API for issue tracking. While it requires implementing API calls, webhooks, and two-way synchronization, it's relatively straightforward compared to some other tasks because it follows standard API integration patterns and the Linear API is well-documented."
+		},
+		{
+			"taskId": 9,
+			"taskTitle": "Security Implementation",
+			"complexityScore": 8,
+			"recommendedSubtasks": 5,
+			"expansionPrompt": "Break down the Security Implementation into 5 detailed subtasks, focusing on secure credential storage, permission boundaries, audit logging, data encryption, and security monitoring. For each subtask, provide encryption algorithms, security best practices, and implementation details with careful attention to potential vulnerabilities.",
+			"reasoning": "This task involves implementing critical security features including credential storage, encryption, and audit logging. The complexity comes from ensuring proper encryption, implementing secure practices, and creating comprehensive audit trails. Security implementations require careful attention to detail and consideration of potential vulnerabilities."
+		},
+		{
+			"taskId": 10,
+			"taskTitle": "Performance Optimization & Monitoring",
+			"complexityScore": 7,
+			"recommendedSubtasks": 5,
+			"expansionPrompt": "Break down the Performance Optimization & Monitoring into 5 detailed subtasks, focusing on performance monitoring system implementation, caching strategies, token usage tracking, alerting mechanisms, and system health dashboard. For each subtask, provide monitoring metrics, caching algorithms, and visualization components.",
+			"reasoning": "This task involves creating systems to monitor and optimize performance across the application. The complexity comes from implementing effective monitoring, designing caching strategies, and creating alerting mechanisms. It requires understanding performance bottlenecks and implementing appropriate optimizations."
+		}
+	]
+}

@@ -1,0 +1,37 @@
+name: weekly_review
+version: 1.0
+
+states:
+  start:
+    entry: [log_start_time, load_week_data]
+    actions: [gather_metrics, load_accomplished_tasks]
+    transitions:
+      data_loaded: analyze_week
+      error: error_state
+
+  analyze_week:
+    actions: [calculate_productivity, identify_patterns, find_blockers]
+    transitions:
+      analysis_complete: generate_insights
+      insufficient_data: manual_input
+
+  generate_insights:
+    actions: [create_summary, suggest_improvements, identify_wins]
+    transitions:
+      complete: create_report
+
+  create_report:
+    actions: [format_markdown, add_charts, save_to_file]
+    exit: [send_notification, archive_report]
+    transitions:
+      saved: complete
+
+  complete:
+    entry: [log_completion]
+    actions: [cleanup_temp_files]
+
+  error_state:
+    actions: [log_error, save_partial]
+    transitions:
+      retry: start
+      abort: complete

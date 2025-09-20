@@ -1,0 +1,37 @@
+[Unit]
+Description=Automation System - Claude Code Integration
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/root/automation-system
+Environment=PATH=/root/automation-system/venv/bin
+ExecStart=/root/automation-system/venv/bin/python automation.py
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=mixed
+KillSignal=SIGINT
+TimeoutStopSec=30
+Restart=always
+RestartSec=10
+
+# Security
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/root/automation-system/logs
+ReadWritePaths=/root/automation-system/tmp
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=automation-system
+
+# Environment
+EnvironmentFile=/root/automation-system/.env
+
+[Install]
+WantedBy=multi-user.target

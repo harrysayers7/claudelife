@@ -1,0 +1,76 @@
+# Automation System Configuration
+
+# Server Configuration
+server:
+  host: "0.0.0.0"
+  port: 8000
+  debug: false
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/automation.log"
+  max_bytes: 10485760  # 10MB
+  backup_count: 5
+
+# Notion Integration
+notion:
+  api_key: "${NOTION_API_KEY}"
+  database_ids:
+    tasks_ai: "bb278d48-954a-4c93-85b7-88bd4979f467"
+  timeout: 30
+
+# Supabase Integration
+supabase:
+  url: "${SUPABASE_URL}"
+  anon_key: "${SUPABASE_ANON_KEY}"
+  service_key: "${SUPABASE_SERVICE_KEY}"
+  timeout: 30
+
+# n8n Integration
+n8n:
+  base_url: "http://134.199.159.190:5678"
+  webhook_base: "http://134.199.159.190:5678/webhook"
+  timeout: 60
+  workflows:
+    daily_summary: "daily-summary"
+    process_inbox: "process-inbox"
+    backup_workspace: "backup-workspace"
+    send_update: "send-update"
+
+# Workflow Engine
+workflows:
+  enabled: true
+  check_interval: 30  # seconds
+  max_concurrent: 5
+  retry_attempts: 3
+  retry_delay: 60
+
+# Claude Integration
+claude:
+  model: "claude-3-5-sonnet-20241022"
+  max_tokens: 4096
+  temperature: 0.1
+
+# Memory Management
+memory:
+  graph_sync_interval: 300  # 5 minutes
+  cache_ttl: 3600  # 1 hour
+  backup_interval: 86400  # 24 hours
+
+# Automation Rules
+automation:
+  morning_routine:
+    enabled: true
+    time: "09:00"
+    timezone: "Australia/Sydney"
+
+  evening_review:
+    enabled: true
+    time: "17:00"
+    timezone: "Australia/Sydney"
+
+  overdue_check:
+    enabled: true
+    interval: 3600  # 1 hour

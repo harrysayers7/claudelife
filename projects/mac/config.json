@@ -1,0 +1,29 @@
+{
+  "project": {
+    "name": "Mac",
+    "type": "system",
+    "priority": "low",
+    "domain": "system_administration",
+    "focus": "productivity_optimization"
+  },
+  "context": {
+    "load_priority": 4,
+    "max_tokens": 5000,
+    "key_files": [
+      "CLAUDE.md",
+      "context/configurations.md",
+      "context/scripts.md",
+      "context/tools.md"
+    ]
+  },
+  "automation": {
+    "system_maintenance": true,
+    "backup_checks": true,
+    "update_reminders": true
+  },
+  "integrations": {
+    "linear": false,
+    "raycast": true,
+    "shortcuts": true
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "triggers": [
+    {
+      "id": "morning_routine",
+      "condition": "time == 09:00 AND weekday",
+      "confidence_threshold": 0.90,
+      "actions": [
+        "fetch_calendar",
+        "check_urgent_emails",
+        "query_tasks_ai_priorities",
+        "prepare_daily_brief"
+      ],
+      "require_confirmation": false
+    },
+    {
+      "id": "task_creation_voice",
+      "condition": "voice_contains('I need to') OR voice_contains('reminder')",
+      "confidence_threshold": 0.80,
+      "actions": [
+        "extract_task_from_voice",
+        "auto_categorize_by_area",
+        "create_tasks_ai_entry"
+      ],
+      "require_confirmation": true
+    },
+    {
+      "id": "mokai_task_detected",
+      "condition": "content_contains('cybersecurity') OR content_contains('compliance') OR content_contains('government')",
+      "confidence_threshold": 0.85,
+      "actions": [
+        "suggest_mokai_task_creation",
+        "check_mokai_project_status"
+      ],
+      "require_confirmation": true
+    },
+    {
+      "id": "friday_afternoon",
+      "condition": "time > 15:00 AND day == 'friday'",
+      "confidence_threshold": 0.95,
+      "actions": [
+        "generate_weekly_report",
+        "update_tasks_ai_completed",
+        "archive_completed_tasks"
+      ],
+      "require_confirmation": false
+    },
+    {
+      "id": "overdue_task_reminder",
+      "condition": "tasks_ai_has_overdue == true",
+      "confidence_threshold": 0.99,
+      "actions": [
+        "list_overdue_tasks",
+        "suggest_rescheduling",
+        "check_blocking_dependencies"
+      ],
+      "require_confirmation": false
+    }
+  ]
+}

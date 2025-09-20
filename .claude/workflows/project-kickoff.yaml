@@ -1,0 +1,221 @@
+name: project_kickoff
+version: 2.0
+author: conductor
+description: Comprehensive project initialization workflow
+
+# Input validation
+inputs:
+  required:
+    - project_name
+    - stakeholders
+    - deadline
+  optional:
+    - budget
+    - tech_stack
+    - team_members
+
+# Global context
+context:
+  max_duration: 3600  # 1 hour timeout
+  checkpoint_interval: 300  # Every 5 minutes
+  notification_channels: ["email", "slack"]
+
+# State definitions
+states:
+  initialize:
+    entry:
+      - validate_inputs
+      - create_project_id
+      - setup_workspace
+
+    parallel:
+      research_branch:
+        agent: "@web-researcher"
+        task: "Research similar projects and best practices"
+        timeout: 300
+
+      stakeholder_branch:
+        agent: "@data-miner"
+        task: "Gather stakeholder preferences and requirements"
+        timeout: 300
+
+      resource_branch:
+        agent: "@conductor"
+        task: "Check resource availability and constraints"
+        timeout: 300
+
+    wait_for: "all"
+
+    transitions:
+      all_complete: process_findings
+      timeout: escalate_incomplete
+      error: error_recovery
+
+  process_findings:
+    actions:
+      - merge_research_results
+      - identify_risks
+      - create_initial_plan
+
+    conditional:
+      - if: "context.risks.high_count > 3"
+        goto: risk_mitigation
+      - elif: "context.budget < context.estimated_cost"
+        goto: budget_approval
+      - else:
+        goto: create_structure
+
+  risk_mitigation:
+    agent: "@conductor"
+
+    sub_workflow:
+      name: "risk_analysis"
+      pass_context: true
+      timeout: 600
+
+    transitions:
+      mitigated: create_structure
+      unacceptable: project_abort
+      needs_approval: stakeholder_approval
+
+  budget_approval:
+    actions:
+      - prepare_budget_proposal
+      - send_approval_request
+
+    wait_for_human: true
+    timeout: 86400  # 24 hours
+
+    transitions:
+      approved: create_structure
+      rejected: project_abort
+      modified: process_findings  # Re-evaluate with new budget
+
+  create_structure:
+    parallel:
+      setup_tools:
+        - create_github_repo
+        - setup_notion_workspace
+        - configure_ci_cd
+        - create_documentation_structure
+
+      setup_team:
+        - create_communication_channels
+        - send_invitations
+        - schedule_kickoff_meeting
+        - assign_initial_roles
+
+      setup_automation:
+        - create_n8n_workflows
+        - setup_monitoring
+        - configure_alerts
+        - create_dashboards
+
+    error_handling:
+      on_partial_failure: "continue_with_warnings"
+      on_total_failure: "rollback_and_retry"
+
+    transitions:
+      success: generate_artifacts
+
+  generate_artifacts:
+    sequential:
+      - generate_project_charter
+      - create_roadmap
+      - write_technical_spec
+      - prepare_kickoff_deck
+      - create_task_backlog
+
+    checkpoints:
+      after_each: true
+
+    transitions:
+      complete: finalize
+
+  finalize:
+    actions:
+      - send_notifications
+      - schedule_followups
+      - create_success_metrics
+      - archive_setup_data
+      - start_day_one_automation
+
+    exit:
+      - log_completion
+      - cleanup_temp_files
+      - send_summary
+
+  # Error states
+  error_recovery:
+    actions:
+      - log_error_details
+      - attempt_auto_recovery
+      - save_partial_progress
+
+    transitions:
+      recovered: return_to_last_state
+      failed: escalate_incomplete
+
+  escalate_incomplete:
+    actions:
+      - package_incomplete_work
+      - notify_human
+      - await_intervention
+
+    transitions:
+      resolved: return_to_last_state
+      abort: project_abort
+
+  project_abort:
+    actions:
+      - rollback_changes
+      - cleanup_resources
+      - send_abort_notification
+      - archive_attempt
+
+    exit:
+      - final_cleanup
+
+  stakeholder_approval:
+    actions:
+      - prepare_presentation
+      - schedule_meeting
+      - await_decision
+
+    transitions:
+      approved: return_to_last_state
+      rejected: project_abort
+
+# Metrics to track
+metrics:
+  track:
+    - state_durations
+    - error_frequency
+    - retry_counts
+    - human_interventions
+    - resource_usage
+
+  report_to: "memory/metrics/workflows/"
+
+# Notification rules
+notifications:
+  on_start:
+    - channel: "slack"
+      message: "Project kickoff workflow started for {project_name}"
+
+  on_complete:
+    - channel: "email"
+      template: "project_kickoff_complete"
+      recipients: "{stakeholders}"
+
+  on_error:
+    - channel: "slack"
+      message: "Error in project kickoff: {error_message}"
+      recipients: ["admin"]
+
+# Recovery rules
+recovery:
+  auto_resume: true
+  max_resume_attempts: 3
+  preserve_context: true
+  checkpoint_storage: "memory/checkpoints/workflows/"

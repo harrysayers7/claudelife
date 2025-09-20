@@ -1,0 +1,412 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Project Compartmentalization System Setup",
+        "description": "Establish the foundation for managing multiple projects with separate workspaces and context management.",
+        "details": "1. Create a root directory structure for the personal assistant system\n2. Set up separate project directories for MOKAI, Mok Music, Brain, and Mac projects\n3. Configure project-specific CLAUDE.md files with relevant context for each project\n4. Implement git worktrees for parallel development across projects\n5. Create a project switching mechanism using shell scripts or similar tools\n6. Build a configuration system to store project-specific settings\n7. Implement a context loading strategy that respects token limits\n\nExample directory structure:\n```\n/personal-assistant/\n  /projects/\n    /mokai/\n      CLAUDE.md\n      tasks.json\n      context/\n    /mok-music/\n      CLAUDE.md\n      tasks.json\n      context/\n    /brain/\n      CLAUDE.md\n      tasks.json\n      context/\n    /mac/\n      CLAUDE.md\n      tasks.json\n      context/\n  /shared/\n    /agents/\n    /commands/\n    /utils/\n  config.json\n```",
+        "testStrategy": "1. Verify that each project workspace is properly isolated\n2. Test project switching mechanism to ensure context is properly loaded\n3. Validate that git worktrees function correctly for parallel development\n4. Ensure CLAUDE.md files are properly configured and loaded\n5. Test token awareness by measuring context size for each project",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create Root Directory Structure",
+            "description": "Establish the foundational directory structure for the personal assistant system with project-specific and shared directories.",
+            "dependencies": [],
+            "details": "1. Create the main `/personal-assistant/` directory\n2. Create the `/projects/` subdirectory for project-specific content\n3. Create individual project directories for MOKAI, Mok Music, Brain, and Mac\n4. Create the `/shared/` directory with subdirectories for agents, commands, and utils\n5. Create a root-level config.json file\n6. Set appropriate permissions for all directories\n7. Document the directory structure in a README.md file\n\nAcceptance Criteria:\n- All directories exist with correct naming and hierarchy\n- README.md clearly documents the structure and purpose of each directory\n- Directory permissions allow appropriate access\n- Empty placeholder files are created where needed to maintain git structure",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Configure Project-Specific Files and Context",
+            "description": "Set up project-specific configuration files, CLAUDE.md context files, and task tracking for each project workspace.",
+            "dependencies": [],
+            "details": "1. Create a template for CLAUDE.md files with sections for project overview, goals, and context\n2. Implement project-specific CLAUDE.md files for each project (MOKAI, Mok Music, Brain, Mac)\n3. Create tasks.json files for each project to track project-specific tasks\n4. Set up context/ subdirectories in each project folder for additional context files\n5. Create a project-specific config.json template with customizable settings\n6. Implement project-specific config.json files for each project\n\nAcceptance Criteria:\n- Each project has a properly formatted CLAUDE.md file with relevant context\n- Each project has a tasks.json file with the correct schema\n- Context directories exist and are properly structured\n- Project-specific config files contain appropriate settings\n- Files use consistent formatting and naming conventions",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Implement Git Worktrees for Parallel Development",
+            "description": "Configure git worktrees to enable simultaneous work across multiple projects without switching branches.",
+            "dependencies": [],
+            "details": "1. Initialize a git repository in the root personal-assistant directory\n2. Create a main branch for the core system\n3. Create project-specific branches for each project (mokai, mok-music, brain, mac)\n4. Set up git worktrees to link each project directory to its corresponding branch\n5. Configure .gitignore files for each worktree to exclude project-specific temporary files\n6. Create documentation on how to use the worktree setup for development\n7. Implement a script to automate worktree management\n\nAcceptance Criteria:\n- Git worktrees are properly configured for each project\n- Changes in one project don't affect other projects\n- Developers can work on multiple projects simultaneously\n- Documentation clearly explains the worktree structure and usage\n- Worktree management script works correctly",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Create Project Switching Mechanism",
+            "description": "Develop a system to easily switch between projects, loading the appropriate context and configuration for each.",
+            "dependencies": [],
+            "details": "1. Create a shell script (switch-project.sh) that handles project switching\n2. Implement command-line arguments to specify the target project\n3. Add functionality to load project-specific CLAUDE.md context\n4. Configure environment variables based on project settings\n5. Implement visual indicators for the active project (terminal prompt, etc.)\n6. Add project switching history tracking\n7. Create aliases for quick switching between common projects\n\nAcceptance Criteria:\n- Project switching works reliably with a single command\n- Correct context is loaded when switching projects\n- Environment variables are properly set for each project\n- Visual indicators clearly show which project is active\n- Switching history is tracked for easy navigation\n- Command includes help text and error handling",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 5,
+            "title": "Implement Token-Aware Context Loading Strategy",
+            "description": "Develop a system to intelligently load context based on token limits and relevance to the current task.",
+            "dependencies": [],
+            "details": "1. Create a token counting utility to estimate token usage of context files\n2. Implement a priority system for context segments (essential, important, supplementary)\n3. Develop an algorithm to load context based on priority and token limits\n4. Create a context caching mechanism to improve performance\n5. Implement context compression for long-running sessions\n6. Add functionality to dynamically adjust loaded context based on the current task\n7. Create logging to track context loading decisions\n\nAcceptance Criteria:\n- Token estimation is reasonably accurate compared to actual API usage\n- Context loading respects configured token limits\n- High-priority context is consistently included\n- Context loading performance is optimized with caching\n- System can adapt context based on the current task\n- Logging provides visibility into context loading decisions",
+            "status": "pending",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Task Master Integration",
+        "description": "Integrate Task Master across all projects for consistent task tracking and management.",
+        "details": "1. Set up Task Master configuration for the personal assistant system\n2. Create project-specific task tracking files\n3. Implement task creation, updating, and completion functionality\n4. Build priority-based task selection algorithm\n5. Create progress tracking and reporting mechanisms\n6. Implement task dependency management\n7. Build automated task generation from brain dumps or notes\n\nExample Task Master implementation:\n```javascript\nclass TaskMaster {\n  constructor(projectPath) {\n    this.projectPath = projectPath;\n    this.tasksFile = path.join(projectPath, 'tasks.json');\n    this.tasks = this.loadTasks();\n  }\n\n  loadTasks() {\n    // Load tasks from file or create new if doesn't exist\n  }\n\n  saveTasks() {\n    // Save tasks to file\n  }\n\n  addTask(task) {\n    // Add new task with validation\n  }\n\n  updateTask(id, updates) {\n    // Update existing task\n  }\n\n  getNextTasks() {\n    // Return prioritized list of next tasks\n  }\n\n  generateTasksFromNotes(notesText) {\n    // Parse notes and generate structured tasks\n  }\n}\n```",
+        "testStrategy": "1. Create test tasks in each project and verify they remain isolated\n2. Test task creation, updating, and completion workflows\n3. Verify priority-based selection returns appropriate tasks\n4. Test automated task generation with sample brain dumps\n5. Validate progress reporting accuracy\n6. Test task dependency resolution",
+        "priority": "high",
+        "dependencies": [
+          1
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Task Data Structure Design",
+            "description": "Design and implement the core data structure for tasks across all projects",
+            "dependencies": [],
+            "details": "1. Define JSON schema for task objects including fields for ID, title, description, status, priority, dependencies, project, tags, due date, and custom metadata\n2. Create validation functions to ensure task data integrity\n3. Design storage structure for tasks.json files with project isolation\n4. Implement versioning mechanism for task data\n5. Create data migration utilities for schema updates\n6. Design serialization/deserialization methods\n\nTest cases:\n- Validate task creation with required and optional fields\n- Test schema validation with invalid data\n- Verify project isolation in storage",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "CRUD Operations Implementation",
+            "description": "Implement core task management operations for creating, reading, updating and deleting tasks",
+            "dependencies": [],
+            "details": "1. Implement loadTasks() method with error handling and file creation\n2. Build saveTasks() with atomic write operations to prevent data corruption\n3. Create addTask() with validation, ID generation, and metadata addition\n4. Implement updateTask() with partial updates and validation\n5. Build deleteTask() with dependency checking\n6. Implement getTask() and listTasks() with filtering options\n\nTest cases:\n- Create, update, and delete task operations\n- Test concurrent operations handling\n- Verify persistence across application restarts",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Priority-Based Selection Algorithm",
+            "description": "Develop an algorithm to intelligently select the next tasks based on priority, dependencies, and context",
+            "dependencies": [],
+            "details": "1. Design scoring system for tasks based on priority, due date, dependencies, and estimated effort\n2. Implement getNextTasks() method that returns prioritized task list\n3. Create context-aware filtering (time of day, available time, project focus)\n4. Build task suggestion mechanism based on work patterns\n5. Implement caching for performance optimization\n\nTest cases:\n- Verify high priority tasks are selected first\n- Test dependency resolution prevents blocked tasks from being selected\n- Validate context-aware filtering works correctly",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Progress Tracking and Reporting",
+            "description": "Build mechanisms to track task progress and generate reports across projects",
+            "dependencies": [],
+            "details": "1. Implement task status transitions (pending → in-progress → completed)\n2. Create time tracking for tasks with start/pause/resume functionality\n3. Build reporting functions for daily/weekly summaries\n4. Implement project-level progress visualization\n5. Create export functionality for reports (JSON, CSV, Markdown)\n6. Design burndown charts and velocity metrics\n\nTest cases:\n- Track task through complete lifecycle\n- Verify time tracking accuracy\n- Test report generation with sample data",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 5,
+            "title": "Task Dependency Management",
+            "description": "Implement a system to manage and enforce task dependencies across projects",
+            "dependencies": [],
+            "details": "1. Design dependency representation in task data structure\n2. Implement dependency validation to prevent circular dependencies\n3. Create dependency resolution algorithm to determine task readiness\n4. Build dependency visualization tools\n5. Implement cascade updates for dependent tasks\n6. Create dependency impact analysis for task modifications\n\nTest cases:\n- Create tasks with dependencies and verify enforcement\n- Test circular dependency detection\n- Verify cascade updates work correctly when parent tasks change",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 6,
+            "title": "Automated Task Generation from Notes",
+            "description": "Build a system to parse unstructured notes and generate structured tasks",
+            "dependencies": [],
+            "details": "1. Design natural language parsing rules for task identification\n2. Implement generateTasksFromNotes() method using NLP techniques\n3. Create priority and deadline extraction from text\n4. Build project and tag assignment based on context\n5. Implement interactive confirmation for generated tasks\n6. Create batch processing for multiple notes\n\nTest cases:\n- Parse sample notes with various formats\n- Test priority and deadline extraction accuracy\n- Verify project assignment based on note context",
+            "status": "pending",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "AI Agent Framework Development",
+        "description": "Design and implement a modular AI agent framework for task automation and intelligent assistance.",
+        "details": "1. Create a base Agent class with common functionality\n2. Implement specialized agent types (research, coding, documentation)\n3. Build agent orchestration system using Task tool\n4. Implement agent communication patterns and handoff protocols\n5. Create error handling and recovery mechanisms\n6. Set up agent performance tracking\n7. Implement context management for agents\n\nExample Agent implementation:\n```javascript\nclass Agent {\n  constructor(config) {\n    this.name = config.name;\n    this.capabilities = config.capabilities || [];\n    this.context = new Context();\n  }\n\n  async process(task) {\n    try {\n      this.context.load(task.contextRequirements);\n      const result = await this.executeTask(task);\n      return { success: true, result };\n    } catch (error) {\n      return { success: false, error: error.message };\n    }\n  }\n\n  async executeTask(task) {\n    // To be implemented by specific agent types\n    throw new Error('Not implemented');\n  }\n}\n\nclass ResearchAgent extends Agent {\n  async executeTask(task) {\n    // Research-specific implementation\n  }\n}\n\nclass CodingAgent extends Agent {\n  async executeTask(task) {\n    // Coding-specific implementation\n  }\n}\n```",
+        "testStrategy": "1. Create unit tests for each agent type\n2. Test agent orchestration with mock tasks\n3. Simulate errors to verify recovery mechanisms\n4. Measure agent performance metrics\n5. Test context loading and management\n6. Verify agent communication and handoff protocols",
+        "priority": "high",
+        "dependencies": [
+          1,
+          2
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Base Agent Class Implementation",
+            "description": "Design and implement the foundational Agent class with core functionality and interfaces.",
+            "dependencies": [],
+            "details": "1. Create the base Agent class with constructor, process, and executeTask methods\n2. Implement context loading and management within the Agent class\n3. Define standard interfaces for agent configuration\n4. Create error handling wrapper in the process method\n5. Implement agent state management\n6. Add logging and telemetry hooks\n7. Create unit tests for the base Agent class\n\n```javascript\nclass Agent {\n  constructor(config) {\n    this.id = generateUniqueId();\n    this.name = config.name;\n    this.capabilities = config.capabilities || [];\n    this.context = new Context();\n    this.state = 'idle';\n    this.logger = new Logger(this.id);\n  }\n\n  async process(task) {\n    this.state = 'processing';\n    try {\n      this.logger.log('info', `Processing task: ${task.id}`);\n      await this.context.load(task.contextRequirements);\n      const result = await this.executeTask(task);\n      this.state = 'idle';\n      return { success: true, result };\n    } catch (error) {\n      this.state = 'error';\n      this.logger.log('error', `Error processing task: ${error.message}`);\n      return { success: false, error: error.message };\n    }\n  }\n\n  async executeTask(task) {\n    // To be implemented by specific agent types\n    throw new Error('Not implemented');\n  }\n}\n```",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Specialized Agent Types Implementation",
+            "description": "Develop concrete agent implementations for different specialized tasks such as research, coding, and documentation.",
+            "dependencies": [],
+            "details": "1. Implement ResearchAgent with web search and information synthesis capabilities\n2. Create CodingAgent with code generation and analysis features\n3. Develop DocumentationAgent for creating and updating documentation\n4. Implement TestingAgent for test generation and execution\n5. Create PlanningAgent for task breakdown and planning\n6. Add specialized context requirements for each agent type\n7. Create unit tests for each specialized agent\n\n```javascript\nclass ResearchAgent extends Agent {\n  constructor(config) {\n    super(config);\n    this.searchProviders = config.searchProviders || ['default'];\n    this.synthesisCapability = config.synthesisCapability || 'basic';\n  }\n\n  async executeTask(task) {\n    const searchResults = await this.performResearch(task.query);\n    const synthesis = await this.synthesizeInformation(searchResults, task.requirements);\n    return {\n      rawResults: searchResults,\n      synthesis: synthesis\n    };\n  }\n\n  async performResearch(query) {\n    // Implementation of research functionality\n  }\n\n  async synthesizeInformation(results, requirements) {\n    // Implementation of synthesis functionality\n  }\n}\n\nclass CodingAgent extends Agent {\n  constructor(config) {\n    super(config);\n    this.languages = config.languages || ['javascript'];\n    this.frameworks = config.frameworks || [];\n  }\n\n  async executeTask(task) {\n    // Coding-specific implementation\n    const codeAnalysis = await this.analyzeRequirements(task.requirements);\n    const generatedCode = await this.generateCode(codeAnalysis, task.specifications);\n    return {\n      analysis: codeAnalysis,\n      code: generatedCode\n    };\n  }\n}\n```",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Agent Orchestration System",
+            "description": "Build a system to coordinate multiple agents, manage workflows, and handle agent selection based on task requirements.",
+            "dependencies": [],
+            "details": "1. Create AgentOrchestrator class to manage agent selection and task distribution\n2. Implement workflow patterns for sequential and parallel agent execution\n3. Build agent capability matching against task requirements\n4. Create agent pool management for resource optimization\n5. Implement task splitting and result aggregation\n6. Add monitoring and intervention points in workflows\n7. Create integration tests for orchestration scenarios\n\n```javascript\nclass AgentOrchestrator {\n  constructor(config) {\n    this.agents = new Map();\n    this.workflows = new Map();\n    this.taskQueue = new PriorityQueue();\n  }\n\n  registerAgent(agent) {\n    this.agents.set(agent.id, agent);\n  }\n\n  registerWorkflow(name, workflowDefinition) {\n    this.workflows.set(name, workflowDefinition);\n  }\n\n  async executeWorkflow(workflowName, input) {\n    const workflow = this.workflows.get(workflowName);\n    if (!workflow) throw new Error(`Workflow ${workflowName} not found`);\n    \n    const context = new WorkflowContext(input);\n    for (const step of workflow.steps) {\n      const agent = this.selectAgentForStep(step, context);\n      const result = await agent.process(step.createTask(context));\n      context.updateWithResult(step.id, result);\n      \n      if (!result.success && !step.continueOnFailure) {\n        return { success: false, error: result.error, partialResults: context.results };\n      }\n    }\n    \n    return { success: true, results: context.results };\n  }\n  \n  selectAgentForStep(step, context) {\n    // Agent selection logic based on capabilities and availability\n  }\n}\n```",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Agent Communication Patterns",
+            "description": "Implement communication protocols between agents, including data exchange formats, handoff mechanisms, and collaboration patterns.",
+            "dependencies": [],
+            "details": "1. Define standard message format for agent communication\n2. Implement synchronous and asynchronous communication channels\n3. Create agent handoff protocols for workflow transitions\n4. Build shared memory spaces for collaborative tasks\n5. Implement publish-subscribe pattern for event-based communication\n6. Create communication logging and debugging tools\n7. Develop tests for various communication scenarios\n\n```javascript\nclass AgentMessage {\n  constructor(type, payload, metadata = {}) {\n    this.id = generateUniqueId();\n    this.timestamp = Date.now();\n    this.type = type;\n    this.payload = payload;\n    this.metadata = metadata;\n  }\n}\n\nclass CommunicationBus {\n  constructor() {\n    this.channels = new Map();\n    this.subscribers = new Map();\n    this.messageLog = [];\n  }\n\n  createChannel(channelId, options = {}) {\n    this.channels.set(channelId, {\n      messages: [],\n      options\n    });\n    return channelId;\n  }\n\n  subscribe(channelId, callback) {\n    if (!this.subscribers.has(channelId)) {\n      this.subscribers.set(channelId, new Set());\n    }\n    const subscriberId = generateUniqueId();\n    this.subscribers.get(channelId).add({ id: subscriberId, callback });\n    return subscriberId;\n  }\n\n  publish(channelId, message) {\n    const channel = this.channels.get(channelId);\n    if (!channel) throw new Error(`Channel ${channelId} not found`);\n    \n    channel.messages.push(message);\n    this.messageLog.push({ channelId, message, timestamp: Date.now() });\n    \n    // Notify subscribers\n    if (this.subscribers.has(channelId)) {\n      for (const subscriber of this.subscribers.get(channelId)) {\n        subscriber.callback(message);\n      }\n    }\n    \n    return message.id;\n  }\n}\n```",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 5,
+            "title": "Error Handling and Recovery Mechanisms",
+            "description": "Implement robust error handling, fault tolerance, and recovery strategies for agent operations.",
+            "dependencies": [],
+            "details": "1. Create hierarchical error classification system\n2. Implement retry mechanisms with exponential backoff\n3. Build circuit breaker pattern for failing dependencies\n4. Create fallback strategies for critical operations\n5. Implement transaction logging for recovery\n6. Build agent state persistence for crash recovery\n7. Create comprehensive error reporting and analysis tools\n\n```javascript\nclass AgentErrorHandler {\n  constructor(config = {}) {\n    this.maxRetries = config.maxRetries || 3;\n    this.retryDelayMs = config.retryDelayMs || 1000;\n    this.circuitBreakers = new Map();\n    this.errorLog = [];\n  }\n\n  async executeWithRetry(operation, context) {\n    let lastError;\n    let retryCount = 0;\n    \n    while (retryCount < this.maxRetries) {\n      try {\n        // Check circuit breaker\n        const operationKey = this.getOperationKey(operation, context);\n        if (this.isCircuitOpen(operationKey)) {\n          throw new Error(`Circuit open for operation: ${operationKey}`);\n        }\n        \n        const result = await operation(context);\n        this.resetCircuitBreaker(operationKey);\n        return result;\n      } catch (error) {\n        lastError = error;\n        this.logError(error, { retryCount, context });\n        \n        if (!this.isRetryable(error)) {\n          break;\n        }\n        \n        retryCount++;\n        if (retryCount < this.maxRetries) {\n          const delay = this.calculateRetryDelay(retryCount);\n          await new Promise(resolve => setTimeout(resolve, delay));\n        }\n      }\n    }\n    \n    // All retries failed or error not retryable\n    this.updateCircuitBreaker(operation, context, lastError);\n    throw lastError;\n  }\n  \n  isRetryable(error) {\n    // Logic to determine if an error is retryable\n  }\n  \n  calculateRetryDelay(retryCount) {\n    // Exponential backoff implementation\n    return this.retryDelayMs * Math.pow(2, retryCount - 1);\n  }\n}\n```",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 6,
+            "title": "Agent Performance Tracking",
+            "description": "Implement metrics collection, performance analysis, and optimization for agent operations.",
+            "dependencies": [],
+            "details": "1. Create performance metrics collection system\n2. Implement timing measurements for agent operations\n3. Build resource usage tracking (memory, CPU, tokens)\n4. Create performance dashboards and visualizations\n5. Implement anomaly detection for performance issues\n6. Build historical performance data storage and analysis\n7. Create optimization recommendations based on performance data\n\n```javascript\nclass AgentPerformanceTracker {\n  constructor() {\n    this.metrics = new Map();\n    this.thresholds = {\n      responseTime: 2000, // 2 seconds\n      tokenUsage: 1000,\n      memoryUsage: 100 * 1024 * 1024 // 100 MB\n    };\n    this.history = [];\n  }\n\n  startOperation(agentId, operationType) {\n    const operationId = generateUniqueId();\n    const startTime = performance.now();\n    const startMemory = process.memoryUsage().heapUsed;\n    \n    this.metrics.set(operationId, {\n      agentId,\n      operationType,\n      startTime,\n      startMemory,\n      inProgress: true\n    });\n    \n    return operationId;\n  }\n\n  endOperation(operationId, result) {\n    const metric = this.metrics.get(operationId);\n    if (!metric) return null;\n    \n    const endTime = performance.now();\n    const endMemory = process.memoryUsage().heapUsed;\n    \n    const duration = endTime - metric.startTime;\n    const memoryUsed = endMemory - metric.startMemory;\n    const tokenUsage = result.tokenUsage || 0;\n    \n    const performanceData = {\n      ...metric,\n      endTime,\n      duration,\n      memoryUsed,\n      tokenUsage,\n      inProgress: false,\n      timestamp: new Date().toISOString()\n    };\n    \n    this.metrics.set(operationId, performanceData);\n    this.history.push(performanceData);\n    \n    this.detectAnomalies(performanceData);\n    \n    return performanceData;\n  }\n  \n  detectAnomalies(performanceData) {\n    // Anomaly detection implementation\n  }\n}\n```",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 7,
+            "title": "Context Management for Agents",
+            "description": "Implement a comprehensive context management system for agents to maintain state, access relevant information, and share context between operations.",
+            "dependencies": [],
+            "details": "1. Create Context class with storage and retrieval methods\n2. Implement context scoping (global, project, task, agent-specific)\n3. Build context persistence and serialization\n4. Create context merging and conflict resolution\n5. Implement context pruning for relevance and token optimization\n6. Build context visualization and debugging tools\n7. Create context sharing mechanisms between agents\n\n```javascript\nclass Context {\n  constructor(initialData = {}) {\n    this.data = initialData;\n    this.history = [];\n    this.maxHistoryLength = 50;\n  }\n\n  async load(contextRequirements) {\n    for (const req of contextRequirements) {\n      const contextData = await this.fetchContextData(req);\n      this.merge(req.path, contextData, req.mergeStrategy);\n    }\n  }\n\n  async fetchContextData(requirement) {\n    // Implementation to fetch context data from various sources\n    // based on the requirement type (file, database, API, etc.)\n  }\n\n  get(path, defaultValue = null) {\n    return this.getNestedProperty(this.data, path, defaultValue);\n  }\n\n  set(path, value) {\n    const oldValue = this.get(path);\n    this.setNestedProperty(this.data, path, value);\n    \n    // Record history\n    this.history.push({\n      timestamp: Date.now(),\n      action: 'set',\n      path,\n      oldValue,\n      newValue: value\n    });\n    \n    // Prune history if needed\n    if (this.history.length > this.maxHistoryLength) {\n      this.history = this.history.slice(-this.maxHistoryLength);\n    }\n  }\n\n  merge(path, value, strategy = 'replace') {\n    const current = this.get(path, {});\n    let result;\n    \n    switch (strategy) {\n      case 'replace':\n        result = value;\n        break;\n      case 'shallow':\n        result = { ...current, ...value };\n        break;\n      case 'deep':\n        result = this.deepMerge(current, value);\n        break;\n      default:\n        throw new Error(`Unknown merge strategy: ${strategy}`);\n    }\n    \n    this.set(path, result);\n  }\n  \n  deepMerge(target, source) {\n    // Deep merge implementation\n  }\n}\n```",
+            "status": "pending",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Command & Automation System",
+        "description": "Build a system for custom slash commands and automation of routine tasks.",
+        "details": "1. Create a command registry and parser\n2. Implement slash command handlers for common workflows\n3. Build automation for routine tasks (daily standup, EOD summary)\n4. Create command aliases and shortcuts\n5. Implement help and documentation for available commands\n6. Build parameter validation and error handling\n7. Create a command history and favorites system\n\nExample Command implementation:\n```javascript\nclass CommandSystem {\n  constructor() {\n    this.commands = {};\n    this.aliases = {};\n  }\n\n  registerCommand(name, handler, description, params = []) {\n    this.commands[name] = { handler, description, params };\n  }\n\n  registerAlias(alias, commandName) {\n    this.aliases[alias] = commandName;\n  }\n\n  async executeCommand(input) {\n    const { command, params } = this.parseInput(input);\n    const commandName = this.aliases[command] || command;\n    \n    if (!this.commands[commandName]) {\n      throw new Error(`Unknown command: ${command}`);\n    }\n    \n    return await this.commands[commandName].handler(params);\n  }\n\n  parseInput(input) {\n    // Parse command and parameters from input string\n  }\n}\n```\n\nExample commands to implement:\n- `/switch [project]` - Switch to a different project\n- `/task add [description]` - Add a new task\n- `/standup` - Generate standup report\n- `/summary` - Generate end of day summary\n- `/search [query]` - Search across projects",
+        "testStrategy": "1. Test command registration and execution\n2. Verify alias functionality\n3. Test parameter parsing and validation\n4. Verify error handling for invalid commands\n5. Test automation triggers and scheduling\n6. Measure command execution performance",
+        "priority": "medium",
+        "dependencies": [
+          1,
+          2
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Command Registry and Parser Implementation",
+            "description": "Develop the core command registry system and input parser for handling slash commands.",
+            "dependencies": [],
+            "details": "1. Implement the CommandSystem class with methods for registering commands and aliases\n2. Create a robust parseInput method that extracts command name and parameters from input strings\n3. Implement command validation to verify required parameters\n4. Design the command execution flow with proper error handling\n5. Create interfaces for CommandDefinition and CommandResult\n6. Implement unit tests for command registration, parsing, and basic execution",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Slash Command Handlers for Common Workflows",
+            "description": "Implement handlers for the core set of slash commands that support common user workflows.",
+            "dependencies": [
+              "4.1"
+            ],
+            "details": "1. Implement the /switch command for project switching\n2. Create the /task command with add, list, and complete subcommands\n3. Implement the /search command with filtering capabilities\n4. Add the /help command to display available commands and usage\n5. Create a command factory pattern for standardized command creation\n6. Implement command grouping for related commands\n7. Write integration tests for each command handler",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Automation System for Routine Tasks",
+            "description": "Build automation capabilities for routine tasks with scheduling and trigger mechanisms.",
+            "dependencies": [
+              "4.1",
+              "4.2"
+            ],
+            "details": "1. Implement the /standup command to generate daily standup reports\n2. Create the /summary command for end-of-day summaries\n3. Design a scheduler system for time-based command execution\n4. Implement event-based triggers for automated command execution\n5. Create templates for routine reports with customizable sections\n6. Build data collection mechanisms for automated reports\n7. Implement notification system for scheduled automations",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Parameter Validation and Error Handling",
+            "description": "Implement robust parameter validation and comprehensive error handling for the command system.",
+            "dependencies": [
+              "4.1"
+            ],
+            "details": "1. Create a parameter definition schema with types, validation rules, and default values\n2. Implement parameter type conversion (string, number, boolean, date)\n3. Add support for required vs. optional parameters\n4. Create a validation pipeline for command parameters\n5. Implement descriptive error messages for validation failures\n6. Add error recovery suggestions for common mistakes\n7. Create a logging system for command errors and execution",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 5,
+            "title": "Command History and Favorites System",
+            "description": "Implement a system to track command history, allow reuse of previous commands, and save favorite commands.",
+            "dependencies": [
+              "4.1",
+              "4.2"
+            ],
+            "details": "1. Create a CommandHistory class to store executed commands with timestamps\n2. Implement the /history command to view and reuse previous commands\n3. Add the ability to favorite commands with the /favorite add command\n4. Implement /favorite list and /favorite run commands\n5. Create a persistent storage mechanism for command history and favorites\n6. Add search capabilities within command history\n7. Implement command suggestions based on usage patterns",
+            "status": "pending",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Context Management System",
+        "description": "Implement a sophisticated context management system for efficient token usage and smart context switching.",
+        "details": "1. Create a Context class to manage loading and unloading context\n2. Implement token-aware context loading strategy\n3. Build context compression for long sessions\n4. Create checkpoint system for session state\n5. Implement smart context switching between projects\n6. Build context inheritance for related tasks\n7. Create context visualization tools\n\nExample Context implementation:\n```javascript\nclass Context {\n  constructor(maxTokens = 8000) {\n    this.segments = [];\n    this.maxTokens = maxTokens;\n    this.currentTokens = 0;\n  }\n\n  addSegment(segment, priority = 1) {\n    const tokenCount = this.estimateTokens(segment.content);\n    this.segments.push({\n      ...segment,\n      priority,\n      tokenCount\n    });\n    this.optimizeContext();\n  }\n\n  optimizeContext() {\n    // Sort segments by priority\n    this.segments.sort((a, b) => b.priority - a.priority);\n    \n    // Remove lowest priority segments if we exceed token limit\n    let totalTokens = this.segments.reduce((sum, s) => sum + s.tokenCount, 0);\n    while (totalTokens > this.maxTokens && this.segments.length > 0) {\n      const removed = this.segments.pop();\n      totalTokens -= removed.tokenCount;\n    }\n    \n    this.currentTokens = totalTokens;\n  }\n\n  getFullContext() {\n    return this.segments.map(s => s.content).join('\\n\\n');\n  }\n\n  saveCheckpoint(name) {\n    // Save current context state\n  }\n\n  loadCheckpoint(name) {\n    // Restore context from saved checkpoint\n  }\n\n  estimateTokens(text) {\n    // Estimate token count for text\n    return Math.ceil(text.length / 4);\n  }\n}\n```",
+        "testStrategy": "1. Test token estimation accuracy\n2. Verify context optimization respects priorities\n3. Test checkpoint saving and loading\n4. Measure context switching performance\n5. Test context inheritance with related tasks\n6. Verify token limits are respected",
+        "priority": "high",
+        "dependencies": [
+          1
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 6,
+        "title": "Trigger.dev Integration",
+        "description": "Implement trigger-based workflows and scheduled tasks using Trigger.dev.",
+        "details": "1. Set up Trigger.dev account and API integration\n2. Create background job handlers for scheduled tasks\n3. Implement webhook handlers for external triggers\n4. Build retry and error handling mechanisms\n5. Create logging and monitoring for background jobs\n6. Implement common scheduled tasks (daily summaries, backups)\n7. Create job status dashboard\n\nExample Trigger.dev implementation:\n```javascript\nimport { Trigger, customEvent } from '@trigger.dev/sdk';\n\nconst trigger = new Trigger({\n  id: 'personal-assistant',\n  apiKey: process.env.TRIGGER_API_KEY,\n});\n\n// Daily summary job\ntrigger.define({\n  id: 'daily-summary',\n  name: 'Generate Daily Summary',\n  on: trigger.schedule('0 17 * * 1-5'), // 5pm weekdays\n  run: async (event, ctx) => {\n    // Generate and send daily summary\n    const summary = await generateDailySummary();\n    await sendSummary(summary);\n    return { success: true, summary };\n  }\n});\n\n// Handle webhook from Linear\ntrigger.define({\n  id: 'linear-issue-created',\n  name: 'Process New Linear Issue',\n  on: customEvent({ name: 'linear.issue.created' }),\n  run: async (event, ctx) => {\n    // Process new issue from Linear\n    const issue = event.payload;\n    await processNewIssue(issue);\n    return { success: true };\n  }\n});\n```",
+        "testStrategy": "1. Test scheduled job execution\n2. Verify webhook handling with mock payloads\n3. Test error handling and retry mechanisms\n4. Measure job execution performance\n5. Verify logging and monitoring\n6. Test job cancellation and manual triggering",
+        "priority": "medium",
+        "dependencies": [
+          1,
+          4
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Trigger.dev Account Setup and API Integration",
+            "description": "Set up a Trigger.dev account and implement the core API integration for the personal assistant system.",
+            "dependencies": [],
+            "details": "1. Create a Trigger.dev account and obtain API credentials\n2. Install the Trigger.dev SDK with `npm install @trigger.dev/sdk`\n3. Configure environment variables for API keys\n4. Create the base Trigger instance with proper configuration\n5. Implement the connection testing to verify API integration\n6. Set up project structure for job definitions\n7. Create deployment workflow for Trigger.dev jobs",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Background Job Handlers for Scheduled Tasks",
+            "description": "Implement handlers for scheduled background tasks including daily summaries and system maintenance jobs.",
+            "dependencies": [
+              "6.1"
+            ],
+            "details": "1. Create the daily summary job handler with cron scheduling\n2. Implement weekly report generation job\n3. Build system maintenance and backup job handlers\n4. Create data synchronization scheduled jobs\n5. Implement parameterized job factory for creating similar scheduled jobs\n6. Add job cancellation and rescheduling functionality\n7. Implement job chaining for complex workflows with dependencies",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Webhook Handlers for External Triggers",
+            "description": "Implement webhook handlers to process events from external systems like Linear and other integrated services.",
+            "dependencies": [
+              "6.1"
+            ],
+            "details": "1. Create webhook endpoint registration in Trigger.dev\n2. Implement Linear issue webhook handler\n3. Build generic webhook handler factory for different event types\n4. Create authentication and validation for incoming webhooks\n5. Implement payload transformation and normalization\n6. Add webhook testing tools and mock event generators\n7. Create documentation for webhook integration for other systems",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Logging, Monitoring and Error Handling System",
+            "description": "Implement comprehensive logging, monitoring, and error handling for all Trigger.dev jobs.",
+            "dependencies": [
+              "6.1",
+              "6.2",
+              "6.3"
+            ],
+            "details": "1. Implement structured logging for all job executions\n2. Create error classification and handling strategies\n3. Build retry mechanisms with exponential backoff\n4. Implement job status dashboard with real-time updates\n5. Create alerting system for failed jobs\n6. Implement performance monitoring and metrics collection\n7. Build job history and analytics reporting",
+            "status": "pending",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Learning & Optimization System",
+        "description": "Build a system to track learning, recognize patterns, and optimize processes over time.",
+        "details": "1. Create a learning journal system\n2. Implement pattern recognition for common tasks\n3. Build performance metrics tracking\n4. Create knowledge base from successful patterns\n5. Implement continuous improvement loops\n6. Build visualization for performance trends\n7. Create recommendation system for process improvements\n\nExample Learning System implementation:\n```javascript\nclass LearningSystem {\n  constructor(dbPath) {\n    this.db = new Database(dbPath);\n    this.metrics = {};\n  }\n\n  recordJournalEntry(entry) {\n    return this.db.insert('journal', {\n      timestamp: Date.now(),\n      content: entry.content,\n      tags: entry.tags || [],\n      project: entry.project\n    });\n  }\n\n  recordMetric(name, value, context = {}) {\n    return this.db.insert('metrics', {\n      timestamp: Date.now(),\n      name,\n      value,\n      context\n    });\n  }\n\n  async identifyPatterns() {\n    // Analyze journal entries and metrics to identify patterns\n    const entries = await this.db.query('journal', {}, { limit: 100 });\n    // Pattern recognition logic\n    return patterns;\n  }\n\n  async generateRecommendations() {\n    const patterns = await this.identifyPatterns();\n    // Generate recommendations based on patterns\n    return recommendations;\n  }\n\n  async getPerformanceTrends(metricName, days = 30) {\n    // Get performance trends for specific metric\n    const metrics = await this.db.query('metrics', { name: metricName });\n    // Process metrics into trends\n    return trends;\n  }\n}\n```",
+        "testStrategy": "1. Test journal entry recording and retrieval\n2. Verify metric tracking accuracy\n3. Test pattern recognition with sample data\n4. Verify recommendation generation\n5. Test performance trend visualization\n6. Measure system learning effectiveness over time",
+        "priority": "medium",
+        "dependencies": [
+          2,
+          3
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 8,
+        "title": "Linear Integration",
+        "description": "Connect to Linear for issue tracking and bug management across projects.",
+        "details": "1. Set up Linear API integration\n2. Implement issue creation, updating, and status tracking\n3. Create two-way sync between Task Master and Linear\n4. Build issue templates for different types of tasks\n5. Implement webhook handlers for Linear events\n6. Create reporting and visualization for issue metrics\n7. Build command interfaces for Linear operations\n\nExample Linear integration:\n```javascript\nclass LinearClient {\n  constructor(apiKey) {\n    this.apiKey = apiKey;\n    this.baseUrl = 'https://api.linear.app/graphql';\n  }\n\n  async createIssue(teamId, title, description, priority = 'medium') {\n    const mutation = `\n      mutation CreateIssue($teamId: String!, $title: String!, $description: String, $priority: IssuePriority) {\n        issueCreate(input: {\n          teamId: $teamId\n          title: $title\n          description: $description\n          priority: $priority\n        }) {\n          success\n          issue {\n            id\n            identifier\n            url\n          }\n        }\n      }\n    `;\n    \n    const variables = { teamId, title, description, priority };\n    return this.request(mutation, variables);\n  }\n\n  async getIssue(issueId) {\n    const query = `\n      query GetIssue($issueId: String!) {\n        issue(id: $issueId) {\n          id\n          identifier\n          title\n          description\n          state {\n            name\n          }\n          priority\n          url\n        }\n      }\n    `;\n    const variables = { issueId };\n    return this.request(query, variables);\n  }\n\n  async request(query, variables = {}) {\n    const response = await fetch(this.baseUrl, {\n      method: 'POST',\n      headers: {\n        'Content-Type': 'application/json',\n        'Authorization': `Bearer ${this.apiKey}`\n      },\n      body: JSON.stringify({ query, variables })\n    });\n    return await response.json();\n  }\n}\n```",
+        "testStrategy": "1. Test issue creation with mock data\n2. Verify two-way sync between Task Master and Linear\n3. Test webhook handling for Linear events\n4. Verify issue template functionality\n5. Test command interfaces for Linear operations\n6. Measure API performance and implement caching if needed",
+        "priority": "medium",
+        "dependencies": [
+          2,
+          6
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 9,
+        "title": "Security Implementation",
+        "description": "Implement security features including secure credential storage, permission boundaries, and audit logging.",
+        "details": "1. Create secure credential storage system\n2. Implement permission boundaries between projects\n3. Build audit logging for sensitive operations\n4. Implement data encryption at rest\n5. Create secure backup and recovery procedures\n6. Implement authentication for API access\n7. Build security monitoring and alerting\n\nExample Security implementation:\n```javascript\nconst crypto = require('crypto');\nconst fs = require('fs');\n\nclass SecureStorage {\n  constructor(masterKeyPath, storePath) {\n    this.masterKeyPath = masterKeyPath;\n    this.storePath = storePath;\n    this.store = this.loadStore();\n  }\n\n  loadStore() {\n    try {\n      const encryptedData = fs.readFileSync(this.storePath, 'utf8');\n      return this.decrypt(encryptedData);\n    } catch (error) {\n      // Create new store if doesn't exist\n      return {};\n    }\n  }\n\n  saveStore() {\n    const encryptedData = this.encrypt(this.store);\n    fs.writeFileSync(this.storePath, encryptedData, 'utf8');\n  }\n\n  getMasterKey() {\n    try {\n      return fs.readFileSync(this.masterKeyPath, 'utf8').trim();\n    } catch (error) {\n      // Generate new master key if doesn't exist\n      const key = crypto.randomBytes(32).toString('hex');\n      fs.writeFileSync(this.masterKeyPath, key, 'utf8');\n      return key;\n    }\n  }\n\n  encrypt(data) {\n    const masterKey = this.getMasterKey();\n    const iv = crypto.randomBytes(16);\n    const cipher = crypto.createCipheriv('aes-256-cbc', Buffer.from(masterKey, 'hex'), iv);\n    let encrypted = cipher.update(JSON.stringify(data), 'utf8', 'hex');\n    encrypted += cipher.final('hex');\n    return iv.toString('hex') + ':' + encrypted;\n  }\n\n  decrypt(encryptedData) {\n    const masterKey = this.getMasterKey();\n    const parts = encryptedData.split(':');\n    const iv = Buffer.from(parts[0], 'hex');\n    const encrypted = parts[1];\n    const decipher = crypto.createDecipheriv('aes-256-cbc', Buffer.from(masterKey, 'hex'), iv);\n    let decrypted = decipher.update(encrypted, 'hex', 'utf8');\n    decrypted += decipher.final('utf8');\n    return JSON.parse(decrypted);\n  }\n\n  setCredential(key, value) {\n    this.store[key] = value;\n    this.saveStore();\n  }\n\n  getCredential(key) {\n    return this.store[key];\n  }\n\n  logAudit(action, user, resource, success) {\n    const logEntry = {\n      timestamp: new Date().toISOString(),\n      action,\n      user,\n      resource,\n      success,\n      ip: getClientIp()\n    };\n    // Write to secure audit log\n  }\n}\n```",
+        "testStrategy": "1. Test credential storage and retrieval\n2. Verify encryption and decryption functionality\n3. Test permission boundaries between projects\n4. Verify audit logging captures all required information\n5. Test backup and recovery procedures\n6. Verify security monitoring and alerting",
+        "priority": "high",
+        "dependencies": [
+          1
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 10,
+        "title": "Performance Optimization & Monitoring",
+        "description": "Implement performance monitoring, optimization, and alerting to ensure system meets technical requirements.",
+        "details": "1. Create performance monitoring system\n2. Implement caching for frequently used data\n3. Build token usage tracking and optimization\n4. Create alerting for performance issues\n5. Implement system health dashboard\n6. Build performance testing suite\n7. Create optimization recommendations based on usage patterns\n\nExample Performance implementation:\n```javascript\nclass PerformanceMonitor {\n  constructor() {\n    this.metrics = {};\n    this.thresholds = {\n      responseTime: 2000, // 2 seconds\n      tokenUsage: 50000, // 50K tokens\n      successRate: 0.95, // 95%\n    };\n  }\n\n  startTimer(operation) {\n    return {\n      operation,\n      startTime: Date.now()\n    };\n  }\n\n  endTimer(timer, success = true, metadata = {}) {\n    const duration = Date.now() - timer.startTime;\n    this.recordMetric(timer.operation, 'duration', duration, metadata);\n    this.recordMetric(timer.operation, 'success', success ? 1 : 0, metadata);\n    \n    // Check thresholds and alert if needed\n    if (duration > this.thresholds.responseTime) {\n      this.triggerAlert('responseTime', timer.operation, duration);\n    }\n    \n    return duration;\n  }\n\n  recordMetric(operation, metric, value, metadata = {}) {\n    if (!this.metrics[operation]) {\n      this.metrics[operation] = {};\n    }\n    if (!this.metrics[operation][metric]) {\n      this.metrics[operation][metric] = [];\n    }\n    \n    this.metrics[operation][metric].push({\n      timestamp: Date.now(),\n      value,\n      metadata\n    });\n    \n    // Trim old metrics\n    if (this.metrics[operation][metric].length > 1000) {\n      this.metrics[operation][metric] = this.metrics[operation][metric].slice(-1000);\n    }\n  }\n\n  getMetricAverage(operation, metric, timeWindow = 3600000) { // Default 1 hour\n    if (!this.metrics[operation] || !this.metrics[operation][metric]) {\n      return null;\n    }\n    \n    const now = Date.now();\n    const relevantMetrics = this.metrics[operation][metric].filter(\n      m => (now - m.timestamp) < timeWindow\n    );\n    \n    if (relevantMetrics.length === 0) {\n      return null;\n    }\n    \n    const sum = relevantMetrics.reduce((acc, m) => acc + m.value, 0);\n    return sum / relevantMetrics.length;\n  }\n\n  triggerAlert(type, operation, value) {\n    console.error(`ALERT: ${type} threshold exceeded for ${operation}: ${value}`);\n    // Send notification, log to monitoring system, etc.\n  }\n\n  generateReport() {\n    // Generate comprehensive performance report\n    const report = {};\n    \n    for (const operation in this.metrics) {\n      report[operation] = {};\n      for (const metric in this.metrics[operation]) {\n        report[operation][metric] = {\n          avg1h: this.getMetricAverage(operation, metric, 3600000),\n          avg24h: this.getMetricAverage(operation, metric, 86400000),\n          current: this.metrics[operation][metric].slice(-1)[0]?.value\n        };\n      }\n    }\n    \n    return report;\n  }\n}\n```",
+        "testStrategy": "1. Test performance monitoring accuracy\n2. Verify alerting triggers correctly\n3. Test caching effectiveness\n4. Measure token usage tracking accuracy\n5. Verify system health dashboard displays correct information\n6. Test performance under load\n7. Verify optimization recommendations",
+        "priority": "medium",
+        "dependencies": [
+          1,
+          3,
+          5
+        ],
+        "status": "pending",
+        "subtasks": []
+      }
+    ],
+    "metadata": {
+      "created": "2025-09-20T06:30:53.529Z",
+      "updated": "2025-09-20T08:03:35.334Z",
+      "description": "Tasks for master context"
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+	"mcpServers": {
+		"notion": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@modelcontextprotocol/server-notion"
+			],
+			"env": {
+				"NOTION_API_KEY": "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"
+			}
+		},
+		"supabase": {
+			"type": "stdio",
+			"command": "python3",
+			"args": [
+				"/opt/supabase-mcp-server.py"
+			],
+			"env": {
+				"SUPABASE_URL": "https://supa.sayers.app",
+				"SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0",
+				"SUPABASE_SERVICE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImV4cCI6MTk4MzgxMjk5Nn0.EGIM96RAZx35lJzdJsyH-qQwv8Hdp7fsn3W0YpN81IU"
+			}
+		},
+		"task-master-ai": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"--package=task-master-ai",
+				"task-master-ai"
+			],
+			"env": {
+				"ANTHROPIC_API_KEY": "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",
+				"PERPLEXITY_API_KEY": "YOUR_PERPLEXITY_API_KEY_HERE",
+				"OPENAI_API_KEY": "YOUR_OPENAI_KEY_HERE",
+				"GOOGLE_API_KEY": "YOUR_GOOGLE_KEY_HERE",
+				"XAI_API_KEY": "YOUR_XAI_KEY_HERE",
+				"OPENROUTER_API_KEY": "YOUR_OPENROUTER_KEY_HERE",
+				"MISTRAL_API_KEY": "YOUR_MISTRAL_KEY_HERE",
+				"AZURE_OPENAI_API_KEY": "YOUR_AZURE_KEY_HERE",
+				"OLLAMA_API_KEY": "YOUR_OLLAMA_API_KEY_HERE"
+			}
+		},
+		"github": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@modelcontextprotocol/server-github"
+			],
+			"env": {
+				"GITHUB_PERSONAL_ACCESS_TOKEN": "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"
+			}
+		},
+		"memory": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@modelcontextprotocol/server-memory"
+			],
+			"env": {
+				"MEMORY_FILE_PATH": "/Users/harrysayers/.cursor/memory.json"
+			}
+		},
+		"shadcn-ui": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@jpisnice/shadcn-ui-mcp-server",
+				"--github-api-key",
+				"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"
+			]
+		},
+		"exa": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"exa-mcp-server"
+			],
+			"env": {
+				"EXA_API_KEY": "49b8c654-c520-4844-ae45-a1af856903ba"
+			}
+		},
+		"n8n": {
+			"type": "stdio",
+			"command": "node",
+			"args": [
+				"/Users/harrysayers/n8n-mcp/dist/mcp/index.js"
+			],
+			"env": {
+				"MCP_MODE": "stdio",
+				"LOG_LEVEL": "error",
+				"DISABLE_CONSOLE_OUTPUT": "true",
+				"N8N_API_URL": "https://n8n.sayers.app",
+				"N8N_API_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMjM2NGQ5Zi0xMDg2LTRkZTMtOGY0Yi0xYjE5MmI1MjkyNzAiLCJpc3MiOiJuOG4iLCJhdWQiOiJwdWJsaWMtYXBpIiwiaWF0IjoxNzU3Mzk3Njk2fQ.xbIyIxC09TCRGKKmpRusISKQWfP7d4hrmBKOo8SQUPo"
+			}
+		},
+		"awesome-n8n-templates": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"mcp-remote",
+				"https://gitmcp.io/enescingoz/awesome-n8n-templates"
+			]
+		}
+	}
+}

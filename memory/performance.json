@@ -1,0 +1,35 @@
+{
+  "agents": {},
+  "commands": {
+    "/learn": {
+      "usage_count": 1,
+      "last_used": "2025-09-20",
+      "effectiveness": "high",
+      "notes": "Successfully analyzed system and established baseline patterns"
+    }
+  },
+  "workflows": {
+    "learning_analysis": {
+      "steps": ["analyze_memory", "identify_patterns", "update_config", "generate_report"],
+      "success_rate": 1.0,
+      "average_time_minutes": 5
+    }
+  },
+  "patterns": {
+    "successful": [
+      "direct_action_oriented_communication",
+      "context_aware_automation_triggers",
+      "hierarchical_context_loading",
+      "business_context_integration"
+    ],
+    "failed": [],
+    "user_preferences": [
+      "minimal_file_creation",
+      "edit_over_create",
+      "no_unsolicited_documentation",
+      "mokai_business_context_awareness"
+    ]
+  },
+  "baseline_established": "2025-09-20",
+  "last_learning_update": "2025-09-20"
+}

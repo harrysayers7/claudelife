@@ -1,0 +1,31 @@
+{
+  "project": {
+    "name": "Brain",
+    "type": "technical",
+    "priority": "high",
+    "domain": "ai_automation",
+    "focus": "system_intelligence"
+  },
+  "context": {
+    "load_priority": 2,
+    "max_tokens": 20000,
+    "key_files": [
+      "CLAUDE.md",
+      "context/agents.md",
+      "context/workflows.md",
+      "context/integrations.md",
+      "context/learning.md"
+    ]
+  },
+  "automation": {
+    "learning_capture": true,
+    "performance_tracking": true,
+    "system_monitoring": true
+  },
+  "integrations": {
+    "linear": true,
+    "trigger_dev": true,
+    "task_master": true,
+    "mcp_servers": true
+  }
+}

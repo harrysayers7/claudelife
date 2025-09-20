@@ -1,0 +1,39 @@
+{
+  "personalAssistant": {
+    "name": "Claude Life Personal Assistant",
+    "version": "1.0.0",
+    "activeProject": null,
+    "projects": {
+      "mokai": {
+        "name": "MOKAI",
+        "description": "Indigenous-owned technology consultancy",
+        "path": "./projects/mokai",
+        "priority": "high"
+      },
+      "mok-music": {
+        "name": "Mok Music",
+        "description": "Music-related projects and activities",
+        "path": "./projects/mok-music",
+        "priority": "medium"
+      },
+      "brain": {
+        "name": "Brain",
+        "description": "AI system and automation projects",
+        "path": "./projects/brain",
+        "priority": "high"
+      },
+      "mac": {
+        "name": "Mac",
+        "description": "Mac-related projects and configurations",
+        "path": "./projects/mac",
+        "priority": "low"
+      }
+    },
+    "settings": {
+      "maxTokens": 100000,
+      "autoSwitchContext": true,
+      "saveHistory": true,
+      "enableLearning": true
+    }
+  }
+}

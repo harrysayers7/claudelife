@@ -1,0 +1,103 @@
+# Personal Assistant System - Product Requirements Document
+
+## Project Overview
+Build a comprehensive AI-powered personal assistant system that helps organize work across multiple projects, automates routine tasks, and improves productivity using Claude Code and AI agents.
+
+## Core Objectives
+1. Create a structured system for managing multiple concurrent projects
+2. Implement AI agents for task automation and intelligent assistance
+3. Build reusable patterns and commands for common workflows
+4. Establish clear project boundaries and context management
+5. Track learning and optimize processes over time
+
+## Key Features & Requirements
+
+### 1. Project Compartmentalization System
+- Set up separate project workspaces (MOKAI, Mok Music, Brain, Mac projects)
+- Configure project-specific CLAUDE.md files with context
+- Implement isolated task tracking per project using Task Master
+- Create git worktrees for parallel development
+- Build quick switching mechanisms between projects
+
+### 2. AI Agent Framework
+- Design modular agents for specific tasks (research, coding, documentation)
+- Create agent orchestration system using Task tool
+- Implement agent communication and handoff patterns
+- Build error handling and recovery mechanisms
+- Set up agent performance tracking
+
+### 3. Task Management Integration
+- Integrate Task Master across all projects
+- Set up Linear issue tracking for bug discovery
+- Create automated task generation from brain dumps
+- Implement priority-based task selection
+- Build progress tracking and reporting
+
+### 4. Command & Automation System
+- Create custom slash commands for repeated workflows
+- Build automation for routine tasks (daily standup, EOD summary)
+- Implement trigger-based workflows using Trigger.dev
+- Set up scheduled tasks for regular operations
+- Create command aliases and shortcuts
+
+### 5. Learning & Optimization
+- Build learning journal system to track what works
+- Implement pattern recognition for common tasks
+- Create performance metrics tracking
+- Build knowledge base from successful patterns
+- Implement continuous improvement loops
+
+### 6. Context Management
+- Implement token-aware context loading strategy
+- Build context compression for long sessions
+- Create checkpoint system for session state
+- Implement smart context switching between projects
+- Build context inheritance for related tasks
+
+### 7. Integration Layer
+- Connect to Linear for issue tracking
+- Integrate with Trigger.dev for background tasks
+- Connect to external services (calendar, email, etc.)
+- Build MCP server connections
+- Implement webhook handlers
+
+## Technical Requirements
+
+### Infrastructure
+- Use existing server (134.199.159.190) for background processes
+- Implement local-first architecture with cloud sync
+- Set up backup and recovery systems
+- Build monitoring and alerting
+
+### Security
+- Implement secure credential storage
+- Build permission boundaries between projects
+- Create audit logging for sensitive operations
+- Implement data encryption at rest
+
+### Performance
+- Response time < 2s for cached operations
+- Token usage < 50K per complex task
+- Automation success rate > 95%
+- System uptime > 99%
+
+## Success Metrics
+1. Time saved per day > 2 hours
+2. Task completion rate > 90%
+3. Context switch time < 30 seconds
+4. Learning capture rate > 80%
+5. Automation reliability > 95%
+
+## Implementation Priority
+1. Phase 1: Foundation - Project structure and Task Master setup
+2. Phase 2: Core Agents - Basic AI agents and workflows
+3. Phase 3: Automation - Trigger.dev and scheduled tasks
+4. Phase 4: Intelligence - Learning system and optimization
+5. Phase 5: Scale - Team features and advanced integrations
+
+## Constraints
+- Must work within Claude Code's token limits
+- Should minimize API costs through caching
+- Must maintain clear project separation
+- Should be incrementally buildable
+- Must handle failures gracefully
