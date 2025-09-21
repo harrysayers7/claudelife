@@ -1,0 +1,42 @@
+name: Sync AI Brain Tasks File
+
+on:
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:  # Allow manual triggering
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/sync-ai-brain.yml'
+
+jobs:
+  sync-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout claudelife repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Fetch file from ai-brain repo
+        run: |
+          mkdir -p context/external
+          curl -sSL https://raw.githubusercontent.com/harrysayers7/ai-brain/main/ai/context/tasks-ai-management.md \
+            -o context/external/tasks-ai-management.md
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --exit-code || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push if changed
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add context/external/tasks-ai-management.md
+          git commit -m "🔄 Sync tasks-ai-management.md from ai-brain repo"
+          git push
