@@ -285,6 +285,29 @@
 				"/Users/harrysayers/Developer/claudelife/.mcp/fastmcp_server.py"
 			],
 			"env": {}
+		},
+		"claudelife-business-api": {
+			"type": "sse",
+			"url": "http://localhost:8001/mcp",
+			"env": {}
+		},
+		"claudelife-financial-api": {
+			"type": "sse",
+			"url": "http://localhost:8002/mcp",
+			"env": {
+				"SUPABASE_URL": "https://gshsshaodoyttdxippwx.supabase.co",
+				"SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRzbnJib2d0a2xjbHV5aG13cmtoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU5ODA0NDQsImV4cCI6MjA1MTU1NjQ0NH0.-kZMQWOAHi9iGIe2V7cj8Nn5mfDhnhwWTxvjhfvGVNE",
+				"SUPABASE_DB_HOST": "aws-0-ap-southeast-2.pooler.supabase.com",
+				"SUPABASE_DB_PORT": "6543",
+				"SUPABASE_DB_NAME": "postgres",
+				"SUPABASE_DB_USER": "postgres.gshsshaodoyttdxippwx",
+				"SUPABASE_DB_PASSWORD": "VdGX8zdGVrkmgpHB"
+			}
+		},
+		"mindsdb": {
+			"type": "sse",
+			"url": "http://localhost:47334/mcp/sse",
+			"env": {}
 		}
 	}
 }
