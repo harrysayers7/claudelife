@@ -171,6 +171,8 @@
   },
   "active": "f6241238aac9a28b",
   "lastOpenFiles": [
+    "commands/commit.md",
+    "commands/sync-database-context.md",
     "commands/finance/add-invoice.md",
     "commands/add-invoice.md",
     "commands/add-invoice.md.tmp.43972.1758533341981",

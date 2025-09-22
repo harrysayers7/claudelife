@@ -6,21 +6,37 @@
 - **MCP server cache awareness**: Recognized that MCP servers maintain internal state separate from codebase files
 - **Immediate problem resolution focus**: User appreciated quick fix over lengthy explanations
 - **Context continuation from conversation summary**: Successfully resumed work from previous session summary
+- **Automated infrastructure documentation**: Implemented comprehensive Supabase context sync system
+- **Multi-trigger automation**: Git hooks + scheduled tasks + manual commands for comprehensive coverage
+- **Fallback data handling**: Using MCP server data when direct API access fails
+- **Modular documentation structure**: Separate files for schema, purpose, ML pipeline, projects
 
 ## Failure Patterns (Stop doing)
 - **Trusting MCP server cached project IDs**: MCP server had wrong project ID cached, causing database operations to fail
 - **Assuming project configuration persistence**: Don't assume MCP configurations remain consistent across sessions
 - **Over-explaining technical details**: User wanted the problem fixed quickly, not detailed explanations
+- **Assuming credential access**: Direct Supabase API calls failed due to permission limitations
+- **Not implementing fallbacks early**: Should design fallback mechanisms from the start
+- **Over-engineering sync mechanisms**: Started with complex MCP API calls when simple fallback data works
 
 ## Optimizations Discovered
 - **Add critical configs to CLAUDE.md**: For persistent settings that MCP servers might cache incorrectly
 - **Always verify project/database IDs**: Use `list_projects` or similar verification commands before operations
 - **File search + explicit rules strategy**: When configs aren't in files, add explicit rules to prevent future issues
+- **Schema hash tracking**: MD5 hashing for efficient change detection
+- **Structured context hierarchy**: `context/finance/database/` organization pattern
+- **Auto-loading rules**: Specific triggers in CLAUDE.md for automatic context loading
+- **Memory capture workflow**: Seamless integration with existing notification systems
+- **Git integration patterns**: Post-commit hooks with comprehensive automation
 
 ## User Preferences Noted
 - **Immediate problem resolution over explanation**: "why??? you were ablew to do it fine before what has changed" - focus on fixing, not explaining
 - **Expects consistency**: When something worked before, it should continue working
 - **Wants clean permanent solutions**: Remove evidence of wrong configs, add explicit rules
+- **Comprehensive but organized documentation**: User wants full context but well-structured
+- **Automated maintenance**: Strong preference for systems that maintain themselves
+- **No manual overhead**: Solutions should work without requiring user memory/intervention
+- **Test implementation immediately**: User expects verification that systems work
 
 ## Technical Insights
 - **MCP server state management**: MCP servers maintain internal state/cache that's separate from project files

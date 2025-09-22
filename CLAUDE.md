@@ -188,6 +188,10 @@ Check memory/system-state.json for:
 - **Project ID verification**: Always verify correct database/project ID before operations
 - **MCP server cache awareness**: Understand that MCP servers cache configs independently of codebase
 - **Explicit configuration rules**: Add critical config rules directly to CLAUDE.md for persistence
+- **Automated infrastructure documentation**: Implement comprehensive context sync systems with change detection
+- **Multi-trigger automation**: Git hooks + scheduled tasks + manual commands for comprehensive coverage
+- **Fallback data handling**: Design fallback mechanisms when primary APIs fail
+- **Modular documentation structure**: Separate files for different aspects (schema, purpose, ML, projects)
 
 ### User Preferences Discovered
 - **Minimal file creation**: Only when absolutely necessary for goals
@@ -198,6 +202,10 @@ Check memory/system-state.json for:
 - **Financial data accounting context**: Understand business implications (payables vs receivables)
 - **Verify before reporting success**: Want confirmation that tasks were actually completed
 - **Immediate problem resolution**: Focus on fixing issues quickly rather than lengthy explanations
+- **Comprehensive but organized documentation**: Want full context but well-structured
+- **Automated maintenance**: Strong preference for systems that maintain themselves
+- **No manual overhead**: Solutions should work without requiring user memory/intervention
+- **Test implementation immediately**: Expect verification that systems work
 
 ### Deprecated Approaches
 - **Verbose explanations**: User prefers concise, direct responses
@@ -207,6 +215,9 @@ Check memory/system-state.json for:
 - **Guessing constraint values**: Check valid enum/constraint values before inserting
 - **Trusting MCP server cached configs**: Always verify critical settings like project IDs
 - **Assuming project configuration persistence**: MCP servers may cache old/wrong configurations
+- **Assuming credential access**: Direct API calls may fail due to permission limitations
+- **Not implementing fallbacks early**: Always design fallback mechanisms from the start
+- **Over-engineering sync mechanisms**: Simple fallback data often works better than complex API integration
 
 ## Remember
 - Anticipate needs based on established patterns
