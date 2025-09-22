@@ -68,5 +68,40 @@
     "type": "includes",
     "strength": 8,
     "created": "2025-09-22T13:00:00Z"
+  },
+  {
+    "from": "entity_20250922_1330",
+    "to": "entity_20250922_1331",
+    "type": "creates",
+    "strength": 10,
+    "created": "2025-09-22T13:30:00Z"
+  },
+  {
+    "from": "entity_20250922_1331",
+    "to": "entity_20250922_1333",
+    "type": "integrates_with",
+    "strength": 9,
+    "created": "2025-09-22T13:30:00Z"
+  },
+  {
+    "from": "entity_20250922_1332",
+    "to": "entity_20250922_1252",
+    "type": "uses",
+    "strength": 7,
+    "created": "2025-09-22T13:32:00Z"
+  },
+  {
+    "from": "entity_20250922_1333",
+    "to": "entity_20250922_1330",
+    "type": "depends_on",
+    "strength": 8,
+    "created": "2025-09-22T13:33:00Z"
+  },
+  {
+    "from": "entity_20250922_1334",
+    "to": "entity_20250922_1252",
+    "type": "built_with",
+    "strength": 9,
+    "created": "2025-09-22T13:34:00Z"
   }
 ]

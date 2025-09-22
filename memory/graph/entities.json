@@ -124,5 +124,69 @@
     },
     "created": "2025-09-22T13:04:00Z",
     "lastUpdated": "2025-09-22T13:04:00Z"
+  },
+  "entity_20250922_1330": {
+    "id": "entity_20250922_1330",
+    "name": "Git Hook Automation System",
+    "type": "tool",
+    "attributes": {
+      "hooks": ["post-commit", "pre-commit"],
+      "purpose": "automated memory capture reminders",
+      "triggers": ["context files", "infrastructure changes"],
+      "workflow": "reminder-based"
+    },
+    "created": "2025-09-22T13:30:00Z",
+    "lastUpdated": "2025-09-22T13:30:00Z"
+  },
+  "entity_20250922_1331": {
+    "id": "entity_20250922_1331",
+    "name": "Memory Capture Reminder System",
+    "type": "concept",
+    "attributes": {
+      "file": ".memory-capture-needed",
+      "triggers": "git commits with significant changes",
+      "workflow": "create reminder -> run /remember -> delete reminder",
+      "integrates_with": "Claude Code commands"
+    },
+    "created": "2025-09-22T13:31:00Z",
+    "lastUpdated": "2025-09-22T13:31:00Z"
+  },
+  "entity_20250922_1332": {
+    "id": "entity_20250922_1332",
+    "name": "File Watcher System",
+    "type": "tool",
+    "attributes": {
+      "file": ".mcp/memory_watcher.py",
+      "framework": "watchdog",
+      "status": "available_but_optional",
+      "purpose": "real-time memory capture automation"
+    },
+    "created": "2025-09-22T13:32:00Z",
+    "lastUpdated": "2025-09-22T13:32:00Z"
+  },
+  "entity_20250922_1333": {
+    "id": "entity_20250922_1333",
+    "name": "Enhanced Claude Commands",
+    "type": "tool",
+    "attributes": {
+      "commands": ["auto-remember", "check-memory-reminders", "enhanced /remember"],
+      "location": ".claude/commands/",
+      "integration": "git hook workflow"
+    },
+    "created": "2025-09-22T13:33:00Z",
+    "lastUpdated": "2025-09-22T13:33:00Z"
+  },
+  "entity_20250922_1334": {
+    "id": "entity_20250922_1334",
+    "name": "FastMCP Brain Tools",
+    "type": "tool",
+    "attributes": {
+      "file": ".mcp/tools/brain_tools.py",
+      "tools": ["brain_dump", "morning_review"],
+      "framework": "FastMCP",
+      "status": "operational"
+    },
+    "created": "2025-09-22T13:34:00Z",
+    "lastUpdated": "2025-09-22T13:34:00Z"
   }
 }

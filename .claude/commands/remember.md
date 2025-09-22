@@ -1,5 +1,10 @@
 Store information in the memory graph:
 
+## Pre-Steps:
+1. **Check for git reminder**: Look for `.memory-capture-needed` file
+2. **If reminder exists**: Include its contents in the memory capture context
+
+## Main Process:
 Parse the user's input to identify:
 1. **Entities** (people, projects, tools, concepts)
 2. **Relationships** (who knows who, what connects to what)
@@ -29,4 +34,8 @@ Format relationships as:
   "created": "[timestamp]"
 }
 
-After storing, confirm what was remembered.
+## Post-Steps:
+1. **Confirm what was remembered**
+2. **Check if `.memory-capture-needed` exists**
+3. **If reminder file exists**: Ask user if they want to delete it
+4. **Suggest**: `rm .memory-capture-needed` to clear the reminder
