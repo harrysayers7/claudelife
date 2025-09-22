@@ -64,5 +64,101 @@
     "event": "FastMCP Brain Tools Integration",
     "entities": ["entity_20250922_1334"],
     "description": "Implemented brain_dump and morning_review tools using FastMCP framework for cognitive automation features"
+  },
+  {
+    "timestamp": "2025-09-22T16:20:00Z",
+    "event": "FastAPI-MCP Package Integration",
+    "entities": ["entity_20250922_1620", "entity_20250922_1622"],
+    "description": "Successfully installed and configured tadata-org/fastapi_mcp package in virtual environment to convert FastAPI endpoints into MCP tools"
+  },
+  {
+    "timestamp": "2025-09-22T16:21:00Z",
+    "event": "MOKAI Business API Development",
+    "entities": ["entity_20250922_1621"],
+    "description": "Created comprehensive FastAPI application with 4 business endpoints: compliance checking, tender search, client status, and business metrics - all automatically exposed as Claude Code tools"
+  },
+  {
+    "timestamp": "2025-09-22T16:23:00Z",
+    "event": "Business Automation Capabilities Enabled",
+    "entities": ["entity_20250922_1623", "entity_20250922_1624"],
+    "description": "Implemented automated compliance assessment and government tender monitoring systems - transforming manual API workflows into intelligent business assistant capabilities"
+  },
+  {
+    "timestamp": "2025-09-22T16:30:00Z",
+    "event": "Gmail Integration Project Initiated",
+    "entities": ["entity_20250922_1630", "entity_20250922_1633"],
+    "description": "Started Gmail API integration for automated email reading and invoice processing - essential for MOKAI business operations and financial automation"
+  },
+  {
+    "timestamp": "2025-09-22T05:52:33Z",
+    "event": "Gmail SMTP Email Sending Successful",
+    "entities": ["entity_20250922_1631"],
+    "description": "Successfully implemented and tested Gmail SMTP email sending using nodemailer with app passwords - operational email sending capability established"
+  },
+  {
+    "timestamp": "2025-09-22T16:32:00Z",
+    "event": "Gmail OAuth Bug Discovery and Linear Issue Creation",
+    "entities": ["entity_20250922_1632", "entity_20250922_1634"],
+    "description": "Identified persistent invalid_grant OAuth2 error blocking Gmail API email reading. Created Linear issue SAY-74 with high priority for tracking and resolution"
+  },
+  {
+    "timestamp": "2025-09-22T18:15:00Z",
+    "event": "MindsDB Docker Container Setup",
+    "entities": ["entity_20250922_1815"],
+    "description": "Successfully deployed MindsDB in Docker container with ports 47344:47334 and 47345:47335, resolving port conflicts with existing infrastructure"
+  },
+  {
+    "timestamp": "2025-09-22T18:16:00Z",
+    "event": "MindsDB HTTP API Integration Implementation",
+    "entities": ["entity_20250922_1816"],
+    "description": "Pivoted from MCP to direct HTTP API integration for MindsDB after discovering current version lacks MCP handlers - established working connection to localhost:47344"
+  },
+  {
+    "timestamp": "2025-09-22T18:17:00Z",
+    "event": "ML Models Framework Development",
+    "entities": ["entity_20250922_1817"],
+    "description": "Designed comprehensive ML model framework with 7 specialized models for financial AI: transaction categorization, cash flow forecasting, anomaly detection, expense prediction, revenue analysis, vendor risk assessment, and budget optimization"
+  },
+  {
+    "timestamp": "2025-09-22T18:18:00Z",
+    "event": "Financial API Server Enhancement",
+    "entities": ["entity_20250922_1818"],
+    "description": "Enhanced financial_api_server.py with MindsDB integration using dependency injection pattern - implemented AI-powered endpoints for transaction categorization, cash flow forecasting, and anomaly detection"
+  },
+  {
+    "timestamp": "2025-09-22T18:19:00Z",
+    "event": "Multi-Entity Financial Tracking System Activation",
+    "entities": ["entity_20250922_1819"],
+    "description": "Activated comprehensive financial tracking system supporting MOKAI PTY LTD, MOK HOUSE PTY LTD, and Mok Music with AI-powered transaction processing and vendor risk assessment capabilities"
+  },
+  {
+    "timestamp": "2025-09-22T18:20:00Z",
+    "event": "Supabase Project Migration Completed",
+    "entities": ["entity_20250922_1820"],
+    "description": "Successfully migrated from dsnrbogtklcluyhmwrkh to gshsshaodoyttdxippwx Supabase project - updated all configuration files and environment variables for seamless database connectivity"
+  },
+  {
+    "timestamp": "2025-09-22T18:21:00Z",
+    "event": "AI-Powered Transaction Categorization Live",
+    "entities": ["entity_20250922_1821"],
+    "description": "Deployed production-ready AI transaction categorization system using MindsDB ML models - providing intelligent financial automation for multi-entity business operations with confidence scoring and category prediction"
+  },
+  {
+    "timestamp": "2025-09-22T19:02:00Z",
+    "event": "Supabase API Key Authentication Issue Resolved",
+    "entities": ["entity_20250922_1902"],
+    "description": "Successfully diagnosed and fixed Python Supabase client 401 authentication errors by updating hardcoded API key fallback in financial_api_server.py - environment variable export resolved connection issues"
+  },
+  {
+    "timestamp": "2025-09-22T19:03:00Z",
+    "event": "PDF Invoice Parser Operational Verification",
+    "entities": ["entity_20250922_1903"],
+    "description": "Confirmed invoice_parser.py is fully operational with OpenAI GPT-4o-mini integration, PyPDF2 text extraction, and comprehensive field parsing for automated financial document processing"
+  },
+  {
+    "timestamp": "2025-09-22T19:04:00Z",
+    "event": "End-to-End Invoice Processing Workflow Validated",
+    "entities": ["entity_20250922_1904"],
+    "description": "Verified complete PDF-to-database invoice processing pipeline is operational - from file upload through AI parsing to automated transaction creation with multi-entity support for MOKAI and MOK HOUSE business operations"
   }
 ]

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "googleapis": "^160.0.0",
+    "imap": "^0.8.19",
+    "nodemailer": "^7.0.6"
+  }
+}

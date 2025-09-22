@@ -1,0 +1,24 @@
+{
+  "vendor_name": "MOK HOUSE PTY LTD",
+  "invoice_number": "INV-58",
+  "invoice_date": "2025-09-15",
+  "due_date": null,
+  "total_amount": 5250.0,
+  "tax_amount": 0.0,
+  "subtotal": 5250.0,
+  "currency": "AUD",
+  "description": "Repco Fee",
+  "line_items": [
+    {
+      "description": "Repco Fee",
+      "quantity": 1,
+      "unit_price": 5250.0,
+      "total": 5250.0
+    }
+  ],
+  "vendor_abn": "38690628212",
+  "payment_terms": null,
+  "source_file": "250915_ESM_INV_Repco_PO-0934.pdf",
+  "parsed_at": "2025-09-22T19:08:58.929358",
+  "raw_text": "INVOICE\n \nINV-58\n  \nMOK\n \nHOUSE\n \nPTY\n \nLTD\n \n \nABN:\n \n38\n \n690\n \n628\n \n212\n \n \n \n \n \nBILL\n \nTO:\n \nELECTRIC\n \nSHEEP\n \nMUSIC\n \nPTY\n \nLTD\n \nPurchase\n \nOrder:\n \n0934\n \n  \n \n \n \n \nDate:\n \n15/09/25\n \n \nItem\n \nQuantity\n \nRate\n \nAmount\n \nRepco\n \nFee\n \n1\n \n$5,250.00\n \n5,250.00\n \n \n \n \n \n \n \nSUBTOTAL\n \n$5,250.00\n \n \n \nTAX(0%):\n \n$0.00\n \n \n \nTOTAL:\n \n$5,250.00\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nPLEASE\n \nMAKE\n \nPAYMENTS\n \nTO:\n \nName:\n \nHarrison\n \nSayers\n \nBSB:\n \n013943\n \nAcc\n \n#:\n \n612281562\n \n \n \n \n \n"
+}

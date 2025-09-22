@@ -37,12 +37,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "context/business/mokai/mokai-profile.md",
+                "file": "AGENTS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "mokai-profile"
+              "title": "AGENTS"
             }
           }
         ],
@@ -119,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "context/business/mokai/mokai-profile.md",
+                "file": "AGENTS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for mokai-profile"
+              "title": "Backlinks for AGENTS"
             }
           },
           {
@@ -138,12 +138,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "context/business/mokai/mokai-profile.md",
+                "file": "AGENTS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from mokai-profile"
+              "title": "Outgoing links from AGENTS"
             }
           },
           {
@@ -167,13 +167,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "context/business/mokai/mokai-profile.md",
+                "file": "AGENTS.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of mokai-profile"
+              "title": "Outline of AGENTS"
             }
           }
         ]
@@ -194,16 +194,43 @@
       "bases:Create new base": false
     }
   },
-  "active": "94da3d6eb66ccc2c",
+  "active": "9ede3423022a57d3",
   "lastOpenFiles": [
-    "memory/graph/entities.json.tmp.76721.1758511832337",
-    "context/test-git-hook.md",
-    "context/test-memory-capture.md",
-    "memory/graph/relationships.json.tmp.76721.1758510070776",
-    "context/business/mokhouse/mokmusic/mokmusic.md",
-    "context/business/mokhouse/mokmusic/esm.md",
-    "context/business/mokai/mokai-profile.md",
-    "AGENTS.md",
-    "AGENT.md"
+    "test_parser.py.tmp.88296.1758537951486",
+    "parser_env/lib/python3.13/site-packages/requests-2.32.5.dist-info/licenses/LICENSE",
+    "parser_env/lib/python3.13/site-packages/requests-2.32.5.dist-info/top_level.txt",
+    "parser_env/lib/python3.13/site-packages/requests-2.32.5.dist-info/licenses",
+    "parser_env/lib/python3.13/site-packages/requests-2.32.5.dist-info/REQUESTED",
+    "parser_env/lib/python3.13/site-packages/requests-2.32.5.dist-info/WHEEL",
+    "parser_env/lib/python3.13/site-packages/requests-2.32.5.dist-info/INSTALLER",
+    "parser_env/lib/python3.13/site-packages/requests-2.32.5.dist-info/RECORD",
+    "parser_env/lib/python3.13/site-packages/requests-2.32.5.dist-info/METADATA",
+    "parser_env/lib/python3.13/site-packages/requests-2.32.5.dist-info",
+    "parser_env/lib/python3.13/site-packages/requests/__pycache__/utils.cpython-313.pyc",
+    "parser_env/lib/python3.13/site-packages/idna-3.10.dist-info/LICENSE.md",
+    "parser_env/lib/python3.13/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/idna/LICENSE.md",
+    "memory/learning-reports/2025-09-22-learning-report.md",
+    "memory/learning-reports/2025-09-22.md",
+    "invoices/README.md",
+    "AGENT.md",
+    "CLAUDE.md",
+    "node_modules/readable-stream/README.md",
+    "node_modules/string_decoder/README.md",
+    "node_modules/imap/README.md",
+    "node_modules/core-util-is/README.md",
+    "node_modules/isarray/README.md",
+    "node_modules/semver/README.md",
+    "node_modules/utf7/README.md",
+    "node_modules/inherits/README.md",
+    "node_modules/nodemailer/README.md",
+    "node_modules/nodemailer/CODE_OF_CONDUCT.md",
+    "node_modules/nodemailer/CHANGELOG.md",
+    "node_modules/googleapis/README.md",
+    "node_modules/web-streams-polyfill/README.md",
+    "node_modules/gaxios/README.md",
+    "node_modules/node-fetch/README.md",
+    "node_modules/node-fetch/LICENSE.md",
+    "node_modules/gtoken/README.md",
+    "node_modules/gcp-metadata/README.md"
   ]
 }

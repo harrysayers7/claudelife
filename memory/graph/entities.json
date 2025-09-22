@@ -188,5 +188,288 @@
     },
     "created": "2025-09-22T13:34:00Z",
     "lastUpdated": "2025-09-22T13:34:00Z"
+  },
+  "entity_20250922_1620": {
+    "id": "entity_20250922_1620",
+    "name": "FastAPI-MCP Package",
+    "type": "tool",
+    "attributes": {
+      "source": "tadata-org/fastapi_mcp",
+      "version": "0.4.0",
+      "purpose": "convert FastAPI endpoints to MCP tools",
+      "transport": "SSE",
+      "installation": "virtual environment required"
+    },
+    "created": "2025-09-22T16:20:00Z",
+    "lastUpdated": "2025-09-22T16:20:00Z"
+  },
+  "entity_20250922_1621": {
+    "id": "entity_20250922_1621",
+    "name": "MOKAI Business API",
+    "type": "project",
+    "attributes": {
+      "file": "fastapi_mcp_demo/main.py",
+      "endpoints": 4,
+      "services": ["compliance_check", "tender_search", "client_status", "metrics"],
+      "port": 8001,
+      "mcp_mount": "/mcp"
+    },
+    "created": "2025-09-22T16:21:00Z",
+    "lastUpdated": "2025-09-22T16:21:00Z"
+  },
+  "entity_20250922_1622": {
+    "id": "entity_20250922_1622",
+    "name": "FastAPI-MCP Virtual Environment",
+    "type": "tool",
+    "attributes": {
+      "path": "fastapi_mcp_env/",
+      "python_version": "3.13",
+      "reason": "macOS externally managed environment",
+      "packages": ["fastapi-mcp", "uvicorn", "pydantic"]
+    },
+    "created": "2025-09-22T16:22:00Z",
+    "lastUpdated": "2025-09-22T16:22:00Z"
+  },
+  "entity_20250922_1623": {
+    "id": "entity_20250922_1623",
+    "name": "Business Compliance Automation",
+    "type": "concept",
+    "attributes": {
+      "frameworks": ["IRAP", "Essential8"],
+      "capabilities": ["vendor_assessment", "risk_scoring", "certification_tracking"],
+      "integration": "FastAPI-MCP",
+      "business_value": "automated compliance workflows"
+    },
+    "created": "2025-09-22T16:23:00Z",
+    "lastUpdated": "2025-09-22T16:23:00Z"
+  },
+  "entity_20250922_1624": {
+    "id": "entity_20250922_1624",
+    "name": "Government Tender Monitoring",
+    "type": "concept",
+    "attributes": {
+      "sources": ["Department of Defence", "Services Australia"],
+      "filters": ["keywords", "max_value", "requirements"],
+      "automation": "real-time search and notification",
+      "business_impact": "opportunity identification"
+    },
+    "created": "2025-09-22T16:24:00Z",
+    "lastUpdated": "2025-09-22T16:24:00Z"
+  },
+  "entity_20250922_1630": {
+    "id": "entity_20250922_1630",
+    "name": "Gmail API Integration",
+    "type": "tool",
+    "attributes": {
+      "purpose": "email reading and parsing for invoices",
+      "oauth_status": "problematic",
+      "smtp_status": "working",
+      "files": ["scripts/get-gmail-token.js", "scripts/send-test-email.js", "utils/email.js"],
+      "issue": "invalid_grant error"
+    },
+    "created": "2025-09-22T16:30:00Z",
+    "lastUpdated": "2025-09-22T16:30:00Z"
+  },
+  "entity_20250922_1631": {
+    "id": "entity_20250922_1631",
+    "name": "Gmail SMTP Email Sending",
+    "type": "tool",
+    "attributes": {
+      "library": "nodemailer",
+      "authentication": "app_password",
+      "status": "operational",
+      "from_email": "harry@sayers1.com",
+      "test_successful": "2025-09-22T05:52:33Z"
+    },
+    "created": "2025-09-22T16:31:00Z",
+    "lastUpdated": "2025-09-22T16:31:00Z"
+  },
+  "entity_20250922_1632": {
+    "id": "entity_20250922_1632",
+    "name": "Gmail OAuth2 Bug",
+    "type": "concept",
+    "attributes": {
+      "linear_issue": "SAY-74",
+      "error": "invalid_grant",
+      "priority": "high",
+      "workaround": "SMTP with app passwords",
+      "proposed_fix": "revoke and re-authorize with consent prompt"
+    },
+    "created": "2025-09-22T16:32:00Z",
+    "lastUpdated": "2025-09-22T16:32:00Z"
+  },
+  "entity_20250922_1633": {
+    "id": "entity_20250922_1633",
+    "name": "Email Reading Infrastructure",
+    "type": "project",
+    "attributes": {
+      "purpose": "automated invoice processing for MOKAI",
+      "approaches": ["Gmail API", "IMAP"],
+      "current_preference": "Gmail API for attachments",
+      "utilities": ["utils/email.js", "utils/email-reader.js"]
+    },
+    "created": "2025-09-22T16:33:00Z",
+    "lastUpdated": "2025-09-22T16:33:00Z"
+  },
+  "entity_20250922_1634": {
+    "id": "entity_20250922_1634",
+    "name": "Linear Issue Tracking",
+    "type": "tool",
+    "attributes": {
+      "team": "Sayers",
+      "latest_issue": "SAY-74",
+      "integration": "Claude Code MCP",
+      "labels": ["bug", "claudelife"],
+      "automated_creation": true
+    },
+    "created": "2025-09-22T16:34:00Z",
+    "lastUpdated": "2025-09-22T16:34:00Z"
+  },
+  "entity_20250922_1815": {
+    "id": "entity_20250922_1815",
+    "name": "MindsDB Docker Instance",
+    "type": "tool",
+    "attributes": {
+      "container": "mindsdb/mindsdb",
+      "ports": ["47344:47334", "47345:47335"],
+      "version": "25.9.2.0a1",
+      "database_support": "PostgreSQL, MySQL, MongoDB",
+      "api_endpoints": ["http://localhost:47344/api/sql/query"],
+      "status": "operational"
+    },
+    "created": "2025-09-22T18:15:00Z",
+    "lastUpdated": "2025-09-22T18:15:00Z"
+  },
+  "entity_20250922_1816": {
+    "id": "entity_20250922_1816",
+    "name": "MindsDB HTTP API Integration",
+    "type": "tool",
+    "attributes": {
+      "file": ".mcp/mindsdb_integration.py",
+      "api_base": "http://localhost:47344",
+      "query_endpoint": "/api/sql/query",
+      "response_format": "pandas_dataframe",
+      "authentication": "none_local_instance",
+      "status": "operational"
+    },
+    "created": "2025-09-22T18:16:00Z",
+    "lastUpdated": "2025-09-22T18:16:00Z"
+  },
+  "entity_20250922_1817": {
+    "id": "entity_20250922_1817",
+    "name": "MindsDB ML Models Framework",
+    "type": "concept",
+    "attributes": {
+      "models": ["transaction_categorizer", "payment_predictor", "cash_flow_forecaster", "anomaly_detector", "expense_optimizer", "tax_optimizer", "vendor_risk_assessor"],
+      "engines": ["lightgbm", "neural", "statsforecast", "anomaly"],
+      "database_connection": "sayers_data",
+      "status": "framework_ready"
+    },
+    "created": "2025-09-22T18:17:00Z",
+    "lastUpdated": "2025-09-22T18:17:00Z"
+  },
+  "entity_20250922_1818": {
+    "id": "entity_20250922_1818",
+    "name": "Financial API Server",
+    "type": "project",
+    "attributes": {
+      "file": ".mcp/financial_api_server.py",
+      "framework": "FastAPI + FastAPI-MCP",
+      "port": 8002,
+      "endpoints": 9,
+      "ai_features": ["transaction_categorization", "cash_flow_forecasting", "anomaly_detection", "vendor_risk_assessment"],
+      "mcp_mount": "/mcp",
+      "status": "operational"
+    },
+    "created": "2025-09-22T18:18:00Z",
+    "lastUpdated": "2025-09-22T18:18:00Z"
+  },
+  "entity_20250922_1819": {
+    "id": "entity_20250922_1819",
+    "name": "Multi-Entity Financial Tracking System",
+    "type": "concept",
+    "attributes": {
+      "entities": ["MOKAI PTY LTD", "MOK HOUSE PTY LTD", "Mok Music"],
+      "capabilities": ["transaction_processing", "ai_categorization", "compliance_tracking", "cash_flow_management"],
+      "ai_integration": "MindsDB",
+      "database": "Supabase PostgreSQL",
+      "business_impact": "automated_financial_operations"
+    },
+    "created": "2025-09-22T18:19:00Z",
+    "lastUpdated": "2025-09-22T18:19:00Z"
+  },
+  "entity_20250922_1820": {
+    "id": "entity_20250922_1820",
+    "name": "Supabase Project Migration",
+    "type": "concept",
+    "attributes": {
+      "from_project": "dsnrbogtklcluyhmwrkh",
+      "to_project": "gshsshaodoyttdxippwx",
+      "reason": "DNS resolution failure",
+      "migration_date": "2025-09-22",
+      "status": "completed",
+      "affected_files": [".env", ".mcp.json", "financial_api_server.py"]
+    },
+    "created": "2025-09-22T18:20:00Z",
+    "lastUpdated": "2025-09-22T18:20:00Z"
+  },
+  "entity_20250922_1821": {
+    "id": "entity_20250922_1821",
+    "name": "AI-Powered Transaction Categorization",
+    "type": "concept",
+    "attributes": {
+      "input": ["description", "amount", "vendor_name"],
+      "output": ["predicted_category_id", "confidence_score"],
+      "fallback_category": "office_supplies",
+      "confidence_threshold": 0.85,
+      "ml_model": "transaction_categorizer",
+      "status": "operational_with_fallbacks"
+    },
+    "created": "2025-09-22T18:21:00Z",
+    "lastUpdated": "2025-09-22T18:21:00Z"
+  },
+  "entity_20250922_1902": {
+    "id": "entity_20250922_1902",
+    "name": "Supabase API Key Authentication Fix",
+    "type": "concept",
+    "attributes": {
+      "problem": "Invalid API key errors with Python client",
+      "root_cause": "Project migration but hardcoded old key",
+      "solution": "Updated environment variable and hardcoded fallback",
+      "affected_files": [".mcp.json", "financial_api_server.py"],
+      "validation_method": "curl_vs_python_client_comparison",
+      "status": "resolved"
+    },
+    "created": "2025-09-22T19:02:00Z",
+    "lastUpdated": "2025-09-22T19:02:00Z"
+  },
+  "entity_20250922_1903": {
+    "id": "entity_20250922_1903",
+    "name": "PDF Invoice Parser System",
+    "type": "tool",
+    "attributes": {
+      "file": ".mcp/invoice_parser.py",
+      "ai_engine": "OpenAI GPT-4o-mini",
+      "pdf_library": "PyPDF2",
+      "extracted_fields": ["vendor_name", "invoice_number", "date", "amount", "tax", "line_items"],
+      "database_integration": "Supabase PostgreSQL",
+      "status": "operational"
+    },
+    "created": "2025-09-22T19:03:00Z",
+    "lastUpdated": "2025-09-22T19:03:00Z"
+  },
+  "entity_20250922_1904": {
+    "id": "entity_20250922_1904",
+    "name": "End-to-End Invoice Processing Workflow",
+    "type": "concept",
+    "attributes": {
+      "steps": ["PDF upload", "text extraction", "AI parsing", "transaction creation"],
+      "endpoints": ["/financial/parse-invoice", "/financial/parse-invoices-directory"],
+      "automated_transaction_creation": true,
+      "multi_entity_support": ["MOKAI PTY LTD", "MOK HOUSE PTY LTD"],
+      "status": "verified_operational"
+    },
+    "created": "2025-09-22T19:04:00Z",
+    "lastUpdated": "2025-09-22T19:04:00Z"
   }
 }

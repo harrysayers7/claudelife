@@ -155,17 +155,33 @@ Check memory/system-state.json for:
 - **Context-aware automation**: Use confidence thresholds (0.80-0.99) for smart triggers
 - **Hierarchical context loading**: Load essential (10K) → mentioned (30K) → on-demand (50K)
 - **Business-aware categorization**: Auto-detect Mokai content (cybersecurity, compliance, government)
+- **Database schema investigation first**: Always check table structure and constraints before attempting inserts
+- **Multi-table relational persistence**: Handle complex FK relationships by creating dependencies first
+- **Constraint violation methodical resolution**: Work through each DB constraint error systematically
+- **Context continuation from summary**: Successfully resume work using conversation summaries
+- **Verify before reporting success**: Confirm data is actually stored before claiming completion
+- **Project ID verification**: Always verify correct database/project ID before operations
+- **MCP server cache awareness**: Understand that MCP servers cache configs independently of codebase
+- **Explicit configuration rules**: Add critical config rules directly to CLAUDE.md for persistence
 
 ### User Preferences Discovered
 - **Minimal file creation**: Only when absolutely necessary for goals
 - **Edit over create**: Always prefer editing existing files
 - **No unsolicited documentation**: Never create README/docs unless explicitly requested
 - **Business context matters**: Indigenous-owned tech consultancy, cybersecurity focus
+- **Complete relational data storage**: Expect full data persistence across related tables
+- **Financial data accounting context**: Understand business implications (payables vs receivables)
+- **Verify before reporting success**: Want confirmation that tasks were actually completed
+- **Immediate problem resolution**: Focus on fixing issues quickly rather than lengthy explanations
 
 ### Deprecated Approaches
 - **Verbose explanations**: User prefers concise, direct responses
 - **Proactive documentation**: Causes friction, wait for explicit requests
 - **Generic responses**: Leverage Mokai business context when relevant
+- **Assuming database column names**: Always investigate schema first
+- **Guessing constraint values**: Check valid enum/constraint values before inserting
+- **Trusting MCP server cached configs**: Always verify critical settings like project IDs
+- **Assuming project configuration persistence**: MCP servers may cache old/wrong configurations
 
 ## Remember
 - Anticipate needs based on established patterns
@@ -178,6 +194,8 @@ Check memory/system-state.json for:
 ## Task Master AI Instructions
 **Import Task Master's development workflow commands and guidelines, treat as if import is in the main CLAUDE.md file.**
 @./.taskmaster/CLAUDE.md
+
+---
 
 ## **Using Linear MCP**
 
@@ -199,3 +217,48 @@ If you already know exactly which library I want to use, add its Context7 ID to 
 - **Handle failures gracefully** - If library not found, suggest alternatives
 - **Use appropriate token limits** - Balance context with response quality
 - **Verify library compatibility** - Ensure library matches project requirements
+
+---
+
+## **FastAPI MCP Usage Rules**
+
+  ### ALWAYS use FastAPI Business API for:
+  - Vendor/supplier compliance (IRAP, Essential8, SOC2)
+  - Government tender searches
+  - MOKAI business metrics (revenue, pipeline, KPIs)
+  - Client project status
+  - Profitability analysis
+  - Any MOKAI business operations
+
+  ### Keywords that trigger FastAPI MCP:
+  - "vendor", "supplier", "compliance", "IRAP"
+  - "tender", "government contract", "AusTender"
+  - "business revenue", "pipeline", "MOKAI metrics"
+  - "client project", "project status"
+
+  ### Never use for MOKAI business queries:
+  - ❌ Web search (outdated/generic)
+  - ❌ File reading (use API as source of truth)
+  - ❌ Manual calculations (API has the logic)
+
+  Then Claude will know to automatically use FastAPI MCP for
+  business operations without you having to specify each
+  time!
+
+---
+
+## **Supabase Database Rules**
+
+### CRITICAL: Always use correct project ID
+- **CORRECT PROJECT**: `gshsshaodoyttdxippwx` ("SAYERS DATA")
+- **NEVER USE**: `ihqihlwxwbpvzqsjzmjc` (old/inactive project)
+
+### When using Supabase MCP tools:
+- Always verify project ID before database operations
+- Use `mcp__supabase__list_projects` to confirm active project if unsure
+- All financial data (entities, contacts, invoices) lives in the SAYERS DATA project
+
+### Database structure:
+- **entities**: Harrison Robert Sayers (sole trader)
+- **contacts**: Business contacts and vendors
+- **invoices**: Receivables and payables with proper FK relationships

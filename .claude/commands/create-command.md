@@ -1,0 +1,194 @@
+# Create Command
+
+This command helps you create effective, structured command files for your `.claude/commands/` folder by applying proven prompt engineering techniques specifically tailored to your claudelife project's needs.
+
+## Usage
+
+```bash
+/create-command
+```
+
+## Interactive Process
+
+When you run this command, I will:
+
+1. Ask you to describe the task or problem you want to create a command for
+2. Rephrase your requirements to confirm my understanding
+3. Ask specific clarifying questions about:
+   - The command's primary purpose and success criteria
+   - Technical domain knowledge needed (FastMCP, Gmail API, MindsDB, etc.)
+   - Required inputs and expected outputs
+   - Common failure modes or edge cases
+4. Suggest ways to structure the command for maximum effectiveness
+5. Create a well-structured command file based on your feedback
+6. Help you evaluate if the command meets your needs
+
+This interactive approach ensures your command will solve actual problems you face when working in the claudelife codebase.
+
+## Prompt Design Framework
+
+### 1. PURPOSE DEFINITION
+
+Every command should clearly answer:
+- What specific problem does this command solve in the claudelife project?
+- Why is this task challenging or time-consuming to do manually?
+- What technical domain knowledge is required (MCP, FastAPI, Gmail, MindsDB, etc.)?
+- How will this command be used in your workflow?
+
+### 2. CLEAR COMMUNICATION
+
+Write commands as if you're speaking to a knowledgeable colleague who's new to this specific task:
+- Define any claudelife-specific terminology or concepts
+- Provide complete technical context without assuming deep knowledge
+- Be explicit about what you want the output to include and exclude
+- Include concrete examples from your codebase that demonstrate success
+
+### 3. STRUCTURED FORMAT
+
+Use this consistent structure for all commands:
+- Title with clear naming convention (action-object pattern)
+- Purpose statement with specific claudelife-context relevance
+- Interactive process section that prompts for necessary inputs
+- Step-by-step process description with technical details
+- Output format with clear expectations
+- claudelife-specific examples showing real use cases
+- Evaluation criteria tied to project standards
+
+### 4. TECHNICAL DEPTH
+
+Effective claudelife commands include:
+- References to specific project architecture patterns (MCP servers, FastMCP, etc.)
+- Links to similar implementations in the codebase
+- Awareness of coding standards and best practices
+- Consideration of environment variables and API keys
+- Proper error handling approaches for external services
+
+### 5. ITERATIVE IMPROVEMENT
+
+Commands should be treated as living documents:
+- Test the command on various real-world tasks
+- Note where Claude misunderstands or produces incorrect outputs
+- Update your command to address identified issues
+- Add examples for edge cases specific to your codebase
+- Refine based on workflow improvements and changing project needs
+
+## Command Template
+
+```markdown
+# {Action} {Object}
+
+This command helps you {primary function} for {specific context} in the claudelife project, following established patterns and best practices.
+
+## Usage
+
+\`\`\`bash
+/{action}-{object} [arguments]
+\`\`\`
+
+## Interactive Process
+
+When you run this command, I will:
+1. Ask you to describe your specific needs for {object}
+2. Confirm understanding by rephrasing your requirements
+3. Ask clarifying questions about:
+   - {domain-specific consideration 1}
+   - {domain-specific consideration 2}
+   - {domain-specific consideration 3}
+4. Identify potential edge cases specific to claudelife's architecture
+
+## Input Requirements
+
+Before running this command, prepare:
+1. {specific input 1 with example}
+2. {specific input 2 with example}
+3. {specific input 3 with example}
+
+## Process
+
+I'll help you {accomplish task} by:
+
+1. {Step 1 with technical details}
+2. {Step 2 with technical details}
+3. {Step 3 with technical details}
+4. {Step 4 with technical details}
+5. {Step 5 with technical details}
+
+## Technical Implementation Guide
+
+### {Implementation Section 1}
+
+\`\`\`javascript
+// Example code showing implementation pattern
+\`\`\`
+
+### {Implementation Section 2}
+
+\`\`\`javascript
+// Example code showing implementation pattern
+\`\`\`
+
+## Output Format
+
+I'll provide:
+1. {Output component 1}
+2. {Output component 2}
+3. {Output component 3}
+
+## Examples
+
+### Example 1: {Concrete example from claudelife codebase}
+
+{Detailed walkthrough with code snippets}
+
+### Example 2: {Another concrete example}
+
+{Detailed walkthrough with code snippets}
+
+## Evaluation Criteria
+
+A successful {object} should:
+1. {Specific technical criterion 1}
+2. {Specific technical criterion 2}
+3. {Specific technical criterion 3}
+4. {Specific technical criterion 4}
+5. {Specific technical criterion 5}
+
+## Related Resources
+
+- Similar implementations in claudelife: {file paths}
+- MCP documentation: {links}
+- Tests to reference: {file paths}
+```
+
+## Best Practices for claudelife-Specific Commands
+
+1. **MCP Integration Awareness**
+   - Reference existing MCP servers in .mcp.json
+   - Maintain consistent FastMCP patterns
+   - Consider environment variable requirements
+
+2. **Technical Precision**
+   - Always include proper error handling
+   - Follow established project patterns
+   - Reference authentication patterns (API keys, OAuth)
+
+3. **Interactive Refinement**
+   - Begin by restating the user's request in technical terms
+   - Ask about specific technical requirements before generating code
+   - Verify understanding of business context (MOKAI, Mok House)
+   - Use examples from the codebase to clarify intent
+
+4. **Integration Validation**
+   - Include specific references to .mcp.json configuration
+   - Remind users to restart Claude Code when needed
+   - Suggest ways to test the solution works in context
+
+Remember that the best commands for claudelife balance technical precision with business context, provide concrete examples, and actively guide the user through thinking about edge cases particular to your multi-entity business operations and AI automation needs.
+
+## Starting the Command Creation Process
+
+What task or problem would you like to create a command for? Please describe:
+- The specific workflow or problem you encounter
+- What tools or systems it involves (MCP, Gmail, MindsDB, Linear, etc.)
+- How often you need to perform this task
+- What makes it challenging or time-consuming to do manually

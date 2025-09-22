@@ -1,0 +1,80 @@
+{
+  "last_updated": "2025-09-22T14:24:34.285743",
+  "active_ports": [],
+  "known_services": {
+    "8000": "FastAPI Development Server",
+    "8001": "Claude Life Business API",
+    "3000": "Next.js Development Server",
+    "3001": "React Development Server",
+    "5432": "PostgreSQL Database",
+    "6379": "Redis Server",
+    "7687": "Neo4j Bolt",
+    "7474": "Neo4j HTTP",
+    "9090": "Prometheus",
+    "3306": "MySQL",
+    "27017": "MongoDB",
+    "5000": "Flask Development",
+    "4000": "Express.js Development",
+    "8080": "Alternative HTTP",
+    "8443": "HTTPS Alternative",
+    "9000": "Various Development Tools"
+  },
+  "project_ports": {
+    "development": [
+      8000,
+      8001,
+      8002,
+      8003,
+      8004,
+      8005,
+      8006,
+      8007,
+      8008,
+      8009
+    ],
+    "testing": [
+      8010,
+      8011,
+      8012,
+      8013,
+      8014,
+      8015,
+      8016,
+      8017,
+      8018,
+      8019
+    ],
+    "staging": [
+      8020,
+      8021,
+      8022,
+      8023,
+      8024,
+      8025,
+      8026,
+      8027,
+      8028,
+      8029
+    ],
+    "databases": [
+      5432,
+      6379,
+      7687,
+      7474,
+      3306,
+      27017
+    ],
+    "reserved": [
+      80,
+      443,
+      22,
+      21,
+      25,
+      53,
+      110,
+      143,
+      993,
+      995
+    ]
+  }
+}

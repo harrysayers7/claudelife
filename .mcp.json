@@ -296,8 +296,8 @@
 			"url": "http://localhost:8002/mcp",
 			"env": {
 				"SUPABASE_URL": "https://gshsshaodoyttdxippwx.supabase.co",
-				"SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRzbnJib2d0a2xjbHV5aG13cmtoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU5ODA0NDQsImV4cCI6MjA1MTU1NjQ0NH0.-kZMQWOAHi9iGIe2V7cj8Nn5mfDhnhwWTxvjhfvGVNE",
-				"SUPABASE_DB_HOST": "aws-0-ap-southeast-2.pooler.supabase.com",
+				"SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdzaHNzaGFvZG95dHRkeGlwcHd4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg0NzM5ODUsImV4cCI6MjA3NDA0OTk4NX0.h14virnE0QTW2TNxYcwW-2TDiJxMFyBdgUpM8XkzRcA",
+				"SUPABASE_DB_HOST": "db.gshsshaodoyttdxippwx.supabase.co",
 				"SUPABASE_DB_PORT": "6543",
 				"SUPABASE_DB_NAME": "postgres",
 				"SUPABASE_DB_USER": "postgres.gshsshaodoyttdxippwx",

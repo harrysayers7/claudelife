@@ -20,16 +20,48 @@
       "direct_action_oriented_communication",
       "context_aware_automation_triggers",
       "hierarchical_context_loading",
-      "business_context_integration"
+      "business_context_integration",
+      "immediate_tool_rejection_handling",
+      "command_pattern_recognition",
+      "performance_data_tracking",
+      "database_schema_investigation_first",
+      "multi_table_relational_persistence",
+      "constraint_violation_methodical_resolution",
+      "context_continuation_from_summary",
+      "project_id_verification_before_database_operations",
+      "mcp_server_cache_awareness",
+      "explicit_configuration_rules_in_claude_md"
     ],
-    "failed": [],
+    "failed": [
+      "forcing_tool_completion",
+      "ignoring_user_interruptions",
+      "assuming_database_column_names",
+      "guessing_constraint_values",
+      "trusting_mcp_server_cached_project_ids",
+      "assuming_project_configuration_persistence"
+    ],
     "user_preferences": [
       "minimal_file_creation",
       "edit_over_create",
       "no_unsolicited_documentation",
-      "mokai_business_context_awareness"
+      "mokai_business_context_awareness",
+      "tool_use_boundaries_respect",
+      "learning_oriented_system_values",
+      "financial_data_accounting_context",
+      "complete_relational_data_storage",
+      "verify_before_reporting_success",
+      "immediate_problem_resolution_over_explanation"
     ]
   },
   "baseline_established": "2025-09-20",
-  "last_learning_update": "2025-09-20"
+  "last_learning_update": "2025-09-22T21:45:00Z",
+  "recent_sessions": {
+    "2025-09-22_invoice_database_issue": {
+      "problem": "MCP server using wrong Supabase project ID",
+      "solution": "Added explicit project ID rules to CLAUDE.md",
+      "time_to_resolution": "15_minutes",
+      "user_frustration": "moderate",
+      "outcome": "successful_invoice_creation"
+    }
+  }
 }

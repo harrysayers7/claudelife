@@ -13,6 +13,10 @@ import os
 from dotenv import load_dotenv
 from supabase import create_client, Client
 from mindsdb_integration import MindsDBIntegration
+from invoice_parser import InvoiceParser
+from fastapi import UploadFile, File
+import tempfile
+import shutil
 
 # Load environment variables
 load_dotenv()
@@ -25,7 +29,7 @@ app = FastAPI(
 
 # Initialize Supabase client
 supabase_url = os.getenv("SUPABASE_URL", "https://gshsshaodoyttdxippwx.supabase.co")
-supabase_key = os.getenv("SUPABASE_ANON_KEY", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRzbnJib2d0a2xjbHV5aG13cmtoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU5ODA0NDQsImV4cCI6MjA1MTU1NjQ0NH0.-kZMQWOAHi9iGIe2V7cj8Nn5mfDhnhwWTxvjhfvGVNE")
+supabase_key = os.getenv("SUPABASE_ANON_KEY", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdzaHNzaGFvZG95dHRkeGlwcHd4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg0NzM5ODUsImV4cCI6MjA3NDA0OTk4NX0.h14virnE0QTW2TNxYcwW-2TDiJxMFyBdgUpM8XkzRcA")
 
 print(f"Supabase URL: {supabase_url}")
 print(f"Supabase Key length: {len(supabase_key) if supabase_key else 0}")
@@ -39,6 +43,9 @@ except Exception as e:
 
 # Initialize MindsDB integration
 mindsdb = MindsDBIntegration()
+
+# Initialize Invoice Parser
+invoice_parser = InvoiceParser()
 
 # Data models
 class TransactionCreate(BaseModel):
@@ -383,8 +390,10 @@ async def health_check():
         # Check Supabase connection
         supabase_status = "healthy"
         try:
-            supabase.table("entities").select("count").execute()
-        except:
+            result = supabase.table("entities").select("*", count="exact").execute()
+            # Just checking if we can access the table
+        except Exception as e:
+            print(f"Supabase health check failed: {e}")
             supabase_status = "unhealthy"
 
         # Check MindsDB connection
@@ -407,6 +416,167 @@ async def health_check():
             "status": "unhealthy",
             "error": str(e),
             "timestamp": datetime.now().isoformat()
+        }
+
+# Invoice parsing data models
+class InvoiceParseResponse(BaseModel):
+    vendor_name: str
+    invoice_number: str
+    invoice_date: date
+    total_amount: float
+    currency: str
+    description: str
+    transaction_created: bool
+    transaction_id: Optional[int] = None
+
+class InvoiceParseError(BaseModel):
+    error: str
+    filename: str
+    details: Optional[str] = None
+
+# Invoice parsing endpoints
+@app.post("/financial/parse-invoice", response_model=InvoiceParseResponse)
+async def parse_invoice_upload(
+    file: UploadFile = File(...),
+    entity_id: int = 1,
+    account_id: int = 1,
+    auto_create_transaction: bool = True
+):
+    """Parse uploaded PDF invoice and optionally create transaction"""
+
+    if not file.filename.lower().endswith('.pdf'):
+        raise HTTPException(status_code=400, detail="File must be a PDF")
+
+    try:
+        # Save uploaded file temporarily
+        with tempfile.NamedTemporaryFile(delete=False, suffix='.pdf') as temp_file:
+            shutil.copyfileobj(file.file, temp_file)
+            temp_path = temp_file.name
+
+        try:
+            # Parse the invoice
+            invoice_data = invoice_parser.parse_invoice_file(temp_path)
+            if not invoice_data:
+                raise HTTPException(status_code=400, detail="Failed to parse invoice")
+
+            transaction_id = None
+            transaction_created = False
+
+            # Create transaction if requested and Supabase is available
+            if auto_create_transaction and supabase:
+                try:
+                    db_format = invoice_parser.format_for_database(invoice_data, entity_id, account_id)
+                    if db_format:
+                        # Insert transaction
+                        transaction_result = supabase.table("transactions").insert(db_format["transaction"]).execute()
+                        if transaction_result.data:
+                            transaction_id = transaction_result.data[0]["id"]
+                            transaction_created = True
+
+                            # Store invoice metadata separately if needed
+                            invoice_metadata = db_format["invoice_metadata"]
+                            invoice_metadata["transaction_id"] = transaction_id
+
+                except Exception as e:
+                    print(f"Warning: Could not create transaction: {e}")
+
+            return InvoiceParseResponse(
+                vendor_name=invoice_data.get("vendor_name", "Unknown"),
+                invoice_number=invoice_data.get("invoice_number", "N/A"),
+                invoice_date=invoice_data.get("invoice_date"),
+                total_amount=invoice_data.get("total_amount", 0.0),
+                currency=invoice_data.get("currency", "AUD"),
+                description=invoice_data.get("description", "Invoice"),
+                transaction_created=transaction_created,
+                transaction_id=transaction_id
+            )
+
+        finally:
+            # Clean up temp file
+            os.unlink(temp_path)
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error processing invoice: {str(e)}")
+
+@app.post("/financial/parse-invoices-directory")
+async def parse_invoices_directory(
+    directory_path: str = "invoices",
+    entity_id: int = 1,
+    account_id: int = 1,
+    auto_create_transactions: bool = True
+):
+    """Parse all PDF invoices in a directory"""
+
+    try:
+        # Parse all invoices in directory
+        invoices = invoice_parser.parse_invoices_directory(directory_path)
+
+        results = []
+        successful_transactions = 0
+
+        for invoice_data in invoices:
+            try:
+                transaction_id = None
+                transaction_created = False
+
+                # Create transaction if requested
+                if auto_create_transactions and supabase:
+                    try:
+                        db_format = invoice_parser.format_for_database(invoice_data, entity_id, account_id)
+                        if db_format:
+                            transaction_result = supabase.table("transactions").insert(db_format["transaction"]).execute()
+                            if transaction_result.data:
+                                transaction_id = transaction_result.data[0]["id"]
+                                transaction_created = True
+                                successful_transactions += 1
+                    except Exception as e:
+                        print(f"Warning: Could not create transaction for {invoice_data.get('source_file')}: {e}")
+
+                results.append({
+                    "filename": invoice_data.get("source_file"),
+                    "vendor_name": invoice_data.get("vendor_name"),
+                    "invoice_number": invoice_data.get("invoice_number"),
+                    "total_amount": invoice_data.get("total_amount"),
+                    "transaction_created": transaction_created,
+                    "transaction_id": transaction_id
+                })
+
+            except Exception as e:
+                results.append({
+                    "filename": invoice_data.get("source_file", "unknown"),
+                    "error": str(e),
+                    "transaction_created": False
+                })
+
+        return {
+            "total_invoices": len(invoices),
+            "successful_transactions": successful_transactions,
+            "results": results
+        }
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error processing directory: {str(e)}")
+
+@app.get("/financial/test-invoice-parser")
+async def test_invoice_parser():
+    """Test the invoice parser functionality"""
+
+    try:
+        # Test directory parsing
+        invoices = invoice_parser.parse_invoices_directory("invoices")
+
+        return {
+            "parser_status": "operational",
+            "openai_available": bool(invoice_parser.openai_api_key),
+            "invoices_found": len(invoices),
+            "sample_invoice": invoices[0] if invoices else None
+        }
+
+    except Exception as e:
+        return {
+            "parser_status": "error",
+            "error": str(e),
+            "openai_available": bool(invoice_parser.openai_api_key)
         }
 
 # Create MCP server
