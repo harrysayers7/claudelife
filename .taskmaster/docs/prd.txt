@@ -101,3 +101,43 @@ Build a comprehensive AI-powered personal assistant system that helps organize w
 - Must maintain clear project separation
 - Should be incrementally buildable
 - Must handle failures gracefully
+
+## Graphiti Knowledge Graph Integration
+
+### Overview
+Add Graphiti knowledge graph capabilities to the personal assistant system for enhanced AI memory and relationship mapping.
+
+### Requirements
+1. **Environment Setup**
+   - Verify Python 3.10+ compatibility (currently have 3.13)
+   - Install graphiti-core package with LLM provider support
+   - Configure environment variables for API keys and database connection
+
+2. **Database Configuration**
+   - Start and configure existing Neo4j Desktop installation
+   - Create dedicated database instance for Graphiti knowledge graph
+   - Ensure connectivity on ports 7474 (web) and 7687 (bolt)
+   - Document credentials for secure application access
+
+3. **API Integration**
+   - Configure OpenAI API key as primary LLM provider
+   - Optionally set up Anthropic, Groq, Google providers
+   - Implement secure credential storage via environment variables
+
+4. **Installation Validation**
+   - Run official Graphiti quickstart example
+   - Test knowledge graph operations (episodes, search)
+   - Verify data persistence and hybrid search capabilities
+   - Validate graph visualization in Neo4j browser
+
+5. **Integration Points**
+   - Connect Graphiti to personal assistant workflows
+   - Enable knowledge capture from task management
+   - Implement graph-aware search for context retrieval
+   - Build relationship mapping for project connections
+
+### Success Criteria
+- Graphiti successfully integrated and operational
+- Knowledge graph operations functional
+- Search capabilities working with personal assistant data
+- Visual graph inspection available via Neo4j browser

@@ -1,1 +1,128 @@
-{}
+{
+  "entity_20250922_1251": {
+    "id": "entity_20250922_1251",
+    "name": "UpBank MCP Server",
+    "type": "tool",
+    "attributes": {
+      "framework": "FastMCP",
+      "location": ".mcp/upbank_server.py",
+      "api_token": "configured",
+      "tools": 8,
+      "status": "active"
+    },
+    "created": "2025-09-22T12:51:00Z",
+    "lastUpdated": "2025-09-22T12:51:00Z"
+  },
+  "entity_20250922_1252": {
+    "id": "entity_20250922_1252",
+    "name": "FastMCP Framework",
+    "type": "tool",
+    "attributes": {
+      "purpose": "rapid MCP development",
+      "environment": ".mcp/fastmcp-env",
+      "python_version": "3.13"
+    },
+    "created": "2025-09-22T12:52:00Z",
+    "lastUpdated": "2025-09-22T12:52:00Z"
+  },
+  "entity_20250922_1253": {
+    "id": "entity_20250922_1253",
+    "name": "Up Bank API",
+    "type": "concept",
+    "attributes": {
+      "base_url": "https://api.up.com.au/api/v1",
+      "authentication": "bearer_token",
+      "status": "connected"
+    },
+    "created": "2025-09-22T12:53:00Z",
+    "lastUpdated": "2025-09-22T12:53:00Z"
+  },
+  "entity_20250922_1254": {
+    "id": "entity_20250922_1254",
+    "name": "claudelife MCP Configuration",
+    "type": "project",
+    "attributes": {
+      "file": ".mcp.json",
+      "servers": 16,
+      "upbank_configured": true
+    },
+    "created": "2025-09-22T12:54:00Z",
+    "lastUpdated": "2025-09-22T12:54:00Z"
+  },
+  "entity_20250922_1255": {
+    "id": "entity_20250922_1255",
+    "name": "UpBank Migration",
+    "type": "concept",
+    "attributes": {
+      "from": "upbank-mcp directory",
+      "to": ".mcp/upbank_server.py",
+      "reason": "cleaner structure",
+      "completed": "2025-09-22"
+    },
+    "created": "2025-09-22T12:55:00Z",
+    "lastUpdated": "2025-09-22T12:55:00Z"
+  },
+  "entity_20250922_1300": {
+    "id": "entity_20250922_1300",
+    "name": "Context Directory Structure",
+    "type": "project",
+    "attributes": {
+      "location": "context/",
+      "directories": ["business", "personal", "finance", "automations", "voice", "integrations", "external"],
+      "total_files": 16,
+      "purpose": "structured knowledge base"
+    },
+    "created": "2025-09-22T13:00:00Z",
+    "lastUpdated": "2025-09-22T13:00:00Z"
+  },
+  "entity_20250922_1301": {
+    "id": "entity_20250922_1301",
+    "name": "Mokai Business Profile",
+    "type": "concept",
+    "attributes": {
+      "file": "context/business/mokai/mokai-profile.md",
+      "type": "Indigenous-owned technology consultancy",
+      "services": ["cybersecurity", "penetration testing", "GRC", "IRAP"],
+      "model": "prime contractor"
+    },
+    "created": "2025-09-22T13:01:00Z",
+    "lastUpdated": "2025-09-22T13:01:00Z"
+  },
+  "entity_20250922_1302": {
+    "id": "entity_20250922_1302",
+    "name": "Mok House Business Profile",
+    "type": "concept",
+    "attributes": {
+      "file": "context/business/mokhouse/mokhouse-profile.md",
+      "type": "music business entity",
+      "services": ["music production", "artist management", "creative tools"],
+      "related_files": ["mokmusic.md", "esm.md"]
+    },
+    "created": "2025-09-22T13:02:00Z",
+    "lastUpdated": "2025-09-22T13:02:00Z"
+  },
+  "entity_20250922_1303": {
+    "id": "entity_20250922_1303",
+    "name": "Personal Context Files",
+    "type": "concept",
+    "attributes": {
+      "includes": ["kell-profile.md", "routines.md"],
+      "location": "context/personal/",
+      "purpose": "personal assistant customization"
+    },
+    "created": "2025-09-22T13:03:00Z",
+    "lastUpdated": "2025-09-22T13:03:00Z"
+  },
+  "entity_20250922_1304": {
+    "id": "entity_20250922_1304",
+    "name": "Financial Context Files",
+    "type": "concept",
+    "attributes": {
+      "includes": ["thepractice.md", "whitesky.md"],
+      "location": "context/finance/accounting/accountants/",
+      "purpose": "accountant profiles and financial management"
+    },
+    "created": "2025-09-22T13:04:00Z",
+    "lastUpdated": "2025-09-22T13:04:00Z"
+  }
+}

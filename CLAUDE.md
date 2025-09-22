@@ -44,8 +44,14 @@ Always update memory/metrics.md with:
 Load these when referenced or needed:
 - @[agent-name] → Load specific agent file
 - "check my notes" → Load memory/graph/
-- "my routine" → Load context/personal/
-- "project X" → Load specific project context
+- "my routine" → Load context/personal/routines.md
+- "mokai" → Load context/business/mokai/mokai-profile.md
+- "mok house" → Load context/business/mokhouse/mokhouse-profile.md
+- "music" → Load context/business/mokhouse/mokmusic/
+- "kell" → Load context/personal/kell/kell-profile.md
+- "accounting" → Load context/finance/accounting/
+- "workflows" → Load context/automations/workflows.md
+- "project X" → Load specific project from context/business/projects.md
 
 ### Level 2: LOAD ON DEMAND (50K tokens max)
 Load only when specifically needed:
@@ -172,3 +178,24 @@ Check memory/system-state.json for:
 ## Task Master AI Instructions
 **Import Task Master's development workflow commands and guidelines, treat as if import is in the main CLAUDE.md file.**
 @./.taskmaster/CLAUDE.md
+
+## **Using Linear MCP**
+
+- when adding tasks/issues to linear from this project, always use the lable "claudelife" 
+- if adding multiple steps, always number each task by order in which to excecute ie 1. 2. 3. etc
+
+### **Context7 Specific Rules**
+
+Always use Context7 when I need:
+- Code generation or implementation help
+- Library setup or configuration steps  
+- API documentation or usage examples
+- Up-to-date syntax for any programming library/framework
+
+This means you should automatically use the Context7 MCP tools to resolve library IDs and get library docs without me having to explicitly ask. From then on, you'll get Context7's docs in any related conversation without typing anything extra.
+
+If you already know exactly which library I want to use, add its Context7 ID to your prompt using the slash syntax (e.g., "use library /supabase/supabase for API and docs").
+- **Always resolve library ID first** - Use `resolve-library-id` before `get-library-docs`
+- **Handle failures gracefully** - If library not found, suggest alternatives
+- **Use appropriate token limits** - Balance context with response quality
+- **Verify library compatibility** - Ensure library matches project requirements

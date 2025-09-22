@@ -2,14 +2,22 @@ name: Sync AI Brain Tasks File
 
 on:
   schedule:
-    # Run daily at 2 AM UTC
-    - cron: '0 2 * * *'
+    # Run every 6 hours (00:00, 06:00, 12:00, 18:00 UTC)
+    - cron: '0 */6 * * *'
+    # Alternative options (uncomment one):
+    # - cron: '0 * * * *'      # Every hour
+    # - cron: '*/30 * * * *'   # Every 30 minutes (minimum for GitHub Actions)
+    # - cron: '0 */3 * * *'    # Every 3 hours
+    # - cron: '0 */12 * * *'   # Every 12 hours
   workflow_dispatch:  # Allow manual triggering
   push:
     branches:
       - main
     paths:
       - '.github/workflows/sync-ai-brain.yml'
+  # Also sync when ai-brain repo has changes (requires webhook setup)
+  repository_dispatch:
+    types: [ai-brain-updated]
 
 jobs:
   sync-file:

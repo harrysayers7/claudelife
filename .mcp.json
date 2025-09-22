@@ -13,15 +13,13 @@
 		},
 		"supabase": {
 			"type": "stdio",
-			"command": "python3",
+			"command": "npx",
 			"args": [
-				"/opt/supabase-mcp-server.py"
-			],
-			"env": {
-				"SUPABASE_URL": "https://supa.sayers.app",
-				"SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0",
-				"SUPABASE_SERVICE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImV4cCI6MTk4MzgxMjk5Nn0.EGIM96RAZx35lJzdJsyH-qQwv8Hdp7fsn3W0YpN81IU"
-			}
+				"-y",
+				"@supabase/mcp-server-supabase@latest",
+				"--access-token",
+				"sbp_653372a1e15b23bb7e8335e9c224ccc9cd663031"
+			]
 		},
 		"task-master-ai": {
 			"type": "stdio",
@@ -107,6 +105,186 @@
 				"mcp-remote",
 				"https://gitmcp.io/enescingoz/awesome-n8n-templates"
 			]
+		},
+		"graphiti-personal": {
+			"type": "stdio",
+			"command": "/opt/homebrew/bin/uv",
+			"args": [
+				"run",
+				"--isolated",
+				"--directory",
+				"/Users/harrysayers/Developer/claudelife/graphiti_mcp_server",
+				"--project",
+				".",
+				"graphiti_mcp_server.py",
+				"--transport",
+				"stdio",
+				"--group-id",
+				"personal"
+			],
+			"env": {
+				"NEO4J_URI": "bolt://localhost:7687",
+				"NEO4J_USER": "neo4j",
+				"NEO4J_PASSWORD": "neo4j",
+				"OPENAI_API_KEY": "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",
+				"MODEL_NAME": "gpt-4o-mini",
+				"GRAPHITI_TELEMETRY_ENABLED": "false"
+			}
+		},
+		"graphiti-finance": {
+			"type": "stdio",
+			"command": "/opt/homebrew/bin/uv",
+			"args": [
+				"run",
+				"--isolated",
+				"--directory",
+				"/Users/harrysayers/Developer/claudelife/graphiti_mcp_server",
+				"--project",
+				".",
+				"graphiti_mcp_server.py",
+				"--transport",
+				"stdio",
+				"--group-id",
+				"finance"
+			],
+			"env": {
+				"NEO4J_URI": "bolt://localhost:7687",
+				"NEO4J_USER": "neo4j",
+				"NEO4J_PASSWORD": "neo4j",
+				"OPENAI_API_KEY": "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",
+				"MODEL_NAME": "gpt-4o-mini",
+				"GRAPHITI_TELEMETRY_ENABLED": "false"
+			}
+		},
+		"graphiti-mokai": {
+			"type": "stdio",
+			"command": "/opt/homebrew/bin/uv",
+			"args": [
+				"run",
+				"--isolated",
+				"--directory",
+				"/Users/harrysayers/Developer/claudelife/graphiti_mcp_server",
+				"--project",
+				".",
+				"graphiti_mcp_server.py",
+				"--transport",
+				"stdio",
+				"--group-id",
+				"mokai"
+			],
+			"env": {
+				"NEO4J_URI": "bolt://localhost:7687",
+				"NEO4J_USER": "neo4j",
+				"NEO4J_PASSWORD": "neo4j",
+				"OPENAI_API_KEY": "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",
+				"MODEL_NAME": "gpt-4o-mini",
+				"GRAPHITI_TELEMETRY_ENABLED": "false"
+			}
+		},
+		"graphiti-mok-house": {
+			"type": "stdio",
+			"command": "/opt/homebrew/bin/uv",
+			"args": [
+				"run",
+				"--isolated",
+				"--directory",
+				"/Users/harrysayers/Developer/claudelife/graphiti_mcp_server",
+				"--project",
+				".",
+				"graphiti_mcp_server.py",
+				"--transport",
+				"stdio",
+				"--group-id",
+				"mok-house"
+			],
+			"env": {
+				"NEO4J_URI": "bolt://localhost:7687",
+				"NEO4J_USER": "neo4j",
+				"NEO4J_PASSWORD": "neo4j",
+				"OPENAI_API_KEY": "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",
+				"MODEL_NAME": "gpt-4o-mini",
+				"GRAPHITI_TELEMETRY_ENABLED": "false"
+			}
+		},
+		"graphiti-ai-brain": {
+			"type": "stdio",
+			"command": "/opt/homebrew/bin/uv",
+			"args": [
+				"run",
+				"--isolated",
+				"--directory",
+				"/Users/harrysayers/Developer/claudelife/graphiti_mcp_server",
+				"--project",
+				".",
+				"graphiti_mcp_server.py",
+				"--transport",
+				"stdio",
+				"--group-id",
+				"ai-brain"
+			],
+			"env": {
+				"NEO4J_URI": "bolt://localhost:7687",
+				"NEO4J_USER": "neo4j",
+				"NEO4J_PASSWORD": "neo4j",
+				"OPENAI_API_KEY": "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",
+				"MODEL_NAME": "gpt-4o-mini",
+				"GRAPHITI_TELEMETRY_ENABLED": "false"
+			}
+		},
+		"graphiti-claudelife": {
+			"type": "stdio",
+			"command": "/opt/homebrew/bin/uv",
+			"args": [
+				"run",
+				"--isolated",
+				"--directory",
+				"/Users/harrysayers/Developer/claudelife/graphiti_mcp_server",
+				"--project",
+				".",
+				"graphiti_mcp_server.py",
+				"--transport",
+				"stdio",
+				"--group-id",
+				"claudelife"
+			],
+			"env": {
+				"NEO4J_URI": "bolt://localhost:7687",
+				"NEO4J_USER": "neo4j",
+				"NEO4J_PASSWORD": "neo4j",
+				"OPENAI_API_KEY": "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",
+				"MODEL_NAME": "gpt-4o-mini",
+				"GRAPHITI_TELEMETRY_ENABLED": "false"
+			}
+		},
+		"context7": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@upstash/context7-mcp"
+			],
+			"env": {
+				"CONTEXT7_API_KEY": "ctx7sk-24609786-5c2b-44f8-a01a-f5c5dc89ed8c"
+			}
+		},
+		"upbank": {
+			"type": "stdio",
+			"command": "/Users/harrysayers/Developer/claudelife/.mcp/fastmcp-env/bin/python",
+			"args": [
+				"/Users/harrysayers/Developer/claudelife/.mcp/upbank_server.py"
+			],
+			"env": {
+				"UPBANK_API_TOKEN": "up:yeah:cD6zlJoDh4BjqRjo5Of3FTdMPbJyS6ntLNqjc2yaVqixflXhPTG8qF6nQVQ1UFAe2MRH0lBZ4w4bTvV4RhisPNwHqYarxyTetQbG1xqxCd1LRLXihIea92CVw9pLt2C0",
+				"UPBANK_API_BASE_URL": "https://api.up.com.au/api/v1"
+			}
+		},
+		"fastmcp-brain": {
+			"type": "stdio",
+			"command": "/Users/harrysayers/Developer/claudelife/.mcp/fastmcp-env/bin/python",
+			"args": [
+				"/Users/harrysayers/Developer/claudelife/.mcp/fastmcp_server.py"
+			],
+			"env": {}
 		}
 	}
 }

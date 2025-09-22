@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Graphiti Knowledge Graph Visualization</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        #graph-container {
+            width: 100%;
+            height: 800px;
+            border: 1px solid #ddd;
+            background-color: white;
+        }
+        .controls {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .info {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Graphiti Knowledge Graph Visualization</h1>
+
+    <div class="controls">
+        <button onclick="fitGraph()">Fit Graph</button>
+        <button onclick="resetZoom()">Reset Zoom</button>
+        <button onclick="togglePhysics()">Toggle Physics</button>
+        <button onclick="exportGraph()">Export Data</button>
+    </div>
+
+    <div id="graph-container"></div>
+
+    <div class="info">
+        <h3>Graph Information</h3>
+        <p><strong>Nodes:</strong> 0 | <strong>Edges:</strong> 0</p>
+        <p><strong>Generated:</strong> 2025-09-21T04:03:37.253258+00:00</p>
+
+        <h4>Legend</h4>
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #FF6B6B;"></div>
+                <span>Projects</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #4ECDC4;"></div>
+                <span>Technologies</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #45B7D1;"></div>
+                <span>Tasks</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #96CEB4;"></div>
+                <span>Concepts</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #FFEAA7;"></div>
+                <span>People</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #DDA0DD;"></div>
+                <span>Tools</span>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        // Graph data
+        var nodes = new vis.DataSet([]);
+        var edges = new vis.DataSet([]);
+
+        var data = {{
+            nodes: nodes,
+            edges: edges
+        }};
+
+        var options = {{
+            layout: {{
+                improvedLayout: true
+            }},
+            physics: {{
+                enabled: true,
+                stabilization: {{
+                    iterations: 200
+                }},
+                barnesHut: {{
+                    gravitationalConstant: -2000,
+                    centralGravity: 0.3,
+                    springLength: 200,
+                    springConstant: 0.05,
+                    damping: 0.09
+                }}
+            }},
+            nodes: {{
+                shape: 'dot',
+                scaling: {{
+                    min: 10,
+                    max: 30
+                }},
+                font: {{
+                    size: 12,
+                    face: 'Arial'
+                }}
+            }},
+            edges: {{
+                width: 2,
+                color: {{inherit: 'from'}},
+                smooth: {{
+                    type: 'continuous'
+                }},
+                arrows: {{
+                    to: {{enabled: true, scaleFactor: 0.5}}
+                }},
+                font: {{
+                    size: 10
+                }}
+            }},
+            interaction: {{
+                hover: true,
+                tooltipDelay: 200
+            }}
+        }};
+
+        var container = document.getElementById('graph-container');
+        var network = new vis.Network(container, data, options);
+
+        // Event handlers
+        network.on('click', function(params) {{
+            if (params.nodes.length > 0) {{
+                var nodeId = params.nodes[0];
+                var node = nodes.get(nodeId);
+                alert('Node: ' + node.label + '\nType: ' + node.group);
+            }}
+        }});
+
+        // Control functions
+        function fitGraph() {{
+            network.fit();
+        }}
+
+        function resetZoom() {{
+            network.moveTo({{scale: 1}});
+        }}
+
+        var physicsEnabled = true;
+        function togglePhysics() {{
+            physicsEnabled = !physicsEnabled;
+            network.setOptions({{physics: {{enabled: physicsEnabled}}}});
+        }}
+
+        function exportGraph() {{
+            var graphData = {{
+                nodes: nodes.get(),
+                edges: edges.get()
+            }};
+            var dataStr = JSON.stringify(graphData, null, 2);
+            var dataBlob = new Blob([dataStr], {{type: 'application/json'}});
+            var url = URL.createObjectURL(dataBlob);
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = 'graph-data.json';
+            link.click();
+        }}
+    </script>
+</body>
+</html>
