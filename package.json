@@ -1,5 +1,10 @@
 {
+  "scripts": {
+    "sync-context": "node scripts/sync-supabase-context.js",
+    "sync-context-watch": "nodemon --watch 'context/finance/database/' scripts/sync-supabase-context.js"
+  },
   "dependencies": {
+    "@supabase/supabase-js": "^2.57.4",
     "dotenv": "^17.2.2",
     "googleapis": "^160.0.0",
     "imap": "^0.8.19",

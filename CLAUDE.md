@@ -32,6 +32,28 @@ Always update memory/metrics.md with:
 - Tasks created
 - Estimated time saved
 
+## Context Auto-Sync System
+
+Context files are automatically kept in sync with database changes:
+
+### Automatic Triggers
+- **Git hooks**: Schema sync after commits with database changes
+- **Scheduled sync**: Every 6 hours via cron job
+- **Manual sync**: `npm run sync-context`
+- **MCP integration**: Sync when database operations are performed
+
+### Sync Indicators
+- **Schema hash**: Files include MD5 hash of current schema
+- **Memory capture**: `.memory-capture-needed` file created on changes
+- **Timestamps**: Last sync time tracked in context files
+
+### Manual Sync Commands
+```bash
+npm run sync-context              # One-time sync
+npm run sync-context-watch        # Watch for changes
+node scripts/sync-supabase-context.js  # Direct execution
+```
+
 ## Context Loading Strategy
 
 ### Level 0: ALWAYS LOADED (10K tokens max)
@@ -48,6 +70,9 @@ Load these when referenced or needed:
 - "mokai" → Load context/business/mokai/mokai-profile.md
 - "mok house" → Load context/business/mokhouse/mokhouse-profile.md
 - "music" → Load context/business/mokhouse/mokmusic/
+- "database", "supabase" → Load context/finance/database/
+- "financial ml", "predictions" → Load context/finance/database/supabase-ml-pipeline.md
+- "invoice projects", "client work" → Load context/finance/database/supabase-projects.md
 - "kell" → Load context/personal/kell/kell-profile.md
 - "accounting" → Load context/finance/accounting/
 - "workflows" → Load context/automations/workflows.md
