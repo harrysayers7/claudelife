@@ -20,7 +20,7 @@
 
 **Secondary Contact:**
 
-- **Jonathan Salamone** 
+- **Jonathan Salamone**
 
 - **Email**: jonathan@whitesky.com.au
 
@@ -135,4 +135,3 @@
 - They serve both your business (SAFIA) and personal (family trust) financial needs
 
 - Two-tier structure provides appropriate expertise for different complexity levels
-

@@ -5,7 +5,7 @@
 ## General Information
 
 - **Business Name:** Mokai Technologies Pty Ltd
-- **Ownership:** 100% Indigenous-owned (Supply Nation registered / IPP-aligned)
+- **Ownership:** 51% Indigenous-owned (Supply Nation registered / IPP-aligned)
 
 **Founders / Directors:**
 - **Harry Sayers:** Strategy, Finance, Technology
@@ -21,7 +21,7 @@
 - Mokai manages client relationship, delivery oversight, compliance, and assurance.
 - Contractors are paid day rates; Mokai retains a margin.
 
-**Future Roadmap:**  
+**Future Roadmap:**
 Expand into SaaS products (compliance dashboards, monitoring platforms) for recurring revenue.
 
 ---

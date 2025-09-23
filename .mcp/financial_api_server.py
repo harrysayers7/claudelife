@@ -29,7 +29,7 @@ app = FastAPI(
 
 # Initialize Supabase client
 supabase_url = os.getenv("SUPABASE_URL", "https://gshsshaodoyttdxippwx.supabase.co")
-supabase_key = os.getenv("SUPABASE_ANON_KEY", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdzaHNzaGFvZG95dHRkeGlwcHd4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg0NzM5ODUsImV4cCI6MjA3NDA0OTk4NX0.h14virnE0QTW2TNxYcwW-2TDiJxMFyBdgUpM8XkzRcA")
+supabase_key = os.getenv("SUPABASE_ANON_KEY")
 
 print(f"Supabase URL: {supabase_url}")
 print(f"Supabase Key length: {len(supabase_key) if supabase_key else 0}")

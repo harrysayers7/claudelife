@@ -1,4 +1,4 @@
-## My Sole Trader Business Details 
+## My Sole Trader Business Details
 
 ### **ABN Information**
 
@@ -32,7 +32,7 @@
 
 - **Client Type**: Music production companies (like Electric Sheep Music)
 
-- **Service Types**: 
+- **Service Types**:
 
   - Demo creation fees
 
@@ -49,4 +49,3 @@
 - **ABN**: Properly registered and provided to clients
 
 - **Not GST Registered**: Operating below GST threshold or by choice
-

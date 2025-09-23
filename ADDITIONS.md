@@ -1,0 +1,13 @@
+- when using linear use appropriate tagging
+- create a smart detaction to add context awareness
+- add /linear feature add
+- Ensure linear updates issues if installed/fixed etc
+- git hook for when committing to check taskmaster for unfinshed tasks, if done then they are cleared
+- add a rule for when /remember is used it figures out if the rule should be in global claude.md or just this project
+- claude.local.md
+
+- google drive mcp?
+- Slack mcp
+- Sentry mcp
+- retrieve /learn memz for graphiti
+-

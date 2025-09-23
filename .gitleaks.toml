@@ -1,0 +1,54 @@
+# Gitleaks configuration for claudelife project
+title = "gitleaks config for claudelife"
+
+[extend]
+# Enable all default rules
+useDefault = true
+
+[[rules]]
+description = "Environment variables in .env files"
+id = "env-secrets"
+regex = '''(?i)(api_key|secret|token|password|key)(\s*=\s*)['"]*[a-zA-Z0-9/+]{20,}['"]*'''
+path = '''\.env$'''
+
+[[rules]]
+description = "MCP configuration secrets"
+id = "mcp-secrets"
+regex = '''(?i)(api_key|secret|token|password)["']\s*:\s*["'][a-zA-Z0-9/+]{20,}["']'''
+path = '''\.mcp\.json$'''
+
+# Allowlist for known safe patterns
+[allowlist]
+description = "Safe patterns and paths to ignore"
+regexes = [
+    # Supabase demo JWT tokens (public demo instances)
+    '''eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIi.*''',
+    # Local development placeholders
+    '''your-.*-key-here''',
+    '''demo-.*''',
+    '''test-.*''',
+    '''placeholder-.*''',
+    # Environment variable references
+    '''\$\{.*\}''',
+    '''\$[A-Z_]+''',
+]
+paths = [
+    '''node_modules/.*''',
+    '''\.git/.*''',
+    '''.*\.log$''',
+    '''.*\.tmp$''',
+    '''\.pre-commit-config\.yaml''',
+    '''\.gitleaks\.toml''',
+    '''\.env$''',
+    '''.*\.env$''',
+    '''\.env\..*''',
+]
+stopwords = [
+    "example",
+    "sample",
+    "demo",
+    "test",
+    "placeholder",
+    "your-key-here",
+    "replace-with",
+]

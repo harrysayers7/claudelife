@@ -2,7 +2,7 @@
 
 **My APRA Details:**
 
-- Member Name: Harrison Sayers  
+- Member Name: Harrison Sayers
 
 - Member Number: 784794
 
@@ -16,7 +16,7 @@ I regularly create music for advertising campaigns through clients like Electric
 
 - Repco commercial (confirmed by Glenn/Kate I could register under my name)
 
-- Nintendo campaigns  
+- Nintendo campaigns
 
 - Various automotive and brand commercials
 
@@ -32,7 +32,7 @@ As a member of SAFIA, I'm involved in creating band content and music. This incl
 
 **My APRA Activity:**
 
-- I receive regular royalty payments 
+- I receive regular royalty payments
 
 - I access the Writer Portal regularly using security codes
 

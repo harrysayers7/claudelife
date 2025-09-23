@@ -5,10 +5,14 @@ Test script to debug Supabase connection issues
 
 import os
 from supabase import create_client, Client
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Environment variables
-supabase_url = "https://gshsshaodoyttdxippwx.supabase.co"
-supabase_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdzaHNzaGFvZG95dHRkeGlwcHd4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg0NzM5ODUsImV4cCI6MjA3NDA0OTk4NX0.h14virnE0QTW2TNxYcwW-2TDiJxMFyBdgUpM8XkzRcA"
+supabase_url = os.getenv("SUPABASE_URL", "https://gshsshaodoyttdxippwx.supabase.co")
+supabase_key = os.getenv("SUPABASE_ANON_KEY")
 
 print(f"Testing Supabase connection:")
 print(f"URL: {supabase_url}")

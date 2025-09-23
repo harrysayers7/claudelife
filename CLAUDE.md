@@ -192,6 +192,19 @@ Check memory/system-state.json for:
 - **Multi-trigger automation**: Git hooks + scheduled tasks + manual commands for comprehensive coverage
 - **Fallback data handling**: Design fallback mechanisms when primary APIs fail
 - **Modular documentation structure**: Separate files for different aspects (schema, purpose, ML, projects)
+- **Infrastructure diagnosis methodology**: SSH → service status → container check → configuration analysis → targeted fix
+- **Server infrastructure awareness**: Understanding service relationships (Docker containers, reverse proxy, domain mapping)
+- **Context7 research before implementation**: Always use Context7 to resolve library IDs and get up-to-date configuration before adding new MCP servers
+- **MCP server validation workflow**: Check package existence → find alternatives if needed → configure properly → test functionality
+- **Trust score evaluation**: Prioritize higher trust score libraries (9.0+) for critical integrations like Docker management
+- **Systematic secret remediation**: Methodically identify and replace all hardcoded secrets with environment variable references
+- **Dual tool security implementation**: Deploy complementary security tools (gitleaks + trufflehog) for comprehensive coverage
+- **Comprehensive CI/CD security integration**: Implement multi-layer security workflows with secret detection, dependency scanning, and code analysis
+- **Configuration file debugging persistence**: Thoroughly debug configuration format issues and document working patterns
+- **Environment variable security patterns**: Establish consistent patterns for referencing sensitive data from environment variables
+- **Immediate security audit implementation**: Proactively scan for security issues and implement prevention systems
+- **Pre-commit hook automation**: Implement automated security checks at commit time to prevent credential exposure
+- **Exclusion pattern configuration**: Properly configure security tools to ignore legitimate secrets storage while scanning code
 
 ### User Preferences Discovered
 - **Minimal file creation**: Only when absolutely necessary for goals
@@ -206,6 +219,9 @@ Check memory/system-state.json for:
 - **Automated maintenance**: Strong preference for systems that maintain themselves
 - **No manual overhead**: Solutions should work without requiring user memory/intervention
 - **Test implementation immediately**: Expect verification that systems work
+- **Server infrastructure troubleshooting preference**: Quick, systematic diagnosis over lengthy analysis
+- **Tool research preference**: Appreciates Context7 research to find best available tools before implementation
+- **Configuration validation expected**: Want confirmation that new MCP servers are properly configured and functional
 
 ### Deprecated Approaches
 - **Verbose explanations**: User prefers concise, direct responses
@@ -218,6 +234,8 @@ Check memory/system-state.json for:
 - **Assuming credential access**: Direct API calls may fail due to permission limitations
 - **Not implementing fallbacks early**: Always design fallback mechanisms from the start
 - **Over-engineering sync mechanisms**: Simple fallback data often works better than complex API integration
+- **Assuming package availability**: Always verify packages exist before configuring MCP servers
+- **Skipping Context7 research**: Missing opportunities to find better/maintained alternatives to initial package choices
 
 ## Remember
 - Anticipate needs based on established patterns
@@ -235,14 +253,14 @@ Check memory/system-state.json for:
 
 ## **Using Linear MCP**
 
-- when adding tasks/issues to linear from this project, always use the lable "claudelife" 
+- when adding tasks/issues to linear from this project, always use the lable "claudelife"
 - if adding multiple steps, always number each task by order in which to excecute ie 1. 2. 3. etc
 
 ### **Context7 Specific Rules**
 
 Always use Context7 when I need:
 - Code generation or implementation help
-- Library setup or configuration steps  
+- Library setup or configuration steps
 - API documentation or usage examples
 - Up-to-date syntax for any programming library/framework
 
@@ -253,6 +271,14 @@ If you already know exactly which library I want to use, add its Context7 ID to 
 - **Handle failures gracefully** - If library not found, suggest alternatives
 - **Use appropriate token limits** - Balance context with response quality
 - **Verify library compatibility** - Ensure library matches project requirements
+
+### **MCP Server Configuration Rules**
+
+When adding new MCP servers:
+- **Always suggest adding to permissions** in `/Users/harrysayers/Developer/claudelife/.claude/settings.local.json` if beneficial
+- **Prioritize commonly used tools** for the allow list (create, read, execute operations)
+- **Include related tool families** (e.g., if adding Supabase, include execute_sql, apply_migration, etc.)
+- **Consider workflow automation** needs (git operations, build scripts, deployments)
 
 ---
 

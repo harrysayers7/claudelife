@@ -5,6 +5,8 @@ import asyncio
 from datetime import datetime
 import json
 import os
+import subprocess
+import sys
 
 class BrainTools:
     """Brain-related tools for the FastMCP server"""
@@ -73,3 +75,31 @@ class BrainTools:
             json.dump(review, f, indent=2)
 
         return review
+
+# Standalone function for memory watcher integration
+async def capture_memory(name: str, content: str, source: str = "auto-detection", group_id: str = "claudelife"):
+    """Capture memory to Graphiti via MCP"""
+    try:
+        # Use Claude Code with Graphiti MCP to capture memory
+        cmd = [
+            'claude', '-p', f'''
+Use the Graphiti MCP to capture this auto-detected change:
+
+Name: {name}
+Source: {source}
+Group: {group_id}
+
+Content:
+{content}
+'''
+        ]
+
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+
+        if result.returncode == 0:
+            return f"Successfully captured memory: {name}"
+        else:
+            return f"Failed to capture memory: {result.stderr}"
+
+    except Exception as e:
+        return f"Error capturing memory: {str(e)}"

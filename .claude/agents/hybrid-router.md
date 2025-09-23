@@ -25,12 +25,12 @@ Intelligently route tasks between local and cloud resources.
 ### Local Resources
 {
   "file-system": "always-local",
-  "personal-notes": "always-local", 
+  "personal-notes": "always-local",
   "credentials": "always-local",
   "private-memory": "always-local"
 }
 
-### Cloud Resources  
+### Cloud Resources
 {
   "web-search": "always-cloud",
   "llm-reasoning": "always-cloud",

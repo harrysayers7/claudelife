@@ -10,7 +10,7 @@ team/
 ├── shared-automations/  # Team workflows
 └── shared-templates/    # Team templates
 
-### Private Resources  
+### Private Resources
 private/
 ├── personal-notes/      # Never shared
 ├── personal-memory/     # Personal graph

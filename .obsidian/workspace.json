@@ -37,12 +37,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AGENTS.md",
+                "file": "ADDITIONS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AGENTS"
+              "title": "ADDITIONS"
             }
           }
         ],
@@ -119,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AGENTS.md",
+                "file": "ADDITIONS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for AGENTS"
+              "title": "Backlinks for ADDITIONS"
             }
           },
           {
@@ -138,12 +138,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "AGENTS.md",
+                "file": "ADDITIONS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from AGENTS"
+              "title": "Outgoing links from ADDITIONS"
             }
           },
           {
@@ -167,13 +167,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AGENTS.md",
+                "file": "ADDITIONS.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of AGENTS"
+              "title": "Outline of ADDITIONS"
             }
           }
         ]
@@ -196,17 +196,22 @@
   },
   "active": "9ede3423022a57d3",
   "lastOpenFiles": [
-    "memory/performance.json.tmp.88296.1758539591151",
-    "memory/performance.json.tmp.88296.1758539580990",
-    "memory/performance.json.tmp.88296.1758539568275",
-    "memory/performance.json.tmp.88296.1758539561502",
-    "CLAUDE.md.tmp.88296.1758539548533",
-    "CLAUDE.md.tmp.88296.1758539538950",
-    "memory/learning-reports/2025-09-22-learning-report.md.tmp.88296.1758539515082",
-    "memory/learning-reports/2025-09-22-learning-report.md.tmp.88296.1758539507145",
-    "memory/learning-reports/2025-09-22-learning-report.md.tmp.88296.1758539499646",
-    "node_modules/@types/node/ts5.7/compatibility/float16array.d.ts",
-    "node_modules/@types/node/ts5.6/compatibility/float16array.d.ts",
+    "Untitled.canvas",
+    "ADDITIONS.md",
+    "memory/learning-reports/2025-09-23-secret-scanning-insights.md",
+    "memory/performance.json.tmp.49485.1758593051952",
+    "memory/performance.json.tmp.49485.1758592792364",
+    "scripts/sync-supabase-context.js.tmp.49485.1758592485962",
+    "memory/performance.json.tmp.75452.1758586051255",
+    "memory/learning-reports/2025-09-23.md",
+    "memory/learning-reports/2025-09-22.md.tmp.49485.1758580752938",
+    "memory/learning-reports/2025-09-22.md.tmp.49485.1758580738479",
+    "AGENTS.md",
+    "context/business/mokai/docs/contracts",
+    "context/business/mokai/docs/research",
+    "context/business/mokai/docs",
+    "context/business/mokai/course/mokai-course.md",
+    "context/business/mokai/course",
     "node_modules/@types/ws/README.md",
     "node_modules/@types/phoenix/README.md",
     "node_modules/@types/node/README.md",
@@ -226,11 +231,6 @@
     "node_modules/whatwg-url/README.md",
     "context/finance/database/supabase-projects.md",
     "context/finance/database/supabase-ml-pipeline.md",
-    "context/finance/database/supabase-purpose.md",
-    "context/finance/database/supabase-schema.md",
-    "parser_env/lib/python3.13/site-packages/idna-3.10.dist-info/LICENSE.md",
-    "parser_env/lib/python3.13/site-packages/pip-25.2.dist-info/licenses/src/pip/_vendor/idna/LICENSE.md",
-    "memory/learning-reports/2025-09-22-learning-report.md",
-    "memory/learning-reports/2025-09-22.md"
+    "context/finance/database/supabase-purpose.md"
   ]
 }

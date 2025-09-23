@@ -471,5 +471,35 @@
     },
     "created": "2025-09-22T19:04:00Z",
     "lastUpdated": "2025-09-22T19:04:00Z"
+  },
+  "entity_20250922_2046": {
+    "id": "entity_20250922_2046",
+    "name": "Sayers Server Infrastructure",
+    "type": "project",
+    "attributes": {
+      "ip": "134.199.159.190",
+      "hostname": "sayers-server",
+      "services": ["n8n", "Supabase", "ERPNext", "Trigger.dev", "Dify"],
+      "reverse_proxy": "Caddy",
+      "configuration_file": "/etc/caddy/Caddyfile",
+      "domains": ["n8n.sayers.app", "supa.sayers.app", "admin.sayers.app", "brain.sayers.app"]
+    },
+    "created": "2025-09-22T20:46:00Z",
+    "lastUpdated": "2025-09-22T20:46:00Z"
+  },
+  "entity_20250922_2047": {
+    "id": "entity_20250922_2047",
+    "name": "n8n Service Outage Resolution",
+    "type": "concept",
+    "attributes": {
+      "problem": "n8n.sayers.app returning connection errors",
+      "root_cause": "missing reverse proxy configuration in Caddy",
+      "investigation_method": "SSH diagnosis, Docker container check, reverse proxy analysis",
+      "solution": "added n8n.sayers.app mapping to /etc/caddy/Caddyfile",
+      "resolution_time": "10_minutes",
+      "status": "resolved"
+    },
+    "created": "2025-09-22T20:47:00Z",
+    "lastUpdated": "2025-09-22T20:47:00Z"
   }
 }

@@ -171,6 +171,8 @@
   },
   "active": "f6241238aac9a28b",
   "lastOpenFiles": [
+    "commands/learn-and-remember.md",
+    "agents/mokai-business-strategist.md",
     "commands/commit.md",
     "commands/sync-database-context.md",
     "commands/finance/add-invoice.md",

@@ -1,0 +1,32 @@
+# Pre-commit hooks for secret scanning and security
+repos:
+  # Gitleaks for secret detection
+  - repo: https://github.com/zricethezav/gitleaks
+    rev: v8.18.4
+    hooks:
+      - id: gitleaks
+
+  # TruffleHog for additional secret detection
+  - repo: local
+    hooks:
+      - id: trufflehog
+        name: TruffleHog
+        description: Detect secrets with TruffleHog v3
+        entry: bash -c 'trufflehog filesystem --only-verified --fail --exclude-paths=.trufflehog-exclude .'
+        language: system
+        pass_filenames: false
+
+  # General file checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: check-yaml
+      - id: check-json
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+
+# Configuration
+default_stages: [pre-commit]
+fail_fast: false

@@ -36,7 +36,15 @@
       "fallback_data_handling",
       "modular_documentation_structure",
       "schema_hash_change_detection",
-      "git_integration_automation"
+      "git_integration_automation",
+      "systematic_secret_remediation",
+      "dual_tool_security_implementation",
+      "comprehensive_ci_cd_security_integration",
+      "configuration_file_debugging_persistence",
+      "environment_variable_security_patterns",
+      "immediate_security_audit_implementation",
+      "pre_commit_hook_automation",
+      "exclusion_pattern_configuration"
     ],
     "failed": [
       "forcing_tool_completion",
@@ -67,7 +75,6 @@
     ]
   },
   "baseline_established": "2025-09-20",
-  "last_learning_update": "2025-09-22T11:45:00Z",
   "recent_sessions": {
     "2025-09-22_invoice_database_issue": {
       "problem": "MCP server using wrong Supabase project ID",
@@ -82,6 +89,35 @@
       "time_to_resolution": "120_minutes",
       "user_satisfaction": "high",
       "outcome": "automated_schema_documentation_system"
+    },
+    "2025-09-22_n8n_server_infrastructure": {
+      "problem": "n8n.sayers.app was down, server diagnosis needed",
+      "solution": "Identified missing Caddy reverse proxy configuration and added n8n.sayers.app mapping",
+      "time_to_resolution": "10_minutes",
+      "user_satisfaction": "high",
+      "outcome": "n8n_service_restored_and_accessible"
+    },
+    "2025-09-23_docker_mcp_configuration": {
+      "problem": "User wanted Docker MCP server for container management",
+      "solution": "Used Context7 to research and configure quantgeekdev/docker-mcp with uvx",
+      "time_to_resolution": "15_minutes",
+      "user_satisfaction": "high",
+      "outcome": "docker_mcp_server_configured_ready_for_restart"
+    },
+    "2025-09-23_secret_scanning_implementation": {
+      "problem": "User requested automatic secret scanning with gitleaks and trufflehog for repository security",
+      "solution": "Comprehensive dual-layer secret scanning: gitleaks + trufflehog, pre-commit hooks, CI/CD integration, 21 exposed secrets remediated",
+      "time_to_resolution": "45_minutes",
+      "user_satisfaction": "high",
+      "outcome": "complete_automated_secret_scanning_system_with_dual_tools",
+      "key_patterns": [
+        "systematic_secret_remediation",
+        "dual_tool_security_implementation",
+        "comprehensive_ci_cd_security_integration",
+        "configuration_file_debugging_persistence",
+        "environment_variable_security_patterns"
+      ]
     }
-  }
+  },
+  "last_learning_update": "2025-09-23T23:55:00Z"
 }

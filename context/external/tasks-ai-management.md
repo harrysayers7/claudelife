@@ -23,8 +23,8 @@ DO NOT READ THIS SECTION - AI CONTENT BEGINS AFTER THE HTML COMMENT
 
 You have access to my Notion task management Database. I use this to track my tasks.
 
-**Database Name**: Tasks AI  
-**Database ID**: bb278d48-954a-4c93-85b7-88bd4979f467  
+**Database Name**: Tasks AI
+**Database ID**: bb278d48-954a-4c93-85b7-88bd4979f467
 **Data Source ID**: b105e972-10ba-4c45-b349-0105fd107cca
 
 ## Task Creation Process

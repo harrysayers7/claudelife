@@ -47,7 +47,7 @@ I collaborate with Electric Sheep Music as a composer, contributing original mus
 
 **My Role**: I work as a freelance music composer/producer for Electric Sheep Music, creating custom music for advertising campaigns.
 
-**Project Types**: 
+**Project Types**:
 
 - Commercial advertising music (brands like Cabot's, Repco, Nintendo, GWM, Mercedes, Sapporo)
 

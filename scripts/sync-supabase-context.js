@@ -33,7 +33,11 @@ async function getTableInfo() {
     const execAsync = promisify(exec);
 
     // Call the MCP supabase list_tables command via CLI
-    const { stdout } = await execAsync('npx @supabase/mcp-server-supabase --access-token sbp_653372a1e15b23bb7e8335e9c224ccc9cd663031 --project-id gshsshaodoyttdxippwx --command list_tables');
+    const accessToken = process.env.SUPABASE_ACCESS_TOKEN || process.env.SUPABASE_SERVICE_KEY;
+    if (!accessToken) {
+      throw new Error('SUPABASE_ACCESS_TOKEN not found in environment variables');
+    }
+    const { stdout } = await execAsync(`npx @supabase/mcp-server-supabase --access-token ${accessToken} --project-id gshsshaodoyttdxippwx --command list_tables`);
 
     const tables = JSON.parse(stdout);
 
