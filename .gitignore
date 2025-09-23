@@ -1,28 +1,92 @@
+# Personal files
 CLAUDE.local.md
+
+# Environment variables and secrets
 .env
+.env.local
+.env.production
+.env.staging
+*.env
+
+# Output and temporary directories
 output/
-*.log
+temp/
+tmp/
 
 # Logs
-logs
+*.log
+logs/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 dev-debug.log
+*.log.*
+
 # Dependency directories
 node_modules/
-# Environment variables
+.pnp
+.pnp.js
+
+# Python environments and caches
+*env/
+*-env/
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
 # Editor directories and files
-.idea
-.vscode
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
 # OS specific
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-# Task files
+# Cache directories
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+dist/
+build/
+coverage/
+.nyc_output/
+
+# Runtime and process files
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Task files (commented out - managed by Task Master)
 # tasks.json
 # tasks/
