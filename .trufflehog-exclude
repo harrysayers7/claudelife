@@ -5,3 +5,15 @@ node_modules/.*
 .*\.log$
 .*\.tmp$
 \.DS_Store$
+.*env/.*
+.*-env/.*
+venv/.*
+\.venv/.*
+ENV/.*
+__pycache__/.*
+.*\.pyc$
+.*\.so$
+.*\.pyo$
+.*\.pyd$
+.*dist-info/.*
+.*egg-info/.*
