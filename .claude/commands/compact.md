@@ -7,7 +7,7 @@ Compress current context to essential information:
    - Essential data for continuation
    - Active errors or blockers
 3. Clear conversation
-4. Load only Level 0 context
+4. Load only core context (CLAUDE.md + conversation-context.md + active-entities.json)
 5. Restore minimal working state
 
 Output: "✅ Context compacted. Retained: [what was kept]"

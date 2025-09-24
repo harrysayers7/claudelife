@@ -1,0 +1,49 @@
+{
+  "last_updated": "2025-09-24T10:30:00Z",
+  "retention_days": 7,
+  "entities": [
+    {
+      "id": "SAY-84",
+      "name": "CLAUDE.md Restructure",
+      "type": "linear_issue",
+      "context": "Restructuring 813-line CLAUDE.md to modular structure with domain packs",
+      "related_packs": ["technical"],
+      "last_accessed": "2025-09-24T10:30:00Z",
+      "access_count": 15
+    },
+    {
+      "id": "memory-system-optimization",
+      "name": "Memory System Optimization",
+      "type": "implementation",
+      "context": "Pragmatic hybrid approach: 8K core + 15K domain packs with gap detection",
+      "related_packs": ["technical"],
+      "last_accessed": "2025-09-24T10:30:00Z",
+      "access_count": 8
+    },
+    {
+      "id": "entity_20250922_1251",
+      "name": "UpBank MCP Server",
+      "type": "tool",
+      "context": "FastMCP-based banking integration with 8 tools",
+      "related_packs": ["technical", "automation"],
+      "last_accessed": "2025-09-22T12:51:00Z",
+      "access_count": 3
+    },
+    {
+      "id": "entity_20250922_1254",
+      "name": "Supabase Database",
+      "type": "infrastructure",
+      "context": "Financial tracking database with ML categorization",
+      "related_packs": ["technical"],
+      "last_accessed": "2025-09-22T16:25:00Z",
+      "access_count": 5
+    }
+  ],
+  "pruning_log": [
+    {
+      "date": "2025-09-24",
+      "pruned_count": 0,
+      "reason": "Initial setup"
+    }
+  ]
+}

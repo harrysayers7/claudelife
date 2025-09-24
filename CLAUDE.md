@@ -2,6 +2,77 @@
 
 # Personal Assistant Configuration
 
+## **Graphiti Memory Capture Rules**
+
+### ALWAYS capture to Graphiti MCP for:
+- **MCP server setup/changes** - After configuring any MCP server in `.mcp.json`
+- **Infrastructure installations** - After installing/configuring dev tools, frameworks, services
+- **Multi-step implementations** - After completing 3+ step technical work
+- **Complex debugging resolutions** - After solving non-trivial problems (3+ attempts)
+- **Database schema changes** - After migrations or schema updates
+- **New API/webhook creation** - After creating integration points
+- **Security implementations** - After auth systems, encryption, or security features
+- **Performance optimizations** - After measurable improvements
+- **Automation workflows** - After creating n8n workflows, Trigger.dev tasks, cron jobs
+
+### Automatic triggers - capture when you:
+- Complete work matching keywords: "MCP", "install", "configure", "setup", "infrastructure", "migration", "deploy"
+- Modify critical files: `.mcp.json`, `trigger.config.ts`, schema files, CI/CD configs, environment configs
+- Run setup commands: `npm install <framework>`, `npx trigger-dev init`, database migrations, `docker-compose up`
+- Solve errors that took 3+ attempts to resolve
+- Create new integrations, automation workflows, or services
+- Successfully complete multi-step technical implementations
+
+### Workflow (MANDATORY):
+1. **Immediately after completing work** - Don't wait for session end, capture while context is fresh
+2. **Use MCP tool directly** - `mcp__graphiti-claudelife__add_memory` (NOT `/graphiti-add-memz` slash command)
+3. **Include structured content**:
+   ```markdown
+   # [Descriptive Title - e.g., "FastMCP UpBank Server Migration"]
+
+   ## Context
+   [What problem was being solved or feature being added]
+
+   ## Implementation Details
+   [Technical approach, key decisions, architecture choices]
+
+   ## Configuration/Setup
+   [Files modified, environment variables, dependencies]
+
+   ## Key Learnings
+   [What worked well, what didn't, gotchas encountered]
+
+   ## Future Considerations
+   [Maintenance notes, scaling considerations, potential improvements]
+
+   ## Related Systems
+   [Dependencies, integrations, affected services]
+   ```
+4. **Select correct group** - claudelife/mokai/mok-house/personal/finance/ai-brain based on context
+5. **Use specific, searchable titles** - "Trigger.dev v4 Migration with Playwright Extension" not "Fixed automation stuff"
+
+### Group selection:
+- **claudelife** - Claude Code setup, MCP servers, personal assistant infrastructure
+- **mokai** - Cybersecurity, government, compliance-related infrastructure
+- **mok-house** - Music business, creative tools, content management
+- **personal** - Personal workflow, productivity tools, routine automation
+- **finance** - Banking integration, financial tools, accounting systems
+- **ai-brain** - AI model integrations, ML pipelines, research tools
+
+### Never skip capture for:
+- ❌ "I'll remember this" - You won't, capture it now
+- ❌ "It's documented elsewhere" - Graphiti makes it searchable across contexts
+- ❌ "It's too simple" - If it took >3 steps, capture it
+- ❌ "I'll do it later" - Do it immediately while details are fresh
+- ❌ "It's just config changes" - Config knowledge is critical for future debugging
+
+### Skip capture for:
+- ✓ Trivial bug fixes or one-line changes
+- ✓ Routine maintenance (updates, patches)
+- ✓ Temporary debugging or experimental code
+- ✓ Standard CRUD operations
+- ✓ Documentation-only changes
+
 ## Identity
 You are my personal AI assistant helping me be more productive and organized.
 
@@ -26,11 +97,7 @@ personal-assistant/
 └── output/
 
 
-## End of Session
-Always update memory/metrics.md with:
-- Commands used today
-- Tasks created
-- Estimated time saved
+
 
 ## Context Auto-Sync System
 
@@ -54,64 +121,40 @@ npm run sync-context-watch        # Watch for changes
 node scripts/sync-supabase-context.js  # Direct execution
 ```
 
-## Context Loading Strategy
+## Smart Memory Loading (Pragmatic Hybrid)
 
-### Level 0: ALWAYS LOADED (10K tokens max)
+**Full system documentation**: @.claude/instructions/memory-system.md
+
+### Core Context (Always Loaded - 8K tokens)
 - This CLAUDE.md file (core instructions)
-- Current task from user
-- memory/today.md (today's context)
-- Active project from context/business/projects.md
+- `memory/conversation-context.md` (last 2 sessions summary)
+- `memory/active-entities.json` (smart entity subset, 7-day retention)
 
-### Level 1: LOAD ON MENTION (30K tokens max)
-Load these when referenced or needed:
-- @[agent-name] → Load specific agent file
-- "check my notes" → Load memory/graph/
-- "my routine" → Load context/personal/routines.md
-- "mokai" → Load context/business/mokai/mokai-profile.md
-- "mok house" → Load context/business/mokhouse/mokhouse-profile.md
-- "music" → Load context/business/mokhouse/mokmusic/
-- "database", "supabase" → Load context/finance/database/
-- "financial ml", "predictions" → Load context/finance/database/supabase-ml-pipeline.md
-- "invoice projects", "client work" → Load context/finance/database/supabase-projects.md
-- "kell" → Load context/personal/kell/kell-profile.md
-- "accounting" → Load context/finance/accounting/
-- "workflows" → Load context/automations/workflows.md
-- "project X" → Load specific project from context/business/projects.md
+### Domain Packs (Load on Keyword Trigger)
 
-### Level 2: LOAD ON DEMAND (50K tokens max)
-Load only when specifically needed:
-- Full documentation files
-- Historical data from memory/archive/
-- Complete codebase analysis
-- Large data exports
+**Business Pack (~15K)** → @.claude/instructions/business-pack.md
+- **Triggers**: "MOKAI", "mokai", "cybersecurity", "compliance", "IRAP", "Essential8", "tender", "government", "mok house", "music business"
+- **Contains**: MOKAI profile, services, MOK HOUSE, active projects, financial context
 
-## Token Management
+**Technical Pack (~15K)** → @.claude/instructions/technical-pack.md
+- **Triggers**: "MCP", "database", "supabase", "API", "FastAPI", "infrastructure", "server", "docker", "n8n"
+- **Contains**: Supabase schema, ML pipeline, MCP servers, server infrastructure, development tools
 
-When approaching 75% token usage:
-1. Run /compact to compress context
-2. Save state to memory/checkpoints/
-3. Clear non-essential context
-4. Continue with essential context only
+**Automation Pack (~10K)** → @.claude/instructions/automation-pack.md
+- **Triggers**: "workflow", "automation", "trigger", "schedule", "integration", "sync"
+- **Contains**: UpBank sync, financial ML pipeline, context sync, n8n workflows, error recovery patterns
 
-Track token usage in responses:
-"📊 Token usage: ~[X]K / 100K"
+### Smart Loading Logic
+1. **Session start**: Load core (8K) + parse first message for keywords → load matching pack(s)
+2. **Mid-conversation**: New keywords appear → load additional pack
+3. **Gap detection**: Entity mentioned not in active-entities.json → search full entities.json → load related pack
+4. **Emergency fallback**: Critical context missing → load all packs (50K max)
 
-## **Continuous Learning**
+### Token Budgets
+- **Typical conversation**: 8K core + 15K single pack = **23K total** ✅
+- **Cross-domain**: 8K core + 30K (2 packs) = **38K total** (rare)
+- **Emergency**: 8K core + 42K (all packs) = **50K max** (fallback only)
 
-After EVERY task:
-1. Log success/failure in memory/performance.json
-2. Note time saved/lost
-3. Record any user corrections
-
-Every evening at 6pm:
-- Run /learn command
-- Update patterns
-- Optimize frequently-used commands
-
-Every Sunday:
-- Run comprehensive performance review
-- Update all agent configurations
-- Archive old patterns
 
 # Personal Assistant - Production Configuration
 
@@ -205,6 +248,25 @@ Check memory/system-state.json for:
 - **Immediate security audit implementation**: Proactively scan for security issues and implement prevention systems
 - **Pre-commit hook automation**: Implement automated security checks at commit time to prevent credential exposure
 - **Exclusion pattern configuration**: Properly configure security tools to ignore legitimate secrets storage while scanning code
+- **Command creation from existing scripts**: Transform existing functionality into reusable slash commands with comprehensive documentation
+- **Error categorization with test validation**: Implement comprehensive error handling with categorized retry logic and automated testing
+- **Production-ready error recovery systems**: Design resumable sync systems with checkpoints, state management, and monitoring
+- **Enhanced script architecture**: Build enhanced versions of existing scripts with comprehensive error handling, monitoring, and recovery
+- **Database migration for state management**: Create supporting database schemas for complex async operations with proper monitoring
+- **TodoWrite task tracking integration**: Use TodoWrite to track multi-step implementation progress and completion
+- **NPM script integration**: Make enhanced tools easily accessible via package.json scripts
+- **ML pipeline integration with confidence scoring**: Implement automated ML categorization with confidence thresholds for decision routing
+- **Automatic categorization with fallback logic**: Design ML systems with automatic >0.9, review 0.7-0.9, and manual <0.7 confidence workflows
+- **Anomaly detection and severity classification**: Integrate ML models for real-time anomaly detection with appropriate response systems
+- **Real-time prediction during sync**: Perform ML predictions during data sync operations for immediate classification
+- **Notion formula translation to JavaScript**: Convert Notion formula logic into JavaScript for automated business rule implementation
+- **Keyword-based business expense detection**: Implement keyword matching systems for automatic business transaction identification
+- **Automatic tax deductibility flagging**: Build systems that automatically flag transactions for tax deductibility based on business rules
+- **Real-time categorization during sync**: Apply categorization logic during data sync for immediate transaction classification
+- **Interconnected slash command design**: Create command ecosystems where commands reference and enhance each other's functionality
+- **Interactive prompt workflow implementation**: Build commands with guided user input workflows for complex operations
+- **Comprehensive command documentation**: Create detailed documentation with examples, use cases, and interactive features for all commands
+- **Business workflow integration**: Design commands that integrate directly with business processes and accounting workflows
 
 ### User Preferences Discovered
 - **Minimal file creation**: Only when absolutely necessary for goals
@@ -256,21 +318,41 @@ Check memory/system-state.json for:
 - when adding tasks/issues to linear from this project, always use the lable "claudelife"
 - if adding multiple steps, always number each task by order in which to excecute ie 1. 2. 3. etc
 
-### **Context7 Specific Rules**
+### **Context7 MCP Usage Rules**
 
-Always use Context7 when I need:
-- Code generation or implementation help
-- Library setup or configuration steps
-- API documentation or usage examples
-- Up-to-date syntax for any programming library/framework
+### ALWAYS use Context7 MCP for:
+- **Any library/framework implementation** - Before writing code using a library
+- **MCP server setup** - Before configuring new MCP servers
+- **API integration** - Before calling external APIs
+- **Package installation** - Before running npm/pip install commands
+- **Configuration files** - Before creating config files for frameworks
+- **Error debugging** - When encountering library-specific errors
+- **Version-specific syntax** - When syntax might vary by version
 
-This means you should automatically use the Context7 MCP tools to resolve library IDs and get library docs without me having to explicitly ask. From then on, you'll get Context7's docs in any related conversation without typing anything extra.
+### Automatic triggers - use Context7 when you see:
+- Package names mentioned: "use prisma", "add playwright", "setup fastapi"
+- Framework references: "React", "Next.js", "Trigger.dev", "Supabase"
+- Configuration keywords: "config", "setup", "initialize", "install"
+- Integration tasks: "connect to", "integrate with", "use API"
+- Library-specific errors in code or terminal output
+- Questions about "how to" with any library/framework
 
-If you already know exactly which library I want to use, add its Context7 ID to your prompt using the slash syntax (e.g., "use library /supabase/supabase for API and docs").
-- **Always resolve library ID first** - Use `resolve-library-id` before `get-library-docs`
-- **Handle failures gracefully** - If library not found, suggest alternatives
-- **Use appropriate token limits** - Balance context with response quality
-- **Verify library compatibility** - Ensure library matches project requirements
+### Workflow (MANDATORY):
+1. **Resolve library ID first** - `mcp__context7__resolve-library-id` with package name
+2. **Get up-to-date docs** - `mcp__context7__get-library-docs` with resolved ID
+3. **Use docs for implementation** - Reference Context7 docs instead of assuming syntax
+4. **Handle failures gracefully** - If library not found, suggest alternatives from search results
+
+### Token optimization:
+- Start with `tokens: 5000` for initial research
+- Use `tokens: 10000` for complex implementations
+- Add `topic` parameter to focus docs (e.g., "authentication", "deployment")
+
+### Never assume:
+- ❌ Package syntax from memory (might be outdated)
+- ❌ Configuration patterns without checking docs
+- ❌ API methods exist without verification
+- ❌ Installation commands without checking latest docs
 
 ### **MCP Server Configuration Rules**
 

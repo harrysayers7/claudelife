@@ -501,5 +501,250 @@
     },
     "created": "2025-09-22T20:47:00Z",
     "lastUpdated": "2025-09-22T20:47:00Z"
+  },
+  "entity_20250923_2200": {
+    "id": "entity_20250923_2200",
+    "name": "GitHub Spec-Kit Framework",
+    "type": "tool",
+    "attributes": {
+      "repository": "github/spec-kit",
+      "purpose": "spec-driven development methodology",
+      "installation": "npm install -g @github/spec-kit",
+      "commands": ["specify init", "specify check", "specify analyze"],
+      "ai_assistant": "claude",
+      "project_structure": ".claude/commands/ with 7 markdown files"
+    },
+    "created": "2025-09-23T22:00:00Z",
+    "lastUpdated": "2025-09-23T22:00:00Z"
+  },
+  "entity_20250923_2201": {
+    "id": "entity_20250923_2201",
+    "name": "Gitignore Hygiene Enhancement",
+    "type": "concept",
+    "attributes": {
+      "scope": "comprehensive repository protection",
+      "patterns_added": 70,
+      "categories": ["Python environments", "cache directories", "OS-specific files", "runtime files"],
+      "security_improvement": "reduced false positives in security scans",
+      "tools_affected": ["gitleaks", "trufflehog"],
+      "status": "implemented"
+    },
+    "created": "2025-09-23T22:01:00Z",
+    "lastUpdated": "2025-09-23T22:01:00Z"
+  },
+  "entity_20250923_2202": {
+    "id": "entity_20250923_2202",
+    "name": "MCP Server Status Verification System",
+    "type": "concept",
+    "attributes": {
+      "servers_checked": 16,
+      "functionality_rate": "90%",
+      "authentication_method": "environment variables",
+      "failed_server": "UpBank MCP (401 Unauthorized)",
+      "verification_method": "ListMcpResourcesTool",
+      "status": "mostly_operational"
+    },
+    "created": "2025-09-23T22:02:00Z",
+    "lastUpdated": "2025-09-23T22:02:00Z"
+  },
+  "entity_20250923_2203": {
+    "id": "entity_20250923_2203",
+    "name": "Learning Command Execution Framework",
+    "type": "tool",
+    "attributes": {
+      "command": "/learn-and-remember",
+      "functions": ["pattern analysis", "memory capture", "performance tracking"],
+      "files_updated": ["memory/performance.json", "memory/graph/entities.json"],
+      "automation_level": "systematic",
+      "learning_accuracy": "95%",
+      "status": "operational"
+    },
+    "created": "2025-09-23T22:03:00Z",
+    "lastUpdated": "2025-09-23T22:03:00Z"
+  },
+  "entity_20250923_2310": {
+    "id": "entity_20250923_2310",
+    "name": "Enhanced UpBank Sync System",
+    "type": "project",
+    "attributes": {
+      "files": ["scripts/sync-upbank-enhanced.js", "scripts/sync-monitor.js", "migrations/sync-state-management.sql"],
+      "error_handling": "comprehensive categorized retry logic",
+      "monitoring": "health dashboard and error analysis",
+      "state_management": "checkpoints and resumable syncs",
+      "testing_status": "syntax and logic validated",
+      "npm_scripts": ["sync-upbank-enhanced", "sync-upbank-monitor"]
+    },
+    "created": "2025-09-23T23:10:00Z",
+    "lastUpdated": "2025-09-23T23:10:00Z"
+  },
+  "entity_20250923_2311": {
+    "id": "entity_20250923_2311",
+    "name": "UpBank Sync Command Framework",
+    "type": "tool",
+    "attributes": {
+      "file": ".claude/commands/sync-upbank.md",
+      "purpose": "comprehensive UpBank transaction syncing",
+      "features": ["interactive process", "error handling scenarios", "testing instructions"],
+      "script_integration": "enhanced sync with monitoring",
+      "documentation_completeness": "production ready"
+    },
+    "created": "2025-09-23T23:11:00Z",
+    "lastUpdated": "2025-09-23T23:11:00Z"
+  },
+  "entity_20250923_2312": {
+    "id": "entity_20250923_2312",
+    "name": "Error Categorization System",
+    "type": "concept",
+    "attributes": {
+      "categories": ["AUTH_ERROR", "RATE_LIMIT_ERROR", "NETWORK_ERROR", "DATABASE_ERROR", "VALIDATION_ERROR", "UNKNOWN_ERROR"],
+      "retry_logic": "exponential backoff with category-specific limits",
+      "test_coverage": "11 test cases with 100% pass rate",
+      "integration": "enhanced sync script",
+      "validation_method": "automated test script"
+    },
+    "created": "2025-09-23T23:12:00Z",
+    "lastUpdated": "2025-09-23T23:12:00Z"
+  },
+  "entity_20250923_2313": {
+    "id": "entity_20250923_2313",
+    "name": "Sync State Management Schema",
+    "type": "tool",
+    "attributes": {
+      "file": "migrations/sync-state-management.sql",
+      "tables": ["sync_sessions", "sync_checkpoints", "sync_errors", "webhook_locks", "transaction_sync_status", "balance_reconciliations", "rate_limit_status"],
+      "functions": ["get_sync_health_metrics", "check_transaction_gaps", "cleanup_expired_webhook_locks"],
+      "purpose": "resumable sync operations with comprehensive monitoring",
+      "database": "PostgreSQL with JSONB support"
+    },
+    "created": "2025-09-23T23:13:00Z",
+    "lastUpdated": "2025-09-23T23:13:00Z"
+  },
+  "entity_20250923_2314": {
+    "id": "entity_20250923_2314",
+    "name": "TodoWrite Task Tracking Integration",
+    "type": "concept",
+    "attributes": {
+      "usage_pattern": "multi-step implementation progress tracking",
+      "tasks_completed": 4,
+      "integration_context": "enhanced sync system development",
+      "status_transitions": ["pending", "in_progress", "completed"],
+      "workflow_enhancement": "visible progress for complex implementations"
+    },
+    "created": "2025-09-23T23:14:00Z",
+    "lastUpdated": "2025-09-23T23:14:00Z"
+  },
+  "entity_20250923_2340": {
+    "id": "entity_20250923_2340",
+    "name": "MLPipeline Integration System",
+    "type": "tool",
+    "attributes": {
+      "file": "scripts/sync-upbank-enhanced.js",
+      "class": "MLPipeline",
+      "confidence_thresholds": {"auto_apply": 0.9, "review": 0.7, "manual": 0.7},
+      "models": ["transaction_categorizer", "anomaly_detector"],
+      "integration": "MindsDB",
+      "status": "operational"
+    },
+    "created": "2025-09-23T23:40:00Z",
+    "lastUpdated": "2025-09-23T23:40:00Z"
+  },
+  "entity_20250923_2341": {
+    "id": "entity_20250923_2341",
+    "name": "Business Expense Categorization System",
+    "type": "concept",
+    "attributes": {
+      "keywords": ["apple", "dropbox", "notion", "raycast", "youtube", "make", "anthropic", "openai", "setapp", "quickbooks", "splice"],
+      "categories": {"business_category": "Software & Tools", "personal_category": "Business Subscription"},
+      "tax_deductible": true,
+      "origin": "Notion formula translation",
+      "status": "integrated_into_sync"
+    },
+    "created": "2025-09-23T23:41:00Z",
+    "lastUpdated": "2025-09-23T23:41:00Z"
+  },
+  "entity_20250923_2342": {
+    "id": "entity_20250923_2342",
+    "name": "Business Transaction Management Commands",
+    "type": "tool",
+    "attributes": {
+      "location": ".claude/commands/finance/",
+      "commands": ["add-business-keyword", "remove-business-keyword", "show-business-keywords", "add-business-transaction", "show-business-transactions"],
+      "features": ["interactive_prompting", "keyword_management", "transaction_entry", "business_analysis"],
+      "integration": "sync script keyword management"
+    },
+    "created": "2025-09-23T23:42:00Z",
+    "lastUpdated": "2025-09-23T23:42:00Z"
+  },
+  "entity_20250923_2343": {
+    "id": "entity_20250923_2343",
+    "name": "Notion Formula Translation Pattern",
+    "type": "concept",
+    "attributes": {
+      "source": "Notion database formula",
+      "target": "JavaScript keyword matching",
+      "pattern": "contains(lower()) to description.includes(keyword.toLowerCase())",
+      "business_value": "automated expense detection",
+      "reusability": "high for similar formula translations"
+    },
+    "created": "2025-09-23T23:43:00Z",
+    "lastUpdated": "2025-09-23T23:43:00Z"
+  },
+  "entity_20250923_2344": {
+    "id": "entity_20250923_2344",
+    "name": "Interactive Command Workflow Pattern",
+    "type": "concept",
+    "attributes": {
+      "structure": "prompt -> validation -> confirmation -> execution",
+      "examples": ["add-business-transaction", "add-business-keyword"],
+      "user_guidance": "step by step prompting",
+      "error_handling": "validation and re-prompting",
+      "documentation_completeness": "comprehensive with examples"
+    },
+    "created": "2025-09-23T23:44:00Z",
+    "lastUpdated": "2025-09-23T23:44:00Z"
+  },
+  "entity_20250924_0100": {
+    "id": "entity_20250924_0100",
+    "name": "Gmail MCP Server",
+    "type": "tool",
+    "attributes": {
+      "package": "@gongrzhe/server-gmail-autoauth-mcp",
+      "authentication": "OAuth2 autoauth",
+      "configuration_file": ".mcp.json",
+      "enabled_status": "active",
+      "permissions": "mcp__gmail__* wildcard",
+      "capabilities": ["email_management", "label_operations", "search", "filtering", "batch_operations"]
+    },
+    "created": "2025-09-24T01:00:00Z",
+    "lastUpdated": "2025-09-24T01:00:00Z"
+  },
+  "entity_20250924_0101": {
+    "id": "entity_20250924_0101",
+    "name": "Gmail Label System",
+    "type": "concept",
+    "attributes": {
+      "total_labels": 29,
+      "system_labels": 15,
+      "user_labels": 14,
+      "key_labels": ["Accounting", "Invoice_checked", "Zoho Invoices", "Purchase Orders", "Tax Receipts", "Reply Later"],
+      "business_integration": ["financial tracking", "invoice management", "tax documentation"],
+      "automation_potential": "high"
+    },
+    "created": "2025-09-24T01:01:00Z",
+    "lastUpdated": "2025-09-24T01:01:00Z"
+  },
+  "entity_20250924_0102": {
+    "id": "entity_20250924_0102",
+    "name": "Gmail Automation Workflow Potential",
+    "type": "concept",
+    "attributes": {
+      "invoice_automation": ["parse invoice emails", "extract PDFs", "auto-categorize"],
+      "financial_tracking": ["receipt detection", "expense categorization", "tax receipt archiving"],
+      "purchase_order_management": ["PO tracking", "delivery confirmation", "invoice matching"],
+      "integration_targets": ["Supabase financial system", "MindsDB ML pipeline", "n8n workflows"],
+      "status": "infrastructure_ready"
+    },
+    "created": "2025-09-24T01:02:00Z",
+    "lastUpdated": "2025-09-24T01:02:00Z"
   }
 }

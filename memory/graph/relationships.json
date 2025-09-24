@@ -306,5 +306,54 @@
     "type": "supports",
     "strength": 9,
     "created": "2025-09-22T19:04:00Z"
+  },
+  {
+    "from": "entity_20250923_2340",
+    "to": "entity_20250922_1817",
+    "type": "integrates_with",
+    "strength": 10,
+    "created": "2025-09-23T23:40:00Z"
+  },
+  {
+    "from": "entity_20250923_2340",
+    "to": "entity_20250923_2310",
+    "type": "integrated_into",
+    "strength": 10,
+    "created": "2025-09-23T23:40:00Z"
+  },
+  {
+    "from": "entity_20250923_2341",
+    "to": "entity_20250923_2343",
+    "type": "based_on",
+    "strength": 10,
+    "created": "2025-09-23T23:41:00Z"
+  },
+  {
+    "from": "entity_20250923_2341",
+    "to": "entity_20250923_2310",
+    "type": "integrated_into",
+    "strength": 9,
+    "created": "2025-09-23T23:41:00Z"
+  },
+  {
+    "from": "entity_20250923_2342",
+    "to": "entity_20250923_2341",
+    "type": "manages",
+    "strength": 9,
+    "created": "2025-09-23T23:42:00Z"
+  },
+  {
+    "from": "entity_20250923_2342",
+    "to": "entity_20250923_2344",
+    "type": "implements",
+    "strength": 8,
+    "created": "2025-09-23T23:42:00Z"
+  },
+  {
+    "from": "entity_20250922_1301",
+    "to": "entity_20250923_2341",
+    "type": "benefits_from",
+    "strength": 8,
+    "created": "2025-09-23T23:41:00Z"
   }
 ]

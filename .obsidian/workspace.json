@@ -13,22 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "context/business/mokhouse/mokmusic/mokmusic.md",
+                "file": "CLAUDE.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "mokmusic"
+              "title": "CLAUDE"
             }
           },
           {
             "id": "9895901cbc8b0ab0",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "CLAUDE.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "CLAUDE"
             }
           },
           {
@@ -37,16 +41,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ADDITIONS.md",
+                "file": "HARRY/guides/commands-guide.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ADDITIONS"
+              "title": "commands-guide"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -103,7 +106,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "4ba4fbf600cab1d4",
@@ -119,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ADDITIONS.md",
+                "file": "CLAUDE.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +132,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for ADDITIONS"
+              "title": "Backlinks for CLAUDE"
             }
           },
           {
@@ -138,12 +141,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ADDITIONS.md",
+                "file": "CLAUDE.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from ADDITIONS"
+              "title": "Outgoing links from CLAUDE"
             }
           },
           {
@@ -167,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ADDITIONS.md",
+                "file": "CLAUDE.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ADDITIONS"
+              "title": "Outline of CLAUDE"
             }
           }
         ]
@@ -194,43 +197,46 @@
       "bases:Create new base": false
     }
   },
-  "active": "9ede3423022a57d3",
+  "active": "e74fc933b509f1e6",
   "lastOpenFiles": [
-    "Untitled.canvas",
+    "HARRY/TASKS.md",
+    "gcp-oauth.keys.json",
+    "HARRY/guides/commands-guide.md",
+    "CLAUDE.md",
+    "HARRY/CLAUDE.md",
+    "HARRY/OPtimize.md",
+    "HARRY/guides/claudelife-commands-reference.md",
+    "CLAUDE.md.tmp.62765.1758677758660",
+    "CLAUDE.md.tmp.62765.1758677748524",
     "ADDITIONS.md",
-    "memory/learning-reports/2025-09-23-secret-scanning-insights.md",
-    "memory/performance.json.tmp.49485.1758593051952",
-    "memory/performance.json.tmp.49485.1758592792364",
-    "scripts/sync-supabase-context.js.tmp.49485.1758592485962",
-    "memory/performance.json.tmp.75452.1758586051255",
-    "memory/learning-reports/2025-09-23.md",
-    "memory/learning-reports/2025-09-22.md.tmp.49485.1758580752938",
-    "memory/learning-reports/2025-09-22.md.tmp.49485.1758580738479",
-    "AGENTS.md",
-    "context/business/mokai/docs/contracts",
-    "context/business/mokai/docs/research",
-    "context/business/mokai/docs",
-    "context/business/mokai/course/mokai-course.md",
-    "context/business/mokai/course",
-    "node_modules/@types/ws/README.md",
-    "node_modules/@types/phoenix/README.md",
-    "node_modules/@types/node/README.md",
-    "node_modules/@supabase/supabase-js/README.md",
-    "node_modules/@supabase/storage-js/README.md",
-    "node_modules/@supabase/postgrest-js/README.md",
-    "node_modules/@supabase/realtime-js/README.md",
-    "node_modules/@supabase/realtime-js/LICENSE.md",
-    "node_modules/@supabase/auth-js/README.md",
-    "node_modules/@supabase/node-fetch/README.md",
-    "node_modules/@supabase/node-fetch/LICENSE.md",
-    "node_modules/@supabase/functions-js/README.md",
-    "node_modules/webidl-conversions/LICENSE.md",
-    "node_modules/webidl-conversions/README.md",
-    "node_modules/undici-types/README.md",
-    "node_modules/ws/README.md",
-    "node_modules/whatwg-url/README.md",
-    "context/finance/database/supabase-projects.md",
-    "context/finance/database/supabase-ml-pipeline.md",
-    "context/finance/database/supabase-purpose.md"
+    "CLAUDE.md.tmp.62765.1758677700154",
+    "CLAUDE.md.tmp.62765.1758677688797",
+    "HARRY/guides/README.md",
+    "HARRY/guides/commands-guide",
+    "HARRY/guides/commands/commands-guide",
+    "HARRY/guides/commands",
+    "HARRY/guides/folder",
+    "scripts/memory-maintenance.js.tmp.62765.1758675645711",
+    "HARRY/guides/memory-system-guide.md",
+    "HARRY/guides/technical/databases/sayers-data-database-guide.md",
+    "HARRY/guides/sayers-data-database-guide.md",
+    "memory/conversation-context.md",
+    "node_modules/playwright-core/README.md",
+    "node_modules/playwright/README.md",
+    "node_modules/fsevents/README.md",
+    "node_modules/playwright-core/lib/vite/traceViewer/playwright-logo.svg",
+    "node_modules/playwright-core/lib/vite/recorder/playwright-logo.svg",
+    "node_modules/playwright-core/lib/server/chromium/appIcon.png",
+    "Untitled.md",
+    "memory/learning-reports/2025-09-23-comprehensive-learning-report.md",
+    "test-memory-capture.md",
+    "context/business/mokai/course/week-1/module-1-foundations.md",
+    "context/business/mokai/course/week-3/module-3-procurement-buyer-psychology.md",
+    "context/business/mokai/course/course-index.md",
+    "context/business/mokai/course/week-5/module-5-automation-stack.md",
+    "context/business/mokai/course/week-4/module-4-operating-model.md",
+    "mokai-learning-tracker.md",
+    "context/business/mokai/course/week-2/module-2-assurance-basics.md",
+    "Untitled.canvas"
   ]
 }

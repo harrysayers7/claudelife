@@ -7,6 +7,18 @@ CLAUDE.local.md
 .env.production
 .env.staging
 *.env
+.mcp.json
+
+# Temporary files and reminders
+.domain-packs-updated
+.memory-capture-needed
+
+# Editor/IDE workspace files
+.obsidian/
+.roomodes
+
+# Custom rule files (if personal)
+.rules
 
 # Output and temporary directories
 output/
@@ -90,3 +102,5 @@ coverage/
 # Task files (commented out - managed by Task Master)
 # tasks.json
 # tasks/
+
+gcp-oauth.keys.json

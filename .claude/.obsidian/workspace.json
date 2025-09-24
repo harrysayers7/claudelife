@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "commands/learn.md",
+                "file": "commands/popular/sync-commands-guide.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "learn"
+              "title": "sync-commands-guide"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "commands/learn.md",
+                "file": "commands/popular/sync-commands-guide.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for learn"
+              "title": "Backlinks for sync-commands-guide"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "commands/learn.md",
+                "file": "commands/popular/sync-commands-guide.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from learn"
+              "title": "Outgoing links from sync-commands-guide"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "commands/learn.md",
+                "file": "commands/popular/sync-commands-guide.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of learn"
+              "title": "Outline of sync-commands-guide"
             }
           }
         ]
@@ -171,25 +171,36 @@
   },
   "active": "f6241238aac9a28b",
   "lastOpenFiles": [
-    "commands/learn-and-remember.md",
-    "agents/mokai-business-strategist.md",
-    "commands/commit.md",
-    "commands/sync-database-context.md",
-    "commands/finance/add-invoice.md",
-    "commands/add-invoice.md",
-    "commands/add-invoice.md.tmp.43972.1758533341981",
-    "commands/finance",
-    "commands/create-command.md",
-    "commands/brain-drump.md",
-    "agents/hybrid-router.md",
-    "commands/gmail-fix-oauth.md",
-    "commands/remember.md",
-    "commands/check-memory-reminders.md",
-    "commands/tasks-ai.md",
-    "commands/anticipate.md",
-    "TM_COMMANDS_GUIDE.md",
-    "commands/auto-remember.md",
+    "commands/deprecated-auto-remember.md",
+    "commands/deprecated-learn-and-remember.md",
+    "commands/deprecated-learn.md",
+    "commands/popular/remember.md",
+    "agents/atomic-habits-coach.md",
+    "commands/specify/analyze.md",
+    "commands/popular/sync-commands-guide.md",
+    "commands/popular/learn.md",
+    "commands/popular/brain-drump.md",
+    "commands/popular/quick-guide.md",
+    "instructions/automation-pack.md",
+    "commands/quick-guide.md",
+    "instructions/technical-pack.md",
+    "commands/popular",
+    "instructions/business-pack.md",
+    "instructions/memory-system.md",
+    "instructions",
     "commands/learn.md",
-    "commands/sync.md"
+    "commands/linear-retrieve.md",
+    "agents/prompt-engineer.md",
+    "commands/create-prd.md",
+    "commands/ultra-think.md",
+    "commands/finance/show-business-transactions.md",
+    "commands/finance/add-business-transaction.md",
+    "commands/finance/show-business-keywords.md",
+    "commands/finance/remove-business-keyword.md",
+    "commands/finance/add-business-keyword.md",
+    "commands/specify/tasks.md",
+    "commands/specify",
+    "commands/add-invoice.md.tmp.43972.1758533341981",
+    "commands/finance"
   ]
 }

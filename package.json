@@ -1,13 +1,25 @@
 {
   "scripts": {
     "sync-context": "node scripts/sync-supabase-context.js",
-    "sync-context-watch": "nodemon --watch 'context/finance/database/' scripts/sync-supabase-context.js"
+    "sync-context-watch": "nodemon --watch 'context/finance/database/' scripts/sync-supabase-context.js",
+    "sync-domain-packs": "node scripts/sync-domain-packs.js",
+    "sync-all": "npm run sync-context && npm run sync-domain-packs",
+    "sync-upbank": "node scripts/sync-upbank-enhanced.js",
+    "sync-upbank-enhanced": "node scripts/sync-upbank-enhanced.js",
+    "sync-upbank-legacy": "node scripts/sync-upbank-data.js",
+    "sync-upbank-full": "node scripts/sync-upbank-enhanced.js full 30",
+    "sync-upbank-monitor": "node scripts/sync-monitor.js dashboard",
+    "setup-banking": "bash setup-personal-banking.sh",
+    "memory-maintenance": "node scripts/memory-maintenance.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",
     "dotenv": "^17.2.2",
     "googleapis": "^160.0.0",
     "imap": "^0.8.19",
-    "nodemailer": "^7.0.6"
+    "node-fetch": "^2.7.0",
+    "nodemailer": "^7.0.6",
+    "playwright": "^1.55.1",
+    "uuid": "^13.0.0"
   }
 }
