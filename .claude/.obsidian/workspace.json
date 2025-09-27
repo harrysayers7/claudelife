@@ -11,14 +11,10 @@
             "id": "f6241238aac9a28b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "commands/popular/sync-commands-guide.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "sync-commands-guide"
+              "title": "New tab"
             }
           }
         ]
@@ -78,7 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 243.5
   },
   "right": {
     "id": "3a0ef5a08a0480ac",
@@ -94,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "commands/popular/sync-commands-guide.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for sync-commands-guide"
+              "title": "Backlinks"
             }
           },
           {
@@ -113,12 +108,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "commands/popular/sync-commands-guide.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from sync-commands-guide"
+              "title": "Outgoing links"
             }
           },
           {
@@ -142,13 +136,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "commands/popular/sync-commands-guide.md",
+                "file": "agents/mokai/mokai-legal-finance-advisor.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of sync-commands-guide"
+              "title": "Outline of mokai-legal-finance-advisor"
             }
           }
         ]
@@ -169,38 +163,43 @@
       "bases:Create new base": false
     }
   },
-  "active": "f6241238aac9a28b",
+  "active": "73a9ebd9f2d98866",
   "lastOpenFiles": [
-    "commands/deprecated-auto-remember.md",
-    "commands/deprecated-learn-and-remember.md",
-    "commands/deprecated-learn.md",
-    "commands/popular/remember.md",
-    "agents/atomic-habits-coach.md",
-    "commands/specify/analyze.md",
-    "commands/popular/sync-commands-guide.md",
-    "commands/popular/learn.md",
-    "commands/popular/brain-drump.md",
+    "agents/test-engineer.md",
+    "agents/mokai/mokai-legal-finance-advisor.md",
+    "agents/mcp/mcp-integration-engineer.md",
+    "agents/mcp/mcp-deployment-orchestrator.md",
+    "agents/context-manager.md",
+    "snippets/overkill.md",
+    "snippets/graphiti-capture.md",
+    "snippets/context7.md",
+    "snippets/README.md",
+    "commands/sync-notion-supabase.md",
+    "commands/setup-file-protection.md",
+    "commands/scan-mcp-opportunities.md",
+    "commands/popular/ultra-think.md",
+    "commands/popular/simple-summary.md",
     "commands/popular/quick-guide.md",
-    "instructions/automation-pack.md",
-    "commands/quick-guide.md",
-    "instructions/technical-pack.md",
-    "commands/popular",
-    "instructions/business-pack.md",
-    "instructions/memory-system.md",
-    "instructions",
-    "commands/learn.md",
-    "commands/linear-retrieve.md",
-    "agents/prompt-engineer.md",
-    "commands/create-prd.md",
-    "commands/ultra-think.md",
-    "commands/finance/show-business-transactions.md",
-    "commands/finance/add-business-transaction.md",
-    "commands/finance/show-business-keywords.md",
-    "commands/finance/remove-business-keyword.md",
-    "commands/finance/add-business-keyword.md",
-    "commands/specify/tasks.md",
-    "commands/specify",
-    "commands/add-invoice.md.tmp.43972.1758533341981",
-    "commands/finance"
+    "commands/popular/query.md",
+    "commands/popular/help-me.md",
+    "commands/popular/create-prd.md",
+    "commands/git/commit.md",
+    "commands/create-esm-invoice.md",
+    "commands/create-command.md",
+    "commands/business/mok-music/setup-mok-music-automations.md",
+    "commands/business/mok-music/mok-music-status-update.md",
+    "commands/business/mok-music/mok-music-project-status.md",
+    "web-bundles/expansion-packs/bmad-creative-writing/agents/dialog-specialist.txt",
+    "web-bundles/expansion-packs/bmad-infrastructure-devops/agents/infra-devops-platform.txt",
+    "web-bundles/expansion-packs/bmad-creative-writing/teams/agent-team.txt",
+    "web-bundles/expansion-packs/bmad-creative-writing/agents/world-builder.txt",
+    "web-bundles/expansion-packs/bmad-creative-writing/agents/narrative-designer.txt",
+    "web-bundles/expansion-packs/bmad-creative-writing/agents/plot-architect.txt",
+    "web-bundles/expansion-packs/bmad-creative-writing/agents/genre-specialist.txt",
+    "web-bundles/expansion-packs/bmad-creative-writing/agents/editor.txt",
+    "web-bundles/expansion-packs/bmad-creative-writing/agents/cover-designer.txt",
+    "web-bundles/expansion-packs/bmad-creative-writing/agents/character-psychologist.txt",
+    "snippets/skeptic.md",
+    "agents/mokai-legal-finance-advisor.md"
   ]
 }

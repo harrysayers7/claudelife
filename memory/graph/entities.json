@@ -746,5 +746,70 @@
     },
     "created": "2025-09-24T01:02:00Z",
     "lastUpdated": "2025-09-24T01:02:00Z"
+  },
+  "entity_20250925_0300": {
+    "id": "entity_20250925_0300",
+    "name": "Supabase to Notion Bidirectional Sync",
+    "type": "project",
+    "attributes": {
+      "command_file": ".claude/commands/sync-notion-supabase.md",
+      "sync_direction": "bidirectional with Supabase as source of truth",
+      "data_scope": "human-readable tables only",
+      "excluded_tables": ["ml_models", "ai_predictions", "ai_insights", "anomaly_detections", "categorization_rules", "cash_flow_forecasts"],
+      "included_tables": ["entities", "contacts", "transactions", "invoices", "accounts"],
+      "technical_approach": "FastAPI MCP server with fallback to direct MCP tools",
+      "conflict_resolution": "timestamp-based Supabase priority",
+      "error_handling": "exponential backoff for rate limits"
+    },
+    "created": "2025-09-25T03:00:00Z",
+    "lastUpdated": "2025-09-25T03:00:00Z"
+  },
+  "entity_20250925_0301": {
+    "id": "entity_20250925_0301",
+    "name": "Notion Database Mappings",
+    "type": "concept",
+    "attributes": {
+      "database_master_location": "DATABASE MASTER page in Notion",
+      "entities_db": "2784a17b-b7f0-8188-a62f-ffb7975db5e5",
+      "contacts_db": "2784a17b-b7f0-8124-a67f-c51dd6c75a93",
+      "transactions_db": "2784a17b-b7f0-81a5-94c9-d5aba1625d49",
+      "invoices_db": "2784a17b-b7f0-8166-803d-e6cc7330d8c1",
+      "accounts_db": "2784a17b-b7f0-8189-ad95-d6c1fd78db1c",
+      "status": "operational"
+    },
+    "created": "2025-09-25T03:01:00Z",
+    "lastUpdated": "2025-09-25T03:01:00Z"
+  },
+  "entity_20250925_0302": {
+    "id": "entity_20250925_0302",
+    "name": "Sync Command Test Results",
+    "type": "concept",
+    "attributes": {
+      "test_status": "successful",
+      "sample_data_created": true,
+      "entities_synced": "Harrison Robert Sayers (Sole Trader)",
+      "transactions_synced": "$500 ACME Corp consulting payment",
+      "contacts_synced": "John Smith at ACME Corp",
+      "field_mapping": "correct with proper FK relationships",
+      "validation_method": "MCP tool direct queries",
+      "fallback_approach": "MCP tools when FastAPI dependencies unavailable"
+    },
+    "created": "2025-09-25T03:02:00Z",
+    "lastUpdated": "2025-09-25T03:02:00Z"
+  },
+  "entity_20250925_0303": {
+    "id": "entity_20250925_0303",
+    "name": "FastAPI Python Environment Issue",
+    "type": "concept",
+    "attributes": {
+      "problem": "ModuleNotFoundError for fastapi despite installation",
+      "error": "externally-managed-environment preventing pip install",
+      "attempted_fix": "uv pip install approach",
+      "workaround": "direct MCP tool usage for sync operations",
+      "impact": "sync functionality works via alternative method",
+      "status": "operational with workaround"
+    },
+    "created": "2025-09-25T03:03:00Z",
+    "lastUpdated": "2025-09-25T03:03:00Z"
   }
 }

@@ -80,3 +80,6 @@ If MCP servers, infrastructure, or significant technical work was completed, sug
 4. **Update memory/metrics.md** with session stats (commands used, time saved)
 
 **Usage**: Run at end of productive sessions or when user says "remember this" or "save what we learned"
+
+IMPORTANT: Use Serena to search through the codebase. If you get any errors using Serena, retry with different
+Serena tools.

@@ -1,0 +1,3 @@
+tag: #agent
+
+{{date}} {{time}}

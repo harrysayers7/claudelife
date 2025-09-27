@@ -1,3 +1,6 @@
 {
-  "cssTheme": "Obsidianite"
+  "cssTheme": "GitHub Theme",
+  "textFontFamily": "Source Code Pro",
+  "interfaceFontFamily": "Source Code Pro,Arial",
+  "accentColor": "#5000b3"
 }

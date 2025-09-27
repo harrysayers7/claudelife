@@ -47,6 +47,16 @@ mindsdb = MindsDBIntegration()
 # Initialize Invoice Parser
 invoice_parser = InvoiceParser()
 
+# Initialize Notion client
+notion_token = os.getenv("NOTION_TOKEN")
+if notion_token:
+    from notion_client import Client as NotionClient
+    notion = NotionClient(auth=notion_token)
+    print("✓ Notion client initialized successfully")
+else:
+    print("Warning: NOTION_TOKEN not found - Notion sync disabled")
+    notion = None
+
 # Data models
 class TransactionCreate(BaseModel):
     entity_id: int
@@ -102,6 +112,28 @@ class VendorRiskAssessment(BaseModel):
     payment_history_score: float
     transaction_volume: float
     recommendations: List[str]
+
+# Notion sync data models
+class NotionSyncRequest(BaseModel):
+    table_name: str
+    sync_direction: str = Field(..., description="supabase_to_notion, notion_to_supabase, or bidirectional")
+    database_id: Optional[str] = None
+    force_full_sync: bool = False
+
+class NotionSyncResponse(BaseModel):
+    table_name: str
+    sync_direction: str
+    records_synced: int
+    errors: List[str] = []
+    success: bool
+    sync_timestamp: datetime
+
+class NotionDatabaseMapping(BaseModel):
+    table_name: str
+    notion_database_id: str
+    field_mappings: Dict[str, str]  # supabase_field -> notion_property
+    last_sync: Optional[datetime] = None
+    sync_enabled: bool = True
 
 # Dependency to get MindsDB integration
 def get_mindsdb():
@@ -578,6 +610,260 @@ async def test_invoice_parser():
             "error": str(e),
             "openai_available": bool(invoice_parser.openai_api_key)
         }
+
+# Database mappings configuration with actual Notion database IDs
+DATABASE_MAPPINGS = {
+    "entities": {
+        "notion_database_id": "2784a17b-b7f0-8188-a62f-ffb7975db5e5",  # Business Entities
+        "field_mappings": {
+            "id": "ID",
+            "entity_name": "Entity Name",
+            "entity_type": "Type",
+            "abn": "ABN",
+            "created_at": "Created"
+        }
+    },
+    "transactions": {
+        "notion_database_id": "2784a17b-b7f0-81a5-94c9-d5aba1625d49",  # Transactions
+        "field_mappings": {
+            "id": "ID",
+            "entity_id": "Entity ID",
+            "account_id": "Account ID",
+            "amount": "Amount",
+            "description": "Description",
+            "transaction_date": "Transaction Date",
+            "vendor_name": "Vendor Name",
+            "reference_number": "Reference Number",
+            "notes": "Notes"
+        }
+    },
+    "invoices": {
+        "notion_database_id": "2784a17b-b7f0-8166-803d-e6cc7330d8c1",  # Invoices
+        "field_mappings": {
+            "id": "ID",
+            "entity_id": "Entity ID",
+            "contact_id": "Contact ID",
+            "invoice_number": "Invoice Number",
+            "invoice_date": "Invoice Date",
+            "due_date": "Due Date",
+            "total_amount": "Total Amount",
+            "status": "Status",
+            "invoice_type": "Type"
+        }
+    },
+    "contacts": {
+        "notion_database_id": "2784a17b-b7f0-8124-a67f-c51dd6c75a93",  # Contacts
+        "field_mappings": {
+            "id": "ID",
+            "entity_id": "Entity ID",
+            "name": "Name",
+            "company": "Company",
+            "email": "Email",
+            "phone": "Phone",
+            "address": "Address",
+            "contact_type": "Type"
+        }
+    },
+    "accounts": {
+        "notion_database_id": "2784a17b-b7f0-8189-ad95-d6c1fd78db1c",  # Accounts
+        "field_mappings": {
+            "id": "ID",
+            "entity_id": "Entity ID",
+            "account_name": "Account Name",
+            "account_type": "Account Type",
+            "account_code": "Account Code",
+            "description": "Description",
+            "balance": "Balance",
+            "is_active": "Is Active"
+        }
+    }
+}
+
+def transform_supabase_to_notion(table_name: str, record: Dict[str, Any]) -> Dict[str, Any]:
+    """Transform Supabase record to Notion page properties"""
+    if table_name not in DATABASE_MAPPINGS:
+        raise ValueError(f"No mapping found for table: {table_name}")
+
+    mapping = DATABASE_MAPPINGS[table_name]["field_mappings"]
+    notion_properties = {}
+
+    for supabase_field, notion_field in mapping.items():
+        if supabase_field in record and record[supabase_field] is not None:
+            value = record[supabase_field]
+
+            # Transform based on field type
+            if isinstance(value, (int, float)):
+                notion_properties[notion_field] = {"number": value}
+            elif isinstance(value, str):
+                notion_properties[notion_field] = {"title": [{"text": {"content": value}}]} if notion_field in ["Entity Name", "Contact Name", "Description"] else {"rich_text": [{"text": {"content": value}}]}
+            elif isinstance(value, datetime):
+                notion_properties[notion_field] = {"date": {"start": value.isoformat()}}
+            elif isinstance(value, date):
+                notion_properties[notion_field] = {"date": {"start": value.isoformat()}}
+            else:
+                notion_properties[notion_field] = {"rich_text": [{"text": {"content": str(value)}}]}
+
+    return notion_properties
+
+@app.post("/sync/supabase-to-notion", response_model=NotionSyncResponse)
+async def sync_supabase_to_notion(request: NotionSyncRequest):
+    """Sync data from Supabase to Notion"""
+    if not notion:
+        raise HTTPException(status_code=503, detail="Notion client not initialized")
+
+    errors = []
+    records_synced = 0
+
+    try:
+        # Get database ID from mapping or request
+        database_id = request.database_id or DATABASE_MAPPINGS.get(request.table_name, {}).get("notion_database_id")
+        if not database_id:
+            raise HTTPException(status_code=400, detail=f"No Notion database ID found for table: {request.table_name}")
+
+        # Fetch records from Supabase
+        result = supabase.table(request.table_name).select("*").execute()
+
+        for record in result.data:
+            try:
+                # Transform record to Notion format
+                notion_properties = transform_supabase_to_notion(request.table_name, record)
+
+                # Check if record already exists in Notion (by ID)
+                existing_pages = notion.databases.query(
+                    database_id=database_id,
+                    filter={"property": "ID", "number": {"equals": record.get("id")}}
+                ).get("results", [])
+
+                if existing_pages and not request.force_full_sync:
+                    # Update existing page
+                    page_id = existing_pages[0]["id"]
+                    notion.pages.update(page_id=page_id, properties=notion_properties)
+                else:
+                    # Create new page
+                    notion.pages.create(parent={"database_id": database_id}, properties=notion_properties)
+
+                records_synced += 1
+
+            except Exception as e:
+                errors.append(f"Error syncing record {record.get('id', 'unknown')}: {str(e)}")
+
+        return NotionSyncResponse(
+            table_name=request.table_name,
+            sync_direction=request.sync_direction,
+            records_synced=records_synced,
+            errors=errors,
+            success=len(errors) == 0,
+            sync_timestamp=datetime.now()
+        )
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Sync failed: {str(e)}")
+
+@app.post("/sync/notion-to-supabase", response_model=NotionSyncResponse)
+async def sync_notion_to_supabase(request: NotionSyncRequest):
+    """Sync data from Notion to Supabase"""
+    if not notion:
+        raise HTTPException(status_code=503, detail="Notion client not initialized")
+
+    errors = []
+    records_synced = 0
+
+    try:
+        # Get database ID from mapping or request
+        database_id = request.database_id or DATABASE_MAPPINGS.get(request.table_name, {}).get("notion_database_id")
+        if not database_id:
+            raise HTTPException(status_code=400, detail=f"No Notion database ID found for table: {request.table_name}")
+
+        # Fetch all pages from Notion database
+        notion_pages = notion.databases.query(database_id=database_id).get("results", [])
+
+        for page in notion_pages:
+            try:
+                # Transform Notion page to Supabase format
+                supabase_record = {}
+                mapping = DATABASE_MAPPINGS[request.table_name]["field_mappings"]
+
+                for supabase_field, notion_field in mapping.items():
+                    if notion_field in page["properties"]:
+                        prop = page["properties"][notion_field]
+
+                        # Extract value based on property type
+                        if prop["type"] == "number":
+                            supabase_record[supabase_field] = prop["number"]
+                        elif prop["type"] == "title":
+                            supabase_record[supabase_field] = prop["title"][0]["text"]["content"] if prop["title"] else None
+                        elif prop["type"] == "rich_text":
+                            supabase_record[supabase_field] = prop["rich_text"][0]["text"]["content"] if prop["rich_text"] else None
+                        elif prop["type"] == "date":
+                            supabase_record[supabase_field] = prop["date"]["start"] if prop["date"] else None
+
+                # Check if record exists in Supabase
+                existing = supabase.table(request.table_name).select("*").eq("id", supabase_record.get("id")).execute()
+
+                if existing.data and not request.force_full_sync:
+                    # Update existing record
+                    supabase.table(request.table_name).update(supabase_record).eq("id", supabase_record["id"]).execute()
+                else:
+                    # Insert new record (remove ID for insert)
+                    insert_record = {k: v for k, v in supabase_record.items() if k != "id"}
+                    supabase.table(request.table_name).insert(insert_record).execute()
+
+                records_synced += 1
+
+            except Exception as e:
+                errors.append(f"Error syncing page {page.get('id', 'unknown')}: {str(e)}")
+
+        return NotionSyncResponse(
+            table_name=request.table_name,
+            sync_direction=request.sync_direction,
+            records_synced=records_synced,
+            errors=errors,
+            success=len(errors) == 0,
+            sync_timestamp=datetime.now()
+        )
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Sync failed: {str(e)}")
+
+@app.post("/sync/bidirectional", response_model=List[NotionSyncResponse])
+async def sync_bidirectional(request: NotionSyncRequest):
+    """Perform bidirectional sync between Supabase and Notion"""
+
+    # First sync Supabase to Notion
+    supabase_to_notion = await sync_supabase_to_notion(
+        NotionSyncRequest(
+            table_name=request.table_name,
+            sync_direction="supabase_to_notion",
+            database_id=request.database_id,
+            force_full_sync=request.force_full_sync
+        )
+    )
+
+    # Then sync Notion to Supabase
+    notion_to_supabase = await sync_notion_to_supabase(
+        NotionSyncRequest(
+            table_name=request.table_name,
+            sync_direction="notion_to_supabase",
+            database_id=request.database_id,
+            force_full_sync=request.force_full_sync
+        )
+    )
+
+    return [supabase_to_notion, notion_to_supabase]
+
+@app.get("/sync/mappings")
+async def get_database_mappings():
+    """Get all configured database mappings"""
+    return DATABASE_MAPPINGS
+
+@app.post("/sync/mappings/{table_name}")
+async def update_database_mapping(table_name: str, mapping: NotionDatabaseMapping):
+    """Update database mapping configuration"""
+    DATABASE_MAPPINGS[table_name] = {
+        "notion_database_id": mapping.notion_database_id,
+        "field_mappings": mapping.field_mappings
+    }
+    return {"message": f"Mapping for {table_name} updated successfully"}
 
 # Create MCP server
 mcp = FastApiMCP(app)

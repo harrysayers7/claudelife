@@ -192,3 +192,6 @@ What task or problem would you like to create a command for? Please describe:
 - What tools or systems it involves (MCP, Gmail, MindsDB, Linear, etc.)
 - How often you need to perform this task
 - What makes it challenging or time-consuming to do manually
+
+always add "IMPORTANT: Use Serena to search through the codebase. If you get any errors using Serena, retry with different
+Serena tools."

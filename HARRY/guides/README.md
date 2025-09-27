@@ -6,38 +6,27 @@
 ## 📚 Guide Categories
 
 ### Technical
-- **Databases**
-  - [SAYERS DATA Supabase Database](technical/databases/sayers-data-database-guide.md) - Navigate your financial database
+**Databases**
+- [SAYERS DATA Supabase Database](technical/databases/sayers-data-database-guide.md)
 
 ### Business
-- **MOKAI** - *No guides yet*
-- **Mok House** - *No guides yet*
-- **Financial** - *No guides yet*
+**MOKAI**
+
+**Mok House**
+
+**Financial**
 
 ### Tools
-- **MCP Servers** - *No guides yet*
-- **Supabase** - *No guides yet*
-- **Playwright** - *No guides yet*
+**MCP Servers**
+
+**Supabase**
+
+**Playwright**
 
 ### Workflows
-- **Daily Routines** - *No guides yet*
-- **Integrations** - *No guides yet*
+**Daily Routines**
 
----
-
-## Quick Access
-
-**By Topic:**
-- Database navigation → `technical/databases/`
-- Business processes → `business/{company}/`
-- Tool usage → `tools/{tool-name}/`
-- Workflow automation → `workflows/`
-
-**By Use Case:**
-- 💰 Financial operations → `technical/databases/` or `business/financial/`
-- 🔧 Development tools → `tools/`
-- 📊 Business processes → `business/`
-- 🔄 Automation → `workflows/integrations/`
+**Integrations**
 
 ---
 

@@ -1,14 +1,19 @@
 {
   "mobileToolbarCommands": [
-    "editor:undo",
+    "command-palette:open",
     "editor:redo",
     "editor:insert-wikilink",
-    "editor:insert-embed",
+    "obsidian-tasks-plugin:edit-task",
+    "editor:undo",
+    "editor:copy",
+    "editor:paste",
+    "editor:open-search",
+    "markdown:add-metadata-property",
+    "obsidian-linter:lint-file",
     "editor:insert-tag",
-    "editor:attach-file",
+    "editor:insert-codeblock",
     "editor:set-heading",
     "editor:toggle-bold",
-    "editor:toggle-italics",
     "editor:toggle-highlight",
     "editor:toggle-code",
     "editor:toggle-blockquote",
@@ -16,9 +21,8 @@
     "editor:toggle-bullet-list",
     "editor:toggle-numbered-list",
     "editor:toggle-checklist-status",
-    "editor:indent-list",
-    "editor:unindent-list",
-    "editor:configure-toolbar"
+    "editor:configure-toolbar",
+    "editor:cycle-list-checklist"
   ],
   "showUnsupportedFiles": false,
   "userIgnoreFilters": [
@@ -26,5 +30,11 @@
     "__pycache__/",
     "graphiti-env/",
     "graphiti_mcp_server/"
-  ]
+  ],
+  "pdfExportSettings": {
+    "pageSize": "Legal",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
 }

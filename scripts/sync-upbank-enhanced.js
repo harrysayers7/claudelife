@@ -68,7 +68,7 @@ class MLPipeline {
       // Prepare features for ML model
       const features = {
         description: transaction.description || '',
-        amount: Math.abs(transaction.amount_cents) / 100,
+        amount: Math.abs(transaction.amount_cents), // Pass amount in cents (integer)
         vendor_name: this.extractVendor(transaction.description),
         account_type: transaction.account_type || 'unknown'
       };
@@ -148,7 +148,6 @@ class MLPipeline {
       // AI Categorization
       ai_category: categorization.category,
       ai_confidence: categorization.confidence,
-      categorization_method: categorization.method,
 
       // Anomaly Detection
       is_anomaly: anomaly.is_anomaly,
@@ -891,17 +890,9 @@ class EnhancedUpBankSyncer {
             // AI Categorization
             ai_category: enhancedTransaction.ai_category,
             ai_confidence: enhancedTransaction.ai_confidence,
-            categorization_method: enhancedTransaction.categorization_method,
 
-            // Anomaly Detection
-            is_anomaly: enhancedTransaction.is_anomaly,
-            anomaly_score: enhancedTransaction.anomaly_score,
-            anomaly_reason: enhancedTransaction.anomaly_reason,
-            anomaly_severity: enhancedTransaction.anomaly_severity,
-
-            // ML Metadata
-            ml_processed_at: enhancedTransaction.ml_processed_at,
-            ml_models_used: enhancedTransaction.ml_models_used
+            // Anomaly Detection (only include existing columns)
+            anomaly_score: enhancedTransaction.anomaly_score
           };
 
           // Add business expense categorization
@@ -928,16 +919,14 @@ class EnhancedUpBankSyncer {
           if (enhancedTransaction.ai_confidence >= 0.9) {
             this.summary.highConfidenceML++;
           }
-          if (enhancedTransaction.is_anomaly) {
+          if (enhancedTransaction.anomaly_score > 0) {
             this.summary.anomaliesDetected++;
 
-            // Log high-severity anomalies
-            if (enhancedTransaction.anomaly_severity === 'critical' ||
-                enhancedTransaction.anomaly_severity === 'high') {
-              console.warn(`🚨 ${enhancedTransaction.anomaly_severity.toUpperCase()} anomaly detected:`);
+            // Log high-score anomalies
+            if (enhancedTransaction.anomaly_score >= 0.7) {
+              console.warn(`🚨 HIGH anomaly detected:`);
               console.warn(`   Description: ${baseTransactionData.description}`);
               console.warn(`   Amount: $${Math.abs(baseTransactionData.amount_cents) / 100}`);
-              console.warn(`   Reason: ${enhancedTransaction.anomaly_reason}`);
               console.warn(`   Score: ${enhancedTransaction.anomaly_score}`);
             }
           }
@@ -1115,15 +1104,69 @@ class EnhancedUpBankSyncer {
   async reconcileBalances(accounts) {
     console.log('💰 Reconciling account balances...');
 
+    // First, ensure accounts are synced and get their internal IDs
+    const { data: dbAccountsTable } = await supabase
+      .from('personal_accounts')
+      .select('id, upbank_account_id, display_name');
+
+    console.log('🔄 Checking for account ID changes...');
+
+    // Map current UpBank accounts by display name to database accounts
+    const accountMappings = [];
+    for (const upbankAccount of accounts) {
+      const dbAccount = dbAccountsTable?.find(db =>
+        db.display_name === upbankAccount.attributes.displayName
+      );
+
+      if (dbAccount && dbAccount.upbank_account_id !== upbankAccount.id) {
+        console.log(`  🔄 Account UpBank ID changed: ${upbankAccount.attributes.displayName}`);
+        console.log(`    Old UpBank ID: ${dbAccount.upbank_account_id}`);
+        console.log(`    New UpBank ID: ${upbankAccount.id}`);
+
+        // Update the personal_accounts table with new UpBank ID
+        const { error: accountUpdateError } = await supabase
+          .from('personal_accounts')
+          .update({ upbank_account_id: upbankAccount.id })
+          .eq('id', dbAccount.id);
+
+        if (accountUpdateError) {
+          console.error(`❌ Failed to update account ${upbankAccount.attributes.displayName}:`, accountUpdateError);
+          continue;
+        }
+
+        console.log(`✅ Updated account ${upbankAccount.attributes.displayName} with new UpBank ID`);
+      }
+    }
+
     const reconciliationResults = [];
 
     for (const account of accounts) {
       try {
-        // Get all transactions for this account
+        // Find the internal database ID for this UpBank account
+        const dbAccount = dbAccountsTable?.find(db =>
+          db.display_name === account.attributes.displayName
+        );
+
+        if (!dbAccount) {
+          console.error(`❌ No database account found for ${account.attributes.displayName}`);
+          continue;
+        }
+
+        // Get all transactions for this account using internal ID
         const { data: transactions } = await supabase
           .from('personal_transactions')
           .select('amount_cents, status')
-          .eq('account_id', account.id);
+          .eq('account_id', dbAccount.id);
+
+        console.log(`  🔍 Debug for ${account.attributes.displayName} (internal ID: ${dbAccount.id}):`);
+        console.log(`    UpBank Account ID: ${account.id}`);
+        console.log(`    Total transactions found: ${transactions?.length || 0}`);
+
+        if (transactions && transactions.length > 0) {
+          const settledTransactions = transactions.filter(t => t.status === 'SETTLED');
+          console.log(`    SETTLED transactions: ${settledTransactions.length}`);
+          console.log(`    Sample transactions:`, transactions.slice(0, 3).map(t => ({ status: t.status, amount_cents: t.amount_cents })));
+        }
 
         const dbBalance = transactions
           ?.filter(t => t.status === 'SETTLED')

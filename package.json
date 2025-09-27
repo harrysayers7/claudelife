@@ -10,7 +10,10 @@
     "sync-upbank-full": "node scripts/sync-upbank-enhanced.js full 30",
     "sync-upbank-monitor": "node scripts/sync-monitor.js dashboard",
     "setup-banking": "bash setup-personal-banking.sh",
-    "memory-maintenance": "node scripts/memory-maintenance.js"
+    "memory-maintenance": "node scripts/memory-maintenance.js",
+    "analyze-context": "node scripts/analyze-context-usage.js",
+    "monitor-mcp": "node scripts/monitor-mcp-health.js",
+    "system-health": "npm run analyze-context && npm run monitor-mcp"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",

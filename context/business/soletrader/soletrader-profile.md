@@ -1,3 +1,9 @@
+---
+tags:
+  - mok-house
+  - mok-music
+description:
+---
 ## My Sole Trader Business Details
 
 ### **ABN Information**

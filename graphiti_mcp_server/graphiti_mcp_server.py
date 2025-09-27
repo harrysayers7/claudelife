@@ -692,11 +692,11 @@ async def process_episode_queue(group_id: str):
 async def add_memory(
     name: str,
     episode_body: str,
-    group_id: str | None = None,
+    group_id: str = '',
     source: str = 'text',
     source_description: str = '',
-    uuid: str | None = None,
-) -> SuccessResponse | ErrorResponse:
+    uuid: str = '',
+) -> dict:
     """Add an episode to memory. This is the primary way to add information to the graph.
 
     This function returns immediately and processes the episode addition in the background.
@@ -766,7 +766,7 @@ async def add_memory(
             source_type = EpisodeType.json
 
         # Use the provided group_id or fall back to the default from config
-        effective_group_id = group_id if group_id is not None else config.group_id
+        effective_group_id = group_id if group_id and group_id.strip() else config.group_id
 
         # Cast group_id to str to satisfy type checker
         # The Graphiti client expects a str for group_id, not Optional[str]
@@ -792,7 +792,7 @@ async def add_memory(
                     source=source_type,
                     source_description=source_description,
                     group_id=group_id_str,  # Using the string version of group_id
-                    uuid=uuid,
+                    uuid=uuid if uuid and uuid.strip() else None,
                     reference_time=datetime.now(timezone.utc),
                     entity_types=entity_types,
                 )
@@ -817,23 +817,23 @@ async def add_memory(
             asyncio.create_task(process_episode_queue(group_id_str))
 
         # Return immediately with a success message
-        return SuccessResponse(
-            message=f"Episode '{name}' queued for processing (position: {episode_queues[group_id_str].qsize()})"
-        )
+        return {
+            "message": f"Episode '{name}' queued for processing (position: {episode_queues[group_id_str].qsize()})"
+        }
     except Exception as e:
         error_msg = str(e)
         logger.error(f'Error queuing episode task: {error_msg}')
-        return ErrorResponse(error=f'Error queuing episode task: {error_msg}')
+        return {"error": f'Error queuing episode task: {error_msg}'}
 
 
 @mcp.tool()
 async def search_memory_nodes(
     query: str,
-    group_ids: list[str] | None = None,
+    group_ids: list[str] = None,
     max_nodes: int = 10,
-    center_node_uuid: str | None = None,
+    center_node_uuid: str = '',
     entity: str = '',  # cursor seems to break with None
-) -> NodeSearchResponse | ErrorResponse:
+) -> dict:
     """Search the graph memory for relevant node summaries.
     These contain a summary of all of a node's relationships with other nodes.
 
@@ -849,7 +849,7 @@ async def search_memory_nodes(
     global graphiti_client
 
     if graphiti_client is None:
-        return ErrorResponse(error='Graphiti client not initialized')
+        return {"error": 'Graphiti client not initialized'}
 
     try:
         # Use the provided group_ids or fall back to the default from config if none provided
@@ -858,14 +858,14 @@ async def search_memory_nodes(
         )
 
         # Configure the search
-        if center_node_uuid is not None:
+        if center_node_uuid and center_node_uuid.strip():
             search_config = NODE_HYBRID_SEARCH_NODE_DISTANCE.model_copy(deep=True)
         else:
             search_config = NODE_HYBRID_SEARCH_RRF.model_copy(deep=True)
         search_config.limit = max_nodes
 
         filters = SearchFilters()
-        if entity != '':
+        if entity and entity.strip():
             filters.node_labels = [entity]
 
         # We've already checked that graphiti_client is not None above
@@ -879,15 +879,15 @@ async def search_memory_nodes(
             query=query,
             config=search_config,
             group_ids=effective_group_ids,
-            center_node_uuid=center_node_uuid,
+            center_node_uuid=center_node_uuid if center_node_uuid and center_node_uuid.strip() else None,
             search_filter=filters,
         )
 
         if not search_results.nodes:
-            return NodeSearchResponse(message='No relevant nodes found', nodes=[])
+            return {"message": 'No relevant nodes found', "nodes": []}
 
         # Format the node results
-        formatted_nodes: list[NodeResult] = [
+        formatted_nodes = [
             {
                 'uuid': node.uuid,
                 'name': node.name,
@@ -900,20 +900,20 @@ async def search_memory_nodes(
             for node in search_results.nodes
         ]
 
-        return NodeSearchResponse(message='Nodes retrieved successfully', nodes=formatted_nodes)
+        return {"message": 'Nodes retrieved successfully', "nodes": formatted_nodes}
     except Exception as e:
         error_msg = str(e)
         logger.error(f'Error searching nodes: {error_msg}')
-        return ErrorResponse(error=f'Error searching nodes: {error_msg}')
+        return {"error": f'Error searching nodes: {error_msg}'}
 
 
 @mcp.tool()
 async def search_memory_facts(
     query: str,
-    group_ids: list[str] | None = None,
+    group_ids: list[str] = None,
     max_facts: int = 10,
-    center_node_uuid: str | None = None,
-) -> FactSearchResponse | ErrorResponse:
+    center_node_uuid: str = '',
+) -> dict:
     """Search the graph memory for relevant facts.
 
     Args:
@@ -925,12 +925,12 @@ async def search_memory_facts(
     global graphiti_client
 
     if graphiti_client is None:
-        return ErrorResponse(error='Graphiti client not initialized')
+        return {"error": 'Graphiti client not initialized'}
 
     try:
         # Validate max_facts parameter
         if max_facts <= 0:
-            return ErrorResponse(error='max_facts must be a positive integer')
+            return {"error": 'max_facts must be a positive integer'}
 
         # Use the provided group_ids or fall back to the default from config if none provided
         effective_group_ids = (
@@ -947,22 +947,22 @@ async def search_memory_facts(
             group_ids=effective_group_ids,
             query=query,
             num_results=max_facts,
-            center_node_uuid=center_node_uuid,
+            center_node_uuid=center_node_uuid if center_node_uuid and center_node_uuid.strip() else None,
         )
 
         if not relevant_edges:
-            return FactSearchResponse(message='No relevant facts found', facts=[])
+            return {"message": 'No relevant facts found', "facts": []}
 
         facts = [format_fact_result(edge) for edge in relevant_edges]
-        return FactSearchResponse(message='Facts retrieved successfully', facts=facts)
+        return {"message": 'Facts retrieved successfully', "facts": facts}
     except Exception as e:
         error_msg = str(e)
         logger.error(f'Error searching facts: {error_msg}')
-        return ErrorResponse(error=f'Error searching facts: {error_msg}')
+        return {"error": f'Error searching facts: {error_msg}'}
 
 
 @mcp.tool()
-async def delete_entity_edge(uuid: str) -> SuccessResponse | ErrorResponse:
+async def delete_entity_edge(uuid: str) -> dict:
     """Delete an entity edge from the graph memory.
 
     Args:
@@ -971,7 +971,7 @@ async def delete_entity_edge(uuid: str) -> SuccessResponse | ErrorResponse:
     global graphiti_client
 
     if graphiti_client is None:
-        return ErrorResponse(error='Graphiti client not initialized')
+        return {"error": 'Graphiti client not initialized'}
 
     try:
         # We've already checked that graphiti_client is not None above
@@ -984,15 +984,15 @@ async def delete_entity_edge(uuid: str) -> SuccessResponse | ErrorResponse:
         entity_edge = await EntityEdge.get_by_uuid(client.driver, uuid)
         # Delete the edge using its delete method
         await entity_edge.delete(client.driver)
-        return SuccessResponse(message=f'Entity edge with UUID {uuid} deleted successfully')
+        return {"message": f'Entity edge with UUID {uuid} deleted successfully'}
     except Exception as e:
         error_msg = str(e)
         logger.error(f'Error deleting entity edge: {error_msg}')
-        return ErrorResponse(error=f'Error deleting entity edge: {error_msg}')
+        return {"error": f'Error deleting entity edge: {error_msg}'}
 
 
 @mcp.tool()
-async def delete_episode(uuid: str) -> SuccessResponse | ErrorResponse:
+async def delete_episode(uuid: str) -> dict:
     """Delete an episode from the graph memory.
 
     Args:
@@ -1001,7 +1001,7 @@ async def delete_episode(uuid: str) -> SuccessResponse | ErrorResponse:
     global graphiti_client
 
     if graphiti_client is None:
-        return ErrorResponse(error='Graphiti client not initialized')
+        return {"error": 'Graphiti client not initialized'}
 
     try:
         # We've already checked that graphiti_client is not None above
@@ -1014,15 +1014,15 @@ async def delete_episode(uuid: str) -> SuccessResponse | ErrorResponse:
         episodic_node = await EpisodicNode.get_by_uuid(client.driver, uuid)
         # Delete the node using its delete method
         await episodic_node.delete(client.driver)
-        return SuccessResponse(message=f'Episode with UUID {uuid} deleted successfully')
+        return {"message": f'Episode with UUID {uuid} deleted successfully'}
     except Exception as e:
         error_msg = str(e)
         logger.error(f'Error deleting episode: {error_msg}')
-        return ErrorResponse(error=f'Error deleting episode: {error_msg}')
+        return {"error": f'Error deleting episode: {error_msg}'}
 
 
 @mcp.tool()
-async def get_entity_edge(uuid: str) -> dict[str, Any] | ErrorResponse:
+async def get_entity_edge(uuid: str) -> dict:
     """Get an entity edge from the graph memory by its UUID.
 
     Args:
@@ -1031,7 +1031,7 @@ async def get_entity_edge(uuid: str) -> dict[str, Any] | ErrorResponse:
     global graphiti_client
 
     if graphiti_client is None:
-        return ErrorResponse(error='Graphiti client not initialized')
+        return {"error": 'Graphiti client not initialized'}
 
     try:
         # We've already checked that graphiti_client is not None above
@@ -1049,13 +1049,13 @@ async def get_entity_edge(uuid: str) -> dict[str, Any] | ErrorResponse:
     except Exception as e:
         error_msg = str(e)
         logger.error(f'Error getting entity edge: {error_msg}')
-        return ErrorResponse(error=f'Error getting entity edge: {error_msg}')
+        return {"error": f'Error getting entity edge: {error_msg}'}
 
 
 @mcp.tool()
 async def get_episodes(
-    group_id: str | None = None, last_n: int = 10
-) -> list[dict[str, Any]] | EpisodeSearchResponse | ErrorResponse:
+    group_id: str = '', last_n: int = 10
+) -> dict:
     """Get the most recent memory episodes for a specific group.
 
     Args:
@@ -1065,14 +1065,14 @@ async def get_episodes(
     global graphiti_client
 
     if graphiti_client is None:
-        return ErrorResponse(error='Graphiti client not initialized')
+        return {"error": 'Graphiti client not initialized'}
 
     try:
         # Use the provided group_id or fall back to the default from config
-        effective_group_id = group_id if group_id is not None else config.group_id
+        effective_group_id = group_id if group_id and group_id.strip() else config.group_id
 
         if not isinstance(effective_group_id, str):
-            return ErrorResponse(error='Group ID must be a string')
+            return {"error": 'Group ID must be a string'}
 
         # We've already checked that graphiti_client is not None above
         assert graphiti_client is not None
@@ -1085,9 +1085,10 @@ async def get_episodes(
         )
 
         if not episodes:
-            return EpisodeSearchResponse(
-                message=f'No episodes found for group {effective_group_id}', episodes=[]
-            )
+            return {
+                "message": f'No episodes found for group {effective_group_id}',
+                "episodes": []
+            }
 
         # Use Pydantic's model_dump method for EpisodicNode serialization
         formatted_episodes = [
@@ -1096,21 +1097,21 @@ async def get_episodes(
             for episode in episodes
         ]
 
-        # Return the Python list directly - MCP will handle serialization
-        return formatted_episodes
+        # Return the episodes directly
+        return {"episodes": formatted_episodes}
     except Exception as e:
         error_msg = str(e)
         logger.error(f'Error getting episodes: {error_msg}')
-        return ErrorResponse(error=f'Error getting episodes: {error_msg}')
+        return {"error": f'Error getting episodes: {error_msg}'}
 
 
 @mcp.tool()
-async def clear_graph() -> SuccessResponse | ErrorResponse:
+async def clear_graph() -> dict:
     """Clear all data from the graph memory and rebuild indices."""
     global graphiti_client
 
     if graphiti_client is None:
-        return ErrorResponse(error='Graphiti client not initialized')
+        return {"error": 'Graphiti client not initialized'}
 
     try:
         # We've already checked that graphiti_client is not None above
@@ -1122,20 +1123,20 @@ async def clear_graph() -> SuccessResponse | ErrorResponse:
         # clear_data is already imported at the top
         await clear_data(client.driver)
         await client.build_indices_and_constraints()
-        return SuccessResponse(message='Graph cleared successfully and indices rebuilt')
+        return {"message": 'Graph cleared successfully and indices rebuilt'}
     except Exception as e:
         error_msg = str(e)
         logger.error(f'Error clearing graph: {error_msg}')
-        return ErrorResponse(error=f'Error clearing graph: {error_msg}')
+        return {"error": f'Error clearing graph: {error_msg}'}
 
 
 @mcp.resource('http://graphiti/status')
-async def get_status() -> StatusResponse:
+async def get_status() -> dict:
     """Get the status of the Graphiti MCP server and Neo4j connection."""
     global graphiti_client
 
     if graphiti_client is None:
-        return StatusResponse(status='error', message='Graphiti client not initialized')
+        return {"status": 'error', "message": 'Graphiti client not initialized'}
 
     try:
         # We've already checked that graphiti_client is not None above
@@ -1147,16 +1148,17 @@ async def get_status() -> StatusResponse:
         # Test database connection
         await client.driver.client.verify_connectivity()  # type: ignore
 
-        return StatusResponse(
-            status='ok', message='Graphiti MCP server is running and connected to Neo4j'
-        )
+        return {
+            "status": 'ok',
+            "message": 'Graphiti MCP server is running and connected to Neo4j'
+        }
     except Exception as e:
         error_msg = str(e)
         logger.error(f'Error checking Neo4j connection: {error_msg}')
-        return StatusResponse(
-            status='error',
-            message=f'Graphiti MCP server is running but Neo4j connection failed: {error_msg}',
-        )
+        return {
+            "status": 'error',
+            "message": f'Graphiti MCP server is running but Neo4j connection failed: {error_msg}',
+        }
 
 
 async def initialize_server() -> MCPConfig:

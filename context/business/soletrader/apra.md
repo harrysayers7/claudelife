@@ -1,3 +1,9 @@
+---
+tags:
+  - mok-house
+  - mokhouse
+aliases:
+---
 ## How I Use APRA AMCOS
 
 **My APRA Details:**

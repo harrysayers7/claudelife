@@ -32,3 +32,6 @@ Scan `.claude/commands/` for new commands and identify which ones haven't been a
 ## Implementation
 
 Use `mcp__serena__list_dir` with recursive option to scan `.claude/commands/`, then parse the guide markdown to extract command references, compare lists, and generate the report.
+
+IMPORTANT: Use Serena to search through the codebase. If you get any errors using Serena, retry with different
+Serena tools.

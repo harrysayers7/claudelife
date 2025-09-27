@@ -1,0 +1,15 @@
+{
+  "timestamp": "2025-09-25T06:37:39.806Z",
+  "analysis": {
+    "packsLoaded": 0,
+    "averageTokens": 0,
+    "efficiency": 0
+  },
+  "recommendations": [
+    {
+      "type": "token-optimization",
+      "priority": "high",
+      "suggestion": "Consider implementing graduated loading - many packs loaded with low token usage"
+    }
+  ]
+}

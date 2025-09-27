@@ -1,0 +1,219 @@
+{
+  "name": "MOK Music Project Sync",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "mok-music/project-sync",
+        "options": {}
+      },
+      "id": "webhook-node",
+      "name": "Notion Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.type}}",
+              "value2": "page_property_changed"
+            }
+          ]
+        }
+      },
+      "id": "filter-node",
+      "name": "Filter Property Changes",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{$json.property_name}}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "Status",
+              "output": 1
+            },
+            {
+              "value2": "Demo Fee",
+              "output": 2
+            },
+            {
+              "value2": "Award Fee",
+              "output": 3
+            },
+            {
+              "value2": "APRA",
+              "output": 4
+            }
+          ]
+        }
+      },
+      "id": "route-node",
+      "name": "Route by Property",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "table": "mok_music_projects",
+        "schema": "public",
+        "upsertFields": "notion_id",
+        "additionalFields": {
+          "notion_id": "={{$json.page_id}}",
+          "project_name": "={{$json.properties.Name.title[0].text.content}}",
+          "status": "={{$json.properties.Status.status.name}}",
+          "demo_fee": "={{$json.properties['Demo Fee'].number}}",
+          "award_fee": "={{$json.properties['Award Fee'].number}}",
+          "apra_status": "={{$json.properties.APRA.select.name}}",
+          "updated_at": "={{$now}}"
+        }
+      },
+      "id": "supabase-upsert",
+      "name": "Update Supabase",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [900, 200]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.properties.Status.status.name}}",
+              "value2": "Invoice Ready"
+            }
+          ]
+        }
+      },
+      "id": "invoice-check",
+      "name": "Check Invoice Status",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [900, 400]
+    },
+    {
+      "parameters": {
+        "to": "kate@electricsheepmusic.com",
+        "cc": "harry@sayerssoftware.com",
+        "subject": "Invoice Ready: {{$json.properties.Name.title[0].text.content}}",
+        "emailFormat": "html",
+        "message": "<h2>Project Invoice Ready</h2><p><strong>Project:</strong> {{$json.properties.Name.title[0].text.content}}</p><p><strong>Demo Fee:</strong> ${{$json.properties['Demo Fee'].number}}</p><p><strong>Award Fee:</strong> ${{$json.properties['Award Fee'].number}}</p><p><strong>Total:</strong> ${{$json.properties['Demo Fee'].number + $json.properties['Award Fee'].number}}</p><p>Please process payment to:</p><p>MOK HOUSE PTY LTD<br>BSB: 013943<br>Account: 612281562<br>ABN: 38690628212</p>",
+        "options": {}
+      },
+      "id": "invoice-email",
+      "name": "Send Invoice Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 1,
+      "position": [1120, 500]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.properties.Status.status.name}}",
+              "value2": "Complete"
+            }
+          ]
+        }
+      },
+      "id": "completion-check",
+      "name": "Check Completion",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [900, 600]
+    },
+    {
+      "parameters": {
+        "to": "kate@electricsheepmusic.com",
+        "cc": "harry@sayerssoftware.com",
+        "subject": "Project Complete: {{$json.properties.Name.title[0].text.content}}",
+        "message": "The project {{$json.properties.Name.title[0].text.content}} has been marked as complete.\n\nAPRA Status: {{$json.properties.APRA.select.name}}\n\nPlease review and confirm all deliverables have been received.",
+        "options": {}
+      },
+      "id": "completion-email",
+      "name": "Send Completion Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 1,
+      "position": [1120, 700]
+    }
+  ],
+  "connections": {
+    "Notion Webhook": {
+      "main": [
+        [
+          {
+            "node": "Filter Property Changes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Property Changes": {
+      "main": [
+        [
+          {
+            "node": "Route by Property",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route by Property": {
+      "main": [
+        [
+          {
+            "node": "Update Supabase",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Check Invoice Status",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Check Completion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Invoice Status": {
+      "main": [
+        [
+          {
+            "node": "Send Invoice Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Completion": {
+      "main": [
+        [
+          {
+            "node": "Send Completion Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "versionId": "1"
+}

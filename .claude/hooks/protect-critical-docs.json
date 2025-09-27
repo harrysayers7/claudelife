@@ -1,0 +1,16 @@
+{
+  "description": "Protect critical documentation files from accidental modification. Warns before editing important markdown files, configuration files, and system documentation.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|MultiEdit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "CRITICAL_PATTERNS=('*/CLAUDE.md' '*/README.md' '*/.taskmaster/CLAUDE.md' '*/package.json' '*/trigger.config.*' '*/.mcp.json' '*/context-manager-analysis.md' '*/memory/conversation-context.md' '*/.claude/instructions/*.md' '*/context/*/*.md'); for pattern in \"${CRITICAL_PATTERNS[@]}\"; do if [[ \"$CLAUDE_TOOL_FILE_PATH\" == $pattern ]]; then echo \"⚠️  WARNING: Modifying critical file: $CLAUDE_TOOL_FILE_PATH\" >&2; echo \"This file contains important system configuration or documentation.\" >&2; echo \"Continue? (y/N)\" >&2; read -r response; if [[ ! \"$response\" =~ ^[Yy]$ ]]; then echo \"Edit cancelled by user\" >&2; exit 1; fi; fi; done"
+          }
+        ]
+      }
+    ]
+  }
+}

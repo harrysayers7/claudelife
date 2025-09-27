@@ -10,21 +10,23 @@ version: 1
 ---
 
 # ✅ Tasks
-- [ ] Check that memory folder is actually working
-- [ ] Split `claude.md` files into directories
-- [ ] Create custom agents for specific MCPs (integrating FastAPI MCP)
-- [ ] Create a slash command for the above
-- [ ] add atomic habits agent
-- [ ] i messgae
-- [ ] obsideina shortcuts
-- [ ] notion
-- [x] playwright
-- [ ] stripe
-- [ ] jack convo ttranscript
+
+
 - [ ]
+- [ ] obsideina shortcuts
+- [x] stripe ✅ 2025-09-26
+- [ ] jack convo ttranscript🏁 🔺
+- [ ] try exa
+- [ ] check if test hook is working
+- [ ] debug FASTAPI MCP
+- [ ] should we group any agents or slash commands?
+- [ ] in reports generating commands have them use point to reports folder
+- [ ] create auto tagging system
+- [ ] check. Mcpjson if references serena
+- [ ] Check if rule for task master to make task master if wl9ng context
+- [ ] command that checks connections if names have changed
+- [ ] snippets for creating a report after installing etc
 
-
-- [ ]sadhjasd
 
 
 ---
@@ -32,7 +34,6 @@ version: 1
 ### **Questions:**
 
 - can you have .claude in obsidian
-- `do files need to be updated now the syustem has been optimized`
 
 
 ---
@@ -45,14 +46,19 @@ version: 1
 - [ ] Add Git hook to check Taskmaster for unfinished tasks before committing; if done, tasks are cleared
 - [ ] Add a rule for when `/remember` is used → decide if rule belongs in global `claude.md` or local project
 - [ ] Maintain `claude.local.md`
+- [ ] add important
+- [ ] • IMPORTANT: Emphasizes critical instructions that should not be overlooked
+• Proactively: Encourages Claude to take initiative and suggest improvements
+• Ultra-think: Can trigger more thorough analysis (use sparingly)
 
 ---
 
 # ⌨️ Slash Commands
-- [ ] `/guide` → Claude creates a comprehensive guide for a new feature
+- [x] `/guide` → Claude creates a comprehensive guide for a new feature
 - [ ] `/learn memz` for Graphiti (only when necessary)
-- [ ] Create folder for specific purposes
+- [x] Create folder for specific purposes ✅ 2025-09-26
 - [ ] `claude.md` for folder organization
+- [ ] summarize conversation before clearing
 
 ---
 
@@ -62,16 +68,8 @@ version: 1
 - [ ] Sentry MCP
 - [ ] Canva MCP
 - [ ] Deep Research MCP
-- [x] Notion MCP → https://www.aitmpl.com/agents
-- [x] Gmail MCP → https://github.com/GongRzhe/Gmail-MCP-Server
-
 ---
 
 # 📊 Future Enhancements
 - [ ] Create companion commands for transaction analysis & spending reports
 - [ ] Add support for exporting data for tax/accounting purposes
-
-
-
-mok music project manager for working with /Users/harrysayers/Developer/claudelife/context/business/mokhouse/mokmusic/esm.md
-i need an agent that helps me with the work i do with ESM ie updates my supabase database (SAYERS-DATA)

@@ -101,3 +101,71 @@ Expand into SaaS products (compliance dashboards, monitoring platforms) for recu
 1. Build strong base of government contracts through IPP sole-source opportunities.
 2. Leverage credibility in cyber to expand into automation consulting.
 3. Develop SaaS platform for compliance dashboards, securing recurring revenue.
+---
+
+
+# **Roles in Mokai
+
+### 🧩 Harry Sayers — Co-Founder, Strategy & Operations
+
+Core Role: Vision, strategy, and business architecture.
+
+Strengths leveraged: Indigenous ownership, government procurement expertise, systems/automation thinking.
+
+Responsibilities:
+
+Strategic Direction: Define Mokai’s positioning (Indigenous-owned cyber & tech consultancy with SaaS roadmap).
+
+Operations Architecture: Build lean, recruitment-led delivery model (SOPs, compliance, contracting frameworks).
+
+Finance & Risk: Oversee financial structures, contractor payments, and compliance with ISO 27001 / Essential Eight.
+
+Growth: Develop diversification plays (automation consulting, SaaS products).
+
+IPP/APP Navigation: Leverage Supply Nation, Exemption 16, and Indigenous Procurement rules to secure contracts.
+
+### 🔐 Jack Bell — Co-Founder, Head of Delivery (Cybersecurity & Technical Services)
+
+Core Role: Technical credibility and delivery of cyber engagements.
+
+Strengths leveraged: Cybersecurity network, IRAP/Essential Eight expertise, contractor connections.
+
+Responsibilities:
+
+Engagement Delivery: Own cyber scopes (pen testing, IRAP, architecture reviews, uplift programs).
+
+Talent Network: Maintain and deploy specialist contractors (pen testers, GRC experts, automation engineers).
+
+Quality Assurance: Ensure technical work meets ASD/ISO standards, feeding back into Mokai’s assurance framework.
+
+Client Trust: Build technical relationships with government & enterprise buyers — being the face of capability.
+
+Innovation: Spot emerging client needs (AI assurance, continuous compliance) to feed into Mokai’s SaaS direction.
+
+### 🎯 Kell — Director of Marketing & Client Experience
+
+Core Role: Growth engine through branding, marketing, and client journey.
+
+Strengths leveraged: Marketing expertise, relationship building, operational oversight.
+
+Responsibilities:
+
+Brand & Comms: Shape Mokai’s story — Indigenous-owned, cyber-credible, future-focused tech consultancy.
+
+Client Experience: Map and manage the client journey from outreach → contract → delivery → renewal.
+
+Marketing: Build capability statements, website, case studies, and thought-leadership content.
+
+Sales Support: Enable outreach campaigns, proposal packaging, and tender support.
+
+Ops Bridge: Act as connective tissue between Harry’s strategy and Jack’s delivery — ensuring smooth execution.
+
+How They Interlock
+
+Harry = Strategy, structure, and procurement pathways.
+
+Jack = Delivery, technical depth, and contractor network.
+
+Kell = Marketing, client trust, and operational polish.
+
+👉 Together: Harry secures the pathway, Kell wins the hearts and trust, Jack delivers the technical outcome.

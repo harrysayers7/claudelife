@@ -1,0 +1,2 @@
+tag: #snippet
+{{date}} {{time}}

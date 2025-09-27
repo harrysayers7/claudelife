@@ -167,3 +167,7 @@ A good guide should:
 ---
 
 **Ready to create a guide? Tell me the topic!**
+
+
+IMPORTANT: Use Serena to search through the codebase. If you get any errors using Serena, retry with different
+Serena tools.

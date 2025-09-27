@@ -1,0 +1,343 @@
+{
+  "lastCheck": "2025-09-25T06:37:40.097Z",
+  "servers": {
+    "notion": {
+      "history": [
+        {
+          "name": "notion",
+          "status": "healthy",
+          "responseTime": 7,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "supabase": {
+      "history": [
+        {
+          "name": "supabase",
+          "status": "healthy",
+          "responseTime": 5,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "task-master-ai": {
+      "history": [
+        {
+          "name": "task-master-ai",
+          "status": "healthy",
+          "responseTime": 4,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "github": {
+      "history": [
+        {
+          "name": "github",
+          "status": "healthy",
+          "responseTime": 4,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "memory": {
+      "history": [
+        {
+          "name": "memory",
+          "status": "healthy",
+          "responseTime": 5,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "shadcn-ui": {
+      "history": [
+        {
+          "name": "shadcn-ui",
+          "status": "healthy",
+          "responseTime": 2,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "exa": {
+      "history": [
+        {
+          "name": "exa",
+          "status": "healthy",
+          "responseTime": 3,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "n8n": {
+      "history": [
+        {
+          "name": "n8n",
+          "status": "healthy",
+          "responseTime": 3,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "awesome-n8n-templates": {
+      "history": [
+        {
+          "name": "awesome-n8n-templates",
+          "status": "healthy",
+          "responseTime": 4,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "graphiti-personal": {
+      "history": [
+        {
+          "name": "graphiti-personal",
+          "status": "healthy",
+          "responseTime": 4,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "graphiti-finance": {
+      "history": [
+        {
+          "name": "graphiti-finance",
+          "status": "healthy",
+          "responseTime": 5,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "graphiti-mokai": {
+      "history": [
+        {
+          "name": "graphiti-mokai",
+          "status": "healthy",
+          "responseTime": 3,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "graphiti-mok-house": {
+      "history": [
+        {
+          "name": "graphiti-mok-house",
+          "status": "healthy",
+          "responseTime": 3,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "graphiti-ai-brain": {
+      "history": [
+        {
+          "name": "graphiti-ai-brain",
+          "status": "healthy",
+          "responseTime": 4,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "graphiti-claudelife": {
+      "history": [
+        {
+          "name": "graphiti-claudelife",
+          "status": "healthy",
+          "responseTime": 5,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "context7": {
+      "history": [
+        {
+          "name": "context7",
+          "status": "healthy",
+          "responseTime": 3,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "upbank": {
+      "history": [
+        {
+          "name": "upbank",
+          "status": "healthy",
+          "responseTime": 4,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "fastmcp-brain": {
+      "history": [
+        {
+          "name": "fastmcp-brain",
+          "status": "healthy",
+          "responseTime": 2,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "claudelife-business-api": {
+      "history": [
+        {
+          "name": "claudelife-business-api",
+          "status": "healthy",
+          "responseTime": 3,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "claudelife-financial-api": {
+      "history": [
+        {
+          "name": "claudelife-financial-api",
+          "status": "healthy",
+          "responseTime": 5,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "mindsdb": {
+      "history": [
+        {
+          "name": "mindsdb",
+          "status": "healthy",
+          "responseTime": 2,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "docker": {
+      "history": [
+        {
+          "name": "docker",
+          "status": "healthy",
+          "responseTime": 5,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "executeautomation-playwright-server": {
+      "history": [
+        {
+          "name": "executeautomation-playwright-server",
+          "status": "healthy",
+          "responseTime": 3,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "gmail": {
+      "history": [
+        {
+          "name": "gmail",
+          "status": "healthy",
+          "responseTime": 6,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "serena": {
+      "history": [
+        {
+          "name": "serena",
+          "status": "healthy",
+          "responseTime": 3,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "gptr-mcp": {
+      "history": [
+        {
+          "name": "gptr-mcp",
+          "status": "healthy",
+          "responseTime": 5,
+          "error": null,
+          "timestamp": "2025-09-25T06:37:40.097Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    }
+  }
+}

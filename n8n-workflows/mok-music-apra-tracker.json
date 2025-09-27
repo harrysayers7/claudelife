@@ -1,0 +1,310 @@
+{
+  "name": "MOK Music APRA Tracker",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24
+            }
+          ]
+        }
+      },
+      "id": "schedule-node",
+      "name": "Daily APRA Check",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "database_id": "1e64a17b-b7f0-807d-b0f3-fe2cf5a6e3ac",
+        "filter": {
+          "and": [
+            {
+              "property": "APRA",
+              "select": {
+                "equals": "Check"
+              }
+            },
+            {
+              "property": "Status",
+              "status": {
+                "does_not_equal": "Complete"
+              }
+            }
+          ]
+        },
+        "page_size": 50
+      },
+      "id": "notion-query",
+      "name": "Query APRA Check Items",
+      "type": "@notionhq/n8n-nodes-notion.notionDatabasePage",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": false,
+        "values": {
+          "string": [
+            {
+              "name": "project_name",
+              "value": "={{$json.properties.Name.title[0].text.content}}"
+            },
+            {
+              "name": "status",
+              "value": "={{$json.properties.Status.status.name}}"
+            },
+            {
+              "name": "apra_status",
+              "value": "={{$json.properties.APRA.select.name}}"
+            },
+            {
+              "name": "date_received",
+              "value": "={{$json.properties['Date Received'].date.start}}"
+            },
+            {
+              "name": "days_since_received",
+              "value": "={{Math.floor((new Date() - new Date($json.properties['Date Received'].date.start)) / (1000 * 60 * 60 * 24))}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "transform-data",
+      "name": "Transform Project Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{$json.days_since_received}}",
+              "operation": "larger",
+              "value2": 7
+            }
+          ]
+        }
+      },
+      "id": "check-overdue",
+      "name": "Check if Overdue",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "dataType": "number",
+        "value1": "={{$json.days_since_received}}",
+        "rules": {
+          "rules": [
+            {
+              "value2": 14,
+              "operation": "larger",
+              "output": 1
+            },
+            {
+              "value2": 21,
+              "operation": "larger",
+              "output": 2
+            },
+            {
+              "value2": 30,
+              "operation": "larger",
+              "output": 3
+            }
+          ]
+        }
+      },
+      "id": "urgency-switch",
+      "name": "Determine Urgency",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [1120, 200]
+    },
+    {
+      "parameters": {
+        "to": "kate@electricsheepmusic.com,harry@sayerssoftware.com",
+        "subject": "APRA Registration Required: {{$json.project_name}}",
+        "message": "The following project requires APRA registration:\n\n**Project:** {{$json.project_name}}\n**Status:** {{$json.status}}\n**Days Since Received:** {{$json.days_since_received}}\n\nPlease check and update the APRA status in the ESM Projects database.\n\nProject Link: https://notion.so/{{$json.id}}",
+        "options": {}
+      },
+      "id": "reminder-email",
+      "name": "Send APRA Reminder",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 1,
+      "position": [1340, 300]
+    },
+    {
+      "parameters": {
+        "to": "kate@electricsheepmusic.com,harry@sayerssoftware.com",
+        "subject": "URGENT: APRA Registration Overdue - {{$json.project_name}}",
+        "message": "🚨 URGENT: The following project has an overdue APRA registration:\n\n**Project:** {{$json.project_name}}\n**Status:** {{$json.status}}\n**Days Overdue:** {{$json.days_since_received}}\n\nThis project has been waiting for APRA registration for over 3 weeks. Please prioritize this immediately.\n\nProject Link: https://notion.so/{{$json.id}}",
+        "options": {}
+      },
+      "id": "urgent-email",
+      "name": "Send Urgent Alert",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 1,
+      "position": [1340, 500]
+    },
+    {
+      "parameters": {
+        "database_id": "1e64a17b-b7f0-807d-b0f3-fe2cf5a6e3ac",
+        "filter": {
+          "and": [
+            {
+              "property": "APRA",
+              "select": {
+                "equals": "In Progress"
+              }
+            }
+          ]
+        },
+        "page_size": 50
+      },
+      "id": "in-progress-query",
+      "name": "Query In Progress Items",
+      "type": "@notionhq/n8n-nodes-notion.notionDatabasePage",
+      "typeVersion": 2,
+      "position": [460, 600]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": false,
+        "values": {
+          "string": [
+            {
+              "name": "summary_data",
+              "value": "={{$json.length}} projects need APRA attention"
+            }
+          ]
+        }
+      },
+      "id": "create-summary",
+      "name": "Create Summary",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [1120, 700]
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "table": "mok_music_apra_tracking",
+        "schema": "public",
+        "upsertFields": "check_date",
+        "additionalFields": {
+          "check_date": "={{$now.format('yyyy-MM-dd')}}",
+          "items_needing_attention": "={{$json.length}}",
+          "overdue_count": "={{$runIndex}}",
+          "created_at": "={{$now}}"
+        }
+      },
+      "id": "log-to-supabase",
+      "name": "Log APRA Check",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [1340, 700]
+    }
+  ],
+  "connections": {
+    "Daily APRA Check": {
+      "main": [
+        [
+          {
+            "node": "Query APRA Check Items",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Query In Progress Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Query APRA Check Items": {
+      "main": [
+        [
+          {
+            "node": "Transform Project Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transform Project Data": {
+      "main": [
+        [
+          {
+            "node": "Check if Overdue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check if Overdue": {
+      "main": [
+        [
+          {
+            "node": "Determine Urgency",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Determine Urgency": {
+      "main": [
+        [
+          {
+            "node": "Send APRA Reminder",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Urgent Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Query In Progress Items": {
+      "main": [
+        [
+          {
+            "node": "Create Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Summary": {
+      "main": [
+        [
+          {
+            "node": "Log APRA Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "versionId": "1"
+}

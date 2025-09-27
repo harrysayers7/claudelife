@@ -1,0 +1,352 @@
+{
+  "name": "MOK Music Financial Sync",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 6
+            }
+          ]
+        }
+      },
+      "id": "schedule-sync",
+      "name": "Scheduled Financial Sync",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "database_id": "1e64a17b-b7f0-807d-b0f3-fe2cf5a6e3ac",
+        "page_size": 100,
+        "sorts": [
+          {
+            "property": "Date Received",
+            "direction": "descending"
+          }
+        ]
+      },
+      "id": "fetch-all-projects",
+      "name": "Fetch All Projects",
+      "type": "@notionhq/n8n-nodes-notion.notionDatabasePage",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": false,
+        "values": {
+          "string": [
+            {
+              "name": "notion_id",
+              "value": "={{$json.id}}"
+            },
+            {
+              "name": "project_name",
+              "value": "={{$json.properties.Name.title[0]?.text?.content || 'Unnamed Project'}}"
+            },
+            {
+              "name": "client_name",
+              "value": "Electric Sheep Music"
+            },
+            {
+              "name": "status",
+              "value": "={{$json.properties.Status?.status?.name || 'Unknown'}}"
+            },
+            {
+              "name": "demo_fee",
+              "value": "={{$json.properties['Demo Fee']?.number || 0}}"
+            },
+            {
+              "name": "award_fee",
+              "value": "={{$json.properties['Award Fee']?.number || 0}}"
+            },
+            {
+              "name": "total_value",
+              "value": "={{($json.properties['Demo Fee']?.number || 0) + ($json.properties['Award Fee']?.number || 0)}}"
+            },
+            {
+              "name": "apra_status",
+              "value": "={{$json.properties.APRA?.select?.name || 'Not Set'}}"
+            },
+            {
+              "name": "date_received",
+              "value": "={{$json.properties['Date Received']?.date?.start}}"
+            },
+            {
+              "name": "date_submitted",
+              "value": "={{$json.properties['Submitted On']?.date?.start}}"
+            },
+            {
+              "name": "po_number",
+              "value": "={{$json.properties['PO Number']?.rich_text[0]?.text?.content || null}}"
+            },
+            {
+              "name": "is_invoiceable",
+              "value": "={{$json.properties.Status?.status?.name === 'Invoice Ready' || $json.properties.Status?.status?.name === 'Complete'}}"
+            }
+          ]
+        }
+      },
+      "id": "transform-financial-data",
+      "name": "Transform Financial Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "table": "mok_music_projects",
+        "schema": "public",
+        "upsertFields": "notion_id",
+        "additionalFields": {
+          "notion_id": "={{$json.notion_id}}",
+          "project_name": "={{$json.project_name}}",
+          "client_name": "={{$json.client_name}}",
+          "status": "={{$json.status}}",
+          "demo_fee": "={{$json.demo_fee}}",
+          "award_fee": "={{$json.award_fee}}",
+          "total_value": "={{$json.total_value}}",
+          "apra_status": "={{$json.apra_status}}",
+          "date_received": "={{$json.date_received}}",
+          "date_submitted": "={{$json.date_submitted}}",
+          "po_number": "={{$json.po_number}}",
+          "is_invoiceable": "={{$json.is_invoiceable}}",
+          "updated_at": "={{$now}}"
+        }
+      },
+      "id": "upsert-project",
+      "name": "Upsert Project Record",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{$json.is_invoiceable}}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "check-invoiceable",
+      "name": "Check if Invoiceable",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [1120, 200]
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "table": "invoices",
+        "schema": "public",
+        "upsertFields": "external_reference",
+        "additionalFields": {
+          "entity_id": 1,
+          "contact_id": 2,
+          "type": "receivable",
+          "external_reference": "MOK-{{$json.notion_id}}",
+          "description": "Music production services: {{$json.project_name}}",
+          "amount": "={{$json.total_value}}",
+          "currency": "AUD",
+          "status": "pending",
+          "due_date": "={{$now.plus({days: 30}).format('yyyy-MM-dd')}}",
+          "po_number": "={{$json.po_number}}",
+          "notes": "Demo Fee: ${{$json.demo_fee}}, Award Fee: ${{$json.award_fee}}, APRA: {{$json.apra_status}}",
+          "created_at": "={{$now}}"
+        }
+      },
+      "id": "create-invoice-record",
+      "name": "Create Invoice Record",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [1340, 100]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": "mok_music_projects",
+        "schema": "public",
+        "returnAll": false,
+        "limit": 1,
+        "additionalFields": {}
+      },
+      "id": "get-summary-stats",
+      "name": "Get Summary Stats",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [900, 500]
+    },
+    {
+      "parameters": {
+        "query": "SELECT \n  COUNT(*) as total_projects,\n  COUNT(CASE WHEN status IN ('Invoice Ready', 'Complete') THEN 1 END) as invoiceable_count,\n  SUM(total_value) as total_pipeline_value,\n  SUM(CASE WHEN status IN ('Invoice Ready', 'Complete') THEN total_value ELSE 0 END) as invoiceable_value,\n  COUNT(CASE WHEN apra_status = 'Check' THEN 1 END) as apra_pending\nFROM mok_music_projects;"
+      },
+      "id": "calculate-metrics",
+      "name": "Calculate Financial Metrics",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [1120, 500]
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "table": "financial_snapshots",
+        "schema": "public",
+        "upsertFields": "snapshot_date,entity_type",
+        "additionalFields": {
+          "entity_type": "mok_music",
+          "snapshot_date": "={{$now.format('yyyy-MM-dd')}}",
+          "total_projects": "={{$json[0].total_projects}}",
+          "invoiceable_count": "={{$json[0].invoiceable_count}}",
+          "total_pipeline_value": "={{$json[0].total_pipeline_value}}",
+          "invoiceable_value": "={{$json[0].invoiceable_value}}",
+          "apra_pending_count": "={{$json[0].apra_pending}}",
+          "sync_timestamp": "={{$now}}",
+          "created_at": "={{$now}}"
+        }
+      },
+      "id": "save-snapshot",
+      "name": "Save Financial Snapshot",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [1340, 500]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{$json[0].apra_pending}}",
+              "operation": "larger",
+              "value2": 3
+            }
+          ]
+        }
+      },
+      "id": "check-apra-alerts",
+      "name": "Check APRA Alerts",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [1120, 700]
+    },
+    {
+      "parameters": {
+        "to": "harry@sayerssoftware.com",
+        "cc": "kate@electricsheepmusic.com",
+        "subject": "MOK Music Financial Sync Complete",
+        "emailFormat": "html",
+        "message": "<h2>MOK Music Financial Sync Report</h2>\n<p><strong>Sync Time:</strong> {{$now.format('yyyy-MM-dd HH:mm:ss')}}</p>\n<ul>\n<li><strong>Total Projects:</strong> {{$json[0].total_projects}}</li>\n<li><strong>Invoiceable Projects:</strong> {{$json[0].invoiceable_count}}</li>\n<li><strong>Total Pipeline Value:</strong> ${{$json[0].total_pipeline_value}}</li>\n<li><strong>Invoiceable Value:</strong> ${{$json[0].invoiceable_value}}</li>\n<li><strong>APRA Items Pending:</strong> {{$json[0].apra_pending}}</li>\n</ul>\n{{$json[0].apra_pending > 3 ? '<p style=\"color: red;\"><strong>Alert:</strong> High number of APRA items pending attention.</p>' : ''}}\n<p>Dashboard: <a href=\"https://supabase.com/dashboard/project/gshsshaodoyttdxippwx\">View in Supabase</a></p>",
+        "options": {}
+      },
+      "id": "send-sync-report",
+      "name": "Send Sync Report",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 1,
+      "position": [1340, 700]
+    }
+  ],
+  "connections": {
+    "Scheduled Financial Sync": {
+      "main": [
+        [
+          {
+            "node": "Fetch All Projects",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch All Projects": {
+      "main": [
+        [
+          {
+            "node": "Transform Financial Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transform Financial Data": {
+      "main": [
+        [
+          {
+            "node": "Upsert Project Record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upsert Project Record": {
+      "main": [
+        [
+          {
+            "node": "Check if Invoiceable",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Summary Stats",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check if Invoiceable": {
+      "main": [
+        [
+          {
+            "node": "Create Invoice Record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Summary Stats": {
+      "main": [
+        [
+          {
+            "node": "Calculate Financial Metrics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate Financial Metrics": {
+      "main": [
+        [
+          {
+            "node": "Save Financial Snapshot",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Check APRA Alerts",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send Sync Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "versionId": "1"
+}
