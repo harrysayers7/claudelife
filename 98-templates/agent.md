@@ -1,3 +1,3 @@
-tag: #agent
+tag: [[agents]]
 
 {{date}} {{time}}

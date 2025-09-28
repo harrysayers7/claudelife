@@ -36,5 +36,8 @@
     "landscape": false,
     "margin": "0",
     "downscalePercent": 100
-  }
+  },
+  "newFileLocation": "folder",
+  "newFileFolderPath": "00-inbox",
+  "promptDelete": false
 }

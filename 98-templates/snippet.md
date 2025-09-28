@@ -1,2 +1,1 @@
-tag: #snippet
-{{date}} {{time}}
+tag: [[snippets]]

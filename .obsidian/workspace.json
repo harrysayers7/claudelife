@@ -8,17 +8,51 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e74fc933b509f1e6",
+            "id": "1521a66845d31f86",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "98-templates/agent.md",
+                "file": "00-inbox/todo.md",
                 "mode": "source",
-                "source": false
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
               },
               "icon": "lucide-file",
-              "title": "agent"
+              "title": "todo"
+            }
+          },
+          {
+            "id": "c1d11e2efce12538",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "youtube-clips/Claude Code Can Be Your Second Brain.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Claude Code Can Be Your Second Brain"
             }
           },
           {
@@ -27,43 +61,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HARRY/TASKS.md",
+                "file": "00-inbox/osidian-system.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TASKS"
+              "title": "osidian-system"
             }
           },
           {
-            "id": "9ede3423022a57d3",
+            "id": "b3d07c45b8486890",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "HARRY/agent-ideas/N8n-agent.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "N8n-agent"
-            }
-          },
-          {
-            "id": "73697fe3361dad3e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "deprecated-items/deprecated-claude-rules.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "deprecated-claude-rules"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -95,7 +112,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:mokai",
+                "query": "tag:#todo/back-burn",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -136,7 +153,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "98-templates/agent.md",
+                "file": "00-inbox/kieren.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -146,7 +163,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for agent"
+              "title": "Backlinks for kieren"
             }
           },
           {
@@ -155,12 +172,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "98-templates/agent.md",
+                "file": "00-inbox/kieren.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from agent"
+              "title": "Outgoing links from kieren"
             }
           },
           {
@@ -184,13 +201,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "98-templates/agent.md",
+                "file": "00-inbox/kieren.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of agent"
+              "title": "Outline of kieren"
             }
           },
           {
@@ -202,14 +219,23 @@
               "icon": "message-square",
               "title": "Copilot"
             }
+          },
+          {
+            "id": "5128d7e1328774b4",
+            "type": "leaf",
+            "state": {
+              "type": "todo",
+              "state": {},
+              "icon": "checkmark",
+              "title": "Todo List"
+            }
           }
         ],
         "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 369.5,
-    "collapsed": true
+    "width": 323.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -228,46 +254,46 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "e74fc933b509f1e6",
+  "active": "c1d11e2efce12538",
   "lastOpenFiles": [
-    "01-docs/reports/Obsidian-second-brain-creator.md",
-    "01-docs/reports/MCP_OPPORTUNITIES_ANALYSIS.md",
-    "templates/snippet.md",
-    "templates/note.md",
-    "templates/agent.md",
-    "templates",
-    "99-archive",
-    "templates/Untitled",
-    "scripts/sync-supabase-notion.py.tmp.52862.1758949229466",
-    "tags",
-    "98-templates/agent.md",
-    "Clippings/Obsidian As A Second Brain The ULTIMATE Tutorial.md",
-    "youtube obsidian/Obsidian As A Second Brain The ULTIMATE Tutorial.md",
-    "youtube obsidian",
-    "Clippings",
+    "00-inbox/Monday-itus.md",
+    "youtube-clips/Claude Code Can Be Your Second Brain.md",
+    "youtube-clips",
+    "97-tags/n8n.md",
+    "97-tags/mokai.md",
+    "97-tags/snippets.md",
     "98-templates/snippet.md",
+    "00-inbox/Untitled.md",
+    "00-inbox/Untitled 1.md",
+    "97-tags/AI-Research.md",
+    "97-tags/agents.md",
+    "00-inbox/Grok-4-on-tesla?.md",
+    "Grok Voice w/Grok 4 on tesla?.md",
+    "00-inbox/Bins-print-list-for-recycle.md",
+    "00-inbox/osidian-system.md",
+    "00-inbox/Ad-research-agent.md",
+    "00-inbox/hotkey-legend.md",
+    "00-inbox/Untitled 3.md",
+    "00-inbox/todo.md",
     "98-templates/note.md",
-    "hdjakdsj.md",
-    "context/business/mokai/docs/contracts/MOKAI-SHA-V2.md",
-    "98-templates",
-    "context/business/mokai/docs/contracts/MOKAI-Shareholders-Agreement-DRAFT.md",
-    "context/business/mokai/docs/contracts/MOKAI-Shareholders-Agreement-DRAFT.pdf",
-    "context/business/mokai/docs/finance/MOKAI-Director-Pay-Structure.md",
-    "context/business/mokai/docs/mokai-shareholders-agreement-analysis.md",
-    "context/business/mokai/docs/contracts/18fifty3 Shareholders Agreement.md",
-    "context/business/mokai/mokai-profile.md",
-    "context/business/mokai/docs/finance",
-    "CLAUDE.md",
+    "Grok Voice w",
+    "00-inbox/hotkeys.md",
+    "HARRY/TASKS.md",
+    "00-inbox/kieren.md",
+    "97-tags/knowledge-base.md",
+    "97-tags/mok-music.md",
+    "97-tags/mcp.md",
+    "00-inbox/add-research-agent.md",
+    "Clippings",
+    "Untitled",
+    "02-projects/mok-music/context",
+    "02-projects/mokai/context",
+    "02-projects/brain/context",
+    "02-projects/mac/context",
+    "02-projects/mok-music",
+    "02-projects/mokai",
     "Untitled 1.canvas",
     "Untitled.canvas",
-    "HARRY/agent-ideas/Obsidian-second-brain-creator.md",
-    "01-docs/reports/context-manager-analysis.md",
-    "AGENTS2.md",
-    "HARRY/TASKS.md",
-    "copilot/copilot-custom-prompts/Generate glossary.md",
-    "copilot/copilot-custom-prompts/Fix grammar and spelling.md",
-    "copilot/copilot-custom-prompts/Explain like I am 5.md",
-    "copilot/copilot-custom-prompts/Emojify.md",
     "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/voyage.webp",
     "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/xai.svg",
     "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/volcengine.png",

@@ -7,9 +7,12 @@ tags:
   - tasks
   - mcp
 version: 1
+relation: "[[mcp]]"
 ---
 
 # ✅ Tasks
+
+``
 
 
 - [ ]
@@ -73,3 +76,7 @@ version: 1
 # 📊 Future Enhancements
 - [ ] Create companion commands for transaction analysis & spending reports
 - [ ] Add support for exporting data for tax/accounting purposes
+#todo/urgent
+- [ ] jdaskld
+
+``
