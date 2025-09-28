@@ -27,7 +27,7 @@
 - **Inputs**: task_description, context_hints (business/personal/technical)
 - **Logic**:
   - Analyze input for business keywords (Mokai, clients, cybersecurity)
-  - Auto-assign to correct project based on context/business/projects.md
+  - Auto-assign to correct project based on 01-areas/business/projects.md
   - Set priority based on context/personal/routines.md
 - **Output**: Task created in appropriate system with context tags
 
@@ -36,7 +36,7 @@
 - **Triggers**: New emails to monitored addresses
 - **Inputs**: Email content and sender
 - **Logic**:
-  - Check sender against context/business/ profiles
+  - Check sender against 01-areas/business/ profiles
   - Route Mokai emails to business workflows
   - Route personal emails based on context/personal/ settings
 - **Output**: Categorized, prioritized, and routed appropriately

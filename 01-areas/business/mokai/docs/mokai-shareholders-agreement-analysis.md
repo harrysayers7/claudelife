@@ -646,5 +646,5 @@ Section XX: Subcontractor Management
 ---
 
 *Analysis prepared by: Mokai Legal & Financial Advisory Agent*
-*Document saved to: /context/business/mokai/docs/mokai-shareholders-agreement-analysis.md*
+*Document saved to: /01-areas/business/mokai/docs/mokai-shareholders-agreement-analysis.md*
 *Next steps: Obtain 18fifty3 source agreement for detailed clause-by-clause adaptation*

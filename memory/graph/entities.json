@@ -80,7 +80,7 @@
     "name": "Mokai Business Profile",
     "type": "concept",
     "attributes": {
-      "file": "context/business/mokai/mokai-profile.md",
+      "file": "01-areas/business/mokai/mokai-profile.md",
       "type": "Indigenous-owned technology consultancy",
       "services": ["cybersecurity", "penetration testing", "GRC", "IRAP"],
       "model": "prime contractor"
@@ -93,7 +93,7 @@
     "name": "Mok House Business Profile",
     "type": "concept",
     "attributes": {
-      "file": "context/business/mokhouse/mokhouse-profile.md",
+      "file": "01-areas/business/mokhouse/mokhouse-profile.md",
       "type": "music business entity",
       "services": ["music production", "artist management", "creative tools"],
       "related_files": ["mokmusic.md", "esm.md"]

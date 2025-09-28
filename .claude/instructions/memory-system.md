@@ -18,10 +18,10 @@
 **Triggers**: "MOKAI", "mokai", "cybersecurity", "compliance", "IRAP", "Essential8", "tender", "government", "revenue", "mok house", "music business"
 
 **Contents**:
-- `context/business/mokai/mokai-profile.md`
-- `context/business/mokai/services.md`
-- `context/business/mokhouse/mokhouse-profile.md`
-- `context/business/projects.md` (active projects only)
+- `01-areas/business/mokai/mokai-profile.md`
+- `01-areas/business/mokai/services.md`
+- `01-areas/business/mokhouse/mokhouse-profile.md`
+- `01-areas/business/projects.md` (active projects only)
 
 #### Technical Pack (~15K)
 **Triggers**: "MCP", "database", "supabase", "API", "FastAPI", "infrastructure", "server", "deployment", "docker", "n8n"

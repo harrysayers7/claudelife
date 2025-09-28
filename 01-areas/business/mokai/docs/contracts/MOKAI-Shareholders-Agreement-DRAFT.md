@@ -8,7 +8,7 @@ status: DRAFT - NOT FOR EXECUTION
 ---
 ## What You Now Have
 
-  Draft Agreement: /context/business/mokai/docs/contracts/MOKA
+  Draft Agreement: /01-areas/business/mokai/docs/contracts/MOKA
   I-Shareholders-Agreement-DRAFT.md
 
   Key Features

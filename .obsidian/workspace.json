@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "youtube-clips/Claude Code Can Be Your Second Brain.md",
+                "file": "00-inbox/osidian-system.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,55 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Claude Code Can Be Your Second Brain"
+              "title": "osidian-system"
+            }
+          },
+          {
+            "id": "be6da9f7c49392c0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Clippings/Obsidian Notes to Build Wisdom (FULL GUIDE + SETUP).md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Obsidian Notes to Build Wisdom (FULL GUIDE + SETUP)"
+            }
+          },
+          {
+            "id": "7e8c72bdebd8a58e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01-areas/accounting/Untitled.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Untitled"
             }
           },
           {
@@ -80,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -254,44 +302,44 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "c1d11e2efce12538",
+  "active": "94da3d6eb66ccc2c",
   "lastOpenFiles": [
-    "00-inbox/Monday-itus.md",
-    "youtube-clips/Claude Code Can Be Your Second Brain.md",
-    "youtube-clips",
-    "97-tags/n8n.md",
-    "97-tags/mokai.md",
-    "97-tags/snippets.md",
-    "98-templates/snippet.md",
-    "00-inbox/Untitled.md",
-    "00-inbox/Untitled 1.md",
-    "97-tags/AI-Research.md",
-    "97-tags/agents.md",
-    "00-inbox/Grok-4-on-tesla?.md",
-    "Grok Voice w/Grok 4 on tesla?.md",
-    "00-inbox/Bins-print-list-for-recycle.md",
-    "00-inbox/osidian-system.md",
-    "00-inbox/Ad-research-agent.md",
-    "00-inbox/hotkey-legend.md",
-    "00-inbox/Untitled 3.md",
-    "00-inbox/todo.md",
-    "98-templates/note.md",
-    "Grok Voice w",
-    "00-inbox/hotkeys.md",
-    "HARRY/TASKS.md",
-    "00-inbox/kieren.md",
-    "97-tags/knowledge-base.md",
-    "97-tags/mok-music.md",
-    "97-tags/mcp.md",
-    "00-inbox/add-research-agent.md",
-    "Clippings",
-    "Untitled",
-    "02-projects/mok-music/context",
-    "02-projects/mokai/context",
-    "02-projects/brain/context",
-    "02-projects/mac/context",
-    "02-projects/mok-music",
-    "02-projects/mokai",
+    "01-areas/business/mokhouse/mokmusic/docs/resume.md",
+    "01-areas/business/mokai/docs/finance/MOKAI-Director-Pay-Structure.md",
+    "01-areas/business/mokai/docs/contracts/EMPLOYMENT AGREEMENT – COO.md",
+    "01-areas/business/mokai/docs/contracts/MOKAI-SHA-V2.md",
+    "01-areas/business/mokai/docs/contracts/MOKAI-Shareholders-Agreement-DRAFT.pdf",
+    "01-areas/business/mokai/docs/contracts/MOKAI-Shareholders-Agreement-DRAFT.md",
+    "01-areas/business/mokai/docs/contracts/18fifty3 Shareholders Agreement.md",
+    "01-areas/business/mokai/course/week-5/module-5-automation-stack.md",
+    "01-areas/business/mokai/course/week-4/module-4-operating-model.md",
+    "01-areas/business/mokai/course/week-3/module-3-procurement-buyer-psychology.md",
+    "01-areas/business/mokai/course/week-2/module-2-assurance-basics.md",
+    "01-areas/business/mokai/course/week-1/module-1-foundations.md",
+    "01-areas/business/mokhouse/mokmusic/projects",
+    "01-areas/business/mokhouse/mokmusic/mokmusic.md",
+    "01-areas/business/mokhouse/mokmusic/esm.md",
+    "01-areas/business/mokhouse/mokmusic/docs",
+    "01-areas/business/mokai/docs/research",
+    "01-areas/business/mokai/docs/mokai-shareholders-agreement-analysis.md",
+    "01-areas/business/mokai/docs/finance",
+    "01-areas/business/mokai/docs/contracts",
+    "01-areas/business/mokai/course/week-9",
+    "01-areas/business/mokai/course/week-8",
+    "01-areas/business/mokai/course/week-7",
+    "01-areas/business/mokai/course/week-12",
+    "01-areas/business/mokai/course/mokai-course.md",
+    "01-areas/business/mokai/course/mokai-learning-tracker.md",
+    "01-areas/business/mokai/course/mokai-learning-plan.md",
+    "01-areas/business/mokai/course/course-index.md",
+    "01-areas/business/mokhouse/mokhouse-profile.md",
+    "01-areas/business/soletrader/soletrader-profile.md",
+    "01-areas/business/soletrader/apra.md",
+    "01-areas/business/safia/safia-profile.md",
+    "01-areas/business/mokai/mokai-profile.md",
+    "01-areas/business/projects.md",
+    "01-areas/README.md",
+    "01-areas/accounting/Untitled.md",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/voyage.webp",

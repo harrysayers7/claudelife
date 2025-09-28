@@ -162,7 +162,7 @@ tags:
   3. Configure Auto-tagging Rules
   // scripts/auto-tag-markdown.js
   const autoTagRules = {
-    'context/business/mokai/': ['#mokai', '#business'],
+    '01-areas/business/mokai/': ['#mokai', '#business'],
     'memory/learning-reports/': ['#memory', '#learning'],
     '.claude/commands/': ['#command', '#automation']
   };

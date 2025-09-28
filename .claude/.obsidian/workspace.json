@@ -165,6 +165,8 @@
   },
   "active": "73a9ebd9f2d98866",
   "lastOpenFiles": [
+    "agents/mokai/mokai-legal-finance-advisor.md.tmp.52862.1759042397027",
+    "instructions/memory-system.md.tmp.52862.1759042396502",
     "agents/test-engineer.md",
     "agents/mokai/mokai-legal-finance-advisor.md",
     "agents/mcp/mcp-integration-engineer.md",
@@ -198,8 +200,6 @@
     "web-bundles/expansion-packs/bmad-creative-writing/agents/genre-specialist.txt",
     "web-bundles/expansion-packs/bmad-creative-writing/agents/editor.txt",
     "web-bundles/expansion-packs/bmad-creative-writing/agents/cover-designer.txt",
-    "web-bundles/expansion-packs/bmad-creative-writing/agents/character-psychologist.txt",
-    "snippets/skeptic.md",
-    "agents/mokai-legal-finance-advisor.md"
+    "snippets/skeptic.md"
   ]
 }

@@ -43,7 +43,7 @@ This command analyzes the codebase to identify potential FastMCP server implemen
 
 - **`.mcp/` directory**: Existing MCP server implementations, patterns, utilities
 - **`scripts/` directory**: Automation scripts that could be MCP-enabled
-- **`context/business/`**: MOKAI and Mok House workflows requiring API access
+- **`01-areas/business/`**: MOKAI and Mok House workflows requiring API access
 - **`context/personal/`**: Personal productivity and routine automation
 - **`memory/` directory**: Knowledge graph operations and AI memory integration
 - **Existing MCP servers**: Integration opportunities with current 22+ servers

@@ -17,9 +17,9 @@ const CONTEXT_DIR = path.join(__dirname, '../context');
 const PACK_MAPPINGS = {
   'business-pack.md': {
     sources: [
-      'context/business/mokai/mokai-profile.md',
-      'context/business/mokhouse/mokhouse-profile.md',
-      'context/business/projects.md'
+      '01-areas/business/mokai/mokai-profile.md',
+      '01-areas/business/mokhouse/mokhouse-profile.md',
+      '01-areas/business/projects.md'
     ],
     triggers: ['MOKAI', 'mokai', 'cybersecurity', 'compliance', 'IRAP', 'Essential8', 'tender', 'government', 'mok house', 'music business']
   },
