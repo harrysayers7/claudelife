@@ -63,12 +63,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-areas/business/mokhouse/mokmusic/docs/resume.md",
+                "file": "02-projects/claudelife/plans/osidian-system.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
                 "backlinkOpts": {
-                  "collapseAll": false,
+                  "collapseAll": true,
                   "extraContext": false,
                   "sortOrder": "alphabetical",
                   "showSearch": false,
@@ -78,7 +78,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "resume"
+              "title": "osidian-system"
             }
           }
         ],
@@ -139,7 +139,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 341.5
+    "width": 277.5
   },
   "right": {
     "id": "4ba4fbf600cab1d4",
@@ -261,8 +261,28 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b3d07c45b8486890",
+  "active": "94da3d6eb66ccc2c",
   "lastOpenFiles": [
+    "00-inbox/make-it-stick.md",
+    "00-inbox/add-research-agent.md",
+    "00-inbox/Monday-itus.md",
+    "02-projects/claudelife/plans/n8n-upbank-sync-setup.md",
+    "02-projects/claudelife/plans",
+    "02-projects/claudelife/enhancements",
+    "02-projects/claudelife",
+    "00-inbox/n8n-upbank-sync-setup.md.tmp.7452.1759133853848",
+    "00-inbox/n8n-upbank-sync-setup.md.tmp.7452.1759133831445",
+    "00-inbox/http-sync-wrapper.js",
+    "00-inbox/n8n-function-script.md",
+    "CLAUDE.md",
+    "000-index/tag-taxonomy.md",
+    "00-inbox/Ad-research-agent.md",
+    "01-areas/business/mokai/docs/contracts/drafts/MOKAI-SHA-V2.md",
+    "01-areas/business/mokai/docs/contracts/signed/MOKAI-SHA-V2.pdf",
+    "97-tags/agents.md",
+    "01-areas/business/mokai/course/course-index.md",
+    "01-areas/business/mokai/course/week-1/module-1-foundations.md",
+    "01-areas/business/mokhouse/mokmusic/docs/resume.md",
     "01-areas/business/mokhouse/mokmusic/mokmusic-clients.md",
     "01-areas/business/mokhouse/mokmusic/mokmusic-profile.md",
     "01-areas/business/mokhouse/mokmusic/clients.md",
@@ -271,35 +291,15 @@
     "06-research/context-engineering.md",
     "04-resources/01-hotkeys.md",
     "97-tags/p-dev.md",
-    "00-inbox/make-it-stick.md",
+    "01-areas/p-dev/make-it-stick.md",
     "01-areas/business/mokai/docs/contracts/drafts/EMPLOYMENT AGREEMENT – COO.md",
     "00-inbox/kell.md",
     "07-context/people/kell/kell-profile.md",
     "00-inbox/Bins-print-list-for-recycle.md",
-    "00-inbox/hotkey-legend.md",
-    "00-inbox/Personal-assistant-mode.md",
-    "03-ideas/agent-ideas/personal-assistant-mode.md",
-    "03-ideas/agent-ideas/N8n-agent.md",
-    "01-areas/business/safia/safia-profile.md",
-    "01-areas/business/mokai/docs/contracts/drafts/SERVICES AGREEMENT.md",
-    "01-areas/business/mokai/docs/contracts/drafts/MOKAI-SHA-V2.md",
-    "01-areas/business/mokai/docs/contracts/drafts/CONTRACTOR AGREEMENT.md",
-    "98-templates/hotkey.md",
-    "98-templates/snippet.md",
-    "98-templates/slash-command.md",
-    "98-templates/rule.md",
-    "98-templates/lesson.md",
     "01-areas/business/mokai/docs/contracts/signed",
     "01-areas/business/mokai/docs/contracts/drafts",
     "01-areas/business/mokai/docs/contracts/archive",
-    "06-research/research-ai",
-    "01-areas/p-dev",
-    "01-areas/tech",
-    "01-areas/lifestyle",
-    "01-areas/health-fitness",
     "Untitled.canvas",
-    "04-resources/hotkeys",
-    "07-context/tech/music-production",
     "Untitled 1.canvas",
     "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/voyage.webp",
     "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/xai.svg",
