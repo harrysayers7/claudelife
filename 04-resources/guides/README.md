@@ -7,7 +7,7 @@
 
 ### Technical
 **Databases**
-- [SAYERS DATA Supabase Database](technical/databases/sayers-data-database-guide.md)
+- [SAYERS DATA Supabase Database](sayers-data-database-guide.md)
 
 ### Business
 **MOKAI**

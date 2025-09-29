@@ -1,6 +1,5 @@
 {
   "mobileToolbarCommands": [
-    "command-palette:open",
     "editor:redo",
     "editor:insert-wikilink",
     "obsidian-tasks-plugin:edit-task",
@@ -9,7 +8,6 @@
     "editor:paste",
     "editor:open-search",
     "markdown:add-metadata-property",
-    "obsidian-linter:lint-file",
     "editor:insert-tag",
     "editor:insert-codeblock",
     "editor:set-heading",
@@ -18,18 +16,20 @@
     "editor:toggle-code",
     "editor:toggle-blockquote",
     "editor:insert-link",
-    "editor:toggle-bullet-list",
     "editor:toggle-numbered-list",
     "editor:toggle-checklist-status",
     "editor:configure-toolbar",
-    "editor:cycle-list-checklist"
+    "editor:cycle-list-checklist",
+    "editor:toggle-comments",
+    "smart-connections:insert-connections-codeblock"
   ],
   "showUnsupportedFiles": false,
   "userIgnoreFilters": [
     "automation-system/",
     "__pycache__/",
     "graphiti-env/",
-    "graphiti_mcp_server/"
+    "graphiti_mcp_server/",
+    "node_modules/"
   ],
   "pdfExportSettings": {
     "pageSize": "Legal",
@@ -39,5 +39,7 @@
   },
   "newFileLocation": "folder",
   "newFileFolderPath": "00-inbox",
-  "promptDelete": false
+  "promptDelete": false,
+  "alwaysUpdateLinks": true,
+  "mobilePullAction": "templater-obsidian:create-new-note-from-template"
 }

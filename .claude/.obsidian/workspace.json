@@ -165,6 +165,11 @@
   },
   "active": "73a9ebd9f2d98866",
   "lastOpenFiles": [
+    "commands/popular/challenge.md",
+    "commands/popular/Untitled.md",
+    "commands/popular/move-file.md",
+    "commands/move-file.md",
+    "commands/move-with-references.md",
     "agents/mokai/mokai-legal-finance-advisor.md.tmp.52862.1759042397027",
     "instructions/memory-system.md.tmp.52862.1759042396502",
     "agents/test-engineer.md",
@@ -188,9 +193,6 @@
     "commands/git/commit.md",
     "commands/create-esm-invoice.md",
     "commands/create-command.md",
-    "commands/business/mok-music/setup-mok-music-automations.md",
-    "commands/business/mok-music/mok-music-status-update.md",
-    "commands/business/mok-music/mok-music-project-status.md",
     "web-bundles/expansion-packs/bmad-creative-writing/agents/dialog-specialist.txt",
     "web-bundles/expansion-packs/bmad-infrastructure-devops/agents/infra-devops-platform.txt",
     "web-bundles/expansion-packs/bmad-creative-writing/teams/agent-team.txt",
@@ -198,8 +200,6 @@
     "web-bundles/expansion-packs/bmad-creative-writing/agents/narrative-designer.txt",
     "web-bundles/expansion-packs/bmad-creative-writing/agents/plot-architect.txt",
     "web-bundles/expansion-packs/bmad-creative-writing/agents/genre-specialist.txt",
-    "web-bundles/expansion-packs/bmad-creative-writing/agents/editor.txt",
-    "web-bundles/expansion-packs/bmad-creative-writing/agents/cover-designer.txt",
-    "snippets/skeptic.md"
+    "web-bundles/expansion-packs/bmad-creative-writing/agents/editor.txt"
   ]
 }

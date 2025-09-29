@@ -85,7 +85,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-areas/accounting/Untitled.md",
+                "file": "98-templates/hotkey.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -100,7 +100,79 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "hotkey"
+            }
+          },
+          {
+            "id": "819942adb2cf81d8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "98-templates/hotkey.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "hotkey"
+            }
+          },
+          {
+            "id": "fabac9f9e7053404",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "98-templates/agent.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "agent"
+            }
+          },
+          {
+            "id": "85831201b32f01db",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03-ideas/agent-ideas/personal-assistant-mode.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": true,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "personal-assistant-mode"
             }
           },
           {
@@ -128,7 +200,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -302,46 +374,46 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "94da3d6eb66ccc2c",
+  "active": "85831201b32f01db",
   "lastOpenFiles": [
-    "01-areas/business/mokhouse/mokmusic/docs/resume.md",
-    "01-areas/business/mokai/docs/finance/MOKAI-Director-Pay-Structure.md",
-    "01-areas/business/mokai/docs/contracts/EMPLOYMENT AGREEMENT – COO.md",
-    "01-areas/business/mokai/docs/contracts/MOKAI-SHA-V2.md",
-    "01-areas/business/mokai/docs/contracts/MOKAI-Shareholders-Agreement-DRAFT.pdf",
-    "01-areas/business/mokai/docs/contracts/MOKAI-Shareholders-Agreement-DRAFT.md",
-    "01-areas/business/mokai/docs/contracts/18fifty3 Shareholders Agreement.md",
-    "01-areas/business/mokai/course/week-5/module-5-automation-stack.md",
-    "01-areas/business/mokai/course/week-4/module-4-operating-model.md",
-    "01-areas/business/mokai/course/week-3/module-3-procurement-buyer-psychology.md",
-    "01-areas/business/mokai/course/week-2/module-2-assurance-basics.md",
-    "01-areas/business/mokai/course/week-1/module-1-foundations.md",
-    "01-areas/business/mokhouse/mokmusic/projects",
-    "01-areas/business/mokhouse/mokmusic/mokmusic.md",
-    "01-areas/business/mokhouse/mokmusic/esm.md",
-    "01-areas/business/mokhouse/mokmusic/docs",
-    "01-areas/business/mokai/docs/research",
-    "01-areas/business/mokai/docs/mokai-shareholders-agreement-analysis.md",
-    "01-areas/business/mokai/docs/finance",
-    "01-areas/business/mokai/docs/contracts",
-    "01-areas/business/mokai/course/week-9",
-    "01-areas/business/mokai/course/week-8",
-    "01-areas/business/mokai/course/week-7",
-    "01-areas/business/mokai/course/week-12",
-    "01-areas/business/mokai/course/mokai-course.md",
-    "01-areas/business/mokai/course/mokai-learning-tracker.md",
-    "01-areas/business/mokai/course/mokai-learning-plan.md",
-    "01-areas/business/mokai/course/course-index.md",
-    "01-areas/business/mokhouse/mokhouse-profile.md",
-    "01-areas/business/soletrader/soletrader-profile.md",
-    "01-areas/business/soletrader/apra.md",
-    "01-areas/business/safia/safia-profile.md",
-    "01-areas/business/mokai/mokai-profile.md",
-    "01-areas/business/projects.md",
+    "00-inbox/command+;.md",
+    "README.md",
+    "04-resources/reports/Obsidian-second-brain-creator.md",
+    "MCP Servers Index.md",
+    "Systems.md",
+    "00-inbox/Termius2.md",
+    "Untitled.md",
+    "Untitled.canvas",
+    "97-tags/hotkey.md",
+    "04-resources/hotkeys",
+    "98-templates/hotkey.md",
+    "04-resources/hotkeys/command+; = add property table.md",
+    "00-inbox/Untitled 3.md",
+    "98-templates/agent.md",
+    "00-inbox/Untitled 2.md",
+    "00-inbox/Untitled 1.md",
+    "00-inbox/Untitled.md",
     "01-areas/README.md",
     "01-areas/accounting/Untitled.md",
+    "07-context/tech/music-production",
+    "07-context/tech/server",
+    "07-context/tech/mac",
+    "07-context/tech/Untitled",
+    "07-context/tech",
+    "07-context/Untitled",
+    "97-tags/context.md",
+    "07-context/communication/email-writing-style.md",
+    "07-context/communication",
+    "03-ideas/agent-ideas/personal-assistant-mode.md",
+    "03-ideas/agent-ideas/Untitled.md",
+    "98-templates/rule.md",
+    "98-templates/Rule.md",
+    "97-tags/cc-rules.md",
+    "03-ideas/CC-Rule-ideas/Must-use-links-as-tags.md",
+    "03-ideas/CC-Rule-ideas/Untitled.md",
+    "03-ideas/CC-Rule-ideas",
+    "03-ideas/Rule-ideas",
     "Untitled 1.canvas",
-    "Untitled.canvas",
     "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/voyage.webp",
     "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/xai.svg",
     "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/volcengine.png",
