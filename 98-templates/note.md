@@ -1,11 +1,6 @@
 ---
+date: "{{date}} {{time}}"
 relation:
 tags:
 description:
 ---
----
-{{date}}
-
-
-
-##### References

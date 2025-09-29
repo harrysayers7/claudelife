@@ -8,6 +8,32 @@
         "type": "tabs",
         "children": [
           {
+            "id": "f644d129b6b3cbec",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "04-resources/01-hotkeys.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "01-hotkeys"
+            }
+          },
+          {
             "id": "1521a66845d31f86",
             "type": "leaf",
             "state": {
@@ -32,175 +58,31 @@
             }
           },
           {
-            "id": "c1d11e2efce12538",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00-inbox/osidian-system.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "osidian-system"
-            }
-          },
-          {
-            "id": "be6da9f7c49392c0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Clippings/Obsidian Notes to Build Wisdom (FULL GUIDE + SETUP).md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Obsidian Notes to Build Wisdom (FULL GUIDE + SETUP)"
-            }
-          },
-          {
-            "id": "7e8c72bdebd8a58e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "98-templates/hotkey.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "hotkey"
-            }
-          },
-          {
-            "id": "819942adb2cf81d8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "98-templates/hotkey.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "hotkey"
-            }
-          },
-          {
-            "id": "fabac9f9e7053404",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "98-templates/agent.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "agent"
-            }
-          },
-          {
-            "id": "85831201b32f01db",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03-ideas/agent-ideas/personal-assistant-mode.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": true,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "personal-assistant-mode"
-            }
-          },
-          {
-            "id": "9895901cbc8b0ab0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00-inbox/osidian-system.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "osidian-system"
-            }
-          },
-          {
             "id": "b3d07c45b8486890",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "01-areas/business/mokhouse/mokmusic/docs/resume.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "resume"
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -257,7 +139,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 259.5
+    "width": 341.5
   },
   "right": {
     "id": "4ba4fbf600cab1d4",
@@ -351,14 +233,19 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 323.5
+    "width": 323.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
+      "smart-connections:Open: Smart Chat": false,
+      "smart-connections:Smart Connections: Open connections view": false,
+      "smart-connections:Smart Connections: Open random connection": true,
+      "obsidian-git:Open Git source control": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -374,45 +261,45 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "85831201b32f01db",
+  "active": "b3d07c45b8486890",
   "lastOpenFiles": [
-    "00-inbox/command+;.md",
-    "README.md",
-    "04-resources/reports/Obsidian-second-brain-creator.md",
-    "MCP Servers Index.md",
-    "Systems.md",
-    "00-inbox/Termius2.md",
-    "Untitled.md",
-    "Untitled.canvas",
-    "97-tags/hotkey.md",
-    "04-resources/hotkeys",
-    "98-templates/hotkey.md",
-    "04-resources/hotkeys/command+; = add property table.md",
-    "00-inbox/Untitled 3.md",
-    "98-templates/agent.md",
-    "00-inbox/Untitled 2.md",
-    "00-inbox/Untitled 1.md",
-    "00-inbox/Untitled.md",
-    "01-areas/README.md",
-    "01-areas/accounting/Untitled.md",
-    "07-context/tech/music-production",
-    "07-context/tech/server",
-    "07-context/tech/mac",
-    "07-context/tech/Untitled",
-    "07-context/tech",
-    "07-context/Untitled",
-    "97-tags/context.md",
-    "07-context/communication/email-writing-style.md",
-    "07-context/communication",
+    "01-areas/business/mokhouse/mokmusic/mokmusic-clients.md",
+    "01-areas/business/mokhouse/mokmusic/mokmusic-profile.md",
+    "01-areas/business/mokhouse/mokmusic/clients.md",
+    "98-templates/mok-music-project.md",
+    "97-tags/mokhouse.md",
+    "06-research/context-engineering.md",
+    "04-resources/01-hotkeys.md",
+    "97-tags/p-dev.md",
+    "00-inbox/make-it-stick.md",
+    "01-areas/business/mokai/docs/contracts/drafts/EMPLOYMENT AGREEMENT – COO.md",
+    "00-inbox/kell.md",
+    "07-context/people/kell/kell-profile.md",
+    "00-inbox/Bins-print-list-for-recycle.md",
+    "00-inbox/hotkey-legend.md",
+    "00-inbox/Personal-assistant-mode.md",
     "03-ideas/agent-ideas/personal-assistant-mode.md",
-    "03-ideas/agent-ideas/Untitled.md",
+    "03-ideas/agent-ideas/N8n-agent.md",
+    "01-areas/business/safia/safia-profile.md",
+    "01-areas/business/mokai/docs/contracts/drafts/SERVICES AGREEMENT.md",
+    "01-areas/business/mokai/docs/contracts/drafts/MOKAI-SHA-V2.md",
+    "01-areas/business/mokai/docs/contracts/drafts/CONTRACTOR AGREEMENT.md",
+    "98-templates/hotkey.md",
+    "98-templates/snippet.md",
+    "98-templates/slash-command.md",
     "98-templates/rule.md",
-    "98-templates/Rule.md",
-    "97-tags/cc-rules.md",
-    "03-ideas/CC-Rule-ideas/Must-use-links-as-tags.md",
-    "03-ideas/CC-Rule-ideas/Untitled.md",
-    "03-ideas/CC-Rule-ideas",
-    "03-ideas/Rule-ideas",
+    "98-templates/lesson.md",
+    "01-areas/business/mokai/docs/contracts/signed",
+    "01-areas/business/mokai/docs/contracts/drafts",
+    "01-areas/business/mokai/docs/contracts/archive",
+    "06-research/research-ai",
+    "01-areas/p-dev",
+    "01-areas/tech",
+    "01-areas/lifestyle",
+    "01-areas/health-fitness",
+    "Untitled.canvas",
+    "04-resources/hotkeys",
+    "07-context/tech/music-production",
     "Untitled 1.canvas",
     "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/voyage.webp",
     "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/xai.svg",

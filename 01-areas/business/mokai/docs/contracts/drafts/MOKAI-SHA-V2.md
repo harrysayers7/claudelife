@@ -1,7 +1,9 @@
 ---
 tags:
-  - mokai
-  - contracts
+  - draft
+relation:
+  - "[[contracts]]"
+  - "[[mokai]]"
 ---
 
 # SHAREHOLDERS AGREEMENT

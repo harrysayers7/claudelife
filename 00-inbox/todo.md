@@ -1,5 +1,5 @@
 #todo/urgent
-- [ ] dguiasd
+- [x] dguiasd
 - [ ]
 #todo/back-burn
-- [ ] dhajskdla
+- [x] dhajskdla

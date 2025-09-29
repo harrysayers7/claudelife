@@ -29,7 +29,8 @@
     "__pycache__/",
     "graphiti-env/",
     "graphiti_mcp_server/",
-    "node_modules/"
+    "node_modules/",
+    "n8n-workflows/"
   ],
   "pdfExportSettings": {
     "pageSize": "Legal",

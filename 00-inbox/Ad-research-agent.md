@@ -1,4 +1,4 @@
-tag: [[agents]] [[mcp]] [[mok-music]]
+tag: [[agents]] [[mcp]] [[97-tags/mok-music]]
 
 
 
