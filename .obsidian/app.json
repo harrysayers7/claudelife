@@ -2,7 +2,6 @@
   "mobileToolbarCommands": [
     "editor:redo",
     "editor:insert-wikilink",
-    "obsidian-tasks-plugin:edit-task",
     "editor:undo",
     "editor:copy",
     "editor:paste",
@@ -17,11 +16,9 @@
     "editor:toggle-blockquote",
     "editor:insert-link",
     "editor:toggle-numbered-list",
-    "editor:toggle-checklist-status",
-    "editor:configure-toolbar",
     "editor:cycle-list-checklist",
-    "editor:toggle-comments",
-    "smart-connections:insert-connections-codeblock"
+    "editor:toggle-checklist-status",
+    "editor:configure-toolbar"
   ],
   "showUnsupportedFiles": false,
   "userIgnoreFilters": [
@@ -42,5 +39,5 @@
   "newFileFolderPath": "00-inbox",
   "promptDelete": false,
   "alwaysUpdateLinks": true,
-  "mobilePullAction": "templater-obsidian:create-new-note-from-template"
+  "mobilePullAction": "command-palette:open"
 }

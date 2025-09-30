@@ -1,3 +1,8 @@
+---
+relation:
+  - "[[Automation]]"
+  - "[[N8n]]"
+---
 # n8n UpBank Sync Setup - Step by Step
 
 ## Overview

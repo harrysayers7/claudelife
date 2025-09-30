@@ -1,3 +1,8 @@
+---
+relation:
+  - "[[deep-research]]"
+  - "[[context]]"
+---
 # **Advanced Context Engineering Guide for Claude (Coding & Second-Brain Use Cases)**
 
 

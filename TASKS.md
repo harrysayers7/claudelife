@@ -4,18 +4,17 @@ created:
   "{ date }":
 tags:
   - obsidian
-  - tasks
   - mcp
 version: 1
 relation: "[[mcp]]"
 ---
 
-# ✅ Tasks
+
 
 ``
+# Tasks
 
 
-- [ ]
 - [ ] obsideina shortcuts
 - [x] stripe ✅ 2025-09-26
 - [ ] jack convo ttranscript🏁 🔺
@@ -52,7 +51,7 @@ relation: "[[mcp]]"
 - [ ] add important
 - [ ] • IMPORTANT: Emphasizes critical instructions that should not be overlooked
 • Proactively: Encourages Claude to take initiative and suggest improvements
-• Ultra-think: Can trigger more thorough analysis (use sparingly)
+• Ultra-think: Can trigger more thorough analysis (use sparingly
 
 ---
 
@@ -60,7 +59,7 @@ relation: "[[mcp]]"
 - [x] `/guide` → Claude creates a comprehensive guide for a new feature
 - [ ] `/learn memz` for Graphiti (only when necessary)
 - [x] Create folder for specific purposes ✅ 2025-09-26
-- [ ] `claude.md` for folder organization
+- [x] `claude.md` for folder organization
 - [ ] summarize conversation before clearing
 
 ---
@@ -77,6 +76,7 @@ relation: "[[mcp]]"
 - [ ] Create companion commands for transaction analysis & spending reports
 - [ ] Add support for exporting data for tax/accounting purposes
 #todo/urgent
-- [ ] jdaskld
+- [x] jdaskld
 
 ``
+- [ ] gshsn

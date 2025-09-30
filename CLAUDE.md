@@ -295,6 +295,55 @@ Check memory/system-state.json for:
 - **Business context**: Leverage MOKAI/MOK HOUSE context when relevant
 - **Verify success**: Confirm tasks actually completed before reporting success
 
+## Markdown File Format
+
+### Date Frontmatter (All .md files)
+When creating new `.md` files, always include frontmatter with date:
+
+```markdown
+---
+date: "YYYY-MM-DD HH:MM"
+---
+```
+
+Example:
+```markdown
+---
+date: "2025-09-30 15:52"
+---
+
+# Content here
+```
+
+### Relation Frontmatter (Specific Folders)
+When creating `.md` files in these folders, also add `relation` property:
+- `000-index/`
+- `01-areas/`
+- `02-projects/`
+- `03-ideas/`
+- `04-resources/`
+- `05-knowledge/`
+- `06-research/`
+- `07-context/`
+
+**IMPORTANT**:
+- **ONLY use existing relation tags** from `97-tags/` directory
+- **NEVER create new relation tag names** - check `97-tags/` folder first
+- To find available tags: Use `Glob` tool with pattern `97-tags/*.md` to dynamically list current tags
+- Tag format: `[[filename-without-extension]]` (e.g., `mokai.md` → `[[mokai]]`)
+
+Example with relation:
+```markdown
+---
+date: "2025-09-30 15:52"
+relation:
+  - "[[mokai]]"
+  - "[[tech]]"
+---
+
+# Content here
+```
+
 ## Tool Usage
 
 - **Serena**: For code structure understanding before implementation

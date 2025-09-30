@@ -180,6 +180,8 @@
   },
   "active": "73a9ebd9f2d98866",
   "lastOpenFiles": [
+    "agents/fastmcp-cloud-expert.md",
+    "commands/bmad.md",
     "agents/ableton/plug-in-designer.md",
     "agents/mok-music/admin/mok-music-manager.md",
     "commands/popular/brain-drump.md",
@@ -206,8 +208,6 @@
     "agents/context-manager.md",
     "snippets/overkill.md",
     "snippets/graphiti-capture.md",
-    "snippets/README.md",
-    "commands/sync-notion-supabase.md",
     "web-bundles/expansion-packs/bmad-creative-writing/agents/dialog-specialist.txt",
     "web-bundles/expansion-packs/bmad-infrastructure-devops/agents/infra-devops-platform.txt",
     "web-bundles/expansion-packs/bmad-creative-writing/teams/agent-team.txt",
