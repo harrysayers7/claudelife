@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "07-context/ai/modes/mokai-accountant.md",
+                "file": "01-areas/business/mokai/docs/contracts/under-review/MOKAI-SHA-V2.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -54,7 +54,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "mokai-accountant"
+              "title": "MOKAI-SHA-V2"
             }
           },
           {
@@ -87,7 +87,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-areas/business/mokai/docs/contracts/drafts/CONSTITUTION.md",
+                "file": "01-areas/business/mokai/docs/contracts/archive/CONSTITUTION v2.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -102,7 +102,31 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "CONSTITUTION"
+              "title": "CONSTITUTION v2"
+            }
+          },
+          {
+            "id": "c1704134da150c62",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00-inbox/01-today/25-10-02 - Thu.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": true,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "25-10-02 - Thu"
             }
           },
           {
@@ -130,7 +154,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -346,44 +370,44 @@
       "obsidian-day-planner:Open Multi-Day View": false
     }
   },
-  "active": "8957a34fd39c3033",
+  "active": "c1704134da150c62",
   "lastOpenFiles": [
-    "07-context/ai/modes/developer.md",
-    "07-context/ai/context/tasks-ai-management.md",
-    "07-context/ai/context/tech-stack.md",
-    "07-context/ai/context/README.md",
-    "07-context/ai/README.md",
+    "00-inbox/Add claude docs to arc.md",
+    "00-inbox/01-today/25-10-02 - Thu.md",
+    "00-inbox/Untitled.md",
+    "01-areas/business/mokai/clients",
+    "01-areas/business/mokai/Untitled",
+    "97-tags/Phishing.md",
+    "00-inbox/Sync obsidian.md",
     "07-context/ai/modes/mokai-accountant.md",
-    "07-context/ai/modes/accountant.md",
-    "07-context/ai/context/mcp-server-application.md",
-    "07-context/ai/context/infrastructure.md",
-    "07-context/ai/templates/code-generation.md",
-    "07-context/ai/templates",
-    "07-context/ai/rules/mcp-usage.md",
-    "07-context/ai/rules/shortcuts-rule.md",
-    "07-context/ai/rules/infrastructure-guidelines.md",
-    "07-context/ai/rules",
-    "07-context/ai/system-prompts/claude[INSTRUCTIONS].md",
-    "07-context/ai/system-prompts/claude-instruction-box.md",
-    "07-context/ai/system-prompts/claude-desktop.md",
-    "07-context/ai/system-prompts/claude-code.md",
-    "07-context/ai/system-prompts",
-    "07-context/ai/workflows/invoice-processing.md",
-    "07-context/ai/workflows",
-    "07-context/ai/modes/vibe-coding.md",
-    "07-context/ai/modes/README.md",
-    "07-context/ai/modes",
-    "07-context/ai/context",
-    "07-context/ai",
-    "97-tags/mokai-accounting.md",
-    "97-tags/prompt-library.md",
-    "98-templates/mokai-note.md",
+    "97-tags/mokai-contracts.md",
+    "01-areas/business/mokai/docs/research/Operating Model & Business architecture.md",
+    "00-inbox/Quiz-me.md",
+    "99-archive/Gmail filters.md",
+    "99-archive/Bmad-scan.md",
+    "97-tags/mokai-marketing.md",
+    "00-inbox/ElevenLabs.md",
+    "01-areas/business/mokai/docs/contracts/drafts/CONSTITUTION v3.md",
+    "01-areas/business/mokai/docs/contracts/under-review/CONSTITUTION v3.pdf",
+    "01-areas/business/mokai/docs/contracts/drafts/BOARD_RESOLUTION v2.md",
+    "01-areas/business/mokai/docs/contracts/under-review/BOARD_RESOLUTION v2.pdf",
+    "01-areas/business/mokai/docs/contracts/archive/BOARD_RESOLUTION.md",
+    "01-areas/business/mokai/docs/contracts/drafts/DEED OF INDEMNITY.md",
+    "01-areas/business/mokai/docs/contracts/drafts/CONTRACTOR AGREEMENT.md",
+    "01-areas/business/mokai/docs/contracts/archive/CONSTITUTION.md",
+    "01-areas/business/mokai/docs/contracts/archive/CONSTITUTION v2.md",
+    "01-areas/business/mokai/docs/contracts/under-review/MOKAI-SHA-V2.md",
+    "01-areas/business/mokai/docs/contracts/under-review",
     "04-resources/01-hotkeys.md",
-    "01-areas/business/mokai/docs/contracts/drafts/CONSTITUTION.md",
-    "01-areas/business/mokai/docs/contracts/IMPORTANT.md",
-    "00-inbox/mokai-learn",
-    "00-inbox/tasks/Untitled",
-    "01-areas/finance/accounting/profiles/personal/trust/2025 Trust Resolution - HS Family Trust (SIGNED).pdf",
+    "00-inbox/Sort commands.md",
+    "00-inbox/Create index md.md",
+    "00-inbox/Gmail filters.md",
+    "00-inbox/Bmad-scan.md",
+    "07-context/ai/templates",
+    "07-context/ai/rules",
+    "07-context/ai/system-prompts",
+    "07-context/ai/workflows",
+    "07-context/ai/modes",
     "Untitled.canvas",
     "Untitled 1.canvas",
     "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/voyage.webp",

@@ -1,7 +1,8 @@
 {
-  "cssTheme": "GitHub Theme",
+  "cssTheme": "Dark Moss",
   "accentColor": "#6640ff",
-  "interfaceFontFamily": "Inter",
-  "textFontFamily": "Avenir",
-  "baseFontSize": 19
+  "interfaceFontFamily": "Helvetica",
+  "textFontFamily": "Helvetica",
+  "baseFontSize": 19,
+  "baseFontSizeAction": true
 }

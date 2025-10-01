@@ -1,5 +1,4 @@
 ---
-date: "{{date}} {{time}}"
 relation:
   - "[[mokai-cyber-learning]]"
 tags:
@@ -7,16 +6,9 @@ tags:
 description:
 ---
 
-## Summary
-
-
-
 ## Key Points
 -
 -
 
 ## Relevance to Cyber Business
--
-
-## Sources / Links
 -

@@ -1,7 +1,11 @@
 ---
 tags:
 description:
-date: "2025-09-29 15:54"
+date: 2025-09-29 15:54
+relation:
+  - "[[mokai-contracts]]"
+  - "[[mokai]]"
+  - "[[contracts]]"
 ---
 
 

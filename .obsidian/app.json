@@ -5,6 +5,7 @@
     "editor:undo",
     "editor:copy",
     "editor:paste",
+    "obsidian-linter:lint-file-unless-ignored",
     "editor:open-search",
     "markdown:add-metadata-property",
     "editor:insert-tag",
@@ -17,6 +18,7 @@
     "editor:toggle-blockquote",
     "editor:insert-link",
     "editor:toggle-numbered-list",
+    "command-palette:open",
     "editor:cycle-list-checklist",
     "editor:configure-toolbar"
   ],

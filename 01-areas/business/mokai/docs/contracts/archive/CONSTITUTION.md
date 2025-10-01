@@ -3,7 +3,6 @@ tags:
 description:
 date: "2025-09-29 15:14"
 ---
-
 **
 
 # CONSTITUTION

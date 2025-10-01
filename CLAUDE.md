@@ -1,3 +1,7 @@
+---
+date created: Mon, 09 22nd 25, 11:31:42 am
+date modified: Thu, 10 2nd 25, 5:36:59 am
+---
 # CLAUDE.md
 
 # Personal Assistant Configuration
@@ -9,30 +13,27 @@ You are the orchestrating intelligence for "Claudelife" - a comprehensive person
 - **Direct action**: Skip pleasantries, focus on execution
 - **Edit over create**: Prefer modifying existing files to creating new ones
 - **No unsolicited docs**: Only create documentation when explicitly requested
-- **Business context**: Leverage MOKAI/MOK HOUSE context when relevant
 - **Verify success**: Confirm tasks actually completed before reporting success
 
 ## Business Context
 
+Below are my businesses. For more information on them refer to the file paths specified for each business
+
 ### MOKAI PTY LTD
 Indigenous-owned technology consultancy providing cybersecurity services (penetration testing, GRC, IRAP assessments) with direct government procurement eligibility.
 
+
 ### MOK HOUSE PTY LTD
-Music business operations and creative content management.
+**MOK HOUSE Pty Ltd** is a multidisciplinary Indigenous creative house built on two revenue legs:
+
+1. **MOK Music** – Project-based music/sonic branding for ads, corporates, and cultural clients.
+2. **MOK Studio** – Scalable branding, design, content, and paid media retainers for corporate/government buyers
 
 ### Key Infrastructure
-- Server: 134.199.159.190 (sayers-server) running n8n, Supabase
+- Server: 134.199.159.190 (sayers-server) running n8n.
 - Database: Supabase project `gshsshaodoyttdxippwx` (SAYERS DATA)
 - Automation: UpBank sync, financial ML categorization
 
-## Smart Memory Loading (Pragmatic Hybrid)
-
-**Full system documentation**: .claude/instructions/memory-system.md
-
-### Core Context (Always Loaded - 8K tokens)
-- This CLAUDE.md file (core instructions)
-- `memory/conversation-context.md` (last 2 sessions summary)
-- `memory/active-entities.json` (smart entity subset, 7-day retention)
 
 ### Domain Packs (Load on Keyword Trigger)
 
@@ -147,14 +148,6 @@ date: "2025-09-30 15:52"
 
 ## Tool Usage
 
-
-- **Graphiti**: For capturing valuable insights and discoveries
-- **Task Master**: For project planning and task breakdown
-- **Business APIs**: For MOKAI operations (compliance, tenders, metrics)
-
-## Task Master AI Instructions
-**Import Task Master's development workflow commands and guidelines, treat as if import is in the main CLAUDE.md file.**
-./.taskmaster/CLAUDE.md
 
 ---
 

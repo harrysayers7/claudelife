@@ -1,6 +1,7 @@
 ---
 relation:
   - "[[mokai-cyber-learning]]"
+  - "[[mokai-marketing]]"
 tags:
 description:
 date created: Wed, 10 1st 25, 11:35:02 am

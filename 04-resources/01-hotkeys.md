@@ -7,6 +7,6 @@
 
 ##### Raycast
 
-
+Clipboard History Command: opt+Z
 ###### arc
 **Toggle Sidebar**: Command+S

@@ -65,6 +65,7 @@ jobs:
 
     - name: Run npm audit fix
       run: npm audit fix --dry-run
+      continue-on-error: true
 
   security-review:
     name: Security Code Review

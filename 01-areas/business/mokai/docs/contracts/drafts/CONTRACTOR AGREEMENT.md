@@ -4,6 +4,7 @@ date: 2025-09-29 16:02
 relation:
   - "[[contracts]]"
   - "[[mokai]]"
+  - "[[mokai-contracts]]"
 ---
 
 # CONTRACTOR AGREEMENT
