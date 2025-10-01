@@ -4,6 +4,7 @@ tags:
 relation:
   - "[[contracts]]"
   - "[[mokai]]"
+  - "[[SHAREHOLDERS AGREEMENT]]"
 ---
 
 # SHAREHOLDERS AGREEMENT

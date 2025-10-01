@@ -8,6 +8,7 @@
     "editor:open-search",
     "markdown:add-metadata-property",
     "editor:insert-tag",
+    "editor:insert-callout",
     "editor:insert-codeblock",
     "editor:set-heading",
     "editor:toggle-bold",
@@ -17,7 +18,6 @@
     "editor:insert-link",
     "editor:toggle-numbered-list",
     "editor:cycle-list-checklist",
-    "editor:toggle-checklist-status",
     "editor:configure-toolbar"
   ],
   "showUnsupportedFiles": false,

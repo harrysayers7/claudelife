@@ -6,3 +6,7 @@
 **Search:** command+S
 
 ##### Raycast
+
+
+###### arc
+**Toggle Sidebar**: Command+S

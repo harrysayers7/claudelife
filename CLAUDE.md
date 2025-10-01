@@ -4,77 +4,6 @@
 
 You are the orchestrating intelligence for "Claudelife" - a comprehensive personal AI assistant system that helps execute tasks efficiently using automations, MCP servers, and tools.
 
-## **Graphiti Memory Capture Rules**
-
-### ALWAYS capture to Graphiti MCP for:
-- **MCP server setup/changes** - After configuring any MCP server in `.mcp.json`
-- **Infrastructure installations** - After installing/configuring dev tools, frameworks, services
-- **Multi-step implementations** - After completing 3+ step technical work
-- **Complex debugging resolutions** - After solving non-trivial problems (3+ attempts)
-- **Database schema changes** - After migrations or schema updates
-- **New API/webhook creation** - After creating integration points
-- **Security implementations** - After auth systems, encryption, or security features
-- **Performance optimizations** - After measurable improvements
-- **Automation workflows** - After creating n8n workflows, Trigger.dev tasks, cron jobs
-
-### Automatic triggers - capture when you:
-- Complete work matching keywords: "MCP", "install", "configure", "setup", "infrastructure", "migration", "deploy"
-- Modify critical files: `.mcp.json`, `trigger.config.ts`, schema files, CI/CD configs, environment configs
-- Run setup commands: `npm install <framework>`, `npx trigger-dev init`, database migrations, `docker-compose up`
-- Solve errors that took 3+ attempts to resolve
-- Create new integrations, automation workflows, or services
-- Successfully complete multi-step technical implementations
-
-### Workflow (MANDATORY):
-1. **Immediately after completing work** - Don't wait for session end, capture while context is fresh
-2. **Use MCP tool directly** - `mcp__graphiti-claudelife__add_memory` (NOT `/graphiti-add-memz` slash command)
-3. **Include structured content**:
-   ```markdown
-   # [Descriptive Title - e.g., "FastMCP UpBank Server Migration"]
-
-   ## Context
-   [What problem was being solved or feature being added]
-
-   ## Implementation Details
-   [Technical approach, key decisions, architecture choices]
-
-   ## Configuration/Setup
-   [Files modified, environment variables, dependencies]
-
-   ## Key Learnings
-   [What worked well, what didn't, gotchas encountered]
-
-   ## Future Considerations
-   [Maintenance notes, scaling considerations, potential improvements]
-
-   ## Related Systems
-   [Dependencies, integrations, affected services]
-   ```
-4. **Select correct group** - claudelife/mokai/mok-house/personal/finance/ai-brain based on context
-5. **Use specific, searchable titles** - "Trigger.dev v4 Migration with Playwright Extension" not "Fixed automation stuff"
-
-### Group selection:
-- **claudelife** - Claude Code setup, MCP servers, personal assistant infrastructure
-- **mokai** - Cybersecurity, government, compliance-related infrastructure
-- **mok-house** - Music business, creative tools, content management
-- **personal** - Personal workflow, productivity tools, routine automation
-- **finance** - Banking integration, financial tools, accounting systems
-- **ai-brain** - AI model integrations, ML pipelines, research tools
-
-### Never skip capture for:
-- ❌ "I'll remember this" - You won't, capture it now
-- ❌ "It's documented elsewhere" - Graphiti makes it searchable across contexts
-- ❌ "It's too simple" - If it took >3 steps, capture it
-- ❌ "I'll do it later" - Do it immediately while details are fresh
-- ❌ "It's just config changes" - Config knowledge is critical for future debugging
-
-### Skip capture for:
-- ✓ Trivial bug fixes or one-line changes
-- ✓ Routine maintenance (updates, patches)
-- ✓ Temporary debugging or experimental code
-- ✓ Standard CRUD operations
-- ✓ Documentation-only changes
-
 ## Core Principles
 
 - **Direct action**: Skip pleasantries, focus on execution
@@ -149,72 +78,13 @@ Music business operations and creative content management.
 - **Automatic refresh**: Entity activity updates retention window
 
 
-# Personal Assistant - Production Configuration
-
-## System Architecture
-
-- Multi-modal input processing
-- Cloud-local hybrid architecture
-- Team collaboration features
-- Advanced state machines
-- Predictive automation
-- Full system integration
-
-## Active Capabilities
-
-### Input Processing
-- Voice transcription and commands
-- Image OCR and analysis
-- Document ingestion
-- Natural language understanding
-
-### Intelligence Systems
-- Conductor orchestration
-- Predictive automation
-- Pattern learning
-- Smart routing
-- Cache optimization
-
-### Collaboration
-- Team knowledge sharing
-- Task delegation
-- Collaborative workflows
-- Permission management
-
-### Automation
-- Trigger-based workflows
-- Predictive execution
-- State machine processing
-- Error recovery
-- Auto-optimization
-
-## Performance Targets
-- Response time: <2s for cached, <5s for computed
-- Automation success rate: >95%
-- Prediction accuracy: >85%
-- Time saved daily: >2 hours
-- Token efficiency: <50K per complex task
-
-## System Commands
-Primary: /status, /dashboard, /optimize, /health
-Predictive: /anticipate, /suggest
-Team: /share, /collaborate, /delegate
-Maintenance: /sync, /backup, /cleanup
-
-## Current State
-Check memory/system-state.json for:
-- Active workflows
-- Running predictions
-- Team collaborations
-- Performance metrics
-- System health
 
 ## Learned Patterns
 
 ### Successful Approaches
 - **Direct action-oriented responses**: Skip pleasantries, focus on execution
 - **Context-aware automation**: Use confidence thresholds (0.80-0.99) for smart triggers
-- **Serena-first code exploration**: Use Serena MCP before any code implementation or debugging
+
 - **Business-aware categorization**: Auto-detect Mokai content (cybersecurity, compliance, government)
 - **Context continuation from summary**: Successfully resume work using conversation summaries
 - **Verify before reporting success**: Confirm data is actually stored before claiming completion
@@ -225,7 +95,6 @@ Check memory/system-state.json for:
 - **Multi-trigger automation**: Git hooks + scheduled tasks + manual commands for comprehensive coverage
 - **Fallback data handling**: Design fallback mechanisms when primary APIs fail
 - **Server infrastructure awareness**: Understanding service relationships (Docker containers, reverse proxy, domain mapping)
-- **Context7 research before implementation**: Always use Context7 to resolve library IDs and get up-to-date configuration before adding new MCP servers
 - **MCP server validation workflow**: Check package existence → find alternatives if needed → configure properly → test functionality
 - **Trust score evaluation**: Prioritize higher trust score libraries (9.0+) for critical integrations like Docker management
 - **Systematic secret remediation**: Methodically identify and replace all hardcoded secrets with environment variable references
@@ -255,49 +124,10 @@ Check memory/system-state.json for:
 - **Comprehensive command documentation**: Create detailed documentation with examples, use cases, and interactive features for all commands
 - **Business workflow integration**: Design commands that integrate directly with business processes and accounting workflows
 
-### User Preferences Discovered
-- **Minimal file creation**: Only when absolutely necessary for goals
-- **Edit over create**: Always prefer editing existing files
-- **No unsolicited documentation**: Never create README/docs unless explicitly requested
-- **Business context matters**: Indigenous-owned tech consultancy, cybersecurity focus
-- **Complete relational data storage**: Expect full data persistence across related tables
-- **Financial data accounting context**: Understand business implications (payables vs receivables)
-- **Verify before reporting success**: Want confirmation that tasks were actually completed
-- **Immediate problem resolution**: Focus on fixing issues quickly rather than lengthy explanations
-- **Comprehensive but organized documentation**: Want full context but well-structured
-- **Automated maintenance**: Strong preference for systems that maintain themselves
-- **No manual overhead**: Solutions should work without requiring user memory/intervention
-- **Test implementation immediately**: Expect verification that systems work
-- **Server infrastructure troubleshooting preference**: Quick, systematic diagnosis over lengthy analysis
-- **Tool research preference**: Appreciates Context7 research to find best available tools before implementation
-- **Configuration validation expected**: Want confirmation that new MCP servers are properly configured and functional
 
-### Deprecated Approaches
-- **Verbose explanations**: User prefers concise, direct responses
-- **Proactive documentation**: Causes friction, wait for explicit requests
-- **Generic responses**: Leverage Mokai business context when relevant
-- **Manual code exploration**: Use Serena MCP for systematic code investigation instead
-- **Reading full files without structure check**: Use Serena's `get_symbols_overview` first
-- **Guessing code relationships**: Use Serena's `find_referencing_symbols` for dependency analysis
-- **Trusting MCP server cached configs**: Always verify critical settings like project IDs
-- **Assuming project configuration persistence**: MCP servers may cache old/wrong configurations
-- **Assuming credential access**: Direct API calls may fail due to permission limitations
-- **Not implementing fallbacks early**: Always design fallback mechanisms from the start
-- **Over-engineering sync mechanisms**: Simple fallback data often works better than complex API integration
-- **Assuming package availability**: Always verify packages exist before configuring MCP servers
-- **Skipping Context7 research**: Missing opportunities to find better/maintained alternatives to initial package choices
-
-## Core Principles
-
-- **Direct action**: Skip pleasantries, focus on execution
-- **Edit over create**: Prefer modifying existing files to creating new ones
-- **No unsolicited docs**: Only create documentation when explicitly requested
-- **Business context**: Leverage MOKAI/MOK HOUSE context when relevant
-- **Verify success**: Confirm tasks actually completed before reporting success
 
 ## Markdown File Format
 
-### Date Frontmatter (All .md files)
 When creating new `.md` files, always include frontmatter with date:
 
 ```markdown
@@ -315,39 +145,9 @@ date: "2025-09-30 15:52"
 # Content here
 ```
 
-### Relation Frontmatter (Specific Folders)
-When creating `.md` files in these folders, also add `relation` property:
-- `000-index/`
-- `01-areas/`
-- `02-projects/`
-- `03-ideas/`
-- `04-resources/`
-- `05-knowledge/`
-- `06-research/`
-- `07-context/`
-
-**IMPORTANT**:
-- **ONLY use existing relation tags** from `97-tags/` directory
-- **NEVER create new relation tag names** - check `97-tags/` folder first
-- To find available tags: Use `Glob` tool with pattern `97-tags/*.md` to dynamically list current tags
-- Tag format: `[[filename-without-extension]]` (e.g., `mokai.md` → `[[mokai]]`)
-
-Example with relation:
-```markdown
----
-date: "2025-09-30 15:52"
-relation:
-  - "[[mokai]]"
-  - "[[tech]]"
----
-
-# Content here
-```
-
 ## Tool Usage
 
-- **Serena**: For code structure understanding before implementation
-- **Context7**: For up-to-date library/framework documentation
+
 - **Graphiti**: For capturing valuable insights and discoveries
 - **Task Master**: For project planning and task breakdown
 - **Business APIs**: For MOKAI operations (compliance, tenders, metrics)
@@ -411,7 +211,6 @@ relation:
 
 ### CRITICAL: Always use correct project ID
 - **CORRECT PROJECT**: `gshsshaodoyttdxippwx` ("SAYERS DATA")
-- **NEVER USE**: `ihqihlwxwbpvzqsjzmjc` (old/inactive project)
 
 ### When using Supabase MCP tools:
 - Always verify project ID before database operations

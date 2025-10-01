@@ -180,6 +180,10 @@
   },
   "active": "73a9ebd9f2d98866",
   "lastOpenFiles": [
+    "scripts/stripe-mcp.sh",
+    "scripts",
+    "commands/n8n-workflow.md",
+    "agents/n8n-workflow-automation-agent.md",
     "agents/fastmcp-cloud-expert.md",
     "commands/bmad.md",
     "agents/ableton/plug-in-designer.md",
@@ -205,16 +209,12 @@
     "agents/mokai/mokai-legal-finance-advisor.md",
     "agents/mcp/mcp-integration-engineer.md",
     "agents/mcp/mcp-deployment-orchestrator.md",
-    "agents/context-manager.md",
-    "snippets/overkill.md",
-    "snippets/graphiti-capture.md",
     "web-bundles/expansion-packs/bmad-creative-writing/agents/dialog-specialist.txt",
     "web-bundles/expansion-packs/bmad-infrastructure-devops/agents/infra-devops-platform.txt",
     "web-bundles/expansion-packs/bmad-creative-writing/teams/agent-team.txt",
     "web-bundles/expansion-packs/bmad-creative-writing/agents/world-builder.txt",
     "web-bundles/expansion-packs/bmad-creative-writing/agents/narrative-designer.txt",
     "web-bundles/expansion-packs/bmad-creative-writing/agents/plot-architect.txt",
-    "web-bundles/expansion-packs/bmad-creative-writing/agents/genre-specialist.txt",
-    "web-bundles/expansion-packs/bmad-creative-writing/agents/editor.txt"
+    "web-bundles/expansion-packs/bmad-creative-writing/agents/genre-specialist.txt"
   ]
 }

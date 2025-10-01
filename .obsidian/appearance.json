@@ -1,6 +1,7 @@
 {
   "cssTheme": "GitHub Theme",
   "accentColor": "#6640ff",
-  "interfaceFontFamily": "Source Code Pro",
-  "textFontFamily": "Avenir"
+  "interfaceFontFamily": "Inter",
+  "textFontFamily": "Avenir",
+  "baseFontSize": 19
 }
