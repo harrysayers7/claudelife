@@ -1,11 +1,11 @@
 
-#task
+#todo
 
 - [x] Check if you need business trust or not
 - [x] Jack get family trust
 - [ ] Get ABN/ABC
-- [ ] Sign Partner Agreements
-- [ ] Open up bank account
-- [ ] Get $50,000 in the bank account
-- [ ] Consolidate Supply Nation Documents
-- [ ] Turn in documents for approval
+- [x] Sign Partner Agreements
+- [x] Open up bank account
+- [x] Get $50,000 in the bank account
+- [x] Consolidate Supply Nation Documents
+- [x] Turn in documents for approval

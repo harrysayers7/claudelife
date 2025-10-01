@@ -38,13 +38,7 @@ of MOKAI Pty Ltd (ACN [insert])
 
 - Harrison Sayers – Chief Executive Officer (CEO)
 
-
 - Jack Bell – Chief Technology Officer (CTO)
-
-
-- Kelly Mendoza – Chief Operating Officer (COO)
-    3.5 The COO has delegated authority over brand, marketing, operations, and Indigenous social impact, in accordance with her Employment Agreement and Board Resolutions.
-
 
 
 ---
@@ -95,7 +89,7 @@ of MOKAI Pty Ltd (ACN [insert])
 ## 9. Intellectual Property
 
 9.1 All intellectual property created by directors, officers, employees, or contractors in connection with the Company is owned by the Company.
-9.2 Moral rights are waived to the extent permitted by law.
+
 
 ---
 
@@ -119,49 +113,6 @@ of MOKAI Pty Ltd (ACN [insert])
 
 ---
 
-## Schedule 1 – Compensation Framework
-
-Stage 1 – Early Operations (Pre-revenue / up to $200k annual revenue):
-
-- Harrison (CEO): Base salary AUD $[insert] per annum.
-
-
-- Jack (CTO): Base salary AUD $[insert] per annum + 1% performance fee of net profit.
-
-
-- Kelly (COO): Base salary AUD $[insert] per annum.
-
-
-- Salaries may be deferred in whole or part, subject to available cash flow, as agreed by the Board.
-
-
-
-Stage 2 – Growth Phase ($200k–$750k annual revenue):
-
-- Harrison (CEO): Base salary AUD $[insert].
-
-
-- Jack (CTO): Base salary AUD $[insert] + 1% performance fee.
-
-
-- Kelly (COO): Base salary AUD $[insert].
-
-
-- Salaries are paid monthly from revenue before dividends are declared.
-
-
-
-Stage 3 – Established Phase ($750k+ annual revenue):
-
-- Salaries are reviewed annually by the Board, with minimum increases in line with CPI.
-
-
-- Performance bonuses or additional profit share may be agreed annually.
-
-
-
----
-
 Adopted by the Board on: ___ / ___ / 2025
 
 Signed by Directors:
@@ -180,7 +131,6 @@ Jack Bell – Director
 **
 
 
-### Old Contract
 
 
 

@@ -74,7 +74,27 @@ Commands should be treated as living documents:
 
 ## Command Template
 
+**IMPORTANT**: All commands must start with YAML frontmatter containing:
+- `created`: Date and time of creation in "YYYY-MM-DD HH:MM" format
+- `description`: Clear explanation of what the command does, its capabilities, and outputs
+- `examples`: Array of usage examples showing different use cases
+
 ```markdown
+---
+created: "YYYY-MM-DD HH:MM"
+description: |
+  Brief description of what this command does, its purpose, and key capabilities.
+  Include:
+    - Primary function and workflow it supports
+    - What it analyzes, generates, or automates
+    - Key outputs or deliverables
+    - Common use cases
+examples:
+  - /{action}-{object} "example usage 1"
+  - /{action}-{object} "example usage 2"
+  - /{action}-{object} "example usage 3"
+---
+
 # {Action} {Object}
 
 This command helps you {primary function} for {specific context} in the claudelife project, following established patterns and best practices.
@@ -104,6 +124,8 @@ Before running this command, prepare:
 3. {specific input 3 with example}
 
 ## Process
+
+**IMPORTANT**: Use Serena to search through the codebase. If you get any errors using Serena, retry with different Serena tools.
 
 I'll help you {accomplish task} by:
 
@@ -177,6 +199,7 @@ A successful {object} should:
    - Ask about specific technical requirements before generating code
    - Verify understanding of business context (MOKAI, Mok House)
    - Use examples from the codebase to clarify intent
+   - **IMPORTANT**: Always include "Use Serena to search through the codebase. If you get any errors using Serena, retry with different Serena tools." in commands that need codebase exploration
 
 4. **Integration Validation**
    - Include specific references to .mcp.json configuration
