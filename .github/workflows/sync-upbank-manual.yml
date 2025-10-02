@@ -6,21 +6,22 @@ on:
       sync_type:
         description: 'Sync type'
         required: true
-        default: 'recent'
+        default: 'full'
         type: choice
         options:
-          - recent
           - full
-          - check
+          - accounts
+          - categories
+          - transactions
       days:
-        description: 'Days to sync (for full sync)'
+        description: 'Days to sync (for full/transaction sync)'
         required: false
         default: '30'
-      force_recategorize:
-        description: 'Force ML recategorization of existing transactions'
+        type: string
+      account_id:
+        description: 'Specific account ID (for transaction sync only)'
         required: false
-        type: boolean
-        default: false
+        type: string
 
 jobs:
   sync:
@@ -30,48 +31,34 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run Manual UpBank Sync
-        uses: anthropics/claude-code-action@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          prompt: |
-            Execute manual UpBank sync with the following parameters:
+          node-version: '20'
 
-            Sync Type: ${{ inputs.sync_type }}
-            Days: ${{ inputs.days }}
-            Force Recategorize: ${{ inputs.force_recategorize }}
+      - name: Install dependencies
+        run: npm install
 
-            Instructions:
-            1. If sync_type is 'recent': Sync last 24 hours of transactions
-            2. If sync_type is 'full': Sync last ${{ inputs.days }} days
-            3. If sync_type is 'check': Only verify sync health, don't sync new data
-
-            4. If force_recategorize is true:
-               - Re-run ML categorization on all transactions from the sync period
-               - Update categories based on latest ML model predictions
-               - Report recategorization changes
-
-            5. Provide detailed summary:
-               - Transactions synced: [count]
-               - New transactions: [count]
-               - Updated transactions: [count]
-               - Business expenses detected: [count and total amount]
-               - ML categorization stats: [auto/review/manual counts]
-               - Any errors or warnings
-
-            Use the /sync-upbank command with appropriate parameters.
+      - name: Run Manual Sync
+        run: |
+          if [ "${{ inputs.sync_type }}" = "full" ]; then
+            node scripts/sync-upbank-data.js full ${{ inputs.days }}
+          elif [ "${{ inputs.sync_type }}" = "transactions" ] && [ -n "${{ inputs.account_id }}" ]; then
+            node scripts/sync-upbank-data.js transactions ${{ inputs.account_id }} ${{ inputs.days }}
+          else
+            node scripts/sync-upbank-data.js ${{ inputs.sync_type }}
+          fi
         env:
           UPBANK_API_TOKEN: ${{ secrets.UPBANK_API_TOKEN }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           SUPABASE_URL: https://gshsshaodoyttdxippwx.supabase.co
-          SUPABASE_PROJECT_ID: gshsshaodoyttdxippwx
 
-      - name: Upload Sync Report
+      - name: Upload Sync Logs
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: sync-report-${{ github.run_number }}
+          name: sync-logs-${{ github.run_number }}
           path: |
             *.log
-            reports/*.json
           retention-days: 30
+          if-no-files-found: ignore

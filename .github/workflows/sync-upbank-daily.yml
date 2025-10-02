@@ -14,32 +14,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run UpBank Sync
-        uses: anthropics/claude-code-action@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          prompt: |
-            Execute the daily UpBank sync for recent transactions:
+          node-version: '20'
 
-            1. Run the sync-upbank command for recent transactions (last 24 hours)
-            2. Verify the sync completed successfully
-            3. Check for any errors or unusual transactions
-            4. If there are sync gaps, identify the missing date ranges
-            5. Provide a summary of:
-               - Number of transactions synced
-               - Any errors encountered
-               - Business expenses detected (Mokai/MOK HOUSE)
-               - Sync health status
+      - name: Install dependencies
+        run: npm install
 
-            Use the /sync-upbank command with 'recent' parameter.
+      - name: Run UpBank Sync
+        run: node scripts/sync-upbank-data.js full 7
         env:
           UPBANK_API_TOKEN: ${{ secrets.UPBANK_API_TOKEN }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           SUPABASE_URL: https://gshsshaodoyttdxippwx.supabase.co
-          SUPABASE_PROJECT_ID: gshsshaodoyttdxippwx
 
-      - name: Report Results
+      - name: Sync Summary
         if: always()
         run: |
-          echo "Daily UpBank sync completed"
-          echo "Check workflow logs for detailed sync summary"
+          echo "✅ Daily UpBank sync completed"
+          echo "📅 Synced last 7 days of transactions"
+          echo "Check logs above for detailed results"
