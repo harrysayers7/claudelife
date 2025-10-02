@@ -1,0 +1,11 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - relation.contains(link("mokai-cyber-learning"))
+    order:
+      - file.name
+      - date created
+  - type: cards
+    name: View

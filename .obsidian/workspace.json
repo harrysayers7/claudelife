@@ -4,30 +4,8 @@
     "type": "split",
     "children": [
       {
-        "id": "ccd932fd90f1548a",
-        "type": "tabs",
-        "dimension": 16.722408026755854,
-        "children": [
-          {
-            "id": "21f70574f0ac8c3c",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "mk-ever-view",
-              "state": {
-                "path": "00-inbox/mokhouse"
-              },
-              "pinned": true,
-              "icon": "columns",
-              "title": "Overview"
-            }
-          }
-        ]
-      },
-      {
         "id": "c231c5a3fdc286e6",
         "type": "tabs",
-        "dimension": 83.27759197324414,
         "children": [
           {
             "id": "f644d129b6b3cbec",
@@ -61,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-areas/business/mokai/docs/contracts/under-review/MOKAI-SHA-V2.md",
+                "file": "08-context-ai-apps/claude-desktop/mokhouse/Notion-ESM-Instructions-claude.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -76,7 +54,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "MOKAI-SHA-V2"
+              "title": "Notion-ESM-Instructions-claude"
             }
           },
           {
@@ -246,18 +224,6 @@
               "icon": "lucide-file",
               "title": "Bank-details"
             }
-          },
-          {
-            "id": "e733f6d77266b82c",
-            "type": "leaf",
-            "state": {
-              "type": "mk-space",
-              "state": {
-                "path": "mk-core://settings"
-              },
-              "icon": "lucide-file",
-              "title": "Settings"
-            }
           }
         ],
         "currentTab": 1
@@ -272,7 +238,7 @@
       {
         "id": "e16e878e85595b6b",
         "type": "tabs",
-        "dimension": 62.19686162624822,
+        "dimension": 69.81132075471697,
         "children": [
           {
             "id": "94da3d6eb66ccc2c",
@@ -303,23 +269,13 @@
               "icon": "lucide-search",
               "title": "Search"
             }
-          },
-          {
-            "id": "99b6efebdd3c4cd5",
-            "type": "leaf",
-            "state": {
-              "type": "mk-path-view",
-              "state": {},
-              "icon": "layout-grid",
-              "title": "Navigator"
-            }
           }
         ]
       },
       {
         "id": "0ee97bd524279821",
         "type": "tabs",
-        "dimension": 37.803138373751786,
+        "dimension": 30.18867924528302,
         "children": [
           {
             "id": "275f9890619f9095",
@@ -496,6 +452,17 @@
   },
   "active": "8957a34fd39c3033",
   "lastOpenFiles": [
+    "08-context-ai-apps/claude-desktop/mokhouse/supabase-esm-instructions-claude.md",
+    "08-context-ai-apps/claude-desktop/mokhouse/Notion-ESM-Instructions-claude.md",
+    "08-context-ai-apps/claude-desktop/mokhouse",
+    "01-areas/business/mokhouse/mokmusic/Untitled",
+    "08-context-ai-apps/claude-desktop/Untitled",
+    "08-context-ai-apps/Untitled",
+    "01-areas/business/mokhouse/mokmusic/esm.md",
+    "00-inbox/monthly-finacial-review.md",
+    "97-tags/Claude-desktop.md",
+    "00-inbox/Untitled.base",
+    "01-areas/business/mokai/docs/contracts/under-review/MOKAI-SHA-V2.md",
     "spaces-folder/waypoints.json",
     "spaces-folder/iconsets",
     "spaces-folder",
@@ -503,10 +470,7 @@
     "01-areas/business/mokhouse/Bank-details.md",
     "Tags",
     "00-inbox/Stripe instructions.md",
-    "00-inbox/Untitled.md",
     "00-inbox/mokhouse",
-    "00-inbox/Untitled 1",
-    "00-inbox/Untitled",
     "97-tags/mokai-important.md",
     "00-inbox/Memory tool.md",
     "97-tags/claude-docs.md",
@@ -519,19 +483,11 @@
     "00-inbox/01-today/25-10-03 - Fri.md",
     "08-context-ai-apps/claude-desktop/mokai/additional-rules.md",
     "01-areas/business/mokai/context/2025-10-03 Mokai-context.md",
-    "00-inbox/Claude-desktop.md",
     "00-inbox/Claude-desktop]].md",
     "08-context-ai-apps/claude-desktop/mokai/mokai-business-development.md",
     "08-context-ai-apps/claude-desktop/mokai/mokai-technical-delivery.md",
     "08-context-ai-apps/claude-desktop/mokai/mokai-marketing-brand.md",
     "08-context-ai-apps/claude-desktop/mokai/mokai-operations-delivery.md",
-    "00-inbox/Untitled.base",
-    "08-context-ai-apps/claude-desktop/mokai/mokai-sales-procurement.md",
-    "08-context-ai-apps/claude-desktop/mokai/Untitled.md",
-    "08-context-ai-apps/claude-desktop/mokai/Untitled",
-    "07-context/systems/automations/upbank-sync.md.tmp.65600.1759387611273",
-    "00-inbox/01-today/2025-10-02 .md",
-    "07-context/systems/integrations",
     "Untitled.canvas",
     "Untitled 1.canvas",
     "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/voyage.webp",
