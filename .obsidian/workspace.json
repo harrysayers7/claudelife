@@ -63,7 +63,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-areas/business/mokai/docs/contracts/IMPORTANT.md",
+                "file": "00-inbox/ElevenLabs.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -78,7 +78,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "IMPORTANT"
+              "title": "ElevenLabs"
             }
           },
           {
@@ -111,12 +111,36 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00-inbox/01-today/25-10-02 - Thu.md",
+                "file": "00-inbox/JACK Q'S.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
                 "backlinkOpts": {
                   "collapseAll": true,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "JACK Q'S"
+            }
+          },
+          {
+            "id": "952330c5de3a1ecf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00-inbox/01-today/25-10-02 - Thu.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
                   "extraContext": false,
                   "sortOrder": "alphabetical",
                   "showSearch": false,
@@ -152,9 +176,57 @@
               "icon": "lucide-file",
               "title": "TASKS"
             }
+          },
+          {
+            "id": "115f00c0741b1090",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00-inbox/TOM.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "TOM"
+            }
+          },
+          {
+            "id": "faa9127592223150",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CLAUDE.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "CLAUDE"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -166,6 +238,7 @@
       {
         "id": "e16e878e85595b6b",
         "type": "tabs",
+        "dimension": 63.84839650145773,
         "children": [
           {
             "id": "94da3d6eb66ccc2c",
@@ -186,7 +259,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#task",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -196,7 +269,14 @@
               "icon": "lucide-search",
               "title": "Search"
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "25d8a2f0feb90b1a",
+        "type": "tabs",
+        "dimension": 15.087463556851313,
+        "children": [
           {
             "id": "e27aa5d6696ac75f",
             "type": "leaf",
@@ -208,10 +288,27 @@
             }
           }
         ]
+      },
+      {
+        "id": "0ee97bd524279821",
+        "type": "tabs",
+        "dimension": 21.06413994169096,
+        "children": [
+          {
+            "id": "275f9890619f9095",
+            "type": "leaf",
+            "state": {
+              "type": "journal-calendar",
+              "state": {},
+              "icon": "calendar-days",
+              "title": "Calendar"
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 277.5
+    "width": 203.5
   },
   "right": {
     "id": "4ba4fbf600cab1d4",
@@ -227,7 +324,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "00-inbox/kieren.md",
+                "file": "CLAUDE.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -237,7 +334,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for kieren"
+              "title": "Backlinks for CLAUDE"
             }
           },
           {
@@ -246,12 +343,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "00-inbox/kieren.md",
+                "file": "CLAUDE.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from kieren"
+              "title": "Outgoing links from CLAUDE"
             }
           },
           {
@@ -275,13 +372,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00-inbox/kieren.md",
+                "file": "CLAUDE.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of kieren"
+              "title": "Outline of CLAUDE"
             }
           },
           {
@@ -367,47 +464,50 @@
       "remotely-save:Remotely Save": false,
       "templater-obsidian:Templater": false,
       "obsidian-day-planner:Open Timeline": false,
-      "obsidian-day-planner:Open Multi-Day View": false
+      "obsidian-day-planner:Open Multi-Day View": false,
+      "journals:shelf:-mokai:mokai": false,
+      "journals:mokai-weekly:mokai---weekly-note": false,
+      "journals:mokai-context:mokai-context": false
     }
   },
-  "active": "c1704134da150c62",
+  "active": "faa9127592223150",
   "lastOpenFiles": [
-    "00-inbox/Add claude docs to arc.md",
-    "00-inbox/01-today/25-10-02 - Thu.md",
-    "00-inbox/Untitled.md",
-    "01-areas/business/mokai/clients",
-    "01-areas/business/mokai/Untitled",
-    "97-tags/Phishing.md",
-    "00-inbox/Sync obsidian.md",
-    "07-context/ai/modes/mokai-accountant.md",
-    "97-tags/mokai-contracts.md",
-    "01-areas/business/mokai/docs/research/Operating Model & Business architecture.md",
-    "00-inbox/Quiz-me.md",
-    "99-archive/Gmail filters.md",
-    "99-archive/Bmad-scan.md",
-    "97-tags/mokai-marketing.md",
-    "00-inbox/ElevenLabs.md",
-    "01-areas/business/mokai/docs/contracts/drafts/CONSTITUTION v3.md",
-    "01-areas/business/mokai/docs/contracts/under-review/CONSTITUTION v3.pdf",
-    "01-areas/business/mokai/docs/contracts/drafts/BOARD_RESOLUTION v2.md",
-    "01-areas/business/mokai/docs/contracts/under-review/BOARD_RESOLUTION v2.pdf",
-    "01-areas/business/mokai/docs/contracts/archive/BOARD_RESOLUTION.md",
-    "01-areas/business/mokai/docs/contracts/drafts/DEED OF INDEMNITY.md",
-    "01-areas/business/mokai/docs/contracts/drafts/CONTRACTOR AGREEMENT.md",
-    "01-areas/business/mokai/docs/contracts/archive/CONSTITUTION.md",
-    "01-areas/business/mokai/docs/contracts/archive/CONSTITUTION v2.md",
-    "01-areas/business/mokai/docs/contracts/under-review/MOKAI-SHA-V2.md",
-    "01-areas/business/mokai/docs/contracts/under-review",
-    "04-resources/01-hotkeys.md",
-    "00-inbox/Sort commands.md",
+    "07-context/systems/automations/upbank-sync.md",
+    "07-context/systems/database/supabase-mcp-setup.md",
+    "07-context/systems/database/supabase-sayers-data.md",
     "00-inbox/Create index md.md",
-    "00-inbox/Gmail filters.md",
-    "00-inbox/Bmad-scan.md",
-    "07-context/ai/templates",
-    "07-context/ai/rules",
-    "07-context/ai/system-prompts",
-    "07-context/ai/workflows",
-    "07-context/ai/modes",
+    "00-inbox/mokai/01 - Mokai - Daily/2025-10-02.md",
+    "00-inbox/tasks/MOKAI TASKS.md",
+    "98-templates/mokai-note.md",
+    "98-templates/daily-note.md",
+    "98-templates/mokai-learn-note.md",
+    "00-inbox/01-today/25-10-02 - Thu.md",
+    "TASKS.md",
+    "01-areas/business/mokai/context/2025-10-02.md",
+    "01-areas/business/mokai/context/README.md",
+    "98-templates/mokai-context.md",
+    "97-tags/mokai context.md",
+    "00-inbox/TOM.md",
+    "01-areas/business/mokai/context",
+    "04-resources/01-hotkeys.md",
+    "00-inbox/ElevenLabs.md",
+    "07-context/systems/automations/README.md",
+    "07-context/systems/website",
+    "07-context/systems/server",
+    "07-context/systems/n8n-local-setup.md",
+    "07-context/systems/music-production",
+    "07-context/systems/mcp",
+    "07-context/systems/mac",
+    "07-context/systems/database",
+    "07-context/systems/automations",
+    "07-context/systems",
+    "07-context/tech-stack/automations/README.md",
+    "07-context/tech-stack/website",
+    "07-context/tech-stack/n8n-local-setup.md",
+    "07-context/README.md",
+    "07-context/tech/automations/README.md",
+    "00-inbox/Add claude docs to arc.md",
+    "00-inbox/01-today/2025-10-02 .md",
     "Untitled.canvas",
     "Untitled 1.canvas",
     "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/voyage.webp",

@@ -1,9 +1,9 @@
 
-#mtask
+#mokai-task
 
 - [ ] FOLLOW UP justin
-- [ ] create task template
-- [ ] Get ABN/ABC
+- [x] create task template
+- [x] Get ABN/ABC
 - [ ] Sign Partner Agreements
 - [ ] Open up bank account
 - [ ] Get $50,000 in the bank account

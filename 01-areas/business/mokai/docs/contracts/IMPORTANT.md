@@ -1,3 +1,10 @@
+---
+relation:
+  - "[[mokai-cyber-learning]]"
+tags:
+  - not-started
+description:
+---
 ### 1. **Constitution** ✅ CRITICAL
 
 - **Why**: Supply Nation requires proof of Indigenous ownership structure (51%+ Indigenous ownership and control)
@@ -15,6 +22,13 @@
 - **Why**: Confirms officer appointments and Indigenous representation
 - **Status**: Draft exists
 - **Priority**: HIGH - shows Indigenous participation in management
+
+## Key Points
+-
+-
+
+## Relevance to Cyber Business
+-
 
 ## Can Wait Until After Registration
 

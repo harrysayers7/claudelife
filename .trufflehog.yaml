@@ -1,0 +1,10 @@
+# TruffleHog configuration for claudelife
+# Excludes files that are gitignored and contain necessary secrets
+
+# Exclude paths that are already in .gitignore
+exclude_paths:
+  - .mcp.json
+  - .mcp-test.json
+  - .env
+  - .env.*
+  - 07-context/systems/automations/*.md

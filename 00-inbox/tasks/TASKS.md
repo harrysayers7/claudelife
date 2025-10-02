@@ -3,7 +3,7 @@
 
 - [x] Check if you need business trust or not
 - [x] Jack get family trust
-- [ ] Get ABN/ABC
+- [x] Get ABN/ABC
 - [x] Sign Partner Agreements
 - [x] Open up bank account
 - [x] Get $50,000 in the bank account

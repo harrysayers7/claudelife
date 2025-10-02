@@ -1,19 +1,8 @@
-\.env$
-\.env\..*
-\.git/.*
-node_modules/.*
-.*\.log$
-.*\.tmp$
-\.DS_Store$
-.*env/.*
-.*-env/.*
-venv/.*
-\.venv/.*
-ENV/.*
-__pycache__/.*
-.*\.pyc$
-.*\.so$
-.*\.pyo$
-.*\.pyd$
-.*dist-info/.*
-.*egg-info/.*
+# TruffleHog exclude paths
+# Files that are gitignored and contain necessary secrets
+.git
+.mcp.json
+.mcp-test.json
+.env
+.env.*
+07-context/systems/automations/

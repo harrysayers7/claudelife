@@ -42,6 +42,9 @@ paths = [
     '''\.env$''',
     '''.*\.env$''',
     '''\.env\..*''',
+    '''\.mcp\.json$''',
+    '''\.mcp-test\.json$''',
+    '''07-context/systems/automations/.*\.md$''',
 ]
 stopwords = [
     "example",
