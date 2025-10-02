@@ -1,6 +1,6 @@
 ---
 date created: Mon, 09 22nd 25, 11:31:42 am
-date modified: Thu, 10 2nd 25, 5:36:59 am
+date modified: Thu, 10 2nd 25, 8:39:53 pm
 ---
 # CLAUDE.md
 
@@ -214,3 +214,6 @@ date: "2025-09-30 15:52"
 - **entities**: Harrison Robert Sayers (sole trader)
 - **contacts**: Business contacts and vendors
 - **invoices**: Receivables and payables with proper FK relationships
+
+### context save
+- after finishing a major implentation. ie implement new workflow, new script, mcp server - always refer to @.claude/commands/reports/document-system for next instructions
