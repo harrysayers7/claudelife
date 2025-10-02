@@ -15,7 +15,7 @@ relation:
 
 **Type**: GitHub Actions Automation (scheduled workflows + Node.js scripts)
 
-**Status**: Active (daily automated syncs running)
+**Status**: Active (hourly automated syncs running)
 
 **Business Context**: Part of claudelife's personal finance automation system. Enables automatic transaction tracking, spending analysis, and integration with MindsDB for intelligent categorization of business expenses (MOKAI/MOK HOUSE).
 
@@ -24,7 +24,7 @@ relation:
 ### GitHub Actions Workflows
 
 **Primary Files**:
-- [.github/workflows/sync-upbank-daily.yml:1](/.github/workflows/sync-upbank-daily.yml) - Daily automated sync (8 AM Sydney time)
+- [.github/workflows/sync-upbank-daily.yml:1](/.github/workflows/sync-upbank-daily.yml) - Hourly automated sync (every hour)
 - [.github/workflows/sync-upbank-monitor.yml:1](/.github/workflows/sync-upbank-monitor.yml) - Health monitoring (every 6 hours)
 - [.github/workflows/sync-upbank-manual.yml:1](/.github/workflows/sync-upbank-manual.yml) - On-demand manual sync
 
@@ -51,8 +51,8 @@ relation:
 
 ### Components
 
-1. **Daily Sync Workflow** ([.github/workflows/sync-upbank-daily.yml](/.github/workflows/sync-upbank-daily.yml))
-   - **Trigger**: Cron schedule (10 PM UTC / 8 AM Sydney)
+1. **Hourly Sync Workflow** ([.github/workflows/sync-upbank-daily.yml](/.github/workflows/sync-upbank-daily.yml))
+   - **Trigger**: Cron schedule (every hour on the hour)
    - **Action**: Syncs last 7 days of transactions
    - **Output**: Transaction counts, error logs, sync summary
    - **Integration**: UpBank API → Node.js script → Supabase
@@ -143,7 +143,7 @@ Add these in [GitHub repo settings → Secrets](https://github.com/harrysayers7/
 
 ### Workflow Schedules
 
-- **Daily Sync**: `0 22 * * *` (10 PM UTC = 8 AM Sydney next day)
+- **Hourly Sync**: `0 * * * *` (Every hour on the hour)
 - **Health Monitor**: `0 */6 * * *` (Every 6 hours)
 - **Manual Sync**: On-demand via GitHub Actions UI
 
@@ -161,9 +161,9 @@ Add these in [GitHub repo settings → Secrets](https://github.com/harrysayers7/
 
 ## Usage
 
-### Automatic Daily Sync
+### Automatic Hourly Sync
 
-**No action required** - runs automatically every day at 8 AM Sydney time.
+**No action required** - runs automatically every hour on the hour.
 
 **What it does**:
 1. Syncs last 7 days of transactions
@@ -211,12 +211,12 @@ node scripts/sync-monitor.js dashboard
 
 ## Examples
 
-### Example 1: Daily Automated Sync
+### Example 1: Hourly Automated Sync
 
-**Scenario**: Automatic sync runs at 8 AM Sydney time
+**Scenario**: Automatic sync runs every hour on the hour
 
 **Process**:
-1. GitHub Actions triggers workflow at 10 PM UTC
+1. GitHub Actions triggers workflow every hour (e.g., 1:00 PM, 2:00 PM, etc.)
 2. Checks out repository, installs Node.js 20
 3. Runs `node scripts/sync-upbank-data.js full 7`
 4. Script fetches last 7 days of transactions from UpBank
@@ -227,11 +227,11 @@ node scripts/sync-monitor.js dashboard
 
 **Result**:
 ```
-✅ Daily UpBank sync completed
+✅ Hourly UpBank sync completed
 📅 Synced last 7 days of transactions
-📊 New transactions: 23
-💰 Total amount: -$543.21
-⏱️ Duration: 8.3 seconds
+📊 New transactions: 3
+💰 Total amount: -$42.50
+⏱️ Duration: 6.2 seconds
 ```
 
 ### Example 2: Manual Full Sync
@@ -417,19 +417,21 @@ node scripts/sync-monitor.js retry
 
 **Key Metrics**:
 - Last successful sync timestamp
-- Transaction sync rate (transactions/day)
+- Transaction sync rate (transactions/hour)
 - Error rate (errors/sync session)
-- Sync duration (should be <30 seconds for daily)
+- Sync duration (should be <30 seconds per sync)
 
 ### Maintenance Tasks
 
-**Weekly**:
+**Daily**:
 - Review GitHub Actions runs for patterns
 - Check for any persistent errors in sync_errors table
 
-**Monthly**:
+**Weekly**:
 - Verify account balances match UpBank dashboard
 - Review categorization accuracy (MindsDB predictions)
+
+**Monthly**:
 - Clean up old sync_errors entries (>90 days)
 
 **Quarterly**:
@@ -462,6 +464,7 @@ node scripts/sync-monitor.js retry
 
 ## Change Log
 
+- **2025-10-02**: Changed sync frequency from daily to hourly for more up-to-date transaction data
 - **2025-10-02**: Initial documentation created
 - **2025-10-02**: Replaced Claude Code workflow with direct script execution (cost optimization)
 - **2025-10-02**: Added health monitoring with auto-issue creation
