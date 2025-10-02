@@ -207,7 +207,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "08-context-ai-apps/claude-desktop/mokai/mokai-instructions.md",
+                "file": "08-context-ai-apps/claude-desktop/mokai/instruction-box.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -222,7 +222,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "mokai-instructions"
+              "title": "instruction-box"
             }
           }
         ],
@@ -324,7 +324,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "08-context-ai-apps/claude-desktop/mokai/mokai-instructions.md",
+                "file": "08-context-ai-apps/claude-desktop/mokai/instruction-box.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -334,7 +334,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for mokai-instructions"
+              "title": "Backlinks for instruction-box"
             }
           },
           {
@@ -343,12 +343,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "08-context-ai-apps/claude-desktop/mokai/mokai-instructions.md",
+                "file": "08-context-ai-apps/claude-desktop/mokai/instruction-box.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from mokai-instructions"
+              "title": "Outgoing links from instruction-box"
             }
           },
           {
@@ -372,13 +372,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "08-context-ai-apps/claude-desktop/mokai/mokai-instructions.md",
+                "file": "08-context-ai-apps/claude-desktop/mokai/instruction-box.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of mokai-instructions"
+              "title": "Outline of instruction-box"
             }
           },
           {
@@ -472,10 +472,12 @@
   },
   "active": "faa9127592223150",
   "lastOpenFiles": [
-    "08-context-ai-apps/claude-desktop/mokai/mokai-business-strategist.md",
     "08-context-ai-apps/claude-desktop/mokai/mokai-instructions.md",
-    "08-context-ai-apps/claude-desktop/mokai/mokai-lawyer.md",
+    "08-context-ai-apps/claude-desktop/mokai/instruction-box.md",
+    "08-context-ai-apps/claude-desktop/mokai/Untitled",
     "08-context-ai-apps/claude-desktop/mokai/mokai-accountant.md",
+    "08-context-ai-apps/claude-desktop/mokai/mokai-lawyer.md",
+    "08-context-ai-apps/claude-desktop/mokai/mokai-business-strategist.md",
     "08-context-ai-apps/claude-desktop/Untitled.md",
     "08-context-ai-apps/claude-desktop/mokai",
     "context/ai-brain/system-prompts/claude[INSTRUCTIONS].md",
@@ -501,13 +503,11 @@
     "01-areas/business/mokai/context/README.md",
     "98-templates/mokai-context.md",
     "97-tags/mokai context.md",
-    "00-inbox/TOM.md",
     "01-areas/business/mokai/context",
     "07-context/systems/website",
     "07-context/systems/server",
     "07-context/systems/music-production",
     "07-context/systems/mcp",
-    "07-context/systems/mac",
     "Untitled.canvas",
     "Untitled 1.canvas",
     "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/voyage.webp",

@@ -36,3 +36,14 @@ Follow conventional commits:
 If no message provided, will prompt for one.
 
 Follow up with questions, would you like to push to main?
+
+## **Serena MCP Usage Rules**
+
+IMPORTANT: Use Serena FIRST before reading files when you need to:
+- Understand project structure or architecture
+- Find where functionality is implemented
+- Search for specific symbols, classes, or functions
+- Understand relationships between code components
+- Find references to variables, methods, or imports
+- Explore unfamiliar codebases before making changes
+- Search for patterns across multiple files
