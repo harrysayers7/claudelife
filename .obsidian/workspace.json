@@ -207,7 +207,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CLAUDE.md",
+                "file": "08-context-ai-apps/claude-desktop/mokai/mokai-instructions.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -222,7 +222,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "CLAUDE"
+              "title": "mokai-instructions"
             }
           }
         ],
@@ -324,7 +324,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CLAUDE.md",
+                "file": "08-context-ai-apps/claude-desktop/mokai/mokai-instructions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -334,7 +334,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for CLAUDE"
+              "title": "Backlinks for mokai-instructions"
             }
           },
           {
@@ -343,12 +343,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CLAUDE.md",
+                "file": "08-context-ai-apps/claude-desktop/mokai/mokai-instructions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from CLAUDE"
+              "title": "Outgoing links from mokai-instructions"
             }
           },
           {
@@ -372,13 +372,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CLAUDE.md",
+                "file": "08-context-ai-apps/claude-desktop/mokai/mokai-instructions.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of CLAUDE"
+              "title": "Outline of mokai-instructions"
             }
           },
           {
@@ -472,6 +472,20 @@
   },
   "active": "faa9127592223150",
   "lastOpenFiles": [
+    "08-context-ai-apps/claude-desktop/mokai/mokai-business-strategist.md",
+    "08-context-ai-apps/claude-desktop/mokai/mokai-instructions.md",
+    "08-context-ai-apps/claude-desktop/mokai/mokai-lawyer.md",
+    "08-context-ai-apps/claude-desktop/mokai/mokai-accountant.md",
+    "08-context-ai-apps/claude-desktop/Untitled.md",
+    "08-context-ai-apps/claude-desktop/mokai",
+    "context/ai-brain/system-prompts/claude[INSTRUCTIONS].md",
+    "08-context-ai-apps/claude-desktop/claudelife",
+    "08-context-ai-apps/claude-desktop/claudelife-dev",
+    "context/ai-brain/system-prompts/claude-desktop.md",
+    "context/ai-brain/system-prompts/claude-code.md",
+    "context/ai-brain/modes/vibe-coding.md",
+    "CLAUDE.md",
+    "08-context-ai-apps/claude-desktop",
     "07-context/systems/automations/upbank-sync.md",
     "07-context/systems/database/supabase-mcp-setup.md",
     "07-context/systems/database/supabase-sayers-data.md",
@@ -489,25 +503,11 @@
     "97-tags/mokai context.md",
     "00-inbox/TOM.md",
     "01-areas/business/mokai/context",
-    "04-resources/01-hotkeys.md",
-    "00-inbox/ElevenLabs.md",
-    "07-context/systems/automations/README.md",
     "07-context/systems/website",
     "07-context/systems/server",
-    "07-context/systems/n8n-local-setup.md",
     "07-context/systems/music-production",
     "07-context/systems/mcp",
     "07-context/systems/mac",
-    "07-context/systems/database",
-    "07-context/systems/automations",
-    "07-context/systems",
-    "07-context/tech-stack/automations/README.md",
-    "07-context/tech-stack/website",
-    "07-context/tech-stack/n8n-local-setup.md",
-    "07-context/README.md",
-    "07-context/tech/automations/README.md",
-    "00-inbox/Add claude docs to arc.md",
-    "00-inbox/01-today/2025-10-02 .md",
     "Untitled.canvas",
     "Untitled 1.canvas",
     "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/voyage.webp",
