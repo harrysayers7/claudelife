@@ -1,8 +1,9 @@
 ---
 relation:
-  - "[[mokai]]"
   - "[[mokai-cyber-learning]]"
-type:
+tags:
+  - not-started
+description:
 ---
 
 
@@ -12,6 +13,5 @@ type:
 
 
 
-
-#mokai-task
+#mtask
 - [ ]

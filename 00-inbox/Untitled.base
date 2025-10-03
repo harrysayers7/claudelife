@@ -3,9 +3,17 @@ views:
     name: Table
     filters:
       and:
-        - relation.contains(link("mokai-cyber-learning"))
+        - type == "Task"
     order:
       - file.name
-      - date created
+      - status
+      - Done
+      - file.ctime
+      - date modified
+    sort:
+      - property: date created
+        direction: ASC
+    columnSize:
+      file.name: 352
   - type: cards
     name: View

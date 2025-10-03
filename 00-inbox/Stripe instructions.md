@@ -3,6 +3,8 @@ date: "{{date}} {{time}}"
 relation:
 tags:
 description:
+date created: Fri, 10 3rd 25, 5:49:09 am
+date modified: Fri, 10 3rd 25, 11:38:03 am
 ---
 # Model Context Protocol (MCP)
 
@@ -12,7 +14,7 @@ The Stripe Model Context Protocol (MCP) server defines a set of tools that AI ag
 
 If you use AI-powered code editors like Cursor or Windsurf, or general-purpose tools like Claude Desktop, you can use the MCP server.
 
-## Remote server
+## Remote Server
 
 Stripe hosts a Streamable HTTP MCP server that’s available at `https://mcp.stripe.com`. The Stripe MCP server uses OAuth Dynamic Client Registration to connect MCP clients as per the [MCP spec](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-1-1-oauth-grant-types).
 
@@ -55,7 +57,7 @@ To add MCP to Claude code, run the following command. To learn more, see the Cla
 claude mcp add --transport http stripe https://mcp.stripe.com/
 ```
 
-### OAuth connections
+### OAuth Connections
 
 When you add the Stripe MCP to a client, the MCP client opens an OAuth consent form which allows you to authorize the client to access your Stripe data. OAuth is done through a *Stripe App* (An app that you can build on top of Stripe to customize the functionality of the Stripe Dashboard UI, leverage Stripe user data, store data on Stripe, and more). Only admins can install the Stripe MCP. After installing, you can manage your OAuth connections in your Dashboard settings.
 
@@ -71,11 +73,11 @@ To revoke OAuth access for a specific MCP client session:
 
 2. Select **Revoke session**.
 
-### Allowlist of client redirect URIs
+### Allowlist of Client Redirect URIs
 
 Stripe maintains an allowlist of vetted MCP client redirect URIs to protect our users from malicious phishing attacks. If there’s an MCP client application that you want to allowlist, email us at [mcp@stripe.com](mailto:mcp@stripe.com).
 
-### Bearer token
+### Bearer Token
 
 If you’re building agentic software, you can pass a Stripe API key as a bearer token to the MCP remote server. We strongly recommend using [restricted API keys](https://docs.stripe.com/keys.md#create-restricted-api-secret-key) to limit access to the functionality your agent requires. For example, you can use this authorization method with [OpenAI’s Responses API](https://platform.openai.com/docs/guides/tools-remote-mcp#authentication).
 
@@ -94,7 +96,7 @@ curl https://mcp.stripe.com/ \
   }'
 ```
 
-## Local server
+## Local Server
 
 If you prefer or require a local setup, run the [local Stripe MCP server](https://github.com/stripe/agent-toolkit/tree/main/modelcontextprotocol).
 

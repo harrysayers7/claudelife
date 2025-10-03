@@ -1,0 +1,32 @@
+properties:
+  note.status:
+    displayName: Priority
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - type == "Task"
+        - file.name != "task"
+        - Done != true
+        - relation.contains(link("code"))
+    order:
+      - Done
+      - file.name
+      - description
+      - status
+      - file.ctime
+      - file.mtime
+      - file.folder
+      - relation
+    sort:
+      - property: status
+        direction: DESC
+      - property: file.ctime
+        direction: DESC
+    columnSize:
+      note.Done: 87
+      file.name: 337
+      note.description: 227
+      note.status: 122
+      note.relation: 147

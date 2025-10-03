@@ -36,25 +36,16 @@
           {
             "id": "8957a34fd39c3033",
             "type": "leaf",
+            "pinned": true,
             "state": {
-              "type": "markdown",
+              "type": "bases",
               "state": {
-                "file": "08-context-ai-apps/claude-desktop/mokhouse/Notion-ESM-Instructions-claude.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
+                "file": "00-inbox/tasks/Tasks.base",
+                "viewName": "Table"
               },
-              "icon": "lucide-file",
-              "title": "Notion-ESM-Instructions-claude"
+              "pinned": true,
+              "icon": "lucide-table",
+              "title": "Tasks"
             }
           },
           {
@@ -224,9 +215,76 @@
               "icon": "lucide-file",
               "title": "Bank-details"
             }
+          },
+          {
+            "id": "b8ee2a2f66aae69e",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "00-inbox/tasks/Mokai Tasks.base",
+                "viewName": "Table"
+              },
+              "icon": "lucide-table",
+              "title": "Mokai Tasks"
+            }
+          },
+          {
+            "id": "2b015affe4b786c8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "99-archive/Notion-ESM-Instructions-claude.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Notion-ESM-Instructions-claude"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 10
+      },
+      {
+        "id": "488ebf3d6e8b903e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a279cb3e333682fc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00-inbox/01-today/25-10-03 - Fri.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "25-10-03 - Fri"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -423,8 +481,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 323.5,
-    "collapsed": true
+    "width": 323.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -450,44 +507,44 @@
       "journals:mokai-context:mokai-context": false
     }
   },
-  "active": "8957a34fd39c3033",
+  "active": "94da3d6eb66ccc2c",
   "lastOpenFiles": [
-    "08-context-ai-apps/claude-desktop/mokhouse/supabase-esm-instructions-claude.md",
-    "08-context-ai-apps/claude-desktop/mokhouse/Notion-ESM-Instructions-claude.md",
+    "08-context-ai-apps/claude-desktop/mokhouse/Notion-ESM-Instructions-claude v2.md",
+    "07-context/ai/system-prompts/claude-code.md",
+    "00-inbox/tasks/Code.base",
+    "00-inbox/Git-obsidian-settings.md",
+    "00-inbox/tasks/all tasks/$50,000 Invoice.md",
+    "00-inbox/tasks/all tasks/Raycast Hotkey change to caps.md",
+    "00-inbox/01-today/25-10-03 - Fri.md",
+    "00-inbox/tasks/all tasks/Memory tool installation.md",
+    "00-inbox/tasks/Tasks.base",
+    "97-tags/code.md",
+    "00-inbox/tasks/Mokai Tasks.base",
+    "98-templates/agent.md",
+    "98-templates/slash-command.md",
+    "98-templates/rule.md",
+    "00-inbox/tasks/MOKAI TASKS.md",
+    "98-templates/brain-dump.md",
+    "98-templates/mokai-learn-note.md",
+    "98-templates/mokai-note.md",
+    "98-templates/note.md",
+    "00-inbox/tasks/all tasks/Supply Nation application.md",
+    "00-inbox/tasks/all tasks/Linkdin Profile update.md",
+    "00-inbox/tasks/all tasks/Follow Up with Justin.md",
+    "98-templates/task.md",
+    "00-inbox/tasks/all tasks/Sign Partnership Agreement.md",
+    "00-inbox/tasks/all tasks",
+    "00-inbox/tasks/Untitled",
+    "00-inbox/tasks/all tasks/Open Bank Account.md",
+    "00-inbox/Open Bank account.md",
+    "00-inbox/tasks/Untitled.base",
+    "00-inbox/tasks/TASKS.md",
+    "00-inbox/tasks/fix daily note te,plate.md",
+    "00-inbox/crewate.md",
+    "00-inbox/Untitled.base",
+    "00-inbox/Untitled 1.base",
     "08-context-ai-apps/claude-desktop/mokhouse",
     "01-areas/business/mokhouse/mokmusic/Untitled",
-    "08-context-ai-apps/claude-desktop/Untitled",
-    "08-context-ai-apps/Untitled",
-    "01-areas/business/mokhouse/mokmusic/esm.md",
-    "00-inbox/monthly-finacial-review.md",
-    "97-tags/Claude-desktop.md",
-    "00-inbox/Untitled.base",
-    "01-areas/business/mokai/docs/contracts/under-review/MOKAI-SHA-V2.md",
-    "spaces-folder/waypoints.json",
-    "spaces-folder/iconsets",
-    "spaces-folder",
-    "00-inbox/01-today/25-10-02 - Thu.md",
-    "01-areas/business/mokhouse/Bank-details.md",
-    "Tags",
-    "00-inbox/Stripe instructions.md",
-    "00-inbox/mokhouse",
-    "97-tags/mokai-important.md",
-    "00-inbox/Memory tool.md",
-    "97-tags/claude-docs.md",
-    "00-inbox/claude-docs.md",
-    "00-inbox/Untitled 2.md",
-    "97-tags/commands.md",
-    "08-context-ai-apps/claude-desktop/mokai/additional-commands.md",
-    "00-inbox/Books recommended by claude.md",
-    "00-inbox/mokai/01 - Mokai - Daily/2025-10-03-mokai-daily.md",
-    "00-inbox/01-today/25-10-03 - Fri.md",
-    "08-context-ai-apps/claude-desktop/mokai/additional-rules.md",
-    "01-areas/business/mokai/context/2025-10-03 Mokai-context.md",
-    "00-inbox/Claude-desktop]].md",
-    "08-context-ai-apps/claude-desktop/mokai/mokai-business-development.md",
-    "08-context-ai-apps/claude-desktop/mokai/mokai-technical-delivery.md",
-    "08-context-ai-apps/claude-desktop/mokai/mokai-marketing-brand.md",
-    "08-context-ai-apps/claude-desktop/mokai/mokai-operations-delivery.md",
     "Untitled.canvas",
     "Untitled 1.canvas",
     "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/voyage.webp",

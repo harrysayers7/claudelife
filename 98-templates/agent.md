@@ -4,4 +4,5 @@ relation:
   - "[[agents]]"
 tags:
 description:
+type:
 ---

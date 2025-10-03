@@ -15,6 +15,7 @@ CLAUDE.local.md
 
 # Editor/IDE workspace files
 .obsidian/
+.makemd/
 .roomodes
 claude-files
 

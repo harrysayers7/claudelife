@@ -1,0 +1,27 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - type == "Task"
+        - file.name != "task"
+        - Done != true
+        - relation.contains(link("mokai"))
+    order:
+      - Done
+      - file.name
+      - description
+      - status
+      - relation
+      - file.ctime
+      - file.mtime
+      - file.folder
+    sort:
+      - property: file.ctime
+        direction: DESC
+    columnSize:
+      note.Done: 87
+      file.name: 337
+      note.description: 286
+      note.status: 230
+      note.relation: 147

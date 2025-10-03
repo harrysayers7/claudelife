@@ -1,7 +1,6 @@
 ---
-Done: false
 type: Task
 status:
 relation:
-description:
+Done: true
 ---
