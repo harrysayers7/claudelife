@@ -20,12 +20,6 @@ date modified: Fri, 10 3rd 25, 12:33:39 pm
 
 
 
-##### Tasks
-#todo
-- [ ]
+### Tasks
 
-#todo/urgent
-- [ ]
-
-#todo/backburn
 - [ ]

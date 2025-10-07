@@ -1,14 +1,17 @@
-Profile: Kelly Otoole Mendoza Sayers
-
-Personal Information
+---
+date created: Mon, 09 22nd 25, 11:11:52 am
+date modified: Mon, 10 6th 25, 4:19:26 pm
+---
+Profile: Kelly Otoole Mendoza
+### Personal Information
 
 Full Legal Name: Kelly Otoole Mendoza Sayers
 
-Date of Birth:
+Date of Birth: 21/05/1992
 
 Place of Birth: Long Beach
 
-Citizenship(s): American (✔) /
+Citizenship(s): American/Australian
 
 Residency Status (Australia):  (e.g. permanent resident, spouse visa, dual residency)
 
@@ -18,7 +21,7 @@ U.S. Social Security Number (SSN / ITIN):
 
 ---
 
-Marital & Family Information
+### Marital & Family Information
 
 Marital Status: Married to Harry Sayers
 
@@ -38,7 +41,7 @@ Siblings: Jimmy (brother)
 
 ---
 
-Financial Information
+### Financial Information
 
 Bank Accounts (AU/US/Other):
 
@@ -52,7 +55,7 @@ Insurance Policies (Life, Health, Income):
 
 ---
 
-Tax Information
+### Tax Information
 
 Australian Tax Residency: Yes / No / Pending
 
@@ -64,7 +67,7 @@ Dual Tax Treaty Considerations:
 
 ---
 
-Business & Legal Involvement
+### Business & Legal Involvement
 
 Trust Membership / Beneficiary:
 
@@ -78,7 +81,7 @@ Intellectual Property Ownership:
 
 ---
 
-Estate Planning
+### Estate Planning
 
 Will in Australia: Yes / No
 

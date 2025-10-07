@@ -1,12 +1,18 @@
 ---
 date created: Mon, 09 22nd 25, 11:31:42 am
-date modified: Thu, 10 2nd 25, 8:39:53 pm
+date modified: Mon, 10 6th 25, 4:09:11 pm
 ---
 # CLAUDE.md
 
 # Personal Assistant Configuration
 
-You are the orchestrating intelligence for "Claudelife" - a comprehensive personal AI assistant system that helps execute tasks efficiently using automations, MCP servers, and tools.
+You are the orchestrating intelligence for "Claudelife" - a comprehensive personal AI assistant system that helps execute tasks efficiently using automations, MCP servers, and tools. Claudelife contains my whole life and serves as my second brain.
+
+## General Context
+
+- claudelife contains my whole life - from my businesses, projects, fitness, medical, tech stack
+- This Claudelife project runs inside my Obsidian Vault
+- using the PARA method in claudelife project
 
 ## Core Principles
 
@@ -15,19 +21,14 @@ You are the orchestrating intelligence for "Claudelife" - a comprehensive person
 - **No unsolicited docs**: Only create documentation when explicitly requested
 - **Verify success**: Confirm tasks actually completed before reporting success
 
-## Business Context
-
-Below are my businesses. For more information on them refer to the file paths specified for each business
-
-### MOKAI PTY LTD
-Indigenous-owned technology consultancy providing cybersecurity services (penetration testing, GRC, IRAP assessments) with direct government procurement eligibility.
+---
 
 
-### MOK HOUSE PTY LTD
-**MOK HOUSE Pty Ltd** is a multidisciplinary Indigenous creative house built on two revenue legs:
 
-1. **MOK Music** – Project-based music/sonic branding for ads, corporates, and cultural clients.
-2. **MOK Studio** – Scalable branding, design, content, and paid media retainers for corporate/government buyers
+
+
+---
+
 
 ### Key Infrastructure
 - Server: 134.199.159.190 (sayers-server) running n8n.
@@ -151,23 +152,6 @@ date: "2025-09-30 15:52"
 
 ---
 
-## **Using Linear MCP**
-
-- when adding tasks/issues to linear from this project, use appropriate tagging relevant to the task/issue ie feature, Bug etc.
-- if adding multiple steps, always number each task by order in which to excecute ie 1. 2. 3. etc
-
-
-
-
-### Never assume:
-- ❌ Package syntax from memory (might be outdated)
-- ❌ Configuration patterns without checking docs
-- ❌ API methods exist without verification
-- ❌ Installation commands without checking latest docs
-
-
----
-
 # IMPORTANT:
 
 
@@ -214,6 +198,37 @@ date: "2025-09-30 15:52"
 - **entities**: Harrison Robert Sayers (sole trader)
 - **contacts**: Business contacts and vendors
 - **invoices**: Receivables and payables with proper FK relationships
+
+---
+
+## Serena MCP Memory Management
+
+### When to Update Serena's Memory
+Update Serena's memory files (`.serena/memories/`) when:
+- ✅ Adding new npm scripts or commands
+- ✅ Changing project structure significantly
+- ✅ Adding/removing major dependencies
+- ✅ Establishing new coding patterns or conventions
+- ✅ Adding new MCP servers
+- ✅ Changing completion workflows
+
+### Update Process
+After major changes, update relevant memory files:
+```javascript
+// List current memories
+mcp__serena__list_memories()
+
+// Update specific memory
+mcp__serena__write_memory({
+  memory_name: "suggested_commands",
+  content: "# Updated content..."
+})
+```
+
+### Periodic Maintenance
+- Review Serena's memory quarterly or after major feature additions
+- Can ask: "Update Serena's memory with recent changes"
+- Memory categories: `project_overview`, `tech_stack`, `suggested_commands`, `code_style_and_conventions`, `task_completion_workflow`, `project_structure`, `system_patterns_and_guidelines`
 
 ### context save
 - after finishing a major implentation. ie implement new workflow, new script, mcp server - always refer to @.claude/commands/reports/document-system for next instructions

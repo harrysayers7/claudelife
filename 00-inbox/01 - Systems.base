@@ -1,0 +1,12 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.folder.contains("07-context/systems")
+        - file.name != "README"
+    order:
+      - file.name
+      - relation
+      - system_type
+      - created

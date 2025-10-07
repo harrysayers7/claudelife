@@ -1,8 +1,8 @@
 {
-  "cssTheme": "AnuPpuccin",
+  "cssTheme": "",
   "accentColor": "#6640ff",
   "interfaceFontFamily": "Helvetica",
-  "textFontFamily": "Helvetica",
-  "baseFontSize": 19,
+  "textFontFamily": "Helvetica Neue",
+  "baseFontSize": 16,
   "baseFontSizeAction": true
 }

@@ -1,0 +1,15 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - relation.contains(link("AI-Research"))
+        - file.name != "ai-research"
+    order:
+      - file.name
+      - description
+      - relation
+      - created
+    columnSize:
+      file.name: 246
+      note.description: 342

@@ -1,0 +1,9 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - relation.contains(link("prompt-library"))
+    order:
+      - file.name
+      - description

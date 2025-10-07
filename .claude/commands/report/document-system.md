@@ -414,3 +414,57 @@ A successful system documentation should:
 - Generated docs follow a consistent structure for easy navigation and understanding
 - Links related systems together for comprehensive context awareness
 - Future-proofed with change logs and update tracking
+
+## Post-Documentation: Update Serena's Memory
+
+After creating system documentation, consider updating Serena's memory to reflect changes:
+
+### When to Update Serena
+Update if the documented system involved:
+- ✅ New npm scripts or commands
+- ✅ Changed project structure
+- ✅ New dependencies or MCP servers
+- ✅ New coding patterns or conventions
+- ✅ Changed development workflows
+
+### How to Update
+```javascript
+// 1. List current memories to see what exists
+mcp__serena__list_memories()
+
+// 2. Update relevant memory files
+// Example: Adding new sync commands
+mcp__serena__write_memory({
+  memory_name: "suggested_commands",
+  content: `
+# Suggested Commands
+
+## [Existing sections...]
+
+## New System Commands
+- npm run new-sync-command - Description of what it does
+- task-master new-feature - Description
+
+[... rest of updated content ...]
+  `
+})
+
+// 3. Update tech stack if dependencies changed
+mcp__serena__write_memory({
+  memory_name: "tech_stack",
+  content: "# Updated tech stack with new dependencies..."
+})
+```
+
+### Memory Categories to Consider
+- `suggested_commands` - New scripts or commands added
+- `tech_stack` - New dependencies or infrastructure
+- `project_structure` - If directory layout changed
+- `task_completion_workflow` - If dev workflow changed
+- `system_patterns_and_guidelines` - If new patterns established
+
+### Quick Update Pattern
+After documenting a major system, ask:
+> "Update Serena's memory with the new [system name] additions"
+
+This ensures Serena stays current with your codebase evolution and provides accurate, up-to-date guidance.

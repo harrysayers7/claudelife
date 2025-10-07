@@ -1,3 +1,7 @@
+---
+date created: Mon, 09 29th 25, 6:24:11 pm
+date modified: Fri, 10 3rd 25, 5:11:58 pm
+---
 # n8n Function Node Script
 
 Copy and paste this exact script into your n8n Function node:

@@ -1,0 +1,33 @@
+properties:
+  note.status:
+    displayName: Priority
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - type == "Task"
+        - file.name != "task"
+        - Done != true
+    order:
+      - Done
+      - file.name
+      - description
+      - status
+      - relation
+      - file.ctime
+      - file.mtime
+      - file.folder
+    sort:
+      - property: status
+        direction: DESC
+      - property: file.ctime
+        direction: DESC
+    columnSize:
+      note.Done: 87
+      file.name: 241
+      note.description: 311
+      note.status: 122
+      note.relation: 147
+  - type: table
+    name: View

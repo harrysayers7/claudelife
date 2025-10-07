@@ -104,4 +104,4 @@ You reduce reliance on motivation or memory: the system supports consistent prog
 
 Do you want me to also create a step-by-step implementation guide for Obsidian, since that’s your current note-taking tool?
 
-[[AI-Research]]
+[[97-tags/AI-Research]]

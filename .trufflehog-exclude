@@ -1,8 +1,10 @@
-# TruffleHog exclude paths
-# Files that are gitignored and contain necessary secrets
-.git
+# TruffleHog exclusions
 .mcp.json
 .mcp-test.json
 .env
 .env.*
 07-context/systems/automations/
+.obsidian/
+.smtcmp_json_db/
+.smtcmp_vector_db.tar.gz
+finance-dashboard/node_modules/

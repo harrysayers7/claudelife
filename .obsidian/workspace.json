@@ -40,7 +40,7 @@
             "state": {
               "type": "bases",
               "state": {
-                "file": "00-inbox/tasks/Tasks.base",
+                "file": "000 - Tasks/Tasks.base",
                 "viewName": "Table"
               },
               "pinned": true,
@@ -49,12 +49,12 @@
             }
           },
           {
-            "id": "388dd98556397b63",
+            "id": "8268b1de2a87a918",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00-inbox/ElevenLabs.md",
+                "file": "00 - Daily/25-10-05 Sun.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -69,173 +69,42 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "ElevenLabs"
+              "title": "25-10-05 Sun"
             }
           },
           {
-            "id": "bf9b26ba6f40b54e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01-areas/business/mokai/docs/contracts/archive/CONSTITUTION v2.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "CONSTITUTION v2"
-            }
-          },
-          {
-            "id": "c1704134da150c62",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00-inbox/JACK Q'S.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": true,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "JACK Q'S"
-            }
-          },
-          {
-            "id": "952330c5de3a1ecf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00-inbox/01-today/25-10-02 - Thu.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "25-10-02 - Thu"
-            }
-          },
-          {
-            "id": "b1894f1b94bf8f9e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00-inbox/tasks/TASKS.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "TASKS"
-            }
-          },
-          {
-            "id": "115f00c0741b1090",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00-inbox/TOM.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "TOM"
-            }
-          },
-          {
-            "id": "faa9127592223150",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01-areas/business/mokhouse/Bank-details.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Bank-details"
-            }
-          },
-          {
-            "id": "b8ee2a2f66aae69e",
+            "id": "82bb747abb3f04ed",
             "type": "leaf",
             "state": {
               "type": "bases",
               "state": {
-                "file": "00-inbox/tasks/Mokai Tasks.base",
+                "file": "000 - Tasks/Mok House.base",
                 "viewName": "Table"
               },
               "icon": "lucide-table",
-              "title": "Mokai Tasks"
+              "title": "Mok House"
             }
           },
           {
-            "id": "2b015affe4b786c8",
+            "id": "bb7a8987333f127b",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "000 - Tasks/Admin.base",
+                "viewName": "Table"
+              },
+              "icon": "lucide-table",
+              "title": "Admin"
+            }
+          },
+          {
+            "id": "e1c6cebf5d05ffc4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "99-archive/Notion-ESM-Instructions-claude.md",
+                "file": "01-areas/business/mokai/learn/Procurment process explained by jack.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -250,23 +119,71 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Notion-ESM-Instructions-claude"
+              "title": "Procurment process explained by jack"
+            }
+          },
+          {
+            "id": "b6b52d604d1122a6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01-areas/business/mokai/learn/Procurment process explained by jack.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Procurment process explained by jack"
+            }
+          },
+          {
+            "id": "9d872d1ba3843fb8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01-areas/business/mokhouse/context/mokhouse-project-management-claude.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "mokhouse-project-management-claude"
             }
           }
         ],
-        "currentTab": 10
+        "currentTab": 7
       },
       {
-        "id": "488ebf3d6e8b903e",
+        "id": "454c9b7b329c845a",
         "type": "tabs",
         "children": [
           {
-            "id": "a279cb3e333682fc",
+            "id": "6915b4e5feebdcda",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00-inbox/01-today/25-10-03 - Fri.md",
+                "file": "98-templates/mok-house-project.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -281,10 +198,59 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "25-10-03 - Fri"
+              "title": "mok-house-project"
+            }
+          },
+          {
+            "id": "73c677475c7f8fba",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00-inbox/Untitled 1.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Untitled 1"
+            }
+          },
+          {
+            "id": "5ea716ec457bc9a2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "251007-xxxx-ultra.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "251007-xxxx-ultra"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -296,7 +262,6 @@
       {
         "id": "e16e878e85595b6b",
         "type": "tabs",
-        "dimension": 69.81132075471697,
         "children": [
           {
             "id": "94da3d6eb66ccc2c",
@@ -327,16 +292,39 @@
               "icon": "lucide-search",
               "title": "Search"
             }
-          }
-        ]
-      },
-      {
-        "id": "0ee97bd524279821",
-        "type": "tabs",
-        "dimension": 30.18867924528302,
-        "children": [
+          },
           {
-            "id": "275f9890619f9095",
+            "id": "2b307584957a18bb",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          },
+          {
+            "id": "d483602a7664257c",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {},
+              "icon": "clock",
+              "title": "Recent Files"
+            }
+          },
+          {
+            "id": "5dab4682ee91119e",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          },
+          {
+            "id": "da69839c2251531b",
             "type": "leaf",
             "state": {
               "type": "journal-calendar",
@@ -360,36 +348,13 @@
         "type": "tabs",
         "children": [
           {
-            "id": "f498b98fdbe2e1e3",
+            "id": "59953e4076fd41a1",
             "type": "leaf",
             "state": {
-              "type": "backlink",
-              "state": {
-                "file": "01-areas/business/mokhouse/Bank-details.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-coming-in",
-              "title": "Backlinks for Bank-details"
-            }
-          },
-          {
-            "id": "1688e8c6402efa4f",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "01-areas/business/mokhouse/Bank-details.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "Outgoing links from Bank-details"
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           },
           {
@@ -408,38 +373,28 @@
             }
           },
           {
+            "id": "a0ec68c4d9ef9145",
+            "type": "leaf",
+            "state": {
+              "type": "planner-timeline",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Timeline"
+            }
+          },
+          {
             "id": "2a2b5761a6a92c81",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "01-areas/business/mokhouse/Bank-details.md",
+                "file": "00 - Daily/25-10-07 - Tue.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Bank-details"
-            }
-          },
-          {
-            "id": "4a249c207e72aada",
-            "type": "leaf",
-            "state": {
-              "type": "copilot-chat-view",
-              "state": {},
-              "icon": "message-square",
-              "title": "Copilot"
-            }
-          },
-          {
-            "id": "5128d7e1328774b4",
-            "type": "leaf",
-            "state": {
-              "type": "todo",
-              "state": {},
-              "icon": "checkmark",
-              "title": "Todo List"
+              "title": "Outline of 25-10-07 - Tue"
             }
           },
           {
@@ -462,33 +417,75 @@
             "state": {
               "type": "smart-connections-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "smart-connections-view"
+              "icon": "smart-connections",
+              "title": "Connections"
             }
           },
           {
-            "id": "a0ec68c4d9ef9145",
+            "id": "3bc43f7af4338720",
             "type": "leaf",
             "state": {
-              "type": "planner-timeline",
+              "type": "smtcmp-chat-view",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Timeline"
+              "icon": "wand-sparkles",
+              "title": "Smart composer chat"
+            }
+          },
+          {
+            "id": "ba6069ee603df108",
+            "type": "leaf",
+            "state": {
+              "type": "todo",
+              "state": {},
+              "icon": "checkmark",
+              "title": "Todo List"
+            }
+          },
+          {
+            "id": "07e007e262b87384",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "01-areas/business/mokhouse/context/mokhouse-project-management-claude.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for mokhouse-project-management-claude"
+            }
+          },
+          {
+            "id": "45d583ab303cedc8",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "01-areas/business/mokhouse/context/mokhouse-project-management-claude.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from mokhouse-project-management-claude"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 323.5
+    "width": 712.5
   },
   "left-ribbon": {
     "hiddenItems": {
       "markdown-importer:Open format converter": false,
       "obsidian-git:Open Git source control": false,
       "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
@@ -504,58 +501,77 @@
       "obsidian-day-planner:Open Multi-Day View": false,
       "journals:shelf:-mokai:mokai": false,
       "journals:mokai-weekly:mokai---weekly-note": false,
-      "journals:mokai-context:mokai-context": false
+      "journals:mokai-context:mokai-context": false,
+      "workspaces:Manage workspace layouts": false,
+      "obsidian-kanban:Create new board": false,
+      "obsidian-full-calendar:Open Full Calendar": false,
+      "graph:Open graph view": false,
+      "obsidian-textgenerator-plugin:Generate Text!": false,
+      "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false,
+      "smart-composer:Open smart composer": false,
+      "smart-connections:Open: Smart Chat": false,
+      "smart-connections:Smart Connections: Open connections view": false,
+      "smart-connections:Smart Connections: Open random connection": true,
+      "tasknotes:Open mini calendar": false,
+      "tasknotes:Open advanced calendar": false,
+      "tasknotes:Open task list": false,
+      "tasknotes:Open notes": false,
+      "tasknotes:Open agenda": false,
+      "tasknotes:Open kanban board": false,
+      "tasknotes:Open pomodoro": false,
+      "tasknotes:Open pomodoro stats": false,
+      "tasknotes:Create new task": false
     }
   },
-  "active": "94da3d6eb66ccc2c",
+  "active": "9d872d1ba3843fb8",
   "lastOpenFiles": [
-    "08-context-ai-apps/claude-desktop/mokhouse/Notion-ESM-Instructions-claude v2.md",
-    "07-context/ai/system-prompts/claude-code.md",
-    "00-inbox/tasks/Code.base",
-    "00-inbox/Git-obsidian-settings.md",
-    "00-inbox/tasks/all tasks/$50,000 Invoice.md",
-    "00-inbox/tasks/all tasks/Raycast Hotkey change to caps.md",
-    "00-inbox/01-today/25-10-03 - Fri.md",
-    "00-inbox/tasks/all tasks/Memory tool installation.md",
-    "00-inbox/tasks/Tasks.base",
-    "97-tags/code.md",
-    "00-inbox/tasks/Mokai Tasks.base",
-    "98-templates/agent.md",
-    "98-templates/slash-command.md",
-    "98-templates/rule.md",
-    "00-inbox/tasks/MOKAI TASKS.md",
-    "98-templates/brain-dump.md",
-    "98-templates/mokai-learn-note.md",
-    "98-templates/mokai-note.md",
-    "98-templates/note.md",
-    "00-inbox/tasks/all tasks/Supply Nation application.md",
-    "00-inbox/tasks/all tasks/Linkdin Profile update.md",
-    "00-inbox/tasks/all tasks/Follow Up with Justin.md",
-    "98-templates/task.md",
-    "00-inbox/tasks/all tasks/Sign Partnership Agreement.md",
-    "00-inbox/tasks/all tasks",
-    "00-inbox/tasks/Untitled",
-    "00-inbox/tasks/all tasks/Open Bank Account.md",
-    "00-inbox/Open Bank account.md",
-    "00-inbox/tasks/Untitled.base",
-    "00-inbox/tasks/TASKS.md",
+    "01-areas/business/mokai/docs/contracts/archive/MOKAI-SHA-V2.md",
+    "01-areas/business/mokhouse/context/mokhouse-project-management-claude.md",
+    "251007-xxxx-ultra.md",
+    "98-templates/mok-house-project.md",
+    "00-inbox/mok-house-claude-pm.md",
+    "00-inbox/Untitled 1.md",
+    "02-projects/Untitled.base",
+    "00-inbox/mokhouse-projects.md",
+    "01-areas/business/mokhouse/mokhouse-profile.md",
+    "01-areas/business/mokai/mokai-profile.md",
+    "000 - Tasks/Mokai.base",
+    "000 - Tasks/Tasks.base",
+    "00-inbox/Second brain prompts.md",
+    "000 - Tasks/Admin.base",
+    "00 - Daily/25-10-07 - Tue.md",
+    "00 - Daily/25-10-09 - Thu.md",
+    "000 - Tasks/Mok House.base",
+    "00-inbox/tasks/all tasks/reformat SHA.md",
+    "04-resources/01-hotkeys.md",
+    "01-areas/business/mokai/docs/contracts/under-review/Untitled.md",
+    "01-areas/business/mokai/docs/contracts/under-review/MOKAI-SHA-V3.pdf",
+    "01-areas/business/mokai/docs/contracts/under-review/MOKAI-SHA-V3.md",
+    "01-areas/business/mokai/docs/contracts/under-review/BOARD_RESOLUTION v2.pdf",
+    "01-areas/business/mokai/docs/contracts/under-review/CONSTITUTION v3.pdf",
+    "00-inbox/Brain-connections.md",
+    "00-inbox/tasks/all tasks/Remove section 11 of SHA.md",
+    "02-projects/mok-music/CLAUDE.md",
+    "02-projects/mok-music",
+    "000-index/tag-taxonomy.md",
+    "000-index/Tags.md",
+    "000-index",
     "00-inbox/tasks/fix daily note te,plate.md",
-    "00-inbox/crewate.md",
-    "00-inbox/Untitled.base",
-    "00-inbox/Untitled 1.base",
-    "08-context-ai-apps/claude-desktop/mokhouse",
-    "01-areas/business/mokhouse/mokmusic/Untitled",
+    "00-inbox/sadgjskad.md",
+    "00-inbox/mokai-learn/Procurment process explained by jack.md",
+    "00-inbox/mokai-learn/Mokai-market opportunity.md",
+    "00-inbox/mokai-learn/Mokai explained simply.md",
     "Untitled.canvas",
+    "finance-dashboard/public/file.svg",
+    "finance-dashboard/public/window.svg",
+    "finance-dashboard/public/next.svg",
+    "finance-dashboard/public/vercel.svg",
+    "finance-dashboard/public/globe.svg",
     "Untitled 1.canvas",
     "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/voyage.webp",
     "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/xai.svg",
     "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/volcengine.png",
     "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/vllm.png",
-    "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/togetherai.svg",
-    "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/secret_detect.png",
-    "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/sambanova.svg",
-    "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/qwen.png",
-    "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/presidio.png",
-    "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/postgresql.svg"
+    "fastapi_mcp_env/lib/python3.13/site-packages/litellm/proxy/_experimental/out/assets/logos/togetherai.svg"
   ]
 }

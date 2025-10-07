@@ -1,0 +1,23 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - relation.contains(link("mokhouse"))
+        - type == "Task"
+    order:
+      - Done
+      - file.name
+      - relation
+    sort:
+      - property: relation
+        direction: ASC
+  - type: cards
+    name: View
+    order:
+      - file.name
+      - file.backlinks
+      - file.basename
+      - file.ctime
+      - file.embeds
+      - file.ext

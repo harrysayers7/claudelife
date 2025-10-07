@@ -6,18 +6,18 @@
     "editor:copy",
     "editor:paste",
     "obsidian-linter:lint-file-unless-ignored",
+    "editor:set-heading-3",
+    "markdown:add-metadata-property",
     "editor:set-heading",
     "editor:open-search",
-    "markdown:add-metadata-property",
+    "obsidian-textgenerator-plugin:generate-text",
     "editor:insert-tag",
+    "note-refactor-obsidian:app:extract-selection-content-only",
     "editor:insert-callout",
     "editor:insert-codeblock",
     "editor:toggle-bold",
     "editor:toggle-highlight",
     "editor:toggle-code",
-    "editor:toggle-blockquote",
-    "editor:insert-link",
-    "editor:toggle-numbered-list",
     "command-palette:open",
     "editor:cycle-list-checklist",
     "editor:configure-toolbar"
@@ -32,7 +32,7 @@
     "n8n-workflows/"
   ],
   "pdfExportSettings": {
-    "pageSize": "Legal",
+    "pageSize": "A4",
     "landscape": false,
     "margin": "0",
     "downscalePercent": 100
@@ -41,5 +41,7 @@
   "newFileFolderPath": "00-inbox",
   "promptDelete": false,
   "alwaysUpdateLinks": true,
-  "mobilePullAction": "command-palette:open"
+  "mobilePullAction": "command-palette:open",
+  "foldIndent": true,
+  "propertiesInDocument": "visible"
 }

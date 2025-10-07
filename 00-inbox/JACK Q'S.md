@@ -1,6 +1,9 @@
 ---
 date created: Thu, 10 2nd 25, 9:40:46 am
-date modified: Thu, 10 2nd 25, 9:41:27 am
+date modified: Fri, 10 3rd 25, 5:02:08 pm
+relation:
+  - "[[mokai]]"
+  - "[[mokai-cyber-learning]]"
 ---
 Two Essential Questions for Jack
 Question 1: Pricing & Contractor Economics

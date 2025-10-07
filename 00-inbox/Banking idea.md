@@ -19,13 +19,10 @@ TQ_show_start_date:
 TQ_show_tags:
 TQ_show_task_count:
 TQ_show_tree:
+date created: Tue, 09 30th 25, 11:10:03 am
+date modified: Tue, 10 7th 25, 8:51:56 am
 ---
 ### Project Overview
-
-- Building an AI agent for a financial dashboard
-- Dashboard will track spending and taxes
-- System should provide financial insights and projections
-- Goal is to have interactive capability for financial management
 
 ### Technical Components
 

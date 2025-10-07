@@ -1,7 +1,11 @@
 ---
 tags:
 description:
-date: "2025-09-29 15:39"
+date: 2025-09-29 15:39
+relation:
+  - "[[admin]]"
+date created: Mon, 09 29th 25, 4:40:52 pm
+date modified: Sun, 10 5th 25, 1:40:12 pm
 ---
  Core Settings
 
