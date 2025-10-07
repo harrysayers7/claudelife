@@ -1,8 +1,15 @@
 {
-  "lastCheck": "2025-09-25T06:37:40.097Z",
+  "lastCheck": "2025-10-07T00:00:58.840Z",
   "servers": {
     "notion": {
       "history": [
+        {
+          "name": "notion",
+          "status": "healthy",
+          "responseTime": 3,
+          "error": null,
+          "timestamp": "2025-10-07T00:00:58.840Z"
+        },
         {
           "name": "notion",
           "status": "healthy",
@@ -11,11 +18,18 @@
           "timestamp": "2025-09-25T06:37:40.097Z"
         }
       ],
-      "totalChecks": 1,
+      "totalChecks": 2,
       "failures": 0
     },
     "supabase": {
       "history": [
+        {
+          "name": "supabase",
+          "status": "healthy",
+          "responseTime": 3,
+          "error": null,
+          "timestamp": "2025-10-07T00:00:58.840Z"
+        },
         {
           "name": "supabase",
           "status": "healthy",
@@ -24,11 +38,18 @@
           "timestamp": "2025-09-25T06:37:40.097Z"
         }
       ],
-      "totalChecks": 1,
+      "totalChecks": 2,
       "failures": 0
     },
     "task-master-ai": {
       "history": [
+        {
+          "name": "task-master-ai",
+          "status": "healthy",
+          "responseTime": 3,
+          "error": null,
+          "timestamp": "2025-10-07T00:00:58.840Z"
+        },
         {
           "name": "task-master-ai",
           "status": "healthy",
@@ -37,11 +58,18 @@
           "timestamp": "2025-09-25T06:37:40.097Z"
         }
       ],
-      "totalChecks": 1,
+      "totalChecks": 2,
       "failures": 0
     },
     "github": {
       "history": [
+        {
+          "name": "github",
+          "status": "healthy",
+          "responseTime": 2,
+          "error": null,
+          "timestamp": "2025-10-07T00:00:58.840Z"
+        },
         {
           "name": "github",
           "status": "healthy",
@@ -50,11 +78,18 @@
           "timestamp": "2025-09-25T06:37:40.097Z"
         }
       ],
-      "totalChecks": 1,
+      "totalChecks": 2,
       "failures": 0
     },
     "memory": {
       "history": [
+        {
+          "name": "memory",
+          "status": "healthy",
+          "responseTime": 3,
+          "error": null,
+          "timestamp": "2025-10-07T00:00:58.840Z"
+        },
         {
           "name": "memory",
           "status": "healthy",
@@ -63,7 +98,7 @@
           "timestamp": "2025-09-25T06:37:40.097Z"
         }
       ],
-      "totalChecks": 1,
+      "totalChecks": 2,
       "failures": 0
     },
     "shadcn-ui": {
@@ -203,10 +238,17 @@
           "status": "healthy",
           "responseTime": 3,
           "error": null,
+          "timestamp": "2025-10-07T00:00:58.840Z"
+        },
+        {
+          "name": "context7",
+          "status": "healthy",
+          "responseTime": 3,
+          "error": null,
           "timestamp": "2025-09-25T06:37:40.097Z"
         }
       ],
-      "totalChecks": 1,
+      "totalChecks": 2,
       "failures": 0
     },
     "upbank": {
@@ -305,16 +347,30 @@
         {
           "name": "gmail",
           "status": "healthy",
+          "responseTime": 2,
+          "error": null,
+          "timestamp": "2025-10-07T00:00:58.840Z"
+        },
+        {
+          "name": "gmail",
+          "status": "healthy",
           "responseTime": 6,
           "error": null,
           "timestamp": "2025-09-25T06:37:40.097Z"
         }
       ],
-      "totalChecks": 1,
+      "totalChecks": 2,
       "failures": 0
     },
     "serena": {
       "history": [
+        {
+          "name": "serena",
+          "status": "healthy",
+          "responseTime": 5,
+          "error": null,
+          "timestamp": "2025-10-07T00:00:58.840Z"
+        },
         {
           "name": "serena",
           "status": "healthy",
@@ -323,7 +379,7 @@
           "timestamp": "2025-09-25T06:37:40.097Z"
         }
       ],
-      "totalChecks": 1,
+      "totalChecks": 2,
       "failures": 0
     },
     "gptr-mcp": {
@@ -338,6 +394,39 @@
       ],
       "totalChecks": 1,
       "failures": 0
+    },
+    "stripe": {
+      "history": [
+        {
+          "name": "stripe",
+          "status": "healthy",
+          "responseTime": 3,
+          "error": null,
+          "timestamp": "2025-10-07T00:00:58.840Z"
+        }
+      ],
+      "totalChecks": 1,
+      "failures": 0
+    },
+    "baserow": {
+      "history": [
+        {
+          "name": "baserow",
+          "status": "pending",
+          "responseTime": null,
+          "error": null,
+          "timestamp": "2025-10-07T13:45:00.000Z",
+          "notes": "Added to Claude Desktop config via mcp-remote. Requires restart to activate."
+        }
+      ],
+      "totalChecks": 0,
+      "failures": 0,
+      "config": {
+        "type": "mcp-remote",
+        "endpoint": "https://api.baserow.io/mcp/gvRWYDUeJZ5H9c5cxpEF4woPPYOqTo2D/sse",
+        "addedDate": "2025-10-07",
+        "purpose": "Baserow database management and operations"
+      }
     }
   }
 }
