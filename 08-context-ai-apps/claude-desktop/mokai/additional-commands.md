@@ -1,6 +1,6 @@
 ---
 date created: Fri, 10 3rd 25, 5:11:38 am
-date modified: Sat, 10 4th 25, 4:01:30 am
+date modified: Wed, 10 8th 25, 10:28:22 am
 relation:
   - "[[commands]]"
   - "[[mokai]]"
@@ -14,3 +14,8 @@ Same as !md but a shorter summary of no more than 300 words with bullets points
 
 ### !derp
 Explain $ARGUMENTS like im 15 years old and if relevant use a real world example of how this applies to Mokai
+
+### !supa
+Use or refer to the supabase MCP based on $ARGUMENTS
+
+### !

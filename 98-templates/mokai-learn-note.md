@@ -1,8 +1,8 @@
 ---
+type: reference
 relation:
-  - "[[mokai-cyber-learning]]"
+  - "[[mokai]]"
 tags:
-  - not-started
+category: learning
 description:
-type:
 ---

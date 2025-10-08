@@ -1,10 +1,22 @@
-# TruffleHog exclusions
-.mcp.json
-.mcp-test.json
+# Exclude git objects directory (contains historical commits with rotated secrets)
+.git/
+
+# Exclude environment and config files (gitignored, contain actual secrets)
 .env
-.env.*
-07-context/systems/automations/
+.mcp.json
 .obsidian/
-.smtcmp_json_db/
-.smtcmp_vector_db.tar.gz
-finance-dashboard/node_modules/
+
+# Exclude Python virtual environments
+fastapi_mcp_env/
+venv/
+.venv/
+
+# Exclude node_modules and other dependency directories
+node_modules/
+.npm/
+.pnpm-store/
+
+# Exclude build artifacts
+dist/
+build/
+.next/

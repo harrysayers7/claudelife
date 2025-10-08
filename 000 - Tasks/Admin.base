@@ -4,12 +4,16 @@ views:
     filters:
       and:
         - relation.contains(link("admin"))
+        - Done != true
     order:
       - Done
       - file.name
       - description
       - date created
       - relation
+      - today
+      - follow up
+      - effort
     sort:
       - property: date
         direction: ASC

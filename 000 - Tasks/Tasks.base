@@ -12,6 +12,7 @@ views:
     order:
       - Done
       - file.name
+      - today
       - description
       - status
       - relation

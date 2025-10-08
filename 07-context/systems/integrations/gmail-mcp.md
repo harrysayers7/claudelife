@@ -1,7 +1,8 @@
 ---
-created: "2025-10-02 05:40"
-system_type: "integration"
-status: "active"
+created: 2025-10-02 05:40
+system_type: integration
+status: active
+type: mcp
 ---
 
 # Gmail MCP Server

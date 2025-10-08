@@ -13,12 +13,14 @@ views:
     order:
       - Done
       - file.name
+      - today
       - description
       - status
       - file.ctime
       - file.mtime
       - file.folder
       - relation
+      - effort
     sort:
       - property: status
         direction: DESC

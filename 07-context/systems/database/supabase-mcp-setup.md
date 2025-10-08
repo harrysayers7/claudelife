@@ -1,5 +1,8 @@
 ---
-date: "2025-10-02 13:05"
+date: 2025-10-02 13:05
+location: "[[claudelife]]"
+status:
+  - active
 ---
 
 # Supabase MCP Server - Setup & Troubleshooting

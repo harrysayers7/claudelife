@@ -1,3 +1,7 @@
+---
+date created: Tue, 10 7th 25, 5:15:37 pm
+date modified: Tue, 10 7th 25, 9:59:50 pm
+---
 # Automated Project & Invoice Management System
 
 **Version:** 2.0
@@ -243,7 +247,7 @@ Next: Create demo, then mark as submitted
 3. Create project with available information
 4. Mark for later completion
 
-### If Brief Details are Missing:
+### If Brief Details Are Missing:
 
 1. Create project with available info
 2. Use defaults where appropriate

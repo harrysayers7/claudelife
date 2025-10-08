@@ -6,6 +6,7 @@
       {
         "id": "c231c5a3fdc286e6",
         "type": "tabs",
+        "dimension": 58.78707392651615,
         "children": [
           {
             "id": "f644d129b6b3cbec",
@@ -52,9 +53,45 @@
             "id": "8268b1de2a87a918",
             "type": "leaf",
             "state": {
+              "type": "pdf",
+              "state": {
+                "file": "01-areas/business/mokai/docs/contracts/archive/MOKAI-SHA-V2.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "MOKAI-SHA-V2"
+            }
+          },
+          {
+            "id": "113f6f3b9dabdbe1",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "00 - Daily/25-10-05 Sun.md",
+                "file": "98-templates/lesson.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": true,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "lesson"
+            }
+          },
+          {
+            "id": "f42181b2265d60a0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01-areas/business/mokai/learn/Cyber landsacpe.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -69,24 +106,79 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "25-10-05 Sun"
+              "title": "Cyber landsacpe"
             }
           },
           {
-            "id": "82bb747abb3f04ed",
+            "id": "2c816b05bc3a3260",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "000 - Tasks/Mok House.base",
-                "viewName": "Table"
+                "file": "00-inbox/tasks/all tasks/Photos for website.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
               },
-              "icon": "lucide-table",
-              "title": "Mok House"
+              "icon": "lucide-file",
+              "title": "Photos for website"
             }
           },
           {
-            "id": "bb7a8987333f127b",
+            "id": "fb1fbebba62f93ca",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "01-areas/business/soletrader/tax/FY24/Collations Cover Page - Harrison Sayers Group.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Collations Cover Page - Harrison Sayers Group"
+            }
+          },
+          {
+            "id": "b671d483dddb089f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01-areas/business/crypto/research/Crypto Bot Master Research.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Crypto Bot Master Research"
+            }
+          }
+        ],
+        "currentTab": 7
+      },
+      {
+        "id": "707aaa456e16426f",
+        "type": "tabs",
+        "dimension": 41.21292607348384,
+        "children": [
+          {
+            "id": "f4f226ce6219310b",
             "type": "leaf",
             "state": {
               "type": "bases",
@@ -97,160 +189,8 @@
               "icon": "lucide-table",
               "title": "Admin"
             }
-          },
-          {
-            "id": "e1c6cebf5d05ffc4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01-areas/business/mokai/learn/Procurment process explained by jack.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Procurment process explained by jack"
-            }
-          },
-          {
-            "id": "b6b52d604d1122a6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01-areas/business/mokai/learn/Procurment process explained by jack.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Procurment process explained by jack"
-            }
-          },
-          {
-            "id": "9d872d1ba3843fb8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01-areas/business/mokhouse/context/mokhouse-project-management-claude.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "mokhouse-project-management-claude"
-            }
           }
-        ],
-        "currentTab": 7
-      },
-      {
-        "id": "454c9b7b329c845a",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "6915b4e5feebdcda",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "98-templates/mok-house-project.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "mok-house-project"
-            }
-          },
-          {
-            "id": "73c677475c7f8fba",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00-inbox/Untitled 1.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Untitled 1"
-            }
-          },
-          {
-            "id": "5ea716ec457bc9a2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "251007-xxxx-ultra.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "251007-xxxx-ultra"
-            }
-          }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -314,16 +254,6 @@
             }
           },
           {
-            "id": "5dab4682ee91119e",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
-          },
-          {
             "id": "da69839c2251531b",
             "type": "leaf",
             "state": {
@@ -337,7 +267,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 267.5
   },
   "right": {
     "id": "4ba4fbf600cab1d4",
@@ -417,8 +347,8 @@
             "state": {
               "type": "smart-connections-view",
               "state": {},
-              "icon": "smart-connections",
-              "title": "Connections"
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
             }
           },
           {
@@ -447,7 +377,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01-areas/business/mokhouse/context/mokhouse-project-management-claude.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -457,7 +386,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for mokhouse-project-management-claude"
+              "title": "Backlinks"
             }
           },
           {
@@ -466,12 +395,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01-areas/business/mokhouse/context/mokhouse-project-management-claude.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from mokhouse-project-management-claude"
+              "title": "Outgoing links"
             }
           }
         ],
@@ -479,7 +407,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 712.5
+    "width": 488.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -508,59 +437,47 @@
       "graph:Open graph view": false,
       "obsidian-textgenerator-plugin:Generate Text!": false,
       "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false,
-      "smart-composer:Open smart composer": false,
-      "smart-connections:Open: Smart Chat": false,
-      "smart-connections:Smart Connections: Open connections view": false,
-      "smart-connections:Smart Connections: Open random connection": true,
-      "tasknotes:Open mini calendar": false,
-      "tasknotes:Open advanced calendar": false,
-      "tasknotes:Open task list": false,
-      "tasknotes:Open notes": false,
-      "tasknotes:Open agenda": false,
-      "tasknotes:Open kanban board": false,
-      "tasknotes:Open pomodoro": false,
-      "tasknotes:Open pomodoro stats": false,
-      "tasknotes:Create new task": false
+      "smart-composer:Open smart composer": false
     }
   },
-  "active": "9d872d1ba3843fb8",
+  "active": "b671d483dddb089f",
   "lastOpenFiles": [
-    "01-areas/business/mokai/docs/contracts/archive/MOKAI-SHA-V2.md",
-    "01-areas/business/mokhouse/context/mokhouse-project-management-claude.md",
-    "251007-xxxx-ultra.md",
-    "98-templates/mok-house-project.md",
-    "00-inbox/mok-house-claude-pm.md",
-    "00-inbox/Untitled 1.md",
-    "02-projects/Untitled.base",
-    "00-inbox/mokhouse-projects.md",
-    "01-areas/business/mokhouse/mokhouse-profile.md",
-    "01-areas/business/mokai/mokai-profile.md",
-    "000 - Tasks/Mokai.base",
-    "000 - Tasks/Tasks.base",
-    "00-inbox/Second brain prompts.md",
-    "000 - Tasks/Admin.base",
-    "00 - Daily/25-10-07 - Tue.md",
-    "00 - Daily/25-10-09 - Thu.md",
+    "01-areas/business/crypto/research/Claude code AI crypto trading.md",
+    "00-inbox/Untitled 5.md",
+    "01-areas/business/crypto/research/Crypto Bot Master Research.md",
+    "00-inbox/Untitled 4.md",
+    "01-areas/business/soletrader/tax/FY24/Collations Cover Page - Harrison Sayers Group.pdf",
+    "01-areas/business/soletrader/tax/FY24/2024_TRT_HSFamilyTrust (SIGNED).pdf",
+    "01-areas/business/soletrader/tax/FY24/2024_ITR_HarrisonRobertSayers.pdf",
     "000 - Tasks/Mok House.base",
-    "00-inbox/tasks/all tasks/reformat SHA.md",
-    "04-resources/01-hotkeys.md",
-    "01-areas/business/mokai/docs/contracts/under-review/Untitled.md",
-    "01-areas/business/mokai/docs/contracts/under-review/MOKAI-SHA-V3.pdf",
-    "01-areas/business/mokai/docs/contracts/under-review/MOKAI-SHA-V3.md",
-    "01-areas/business/mokai/docs/contracts/under-review/BOARD_RESOLUTION v2.pdf",
-    "01-areas/business/mokai/docs/contracts/under-review/CONSTITUTION v3.pdf",
-    "00-inbox/Brain-connections.md",
-    "00-inbox/tasks/all tasks/Remove section 11 of SHA.md",
-    "02-projects/mok-music/CLAUDE.md",
-    "02-projects/mok-music",
-    "000-index/tag-taxonomy.md",
-    "000-index/Tags.md",
-    "000-index",
-    "00-inbox/tasks/fix daily note te,plate.md",
-    "00-inbox/sadgjskad.md",
-    "00-inbox/mokai-learn/Procurment process explained by jack.md",
-    "00-inbox/mokai-learn/Mokai-market opportunity.md",
-    "00-inbox/mokai-learn/Mokai explained simply.md",
+    "01-areas/business/soletrader/tax/FY24/HS_Family_Trust_-_Financial_Statements 2024 (SIGNED).pdf",
+    "000 - Tasks/Mokai.base",
+    "00-inbox/tasks/all tasks/Sign Partnership Agreement.md",
+    "000 - Tasks/Admin.base",
+    "00-inbox/Git-obsidian-settings.md",
+    "00 - Daily/25-10-08 - Wed.md",
+    "00-inbox/tasks/all tasks/Taxes FY25.md",
+    "98-templates/daily-note.md",
+    "000 - Tasks/Code.base",
+    "00-inbox/tasks/all tasks/Memory tool installation.md",
+    "00-inbox/Sort commands.md",
+    "00-inbox/tasks/all tasks/Create a add task slash command.md",
+    "00-inbox/tasks/all tasks/Refactor prompt claude.md",
+    "00-inbox/tasks/all tasks/Obsidian mcp.md",
+    "00-inbox/tasks/all tasks/Add cursor Mok house subscriptions in Notion.md",
+    "00-inbox/tasks/all tasks/A business transactions section in supabase.md",
+    "00-inbox/tasks/all tasks/Follow Up Ian - Panda Candy.md",
+    "000 - Tasks/Today.base",
+    "00-inbox/tasks/all tasks/FTX Payment.md",
+    "00-inbox/Second brain prompts.md",
+    "00-inbox/tasks/all tasks/SMSF TAXES.md",
+    "00-inbox/Untitled 3.md",
+    "00-inbox/tasks/all tasks/Photos for website.md",
+    "000 - Tasks/Follow Up.base",
+    "98-templates/task.md",
+    "00-inbox/Sub Agents video.md",
+    "04-resources/prompt-library/prompts/create-contract-document-pdf.md",
+    "00-inbox/Create index md.md",
     "Untitled.canvas",
     "finance-dashboard/public/file.svg",
     "finance-dashboard/public/window.svg",

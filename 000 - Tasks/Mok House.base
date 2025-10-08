@@ -9,6 +9,7 @@ views:
       - Done
       - file.name
       - relation
+      - effort
     sort:
       - property: relation
         direction: ASC

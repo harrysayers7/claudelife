@@ -5,6 +5,7 @@ status:
 relation:
   - "[[code]]"
 description:
+today: false
 ---
 ### 🧩 Sequential Thinking Rule
 

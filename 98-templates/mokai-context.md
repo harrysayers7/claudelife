@@ -1,5 +1,9 @@
 ---
+type: reference
 relation:
   - "[[mokai]]"
-  - "[[mokai context]]"
+tags:
+category: context
+description:
+keywords:
 ---

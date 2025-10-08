@@ -6,13 +6,18 @@ tags:
 description: Second brain prompts
 type: Task
 date created: Sat, 10 4th 25, 7:07:47 am
-date modified: Tue, 10 7th 25, 8:59:25 am
+date modified: Wed, 10 8th 25, 3:50:22 pm
 Done: false
 ---
 Here are 10 intelligent prompts you can use with Cursor when working with Obsidian as your second brain. These are designed to make Cursor act like a proactive AI assistant that helps you with thinking, organizing, and creating inside your vault:
 
 ---
 
+### Brain connections
+
+
+
+Find all potential connections between notes. Create bidirectional links using [Note Name] format. Focus on conceptual connections, not just keyword matches. Make sure to add to frontmmater in relation property
 
 ### from youtube:
 

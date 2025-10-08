@@ -5,6 +5,7 @@ system_type: automation
 status: active
 relation:
   - "[[Automation]]"
+location: "[[claudelife]]"
 ---
 
 # UpBank GitHub Actions Automation

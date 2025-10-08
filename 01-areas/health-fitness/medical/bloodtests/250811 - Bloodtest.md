@@ -1,3 +1,7 @@
+---
+date created: Tue, 10 7th 25, 4:46:36 am
+date modified: Tue, 10 7th 25, 8:19:45 pm
+---
 # 🧬 Blood Test Summary — Harrison Sayers
 **Date Collected:** 11 Aug 2025, 08:17 AM
 **Date Reported:** 11 Aug 2025, 08:04 PM
@@ -59,12 +63,12 @@ All values within normal range. eGFR >90 indicates normal kidney function.
 ## 🩶 Iron Studies
 **Specimen Type:** Serum
 
-| Test | Result | Unit | Reference Range |
-|-------|--------|------|----------------|
-| Serum Iron | 21 | µmol/L | 10–30 |
-| Transferrin | 26 | µmol/L | 27–46 |
-| Transferrin Saturation | 41 | % | 13–45 |
-| Serum Ferritin | 318 | µg/L | 30–300 |
+| Test                   | Result | Unit   | Reference Range |
+| ---------------------- | ------ | ------ | --------------- |
+| Serum Iron             | 21     | µmol/L | 10–30           |
+| Transferrin            | 26     | µmol/L | 27–46           |
+| Transferrin Saturation | 41     | %      | 13–45           |
+| Serum Ferritin         | 318    | µg/L   | 30–300          |
 
 **Interpretation:**
 Slightly elevated ferritin with normal transferrin saturation — could be due to mild inflammation or hepatic response. Recheck with CRP and LFT if unwell.
@@ -115,9 +119,9 @@ Normal fasting glucose.
 ---
 
 ## 🌤 Vitamin D
-| Test | Result | Unit | Reference Range |
-|-------|--------|------|----------------|
-| 25(OH) Vitamin D | 72 | nmol/L | 51–200 (Sufficient) |
+| Test             | Result | Unit   | Reference Range     |
+| ---------------- | ------ | ------ | ------------------- |
+| 25(OH) Vitamin D | 72     | nmol/L | 51–200 (Sufficient) |
 
 **Interpretation:**
 Vitamin D level is **sufficient**.

@@ -1,5 +1,5 @@
 ---
+type: brain dump
 relation:
-  - "[[brain dump]]"
-type:
+tags:
 ---

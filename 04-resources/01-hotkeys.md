@@ -1,6 +1,6 @@
 ---
 date created: Mon, 09 29th 25, 4:40:52 pm
-date modified: Tue, 10 7th 25, 11:45:04 am
+date modified: Wed, 10 8th 25, 3:21:43 pm
 ---
 ## ### Mac
 
@@ -17,6 +17,7 @@ Double Click Command: Speak
 **Close current tab:** Cmd+W
 **Left Side Bar**: Shift+CMD+S
 Shift x 2 : command pallete
+Open Daily Note = CMD + D
 
 
  You can highlight a piece of text and click option C, and it will create a task out of it.
@@ -24,6 +25,8 @@ Shift x 2 : command pallete
 ##### Raycast
 
 Clipboard History Command: CAPS+Z
+CAPS + R = Right half ultra wide
+CAPS + L = Left half ultra wide
 
 
 

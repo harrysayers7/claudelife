@@ -1,0 +1,16 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - note["follow up"] == true
+        - Done != true
+    order:
+      - Done
+      - file.name
+      - description
+      - follow up
+      - effort
+    columnSize:
+      file.name: 211
+      note.description: 337

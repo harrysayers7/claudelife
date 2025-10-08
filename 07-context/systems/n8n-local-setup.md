@@ -1,3 +1,6 @@
+---
+location: "[[claudelife]]"
+---
 # n8n Local Setup
 
 ## Overview

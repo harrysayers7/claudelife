@@ -7,6 +7,13 @@ views:
         - file.name != "README"
     order:
       - file.name
+      - status
+      - type
+      - location
       - relation
       - system_type
       - created
+    columnSize:
+      note.status: 114
+      note.type: 126
+      note.location: 122

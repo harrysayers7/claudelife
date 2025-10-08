@@ -1,0 +1,12 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - today == true
+        - Done != true
+    order:
+      - Done
+      - file.name
+      - today
+      - file.ctime
