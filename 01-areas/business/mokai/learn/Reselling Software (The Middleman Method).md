@@ -1,8 +1,13 @@
 ---
 date created: Tue, 10 7th 25, 2:06:38 pm
-date modified: Tue, 10 7th 25, 2:08:02 pm
+date modified: Thu, 10 9th 25, 8:24:14 pm
 relation:
   - "[[mokai-cyber-learning]]"
+tags:
+  - reselling
+  - business-model
+  - pricing
+category: learning
 ---
 ## Reselling Software (The Middleman Method)
 

@@ -1,10 +1,27 @@
 ---
 relation:
   - "[[mokai]]"
-  - "[[mokai-cyber-learning]]"
-  - "[[deep-research]]"
 date created: Wed, 10 1st 25, 8:28:18 pm
-date modified: Wed, 10 1st 25, 8:45:53 pm
+date modified: Fri, 10 10th 25, 11:28:29 am
+category:
+  - research
+tags:
+  - indigenous-business
+  - operations
+  - TOM
+  - consulting
+  - business-model
+keywords:
+  - target-operating-model
+  - service-delivery
+  - productization
+  - SOP
+  - contractor-management
+  - ISO27001
+research-type:
+  - Deep research
+description: Operating model and business architecture framework for lean cybersecurity consulting, covering target operating models, service delivery structures, contractor management, productization strategies, and ISO 27001 compliance
+ai-context: true
 ---
 Operating Model & Business Architecture for a Lean Cyber Consulting Firm (Mokai)
 

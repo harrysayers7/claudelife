@@ -1,3 +1,7 @@
+---
+date created: Wed, 10 8th 25, 6:02:54 pm
+date modified: Wed, 10 8th 25, 6:10:39 pm
+---
 **Cognitive Guardrails: A Blueprint for a Human-in-the-Loop Override System in Automated Crypto Trading**
 
 **Executive Summary**

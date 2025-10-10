@@ -2,10 +2,13 @@
 relation:
   - "[[mokai-cyber-learning]]"
 tags:
-  - active
+  - government
+  - market-analysis
+  - cybersecurity
 description:
 date created: Wed, 10 1st 25, 11:18:37 am
 date modified: Wed, 10 1st 25, 11:34:53 am
+category: learning
 ---
 
 ## Key Points

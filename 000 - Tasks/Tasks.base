@@ -19,6 +19,7 @@ views:
       - file.ctime
       - file.mtime
       - file.folder
+      - effort
     sort:
       - property: status
         direction: DESC

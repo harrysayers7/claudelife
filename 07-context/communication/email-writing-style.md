@@ -1,5 +1,5 @@
 ---
-relation: "[[context]]"
+relation: "[[97-tags/context]]"
 tags:
 description: My email writing style
 ---

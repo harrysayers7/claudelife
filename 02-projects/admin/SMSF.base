@@ -1,0 +1,11 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - type.contains("Task")
+        - relation.contains(link("SMSF"))
+    order:
+      - Done
+      - file.name
+      - description

@@ -4,7 +4,7 @@ relation:
 project name: Coopers Old Mates
 customer: Electric Sheep Music
 status: Brief Received
-demo fee:
+demo fee: 500
 award fee:
 due date: 2025-09-25
 date received: 2025-09-22
@@ -13,12 +13,13 @@ Date Paid: ""
 PO: ""
 "Invoice #": ""
 submitted date: ""
-paid: true
+paid: false
 awarded: false
 APRA: false
 12 FOS: true
 date created: Tue, 10 7th 25, 6:10:11 pm
 date modified: Tue, 10 7th 25, 8:29:57 pm
+invoice sent: true
 ---
 
 > [!NOTE]

@@ -1,6 +1,6 @@
 ---
 date created: Wed, 10 8th 25, 11:55:11 am
-date modified: Wed, 10 8th 25, 11:56:29 am
+date modified: Wed, 10 8th 25, 7:42:50 pm
 ---
 ### **Universal Obsidian Vault File Creation Standards**
 

@@ -2,15 +2,31 @@
 relation:
   - "[[deep-research]]"
   - "[[mokai-cyber-learning]]"
+  - "[[mokai]]"
 tags:
-description:
+  - procurement
+  - IRAP
+  - indigenous-business
+  - government-contracts
+  - cybersecurity
+description: "Australian Government Cybersecurity Services Procurement: Landscape, Indigenous Policy, and Strategy for Mokai"
 date created: Wed, 10 1st 25, 11:02:25 am
-date modified: Tue, 10 7th 25, 10:13:55 pm
+date modified: Fri, 10 10th 25, 11:28:21 am
+category:
+  - research
+keywords:
+  - AusTender
+  - Digital-Marketplace
+  - Indigenous-Procurement-Policy
+  - Essential-Eight
+  - Commonwealth-Procurement-Rules
+  - Exemption-16
+research-type:
+  - Deep research
+ai-context: true
 ---
 
-
-
-Australian Government Cybersecurity Services Procurement: Landscape, Indigenous Policy, and Strategy for Mokai
+### Australian Government Cybersecurity Services Procurement: Landscape, Indigenous Policy, and Strategy for Mokai
 
 Executive Summary
 

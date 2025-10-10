@@ -17,9 +17,9 @@ SORT file.ctime DESC
 
 ### Daily Routine
 
-- [ ] Audiobook
-- [ ] Gym
 - [ ]
+- [ ]
+
 
 
 
@@ -36,3 +36,5 @@ SORT file.ctime DESC
 ---
 
 ### 🌍 Context
+###  👾 AI To-Do's
+-

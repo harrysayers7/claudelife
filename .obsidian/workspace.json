@@ -6,7 +6,6 @@
       {
         "id": "c231c5a3fdc286e6",
         "type": "tabs",
-        "dimension": 58.78707392651615,
         "children": [
           {
             "id": "f644d129b6b3cbec",
@@ -50,24 +49,24 @@
             }
           },
           {
-            "id": "8268b1de2a87a918",
+            "id": "5b14af90efc1424f",
             "type": "leaf",
+            "pinned": true,
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "01-areas/business/mokai/docs/contracts/archive/MOKAI-SHA-V2.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "MOKAI-SHA-V2"
+              "type": "full-calendar-view",
+              "state": {},
+              "pinned": true,
+              "icon": "calendar-glyph",
+              "title": "Calendar"
             }
           },
           {
-            "id": "113f6f3b9dabdbe1",
+            "id": "f1f52b5a3b438339",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "98-templates/lesson.md",
+                "file": "01-areas/business/mokai/learn/What-is-the-Esssential-eight.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -82,76 +81,29 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "lesson"
-            }
-          },
-          {
-            "id": "f42181b2265d60a0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01-areas/business/mokai/learn/Cyber landsacpe.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Cyber landsacpe"
-            }
-          },
-          {
-            "id": "2c816b05bc3a3260",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00-inbox/tasks/all tasks/Photos for website.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Photos for website"
-            }
-          },
-          {
-            "id": "fb1fbebba62f93ca",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "01-areas/business/soletrader/tax/FY24/Collations Cover Page - Harrison Sayers Group.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Collations Cover Page - Harrison Sayers Group"
+              "title": "What-is-the-Esssential-eight"
             }
           },
           {
             "id": "b671d483dddb089f",
             "type": "leaf",
             "state": {
+              "type": "bases",
+              "state": {
+                "file": "000 - Tasks/Mokai.base",
+                "viewName": "Table"
+              },
+              "icon": "lucide-table",
+              "title": "Mokai"
+            }
+          },
+          {
+            "id": "dd38ebcc1e169c63",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "01-areas/business/crypto/research/Crypto Bot Master Research.md",
+                "file": "00 - Daily/25-10-03 - Fri.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -166,28 +118,76 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Crypto Bot Master Research"
+              "title": "25-10-03 - Fri"
+            }
+          },
+          {
+            "id": "bc739752a03e393b",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.youtube.com/watch?v=juPk-9TG2Kw",
+                "title": "(393) The Role of a Cyber Security Consultant: Explained Simply - YouTube",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "(393) The Role of a Cyber Security Consultant: Explained Simply - YouTube"
+            }
+          },
+          {
+            "id": "e3e581646b7d9715",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01-areas/business/mokai/docs/research/COMPETITIVE LANDSCAPE.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "COMPETITIVE LANDSCAPE"
             }
           }
         ],
         "currentTab": 7
       },
       {
-        "id": "707aaa456e16426f",
+        "id": "9aa4b61d15e3eac6",
         "type": "tabs",
-        "dimension": 41.21292607348384,
         "children": [
           {
-            "id": "f4f226ce6219310b",
+            "id": "143bf51cf572f8b8",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "000 - Tasks/Admin.base",
-                "viewName": "Table"
+                "file": "00-inbox/tasks/all tasks/Analyse my learning ability, how i learn and add to claude.md",
+                "mode": "preview",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
               },
-              "icon": "lucide-table",
-              "title": "Admin"
+              "icon": "lucide-file",
+              "title": "Analyse my learning ability, how i learn and add to claude"
             }
           }
         ]
@@ -401,9 +401,19 @@
               "icon": "links-going-out",
               "title": "Outgoing links"
             }
+          },
+          {
+            "id": "ff8a1bddfc7beba8",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
+              "icon": "SpacedRepIcon",
+              "title": "Notes Review Queue"
+            }
           }
         ],
-        "currentTab": 6
+        "currentTab": 10
       }
     ],
     "direction": "horizontal",
@@ -437,47 +447,48 @@
       "graph:Open graph view": false,
       "obsidian-textgenerator-plugin:Generate Text!": false,
       "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false,
-      "smart-composer:Open smart composer": false
+      "smart-composer:Open smart composer": false,
+      "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "b671d483dddb089f",
+  "active": "e3e581646b7d9715",
   "lastOpenFiles": [
-    "01-areas/business/crypto/research/Claude code AI crypto trading.md",
-    "00-inbox/Untitled 5.md",
-    "01-areas/business/crypto/research/Crypto Bot Master Research.md",
-    "00-inbox/Untitled 4.md",
-    "01-areas/business/soletrader/tax/FY24/Collations Cover Page - Harrison Sayers Group.pdf",
-    "01-areas/business/soletrader/tax/FY24/2024_TRT_HSFamilyTrust (SIGNED).pdf",
-    "01-areas/business/soletrader/tax/FY24/2024_ITR_HarrisonRobertSayers.pdf",
-    "000 - Tasks/Mok House.base",
-    "01-areas/business/soletrader/tax/FY24/HS_Family_Trust_-_Financial_Statements 2024 (SIGNED).pdf",
-    "000 - Tasks/Mokai.base",
-    "00-inbox/tasks/all tasks/Sign Partnership Agreement.md",
-    "000 - Tasks/Admin.base",
-    "00-inbox/Git-obsidian-settings.md",
-    "00 - Daily/25-10-08 - Wed.md",
+    "01-areas/business/mokai/docs/research/AUS GOV CYBER LANDSCAPE...md",
+    "01-areas/business/mokai/docs/mokai-shareholders-agreement-analysis.md",
+    "01-areas/business/mokai/docs/research/TIER 2 - DIRECT BUSINESS MODEL PRECEDENTS.md",
+    "01-areas/business/mokai/docs/research/Operating Model & Business architecture.md",
+    "01-areas/business/mokai/docs/research/COMPETITIVE LANDSCAPE.md",
+    "01-areas/business/mokai/docs/research/TIER 1 - DIRECT BUSINESS MODEL PRECEDENTS.md",
+    "01-areas/business/mokai/docs/research/Research for Mokai.md",
+    "01-areas/business/mokai/docs/research/COMPETITIVE LANDSCAPE.md.tmp.3355.1760055553824",
+    "00 - Daily/25-10-10 - Fri.md",
+    "00-inbox/tasks/all tasks/Analyse my learning ability, how i learn and add to claude.md",
+    "00-inbox/tasks/all tasks/Add descriptions and keywords to DR.md",
+    "00-inbox/tasks/all tasks/Set up notion integration with mokai hq cd.md",
     "00-inbox/tasks/all tasks/Taxes FY25.md",
     "98-templates/daily-note.md",
-    "000 - Tasks/Code.base",
-    "00-inbox/tasks/all tasks/Memory tool installation.md",
-    "00-inbox/Sort commands.md",
-    "00-inbox/tasks/all tasks/Create a add task slash command.md",
-    "00-inbox/tasks/all tasks/Refactor prompt claude.md",
-    "00-inbox/tasks/all tasks/Obsidian mcp.md",
-    "00-inbox/tasks/all tasks/Add cursor Mok house subscriptions in Notion.md",
-    "00-inbox/tasks/all tasks/A business transactions section in supabase.md",
-    "00-inbox/tasks/all tasks/Follow Up Ian - Panda Candy.md",
-    "000 - Tasks/Today.base",
-    "00-inbox/tasks/all tasks/FTX Payment.md",
-    "00-inbox/Second brain prompts.md",
-    "00-inbox/tasks/all tasks/SMSF TAXES.md",
-    "00-inbox/Untitled 3.md",
-    "00-inbox/tasks/all tasks/Photos for website.md",
-    "000 - Tasks/Follow Up.base",
-    "98-templates/task.md",
-    "00-inbox/Sub Agents video.md",
-    "04-resources/prompt-library/prompts/create-contract-document-pdf.md",
-    "00-inbox/Create index md.md",
+    "00-inbox/tasks/all tasks/Add exa ai instruct to instructions box.md",
+    "01-areas/ai/claude/Global instructions.md",
+    "01-areas/ai/claude",
+    "01-areas/ai/Untitled",
+    "01-areas/ai",
+    "00-inbox/Untitled 6.md",
+    "01-areas/business/mokai/learn/01-Active/My meeting opening.md",
+    "01-areas/business/mokai/innovation/MCP SERVER IDEAS.md",
+    "01-areas/business/mokai/innovation",
+    "01-areas/business/mokai/learn/Mind mapping procurement processe.md",
+    "00-inbox/tasks/all tasks/Spaced repetition .md",
+    "00-inbox/tasks/all tasks/Update mokai-profile using cd .md",
+    "01-areas/business/mokai/learn/Risk register .md",
+    "01-areas/business/mokai/learn/Reselling Software (The Middleman Method).md",
+    "01-areas/business/mokai/learn/README.md",
+    "01-areas/business/mokai/learn/Procurment process explained by jack.md",
+    "01-areas/business/mokai/learn/our delivery model.md",
+    "01-areas/business/mokai/learn/04-Resources",
+    "01-areas/business/mokai/learn/03-Mastered",
+    "01-areas/business/mokai/learn/02-Review",
+    "01-areas/business/mokai/learn/01-Active",
+    "01-areas/business/mokai/learn/00-Plans",
     "Untitled.canvas",
     "finance-dashboard/public/file.svg",
     "finance-dashboard/public/window.svg",

@@ -3,6 +3,11 @@ date created: Tue, 10 7th 25, 2:02:47 pm
 date modified: Tue, 10 7th 25, 2:04:13 pm
 relation:
   - "[[mokai-cyber-learning]]"
+tags:
+  - government
+  - indigenous-procurement
+  - panel-system
+category: learning
 ---
 ## **The Government "Panel" System**
 

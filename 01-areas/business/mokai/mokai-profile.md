@@ -1,6 +1,6 @@
 ---
 date created: Mon, 09 22nd 25, 11:05:22 am
-date modified: Tue, 10 7th 25, 8:56:38 am
+date modified: Fri, 10 10th 25, 3:15:31 am
 ---
 # Mokai Technologies – Business Profile
 
@@ -21,12 +21,10 @@ date modified: Tue, 10 7th 25, 8:56:38 am
 ## Business Model
 
 - **Structure:** Recruitment-led consultancy model.
-- Mokai contracts vetted contractors/specialists (cybersecurity, automation, SaaS).
+- Mokai contracts vetted contractors/specialists
 - Mokai manages client relationship, delivery oversight, compliance, and assurance.
 - Contractors are paid day rates; Mokai retains a margin.
-
-**Future Roadmap:**
-Expand into SaaS products (compliance dashboards, monitoring platforms) for recurring revenue.
+- software reselling - middleman between vendor and distributor
 
 ---
 
@@ -38,16 +36,6 @@ Expand into SaaS products (compliance dashboards, monitoring platforms) for recu
    - Essential Eight maturity uplift
    - Security architecture reviews
    - GRC (Governance, Risk & Compliance) services
-
-2. **Automation Consulting**
-   - Workflow automation
-   - AI-enabled compliance
-   - Digital transformation
-
-3. **Future SaaS Layer**
-   - Compliance dashboards
-   - Continuous monitoring tools
-   - Procurement & assurance reporting portals
 
 ---
 

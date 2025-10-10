@@ -4,8 +4,11 @@ relation:
   - "[[mokai-cyber-learning]]"
   - "[[essential-8]]"
 tags:
-  - not-started
+  - cybersecurity
+  - compliance
+  - essential-8
 description:
+category: learning
 ---
 
 ## Summary

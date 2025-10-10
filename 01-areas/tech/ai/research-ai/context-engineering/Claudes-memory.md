@@ -1,7 +1,7 @@
 ---
 date: 2025-09-30T06:23:00
 relation:
-  - "[[context]]"
+  - "[[97-tags/context]]"
   - "[[memory]]"
 tags:
 description:

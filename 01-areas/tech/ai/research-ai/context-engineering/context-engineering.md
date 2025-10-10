@@ -1,7 +1,7 @@
 ---
 relation:
   - "[[deep-research]]"
-  - "[[context]]"
+  - "[[97-tags/context]]"
 ---
 # **Advanced Context Engineering Guide for Claude (Coding & Second-Brain Use Cases)**
 

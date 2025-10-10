@@ -3,9 +3,13 @@ relation:
   - "[[mokai-cyber-learning]]"
   - "[[mokai-marketing]]"
 tags:
+  - indigenous-procurement
+  - government
+  - market-opportunity
 description:
 date created: Wed, 10 1st 25, 11:35:02 am
 date modified: Wed, 10 1st 25, 11:55:22 am
+category: learning
 ---
 
 ## Key Points

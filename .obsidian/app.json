@@ -29,7 +29,15 @@
     "graphiti-env/",
     "graphiti_mcp_server/",
     "node_modules/",
-    "n8n-workflows/"
+    "n8n-workflows/",
+    "fastapi_mcp_demo/",
+    "fastapi_mcp_env/bin/",
+    "fastapi_mcp_env/share/",
+    "fastapi_mcp_env/include/",
+    "fastapi_mcp_env/share/man/",
+    "fastapi_mcp_env/include/site/",
+    "fastapi_mcp_env/lib/python3.13/",
+    "finance-dashboard/"
   ],
   "pdfExportSettings": {
     "pageSize": "A4",

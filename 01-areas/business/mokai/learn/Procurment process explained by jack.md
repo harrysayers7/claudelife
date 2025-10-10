@@ -3,10 +3,13 @@ relation:
   - "[[mokai-cyber-learning]]"
   - "[[mokai-pricing]]"
 tags:
-  - not-started
+  - pricing
+  - procurement
+  - business-model
 description:
 date created: Thu, 10 2nd 25, 11:42:15 am
 date modified: Tue, 10 7th 25, 2:41:34 pm
+category: learning
 ---
 
 # Jack's Business Pricing Explained (Like You're 15)

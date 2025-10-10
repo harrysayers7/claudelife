@@ -1,6 +1,6 @@
 ---
 date created: Tue, 10 7th 25, 5:54:59 pm
-date modified: Tue, 10 7th 25, 6:00:10 pm
+date modified: Thu, 10 9th 25, 4:47:36 am
 type: prompt
 relation:
   - "[[mokhouse]]"
@@ -53,6 +53,8 @@ Brief Email → Google Doc → Obsidian Project → AI Suggestions → Submissio
 - Subject lines containing "brief", "project", or client names
 - Google Docs links in email body
 - Project deadlines or requirements
+- additional notes from Glenn or Kate about the brief that aren't included in  Google doc breif
+
 
 ### Step 2: Extract Google Doc Link
 
@@ -61,6 +63,7 @@ Brief Email → Google Doc → Obsidian Project → AI Suggestions → Submissio
 - Google Docs URL (https://docs.google.com/document/d/...)
 - Any contextual information from the email
 - Sender details and urgency indicators
+-
 
 ### Step 3: Fetch Brief Content
 

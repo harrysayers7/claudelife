@@ -2,7 +2,7 @@
 relation:
   - "[[mokai]]"
   - "[[mokai context]]"
-  - "[[context]]"
+  - "[[97-tags/context]]"
 journal: Mokai Context
 journal-date: 2025-10-03
 date created: Fri, 10 3rd 25, 4:26:26 am
