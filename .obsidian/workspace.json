@@ -6,7 +6,24 @@
       {
         "id": "c231c5a3fdc286e6",
         "type": "tabs",
+        "dimension": 57.484499557130206,
         "children": [
+          {
+            "id": "1a6be20b7b9b2d85",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.youtube.com/watch?v=DwSNZEW6jCU&t=227s",
+                "title": "(395) PRODUCTIVELY Learning New Things Using Obsidian - YouTube",
+                "mode": "webview"
+              },
+              "pinned": true,
+              "icon": "globe-2",
+              "title": "(395) PRODUCTIVELY Learning New Things Using Obsidian - YouTube"
+            }
+          },
           {
             "id": "f644d129b6b3cbec",
             "type": "leaf",
@@ -103,7 +120,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00 - Daily/25-10-03 - Fri.md",
+                "file": "01-areas/business/mokai/docs/research/COMPETITIVE LANDSCAPE.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -118,7 +135,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "25-10-03 - Fri"
+              "title": "COMPETITIVE LANDSCAPE"
             }
           },
           {
@@ -159,12 +176,12 @@
               "title": "COMPETITIVE LANDSCAPE"
             }
           }
-        ],
-        "currentTab": 7
+        ]
       },
       {
         "id": "9aa4b61d15e3eac6",
         "type": "tabs",
+        "dimension": 42.515500442869794,
         "children": [
           {
             "id": "143bf51cf572f8b8",
@@ -172,8 +189,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00-inbox/tasks/all tasks/Analyse my learning ability, how i learn and add to claude.md",
-                "mode": "preview",
+                "file": "01-areas/business/mokai/ai/mokai-instructions.md",
+                "mode": "source",
                 "source": false,
                 "backlinks": true,
                 "backlinkOpts": {
@@ -187,7 +204,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Analyse my learning ability, how i learn and add to claude"
+              "title": "mokai-instructions"
             }
           }
         ]
@@ -451,44 +468,44 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "e3e581646b7d9715",
+  "active": "143bf51cf572f8b8",
   "lastOpenFiles": [
-    "01-areas/business/mokai/docs/research/AUS GOV CYBER LANDSCAPE...md",
-    "01-areas/business/mokai/docs/mokai-shareholders-agreement-analysis.md",
-    "01-areas/business/mokai/docs/research/TIER 2 - DIRECT BUSINESS MODEL PRECEDENTS.md",
-    "01-areas/business/mokai/docs/research/Operating Model & Business architecture.md",
-    "01-areas/business/mokai/docs/research/COMPETITIVE LANDSCAPE.md",
-    "01-areas/business/mokai/docs/research/TIER 1 - DIRECT BUSINESS MODEL PRECEDENTS.md",
-    "01-areas/business/mokai/docs/research/Research for Mokai.md",
-    "01-areas/business/mokai/docs/research/COMPETITIVE LANDSCAPE.md.tmp.3355.1760055553824",
+    "01-areas/business/mokai/ai/additional-commands.md",
+    "01-areas/business/mokai/ai/additional-rules.md",
+    "01-areas/business/mokai/ai/instruction-box.md",
+    "01-areas/business/mokai/ai/mokai-technical-delivery.md",
+    "01-areas/business/mokai/ai/mokai-sales-procurement.md",
+    "01-areas/business/mokai/ai/mokai-operations-delivery.md",
+    "01-areas/business/mokai/ai/mokai-marketing-brand.md",
+    "01-areas/business/mokai/ai/mokai-learning-agent.md",
+    "01-areas/business/mokai/ai/mokai-lawyer.md",
+    "01-areas/business/mokai/ai/mokai-instructions.md",
+    "01-areas/business/mokai/ai/mokai-business-strategist.md",
+    "01-areas/business/mokai/ai/mokai-business-development.md",
+    "01-areas/business/mokai/ai/mokai-accountant.md",
+    "01-areas/business/mokai/ai",
+    "00-inbox/mokai-flash-cards.md",
+    "00-inbox/mokai-test.md",
     "00 - Daily/25-10-10 - Fri.md",
-    "00-inbox/tasks/all tasks/Analyse my learning ability, how i learn and add to claude.md",
-    "00-inbox/tasks/all tasks/Add descriptions and keywords to DR.md",
-    "00-inbox/tasks/all tasks/Set up notion integration with mokai hq cd.md",
-    "00-inbox/tasks/all tasks/Taxes FY25.md",
-    "98-templates/daily-note.md",
-    "00-inbox/tasks/all tasks/Add exa ai instruct to instructions box.md",
-    "01-areas/ai/claude/Global instructions.md",
+    "00-inbox/tasks/all tasks/Update mokai-profile using cd .md",
+    "00-inbox/tasks/all tasks/Spaced repetition .md",
+    "01-areas/business/mokai/docs/research/COMPETITIVE LANDSCAPE.md",
+    "01-areas/business/mokai/docs/research/AUS GOV CYBER LANDSCAPE...md",
+    "01-areas/tech/README.md",
+    "000 - Tasks/Tasks.base",
+    "TASKS.md",
+    "00-inbox/Other SMSF Documents.md",
+    "00-inbox/Git-obsidian-settings.md",
+    "00-inbox/Create index md.md",
+    "00 - Daily/25-10-03 - Fri.md",
+    "000 - Tasks/Mokai.base",
+    "01-areas/business/mokai/ai",
+    "01-areas/business/mokai/docs/research/COMPETITIVE LANDSCAPE.md.tmp.3355.1760055553824",
     "01-areas/ai/claude",
     "01-areas/ai/Untitled",
     "01-areas/ai",
-    "00-inbox/Untitled 6.md",
-    "01-areas/business/mokai/learn/01-Active/My meeting opening.md",
-    "01-areas/business/mokai/innovation/MCP SERVER IDEAS.md",
     "01-areas/business/mokai/innovation",
-    "01-areas/business/mokai/learn/Mind mapping procurement processe.md",
-    "00-inbox/tasks/all tasks/Spaced repetition .md",
-    "00-inbox/tasks/all tasks/Update mokai-profile using cd .md",
-    "01-areas/business/mokai/learn/Risk register .md",
-    "01-areas/business/mokai/learn/Reselling Software (The Middleman Method).md",
-    "01-areas/business/mokai/learn/README.md",
-    "01-areas/business/mokai/learn/Procurment process explained by jack.md",
-    "01-areas/business/mokai/learn/our delivery model.md",
     "01-areas/business/mokai/learn/04-Resources",
-    "01-areas/business/mokai/learn/03-Mastered",
-    "01-areas/business/mokai/learn/02-Review",
-    "01-areas/business/mokai/learn/01-Active",
-    "01-areas/business/mokai/learn/00-Plans",
     "Untitled.canvas",
     "finance-dashboard/public/file.svg",
     "finance-dashboard/public/window.svg",
