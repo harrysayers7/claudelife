@@ -25,10 +25,14 @@
             "id": "7cbfa075b69ee6e6",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "agents/mokai/mokai-business-strategist.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "mokai-business-strategist"
             }
           }
         ],
@@ -178,8 +182,20 @@
       "bases:Create new base": false
     }
   },
-  "active": "73a9ebd9f2d98866",
+  "active": "7cbfa075b69ee6e6",
   "lastOpenFiles": [
+    "settings.json",
+    "hooks/post-tool-memory-sync-trigger.sh",
+    "agents/mokai-business-assistant.md",
+    "commands/business/mokai/generate-mokai-flashcards.md",
+    "scripts/check-mokai-knowledge-staleness.sh",
+    "agents/mokai-business-assistant.md.tmp.45832.1760161853914",
+    "commands/business/mokai/generate-mokai-flashcards.md.tmp.45832.1760152264047",
+    "commands/business/mokai/generate-mokai-flashcards.md.tmp.45832.1760152235643",
+    "commands/business/mokai/generate-mokai-flashcards.md.tmp.45832.1760152166225",
+    "commands/business/mokai/generate-mokai-flashcards.md.tmp.41889.1760146980290",
+    "commands/business/mokai/update-mokai-context.md",
+    "commands/business/mokai/generate-mokai-flashcards.md.tmp.41889.1760146387912",
     "scripts/stripe-mcp.sh",
     "scripts",
     "commands/n8n-workflow.md",
@@ -203,18 +219,6 @@
     "commands/popular/move-file.md",
     "commands/move-file.md",
     "commands/move-with-references.md",
-    "agents/mokai/mokai-legal-finance-advisor.md.tmp.52862.1759042397027",
-    "instructions/memory-system.md.tmp.52862.1759042396502",
-    "agents/test-engineer.md",
-    "agents/mokai/mokai-legal-finance-advisor.md",
-    "agents/mcp/mcp-integration-engineer.md",
-    "agents/mcp/mcp-deployment-orchestrator.md",
-    "web-bundles/expansion-packs/bmad-creative-writing/agents/dialog-specialist.txt",
-    "web-bundles/expansion-packs/bmad-infrastructure-devops/agents/infra-devops-platform.txt",
-    "web-bundles/expansion-packs/bmad-creative-writing/teams/agent-team.txt",
-    "web-bundles/expansion-packs/bmad-creative-writing/agents/world-builder.txt",
-    "web-bundles/expansion-packs/bmad-creative-writing/agents/narrative-designer.txt",
-    "web-bundles/expansion-packs/bmad-creative-writing/agents/plot-architect.txt",
-    "web-bundles/expansion-packs/bmad-creative-writing/agents/genre-specialist.txt"
+    "agents/test-engineer.md"
   ]
 }

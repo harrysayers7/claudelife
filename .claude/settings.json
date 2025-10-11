@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "postToolExecution": [
+      {
+        "name": "memory-sync-trigger",
+        "command": "bash",
+        "args": [".claude/hooks/post-tool-memory-sync-trigger.sh"]
+      }
+    ]
+  }
+}

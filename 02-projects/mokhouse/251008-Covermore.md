@@ -19,7 +19,7 @@ awarded: false
 APRA: false
 12 FOS: false
 date created: Wed, 10 8th 25, 6:29:03 pm
-date modified: Thu, 10 9th 25, 4:44:57 am
+date modified: Sat, 10 11th 25, 3:08:16 pm
 ---
 
 > [!NOTE]
@@ -52,12 +52,12 @@ date modified: Thu, 10 9th 25, 4:44:57 am
 
 Creating a sting/sonic branding for the brand Covermore that sings the brand name to use on this campaign and in the future. They are after something that really stands out and feels different in a memorable way. It's important that the sting feels very deliberate and self aware. They don't want this to feel like we've been "forced" to sing the brand name. Instead we lean into that classic feel and use what works so well as a sung sting.
 
-The brief has changed a little from the Agency deck. The agency have asked us not to focus too much on matching the tone of the film and instead making sure that the sting is flexible enough to work beyond this campaign. They have also asked us to shift away from "warm, caring, simple" and focus more on **"Fun, bright, modern, memorable"**
+<mark style="background: #FF5582A6;">The brief has changed a little from the Agency deck. </mark>The agency have asked us not to focus too much on matching the tone of the film and instead making sure that the sting is flexible enough to work beyond this campaign. They have also asked us to shift away from "warm, caring, simple" and focus more on <mark style="background: #FF5582A6;">**"Fun, bright, modern, memorable"**</mark>
 
 
 **TONE & EMOTION:**
 
-The sting should avoid overly sweet or sentimental tones to prevent feeling like a "nappy ad" and instead be fun, bright, and modern. The sonic brand will be self-aware and possibly playful, nodding to classic 1980s Australian jingles but with a deliberate creative choice rather than a forced trope.
+The sting should <mark style="background: #FF5582A6;">avoid overly sweet or sentimental tones to prevent feeling like a "nappy ad" </mark>and instead be fun, bright, and modern.<mark style="background: #FFB86CA6;"> The sonic brand will be self-aware and possibly playful, nodding to classic 1980s </mark>Australian jingles but with a deliberate creative choice rather than a forced trope.
 
 This sonic asset aims to support Covermore's aggressive growth plan by increasing brand memorability and visibility. The sting needs to carry different emotional weights depending on the media context.
 

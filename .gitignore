@@ -18,6 +18,7 @@ CLAUDE.local.md
 .makemd/
 .roomodes
 claude-files
+.hinote/
 
 # Large files (>1MB)
 .claude/web-bundles/expansion-packs/bmad-godot-game-dev/teams/godot-game-team.txt

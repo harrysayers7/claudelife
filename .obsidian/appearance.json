@@ -1,8 +1,9 @@
 {
-  "cssTheme": "",
+  "cssTheme": "GitHub Theme",
   "accentColor": "#6640ff",
   "interfaceFontFamily": "Helvetica",
   "textFontFamily": "Helvetica Neue",
-  "baseFontSize": 16,
-  "baseFontSizeAction": true
+  "baseFontSize": 14,
+  "baseFontSizeAction": true,
+  "showRibbon": true
 }

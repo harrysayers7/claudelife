@@ -6,7 +6,6 @@
       {
         "id": "c231c5a3fdc286e6",
         "type": "tabs",
-        "dimension": 57.484499557130206,
         "children": [
           {
             "id": "1a6be20b7b9b2d85",
@@ -16,12 +15,12 @@
               "type": "webviewer",
               "state": {
                 "url": "https://www.youtube.com/watch?v=DwSNZEW6jCU&t=227s",
-                "title": "(395) PRODUCTIVELY Learning New Things Using Obsidian - YouTube",
+                "title": "(400) PRODUCTIVELY Learning New Things Using Obsidian - YouTube",
                 "mode": "webview"
               },
               "pinned": true,
               "icon": "globe-2",
-              "title": "(395) PRODUCTIVELY Learning New Things Using Obsidian - YouTube"
+              "title": "(400) PRODUCTIVELY Learning New Things Using Obsidian - YouTube"
             }
           },
           {
@@ -78,49 +77,12 @@
             }
           },
           {
-            "id": "f1f52b5a3b438339",
+            "id": "18849de9cda9d97f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-areas/business/mokai/learn/What-is-the-Esssential-eight.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": true,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "What-is-the-Esssential-eight"
-            }
-          },
-          {
-            "id": "b671d483dddb089f",
-            "type": "leaf",
-            "state": {
-              "type": "bases",
-              "state": {
-                "file": "000 - Tasks/Mokai.base",
-                "viewName": "Table"
-              },
-              "icon": "lucide-table",
-              "title": "Mokai"
-            }
-          },
-          {
-            "id": "dd38ebcc1e169c63",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01-areas/business/mokai/docs/research/COMPETITIVE LANDSCAPE.md",
+                "file": "02-projects/mokhouse/251008-Covermore.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -135,61 +97,58 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "COMPETITIVE LANDSCAPE"
+              "title": "251008-Covermore"
             }
           },
           {
-            "id": "bc739752a03e393b",
+            "id": "ed1b1f9af52b0404",
             "type": "leaf",
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://www.youtube.com/watch?v=juPk-9TG2Kw",
-                "title": "(393) The Role of a Cyber Security Consultant: Explained Simply - YouTube",
+                "url": "https://docs.google.com/document/d/1sRFm3uSBOJKyFmTIAAhi0bD_jRbEb3uP8om_-Ub0qjA/edit?tab=t.sv1ys0dc4u9a#heading=h.3alvzekgm302",
+                "title": "Composer Brief - 12736_Supermassive_Covermore_Sting - Google Docs",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "(393) The Role of a Cyber Security Consultant: Explained Simply - YouTube"
+              "title": "Composer Brief - 12736_Supermassive_Covermore_Sting - Google Docs"
             }
           },
           {
-            "id": "e3e581646b7d9715",
+            "id": "c0b5de56fb118427",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "webviewer",
               "state": {
-                "file": "01-areas/business/mokai/docs/research/COMPETITIVE LANDSCAPE.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
+                "url": "https://www.canva.com/design/DAGz7vYW85U/tIRUmxR3UVd-q2iQzK4FHg/view?utm_content=DAGz7vYW85U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha3ac3444c5#31",
+                "title": "Cover-More_Shoot update",
+                "mode": "webview"
               },
-              "icon": "lucide-file",
-              "title": "COMPETITIVE LANDSCAPE"
+              "icon": "globe-2",
+              "title": "Cover-More_Shoot update"
             }
-          }
-        ]
-      },
-      {
-        "id": "9aa4b61d15e3eac6",
-        "type": "tabs",
-        "dimension": 42.515500442869794,
-        "children": [
+          },
           {
-            "id": "143bf51cf572f8b8",
+            "id": "39f76b82998988d6",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#8",
+                "title": "Cover-More by Josh Logue",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Cover-More by Josh Logue"
+            }
+          },
+          {
+            "id": "3395c33da53efca0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-areas/business/mokai/ai/mokai-instructions.md",
+                "file": "00 - Daily/25-10-11 - Sat.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -204,10 +163,35 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "mokai-instructions"
+              "title": "25-10-11 - Sat"
+            }
+          },
+          {
+            "id": "7e5a09d5f418c1b5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01-areas/business/mokai/docs/research/📘 - OPERATIONS GUIDE.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "📘 - OPERATIONS GUIDE"
             }
           }
-        ]
+        ],
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -239,7 +223,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:financial-business-development-flashcards",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -248,16 +232,6 @@
               },
               "icon": "lucide-search",
               "title": "Search"
-            }
-          },
-          {
-            "id": "2b307584957a18bb",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
-              "state": {},
-              "icon": "lucide-bookmark",
-              "title": "Bookmarks"
             }
           },
           {
@@ -284,7 +258,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 267.5
+    "width": 465.5
   },
   "right": {
     "id": "4ba4fbf600cab1d4",
@@ -330,18 +304,28 @@
             }
           },
           {
+            "id": "fa6cc8657c8c4c54",
+            "type": "leaf",
+            "state": {
+              "type": "comment-view",
+              "state": {},
+              "icon": "highlighter",
+              "title": "HiNote"
+            }
+          },
+          {
             "id": "2a2b5761a6a92c81",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "00 - Daily/25-10-07 - Tue.md",
+                "file": "01-areas/business/mokai/docs/research/📘 - OPERATIONS GUIDE.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 25-10-07 - Tue"
+              "title": "Outline of 📘 - OPERATIONS GUIDE"
             }
           },
           {
@@ -369,6 +353,16 @@
             }
           },
           {
+            "id": "2b307584957a18bb",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          },
+          {
             "id": "3bc43f7af4338720",
             "type": "leaf",
             "state": {
@@ -376,47 +370,6 @@
               "state": {},
               "icon": "wand-sparkles",
               "title": "Smart composer chat"
-            }
-          },
-          {
-            "id": "ba6069ee603df108",
-            "type": "leaf",
-            "state": {
-              "type": "todo",
-              "state": {},
-              "icon": "checkmark",
-              "title": "Todo List"
-            }
-          },
-          {
-            "id": "07e007e262b87384",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-coming-in",
-              "title": "Backlinks"
-            }
-          },
-          {
-            "id": "45d583ab303cedc8",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "Outgoing links"
             }
           },
           {
@@ -430,7 +383,7 @@
             }
           }
         ],
-        "currentTab": 10
+        "currentTab": 9
       }
     ],
     "direction": "horizontal",
@@ -439,73 +392,112 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "markdown-importer:Open format converter": false,
-      "obsidian-git:Open Git source control": false,
-      "switcher:Open quick switcher": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "bases:Create new base": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
-      "copilot:Open Copilot Chat": false,
-      "hide-folders:Show hidden folders": false,
-      "omnisearch:Omnisearch": false,
-      "remotely-save:Remotely Save": false,
-      "templater-obsidian:Templater": false,
-      "obsidian-day-planner:Open Timeline": false,
+      "markdown-importer:Open format converter": true,
+      "obsidian-git:Open Git source control": true,
+      "switcher:Open quick switcher": true,
+      "canvas:Create new canvas": true,
+      "daily-notes:Open today's daily note": true,
+      "templates:Insert template": true,
+      "command-palette:Open command palette": true,
+      "bases:Create new base": true,
+      "obsidian-excalidraw-plugin:New drawing": true,
+      "copilot:Open Copilot Chat": true,
+      "hide-folders:Show hidden folders": true,
+      "omnisearch:Omnisearch": true,
+      "remotely-save:Remotely Save": true,
+      "templater-obsidian:Templater": true,
+      "obsidian-day-planner:Open Timeline": true,
       "obsidian-day-planner:Open Multi-Day View": false,
-      "journals:shelf:-mokai:mokai": false,
-      "journals:mokai-weekly:mokai---weekly-note": false,
-      "journals:mokai-context:mokai-context": false,
+      "journals:shelf:-mokai:mokai": true,
+      "journals:mokai-weekly:mokai---weekly-note": true,
+      "journals:mokai-context:mokai-context": true,
       "workspaces:Manage workspace layouts": false,
-      "obsidian-kanban:Create new board": false,
+      "obsidian-kanban:Create new board": true,
       "obsidian-full-calendar:Open Full Calendar": false,
       "graph:Open graph view": false,
-      "obsidian-textgenerator-plugin:Generate Text!": false,
-      "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false,
+      "obsidian-textgenerator-plugin:Generate Text!": true,
+      "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": true,
       "smart-composer:Open smart composer": false,
-      "obsidian-spaced-repetition:Review flashcards": false
+      "obsidian-spaced-repetition:Review flashcards": false,
+      "hi-note:HiNote": false
     }
   },
-  "active": "143bf51cf572f8b8",
+  "floating": {
+    "id": "205b72576cc400e3",
+    "type": "floating",
+    "children": [
+      {
+        "id": "57f3ffcbae677293",
+        "type": "window",
+        "children": [
+          {
+            "id": "0b71b833b26bbdd7",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "eb883fbd63b5f439",
+                "type": "leaf",
+                "state": {
+                  "type": "webviewer",
+                  "state": {
+                    "url": "https://www.stephenmwangi.com/obsidian-spaced-repetition/#support",
+                    "title": "Obsidian Spaced Repetition",
+                    "mode": "webview"
+                  },
+                  "icon": "globe-2",
+                  "title": "Obsidian Spaced Repetition"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 2048,
+        "y": 25,
+        "width": 1024,
+        "height": 800,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "7e5a09d5f418c1b5",
   "lastOpenFiles": [
-    "01-areas/business/mokai/ai/additional-commands.md",
-    "01-areas/business/mokai/ai/additional-rules.md",
-    "01-areas/business/mokai/ai/instruction-box.md",
-    "01-areas/business/mokai/ai/mokai-technical-delivery.md",
-    "01-areas/business/mokai/ai/mokai-sales-procurement.md",
-    "01-areas/business/mokai/ai/mokai-operations-delivery.md",
-    "01-areas/business/mokai/ai/mokai-marketing-brand.md",
-    "01-areas/business/mokai/ai/mokai-learning-agent.md",
-    "01-areas/business/mokai/ai/mokai-lawyer.md",
-    "01-areas/business/mokai/ai/mokai-instructions.md",
-    "01-areas/business/mokai/ai/mokai-business-strategist.md",
-    "01-areas/business/mokai/ai/mokai-business-development.md",
-    "01-areas/business/mokai/ai/mokai-accountant.md",
-    "01-areas/business/mokai/ai",
-    "00-inbox/mokai-flash-cards.md",
-    "00-inbox/mokai-test.md",
-    "00 - Daily/25-10-10 - Fri.md",
-    "00-inbox/tasks/all tasks/Update mokai-profile using cd .md",
-    "00-inbox/tasks/all tasks/Spaced repetition .md",
-    "01-areas/business/mokai/docs/research/COMPETITIVE LANDSCAPE.md",
-    "01-areas/business/mokai/docs/research/AUS GOV CYBER LANDSCAPE...md",
-    "01-areas/tech/README.md",
-    "000 - Tasks/Tasks.base",
-    "TASKS.md",
-    "00-inbox/Other SMSF Documents.md",
-    "00-inbox/Git-obsidian-settings.md",
-    "00-inbox/Create index md.md",
-    "00 - Daily/25-10-03 - Fri.md",
-    "000 - Tasks/Mokai.base",
-    "01-areas/business/mokai/ai",
-    "01-areas/business/mokai/docs/research/COMPETITIVE LANDSCAPE.md.tmp.3355.1760055553824",
-    "01-areas/ai/claude",
-    "01-areas/ai/Untitled",
-    "01-areas/ai",
-    "01-areas/business/mokai/innovation",
-    "01-areas/business/mokai/learn/04-Resources",
+    "01-areas/business/mokai/docs/research/RESEARCH - Project-Level Pricing.md",
+    "01-areas/business/mokai/docs/research/Untitled",
+    "01-areas/business/mokai/docs/research/RESEARCH - Panel Membership Playbook.md",
+    "01-areas/business/mokai/docs/research/RESEARCH - Contractor Market Intelligence.md",
+    "01-areas/business/mokai/docs/research/RESEARCH - Certification Economics.md",
+    "01-areas/business/mokai/docs/research/📘 - OPERATIONS GUIDE.md",
+    "07-context/systems/automations/memory-sync-hook.md",
+    "01-areas/business/mokai/learn/flashcards/financial-business-development-flashcards.md",
+    "01-areas/business/mokai/learn/flashcards/service-delivery-operations-flashcards.md",
+    "01-areas/business/mokai/learn/flashcards/risk-compliance-challenges-flashcards.md",
+    "01-areas/business/mokai/learn/flashcards/mokai-operations-flashcards.md",
+    "01-areas/business/mokai/learn/flashcards/mokai-flash-cards.md",
+    "01-areas/business/mokai/learn/flashcards/indigenous-procurement-contracting-flashcards.md",
+    "01-areas/business/mokai/learn/flashcards/growth-strategy-flashcards.md",
+    "04-resources/01-hotkeys.md",
+    "00 - Daily/25-10-11 - Sat.md",
+    "02-projects/mokhouse/251008-Covermore.md",
+    "01-areas/business/mokai/learn/flashcards/growth-strategy-flashcards.md.tmp.45832.1760153863724",
+    "01-areas/business/mokai/learn/flashcards/financial-business-development-flashcards.md.tmp.45832.1760153850565",
+    "01-areas/business/mokai/learn/flashcards/indigenous-procurement-contracting-flashcards.md.tmp.45832.1760152854597",
+    "01-areas/business/mokai/learn/flashcards/mokai-operations-flashcards.md.tmp.45832.1760150090700",
+    "00-inbox/tasks/all tasks/Change from ai-context to ai-ignore.md",
+    "00-inbox/tasks/all tasks/Supabaze weekly review finance.md",
+    "00-inbox/tasks/all tasks/Bookmarks in right sidebar.md",
+    "00-inbox/meeting note w jack.md",
+    "00-inbox/tasks/all tasks/Analyse my learning ability, how i learn and add to claude.md",
+    "00-inbox/tasks/all tasks/Design a ai assistant based on [operations guide].md",
+    "00-inbox/tasks/all tasks/Pay Electricity bill.md",
+    "00-inbox/Untitled.base",
+    "00 - Daily/25-12-10 - Wed.md",
+    "01-areas/business/mokai/learn/01-Active/Gross Margin.md",
+    "01-areas/business/mokai/learn/vocab",
+    "01-areas/business/mokai/learn/Untitled",
+    "01-areas/business/mokai/learn/course/week-12",
+    "01-areas/business/mokai/learn/course/week-11",
     "Untitled.canvas",
     "finance-dashboard/public/file.svg",
     "finance-dashboard/public/window.svg",

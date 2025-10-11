@@ -9,5 +9,6 @@ exclude_paths:
   - .env.*
   - 07-context/systems/automations/*.md
   - .obsidian/**
+  - .hinote/**
   - .smtcmp_json_db/**
   - .smtcmp_vector_db.tar.gz

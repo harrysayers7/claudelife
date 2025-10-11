@@ -17,11 +17,11 @@ category: learning
 
 The Essential Eight are baseline mitigation strategies recommended by the Australian Cyber Security Centre to reduce the risk of cyber incidents. They focus on limiting initial access, execution, privilege escalation, persistence, and data exfiltration. Organisations are encouraged to implement these controls to at least the “Maturity Level” appropriate to their risk profile.
 
-**1. Application control**
+### **1. Application control**
 
 - Allow only approved applications to run (whitelisting), using methods like hash, publisher or path rules.
 
-**2. Patch applications**
+### **2. Patch applications**
 
 - Apply security patches for internet-facing and commonly exploited applications promptly (e.g., web browsers, Office, Adobe).
 
