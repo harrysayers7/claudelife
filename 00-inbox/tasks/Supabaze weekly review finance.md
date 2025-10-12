@@ -1,6 +1,6 @@
 ---
 Done: false
-today: false
+today: true
 follow up: false
 this week: false
 back burner: false
@@ -9,5 +9,4 @@ status:
 relation:
 description:
 effort:
-ai-assigned: false
 ---

@@ -8,9 +8,10 @@ category:
 description:
 today: true
 date created: Fri, 10 10th 25, 3:53:42 pm
-date modified: Fri, 10 10th 25, 3:55:44 pm
+date modified: Sun, 10 12th 25, 7:15:49 am
+title: meeting note w jack
 ---
-### Business Registration Overview
+### BUSINESS REGISTRATION OVERVIEW
 
 - Discussing setup of a new business entity with trust structure
 - Cost estimated around $1400, potentially higher due to trust involvement
@@ -21,7 +22,7 @@ date modified: Fri, 10 10th 25, 3:55:44 pm
     - Incorporation
     - Share allocation to trusts
 
-### Administrative Requirements
+### ADMINISTRATIVE REQUIREMENTS
 
 - Director ID needed for registration
     - One participant needs to locate or create their Director ID
@@ -30,18 +31,18 @@ date modified: Fri, 10 10th 25, 3:55:44 pm
     - Trust details
 - Professional advisor will send through complete list of requirements
 
-### Government Panels
+### GOVERNMENT PANELS
 
 - Discussion about government panels
 - Waiting for panels to open back up
 - Mention of requirements related to company revenue generation
 
-### Timeline and Next Steps
+### TIMELINE AND NEXT STEPS
 
 - Monday meeting scheduled
 - Process expected to be moving forward soon
 
-### Action Items
+### ACTION ITEMS
 
 - [ ] Locate or create Director ID [[meeting notes]]
 - [ ] Wait for email with complete list of required information (ACN, trust details)

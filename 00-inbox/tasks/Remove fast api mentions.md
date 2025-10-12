@@ -7,7 +7,7 @@ back burner: false
 type: Task
 status:
 relation:
+  - "[[claudelife]]"
 description:
 effort:
-ai-assigned: false
 ---

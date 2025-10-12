@@ -1,5 +1,6 @@
 ---
-type: reference
+type:
+  - cheatsheet
 relation:
   - "[[mokai]]"
 tags:
@@ -7,10 +8,11 @@ tags:
   - negotiation
   - not-started
   - NSTD
-category: learning
+category:
+  - learning
 description:
 date created: Thu, 10 9th 25, 3:25:58 pm
-date modified: Thu, 10 9th 25, 8:23:09 pm
+date modified: Sun, 10 12th 25, 8:10:43 am
 ---
 When they ask "What does this cost?":
 

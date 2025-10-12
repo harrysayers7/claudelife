@@ -23,11 +23,39 @@
 - `npm run memory-maintenance` - Clean up and optimize memory files
 - `npm run setup-banking` - Initialize personal banking database schema
 
+## Claude Code Slash Commands
+
+### Memory & Context Management
+- `/update-serena-memory` - Update Serena MCP's memory after codebase changes
+- `/business:mokai:update-mokai-context` - Update MOKAI business context in Serena
+
+### MOKAI Business Operations
+- `/business:mokai:generate-mokai-flashcards` - Generate learning flashcards from MOKAI research docs
+- `/business:mokai:update-mokai-context` - Update Serena's memory with MOKAI business changes
+
+### System Documentation
+- `/report:document-system` - Generate comprehensive system documentation with automatic categorization
+
 ## Git Operations
 - `git add .` - Stage changes
 - `git commit -m "message"` - Commit with message
 - `git push` - Push to remote
+- `/git:commit "message"` - Quick add, commit, and status check via slash command
 - Pre-commit hooks automatically run security scans (gitleaks, trufflehog)
+
+## Memory Sync Automation
+The memory sync hook automatically detects when Serena's memory needs updating:
+- **Supabase changes**: Updates to `invoices`, `entities`, `contacts` tables
+- **Obsidian changes**: Edits to MOKAI docs in `01-areas/business/mokai/`
+- **MCP config changes**: Updates to `.mcp.json`
+- **Claude files**: Changes to `.claude/instructions/`, `.claude/agents/`, `.claude/commands/`
+
+When detected, you'll see:
+```
+💾 [Source]: [What changed]
+🔄 Recommendation: Update Serena's memory to reflect changes
+   Run: /update-serena-memory
+```
 
 ## Common System Commands (macOS)
 - `ls` - List directory contents

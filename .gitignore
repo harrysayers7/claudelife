@@ -112,3 +112,4 @@ coverage/
 gcp-oauth.keys.json
 .smtcmp_vector_db.tar.gz
 .smtcmp_json_db/
+.hinote/backup/

@@ -1,8 +1,7 @@
 ---
-type: Note
+type:
+  - cheatsheet
 relation:
-tags:
 category:
 description:
-ai-treatment:
 ---

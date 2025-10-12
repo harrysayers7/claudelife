@@ -9,4 +9,6 @@ research-type:
 keywords:
 source:
 description:
+ai-treatment:
+  - reference
 ---

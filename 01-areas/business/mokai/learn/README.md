@@ -1,7 +1,13 @@
 ---
 date created: Thu, 10 9th 25, 5:50:07 pm
-date modified: Thu, 10 9th 25, 5:51:17 pm
+date modified: Sun, 10 12th 25, 6:50:35 am
+ai-prioritise:
+  - High
 ---
+
+IMPORTANT: LLM'S viewing this folder should not treat as knowledge or references. The purpose if this folder is soley
+
+
 ## 📁 Folder System Explained
 
 ### **00-Plans/**

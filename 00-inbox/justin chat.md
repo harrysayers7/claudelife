@@ -5,6 +5,9 @@ relation:
 tags:
   - not-started
 description:
+title: justin chat
+date created: Tue, 09 30th 25, 1:51:22 pm
+date modified: Sun, 10 12th 25, 7:07:03 am
 ---
 - [ ] trust structure - do you have to have a business trust or a personal trust with a corporate trustee
 - [ ] Can i register two businesses

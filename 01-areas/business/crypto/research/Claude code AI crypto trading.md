@@ -1,10 +1,14 @@
 ---
 date created: Tue, 10 7th 25, 5:46:13 am
-date modified: Wed, 10 8th 25, 9:09:59 am
+date modified: Sun, 10 12th 25, 5:42:41 am
 relation:
   - "[[crypto]]"
   - "[[97-tags/AI-Research|AI-Research]]"
 description: "Claude code: Python scripts and workflows for automating tasks with Claude AI."
+type:
+  - Resource
+research-type:
+  - Deep research
 ---
 ### Architecting and Implementing an AI-Powered Crypto Trading System with Claude Code
 

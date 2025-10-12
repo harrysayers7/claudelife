@@ -1,0 +1,14 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.folder == "04-resources/ideas/automations"
+    order:
+      - file.name
+      - category
+      - date created
+      - description
+      - relation
+      - location
+      - sub-category

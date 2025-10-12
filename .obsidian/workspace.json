@@ -24,32 +24,6 @@
             }
           },
           {
-            "id": "f644d129b6b3cbec",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "04-resources/01-hotkeys.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "pinned": true,
-              "icon": "lucide-file",
-              "title": "01-hotkeys"
-            }
-          },
-          {
             "id": "8957a34fd39c3033",
             "type": "leaf",
             "pinned": true,
@@ -172,26 +146,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-areas/business/mokai/docs/research/📘 - OPERATIONS GUIDE.md",
+                "file": "00 - Daily/25-10-12 - Sun.md",
                 "mode": "source",
                 "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
+                "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "📘 - OPERATIONS GUIDE"
+              "title": "25-10-12 - Sun"
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 8
+      },
+      {
+        "id": "f03f21ed0008fda4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "05e70f8dfb5d2011",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00-inbox/tasks/ change positioning of Dock.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "change positioning of Dock"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -319,13 +305,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01-areas/business/mokai/docs/research/📘 - OPERATIONS GUIDE.md",
+                "file": "00 - Daily/25-10-12 - Sun.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 📘 - OPERATIONS GUIDE"
+              "title": "Outline of 25-10-12 - Sun"
             }
           },
           {
@@ -383,7 +369,7 @@
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
@@ -463,41 +449,42 @@
   },
   "active": "7e5a09d5f418c1b5",
   "lastOpenFiles": [
-    "01-areas/business/mokai/docs/research/RESEARCH - Project-Level Pricing.md",
-    "01-areas/business/mokai/docs/research/Untitled",
-    "01-areas/business/mokai/docs/research/RESEARCH - Panel Membership Playbook.md",
-    "01-areas/business/mokai/docs/research/RESEARCH - Contractor Market Intelligence.md",
-    "01-areas/business/mokai/docs/research/RESEARCH - Certification Economics.md",
+    "00-inbox/tasks/Add definitions to definitions .md",
+    "00-inbox/tasks/ change positioning of Dock.md",
+    "00-inbox/tasks/test slashcommand.md",
+    "00 - Daily/25-10-12 - Sun.md",
+    "98-templates/task.md",
+    "000 - Tasks/ai-assigned.base",
+    "00-inbox/tasks/Create tasks agent.md",
+    "98-templates/task-ai.md",
+    "000 - Tasks/Code.base",
+    "00-inbox/Recommended Frontmatter Schema.md",
+    "00-inbox/tasks/Scan for security risks hook.md",
+    "00-inbox/tasks/Review coffee phil.md",
+    "00-inbox/tasks/Depop comet.md",
+    "00-inbox/tasks/Remove fast api mentions.md",
+    "00-inbox/tasks/Install pain relief.md",
+    "98-templates/cheatsheet.md",
+    "00-inbox/tasks/Is claude.md required if i use mokai agent.md",
+    "01-areas/business/mokai/cheatsheet",
+    "01-areas/business/mokai/learn/definitions/Risk register .md",
+    "01-areas/business/mokai/learn/definitions/prime contractor.md",
+    "01-areas/business/mokai/learn/definitions",
     "01-areas/business/mokai/docs/research/📘 - OPERATIONS GUIDE.md",
-    "07-context/systems/automations/memory-sync-hook.md",
-    "01-areas/business/mokai/learn/flashcards/financial-business-development-flashcards.md",
-    "01-areas/business/mokai/learn/flashcards/service-delivery-operations-flashcards.md",
-    "01-areas/business/mokai/learn/flashcards/risk-compliance-challenges-flashcards.md",
-    "01-areas/business/mokai/learn/flashcards/mokai-operations-flashcards.md",
-    "01-areas/business/mokai/learn/flashcards/mokai-flash-cards.md",
-    "01-areas/business/mokai/learn/flashcards/indigenous-procurement-contracting-flashcards.md",
-    "01-areas/business/mokai/learn/flashcards/growth-strategy-flashcards.md",
-    "04-resources/01-hotkeys.md",
-    "00 - Daily/25-10-11 - Sat.md",
-    "02-projects/mokhouse/251008-Covermore.md",
-    "01-areas/business/mokai/learn/flashcards/growth-strategy-flashcards.md.tmp.45832.1760153863724",
-    "01-areas/business/mokai/learn/flashcards/financial-business-development-flashcards.md.tmp.45832.1760153850565",
-    "01-areas/business/mokai/learn/flashcards/indigenous-procurement-contracting-flashcards.md.tmp.45832.1760152854597",
-    "01-areas/business/mokai/learn/flashcards/mokai-operations-flashcards.md.tmp.45832.1760150090700",
-    "00-inbox/tasks/all tasks/Change from ai-context to ai-ignore.md",
-    "00-inbox/tasks/all tasks/Supabaze weekly review finance.md",
-    "00-inbox/tasks/all tasks/Bookmarks in right sidebar.md",
-    "00-inbox/meeting note w jack.md",
-    "00-inbox/tasks/all tasks/Analyse my learning ability, how i learn and add to claude.md",
-    "00-inbox/tasks/all tasks/Design a ai assistant based on [operations guide].md",
-    "00-inbox/tasks/all tasks/Pay Electricity bill.md",
-    "00-inbox/Untitled.base",
-    "00 - Daily/25-12-10 - Wed.md",
-    "01-areas/business/mokai/learn/01-Active/Gross Margin.md",
-    "01-areas/business/mokai/learn/vocab",
-    "01-areas/business/mokai/learn/Untitled",
-    "01-areas/business/mokai/learn/course/week-12",
-    "01-areas/business/mokai/learn/course/week-11",
+    "00-inbox/OPERATIONS GUIDE📘.md",
+    "01-areas/business/mokai/context/2025-10-12 Mokai-context.md",
+    "98-templates/idea - automation.md",
+    "98-templates/idea.md",
+    "99-archive/Sort commands.md",
+    "00-inbox/Obsidian file creation guide.md",
+    "04-resources/guides/obsidian/System for task management.md",
+    "04-resources/guides/obsidian",
+    "04-resources/guides/Untitled",
+    "04-resources/hotkeys.md",
+    "00-Bases/Untitled.base",
+    "04-resources/ideas/automations",
+    "04-resources/ideas/Untitled",
+    "04-resources/ideas/slash-command-ideas",
     "Untitled.canvas",
     "finance-dashboard/public/file.svg",
     "finance-dashboard/public/window.svg",

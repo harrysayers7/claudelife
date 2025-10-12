@@ -1,0 +1,9 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - note["ai-assigned"] == true
+    order:
+      - file.name
+      - ai-assigned
