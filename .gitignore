@@ -8,6 +8,7 @@ CLAUDE.local.md
 .env.staging
 *.env
 .mcp.json
+.mcp.json.backup
 
 # Temporary files and reminders
 .domain-packs-updated
@@ -22,6 +23,7 @@ claude-files
 
 # Large files (>1MB)
 .claude/web-bundles/expansion-packs/bmad-godot-game-dev/teams/godot-game-team.txt
+01-areas/business/trust/*.pdf
 
 # Custom rule files (if personal)
 .rules

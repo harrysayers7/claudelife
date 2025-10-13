@@ -208,6 +208,31 @@ A successful {object} should:
 
 Remember that the best commands for claudelife balance technical precision with business context, provide concrete examples, and actively guide the user through thinking about edge cases particular to your multi-entity business operations and AI automation needs.
 
+## Post-Creation Documentation
+
+**CRITICAL**: After creating a new command, you MUST document it:
+
+1. **Add to Commands Guide**: Append a concise entry (max 100 words) to `/Users/harrysayers/Developer/claudelife/04-resources/guides/commands/claudelife-commands-guide.md`
+
+2. **Documentation Format**:
+```markdown
+### /{command-name}
+**Created**: YYYY-MM-DD HH:MM
+
+##### What it does:
+[2-3 sentences describing the command's functionality and outputs. Max 50 words.]
+
+##### When to use it:
+[2-3 sentences describing use cases and when to apply this command. Max 50 words.]
+
+**Usage**: `/{command-name} [arguments]`
+**File**: `.claude/commands/{command-name}.md`
+
+---
+```
+
+3. **Update Serena's Memory**: After documenting, remind the user to run `/update-serena-memory` to sync the new command into Serena's suggested commands memory.
+
 ## Starting the Command Creation Process
 
 What task or problem would you like to create a command for? Please describe:
