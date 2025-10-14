@@ -314,3 +314,33 @@ Run monthly for big-picture view, when feeling stuck to identify root causes, be
 **Reads**: All diary notes in `01-areas/business/mokai/diary/`
 
 ---
+
+### /complete-task
+**Created**: 2025-10-15 03:25
+
+##### What it does:
+Executes a specific task from `/00-inbox/tasks/` that you designate by filename or description. Uses Serena for codebase exploration, implements the task directly (no confirmation unless requested), marks `Done: true` upon completion, and commits changes with descriptive message.
+
+##### When to use it:
+Use when you want to complete a specific task from your inbox immediately. Simply reference the task filename or description. Default behavior is direct execution; add `--confirm` or state "confirm before executing" if you want approval before implementation.
+
+**Usage**: `/complete-task "[task-filename.md or description]"`
+**File**: `.claude/commands/complete-task.md`
+
+---
+
+## Task Management Commands
+
+### /sort-tasks
+**Created**: 2025-10-12 11:45
+
+##### What it does:
+Automates task management by executing all AI-assigned tasks (`ai-assigned: true`) sequentially from `/00-inbox/tasks/`, verifies completion before marking `Done: true`, cleans up completed tasks older than 2 weeks, and commits changes with summary.
+
+##### When to use it:
+Use for batch processing of all AI-assigned tasks in your inbox. Runs unattended through all eligible tasks, handles failures gracefully, and cleans up old completed tasks automatically. Complements `/complete-task` which handles individual task execution.
+
+**Usage**: `/sort-tasks`
+**File**: `.claude/commands/sort-tasks.md`
+
+---
