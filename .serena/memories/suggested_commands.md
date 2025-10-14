@@ -91,18 +91,44 @@
 - Pre-commit hooks automatically run security scans (gitleaks, trufflehog)
 
 ## Memory Sync Automation
-The memory sync hook automatically detects when Serena's memory needs updating:
-- **Supabase changes**: Updates to `invoices`, `entities`, `contacts` tables
-- **Obsidian changes**: Edits to MOKAI docs in `01-areas/business/mokai/`
-- **MCP config changes**: Updates to `.mcp.json`
-- **Claude files**: Changes to `.claude/instructions/`, `.claude/agents/`, `.claude/commands/`
 
-When detected, you'll see:
+### Post-Commit Hook (Automatic)
+The `post-commit-serena-sync.sh` hook automatically runs after every git commit and detects when Serena's memory needs updating:
+
+**Triggers on changes to:**
+- **Slash commands**: `.claude/commands/` - New or modified commands
+- **MCP configuration**: `.mcp.json` - New MCP servers or config changes
+- **Package dependencies**: `package.json` - New npm scripts or dependencies
+- **Project structure**: `.claude/agents/`, `07-context/`, `.serena/` - Structural changes
+
+**Output when triggered:**
 ```
-💾 [Source]: [What changed]
-🔄 Recommendation: Update Serena's memory to reflect changes
+🔄 Serena Memory Sync Trigger
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📝 Slash commands modified
+   Files: .claude/commands/mokai-status.md
+🔌 MCP configuration changed
+   File: .mcp.json
+
+💡 Recommendation: Update Serena's memory to reflect these changes
    Run: /update-serena-memory
 ```
+
+**Features:**
+- ✅ Non-blocking (commit always succeeds)
+- ✅ Intelligent detection (only triggers on relevant changes)
+- ✅ Color-coded output shows what changed
+- ✅ Works alongside other hooks (Graphiti)
+
+**Location:** `.claude/hooks/post-commit-serena-sync.sh`
+**Dispatcher:** `.git/hooks/post-commit` (runs all post-commit hooks)
+
+### Manual Sync (On-Demand)
+For immediate sync or when hook doesn't catch changes:
+- **Supabase changes**: Updates to `invoices`, `entities`, `contacts` tables
+- **Obsidian changes**: Edits to MOKAI docs in `01-areas/business/mokai/`
+
+Run `/update-serena-memory` manually when needed.
 
 ## Common System Commands (macOS)
 - `ls` - List directory contents
