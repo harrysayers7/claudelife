@@ -1,14 +1,17 @@
 ---
-type: Note
+type:
+  - brain dump
 relation:
 tags:
 category:
 description:
 ai-treatment:
 date created: Tue, 10 14th 25, 4:06:13 am
-date modified: Tue, 10 14th 25, 4:08:15 am
+date modified: Tue, 10 14th 25, 6:53:37 pm
 ---
-I still dont understand why I couldn't just use a slash command to act as a sub agent. why does using a sub agent command add a difference
+
+> [!NOTE]
+> I still dont understand why I couldn't just use a slash command to act as a sub agent. why does using a sub agent command add a difference
 
 Using a slash command and using a subagent in Claude Code are not the same, although both allow you to encapsulate complex workflows. The key differences are about **context management, autonomy, and scalability**.
 

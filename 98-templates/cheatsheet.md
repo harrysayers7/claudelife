@@ -4,4 +4,5 @@ type:
 relation:
 category:
 description:
+archive:
 ---

@@ -184,6 +184,12 @@
   },
   "active": "73a9ebd9f2d98866",
   "lastOpenFiles": [
+    "commands/archive/remember.md",
+    "commands/archive/process-image.md",
+    "commands/recall.md",
+    "commands/archive/recall.md",
+    "commands/complete-task.md",
+    "hooks/post-commit-serena-sync.sh",
     "commands/mokai-insights.md",
     "commands/archive/compact.md",
     "commands/archive/daily-review.md",
@@ -207,18 +213,12 @@
     "commands/quick-research.md",
     "hooks/memory-sync-reminder.json",
     "commands/obsidia.md",
-    "commands/research.md",
     "agents/mokhouse",
-    "agents/mcp-expert.md",
-    "commands/extract-diary.md",
-    "commands/extract-context.md",
-    "commands/extract-insights.md",
     "commands/sort-tasks.md.tmp.30273.1760229304182",
     "commands/sort-tasks.md.tmp.30273.1760229296838",
     "commands/sort-tasks.md.tmp.30273.1760229027530",
     "settings.json",
     "hooks/post-tool-memory-sync-trigger.sh",
-    "scripts/check-mokai-knowledge-staleness.sh",
-    "agents/mokai-business-assistant.md.tmp.45832.1760161853914"
+    "scripts/check-mokai-knowledge-staleness.sh"
   ]
 }

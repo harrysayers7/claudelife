@@ -5,4 +5,5 @@ ai-role:
 trigger: "!"
 keywords:
 description:
+archive: false
 ---

@@ -1,5 +1,7 @@
 ---
 date: "2025-10-14"
+date created: Tue, 10 14th 25, 4:34:53 pm
+date modified: Tue, 10 14th 25, 7:11:20 pm
 ---
 # MOKAI Mission Control
 
@@ -10,7 +12,7 @@ date: "2025-10-14"
 ---
 
 ## 🎯 This Week's Focus (Week of Oct 14)
-**Operations Guide Mastery Week 1**
+#### **Operations Guide Mastery Week 1**
 1. [ ] Read Indigenous Business & Procurement section (1 hour)
 2. [ ] Read Prime Contractor Management section (1 hour)
 3. [ ] Do daily flashcard review (15 min/day)

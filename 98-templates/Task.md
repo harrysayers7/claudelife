@@ -10,5 +10,7 @@ relation:
 description:
 effort:
 ai-assigned: false
+ai-ignore: false
 priority:
+agent:
 ---

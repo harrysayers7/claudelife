@@ -13,7 +13,9 @@
     "memory-maintenance": "node scripts/memory-maintenance.js",
     "analyze-context": "node scripts/analyze-context-usage.js",
     "monitor-mcp": "node scripts/monitor-mcp-health.js",
-    "system-health": "npm run analyze-context && npm run monitor-mcp"
+    "system-health": "npm run analyze-context && npm run monitor-mcp",
+    "scan-tasks": "bash scripts/scan-tasks.sh",
+    "scan-tasks:json": "bash scripts/scan-tasks.sh --json"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",

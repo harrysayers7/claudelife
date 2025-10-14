@@ -9,7 +9,6 @@ status:
 relation:
 description:
 effort:
-ai-assigned: true
-ai-ignore: true
+ai-assigned: false
+priority:
 ---
-Suggest human names for the agents i specify. Ask me which ones.

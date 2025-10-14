@@ -1217,11 +1217,35 @@
             "id": "e74e9b159f001029",
             "type": "leaf",
             "pane-relief:history-v1": {
-              "pos": 0,
+              "pos": 1,
               "stack": [
+                {
+                  "title": "clean-up",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/clean-up.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"clean-up\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":14,\"ch\":0},\"to\":{\"line\":14,\"ch\":0}}}"
+                },
                 {
                   "state": "{}",
                   "eState": "{}"
+                },
+                {
+                  "title": "mokai-dashboard",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/mokai-dashboard.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokai-dashboard\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":132,\"ch\":14},\"to\":{\"line\":132,\"ch\":14}},\"scroll\":0}"
+                },
+                {
+                  "title": "CLAUDE",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"CLAUDE.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"CLAUDE\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":43,\"ch\":0},\"to\":{\"line\":28,\"ch\":0}},\"scroll\":9.2904}"
+                },
+                {
+                  "title": "mokai-tracking-system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"07-context/systems/business-tools/mokai-tracking-system.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokai-tracking-system\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}},\"scroll\":0}"
                 },
                 {
                   "title": "Systems",
@@ -1298,15 +1322,13 @@
               ]
             },
             "state": {
-              "type": "markdown",
+              "type": "bases",
               "state": {
-                "file": "07-context/systems/business-tools/mokai-tracking-system.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
+                "file": "000 - Tasks/ai-assigned.base",
+                "viewName": "Table"
               },
-              "icon": "lucide-file",
-              "title": "mokai-tracking-system"
+              "icon": "lucide-table",
+              "title": "ai-assigned"
             }
           },
           {
@@ -1713,6 +1735,36 @@
           }
         ],
         "currentTab": 8
+      },
+      {
+        "id": "c8de2f2da2d5f958",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f50478c020808719",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00-inbox/tasks/clean-up.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "clean-up"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -1899,10 +1951,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "07-context/systems/business-tools/mokai-tracking-system.md"
+                "file": "000 - Tasks/ai-assigned.base"
               },
               "icon": "lucide-info",
-              "title": "File properties for mokai-tracking-system"
+              "title": "File properties for ai-assigned"
             }
           }
         ]
@@ -1928,6 +1980,18 @@
                 {
                   "state": "{}",
                   "eState": "{}"
+                },
+                {
+                  "title": "Shortwave — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/inbox/important\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Shortwave — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/inbox/other\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
                 },
                 {
                   "title": "Shortwave — harry@sayers1.com",
@@ -2073,13 +2137,13 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://app.shortwave.com/inbox/other",
-                "title": "Shortwave — harry@sayers1.com",
+                "url": "https://app.shortwave.com/inbox/esm",
+                "title": "Covermore Vocal Plan — harry@sayers1.com",
                 "mode": "webview"
               },
               "pinned": true,
               "icon": "globe-2",
-              "title": "Shortwave — harry@sayers1.com"
+              "title": "Covermore Vocal Plan — harry@sayers1.com"
             }
           },
           {
@@ -2708,41 +2772,42 @@
   },
   "active": "e74e9b159f001029",
   "lastOpenFiles": [
+    "scripts/scan-tasks.sh",
+    "00-inbox/tasks/clean-up.md",
+    "000 - Tasks/ai-assigned.base",
+    "00-inbox/tasks/Add instructions to agent-mokai.md",
+    "00-inbox/tasks/agent assigned tasks.md",
+    "00-inbox/tasks/Ignore assigned.md",
+    "00 - Daily/🌤️ Wed - 15th Oct 25.md",
+    "01-areas/business/mokai/mokai-dashboard.md",
+    "00 - Daily/25-10-15 - Wed.md",
+    "00-inbox/tasks/agent-claudelife.md",
+    "00-inbox/tasks/Update commands guide .md",
+    "01-areas/business/mokai/diary/2025-10-15-mokai-daily.md",
+    "00-inbox/Untitled 2.md",
+    "00-inbox/tasks/Heading formatting .md",
+    "00-inbox/Untitled 1.md",
+    "00-inbox/Untitled.md",
+    "04-resources/vault/Untitled.md",
+    "00-inbox/Headings test 🇭🇹.md",
+    "00-inbox/tasks/Remove subscriptions from Super Bass.md",
+    "CLAUDE.md",
+    "00-inbox/Cover-more sonic rationale..md",
+    "04-resources/research/claude-code-business-workflows-2025.md",
+    "04-resources/research/serena-mcp-best-practices-claudelife.md",
+    "04-resources/research",
     "07-context/systems/business-tools/mokai-tracking-system.md",
     "00-Bases/Systems.base",
     "04-resources/guides/commands/claudelife-commands-guide.md",
-    "CLAUDE.md",
     "98-templates/Task.md",
-    "01-areas/business/mokai/mokai-dashboard.md",
     "07-context/systems/business-tools",
     "docs/research/First.md",
     "docs/research",
-    "01-areas/business/mokai/diary/2025-10-14.md",
-    "01-areas/business/mokai/diary/2025-10-14-mokai-daily.md",
-    "98-templates/mokai-note.md",
-    "00-inbox/Untitled 2.md",
-    "01-areas/business/mokai/diary/diary-template.md",
-    "01-areas/business/mokai/diary/README.md",
-    "01-areas/business/mokai/status/phase-1-foundation.md",
-    "00-inbox/Mokai-p.md",
-    "01-areas/business/mokai/status/phase-2-3-future.md",
     "01-areas/business/mokai/status",
     "01-areas/business/mokai/diary",
-    "01-areas/business/mokai/learn/course/mokai-learning-plan.md",
     "00-Bases/Card Details.base",
-    "04-resources/vault/MOK HOUSE Card Details.md",
     "00-Bases/Vault.base",
     "00-Bases/Events.base",
-    "98-templates/brain-dump.md",
-    "98-templates/burn-note.md",
-    "98-templates/mok-house-project.md",
-    "00-Bases/Mok House Projects.base",
-    "00-Bases/AI Research.base",
-    "00-inbox/🧠dumps/ideas/Untitled 1.md",
-    "00-inbox/🧠dumps/ideas/Untitled.md",
-    "00-inbox/🧠dumps/ideas/CC-Rule-ideas/Must-use-links-as-tags.md",
-    "00-inbox/🧠dumps/ideas/agent-ideas/Finance-forcaster.md",
-    "00-inbox/🧠dumps/ideas/finance-dashboard.md",
     "Untitled.canvas",
     "finance-dashboard/public/file.svg",
     "finance-dashboard/public/window.svg",

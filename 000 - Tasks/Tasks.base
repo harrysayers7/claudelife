@@ -20,9 +20,9 @@ views:
       - file.mtime
       - file.folder
       - effort
+      - ai-ignore
+      - ai-assigned
     sort:
-      - property: status
-        direction: DESC
       - property: file.ctime
         direction: DESC
     columnSize:
