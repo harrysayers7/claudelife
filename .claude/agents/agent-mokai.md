@@ -422,6 +422,231 @@ Before responding:
 - ✅ Apply standard timelines: Essential Eight 5 days, IRAP 2-6 months, Pen Test 4-6 weeks, GRC 4-8 weeks
 - ✅ Don't execute slash commands or modify tracking system files directly
 
+## Git Commit Rules (Intelligent Detection)
+
+### When to Commit (Automatic Decision)
+
+**Commit immediately when:**
+- ✅ **Multiple related files changed** (2+ files in same logical change)
+- ✅ **Feature/task completion** (user says "done", "finished", or completes a task)
+- ✅ **Working state achieved** (tests pass, no errors, functional milestone)
+- ✅ **End of work session** (user says "that's all", "thanks", or wrapping up)
+- ✅ **Documentation updated** (README, guides, tracking system docs)
+- ✅ **System configuration changed** (MCP servers, slash commands, agent instructions)
+
+**Ask user first when:**
+- ⚠️ **Single file minor change** (typo fix, small edit) - May be part of larger work
+- ⚠️ **Experimental/incomplete work** (user is still iterating)
+- ⚠️ **Breaking changes** (API changes, major refactors) - User may want to review first
+- ⚠️ **Sensitive files** (.env, credentials, secrets) - Should never commit secrets
+
+**Never commit:**
+- ❌ **Secrets or credentials** (.env files, API keys, passwords)
+- ❌ **Temporary/debug files** (test outputs, debug logs)
+- ❌ **Work-in-progress** when user is actively debugging
+- ❌ **Generated files** (node_modules, build outputs) - Should be in .gitignore
+
+### Commit Message Guidelines
+
+**Format**: Follow conventional commits
+```
+<type>(<scope>): <description>
+
+[optional body]
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+```
+
+**Types**:
+- `feat:` - New feature or major enhancement
+- `fix:` - Bug fix
+- `docs:` - Documentation changes only
+- `refactor:` - Code restructuring without behavior change
+- `chore:` - Maintenance tasks (dependencies, config)
+- `test:` - Adding or updating tests
+
+**Scopes** (optional):
+- `mokai:` - MOKAI business-specific changes
+- `tracking:` - Tracking system changes
+- `agent:` - Agent instruction updates
+- `hooks:` - Git hook changes
+- `memory:` - Serena memory updates
+
+**Examples**:
+```bash
+feat(mokai): add inbox task scanning to mokai-status command
+fix(tracking): prevent duplicate wins in dashboard
+docs(mokai): update Phase 1 checklist with new tasks
+chore(hooks): add post-commit hook for Serena sync
+refactor(agent): reorganize MOKAI knowledge sections
+```
+
+### Intelligent Workflow
+
+**1. Detect Completion Signals**
+```javascript
+// User says any of these:
+- "done"
+- "that works"
+- "commit this"
+- "save these changes"
+- "that's good"
+- "push to github"
+
+→ Automatically offer to commit
+```
+
+**2. Multi-File Change Detection**
+```bash
+# Check git status first
+git status --short
+
+# If 2+ files changed in same logical unit:
+M  .claude/commands/mokai-status.md
+M  07-context/systems/business-tools/mokai-tracking-system.md
+
+→ These are related (command + docs) → Commit together
+```
+
+**3. Verify Working State**
+```bash
+# Before committing, check:
+- No syntax errors in modified files
+- Tests pass (if applicable)
+- No TODOs or FIXMEs added without context
+- All required files included (don't commit half a feature)
+```
+
+**4. Commit Process**
+```bash
+# Stage changes
+git add <relevant-files>
+
+# Create commit with proper message
+git commit -m "feat(mokai): add inbox task scanning
+
+- Scan /00-inbox/tasks/ for MOKAI-related tasks
+- Group by priority: urgent, high, normal
+- Display in dashboard and status reports
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>"
+
+# Verify commit succeeded
+git status
+
+# Offer to push (don't auto-push)
+"Would you like me to push to main?"
+```
+
+### MOKAI-Specific Commit Patterns
+
+**Tracking System Changes**:
+```bash
+# When modifying diary notes, dashboard, or checklist:
+feat(tracking): update MOKAI dashboard with latest wins
+
+# Include both the data file and any automation changes
+git add 01-areas/business/mokai/mokai-dashboard.md
+git add 01-areas/business/mokai/.mokai-tracker.json
+```
+
+**Slash Command Changes**:
+```bash
+# ALWAYS commit command + documentation together
+feat(mokai): add deduplication to mokai-status command
+
+git add .claude/commands/mokai-status.md
+git add 04-resources/guides/commands/claudelife-commands-guide.md
+git add 07-context/systems/business-tools/mokai-tracking-system.md
+```
+
+**Agent Instruction Updates**:
+```bash
+# When updating agent-mokai:
+docs(agent): add git commit rules to agent-mokai
+
+# If also updating related memories:
+git add .claude/agents/agent-mokai.md
+git add .serena/memories/mokai_business_patterns.md
+```
+
+### Security Checks (Always Run)
+
+**Before every commit:**
+```bash
+# 1. Check for secrets (pre-commit hooks will catch, but verify first)
+grep -r "API_KEY\|SECRET\|PASSWORD" <changed-files>
+
+# 2. Check for hardcoded credentials
+grep -r "sk-\|ghp_\|xoxb-" <changed-files>
+
+# 3. Verify .gitignore includes sensitive files
+cat .gitignore | grep ".env\|credentials"
+```
+
+**If secrets detected:**
+- ❌ Stop immediately
+- Remove secrets, use environment variables
+- Never commit the file with secrets
+- Run `git reset HEAD <file>` if accidentally staged
+
+### Post-Commit Actions
+
+**After successful commit:**
+1. ✅ Show commit hash and summary
+2. ✅ Ask if user wants to push to remote
+3. ✅ If tracking system files changed, remind: "Run `/update-serena-memory` to sync Serena's knowledge"
+4. ✅ If post-commit hook triggered, show the output
+
+**Example Output**:
+```
+✅ Committed successfully (hash: abc123f)
+
+feat(mokai): add inbox task scanning
+
+Files changed: 3
+- .claude/commands/mokai-status.md
+- 04-resources/guides/commands/claudelife-commands-guide.md
+- 07-context/systems/business-tools/mokai-tracking-system.md
+
+🔄 Serena Memory Sync Trigger detected
+💡 Recommendation: Run /update-serena-memory
+
+Would you like me to push to main?
+```
+
+### Edge Cases
+
+**Obsidian workspace files changed**:
+```bash
+# Don't commit these unless user explicitly asks:
+.obsidian/workspace.json
+.claude/.obsidian/workspace.json
+
+# These are personal workspace state, not project files
+→ Skip or ask user first
+```
+
+**Large binary files detected**:
+```bash
+# Pre-commit hook will catch, but warn early:
+git diff --stat | grep -E "\\| Bin"
+
+→ "Large binary file detected. Should this be in .gitignore?"
+```
+
+**Merge conflicts**:
+```bash
+# If git status shows conflicts:
+git status | grep "both modified"
+
+→ "Merge conflict detected. Please resolve before committing."
+```
+
 ## Escalation Criteria
 
 Seek clarification when:
