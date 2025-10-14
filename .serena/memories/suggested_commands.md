@@ -1,5 +1,15 @@
 # Suggested Commands
 
+## Serena Memory Reference
+
+**MOKAI-Specific Patterns**: See `mokai_business_patterns` memory for:
+- Diary note structure and sections
+- Dashboard format and auto-update behavior
+- Inbox task frontmatter requirements
+- Phase 1 checklist workflow
+- Slash command purposes (`/mokai-status`, `/mokai-weekly`, `/mokai-insights`)
+- Tracking system concepts (same-day re-reading, deduplication, fuzzy matching)
+
 ## Task Management
 - `task-master list` - View all tasks with status
 - `task-master next` - Get next available task to work on
@@ -28,8 +38,32 @@
 ### Command Documentation
 **NEW**: All commands are documented in `/04-resources/guides/commands/claudelife-commands-guide.md`
 - Comprehensive reference with "What it does" and "When to use it" sections
-- 17 commands documented with usage patterns and file locations
+- 18 commands documented with usage patterns and file locations
 - Automatically updated when creating new commands via `/create-command`
+
+### Task Management Commands
+- `/complete-task "[task-filename.md or description]"` - Execute specific task from `/00-inbox/tasks/`
+  - Uses Serena MCP for codebase exploration when needed
+  - Direct execution by default (add `--confirm` for approval before implementation)
+  - Marks `Done: true` upon completion
+  - Commits changes with descriptive message
+  - Example: `/complete-task "Install GPT Researcher mcp.md"`
+  - Example: `/complete-task "Fix authentication bug.md"`
+  - Complements `/sort-tasks` (batch processing) with individual task execution
+
+- `/sort-tasks` - Batch process all AI-assigned tasks in inbox
+  - Executes all tasks with `ai-assigned: true` sequentially
+  - **NEW**: Skips tasks with `ai-ignore: true` (reserved for future work, not ready yet)
+  - Cleans up completed tasks older than 2 weeks
+  - Commits changes with summary
+  - Use for automated batch processing vs. `/complete-task` for specific tasks
+
+### Task Frontmatter Flags
+Tasks in `/00-inbox/tasks/` support these frontmatter properties:
+- `ai-assigned: true` - Task will be executed by `/sort-tasks` command
+- `ai-ignore: true` - Task will be skipped by `/sort-tasks` (future work, not ready)
+- `Done: true` - Task is completed and marked done
+- If `ai-ignore` is missing, defaults to `false` (task is not ignored)
 
 ### Research & Knowledge Management
 - `/research $ARGUMENTS` - Conduct deep research using GPT Researcher MCP with COSTAR framework optimization
@@ -56,6 +90,9 @@
 - `/extract-diary` - Extract diary entries to `/04-resources/diary.md`
 
 ### MOKAI Business Operations
+- `/mokai-status` - Daily strategic status command (see `mokai_business_patterns` memory for details)
+- `/mokai-weekly` - End-of-week review command (see `mokai_business_patterns` memory for details)
+- `/mokai-insights` - Monthly pattern analysis (see `mokai_business_patterns` memory for details)
 - `/business:mokai:generate-mokai-flashcards` - Generate learning flashcards from MOKAI research docs
 - `/business:mokai:update-mokai-context` - Update Serena's memory with MOKAI business changes
 
