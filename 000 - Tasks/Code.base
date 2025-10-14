@@ -13,6 +13,7 @@ views:
     order:
       - Done
       - file.name
+      - ai-assigned
       - today
       - description
       - status

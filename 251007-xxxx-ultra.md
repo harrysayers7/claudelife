@@ -3,7 +3,8 @@ relation:
   - "[[mokhouse-projects]]"
 project name: XXXX Ultra
 customer: Electric Sheep Music
-status: Brief Received
+status:
+  - Awaiting Payment
 demo fee: 500
 award fee: 4250
 due date: 2025-10-14

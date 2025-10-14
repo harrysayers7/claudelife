@@ -12,7 +12,7 @@ keywords:
 source: Chat GPT
 description:
 date created: Fri, 10 10th 25, 9:58:20 pm
-date modified: Sun, 10 12th 25, 9:47:27 am
+date modified: Mon, 10 13th 25, 6:18:53 pm
 ---
 # Operational Guide for an Indigenous-Owned Cybersecurity Consultancy in Australia
 

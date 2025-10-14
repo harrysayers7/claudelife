@@ -1,9 +1,12 @@
 {
-  "cssTheme": "GitHub Theme",
+  "cssTheme": "Minimal",
   "accentColor": "#6640ff",
   "interfaceFontFamily": "Helvetica",
   "textFontFamily": "Helvetica Neue",
-  "baseFontSize": 14,
+  "baseFontSize": 17,
   "baseFontSizeAction": true,
-  "showRibbon": true
+  "showRibbon": true,
+  "enabledCssSnippets": [
+    "fk-grotesk"
+  ]
 }

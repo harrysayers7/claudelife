@@ -1,0 +1,18 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.inFolder("00-inbox/🧠dumps/ideas")
+    order:
+      - archive
+      - file.name
+      - file.ctime
+      - relation
+      - category
+      - sub-category
+      - location
+      - description
+    sort:
+      - property: file.ctime
+        direction: DESC

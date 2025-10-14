@@ -8,9 +8,12 @@ description:
 status:
   - active
 date created: Fri, 10 10th 25, 4:03:07 am
-date modified: Fri, 10 10th 25, 4:06:31 am
+date modified: Sun, 10 12th 25, 11:05:05 pm
+title: Mind mapping procurement processe
+aliases: ["MOKAI PROCUREMENT PROCESS: VISUAL FLOW MAP"]
+linter-yaml-title-alias: "MOKAI PROCUREMENT PROCESS: VISUAL FLOW MAP"
 ---
-# Mokai Procurement Process: Visual Flow Map
+# MOKAI PROCUREMENT PROCESS: VISUAL FLOW MAP
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
@@ -89,21 +92,21 @@ date modified: Fri, 10 10th 25, 4:06:31 am
 
 ---
 
-## Quick Reference
+## QUICK REFERENCE
 
-### Services Timeline: **4-12 weeks**
+### SERVICES TIMELINE: **4-12 WEEKS**
 ```
 Week 1-2: Proposal → Week 3: Award → Week 4-8: Delivery → Week 9: Handoff
 ```
 
-### Products Timeline: **1-3 weeks**
+### PRODUCTS TIMELINE: **1-3 WEEKS**
 ```
 Day 1-3: Quote → Day 4-5: Order → Day 6-10: Delivery → Day 11-14: Handoff
 ```
 
 ---
 
-## Key Metrics
+## KEY METRICS
 
 | Metric         | Services       | Products                 |
 | -------------- | -------------- | ------------------------ |

@@ -12,9 +12,9 @@ keywords:
   - Mastery
   - System
 source: Chat GPT
-description: How to learn good
+description: How to learn good based on the zettle systems etc
 date created: Fri, 10 10th 25, 8:55:52 pm
-date modified: Sun, 10 12th 25, 7:14:41 am
+date modified: Sun, 10 12th 25, 6:47:00 pm
 title: Learning Mastery 📚
 ---
 Here’s a blueprint for mastering any subject or skill — built on the strongest learning science we have. Think of it as a system, not a set of tips. If you follow it step by step, you’ll retain more, understand more deeply, and progress faster than 99% of people 👇

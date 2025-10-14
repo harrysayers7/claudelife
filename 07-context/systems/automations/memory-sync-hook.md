@@ -9,7 +9,7 @@ status: "active"
 
 ## Overview
 
-**Purpose**: Automatically detects when critical MOKAI business data changes and reminds you to update Serena MCP's memory files, ensuring the mokai-business-assistant agent always has current context.
+**Purpose**: Automatically detects when critical MOKAI business data changes and reminds you to update Serena MCP's memory files, ensuring the agent-mokai always has current context.
 
 **Type**: Claude Code post-tool execution hook
 
@@ -66,7 +66,7 @@ Tool Execution (Supabase/Edit/Write)
 **Triggers on**: Changes to these directories:
 - `01-areas/business/mokai/` - MOKAI business documentation
 - `.claude/instructions/` - Domain pack instructions (business/technical/automation)
-- `.claude/agents/` - Agent configurations (mokai-business-assistant)
+- `.claude/agents/` - Agent configurations (agent-mokai)
 - `.claude/commands/` - Custom slash commands
 
 ### 3. MCP Configuration
@@ -148,7 +148,7 @@ When you see the reminder:
 This command will:
 1. Scan the codebase for structural changes
 2. Update Serena's memory files in `.serena/memories/`
-3. Ensure mokai-business-assistant has current context
+3. Ensure agent-mokai has current context
 
 ## Examples
 
@@ -271,14 +271,14 @@ ls -l .claude/hooks/post-tool-memory-sync-trigger.sh
 
 ## Related Systems
 
-- [mokai-business-assistant agent](/.claude/agents/mokai-business-assistant.md) - Primary beneficiary of fresh memory
+- [agent-mokai](/.claude/agents/agent-mokai.md) - Primary beneficiary of fresh memory
 - [Serena MCP](07-context/systems/mcp-servers/serena.md) - Provides memory management
 - [/update-serena-memory command](/.claude/commands/update-serena-memory.md) - Triggered by this hook
 
 ## Why This Exists
 
 ### Problem Solved
-The mokai-business-assistant agent relies on Serena MCP's memory files to understand:
+The agent-mokai relies on Serena MCP's memory files to understand:
 - Project structure and file locations
 - Available commands and workflows
 - MOKAI business context and operations

@@ -3,7 +3,8 @@ relation:
   - "[[mokhouse-projects]]"
 project name: Covermore Sting
 customer: Electric Sheep Music
-status: Brief Received
+status:
+  - submitted
 demo fee: 500
 award fee: 8000
 due date: 2025-10-15
@@ -19,7 +20,7 @@ awarded: false
 APRA: false
 12 FOS: false
 date created: Wed, 10 8th 25, 6:29:03 pm
-date modified: Sat, 10 11th 25, 3:08:16 pm
+date modified: Mon, 10 13th 25, 12:25:58 pm
 ---
 
 > [!NOTE]

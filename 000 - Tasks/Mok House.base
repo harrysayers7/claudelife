@@ -13,6 +13,8 @@ views:
     sort:
       - property: relation
         direction: ASC
+    columnSize:
+      file.name: 387
   - type: cards
     name: View
     order:

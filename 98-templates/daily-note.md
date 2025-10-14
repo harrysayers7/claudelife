@@ -4,6 +4,8 @@ date created: Tue, 09 30th 25, 11:44:55 am
 date modified: Fri, 10 3rd 25, 12:33:39 pm
 event:
 ---
+### Daily Note
+
 ### Tasks
 
 ```dataview
@@ -15,15 +17,9 @@ WHERE today and Done != true
 SORT file.ctime DESC
 ```
 
-### Daily Routine
-
-- [ ]
-- [ ]
 
 
-
-
-### 🗒️ Notes
+### 🗒️ Diary
 -
 
 
@@ -36,5 +32,4 @@ SORT file.ctime DESC
 ---
 
 ### 🌍 Context
-###  👾 AI To-Do's
 -

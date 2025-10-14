@@ -1,6 +1,6 @@
 ---
 date created: Mon, 09 22nd 25, 11:31:42 am
-date modified: Sun, 10 12th 25, 9:44:44 am
+date modified: Tue, 10 14th 25, 4:46:43 pm
 ---
 # CLAUDE.md
 
@@ -20,9 +20,26 @@ You are the orchestrating intelligence for "Claudelife" - a comprehensive person
 - **Edit over create**: Prefer modifying existing files to creating new ones
 - **No unsolicited docs**: Only create documentation when explicitly requested
 - **Verify success**: Confirm tasks actually completed before reporting success
+- if user does not clarify new file location, default to 00-inbox
 
 ---
 
+## IMPORTANT:
+
+## Slash Command Documentation Rule
+
+**When modifying any slash command**, you MUST update its documentation in [claudelife-commands-guide.md](04-resources/guides/commands/claudelife-commands-guide.md).
+
+### Required updates:
+- Command syntax and parameters
+- What the command does (description)
+- When to use it (use cases)
+- Any changed behavior or outputs
+
+### Process:
+1. Modify the slash command file in `.claude/commands/`
+2. Immediately update the corresponding entry in `claudelife-commands-guide.md`
+3. Verify the documentation accurately reflects the changes
 
 
 
@@ -40,7 +57,7 @@ You are the orchestrating intelligence for "Claudelife" - a comprehensive person
 ## Learned Patterns
 
 ### Successful Approaches
-- **Direct action-oriented responses**: Skip pleasantries, focus on execution
+- **
 - **Context continuation from summary**: Successfully resume work using conversation summaries
 - **Verify before reporting success**: Confirm data is actually stored before claiming completion
 - **Project ID verification**: Always verify correct database/project ID before operations
@@ -56,26 +73,10 @@ You are the orchestrating intelligence for "Claudelife" - a comprehensive person
 - **Comprehensive CI/CD security integration**: Implement multi-layer security workflows with secret detection, dependency scanning, and code analysis
 - **Environment variable security patterns**: Establish consistent patterns for referencing sensitive data from environment variables
 - **Immediate security audit implementation**: Proactively scan for security issues and implement prevention systems
-- **Pre-commit hook automation**: Implement automated security checks at commit time to prevent credential exposure
-- **Exclusion pattern configuration**: Properly configure security tools to ignore legitimate secrets storage while scanning code
+
 - **Command creation from existing scripts**: Transform existing functionality into reusable slash commands with comprehensive documentation
 - **Error categorization with test validation**: Implement comprehensive error handling with categorized retry logic and automated testing
-- **Production-ready error recovery systems**: Design resumable sync systems with checkpoints, state management, and monitoring
-- **Enhanced script architecture**: Build enhanced versions of existing scripts with comprehensive error handling, monitoring, and recovery
-- **Database migration for state management**: Create supporting database schemas for complex async operations with proper monitoring
-- **TodoWrite task tracking integration**: Use TodoWrite to track multi-step implementation progress and completion
-- **NPM script integration**: Make enhanced tools easily accessible via package.json scripts
-- **ML pipeline integration with confidence scoring**: Implement automated ML categorization with confidence thresholds for decision routing
-- **Automatic categorization with fallback logic**: Design ML systems with automatic >0.9, review 0.7-0.9, and manual <0.7 confidence workflows
-- **Anomaly detection and severity classification**: Integrate ML models for real-time anomaly detection with appropriate response systems
-- **Real-time prediction during sync**: Perform ML predictions during data sync operations for immediate classification
-- **Notion formula translation to JavaScript**: Convert Notion formula logic into JavaScript for automated business rule implementation
-- **Keyword-based business expense detection**: Implement keyword matching systems for automatic business transaction identification
-- **Real-time categorization during sync**: Apply categorization logic during data sync for immediate transaction classification
-- **Interconnected slash command design**: Create command ecosystems where commands reference and enhance each other's functionality
-- **Interactive prompt workflow implementation**: Build commands with guided user input workflows for complex operations
-- **Comprehensive command documentation**: Create detailed documentation with examples, use cases, and interactive features for all commands
-- **Business workflow integration**: Design commands that integrate directly with business processes and accounting workflows
+-
 
 
 

@@ -13,6 +13,10 @@ views:
       - relation
       - system_type
       - created
+      - description
+    sort:
+      - property: file.ctime
+        direction: ASC
     columnSize:
       note.status: 114
       note.type: 126

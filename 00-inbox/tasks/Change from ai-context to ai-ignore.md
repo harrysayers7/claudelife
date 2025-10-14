@@ -1,5 +1,5 @@
 ---
-Done: false
+Done: true
 today: true
 follow up: false
 this week: false
@@ -10,4 +10,5 @@ relation:
   - "[[code]]"
 description:
 effort:
+ai-assigned: false
 ---

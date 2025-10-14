@@ -3,7 +3,7 @@ relation:
   - "[[mokhouse-projects]]"
 project name: Coopers Old Mates
 customer: Electric Sheep Music
-status: Brief Received
+status:
 demo fee: 500
 award fee:
 due date: 2025-09-25

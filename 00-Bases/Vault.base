@@ -1,0 +1,11 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.folder == "04-resources/vault"
+    order:
+      - file.name
+      - value
+    columnSize:
+      file.name: 203

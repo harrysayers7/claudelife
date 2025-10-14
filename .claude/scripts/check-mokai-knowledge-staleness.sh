@@ -1,11 +1,11 @@
 #!/bin/bash
 # MOKAI Agent Knowledge Staleness Checker
-# Verifies if mokai-business-assistant agent knowledge is current with Operations Guide
+# Verifies if agent-mokai agent knowledge is current with Operations Guide
 
 set -e
 
 # File paths
-AGENT_FILE=".claude/agents/mokai-business-assistant.md"
+AGENT_FILE=".claude/agents/agent-mokai.md"
 OPS_GUIDE="01-areas/business/mokai/docs/research/📘 - OPERATIONS GUIDE.md"
 
 # Colors for output

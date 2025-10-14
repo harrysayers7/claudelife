@@ -46,6 +46,7 @@ Professional Indemnity insurance ($2M-$5M coverage), Public Liability insurance,
 - **PI**: Professional Indemnity Insurance - Covers professional mistakes
 - **PL**: Public Liability Insurance - Covers injury/damage to others
 - **GST**: Goods and Services Tax - 10% tax on most sales
+<!--SR:!2025-10-18,4,270-->
 
 What working capital strategies help with product reselling?
 ?

@@ -9,7 +9,6 @@ views:
       - Done
       - file.name
       - description
-      - follow up
       - effort
     columnSize:
       file.name: 211

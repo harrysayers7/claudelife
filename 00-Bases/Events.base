@@ -1,0 +1,16 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      or:
+        - "!event.isEmpty()"
+        - '!note["internal review"].isEmpty()'
+    order:
+      - file.name
+      - event
+      - internal review
+      - date received
+      - Date Paid
+    columnSize:
+      file.name: 224
+      note.event: 212

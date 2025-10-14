@@ -10,73 +10,203 @@
           {
             "id": "1a6be20b7b9b2d85",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "Sayers Investments – Calendar - Schedule starting Sunday, 12 October 2025",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://calendar.google.com/calendar/u/0/r/agenda/2025/10/11?pli=1\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Sayers Investments – Calendar - Schedule starting Saturday, 11 October 2025",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://calendar.google.com/calendar/u/0/r/agenda?pli=1\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Sayers Investments – Calendar - October 2025",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://calendar.google.com/calendar/u/0/r?pli=1\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Sayers Investments – Calendar",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.google.com/search?q=google%20calensar\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "google calensar - Google Search",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.youtube.com/watch?v=DwSNZEW6jCU&t=227s\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "(395) spaced repetition obsidian - YouTube",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.youtube.com/results?search_query=spaced+repetition+obsidian\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "(395) [TUT] #obsidian : Make.MD Plugin - The First Plugin To Setup - YouTube",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.youtube.com/watch?v=N4uFKpuqvEU\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "(395) make.md obsidian - YouTube",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.youtube.com/results?search_query=make.md+obsidian\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "(395) The Role of a Cyber Security Consultant: Explained Simply - YouTube",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.youtube.com/watch?v=juPk-9TG2Kw\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                }
+              ]
+            },
             "pinned": true,
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://www.youtube.com/watch?v=DwSNZEW6jCU&t=227s",
-                "title": "(400) PRODUCTIVELY Learning New Things Using Obsidian - YouTube",
+                "url": "https://calendar.google.com/calendar/u/0/r/agenda?pli=1",
+                "title": "Sayers Investments – Calendar - Schedule starting Monday, 13 October 2025",
                 "mode": "webview"
               },
               "pinned": true,
               "icon": "globe-2",
-              "title": "(400) PRODUCTIVELY Learning New Things Using Obsidian - YouTube"
+              "title": "Sayers Investments – Calendar - Schedule starting Monday, 13 October 2025"
             }
           },
           {
-            "id": "8957a34fd39c3033",
+            "id": "30de27c485b68e99",
             "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "bases",
-              "state": {
-                "file": "000 - Tasks/Tasks.base",
-                "viewName": "Table"
-              },
-              "pinned": true,
-              "icon": "lucide-table",
-              "title": "Tasks"
-            }
-          },
-          {
-            "id": "5b14af90efc1424f",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "full-calendar-view",
-              "state": {},
-              "pinned": true,
-              "icon": "calendar-glyph",
-              "title": "Calendar"
-            }
-          },
-          {
-            "id": "18849de9cda9d97f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "02-projects/mokhouse/251008-Covermore.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "(413) Watch history - YouTube",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.youtube.com/feed/history\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "(413) Obsidian Workspaces - YouTube",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.youtube.com/watch?v=eOcumDChzEQ\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "(413) workspaces obsidian - YouTube",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.youtube.com/results?search_query=workspaces+obsidian\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "(413) workspaces ob - YouTube",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.youtube.com/results?search_query=workspaces+ob\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "(413) The OFFICIAL Archon Guide - 10x Your AI Coding Workflow - YouTube",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.youtube.com/watch?v=DMXyDpnzNpY\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "(412) Obsidian task management with Dataviewjs, Templates, Daily Notes - YouTube",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.youtube.com/watch?v=ccN5vJzXwvo\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "(412) dataviewjs obsidian - YouTube",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.youtube.com/results?search_query=dataviewjs+obsidian\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "(412) PRODUCTIVELY Learning New Things Using Obsidian - YouTube",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.youtube.com/watch?v=DwSNZEW6jCU&t=227s\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
                 }
+              ]
+            },
+            "pinned": true,
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.youtube.com/watch?v=xhrqmAWI_cw",
+                "title": "(413) Stop The Prompting... Vibe Coding has Evolved With This - YouTube",
+                "mode": "webview"
               },
-              "icon": "lucide-file",
-              "title": "251008-Covermore"
+              "pinned": true,
+              "icon": "globe-2",
+              "title": "(413) Stop The Prompting... Vibe Coding has Evolved With This - YouTube"
             }
           },
           {
             "id": "ed1b1f9af52b0404",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "Composer Brief - 12736_Supermassive_Covermore_Sting - Google Docs",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://docs.google.com/document/d/1sRFm3uSBOJKyFmTIAAhi0bD_jRbEb3uP8om_-Ub0qjA/edit?tab=t.sv1ys0dc4u9a\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Composer Brief - 12736_Supermassive_Covermore_Sting - Google Docs",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://docs.google.com/document/d/1sRFm3uSBOJKyFmTIAAhi0bD_jRbEb3uP8om_-Ub0qjA/edit?tab=t.sv1ys0dc4u9a#heading=h.3alvzekgm302\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Composer Brief - 12736_Supermassive_Covermore_Sting - Google Docs",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://docs.google.com/document/d/1sRFm3uSBOJKyFmTIAAhi0bD_jRbEb3uP8om_-Ub0qjA/edit?tab=t.sv1ys0dc4u9a\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Composer Brief - 12736_Supermassive_Covermore_Sting - Google Docs",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://docs.google.com/document/d/1sRFm3uSBOJKyFmTIAAhi0bD_jRbEb3uP8om_-Ub0qjA/edit?tab=t.sv1ys0dc4u9a#heading=h.3alvzekgm302\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Composer Brief - 12736_Supermassive_Covermore_Sting - Google Docs",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://docs.google.com/document/d/1sRFm3uSBOJKyFmTIAAhi0bD_jRbEb3uP8om_-Ub0qjA/edit?tab=t.sv1ys0dc4u9a\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Composer Brief - 12736_Supermassive_Covermore_Sting - Google Docs",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://docs.google.com/document/d/1sRFm3uSBOJKyFmTIAAhi0bD_jRbEb3uP8om_-Ub0qjA/edit\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                }
+              ]
+            },
             "state": {
               "type": "webviewer",
               "state": {
@@ -89,22 +219,383 @@
             }
           },
           {
-            "id": "c0b5de56fb118427",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://www.canva.com/design/DAGz7vYW85U/tIRUmxR3UVd-q2iQzK4FHg/view?utm_content=DAGz7vYW85U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha3ac3444c5#31",
-                "title": "Cover-More_Shoot update",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Cover-More_Shoot update"
-            }
-          },
-          {
             "id": "39f76b82998988d6",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#7\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#6\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#5\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#6\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#7\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#8\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#9\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#10\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#11\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#10\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#11\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#12\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#13\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#14\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#15\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#16\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#17\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#18\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#19\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#20\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#21\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#22\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#23\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#24\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#25\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#26\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#27\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#28\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#29\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#30\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#29\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#30\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#29\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#28\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#27\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#26\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#25\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#24\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#23\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#22\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#21\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#20\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#19\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#18\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#17\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#16\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#15\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#14\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#13\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#12\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#11\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#10\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#9\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#8\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#7\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#6\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#5\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#4\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#3\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#2\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Cover-More by Josh Logue",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.canva.com/design/DAGvdjO18dk/UKcVAexyQNNl31Wx7NLmiw/view?utm_content=DAGvdjO18dk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h796b9029ed#1\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                }
+              ]
+            },
             "state": {
               "type": "webviewer",
               "state": {
@@ -117,67 +608,1111 @@
             }
           },
           {
-            "id": "3395c33da53efca0",
+            "id": "b19bf955ef7d6c63",
             "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00 - Daily/25-10-11 - Sat.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
                 }
-              },
-              "icon": "lucide-file",
-              "title": "25-10-11 - Sat"
-            }
-          },
-          {
-            "id": "7e5a09d5f418c1b5",
-            "type": "leaf",
+              ]
+            },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00 - Daily/25-10-12 - Sun.md",
+                "file": "00-inbox/OPERATIONS GUIDE📘.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "25-10-12 - Sun"
+              "title": "OPERATIONS GUIDE📘"
+            }
+          },
+          {
+            "id": "d05dea6b951d9cc6",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "25-10-13 - Mon",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/25-10-13 - Mon.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"25-10-13 - Mon\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":38,\"ch\":15},\"to\":{\"line\":38,\"ch\":30}},\"scroll\":5.831}"
+                },
+                {
+                  "title": "Director ID",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/Director ID.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Director ID\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}}}"
+                },
+                {
+                  "title": "vault-item",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/vault-item.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"vault-item\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}}}"
+                },
+                {
+                  "title": "context-soletrader",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/soletrader/context-soletrader.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context-soletrader\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":11,\"ch\":35},\"to\":{\"line\":11,\"ch\":35}},\"scroll\":0}"
+                },
+                {
+                  "title": "25-10-13 - Mon",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/25-10-13 - Mon.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"25-10-13 - Mon\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":38,\"ch\":43},\"to\":{\"line\":37,\"ch\":0}},\"scroll\":5.830985915492958}"
+                },
+                {
+                  "title": "25-12-10 - Wed",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/25-12-10 - Wed.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"25-12-10 - Wed\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}},\"scroll\":14.3061382018324}"
+                },
+                {
+                  "title": "25-10-01 - Wed",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/25-10-01 - Wed.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"25-10-01 - Wed\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}}}"
+                },
+                {
+                  "title": "Mokai",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/Mokai.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Mokai\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "Mok House",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/Mok House.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Mok House\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "Issues",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/Issues.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Issues\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "Follow Up",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/Follow Up.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Follow Up\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "ai-assigned",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/ai-assigned.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"ai-assigned\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "Admin",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/Admin.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Admin\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "Code",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/Code.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Code\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "ai-assigned",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/ai-assigned.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"ai-assigned\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "Admin",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/Admin.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Admin\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "ai-assigned",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/ai-assigned.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"ai-assigned\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "🌤️ Tue - Oct 14th 25",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Tue - Oct 14th 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Tue - Oct 14th 25\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":21,\"ch\":89},\"to\":{\"line\":21,\"ch\":89}}}"
+                },
+                {
+                  "title": "25-10-13 - Mon",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/25-10-13 - Mon.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"25-10-13 - Mon\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}}}"
+                },
+                {
+                  "title": "gitingest",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/gitingest.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"gitingest\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":14,\"ch\":22},\"to\":{\"line\":14,\"ch\":0}}}"
+                },
+                {
+                  "title": "25-10-13 - Mon",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/25-10-13 - Mon.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"25-10-13 - Mon\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":20,\"ch\":0},\"to\":{\"line\":20,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "daily-notes",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"97-tags/daily-notes.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"daily-notes\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "crypto",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"97-tags/crypto.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"crypto\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "contracts",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"97-tags/contracts.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"contracts\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "context",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"97-tags/context.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":4,\"ch\":193},\"to\":{\"line\":4,\"ch\":0}}}"
+                },
+                {
+                  "title": "context 1",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"97-tags/context 1.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context 1\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}}}"
+                },
+                {
+                  "title": "business",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"97-tags/business.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"business\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "claude-code-best-practices-oct-2025",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/research/claude-code-best-practices-oct-2025.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"claude-code-best-practices-oct-2025\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":29,\"ch\":0},\"to\":{\"line\":29,\"ch\":0}},\"scroll\":40}"
+                },
+                {
+                  "title": "Admin",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/Admin.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Admin\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "Mokai",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/Mokai.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Mokai\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "prompt-library",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"04-resources/prompt-library/prompt-library.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"prompt-library\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "Signed HS FT Deed (ACT)",
+                  "icon": "lucide-file-text",
+                  "state": "{\"type\":\"pdf\",\"state\":{\"file\":\"01-areas/business/trust/Signed HS FT Deed (ACT).pdf\"},\"icon\":\"lucide-file-text\",\"title\":\"Signed HS FT Deed (ACT)\"}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "context",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/harry/context.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "25-10-13 - Mon",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/25-10-13 - Mon.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"25-10-13 - Mon\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":35,\"ch\":59},\"to\":{\"line\":35,\"ch\":59}},\"scroll\":8.422543460319996}"
+                },
+                {
+                  "title": "mokai-university agent",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"mokai-university agent.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokai-university agent\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":15,\"ch\":0},\"to\":{\"line\":15,\"ch\":0}}}"
+                },
+                {
+                  "title": "ai-assigned",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/ai-assigned.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"ai-assigned\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "First_Nations_Creative_and_Professional_Development_-_25_26-Application",
+                  "icon": "lucide-file-text",
+                  "state": "{\"type\":\"pdf\",\"state\":{\"file\":\"01-areas/business/mokhouse/docs/grants/applications/First_Nations_Creative_and_Professional_Development_-_25_26-Application.pdf\"},\"icon\":\"lucide-file-text\",\"title\":\"First_Nations_Creative_and_Professional_Development_-_25_26-Application\"}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "mokhouse-profile",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokhouse/mokhouse-profile.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokhouse-profile\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":1,\"ch\":0},\"to\":{\"line\":1,\"ch\":0}}}"
+                },
+                {
+                  "title": "daily-note",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/daily-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"daily-note\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":3},\"to\":{\"line\":6,\"ch\":3}}}"
+                },
+                {
+                  "title": "25-10-13 - Mon",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/25-10-13 - Mon.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"25-10-13 - Mon\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":21,\"ch\":17},\"to\":{\"line\":21,\"ch\":17}}}"
+                },
+                {
+                  "title": "MCP Server Configuration Mystery - Solved",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/MCP Server Configuration Mystery - Solved.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"MCP Server Configuration Mystery - Solved\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "First_Nations_Creative_and_Professional_Development_-_25_26-Application",
+                  "icon": "lucide-file-text",
+                  "state": "{\"type\":\"pdf\",\"state\":{\"file\":\"01-areas/business/mokhouse/docs/grants/applications/First_Nations_Creative_and_Professional_Development_-_25_26-Application.pdf\"},\"icon\":\"lucide-file-text\",\"title\":\"First_Nations_Creative_and_Professional_Development_-_25_26-Application\"}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "25-10-13 - Mon",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/25-10-13 - Mon.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"25-10-13 - Mon\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":26,\"ch\":3},\"to\":{\"line\":26,\"ch\":0}}}"
+                },
+                {
+                  "title": "gitingest",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/gitingest.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"gitingest\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":13,\"ch\":0},\"to\":{\"line\":13,\"ch\":0}}}"
+                },
+                {
+                  "title": "25-10-13 - Mon",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/25-10-13 - Mon.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"25-10-13 - Mon\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":21,\"ch\":17},\"to\":{\"line\":21,\"ch\":17}}}"
+                },
+                {
+                  "title": "Master rule and automation",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/Master rule and automation.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Master rule and automation\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":13,\"ch\":9},\"to\":{\"line\":13,\"ch\":7}}}"
+                },
+                {
+                  "title": "25-10-13 - Mon",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/25-10-13 - Mon.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"25-10-13 - Mon\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":21,\"ch\":17},\"to\":{\"line\":21,\"ch\":17}}}"
+                },
+                {
+                  "title": "Jack q s",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/Jack q s.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Jack q s\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":4,\"ch\":37},\"to\":{\"line\":4,\"ch\":37}}}"
+                },
+                {
+                  "title": "JACK Q'S",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/JACK Q'S.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"JACK Q'S\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}}}"
+                },
+                {
+                  "title": "Jack q s",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/Jack q s.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Jack q s\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":4,\"ch\":0},\"to\":{\"line\":4,\"ch\":0}}}"
+                },
+                {
+                  "title": "Claudlife UI",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/Claudlife UI.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Claudlife UI\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":12,\"ch\":88},\"to\":{\"line\":12,\"ch\":88}}}"
+                },
+                {
+                  "title": "Compounding engineering",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/Compounding engineering.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Compounding engineering\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":18,\"ch\":0},\"to\":{\"line\":18,\"ch\":0}}}"
+                },
+                {
+                  "title": "🍊ai-frontmatter",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/🍊ai-frontmatter.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🍊ai-frontmatter\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":4,\"ch\":0},\"to\":{\"line\":4,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "🍉Obsidian file structure",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/🍉Obsidian file structure.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🍉Obsidian file structure\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":21.761204481792717}"
+                },
+                {
+                  "title": "25-10-13 - Mon",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/25-10-13 - Mon.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"25-10-13 - Mon\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":21,\"ch\":17},\"to\":{\"line\":21,\"ch\":17}},\"scroll\":10.51201408982262}"
+                },
+                {
+                  "title": "meeting note w jack",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/meeting note w jack.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"meeting note w jack\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":13,\"ch\":0},\"to\":{\"line\":13,\"ch\":0}}}"
+                },
+                {
+                  "title": "25-10-13 - Mon",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/25-10-13 - Mon.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"25-10-13 - Mon\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":35,\"ch\":43},\"to\":{\"line\":35,\"ch\":43}},\"scroll\":0}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00-inbox/Untitled 1.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "Untitled 1"
+            }
+          },
+          {
+            "id": "43bb5530f4cce569",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "Untitled 3",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/Vault.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Untitled 3\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "Director ID",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"04-resources/vault/Director ID.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Director ID\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}}}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00 - Daily/25-10-13 - Mon.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "25-10-13 - Mon"
+            }
+          },
+          {
+            "id": "33dec61a00f9a1f3",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "2025-10-14-mokai-daily",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/diary/2025-10-14-mokai-daily.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"2025-10-14-mokai-daily\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":10,\"ch\":11},\"to\":{\"line\":10,\"ch\":11}}}"
+                },
+                {
+                  "title": "phase-1-foundation",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/status/phase-1-foundation.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"phase-1-foundation\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "Mokai-p",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/Mokai-p.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Mokai-p\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":42,\"ch\":215},\"to\":{\"line\":11,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "mokai-note",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/mokai-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokai-note\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}}}"
+                },
+                {
+                  "title": "2025-10-14-mokai-daily",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/diary/2025-10-14-mokai-daily.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"2025-10-14-mokai-daily\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "mokai-dashboard",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/mokai-dashboard.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokai-dashboard\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":108,\"ch\":13},\"to\":{\"line\":108,\"ch\":13}},\"scroll\":0.2323943661971831}"
+                },
+                {
+                  "title": "Card Details",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/Card Details.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Card Details\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "MOK HOUSE Card Details",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"04-resources/vault/MOK HOUSE Card Details.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"MOK HOUSE Card Details\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":7},\"to\":{\"line\":9,\"ch\":7}}}"
+                },
+                {
+                  "title": "Vault",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/Vault.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Vault\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "Events",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/Events.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Events\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "brain-dump",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/brain-dump.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"brain-dump\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}}}"
+                },
+                {
+                  "title": "burn-note",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/burn-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"burn-note\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}}}"
+                },
+                {
+                  "title": "mok-house-project",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/mok-house-project.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mok-house-project\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":20,\"ch\":0},\"to\":{\"line\":20,\"ch\":0}}}"
+                },
+                {
+                  "title": "Mok House Projects",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/Mok House Projects.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Mok House Projects\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "AI Research",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/AI Research.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"AI Research\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "ideas",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/ideas.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"ideas\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "brain-dump",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/brain-dump.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"brain-dump\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "ideas",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/ideas.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"ideas\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "brain-dump",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/brain-dump.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"brain-dump\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}}}"
+                },
+                {
+                  "title": "ideas",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/ideas.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"ideas\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "Supabase email",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/🧠dumps/ideas/automations/Supabase email.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Supabase email\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":13,\"ch\":0},\"to\":{\"line\":13,\"ch\":0}}}"
+                },
+                {
+                  "title": "📘 - OPERATIONS GUIDE",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/docs/research/📘 - OPERATIONS GUIDE.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"📘 - OPERATIONS GUIDE\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":35,\"ch\":1220},\"to\":{\"line\":35,\"ch\":1083}}}"
+                },
+                {
+                  "title": "Mok House Projects",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/Mok House Projects.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Mok House Projects\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "Events",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/Events.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Events\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "Vault",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/Vault.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Vault\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "Director ID TFN",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"04-resources/vault/Director ID TFN.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Director ID TFN\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}}}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "98-templates/mokai-note.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "mokai-note"
+            }
+          },
+          {
+            "id": "e74e9b159f001029",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "Systems",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/Systems.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Systems\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "claudelife-commands-guide",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"04-resources/guides/commands/claudelife-commands-guide.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"claudelife-commands-guide\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":101},\"to\":{\"line\":8,\"ch\":101}},\"scroll\":242.100897819581}"
+                },
+                {
+                  "title": "CLAUDE",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"CLAUDE.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"CLAUDE\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":43,\"ch\":0},\"to\":{\"line\":43,\"ch\":0}},\"scroll\":9.290441176470589}"
+                },
+                {
+                  "title": "Task",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/Task.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Task\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":14,\"ch\":0},\"to\":{\"line\":14,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "mokai-dashboard",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/mokai-dashboard.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokai-dashboard\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":130,\"ch\":14},\"to\":{\"line\":130,\"ch\":14}},\"scroll\":51.10294117647059}"
+                },
+                {
+                  "title": "claudelife-commands-guide",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"04-resources/guides/commands/claudelife-commands-guide.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"claudelife-commands-guide\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":130},\"to\":{\"line\":8,\"ch\":130}},\"scroll\":281.8216911764706}"
+                },
+                {
+                  "title": "CLAUDE",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"CLAUDE.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"CLAUDE\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":27,\"ch\":0},\"to\":{\"line\":27,\"ch\":0}},\"scroll\":0.04285714285714286}"
+                },
+                {
+                  "title": "mokai-dashboard",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/mokai-dashboard.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokai-dashboard\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":130,\"ch\":14},\"to\":{\"line\":130,\"ch\":14}},\"scroll\":90.8416}"
+                },
+                {
+                  "title": "2025-10-14",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/diary/2025-10-14.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"2025-10-14\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":4,\"ch\":0},\"to\":{\"line\":4,\"ch\":0}}}"
+                },
+                {
+                  "title": "2025-10-14-mokai-daily",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/diary/2025-10-14-mokai-daily.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"2025-10-14-mokai-daily\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":10,\"ch\":11},\"to\":{\"line\":10,\"ch\":11}}}"
+                },
+                {
+                  "title": "mokai-note",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/mokai-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokai-note\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "Untitled 2",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/Untitled 2.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Untitled 2\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "07-context/systems/business-tools/mokai-tracking-system.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "mokai-tracking-system"
+            }
+          },
+          {
+            "id": "8a1f8b8cbb1896e5",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "25-10-14 - Tue",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/25-10-14 - Tue.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"25-10-14 - Tue\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "soletrader",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"97-tags/soletrader.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"soletrader\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "psychedelics",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"97-tags/psychedelics.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"psychedelics\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "ableton",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"97-tags/ableton.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"ableton\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "ai",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"97-tags/ai.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"ai\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "diet",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"97-tags/diet.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"diet\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "medical",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"97-tags/medical.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"medical\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "context-medical",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/health-fitness/medical/context-medical.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context-medical\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "context-gym",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/health-fitness/gym/context-gym.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context-gym\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "context-diet",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/health-fitness/diet/context-diet.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context-diet\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "context-psychedelics",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/p-dev/psychedelics/context-psychedelics.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context-psychedelics\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "context-mindset",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/p-dev/mindset/context-mindset.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context-mindset\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}}}"
+                },
+                {
+                  "title": "context-learning",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/p-dev/learning/context-learning.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context-learning\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "Learning",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"97-tags/Learning.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Learning\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "context-learning",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/p-dev/learning/context-learning.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context-learning\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "context-mac",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/tech/mac/context-mac.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context-mac\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "context-ai",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/tech/ai/context-ai.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context-ai\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "context-smsf",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/SMSF/context-smsf.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context-smsf\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "context-soletrader",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/soletrader/context-soletrader.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context-soletrader\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "context-trust",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/trust/context-trust.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context-trust\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "context-ableton",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/tech/ableton/context-ableton.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context-ableton\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "safia",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"97-tags/safia.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"safia\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "trust",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"97-tags/trust.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"trust\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "context-trust",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/trust/context-trust.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context-trust\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "safia",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"97-tags/safia.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"safia\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "context-safia",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/safia/context-safia.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context-safia\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "safia-profile",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/safia/safia-profile.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"safia-profile\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "context-mokhouse",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokhouse/context-mokhouse.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context-mokhouse\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "context-mokai",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/context-mokai.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context-mokai\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "context-crypto",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/crypto/context-crypto.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"context-crypto\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "context-mokai",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/context-mokai.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokai-context\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "CLAUDE",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/CLAUDE.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"CLAUDE\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "sort-context",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/sort-context.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"sort-context\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}}}"
+                },
+                {
+                  "title": "First year Profit projections for Mokai",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/docs/research/First year Profit projections for Mokai.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"First year Profit projections for Mokai\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":20,\"ch\":0},\"to\":{\"line\":20,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "ESM Xmas party",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/ESM Xmas party.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"ESM Xmas party\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":11,\"ch\":0},\"to\":{\"line\":11,\"ch\":0}}}"
+                },
+                {
+                  "title": "claudelife-commands-guide",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"04-resources/guides/commands/claudelife-commands-guide.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"claudelife-commands-guide\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":150,\"ch\":0},\"to\":{\"line\":150,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "Cover-more sonic rationale.",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/Cover-more sonic rationale..md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Cover-more sonic rationale.\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":32,\"ch\":0},\"to\":{\"line\":32,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "claudelife-commands-guide",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"04-resources/guides/commands/claudelife-commands-guide.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"claudelife-commands-guide\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":10,\"ch\":5},\"to\":{\"line\":10,\"ch\":5}},\"scroll\":41.55727023319616}"
+                },
+                {
+                  "title": "Prepare for MArlon chat",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/Prepare for MArlon chat.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Prepare for MArlon chat\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":37,\"ch\":13},\"to\":{\"line\":37,\"ch\":13}}}"
+                },
+                {
+                  "title": "25-10-13 - Mon",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/25-10-13 - Mon.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"25-10-13 - Mon\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "OPERATIONS GUIDE📘",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/OPERATIONS GUIDE📘.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"OPERATIONS GUIDE📘\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":16,\"ch\":0},\"to\":{\"line\":16,\"ch\":0}},\"scroll\":30.250973183391004}"
+                },
+                {
+                  "title": "Create index md",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/Create index md.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Create index md\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00-inbox/OPERATIONS GUIDE📘.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "OPERATIONS GUIDE📘"
+            }
+          },
+          {
+            "id": "35402322b6c0c6e6",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "🌤️ Tue - Oct 14th 25",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Tue - Oct 14th 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Tue - Oct 14th 25\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":20,\"ch\":0},\"to\":{\"line\":20,\"ch\":0}}}"
+                },
+                {
+                  "title": "Does fireflies hear different voices",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/🧠dumps/Does fireflies hear different voices.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Does fireflies hear different voices\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}}}"
+                },
+                {
+                  "title": "🌤️ Tue - Oct 14th 25",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Tue - Oct 14th 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Tue - Oct 14th 25\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}}}"
+                },
+                {
+                  "title": "Does fireflies hear different voices",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/🧠dumps/Does fireflies hear different voices.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Does fireflies hear different voices\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}}}"
+                },
+                {
+                  "title": "question",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/question.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"question\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}}}"
+                },
+                {
+                  "title": "Agents q",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/🧠dumps/Agents q.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Agents q\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":13,\"ch\":28},\"to\":{\"line\":13,\"ch\":28}}}"
+                },
+                {
+                  "title": "daily-note",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/daily-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"daily-note\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":21,\"ch\":0},\"to\":{\"line\":21,\"ch\":0}},\"scroll\":0.0455}"
+                },
+                {
+                  "title": "25-10-14 - Tue",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/25-10-14 - Tue.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"25-10-14 - Tue\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":3},\"to\":{\"line\":6,\"ch\":0}}}"
+                },
+                {
+                  "title": "memory-system-guide",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"04-resources/guides/memory-system-guide.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"memory-system-guide\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "claudelife-commands-guide",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"04-resources/guides/commands/claudelife-commands-guide.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"claudelife-commands-guide\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":17,\"ch\":204},\"to\":{\"line\":17,\"ch\":204}},\"scroll\":0.0989010989010989}"
+                },
+                {
+                  "title": "commands-guide",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"04-resources/guides/commands-guide.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"commands-guide\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "Learning Mastery 📚",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/Learning Mastery 📚.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Learning Mastery 📚\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":19,\"ch\":0},\"to\":{\"line\":19,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "Does fireflies hear different voices",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/🧠dumps/Does fireflies hear different voices.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Does fireflies hear different voices\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}}}"
+                },
+                {
+                  "title": "Agents q",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/🧠dumps/Agents q.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Agents q\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":10,\"ch\":0},\"to\":{\"line\":10,\"ch\":0}}}"
+                },
+                {
+                  "title": "financial-business-development-flashcards",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/learn/flashcards/financial-business-development-flashcards.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"financial-business-development-flashcards\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "OPERATIONS GUIDE📘",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/OPERATIONS GUIDE📘.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"OPERATIONS GUIDE📘\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":22,\"ch\":658},\"to\":{\"line\":22,\"ch\":658}},\"scroll\":0}"
+                },
+                {
+                  "title": "Untitled",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/Untitled.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Untitled\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":27,\"ch\":0},\"to\":{\"line\":27,\"ch\":0}},\"scroll\":2.4086021505376345}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "98-templates/daily-note.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "daily-note"
             }
           }
         ],
         "currentTab": 8
-      },
-      {
-        "id": "f03f21ed0008fda4",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "05e70f8dfb5d2011",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00-inbox/tasks/ change positioning of Dock.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
-              "icon": "lucide-file",
-              "title": "change positioning of Dock"
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -189,10 +1724,20 @@
       {
         "id": "e16e878e85595b6b",
         "type": "tabs",
+        "dimension": 76.31195335276968,
         "children": [
           {
             "id": "94da3d6eb66ccc2c",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "file-explorer",
               "state": {
@@ -206,6 +1751,15 @@
           {
             "id": "a69430122c93116b",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "search",
               "state": {
@@ -223,6 +1777,15 @@
           {
             "id": "d483602a7664257c",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "recent-files",
               "state": {},
@@ -233,18 +1796,120 @@
           {
             "id": "da69839c2251531b",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "journal-calendar",
               "state": {},
               "icon": "calendar-days",
               "title": "Calendar"
             }
+          },
+          {
+            "id": "33cd36027a11c5d6",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "ChatGPT",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.google.com/search?q=chatgpt\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "chatgpt - Google Search",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://mail.google.com/mail/u/0/#inbox\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Sayers Investments Mail",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://mail.google.com/mail/u/0/\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Sayers Investments Mail",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.google.com/search?q=gmail\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "gmail - Google Search",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://claude.ai/login?returnTo=%2F%3F\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Claude",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://claude.ai/\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Claude",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.google.com/search?q=claude\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                }
+              ]
+            },
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://chatgpt.com/?utm_source=google&utm_medium=paidsearch_brand&utm_campaign=GOOG_C_SEM_GBR_Core_CHT_BAU_ACQ_PER_MIX_ALL_APAC_AU_EN_021425&utm_term=chatgpt&utm_content=176457982953&utm_ad=733052273247&utm_match=e&gad_source=1&gad_campaignid=22239765488&gbraid=0AAAAA-IW-UUM2dJaVd78AsDSocuMBorWG&gclid=Cj0KCQjwo63HBhCKARIsAHOHV_WVeSkCGy2texugVbauHO9ax3-gOOfz0P22QsaEqXHVKMtl8re3nuAaAnx8EALw_wcB",
+                "title": "ChatGPT",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "ChatGPT"
+            }
+          }
+        ]
+      },
+      {
+        "id": "1a4fac9d5f39c125",
+        "type": "tabs",
+        "dimension": 23.688046647230323,
+        "children": [
+          {
+            "id": "0b7f9f0b44202bb9",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "07-context/systems/business-tools/mokai-tracking-system.md"
+              },
+              "icon": "lucide-info",
+              "title": "File properties for mokai-tracking-system"
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 465.5
+    "width": 393.5
   },
   "right": {
     "id": "4ba4fbf600cab1d4",
@@ -255,8 +1920,204 @@
         "type": "tabs",
         "children": [
           {
+            "id": "8cf7c99f149d0b15",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "Shortwave — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Shortwave — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/search?q=asic\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "HS Family Trust — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/inbox/important\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Shortwave — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/inbox/other\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Shortwave — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/inbox/esm\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Shortwave — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/inbox/other\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Shortwave — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/inbox/esm\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Shortwave — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/inbox/important\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Shortwave — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/inbox/other\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Shortwave — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "● Shortwave — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/s/group%3Amartinl%40whitesky.com.au\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Shortwave — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/inbox/other\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Shortwave — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/inbox/esm\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Shortwave — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/inbox/other\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Shortwave — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/inbox/esm\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Shortwave — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/inbox/important\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Shortwave — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/inbox/other\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Shortwave — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/inbox/esm\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Payment Pending Confirmation : Harrison Robert Sayers — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/inbox/other\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Request for Assistance: Updating Company Details & Ownership Transfer to Discretionary Trust — harry@sayers1.com",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Shortwave",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://app.shortwave.com/login\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Shortwave",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.shortwave.com/\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Shortwave — Automate your email with AI",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.google.com/search?q=shortwave\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                }
+              ]
+            },
+            "pinned": true,
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://app.shortwave.com/inbox/other",
+                "title": "Shortwave — harry@sayers1.com",
+                "mode": "webview"
+              },
+              "pinned": true,
+              "icon": "globe-2",
+              "title": "Shortwave — harry@sayers1.com"
+            }
+          },
+          {
+            "id": "2a2b5761a6a92c81",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "98-templates/brain-dump.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of brain-dump"
+            }
+          },
+          {
             "id": "59953e4076fd41a1",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "calendar",
               "state": {},
@@ -265,8 +2126,178 @@
             }
           },
           {
+            "id": "f8d54e7682de3191",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "hotkey",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"97-tags/hotkey.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"hotkey\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "Untitled",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/Vocalist notes cover-more..md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Untitled\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "04-resources/hotkeys.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "hotkeys"
+            }
+          },
+          {
+            "id": "0b34daa494cda97a",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "Outlook",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://outlook.office.com/mail/0/inbox/id/AAQkADY5ZTU2NGI0LTFjZjUtNDlhNy04M2U5LTVhZmIyYzU2ZTExMgAQALg8hQOOhitFhq9duuS4UtI%3D?deeplink=mail%2F0%2F%3Fnlp%3D0\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Email - Harry Sayers - Outlook",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://outlook.office.com/mail/0/?deeplink=mail%2F0%2F%3Fnlp%3D0\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Outlook",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://outlook.office.com/mail/0/inbox/id/AAQkADY5ZTU2NGI0LTFjZjUtNDlhNy04M2U5LTVhZmIyYzU2ZTExMgAQALg8hQOOhitFhq9duuS4UtI%3D?deeplink=mail%2F0%2F%3Fnlp%3D0\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Email - Harry Sayers - Outlook",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://outlook.office.com/mail/0/?deeplink=mail%2F0%2F%3Fnlp%3D0\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Email - Harry Sayers - Outlook",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://outlook.office.com/mail/0/options/general/appAppearance?deeplink=mail%2F0%2F%3Fnlp%3D0\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Email - Harry Sayers - Outlook",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://outlook.office.com/mail/0/options/general/timeAndLanguage?deeplink=mail%2F0%2F%3Fnlp%3D0\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Email - Harry Sayers - Outlook",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://outlook.office.com/mail/0/options/mail/layout?deeplink=mail%2F0%2F%3Fnlp%3D0\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Email - Harry Sayers - Outlook",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://outlook.office.com/mail/0/?deeplink=mail%2F0%2F%3Fnlp%3D0\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Email - Harry Sayers - Outlook",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://outlook.office.com/mail/0/?deeplink=mail%2F0%2F%3Fnlp%3D0&login_hint=O.CiQ4NTFkMTVhYi0yNzEwLTQ0MGQtODNhMi03MjczYWU5OThiMjQSJDM1Y2JmMzgwLTQ1ZGYtNDhjOS05ODk0LWViYWM0YzA1MzQzNxoSaGFycnlAbW9rYWkuY29tLmF1ICk%3D\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Outlook",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://outlook.live.com/mail/0/?deeplink=mail%2F0%2F%3Fnlp%3D0\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Outlook",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://outlook.live.com/mail/0/#code=1.AUIAgPPLNd9FyUiYlOusTAU0NyC_mZE_oQdBhdwCEUeH70gBAABCAA.AgABBAIAAABlMNzVhAPUTrARzfQjWPtKAwDs_wUA9P89p3tPCceCfunzZLSYrKOerY3ARLTb5bN3JMPYAEl4CI7yVfDJFbvVBBw6lOKEctS4VzXYJiJlbGdIho5R_cRIoOf38Vz_E_ScNzBZ0GUOanqlIeo2XOv4wG-N7VC-hscu9CZ7ddOfV_qd4yZKbP2ZjCLlVMX28hc4E1sPlxnmS-H3-OisTRzwi2wF-XDSB2wcd-i-tXpnqC33BzF4Rd8ExWiIchEVCgTbmDxDrR85rN_o8arBJT23NcyvLNjyZ95n0vwfSVEx1EaBbgA9YB1GUo5E2inztbJAOo7WJOyOApMnIjLwENJNXtjFq7GOtFhc7SBtArBGisOAFvwlWtEfbVqOcwFz7NidHHkQgwE7MIqB1HrRE0Ej5hqlwAt5G1PQHTXBfWpdaoOo55lLJjd__MJJxwXfW3D0szhdudyR3UDcv7LkXtCQYJKj264JUMAglEJ0KCr0IaYl8iu4EoWvHFfRLZtYNx0-bomEAj47jLvtJOJ6jZA1MJhawhFKVsifVDL8EaL1gXkoTrDzbV1-4RZw-LpO9x6PcY4jXl7R3ST4_Jpch7IrGKbh_MEKKr8otcP60sYAqpPOhFDIOKuBdbuVU1X_5S2KGFXUSnmAyaqCSMbaKJcRhu-5RuOcT7bYAW2slCXwqcJQajQVsiA_cPakNhBW11lFT3hu8uSjo9ykUfDb8fqj91RhIamx-bMgo3fmjfacZ0fBaYCTkRklwyrdX81IAV2vK6y9oUxsxClSjfgBh3rCpd0I4AcL4RNc-ZHUBP0UUc1jIsX6D3vmdl-53wBzes4GXN0Ddatdjs13GeLFWGBRitTZS1c-PiAa28LtU3uVAGDx_Vw-Z-ipwtXDYXumKgdJ1IXqsdO5MtP5bLiz&client_info=eyJ1aWQiOiI4NTFkMTVhYi0yNzEwLTQ0MGQtODNhMi03MjczYWU5OThiMjQiLCJ1dGlkIjoiMzVjYmYzODAtNDVkZi00OGM5LTk4OTQtZWJhYzRjMDUzNDM3In0&state=eyJpZCI6IjAxOTlkNzk5LTk4ZmQtNzU2My04YmYxLTYzYzQ4YmMzZTAwNCIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3d%7caHR0cHM6Ly9vdXRsb29rLmxpdmUuY29tL21haWwvMC8_ZGVlcGxpbms9bWFpbCUyRjAlMkYlM0ZubHAlM0Qw&session_state=009a7329-3a79-69b1-2390-d54538aa1f26\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Outlook",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://login.microsoftonline.com/common/login\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Sign in to your account",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=9199bf20-a13f-4107-85dc-02114787ef48&scope=https%3A%2F%2Foutlook.office.com%2F.default%20openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Foutlook.live.com%2Fmail%2F&client-request-id=9e82bd8d-949a-7479-3f2f-c61f220b8f3e&response_mode=fragment&client_info=1&prompt=select_account&nonce=0199d799-98fd-77ec-9f26-bf76bd820d0b&state=eyJpZCI6IjAxOTlkNzk5LTk4ZmQtNzU2My04YmYxLTYzYzQ4YmMzZTAwNCIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D%7CaHR0cHM6Ly9vdXRsb29rLmxpdmUuY29tL21haWwvMC8_ZGVlcGxpbms9bWFpbCUyRjAlMkYlM0ZubHAlM0Qw&claims=%7B%22access_token%22%3A%7B%22xms_cc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&x-client-SKU=msal.js.browser&x-client-VER=4.14.0&response_type=code&code_challenge=jPwLf6xhU8H7BYS6Hgspu0Klp2jr2dRBAsb0mwltL3I&code_challenge_method=S256&cobrandid=ab0455a0-8d03-46b9-b18b-df2f57b9e44c&fl=dob,flname,wld\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Sign in to your account",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://outlook.live.com/mail/0/?prompt=select_account&deeplink=mail%2F0%2F%3Fnlp%3D0\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Outlook",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.microsoft.com/en-gb/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook?deeplink=%2fmail%2f0%2f%3fnlp%3d0&sdf=0\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Microsoft Outlook Personal Email and Calendar | Microsoft 365",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://outlook.live.com/mail/0/\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Outlook",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.google.com/search?q=outlook\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                }
+              ]
+            },
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://outlook.office.com/mail/0/?deeplink=mail%2F0%2F%3Fnlp%3D0",
+                "title": "Email - Harry Sayers - Outlook",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Email - Harry Sayers - Outlook"
+            }
+          },
+          {
             "id": "a5d0fce854910d2b",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "tag",
               "state": {
@@ -280,8 +2311,70 @@
             }
           },
           {
+            "id": "de5c0d6c29e4415d",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 1,
+              "stack": [
+                {
+                  "title": "Google Sans Font Family Download for Desktop & WebFont | CDNFonts.com",
+                  "icon": "globe-2",
+                  "state": "{\"type\":\"webviewer\",\"state\":{\"url\":\"https://www.cdnfonts.com/google-sans.font\",\"title\":\"Google Sans Font Family Download for Desktop & WebFont | CDNFonts.com\",\"mode\":\"webview\"},\"icon\":\"globe-2\",\"title\":\"Google Sans Font Family Download for Desktop & WebFont | CDNFonts.com\"}",
+                  "eState": "{}"
+                },
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "Perplexity",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.perplexity.ai/search/new/f15b17ec-bcc1-4a3d-9492-22f795706016\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Perplexity",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.perplexity.ai/?login-source=floatingSignup&login-new=false\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Perplexity",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.perplexity.ai/\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                },
+                {
+                  "title": "Perplexity",
+                  "icon": "globe-2",
+                  "state": "{\"state\":{\"url\":\"https://www.google.com/search?q=perplexity\"},\"type\":\"webviewer\"}",
+                  "eState": "null"
+                }
+              ]
+            },
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.perplexity.ai/search/is-there-an-obsidian-plugin-th-eP0yXvpOQomsxY_UqgTFvg",
+                "title": "Is there an Obsidian plugin that highlights files in the sidebar if they're...",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Is there an Obsidian plugin that highlights files in the sidebar if they're..."
+            }
+          },
+          {
             "id": "a0ec68c4d9ef9145",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "planner-timeline",
               "state": {},
@@ -292,6 +2385,15 @@
           {
             "id": "fa6cc8657c8c4c54",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "comment-view",
               "state": {},
@@ -300,37 +2402,17 @@
             }
           },
           {
-            "id": "2a2b5761a6a92c81",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "00 - Daily/25-10-12 - Sun.md",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-list",
-              "title": "Outline of 25-10-12 - Sun"
-            }
-          },
-          {
-            "id": "6499339edecd0455",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "All properties"
-            }
-          },
-          {
             "id": "644261d59426caa4",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "smart-connections-view",
               "state": {},
@@ -339,8 +2421,39 @@
             }
           },
           {
+            "id": "2b633e1ed06f6388",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "00-Bases/Events.base",
+                "viewName": "Table"
+              },
+              "icon": "lucide-table",
+              "title": "Events"
+            }
+          },
+          {
             "id": "2b307584957a18bb",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "bookmarks",
               "state": {},
@@ -351,6 +2464,15 @@
           {
             "id": "3bc43f7af4338720",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "smtcmp-chat-view",
               "state": {},
@@ -361,20 +2483,121 @@
           {
             "id": "ff8a1bddfc7beba8",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "review-queue-list-view",
               "state": {},
               "icon": "SpacedRepIcon",
               "title": "Notes Review Queue"
             }
+          },
+          {
+            "id": "66d98d3898ec6364",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "98-templates/brain-dump.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for brain-dump"
+            }
+          },
+          {
+            "id": "907ce10d680d4690",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "00-inbox/OPERATIONS GUIDE📘.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from OPERATIONS GUIDE📘"
+            }
+          },
+          {
+            "id": "0a8294e74856de93",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "todo",
+              "state": {},
+              "icon": "checkmark",
+              "title": "Todo List"
+            }
+          },
+          {
+            "id": "542b9c3b32a35c9c",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
           }
         ],
-        "currentTab": 7
+        "currentTab": 11
       }
     ],
     "direction": "horizontal",
-    "width": 488.5,
-    "collapsed": true
+    "width": 766.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -393,6 +2616,7 @@
       "remotely-save:Remotely Save": true,
       "templater-obsidian:Templater": true,
       "obsidian-day-planner:Open Timeline": true,
+      "graph:Open graph view": false,
       "obsidian-day-planner:Open Multi-Day View": false,
       "journals:shelf:-mokai:mokai": true,
       "journals:mokai-weekly:mokai---weekly-note": true,
@@ -400,12 +2624,13 @@
       "workspaces:Manage workspace layouts": false,
       "obsidian-kanban:Create new board": true,
       "obsidian-full-calendar:Open Full Calendar": false,
-      "graph:Open graph view": false,
       "obsidian-textgenerator-plugin:Generate Text!": true,
       "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": true,
       "smart-composer:Open smart composer": false,
       "obsidian-spaced-repetition:Review flashcards": false,
-      "hi-note:HiNote": false
+      "hi-note:HiNote": false,
+      "obsidian-focus-mode:Toggle Focus Mode (Shift + Click to show active pane only)": false,
+      "periodic-notes:Open today": false
     }
   },
   "floating": {
@@ -413,78 +2638,111 @@
     "type": "floating",
     "children": [
       {
-        "id": "57f3ffcbae677293",
+        "id": "82bc737c2a6a3e46",
         "type": "window",
         "children": [
           {
-            "id": "0b71b833b26bbdd7",
+            "id": "28d4530301907f2a",
             "type": "tabs",
             "children": [
               {
-                "id": "eb883fbd63b5f439",
+                "id": "535c3a0996e220c4",
                 "type": "leaf",
+                "pane-relief:history-v1": {
+                  "pos": 0,
+                  "stack": [
+                    {
+                      "state": "{}",
+                      "eState": "{}"
+                    }
+                  ]
+                },
                 "state": {
-                  "type": "webviewer",
+                  "type": "markdown",
                   "state": {
-                    "url": "https://www.stephenmwangi.com/obsidian-spaced-repetition/#support",
-                    "title": "Obsidian Spaced Repetition",
-                    "mode": "webview"
+                    "file": "00-inbox/Cover-more sonic rationale..md",
+                    "mode": "source",
+                    "source": false,
+                    "backlinks": false
                   },
-                  "icon": "globe-2",
-                  "title": "Obsidian Spaced Repetition"
+                  "icon": "lucide-file",
+                  "title": "Cover-more sonic rationale."
+                }
+              },
+              {
+                "id": "9133b09e4b2ffbef",
+                "type": "leaf",
+                "pane-relief:history-v1": {
+                  "pos": 0,
+                  "stack": [
+                    {
+                      "state": "{}",
+                      "eState": "{}"
+                    }
+                  ]
+                },
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "00-inbox/Vocalist notes cover-more..md",
+                    "mode": "source",
+                    "source": false,
+                    "backlinks": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Vocalist notes cover-more."
                 }
               }
             ]
           }
         ],
         "direction": "vertical",
-        "x": 2048,
+        "x": 0,
         "y": 25,
-        "width": 1024,
-        "height": 800,
+        "width": 1150,
+        "height": 1415,
         "maximize": false,
         "zoom": 0
       }
     ]
   },
-  "active": "7e5a09d5f418c1b5",
+  "active": "e74e9b159f001029",
   "lastOpenFiles": [
-    "00-inbox/tasks/Add definitions to definitions .md",
-    "00-inbox/tasks/ change positioning of Dock.md",
-    "00-inbox/tasks/test slashcommand.md",
-    "00 - Daily/25-10-12 - Sun.md",
-    "98-templates/task.md",
-    "000 - Tasks/ai-assigned.base",
-    "00-inbox/tasks/Create tasks agent.md",
-    "98-templates/task-ai.md",
-    "000 - Tasks/Code.base",
-    "00-inbox/Recommended Frontmatter Schema.md",
-    "00-inbox/tasks/Scan for security risks hook.md",
-    "00-inbox/tasks/Review coffee phil.md",
-    "00-inbox/tasks/Depop comet.md",
-    "00-inbox/tasks/Remove fast api mentions.md",
-    "00-inbox/tasks/Install pain relief.md",
-    "98-templates/cheatsheet.md",
-    "00-inbox/tasks/Is claude.md required if i use mokai agent.md",
-    "01-areas/business/mokai/cheatsheet",
-    "01-areas/business/mokai/learn/definitions/Risk register .md",
-    "01-areas/business/mokai/learn/definitions/prime contractor.md",
-    "01-areas/business/mokai/learn/definitions",
-    "01-areas/business/mokai/docs/research/📘 - OPERATIONS GUIDE.md",
-    "00-inbox/OPERATIONS GUIDE📘.md",
-    "01-areas/business/mokai/context/2025-10-12 Mokai-context.md",
-    "98-templates/idea - automation.md",
-    "98-templates/idea.md",
-    "99-archive/Sort commands.md",
-    "00-inbox/Obsidian file creation guide.md",
-    "04-resources/guides/obsidian/System for task management.md",
-    "04-resources/guides/obsidian",
-    "04-resources/guides/Untitled",
-    "04-resources/hotkeys.md",
-    "00-Bases/Untitled.base",
-    "04-resources/ideas/automations",
-    "04-resources/ideas/Untitled",
-    "04-resources/ideas/slash-command-ideas",
+    "07-context/systems/business-tools/mokai-tracking-system.md",
+    "00-Bases/Systems.base",
+    "04-resources/guides/commands/claudelife-commands-guide.md",
+    "CLAUDE.md",
+    "98-templates/Task.md",
+    "01-areas/business/mokai/mokai-dashboard.md",
+    "07-context/systems/business-tools",
+    "docs/research/First.md",
+    "docs/research",
+    "01-areas/business/mokai/diary/2025-10-14.md",
+    "01-areas/business/mokai/diary/2025-10-14-mokai-daily.md",
+    "98-templates/mokai-note.md",
+    "00-inbox/Untitled 2.md",
+    "01-areas/business/mokai/diary/diary-template.md",
+    "01-areas/business/mokai/diary/README.md",
+    "01-areas/business/mokai/status/phase-1-foundation.md",
+    "00-inbox/Mokai-p.md",
+    "01-areas/business/mokai/status/phase-2-3-future.md",
+    "01-areas/business/mokai/status",
+    "01-areas/business/mokai/diary",
+    "01-areas/business/mokai/learn/course/mokai-learning-plan.md",
+    "00-Bases/Card Details.base",
+    "04-resources/vault/MOK HOUSE Card Details.md",
+    "00-Bases/Vault.base",
+    "00-Bases/Events.base",
+    "98-templates/brain-dump.md",
+    "98-templates/burn-note.md",
+    "98-templates/mok-house-project.md",
+    "00-Bases/Mok House Projects.base",
+    "00-Bases/AI Research.base",
+    "00-inbox/🧠dumps/ideas/Untitled 1.md",
+    "00-inbox/🧠dumps/ideas/Untitled.md",
+    "00-inbox/🧠dumps/ideas/CC-Rule-ideas/Must-use-links-as-tags.md",
+    "00-inbox/🧠dumps/ideas/agent-ideas/Finance-forcaster.md",
+    "00-inbox/🧠dumps/ideas/finance-dashboard.md",
     "Untitled.canvas",
     "finance-dashboard/public/file.svg",
     "finance-dashboard/public/window.svg",

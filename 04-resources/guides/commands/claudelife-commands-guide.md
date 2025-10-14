@@ -1,10 +1,12 @@
 ---
 date: "2025-10-13 17:30"
+date created: Tue, 10 14th 25, 4:45:52 pm
+date modified: Tue, 10 14th 25, 4:49:15 pm
 ---
 
 # Claudelife Commands Guide
 
-Comprehensive reference for all custom slash commands in the claudelife project.
+Comprehensive reference for all custom slash commands in the claudelife project. Keep instructions to below 100 words if possible.
 
 ---
 
@@ -243,5 +245,72 @@ Use for complex decision-making, architectural design, or when facing multi-face
 
 **Usage**: `/ultra-think "[problem or question]"`
 **File**: `.claude/commands/popular/ultra-think.md`
+
+---
+
+## MOKAI Business Management Commands
+
+### /mokai-status
+**Created**: 2025-10-14 | **Updated**: 2025-10-14 (Inbox task scanning + Serena MCP)
+
+##### What it does:
+Daily strategic status command that reads unprocessed diary notes, **scans MOKAI task files in /00-inbox/tasks/ grouped by priority (urgent/high/normal)**, extracts wins/blockers/learnings/tasks using Serena pattern matching, dynamically updates Phase 1 checklist via fuzzy task matching (auto-marks completed tasks), updates dashboard automatically, retrieves Serena memory for week-over-week comparison, and provides strategic guidance on what to work on RIGHT NOW. **Prioritizes urgent inbox tasks over routine Phase 1 tasks**. Uses `.mokai-tracker.json` for incremental processing (only reads new notes).
+
+##### When to use it:
+Run every morning (30 seconds) to get your strategic direction. **Safe to run multiple times per day** - today's diary note is always re-read to capture same-day updates, with deduplication preventing duplicate entries. Automatically processes only new diary notes from previous days + scans all MOKAI task files in inbox. Fuzzy matching detects task completion (e.g., "finished reading Indigenous section" matches checklist task). Acts as accountability partner telling you exactly what to focus on today, with urgent inbox tasks surfaced prominently.
+
+**Usage**: `/mokai-status`
+**File**: `.claude/commands/mokai-status.md`
+**Requires**: Serena MCP
+**Diary Location**: `01-areas/business/mokai/diary/YYYY-MM-DD.md`
+**Inbox Tasks**: `/00-inbox/tasks/*.md` (frontmatter: `type: Task`, `relation: mokai`, `Done: false`, `priority: urgent|high|low`)
+
+---
+
+### /mokai-wins
+**Created**: 2025-10-14
+
+##### What it does:
+Quick win logging command that creates or appends to today's diary note (`YYYY-MM-DD.md`). Finds or creates "## 🏆 Wins" section, adds win as bullet point, and provides quick celebration message with next priority based on current week's Phase 1 focus. Ensures wins are logged immediately (not forgotten later).
+
+##### When to use it:
+Use throughout the day immediately after completing tasks (30 seconds). Multiple times per day is encouraged. Builds positive momentum and ensures all wins are captured in diary for weekly aggregation. No need to open diary file manually - command handles everything.
+
+**Usage**: `/mokai-wins [win description]`
+**Example**: `/mokai-wins Completed reading Indigenous Business section of Ops Guide`
+**File**: `.claude/commands/mokai-wins.md`
+
+---
+
+### /mokai-weekly
+**Created**: 2025-10-14 | **Updated**: 2025-10-14 (Inbox task tracking + Serena MCP)
+
+##### What it does:
+End-of-week review command that aggregates entire week's diary notes via Serena pattern matching, **counts completed MOKAI inbox tasks this week**, counts Phase 1 checklist task completion rate, compares week-over-week trends from Serena memory, interactively asks 3 reflection questions, updates Phase 1 checklist (marks completed, rolls forward incomplete with "from Week X" notation), updates dashboard's Weekly Scorecard, stores metrics in `mokai_progress_metrics` memory (including inbox task counts), stores insights in `mokai_weekly_insights` memory, and provides strategic pep talk with honest assessment.
+
+##### When to use it:
+Run every Friday afternoon or Sunday evening (10 minutes) for comprehensive weekly review. First run creates memory, subsequent runs show trends. Stores historical data for longitudinal analysis including inbox task completion patterns. Essential for maintaining strategic direction and catching persistent blockers early (5+ consecutive days).
+
+**Usage**: `/mokai-weekly`
+**File**: `.claude/commands/mokai-weekly.md`
+**Requires**: Serena MCP
+**Memory Files**: `mokai_progress_metrics.md`, `mokai_weekly_insights.md`
+**Inbox Tasks**: Scans `/00-inbox/tasks/*.md` for completed MOKAI tasks this week
+
+---
+
+### /mokai-insights
+**Created**: 2025-10-14
+
+##### What it does:
+Deep pattern analysis command that scans ALL MOKAI diary notes (not just unprocessed) using Serena pattern matching. Performs frequency analysis (top blockers by mention count and dates, top learning themes, win patterns), trend analysis (weekly completion rate, blocker persistence, learning velocity), pattern detection (recurring themes, task completion patterns), and provides strategic recommendations (what's working, what needs attention, emerging patterns, next week predictions).
+
+##### When to use it:
+Run monthly for big-picture view, when feeling stuck to identify root causes, before major decisions to see data-backed patterns, or before phase transitions (Day 30). Complements `/mokai-weekly` by analyzing long-term trends across all history. Identifies persistent blockers that need escalation (mentioned 5+ consecutive days).
+
+**Usage**: `/mokai-insights`
+**File**: `.claude/commands/mokai-insights.md`
+**Requires**: Serena MCP
+**Reads**: All diary notes in `01-areas/business/mokai/diary/`
 
 ---

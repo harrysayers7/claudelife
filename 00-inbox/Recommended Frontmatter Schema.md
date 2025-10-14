@@ -29,7 +29,7 @@ semantic_tags: ["irap", "essential8", "government-procurement"]
 load_priority: 95          # 0-100, higher = load first
 load_condition: "always"   # always|on-mention|explicit-only
 token_budget: 2000         # Estimated token cost
-required_for: ["mokai-business-assistant"]  # Which agents need this
+required_for: ["agent-mokai"]  # Which agents need this
 
 # Relationships
 depends_on: []             # File paths this relies on
@@ -211,7 +211,7 @@ semantic_tags: ["hooks", "memory-sync", "claude-code"]
 load_priority: 90
 load_condition: "always"
 token_budget: 3000
-required_for: ["mokai-business-assistant"]
+required_for: ["agent-mokai"]
 
 status: "active"
 review_date: "2026-01-11"
@@ -261,7 +261,7 @@ semantic_tags: ["indigenous-procurement", "service-delivery", "compliance"]
 load_priority: 95
 load_condition: "on-mention"  # Load when "MOKAI" mentioned
 token_budget: 8000
-required_for: ["mokai-business-assistant"]
+required_for: ["agent-mokai"]
 
 status: "active"
 review_date: "2025-11-15"

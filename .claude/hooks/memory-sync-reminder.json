@@ -1,0 +1,16 @@
+{
+  "description": "Reminds to update Serena's memory after modifying MOKAI business context, MCP configs, or critical system files. Non-blocking reminder shown after tool execution.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "FILE=\"$CLAUDE_TOOL_FILE_PATH\"; PATTERNS=('*/01-areas/business/mokai/*' '*/.claude/instructions/*' '*/.claude/agents/*' '*/.claude/commands/*' '*/.mcp.json'); SHOULD_REMIND=false; for pattern in \"${PATTERNS[@]}\"; do if [[ \"$FILE\" == $pattern ]]; then SHOULD_REMIND=true; break; fi; done; if [[ \"$SHOULD_REMIND\" == true ]]; then (sleep 1 && echo \"\" && echo \"🔄 Context file modified: $(basename \"$FILE\")\" && echo \"   After completion, consider running: /update-serena-memory\" && echo \"\") >&2 & fi; exit 0"
+          }
+        ]
+      }
+    ]
+  }
+}

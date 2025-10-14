@@ -1,6 +1,6 @@
 ---
 date created: Mon, 09 29th 25, 4:40:52 pm
-date modified: Sat, 10 11th 25, 4:49:14 pm
+date modified: Mon, 10 13th 25, 6:18:53 pm
 ---
 ## ### Mac
 
@@ -19,6 +19,11 @@ Double Click Command: Speak
 Shift x 2 : command pallete
 Open Daily Note = CMD + D
 Bookmarks: Show bookmarks: Alt + B
+F1: open file (quick switcher)
+
+##### Mouse clicks
+- scroll wheel press =
+
 
 
  You can highlight a piece of text and click option C, and it will create a task out of it.
