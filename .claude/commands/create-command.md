@@ -25,6 +25,32 @@ When you run this command, I will:
 
 This interactive approach ensures your command will solve actual problems you face when working in the claudelife codebase.
 
+## Script & Optimization Analysis
+
+Before implementing the command, I will:
+
+1. **Search for existing scripts** in `/scripts/` that could accelerate this workflow
+2. **Identify performance bottlenecks**:
+   - Repetitive file I/O operations (reading multiple markdown files)
+   - Large-scale filtering or parsing (frontmatter, task lists, JSON)
+   - Multiple API calls that could be batched
+   - Operations that could benefit from caching
+3. **Suggest creating companion scripts** for:
+   - **Batch operations**: Like `scan-tasks.sh` which provides 30-60x speedup for task filtering
+   - **Pre-filtering/validation**: Quickly eliminate irrelevant files before processing
+   - **Background processing**: Long-running operations that don't need real-time feedback
+   - **Caching strategies**: Store processed results for repeated access
+4. **Provide time estimates**: Compare script-based vs. direct implementation performance
+5. **Confirm optimization approach** with you before implementation
+
+**When scripts make sense:**
+- Processing 10+ files repeatedly
+- Parsing structured data (YAML frontmatter, JSON)
+- Operations that will be run frequently (daily/hourly workflows)
+- Commands that need to be fast for good UX
+
+**Example:** The `/sort-tasks` command uses `scan-tasks.sh` to filter 100+ task files in <1 second instead of 30+ seconds, making the workflow practical for daily use.
+
 ## Prompt Design Framework
 
 ### 1. PURPOSE DEFINITION

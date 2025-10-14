@@ -12,12 +12,13 @@ Comprehensive reference for all custom slash commands in the claudelife project.
 
 ### /create-command
 **Created**: 2025-10-13 17:30
+**Updated**: 2025-10-15
 
 ##### What it does:
-Interactive command creation assistant that guides you through building effective, structured command files. Generates properly formatted commands with YAML frontmatter, interactive workflows, technical implementation guides, and automatic documentation integration.
+Interactive command creation assistant that guides you through building effective, structured command files. Includes script & optimization analysis to identify performance bottlenecks and suggest companion shell scripts for speed improvements. Generates commands with YAML frontmatter, confirms optimizations before implementing, and automatically documents new commands.
 
 ##### When to use it:
-Use when creating new slash commands for repetitive workflows, automation tasks, or complex operations. Ideal for standardizing command structure and ensuring best practices across the claudelife project.
+Use when creating new slash commands for repetitive workflows, automation tasks, or complex operations. The optimizer analyzes if companion scripts (like `scan-tasks.sh`) could provide 30-60x speedup for file-heavy or batch operations.
 
 **Usage**: `/create-command`
 **File**: `.claude/commands/create-command.md`
@@ -344,6 +345,20 @@ Use when you want to complete a specific task from your inbox immediately. Simpl
 ---
 
 ## Task Management Commands
+
+### /janitor
+**Created**: 2025-10-15 04:12
+
+##### What it does:
+Maintenance command that cleans up the claudelife vault by archiving completed/archived files and purging old archives. Scans entire project using Serena MCP for files with `done: true` or `archive: true` in frontmatter, moves them to `/99-archive`, then scans `/99-archive` and deletes files older than 30 days.
+
+##### When to use it:
+Use periodically (weekly/monthly) to keep the vault organized and prevent clutter. Ideal for automated maintenance of completed tasks, archived notes, and old reference materials. Provides summary of archived and deleted files.
+
+**Usage**: `/janitor`
+**File**: `.claude/commands/janitor.md`
+
+---
 
 ### /sort-tasks
 **Created**: 2025-10-12 11:45 | **Updated**: 2025-10-15 (ai-ignore flag, scan-tasks.sh integration)

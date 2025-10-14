@@ -61,6 +61,14 @@
   - Commits changes with summary
   - Use for automated batch processing vs. `/complete-task` for specific tasks
 
+- `/janitor` - Vault maintenance and cleanup command
+  - Scans entire project using Serena MCP for files with `done: true` or `archive: true` in frontmatter
+  - Moves identified files to `/99-archive` directory
+  - Deletes files in `/99-archive` older than 30 days
+  - Provides summary of archived and deleted files
+  - Use periodically (weekly/monthly) to keep vault organized
+  - Example: `/janitor` (no arguments required)
+
 ### Task Scanning Script (NEW)
 **Script**: `./scripts/scan-tasks.sh`
 **Purpose**: Instantly filter and categorize ai-assigned tasks
