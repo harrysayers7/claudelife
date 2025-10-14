@@ -15,7 +15,9 @@
     "monitor-mcp": "node scripts/monitor-mcp-health.js",
     "system-health": "npm run analyze-context && npm run monitor-mcp",
     "scan-tasks": "bash scripts/scan-tasks.sh",
-    "scan-tasks:json": "bash scripts/scan-tasks.sh --json"
+    "scan-tasks:json": "bash scripts/scan-tasks.sh --json",
+    "scan-archive": "bash scripts/scan-archive-candidates.sh",
+    "scan-archive:json": "bash scripts/scan-archive-candidates.sh --json"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",

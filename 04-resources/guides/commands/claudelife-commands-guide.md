@@ -347,16 +347,18 @@ Use when you want to complete a specific task from your inbox immediately. Simpl
 ## Task Management Commands
 
 ### /janitor
-**Created**: 2025-10-15 04:12
+**Created**: 2025-10-15 04:12 | **Updated**: 2025-10-15 04:18 (scan-archive-candidates.sh integration)
 
 ##### What it does:
-Maintenance command that cleans up the claudelife vault by archiving completed/archived files and purging old archives. Scans entire project using Serena MCP for files with `done: true` or `archive: true` in frontmatter, moves them to `/99-archive`, then scans `/99-archive` and deletes files older than 30 days.
+Maintenance command that cleans up the claudelife vault by archiving completed/archived files and purging old archives. Uses `scan-archive-candidates.sh` script for instant scanning (<1 second), moves files with `done: true` or `archive: true` to `/99-archive`, then deletes files in `/99-archive` older than 30 days. **Performance**: 30-60x faster than MCP scanning.
 
 ##### When to use it:
-Use periodically (weekly/monthly) to keep the vault organized and prevent clutter. Ideal for automated maintenance of completed tasks, archived notes, and old reference materials. Provides summary of archived and deleted files.
+Use periodically (weekly/monthly) to keep the vault organized and prevent clutter. Ideal for automated maintenance of completed tasks, archived notes, and old reference materials. Use `npm run scan-archive` to preview files before running `/janitor`.
 
 **Usage**: `/janitor`
+**Pre-scan**: `npm run scan-archive` (preview candidates)
 **File**: `.claude/commands/janitor.md`
+**Script**: `scripts/scan-archive-candidates.sh`
 
 ---
 

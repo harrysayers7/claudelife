@@ -2772,6 +2772,7 @@
   },
   "active": "e74e9b159f001029",
   "lastOpenFiles": [
+    "scripts/scan-archive-candidates.sh",
     "scripts/scan-tasks.sh",
     "00-inbox/tasks/clean-up.md",
     "000 - Tasks/ai-assigned.base",
@@ -2807,7 +2808,6 @@
     "01-areas/business/mokai/diary",
     "00-Bases/Card Details.base",
     "00-Bases/Vault.base",
-    "00-Bases/Events.base",
     "Untitled.canvas",
     "finance-dashboard/public/file.svg",
     "finance-dashboard/public/window.svg",
