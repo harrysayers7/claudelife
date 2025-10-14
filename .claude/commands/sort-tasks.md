@@ -29,11 +29,12 @@ This command automates task management in your claudelife inbox by executing AI-
 ### Phase 1: Execute AI-Assigned Tasks
 1. Scans `/00-inbox/tasks/` directory (non-recursive, immediate children only)
 2. Identifies all `.md` files where `ai-assigned: true` in frontmatter
-3. Skips tasks that already have `done: true` (already completed)
-4. Executes each incomplete ai-assigned task sequentially in the order found
-5. Verifies task completion before updating the file
-6. Updates frontmatter to set `done: true` upon successful completion
-7. If a task fails or cannot be completed, skips it and continues to the next task
+3. Filters out tasks where `ai-ignore: true` (reserved for future work, not ready for execution)
+4. Skips tasks that already have `Done: true` (already completed)
+5. Executes each eligible ai-assigned task sequentially in the order found
+6. Verifies task completion before updating the file
+7. Updates frontmatter to set `Done: true` upon successful completion
+8. If a task fails or cannot be completed, skips it and continues to the next task
 
 ### Phase 2: Clean Up Old Completed Tasks
 1. Scans the same directory for all tasks where `done: true` (regardless of `ai-assigned` value)
@@ -63,6 +64,7 @@ relation:
 description:
 effort:
 ai-assigned: false    # If true, AI will execute this task
+ai-ignore: false      # If true, skip this task (reserved for future work)
 ---
 
 [Task content/description here]
@@ -70,6 +72,7 @@ ai-assigned: false    # If true, AI will execute this task
 
 ### Important Notes:
 - If `ai-assigned` property doesn't exist in frontmatter, treat as `ai-assigned: false`
+- If `ai-ignore: true`, skip this task entirely - it's marked for future work and should not be executed now
 - Task content is in the markdown body after the frontmatter
 - The `Done` field (capital D) is updated to `true` upon completion
 
@@ -83,6 +86,7 @@ I'll help you manage your task inbox by:
    ```javascript
    // Find all .md files in /00-inbox/tasks/
    // Parse frontmatter to check ai-assigned: true
+   // Skip tasks where ai-ignore: true (not ready for execution)
    // Filter out tasks where Done: true (already complete)
    ```
 
@@ -121,9 +125,10 @@ I'll help you manage your task inbox by:
 ### During Execution
 ```
 Executing AI-assigned tasks...
-✓ Task 1: [filename] - Completed
-✗ Task 2: [filename] - Failed: [reason]
-✓ Task 3: [filename] - Completed
+⊘ Task 1: [filename] - Ignored (ai-ignore: true)
+✓ Task 2: [filename] - Completed
+✗ Task 3: [filename] - Failed: [reason]
+✓ Task 4: [filename] - Completed
 
 Cleaning up old completed tasks...
 Deleted 5 completed tasks older than 2 weeks
@@ -137,6 +142,7 @@ Committing changes to git...
 ```
 Task Execution Summary:
 - Total AI-assigned tasks found: X
+- Ignored (reserved for future): I
 - Successfully completed: Y
 - Already done (skipped): Z
 - Failed: N
@@ -205,17 +211,18 @@ Deploy the latest changes to production server
 
 A successful execution should:
 
-1. **Properly Parse Frontmatter**: Correctly identify `ai-assigned` and `Done` boolean values
-2. **Execute Tasks in Order**: Process tasks sequentially, not in parallel
-3. **Verify Before Marking Done**: Only set `Done: true` if task actually completed successfully
-4. **Handle Missing Properties**: Treat missing `ai-assigned` as `ai-assigned: false`
-5. **Skip Completed Tasks**: Don't re-execute tasks already marked `Done: true`
-6. **Continue on Failure**: Log failures but continue processing remaining tasks
-7. **Accurate Date Calculation**: Correctly calculate 2-week threshold from today's date
-8. **Delete Only Eligible Files**: Only delete files with `Done: true` AND modified >2 weeks ago
-9. **Provide Clear Summary**: Show counts of completed, failed, and deleted tasks
-10. **Update Frontmatter Correctly**: Preserve all other frontmatter fields when updating `Done` field
-11. **Git Commit Success**: Successfully stage and commit all changes with descriptive message
+1. **Properly Parse Frontmatter**: Correctly identify `ai-assigned`, `ai-ignore`, and `Done` boolean values
+2. **Respect ai-ignore Flag**: Skip tasks where `ai-ignore: true` - they're reserved for future work
+3. **Execute Tasks in Order**: Process tasks sequentially, not in parallel
+4. **Verify Before Marking Done**: Only set `Done: true` if task actually completed successfully
+5. **Handle Missing Properties**: Treat missing `ai-assigned` as `ai-assigned: false`, missing `ai-ignore` as `ai-ignore: false`
+6. **Skip Completed Tasks**: Don't re-execute tasks already marked `Done: true`
+7. **Continue on Failure**: Log failures but continue processing remaining tasks
+8. **Accurate Date Calculation**: Correctly calculate 2-week threshold from today's date
+9. **Delete Only Eligible Files**: Only delete files with `Done: true` AND modified >2 weeks ago
+10. **Provide Clear Summary**: Show counts of completed, failed, ignored, and deleted tasks
+11. **Update Frontmatter Correctly**: Preserve all other frontmatter fields when updating `Done` field
+12. **Git Commit Success**: Successfully stage and commit all changes with descriptive message
 
 ## Safety Considerations
 
