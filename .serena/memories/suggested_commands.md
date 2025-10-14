@@ -15,6 +15,8 @@
 - `task-master next` - Get next available task to work on
 - `task-master show <id>` - View detailed task information
 - `task-master set-status --id=<id> --status=done` - Mark task complete
+- **NEW**: `npm run scan-tasks` - Quick scan of all ai-assigned tasks with status breakdown
+- **NEW**: `npm run scan-tasks:json` - JSON output for programmatic task filtering
 
 ## Data Synchronization
 - `npm run sync-upbank` - Sync UpBank financial data
@@ -52,11 +54,39 @@
   - Complements `/sort-tasks` (batch processing) with individual task execution
 
 - `/sort-tasks` - Batch process all AI-assigned tasks in inbox
+  - **PERFORMANCE**: Uses `scan-tasks.sh` script for instant task filtering (<1 second vs 30+ seconds)
   - Executes all tasks with `ai-assigned: true` sequentially
-  - **NEW**: Skips tasks with `ai-ignore: true` (reserved for future work, not ready yet)
+  - Skips tasks with `ai-ignore: true` (reserved for future work, not ready yet)
   - Cleans up completed tasks older than 2 weeks
   - Commits changes with summary
   - Use for automated batch processing vs. `/complete-task` for specific tasks
+
+### Task Scanning Script (NEW)
+**Script**: `./scripts/scan-tasks.sh`
+**Purpose**: Instantly filter and categorize ai-assigned tasks
+**Performance**: 30-60x faster than manual file reading (100+ tasks in <1 second)
+
+**Usage**:
+```bash
+# Human-readable output
+./scripts/scan-tasks.sh
+npm run scan-tasks
+
+# JSON output for programmatic use
+./scripts/scan-tasks.sh --json
+npm run scan-tasks:json
+```
+
+**Output Categories**:
+- ✅ **Eligible tasks**: `ai-assigned: true`, `Done: false`, no `ai-ignore`
+- ⊘ **Ignored tasks**: `ai-ignore: true` (reserved for future)
+- ✓ **Completed tasks**: `Done: true`
+
+**Benefits**:
+- Fast pre-scan before running `/sort-tasks`
+- Programmatic integration via JSON output
+- Quick status check of pending work
+- Used internally by `/sort-tasks` for performance
 
 ### Task Frontmatter Flags
 Tasks in `/00-inbox/tasks/` support these frontmatter properties:
@@ -109,6 +139,22 @@ Tasks in `/00-inbox/tasks/` support these frontmatter properties:
 - `/obsidia` - Activate OBSIDIA mode for vault architecture and knowledge system design
 - `/ingest-document` - Process and import external documents into vault
 
+### File Management (NEW)
+- `/rename-file [old-path] [new-path] [--scope=directory]` - Intelligently rename/move markdown files
+  - Automatically finds and updates ALL references across the vault
+  - Handles Obsidian wikilinks (`[[filename]]`) and markdown links (`[text](path/file.md)`)
+  - Previews all changes before applying (shows table of files to modify)
+  - Recalculates relative paths when moving files between directories
+  - Prevents broken links by updating references automatically
+  - Optional scope parameter to limit search to specific directory
+  - Example: `/rename-file meeting-notes.md client-meeting-2025-10-15.md`
+  - Example: `/rename-file 00-inbox/task.md 01-areas/business/mokai/task.md`
+  - Example: `/rename-file old.md new.md --scope=00-inbox` (faster scoped search)
+  - Use when renaming/moving files that are referenced elsewhere in vault
+  - Essential for maintaining link integrity during vault reorganization
+
+- `/move-file` - Move files with automatic reference updates across codebase
+
 ### Analysis & Problem Solving
 - `/ultra-think` - Deep multi-dimensional analysis mode for complex problems
 - `/challenge` - Critical argument analysis and stress-testing
@@ -116,9 +162,6 @@ Tasks in `/00-inbox/tasks/` support these frontmatter properties:
 ### Product & Project Management
 - `/create-prd` - Create Product Requirements Documents
 - `/bmad {agent-name}` - Activate specialized BMAD agents (pm, architect, qa, etc.)
-
-### File Management
-- `/move-file` - Move files with automatic reference updates across codebase
 
 ## Git Operations
 - `git add .` - Stage changes

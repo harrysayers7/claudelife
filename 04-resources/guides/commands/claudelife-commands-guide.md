@@ -52,6 +52,20 @@ Use for thorough research on technical topics, business strategy, market analysi
 
 ---
 
+### /rename-file
+**Created**: 2025-10-15 09:30
+
+##### What it does:
+Intelligently renames markdown files and automatically updates all references across the vault. Handles both Obsidian wikilinks `[[filename]]` and markdown links `[text](path/file.md)`. Provides preview of changes before applying and ensures no broken links remain.
+
+##### When to use it:
+Use when renaming or moving markdown files that are referenced elsewhere in your vault. Essential for maintaining link integrity when reorganizing notes, clarifying filenames, or moving files between directories.
+
+**Usage**: `/rename-file [old-path] [new-path] [--scope=directory]`
+**File**: `.claude/commands/rename-file.md`
+
+---
+
 ### /quick-research
 **Created**: 2025-10-13 17:35
 
@@ -332,15 +346,17 @@ Use when you want to complete a specific task from your inbox immediately. Simpl
 ## Task Management Commands
 
 ### /sort-tasks
-**Created**: 2025-10-12 11:45 | **Updated**: 2025-10-15 (ai-ignore flag)
+**Created**: 2025-10-12 11:45 | **Updated**: 2025-10-15 (ai-ignore flag, scan-tasks.sh integration)
 
 ##### What it does:
-Automates task management by executing all AI-assigned tasks (`ai-assigned: true`) sequentially from `/00-inbox/tasks/`, skips tasks marked with `ai-ignore: true` (reserved for future work), verifies completion before marking `Done: true`, cleans up completed tasks older than 2 weeks, and commits changes with summary.
+Automates task management by executing all AI-assigned tasks (`ai-assigned: true`) sequentially from `/00-inbox/tasks/`. Uses `scan-tasks.sh` script for instant task filtering (<1 second vs 30+ seconds), skips tasks marked with `ai-ignore: true` (reserved for future work), verifies completion before marking `Done: true`, cleans up completed tasks older than 2 weeks, and commits changes with summary. **Performance**: 30-60x faster task scanning.
 
 ##### When to use it:
-Use for batch processing of all AI-assigned tasks in your inbox. Runs unattended through all eligible tasks, respects ai-ignore flag for future tasks, handles failures gracefully, and cleans up old completed tasks automatically. Complements `/complete-task` which handles individual task execution.
+Use for batch processing of all AI-assigned tasks in your inbox. Runs unattended through all eligible tasks, respects ai-ignore flag for future tasks, handles failures gracefully, and cleans up old completed tasks automatically. Use `npm run scan-tasks` first to preview what will be executed. Complements `/complete-task` which handles individual task execution.
 
 **Usage**: `/sort-tasks`
+**Pre-scan**: `npm run scan-tasks` (preview eligible tasks)
 **File**: `.claude/commands/sort-tasks.md`
+**Script**: `scripts/scan-tasks.sh`
 
 ---
