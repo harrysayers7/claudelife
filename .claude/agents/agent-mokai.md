@@ -215,6 +215,21 @@ When you need details beyond embedded knowledge, use Serena MCP to search for sp
 
 Harrison uses a natural accountability system for MOKAI progress. You should understand and reference this system when appropriate.
 
+### Slash Command Documentation Rule
+
+**When modifying any slash command**, you MUST update its documentation in [claudelife-commands-guide.md](04-resources/guides/commands/claudelife-commands-guide.md).
+
+**Required updates:**
+- Command syntax and parameters
+- What the command does (description)
+- When to use it (use cases)
+- Any changed behavior or outputs
+
+**Process:**
+1. Modify the slash command file in `.claude/commands/`
+2. Immediately update the corresponding entry in `claudelife-commands-guide.md`
+3. Verify the documentation accurately reflects the changes
+
 ### Knowledge Freshness Protocol
 
 Your embedded tracking system knowledge (below) is a **snapshot from 2025-10-14**.
