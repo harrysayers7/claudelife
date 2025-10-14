@@ -332,13 +332,13 @@ Use when you want to complete a specific task from your inbox immediately. Simpl
 ## Task Management Commands
 
 ### /sort-tasks
-**Created**: 2025-10-12 11:45
+**Created**: 2025-10-12 11:45 | **Updated**: 2025-10-15 (ai-ignore flag)
 
 ##### What it does:
-Automates task management by executing all AI-assigned tasks (`ai-assigned: true`) sequentially from `/00-inbox/tasks/`, verifies completion before marking `Done: true`, cleans up completed tasks older than 2 weeks, and commits changes with summary.
+Automates task management by executing all AI-assigned tasks (`ai-assigned: true`) sequentially from `/00-inbox/tasks/`, skips tasks marked with `ai-ignore: true` (reserved for future work), verifies completion before marking `Done: true`, cleans up completed tasks older than 2 weeks, and commits changes with summary.
 
 ##### When to use it:
-Use for batch processing of all AI-assigned tasks in your inbox. Runs unattended through all eligible tasks, handles failures gracefully, and cleans up old completed tasks automatically. Complements `/complete-task` which handles individual task execution.
+Use for batch processing of all AI-assigned tasks in your inbox. Runs unattended through all eligible tasks, respects ai-ignore flag for future tasks, handles failures gracefully, and cleans up old completed tasks automatically. Complements `/complete-task` which handles individual task execution.
 
 **Usage**: `/sort-tasks`
 **File**: `.claude/commands/sort-tasks.md`
