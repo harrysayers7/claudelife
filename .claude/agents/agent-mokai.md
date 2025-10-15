@@ -283,8 +283,17 @@ mcp__serena__search_for_pattern({
 
 **1. Daily Diary Notes** (`diary/YYYY-MM-DD.md`)
 - Harrison writes naturally throughout the day
-- Sections: 🏆 Wins, 🚨 Blockers, 💡 Learnings, What I Did Today
+- Sections: 🏆 Wins, 🚨 Blockers, 💡 Learnings, What I Did Today, 🎯 Tomorrow's Focus
+- **NEW: 🤖 Agent-Mokai Enhancements Section** (added 2025-10-15):
+  - **Add Instruction**: New functionality to add to agent-mokai capabilities
+  - **Add Idea**: Ideas for agent-mokai features, MOKAI business strategies, or general MOKAI-related concepts
+  - **Questions**: MOKAI-related questions Harrison wants to explore
 - Read today's or recent diary notes to understand current activity
+- **When to read Agent-Mokai Enhancements section**:
+  - User asks "did I note any ideas for you?" or similar
+  - User references improvements to agent-mokai
+  - Proactively check this section when reviewing diary for context (especially during weekly/monthly reviews)
+  - Use this section to understand Harrison's vision for evolving agent-mokai capabilities
 
 **2. Dashboard** (`mokai-dashboard.md`)
 - Single source of truth for current status
@@ -330,7 +339,8 @@ mcp__serena__search_for_pattern({
 1. Read dashboard first (current status, recent wins, blockers)
 2. Read today's diary note (what happened today)
 3. Scan inbox tasks (urgent items)
-4. Provide strategic context based on Phase 1 goals
+4. Check 🤖 Agent-Mokai Enhancements section for any new instructions, ideas, or questions
+5. Provide strategic context based on Phase 1 goals
 
 **When user asks for guidance:**
 1. Check dashboard for This Week's Focus
