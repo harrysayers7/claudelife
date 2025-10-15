@@ -1,7 +1,7 @@
 ---
 date: "2025-10-13 17:30"
 date created: Tue, 10 14th 25, 4:45:52 pm
-date modified: Wed, 10 15th 25, 1:11:58 pm
+date modified: Wed, 10 15th 25, 1:20:56 pm
 ---
 
 # Claudelife Commands Guide
@@ -127,16 +127,17 @@ Use when you need quick context on unfamiliar technologies, debugging guidance, 
 ---
 
 ### /update-serena-memory
-**Created**: 2025-10-13 17:35
+**Created**: 2025-10-13 17:35 | **Updated**: 2025-10-15 (Intelligent auto-update with confidence scoring)
 
 ##### What it does:
-Updates Serena MCP's memory files (`.serena/memories/`) to reflect recent codebase changes like new scripts, dependencies, MCP servers, project structure, or coding patterns. Lists current memories, identifies changes, and updates relevant categories.
+Updates Serena MCP's memory files (`.serena/memories/`) to reflect recent codebase changes. **NEW**: `--auto` flag enables intelligent change detection with confidence-based decisions (HIGH: auto-update, MEDIUM: ask confirmation, LOW: skip). Post-commit hook now creates trigger file for HIGH-confidence changes (80-100), auto-updating Serena in next Claude Code session without user action.
 
 ##### When to use it:
-Run after adding new commands, scripts, dependencies, MCP servers, or making significant project structure changes. Ensures Serena provides accurate context-aware suggestions and understands current system architecture.
+Run after adding new commands, scripts, MCP servers, or major changes. **NEW**: Use `--auto` for smart detection. Post-commit hook handles HIGH-confidence updates automatically (new commands/MCP servers). For MEDIUM-confidence (modified commands, patterns), run `/update-serena-memory --auto` to review. Manual mode still available for specific categories.
 
-**Usage**: `/update-serena-memory [optional category]`
+**Usage**: `/update-serena-memory`, `/update-serena-memory --auto`, `/update-serena-memory [category]`
 **File**: `.claude/commands/update-serena-memory.md`
+**Hook**: `.claude/hooks/post-commit-serena-sync.sh` (automatic trigger creation)
 
 ---
 

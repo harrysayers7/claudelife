@@ -10,8 +10,55 @@ Update Serena MCP's memory files to reflect recent changes in the codebase.
 ## Usage
 
 ```bash
-/update-serena-memory
-/update-serena-memory [category]
+/update-serena-memory                    # Interactive mode
+/update-serena-memory [category]         # Update specific category
+/update-serena-memory --auto             # Auto-detect changes with smart confidence scoring
+```
+
+## Smart Auto-Update Mode (NEW)
+
+The `--auto` flag enables intelligent change detection with confidence-based decisions:
+
+**How it works:**
+1. Checks git log for recent commits
+2. Analyzes what changed (commands, MCP servers, scripts, structure)
+3. Calculates confidence score (0-100) based on change type
+4. Takes action based on confidence level:
+
+**Confidence Levels:**
+- **HIGH (80-100)**: Auto-updates memory without asking
+  - New slash commands
+  - New MCP servers
+  - New agent configurations
+  - Major workflow changes
+
+- **MEDIUM (50-79)**: Shows proposed changes, asks for confirmation
+  - Modified command behavior
+  - New coding patterns
+  - Project structure reorganization
+
+- **LOW (0-49)**: Skips or mentions briefly
+  - Bug fixes
+  - Documentation-only changes
+  - Config tweaks
+
+**Example:**
+```bash
+/update-serena-memory --auto
+
+🔍 Analyzing recent commits...
+
+📊 Confidence Score: 85/100
+
+Changes detected:
+✅ New slash command: /mokai-dump
+✅ Modified agent: agent-mokai.md
+
+🤖 AUTO-UPDATING (high confidence)
+- Added /mokai-dump to suggested_commands
+- Updated mokai_business_patterns with diary workflow
+
+✨ Done! Serena's memory updated.
 ```
 
 ## When to Use
@@ -268,6 +315,50 @@ Run quarterly or after:
 - New team members joining
 - Technology stack changes
 
+## Intelligent Post-Commit Integration (NEW)
+
+The post-commit hook (`.claude/hooks/post-commit-serena-sync.sh`) now includes confidence-based auto-update:
+
+**How it works:**
+1. **After every commit**, the hook analyzes what changed
+2. **Calculates confidence score** (0-100) based on change type
+3. **Takes action automatically:**
+
+**HIGH Confidence (80-100)** - Creates trigger file:
+```
+🤖 Auto-updating Serena memory (confidence: 85/100)
+✅ Trigger created: .serena-auto-update-trigger.json
+💡 Next Claude Code session will auto-update Serena's memory
+```
+- **Next Claude Code session**: Automatically detects trigger file and updates memory
+- **No user action needed** - fully automated for high-confidence changes
+
+**MEDIUM Confidence (50-79)** - Recommends action:
+```
+⚠️  Memory update recommended (confidence: 65/100)
+💡 Run: /update-serena-memory --auto
+```
+- User runs `/update-serena-memory --auto` to review and confirm
+
+**LOW Confidence (0-49)** - Silent or minimal:
+```
+📌 Minor changes detected (confidence: 25/100)
+   Run /update-serena-memory manually if needed
+```
+
+**Trigger File Workflow:**
+1. Post-commit hook creates `.serena-auto-update-trigger.json` (HIGH confidence only)
+2. Next Claude Code session detects trigger file automatically
+3. Reads trigger file to see what changed
+4. Updates Serena memory accordingly
+5. Deletes trigger file after processing
+6. Shows summary of what was updated
+
+**Benefits:**
+- Zero-friction updates for critical changes (new commands, MCP servers)
+- Optional confirmation for moderate changes
+- Skips noise from minor edits
+
 ## Related Commands
 
 - `/document-system` - Create comprehensive system documentation
@@ -280,3 +371,5 @@ Run quarterly or after:
 - Memory files are stored in `.serena/memories/`
 - Updates should be cumulative, not replacements
 - Memory helps Serena provide better context-aware suggestions
+- **NEW**: Trigger file (`.serena-auto-update-trigger.json`) enables automated updates
+- Trigger file is in `.gitignore` (coordination only, not committed)

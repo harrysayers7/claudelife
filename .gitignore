@@ -13,6 +13,7 @@ CLAUDE.local.md
 # Temporary files and reminders
 .domain-packs-updated
 .memory-capture-needed
+.serena-auto-update-trigger.json
 
 # Editor/IDE workspace files
 .obsidian/
