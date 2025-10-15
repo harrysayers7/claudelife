@@ -1,7 +1,7 @@
 ---
 date: "2025-10-13 17:30"
 date created: Tue, 10 14th 25, 4:45:52 pm
-date modified: Wed, 10 15th 25, 1:20:56 pm
+date modified: Wed, 10 15th 25, 1:36:48 pm
 ---
 
 # Claudelife Commands Guide
@@ -138,6 +138,33 @@ Run after adding new commands, scripts, MCP servers, or major changes. **NEW**: 
 **Usage**: `/update-serena-memory`, `/update-serena-memory --auto`, `/update-serena-memory [category]`
 **File**: `.claude/commands/update-serena-memory.md`
 **Hook**: `.claude/hooks/post-commit-serena-sync.sh` (automatic trigger creation)
+
+---
+
+### Post-Commit Hooks (Automated)
+**Created**: 2025-10-15
+
+The claudelife system includes intelligent post-commit hooks that run automatically after git commits:
+
+##### 1. Post-Commit Serena Sync (`.claude/hooks/post-commit-serena-sync.sh`)
+Analyzes commits and intelligently decides when to update Serena's memory:
+- **HIGH confidence (80-100)**: Creates trigger file (`.serena-auto-update-trigger.json`) for automatic update
+- **MEDIUM confidence (50-79)**: Suggests running `/update-serena-memory --auto`
+- **LOW confidence (0-49)**: Silent skip
+
+**Triggers**: New commands (+85), MCP servers (+85), agent changes (+85), modified commands (+25), experimental commits (-20)
+
+##### 2. Post-System-Completion (`.claude/hooks/post-system-completion.sh`)
+Detects substantial feature completions and suggests documentation:
+- **HIGH confidence (80+)**: Substantial system completion detected
+- **MEDIUM confidence (65-79)**: Feature addition detected
+- **LOW-MEDIUM confidence (50-64)**: Consider if documentation needed
+
+**Triggers**: `feat:` commits (+30), 5+ new files (+40), system-related files (+25), config changes (+15), reduces for fix/refactor/chore (-30)
+
+**Suggestion**: Recommends `/document-system "[system name]"` to capture context while fresh
+
+**Integration**: Both hooks run automatically via `.git/hooks/post-commit` dispatcher
 
 ---
 
