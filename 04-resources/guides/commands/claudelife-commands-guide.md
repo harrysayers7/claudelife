@@ -1,7 +1,7 @@
 ---
 date: "2025-10-13 17:30"
 date created: Tue, 10 14th 25, 4:45:52 pm
-date modified: Tue, 10 14th 25, 4:49:15 pm
+date modified: Wed, 10 15th 25, 12:48:37 pm
 ---
 
 # Claudelife Commands Guide
@@ -55,15 +55,17 @@ Use for thorough research on technical topics, business strategy, market analysi
 
 ### /rename-file
 **Created**: 2025-10-15 09:30
+**Performance**: 10-20x faster with companion script `rename-file.sh`
 
 ##### What it does:
-Intelligently renames markdown files and automatically updates all references across the vault. Handles both Obsidian wikilinks `[[filename]]` and markdown links `[text](path/file.md)`. Provides preview of changes before applying and ensures no broken links remain.
+Intelligently renames markdown files and automatically updates all references across the vault. Uses fast bash script for single-pass reference scanning (1-2 seconds vs 15-30 seconds). Handles both Obsidian wikilinks `[[filename]]` and markdown links `[text](path/file.md)`. Provides preview before applying and ensures no broken links.
 
 ##### When to use it:
-Use when renaming or moving markdown files that are referenced elsewhere in your vault. Essential for maintaining link integrity when reorganizing notes, clarifying filenames, or moving files between directories.
+Use when renaming or moving markdown files that are referenced elsewhere in your vault. Essential for maintaining link integrity when reorganizing notes, clarifying filenames, or moving files between directories. Fast enough for interactive use even in large vaults.
 
 **Usage**: `/rename-file [old-path] [new-path] [--scope=directory]`
 **File**: `.claude/commands/rename-file.md`
+**Script**: `scripts/rename-file.sh` (automatic, 10-20x speedup)
 
 ---
 
@@ -294,6 +296,20 @@ Use throughout the day immediately after completing tasks (30 seconds). Multiple
 **Usage**: `/mokai-wins [win description]`
 **Example**: `/mokai-wins Completed reading Indigenous Business section of Ops Guide`
 **File**: `.claude/commands/mokai-wins.md`
+
+---
+
+### /mokai-dump
+**Created**: 2025-10-15 12:50
+
+##### What it does:
+Quick capture command for MOKAI diary entries. Analyzes your input using AI sentiment/content analysis and automatically categorizes entries under the correct section (🏆 Wins, 💡 Learnings, 🚨 Blockers, 📝 Context/Updates). Supports multiple entries in one command. Always adds to today's diary by default, with optional `--date` parameter to add to different dates (adds to both dates).
+
+##### When to use it:
+Use throughout the day for quick capture from Claude Code without opening Obsidian. Perfect for logging wins, learnings, blockers, or context on-the-go. Faster than manual diary editing. Supports batch entry: `/mokai-dump "entry 1" "entry 2" "entry 3"`.
+
+**Usage**: `/mokai-dump "entry text"` or `/mokai-dump --date=YYYY-MM-DD "entry"`
+**File**: `.claude/commands/mokai-dump.md`
 
 ---
 
