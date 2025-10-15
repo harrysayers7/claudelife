@@ -1,5 +1,5 @@
 ---
-journal: Mokai
+journal: Mokai Daily 🟣
 journal-date: 2025-10-15
 ---
 
@@ -35,5 +35,20 @@ journal-date: 2025-10-15
 
 
 ## 🎯 Tomorrow's Focus
+
+-
+
+
+## 🤖 Agent-Mokai Enhancements
+
+##### Add Instruction
+
+-
+
+##### Add Idea
+
+-
+
+##### Questions
 
 -

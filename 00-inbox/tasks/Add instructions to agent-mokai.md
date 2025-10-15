@@ -1,5 +1,5 @@
 ---
-Done: false
+Done: true
 today: false
 follow up: false
 this week: false
@@ -11,7 +11,7 @@ description:
 effort:
 ai-assigned: true
 priority:
-ai-ignore: true
+ai-ignore: false
 ---
 Add section to mokai daily note that are specifically for adding instructions or ideas etc to agent-mokai functionality
 
