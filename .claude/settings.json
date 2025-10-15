@@ -7,6 +7,10 @@
           {
             "type": "command",
             "command": ".claude/hooks/post-tool-memory-sync-trigger.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/post-tool-auto-diary-capture.sh"
           }
         ]
       },
@@ -16,6 +20,19 @@
           {
             "type": "command",
             "command": ".claude/hooks/post-tool-memory-sync-trigger.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/post-tool-auto-diary-capture.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/post-tool-auto-diary-capture.sh"
           }
         ]
       }
