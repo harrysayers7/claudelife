@@ -32,7 +32,7 @@ if echo "$CHANGED_FILES" | grep -q ".claude/commands/"; then
   NEW_COMMAND_FILES=$(git diff-tree --no-commit-id --name-status -r HEAD | grep "^A.*\.claude/commands/" | cut -f2)
   if [ -n "$NEW_COMMAND_FILES" ]; then
     NEW_COMMAND=true
-    CONFIDENCE=$((CONFIDENCE + 40))  # New command = HIGH confidence
+    CONFIDENCE=$((CONFIDENCE + 85))  # New command = HIGH confidence (auto-update threshold)
   else
     MODIFIED_COMMAND=true
     CONFIDENCE=$((CONFIDENCE + 25))  # Modified command = MEDIUM confidence
@@ -42,7 +42,7 @@ fi
 # Check for MCP config changes
 if echo "$CHANGED_FILES" | grep -q ".mcp.json"; then
   UPDATE_MCP=true
-  CONFIDENCE=$((CONFIDENCE + 35))  # New MCP server = HIGH confidence
+  CONFIDENCE=$((CONFIDENCE + 85))  # New MCP server = HIGH confidence (auto-update threshold)
 fi
 
 # Check for package.json changes (new scripts)
@@ -61,7 +61,7 @@ if echo "$CHANGED_FILES" | grep -q ".claude/agents/\|07-context/\|.serena/"; the
   UPDATE_STRUCTURE=true
   # Agent changes are usually important
   if echo "$CHANGED_FILES" | grep -q ".claude/agents/"; then
-    CONFIDENCE=$((CONFIDENCE + 35))  # Agent changes = HIGH confidence
+    CONFIDENCE=$((CONFIDENCE + 85))  # Agent changes = HIGH confidence (auto-update threshold)
   else
     CONFIDENCE=$((CONFIDENCE + 20))  # Other structure = MEDIUM confidence
   fi
