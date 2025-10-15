@@ -1,12 +1,41 @@
 ---
 date: "2025-10-13 17:30"
 date created: Tue, 10 14th 25, 4:45:52 pm
-date modified: Wed, 10 15th 25, 12:48:37 pm
+date modified: Wed, 10 15th 25, 1:11:58 pm
 ---
 
 # Claudelife Commands Guide
 
 Comprehensive reference for all custom slash commands in the claudelife project. Keep instructions to below 100 words if possible.
+
+---
+- [[#/create-command|/create-command]]
+- [[#/command-update|/command-update]]
+- [[#/extract-context|/extract-context]]
+- [[#/research|/research]]
+- [[#/rename-file|/rename-file]]
+- [[#/quick-research|/quick-research]]
+- [[#/update-serena-memory|/update-serena-memory]]
+- [[#/obsidia|/obsidia]]
+- [[#/bmad|/bmad]]
+- [[#/tag-keyword-DR-extractor|/tag-keyword-DR-extractor]]
+- [[#/document-system|/document-system]]
+- [[#/mokhouse-project|/mokhouse-project]]
+- [[#/ingest-document|/ingest-document]]
+- [[#/extract-diary|/extract-diary]]
+- [[#/extract-insights|/extract-insights]]
+- [[#/challenge|/challenge]]
+- [[#/create-prd|/create-prd]]
+- [[#/move-file|/move-file]]
+- [[#/ultra-think|/ultra-think]]
+- [[#/mokai-status|/mokai-status]]
+- [[#/mokai-wins|/mokai-wins]]
+- [[#/mokai-dump|/mokai-dump]]
+- [[#/mokai-weekly|/mokai-weekly]]
+- [[#/mokai-insights|/mokai-insights]]
+- [[#/complete-task|/complete-task]]
+- [[#/janitor|/janitor]]
+- [[#/sort-tasks|/sort-tasks]]
 
 ---
 
@@ -22,6 +51,20 @@ Use when creating new slash commands for repetitive workflows, automation tasks,
 
 **Usage**: `/create-command`
 **File**: `.claude/commands/create-command.md`
+
+---
+
+### /command-update
+**Created**: 2025-10-15 13:15
+
+##### What it does:
+Interactive command modification assistant for updating existing slash commands. Shows diff preview before applying, validates structure/frontmatter/links, maintains version history, auto-updates documentation in claudelife-commands-guide.md, and flags when Serena memory needs sync. Supports minor edits, feature additions, and major restructuring.
+
+##### When to use it:
+Use when modifying existing commands to fix bugs, add features, improve clarity, or restructure workflows. Ensures all changes are validated, documented, and tracked with version history. Automatically syncs documentation and identifies when `/update-serena-memory` is needed.
+
+**Usage**: `/command-update {command-name} "changes"` or `/command-update --list`
+**File**: `.claude/commands/command-update.md`
 
 ---
 
