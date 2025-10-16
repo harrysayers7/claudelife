@@ -2,6 +2,29 @@
 
 ## Architecture Patterns
 
+### OBSIDIA Orchestrator Pattern (NEW - October 2025)
+- **Purpose**: Master intelligence agent for claudelife ecosystem discovery and architecture design
+- **Agent file**: `.claude/agents/obsidia-orchestrator.md`
+- **Activation**: Via `/launch-agent obsidia "<query>"`
+- **Use cases**:
+  - System discovery: "What can claudelife do for X?"
+  - Architecture design: "How should I build a new command/agent/hook?"
+  - Integration troubleshooting: "Why isn't my MCP server loading?"
+  - System optimization: "Can this command be faster with a script?"
+- **DO NOT use for**:
+  - Task execution (use task-executor or specialized agents)
+  - Direct data operations (use domain commands)
+  - Business strategy (use mokai-business-strategist)
+- **Pattern**: OBSIDIA discovers → Specialized agent executes
+- **Key features**:
+  - Knowledge freshness checking (warns if 7+ days old)
+  - Progressive discovery (token-efficient lazy loading)
+  - Dynamic file path resolution (never hardcoded paths)
+  - MCP fallback handling (Serena → Grep → manual)
+  - Code sample verification via Context7
+- **MCP dependencies**: Serena, Graphiti, Context7, Task Master
+- **Response format**: Direct answer first, progressive disclosure for details
+
 ### Context File Pattern (NEW - October 2025)
 - **Standardized context files**: Each business/area subfolder contains `context-{name}.md`
 - **Consistent frontmatter**:
@@ -33,13 +56,13 @@
   **File**: `.claude/commands/command-name.md`
   ```
 - **Automatic documentation**: `/create-command` enforces post-creation documentation
-- **Coverage**: 18+ commands documented with clear use cases and functionality
+- **Coverage**: 48+ commands documented with clear use cases and functionality
 - **Discovery**: Single source of truth for all available commands
 
 ### Command Update Workflow Pattern (NEW - October 2025)
 - **Version tracking**: All command modifications tracked in frontmatter `version_history`
 - **Diff preview**: Show before/after changes before applying
-- **Validation suite**: 
+- **Validation suite**:
   - Frontmatter YAML syntax validation
   - Command structure integrity checks
   - Broken link detection (file paths in examples)
@@ -142,7 +165,7 @@
 
 ### Memory Management
 - **Serena memory files**: Located in `.serena/memories/`
-- **Update triggers**: Changes to critical data sources (Supabase, MOKAI docs, MCP config, slash commands)
+- **Update triggers**: Changes to critical data sources (Supabase, MOKAI docs, MCP config, slash commands, new agents)
 - **Automated reminders**: Hooks notify when memory update recommended
 - **Update command**: `/update-serena-memory` refreshes Serena's context
 - **Memory categories**: project_overview, tech_stack, suggested_commands, system_patterns, etc.
@@ -169,6 +192,13 @@
 - **Version control**: Use `/command-update` for modifications to maintain version history
 - **Change validation**: All updates validated (structure, YAML, links, code syntax) before applying
 - **Documentation sync**: Command updates automatically sync to `claudelife-commands-guide.md`
+
+### Agent Development
+- **Use OBSIDIA for design**: Run `/launch-agent obsidia "design agent for X"` before creating
+- **Activation criteria**: Clearly define when agent should be used vs others
+- **MCP dependencies**: Document required MCP servers in frontmatter
+- **Integration with /launch-agent**: Add to valid agent types list
+- **Specialized vs general**: Create narrow, expert agents (not duplicates of general-purpose)
 
 ## Design Patterns in Use
 
