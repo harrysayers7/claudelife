@@ -4,7 +4,7 @@
 
 ### OBSIDIA Orchestrator Pattern (NEW - October 2025)
 - **Purpose**: Master intelligence agent for claudelife ecosystem discovery and architecture design
-- **Agent file**: `.claude/agents/obsidia-orchestrator.md`
+- **Agent file**: `.claude/agents/obsidia.md`
 - **Activation**: Via `/launch-agent obsidia "<query>"`
 - **Use cases**:
   - System discovery: "What can claudelife do for X?"

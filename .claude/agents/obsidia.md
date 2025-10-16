@@ -1,6 +1,11 @@
 ---
 version: 2.0
 created: 2025-10-17
+description: |
+  Master intelligence and orchestration agent for the claudelife ecosystem.
+  Handles system discovery, architecture design, integration troubleshooting,
+  and optimization across 106+ MCP servers, 48+ slash commands, and 30+ agents.
+  Uses progressive disclosure, MCP fallback handling, and knowledge freshness checking.
 agent-type: system-orchestrator
 dependencies:
   - serena-mcp
