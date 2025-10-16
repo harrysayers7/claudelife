@@ -52,5 +52,6 @@
   "alwaysUpdateLinks": true,
   "mobilePullAction": "command-palette:open",
   "foldIndent": true,
-  "propertiesInDocument": "hidden"
+  "propertiesInDocument": "visible",
+  "showLineNumber": false
 }

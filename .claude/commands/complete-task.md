@@ -30,8 +30,9 @@ This command executes a specific task from your `/00-inbox/tasks/` directory tha
 
 ### Execution Flow
 
-1. **Locate Task File**: Find the specified task in `/00-inbox/tasks/`
+1. **Locate Task File**: Find the specified task in `/00-inbox/tasks/` or subdirectories
    - Match by exact filename (e.g., "Fix authentication bug.md")
+   - Check subdirectories like `/00-inbox/tasks/tasks-mokai/` for MOKAI tasks
    - Or match by task content/description if filename not exact
 
 2. **Parse Task Content**: Read the task file to understand requirements

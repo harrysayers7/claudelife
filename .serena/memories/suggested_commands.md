@@ -7,7 +7,7 @@
 - Dashboard format and auto-update behavior
 - Inbox task frontmatter requirements
 - Phase 1 checklist workflow
-- Slash command purposes (`/mokai-status`, `/mokai-weekly`, `/mokai-insights`)
+- Slash command purposes (`/mokai-status`, `/mokai-weekly`, `/mokai-insights`, `/mokai-dump`)
 - Tracking system concepts (same-day re-reading, deduplication, fuzzy matching)
 
 ## Task Management
@@ -40,8 +40,32 @@
 ### Command Documentation
 **NEW**: All commands are documented in `/04-resources/guides/commands/claudelife-commands-guide.md`
 - Comprehensive reference with "What it does" and "When to use it" sections
-- 18 commands documented with usage patterns and file locations
+- 18+ commands documented with usage patterns and file locations
 - Automatically updated when creating new commands via `/create-command`
+
+### Command Management
+- `/create-command` - Interactive command creation wizard with prompt engineering guidance
+  - Automatically documents commands in commands guide after creation
+  - Enforces consistent structure with YAML frontmatter
+  - Includes script & optimization analysis
+  - Suggests companion shell scripts for performance (30-60x speedup)
+  - Example: `/create-command` (interactive creation process)
+  
+- **NEW**: `/command-update {command-name} "changes"` - Interactive command modification assistant
+  - Updates existing slash commands with validation and version tracking
+  - Shows diff preview before applying changes
+  - Validates frontmatter YAML, structure, links, and code syntax
+  - Automatically updates documentation in `claudelife-commands-guide.md`
+  - Maintains version history in command frontmatter
+  - Flags when Serena memory needs updating
+  - Supports three change types:
+    - **Minor edits**: Typos, grammar, example clarifications
+    - **Feature additions**: New options, script integration, expanded examples
+    - **Major restructuring**: Purpose changes, workflow redesigns, provider migrations
+  - Example: `/command-update mokai-status "add inbox task scanning"`
+  - Example: `/command-update research "convert to Context7 MCP"`
+  - Example: `/command-update --list` (show all available commands)
+  - Use when modifying existing commands to ensure proper validation and documentation sync
 
 ### Task Management Commands
 - `/complete-task "[task-filename.md or description]"` - Execute specific task from `/00-inbox/tasks/`
@@ -97,7 +121,7 @@ npm run scan-tasks:json
 - Quick status check of pending work
 - Used internally by `/sort-tasks` for performance
 
-### Archive Scanning Script (NEW)
+### Archive Scanning Script
 **Script**: `./scripts/scan-archive-candidates.sh`
 **Purpose**: Instantly identify files eligible for archiving
 **Performance**: 30-60x faster than MCP scanning (100+ files in <1 second)
@@ -160,23 +184,39 @@ Tasks in `/00-inbox/tasks/` support these frontmatter properties:
 - `/mokai-status` - Daily strategic status command (see `mokai_business_patterns` memory for details)
 - `/mokai-weekly` - End-of-week review command (see `mokai_business_patterns` memory for details)
 - `/mokai-insights` - Monthly pattern analysis (see `mokai_business_patterns` memory for details)
+- **NEW**: `/mokai-dump "entry text"` - Quick capture for MOKAI diary entries from Claude Code
+  - AI-powered sentiment analysis automatically categorizes to: 🏆 Wins, 💡 Learnings, 🚨 Blockers, 📝 Context/Updates
+  - Supports multiple entries: `/mokai-dump "entry 1" "entry 2" "entry 3"`
+  - Always adds to today's diary by default
+  - Optional backdating: `/mokai-dump --date=2025-10-14 "yesterday's win"` (adds to both dates)
+  - No manual category selection needed
+  - Creates diary from template if doesn't exist
+  - Example: `/mokai-dump "Had a great call with the client, they loved our Essential Eight proposal"`
+  - Example: `/mokai-dump "Learned that IRAP assessments take 2-6 months" "Stuck waiting for contractor availability"`
+  - Use for quick capture throughout the day without opening Obsidian
 - `/business:mokai:generate-mokai-flashcards` - Generate learning flashcards from MOKAI research docs
 - `/business:mokai:update-mokai-context` - Update Serena's memory with MOKAI business changes
 
+### MOK HOUSE Business Operations
+- **NEW**: `/mokhouse-portfolio-blurb "[project details or link]"` - Generate professional portfolio project descriptions for MOK HOUSE website
+  - Creates 3 catchy tagline options and 3 complete project description drafts (technical, creative, impact angles)
+  - Interactive refinement with multiple options before finalizing
+  - Saves to `01-areas/business/mokhouse/website/project-blurbs/[project-name]-blurb.md`
+  - Automatically logs creation in `context-mokhouse.md` with date, client, and file link
+  - Maintains third-person perspective and impact-focused tone
+  - Includes properly formatted "Appreciation" credits section
+  - Example: `/mokhouse-portfolio-blurb "Just finished Repco sonic branding - 100-year campaign"`
+  - Example: `/mokhouse-portfolio-blurb "[[Project Brief - Nike Commercial]]"`
+  - Use after completing music production projects ready for portfolio display
+
 ### System Documentation
 - `/report:document-system` - Generate comprehensive system documentation with automatic categorization
-
-### Command Creation
-- `/create-command` - Interactive command creation wizard with prompt engineering guidance
-  - **NEW**: Automatically documents commands in commands guide after creation
-  - Enforces consistent structure with YAML frontmatter
-  - Includes post-creation documentation step
 
 ### Obsidian Vault Management
 - `/obsidia` - Activate OBSIDIA mode for vault architecture and knowledge system design
 - `/ingest-document` - Process and import external documents into vault
 
-### File Management (NEW)
+### File Management
 - `/rename-file [old-path] [new-path] [--scope=directory]` - Intelligently rename/move markdown files
   - Automatically finds and updates ALL references across the vault
   - Handles Obsidian wikilinks (`[[filename]]`) and markdown links (`[text](path/file.md)`)

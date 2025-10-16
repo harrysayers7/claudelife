@@ -1,5 +1,5 @@
 ---
-Done: false
+Done: true
 today: true
 follow up: false
 this week: false
@@ -9,4 +9,6 @@ status:
 relation:
 description:
 effort:
+ai-ignore: true
+ai-assigned: true
 ---

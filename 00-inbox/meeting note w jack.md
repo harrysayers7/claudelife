@@ -1,14 +1,14 @@
 ---
 type:
-  - Task
+  - meeting-note
 relation:
   - "[[mokai]]"
 tags:
 category:
 description:
-today: true
+today: false
 date created: Fri, 10 10th 25, 3:53:42 pm
-date modified: Sun, 10 12th 25, 7:15:49 am
+date modified: Wed, 10 15th 25, 8:05:00 pm
 title: meeting note w jack
 ---
 ### BUSINESS REGISTRATION OVERVIEW

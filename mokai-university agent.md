@@ -1,6 +1,6 @@
 ---
 Done: false
-today: true
+today: false
 follow up: false
 this week: false
 back burner: false

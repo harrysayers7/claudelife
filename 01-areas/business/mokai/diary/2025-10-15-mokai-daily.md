@@ -1,12 +1,15 @@
 ---
 journal: Mokai Daily 🟣
 journal-date: 2025-10-15
+date created: Wed, 10 15th 25, 2:15:36 pm
+date modified: Wed, 10 15th 25, 4:12:07 pm
 ---
 
 
 ## What I Did Today
 
 - Implemented auto-diary capture hook for automatic logging
+-   I read a little bit of the operations guide, but I was going through it and highlighting certain areas. When I went back later to look, all those had been erased, so I don't know what I highlighted. Which is super frustrating and I'm pretty fucking pissed off. 
 
 
 
@@ -18,19 +21,20 @@ journal-date: 2025-10-15
 
 ## 🏆 Wins
 
--
+- Created a few good workflows to make work run better. 
 
 
 
 ## 🚨 Blockers
 
--
+- Trying to figure out why there's syncing issues with Obsidian, so I got annoyed and it stopped me from executing more work. 
 
 
 
 ## 📝 Context/Updates
 
 -
+- Executed  command
 
 
 
@@ -42,16 +46,15 @@ journal-date: 2025-10-15
 ## 🤖 Agent-Mokai Discussion
 
 ##### Proposed Instructions
-> New functionality or capabilities I want agent-mokai to have. Agent should challenge assumptions and suggest improvements.
-
+> 
 -
 
 ##### Ideas to Explore
-> Business strategies, agent features, or MOKAI concepts I want to discuss. Agent should evaluate feasibility and provide alternatives.
+
 
 -
 
 ##### Questions
-> Things I'm uncertain about. Agent should provide analysis and recommendations.
+>
 
 -

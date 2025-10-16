@@ -8,13 +8,35 @@ event:
 
 ### Tasks
 
-```dataview
-TABLE WITHOUT ID
-  file.link AS "Task",
-  description AS "Description",
-  today
-WHERE today and Done != true
-SORT file.ctime DESC
+```dataviewjs
+// Get tasks for today that aren't done
+const pages = dv.pages()
+  .where(p => p.today && !p.Done)
+  .sort(p => p.file.ctime, 'desc');
+
+// Create table with checkbox in first column
+dv.table(
+  ["✓", "Task", "Description"],
+  pages.map(p => {
+    const checkbox = dv.el('input', '', {
+      attr: { type: 'checkbox' },
+      cls: 'task-checkbox'
+    });
+
+    checkbox.onclick = async () => {
+      const file = app.vault.getAbstractFileByPath(p.file.path);
+      await app.fileManager.processFrontMatter(file, (fm) => {
+        fm.Done = true;
+      });
+    };
+
+    return [
+      checkbox,
+      p.file.link,
+      p.description || ""
+    ];
+  })
+);
 ```
 
 
@@ -33,3 +55,9 @@ SORT file.ctime DESC
 
 ### 🌍 Context
 -
+
+
+## Index
+
+- [[01-areas/business/mokai/INDEX|Mokai]]
+- 

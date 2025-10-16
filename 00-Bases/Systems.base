@@ -16,7 +16,7 @@ views:
       - description
     sort:
       - property: file.ctime
-        direction: ASC
+        direction: DESC
     columnSize:
       note.status: 114
       note.type: 126

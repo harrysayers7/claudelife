@@ -33,8 +33,56 @@
   **File**: `.claude/commands/command-name.md`
   ```
 - **Automatic documentation**: `/create-command` enforces post-creation documentation
-- **Coverage**: 17 commands documented with clear use cases and functionality
+- **Coverage**: 18+ commands documented with clear use cases and functionality
 - **Discovery**: Single source of truth for all available commands
+
+### Command Update Workflow Pattern (NEW - October 2025)
+- **Version tracking**: All command modifications tracked in frontmatter `version_history`
+- **Diff preview**: Show before/after changes before applying
+- **Validation suite**: 
+  - Frontmatter YAML syntax validation
+  - Command structure integrity checks
+  - Broken link detection (file paths in examples)
+  - Code block syntax validation
+- **Auto-documentation sync**: Changes automatically update `claudelife-commands-guide.md`
+- **Memory sync flagging**: Identifies when Serena memory needs updating
+- **Change categories**:
+  - **Minor edits**: Typos, grammar, clarifications (patch version)
+  - **Feature additions**: New options, script integration (minor version)
+  - **Major restructuring**: Purpose/workflow changes (major version)
+- **Workflow**: Load → Analyze → Preview diff → Validate → Apply → Sync docs → Flag memory
+- **Command**: `/command-update {command-name} "description of changes"`
+- **Safety**: Always shows diff before applying, git commit with descriptive message
+
+### MCP Server Configuration Pattern (CRITICAL - October 2025)
+**LESSON LEARNED: Claude Code uses ~/.claude.json NOT .mcp.json**
+
+- **Correct config location**: `~/.claude.json` (managed by CLI)
+- **NEVER manually edit**: Use `claude mcp add` CLI exclusively
+- **Wrong file trap**: `.mcp.json` exists but is NOT used by Claude Code
+- **Verification command**: `claude mcp list` shows actual loaded servers
+- **Configuration format in ~/.claude.json**:
+  ```json
+  {
+    "server-name": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "package@latest"],
+      "env": {"API_KEY": "value"}
+    }
+  }
+  ```
+- **Add servers via CLI**:
+  ```bash
+  claude mcp add --transport stdio <name> --env KEY=val -- command args
+  ```
+- **Common mistake**: Editing `~/.mcp.json` or `.mcp.json` won't affect Claude Code
+- **Debug workflow**:
+  1. `claude mcp list` - see what's actually loaded
+  2. `claude mcp get <name>` - check specific server config
+  3. `~/Library/Logs/Claude/mcp-server-<name>.log` - view connection logs
+- **Context7 integration**: Use Context7 MCP to research MCP documentation before configuring
+- **Hook automation**: UserPromptSubmit hook detects library questions and suggests Context7
 
 ### Context Engineering
 - **Domain pack system**: Business, Technical, and Automation packs (~15K each)
@@ -42,20 +90,16 @@
 - **Active entity tracking**: 7-day retention window in `active-entities.json`
 - **Graduated loading**: Essential (10K) → mentioned entities (30K) → full context (50K max)
 
-### MCP Server Strategy
-- **Project-specific servers**: Configured in `.mcp.json` (git-ignored)
-- **Global servers**: Configured in `~/.mcp.json`
-- **Explicit enablement**: All servers must be listed in `enabledMcpjsonServers`
-- **Specialized functions**: Supabase, Notion, Gmail, UpBank, Stripe, GPT Researcher, etc.
-
 ### Claude Code Hooks System
 - **Post-tool execution hooks**: Monitor tool executions for data changes
+- **UserPromptSubmit hooks**: Analyze user prompts before processing (e.g., Context7 detector)
 - **Memory sync automation**: Auto-detect when Serena's memory needs updating
 - **Pattern-based triggers**: Match tool names/arguments to detect critical changes
-- **Hook configuration**: Defined in `.claude/settings.json`
-- **Hook scripts**: Executable bash scripts in `.claude/hooks/`
+- **Hook configuration**: Defined in `.claude/settings.local.json`
+- **Hook scripts**: Executable Python/bash scripts in `.claude/hooks/`
 - **Primary hooks**:
-  - `post-tool-memory-sync-trigger.sh` - Monitors Supabase/Obsidian/MCP changes
+  - `context7_detector.py` - Detects library documentation needs, suggests Context7 MCP
+  - `cache-mokai-inbox.sh` - Auto-updates MOKAI inbox cache on file changes
 
 ### Research Workflow Pattern
 - **COSTAR framework**: Context, Objective, Style, Tone, Audience, Response optimization
@@ -122,6 +166,9 @@
 - **Interactive workflows**: Ask clarifying questions before execution
 - **Serena integration**: Commands that modify codebase should trigger memory updates
 - **Post-creation documentation**: Automatically document in commands guide with "What it does" / "When to use it" format
+- **Version control**: Use `/command-update` for modifications to maintain version history
+- **Change validation**: All updates validated (structure, YAML, links, code syntax) before applying
+- **Documentation sync**: Command updates automatically sync to `claudelife-commands-guide.md`
 
 ## Design Patterns in Use
 

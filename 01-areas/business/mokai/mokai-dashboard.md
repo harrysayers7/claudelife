@@ -1,17 +1,17 @@
 ---
 date: "2025-10-14"
 date created: Tue, 10 14th 25, 4:34:53 pm
-date modified: Tue, 10 14th 25, 7:11:20 pm
+date modified: Thu, 10 16th 25, 8:51:29 am
 ---
 # MOKAI Mission Control
 
-**Last Updated**: 2025-10-14
+**Last Updated**: 2025-10-16
 **Current Phase**: Phase 1 - Foundation (Pre-Launch)
 **Primary Goal**: Master business fundamentals while waiting for legal setup
 
 ---
 
-## 🎯 This Week's Focus (Week of Oct 14)
+## 🎯 This Week's Focus (Week 1: Oct 14-20)
 #### **Operations Guide Mastery Week 1**
 1. [ ] Read Indigenous Business & Procurement section (1 hour)
 2. [ ] Read Prime Contractor Management section (1 hour)
@@ -19,6 +19,154 @@ date modified: Tue, 10 14th 25, 7:11:20 pm
 4. [ ] Write summary: "How MOKAI makes money" in own words
 
 **Daily Time**: 5-7 hours available (allocate 2 hours/day to learning)
+
+---
+
+## 📬 MOKAI Tasks
+
+### 🔥 Quick Wins (High Impact, Low Effort)
+```dataviewjs
+const tasks = dv.pages('"00-inbox/tasks/tasks-mokai"')
+  .where(t => t.status !== "done" && t.status !== "archive")
+  .where(t => t.impact >= 7 && t.effort <= 4)
+  .sort(t => t.impact, 'desc');
+
+if (tasks.length === 0) {
+  dv.paragraph("*No quick wins available - focus on strategic work*");
+} else {
+  dv.table(
+    ["✓", "Task", "Brief", "Impact", "Effort"],
+    tasks.map(t => {
+      const impactColor = t.impact >= 8 ? "🔴" : "🟡";
+      const effortBar = "▓".repeat(Math.round(t.effort)) + "░".repeat(10 - Math.round(t.effort));
+
+      return [
+        `<input type="checkbox" ${t.Done ? "checked" : ""} onclick="
+          const file = app.vault.getAbstractFileByPath('${t.file.path}');
+          app.fileManager.processFrontMatter(file, fm => { fm.Done = !fm.Done; fm.status = fm.Done ? 'done' : 'in-progress'; });
+        ">`,
+        t.file.link,
+        t.description || "",
+        `${impactColor} ${t.impact}`,
+        `${effortBar} ${t.effort}`
+      ];
+    })
+  );
+}
+```
+
+### 🎯 Strategic Work (High Impact, High Effort)
+```dataviewjs
+const tasks = dv.pages('"00-inbox/tasks/tasks-mokai"')
+  .where(t => t.status !== "done" && t.status !== "archive")
+  .where(t => t.impact >= 7 && t.effort >= 5)
+  .sort(t => t.impact, 'desc');
+
+if (tasks.length === 0) {
+  dv.paragraph("*No strategic work scheduled*");
+} else {
+  dv.table(
+    ["✓", "Task", "Brief", "Impact", "Effort"],
+    tasks.map(t => {
+      const impactColor = t.impact >= 8 ? "🔴" : "🟡";
+      const effortBar = "▓".repeat(Math.round(t.effort)) + "░".repeat(10 - Math.round(t.effort));
+
+      return [
+        `<input type="checkbox" ${t.Done ? "checked" : ""} onclick="
+          const file = app.vault.getAbstractFileByPath('${t.file.path}');
+          app.fileManager.processFrontMatter(file, fm => { fm.Done = !fm.Done; fm.status = fm.Done ? 'done' : 'in-progress'; });
+        ">`,
+        t.file.link,
+        t.description || "",
+        `${impactColor} ${t.impact}`,
+        `${effortBar} ${t.effort}`
+      ];
+    })
+  );
+}
+```
+
+### 📋 Next Up
+```dataviewjs
+const tasks = dv.pages('"00-inbox/tasks/tasks-mokai"')
+  .where(t => t.status === "next-up" || t.status === "inbox")
+  .sort(t => t.impact, 'desc');
+
+if (tasks.length === 0) {
+  dv.paragraph("*Inbox empty - all tasks triaged*");
+} else {
+  dv.table(
+    ["✓", "Task", "Brief", "Impact", "Effort", "Category"],
+    tasks.map(t => {
+      const impactColor = t.impact >= 8 ? "🔴" : (t.impact >= 5 ? "🟡" : "⚪");
+      const effortBar = "▓".repeat(Math.round(t.effort)) + "░".repeat(10 - Math.round(t.effort));
+
+      return [
+        `<input type="checkbox" ${t.Done ? "checked" : ""} onclick="
+          const file = app.vault.getAbstractFileByPath('${t.file.path}');
+          app.fileManager.processFrontMatter(file, fm => { fm.Done = !fm.Done; fm.status = fm.Done ? 'done' : 'in-progress'; });
+        ">`,
+        t.file.link,
+        t.description || "",
+        `${impactColor} ${t.impact}`,
+        `${effortBar} ${t.effort}`,
+        t.category || ""
+      ];
+    })
+  );
+}
+```
+
+### ⏳ Waiting (Blocked)
+```dataviewjs
+const tasks = dv.pages('"00-inbox/tasks/tasks-mokai"')
+  .where(t => t.status === "waiting");
+
+if (tasks.length === 0) {
+  dv.paragraph("*No blocked tasks*");
+} else {
+  dv.table(
+    ["Task", "Brief", "Impact"],
+    tasks.map(t => {
+      const impactColor = t.impact >= 8 ? "🔴" : (t.impact >= 5 ? "🟡" : "⚪");
+      return [
+        t.file.link,
+        t.description || "",
+        `${impactColor} ${t.impact}`
+      ];
+    })
+  );
+}
+```
+
+### ✅ Recently Completed
+```dataviewjs
+const tasks = dv.pages('"00-inbox/tasks/tasks-mokai"')
+  .where(t => t.status === "done")
+  .sort(t => t.file.mtime, 'desc')
+  .limit(5);
+
+if (tasks.length === 0) {
+  dv.paragraph("*No completed tasks yet*");
+} else {
+  dv.table(
+    ["Task", "Brief", "Impact"],
+    tasks.map(t => {
+      const impactColor = t.impact >= 8 ? "🔴" : (t.impact >= 5 ? "🟡" : "⚪");
+      return [
+        t.file.link,
+        t.description || "",
+        `${impactColor} ${t.impact}`
+      ];
+    })
+  );
+}
+```
+
+**Task Legend:**
+- **Impact**: 🔴 High (8-10) | 🟡 Medium (5-7) | ⚪ Low (1-4)
+- **Effort**: ▓▓▓▓▓▓▓▓▓▓ = 10/10 effort
+- **Categories**: learning | operations | sales | admin | technical
 
 ---
 
@@ -48,18 +196,18 @@ date modified: Tue, 10 14th 25, 7:11:20 pm
 - **Flashcards**: Set up in Obsidian ✅
 
 ### Blockers 🚨
+- **Obsidian syncing issues** (Oct 15) - Highlighted sections in Operations Guide got erased, frustrating workflow
 - **Jack's family trust setup** (blocking ABN/ACN registration)
-- **Haven't started Operations Guide reading yet**
+- **Haven't started structured Operations Guide reading yet** (only partial highlighting on Oct 15)
 
 ---
 
 ## 🏆 Recent Wins
+- ✅ Implemented auto-diary capture hook for automatic logging (Oct 15)
+- ✅ Created a few good workflows to make work run better (Oct 15)
 - ✅ Created MOKAI dashboard system
 - ✅ Clarified ownership split (51% Indigenous)
 - ✅ Kelly's website almost done
-- ✅ Ultra-think session: Built realistic 30/60/90 plan
-- ✅ Jack's contractor network available
-- ✅ MOKAI dashboard + slash commands created with Serena integration
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-Done: false
+Done: true
 today: true
 follow up: false
 this week: false

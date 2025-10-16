@@ -59,98 +59,154 @@ Before running this command, prepare:
 
 I'll help you rename the file safely by:
 
-1. **Validate Input**
-   - Check that the source file exists
-   - Verify the destination path is available
-   - Confirm file extension is `.md`
+1. **Fast Reference Scan (using script)**
+   - Run `./scripts/rename-file.sh` for 10-20x faster scanning
+   - Single-pass search for all reference patterns
+   - Get JSON output with complete file list in 1-2 seconds
 
-2. **Identify Reference Patterns**
-   - Extract filename from path (with and without extension)
-   - Generate all possible reference patterns:
-     - `[[old-filename]]`
-     - `[[old-filename.md]]`
-     - `[text](path/to/old-filename.md)`
-     - `[text](../path/to/old-filename.md)`
+2. **Validate Input**
+   - Script validates that source file exists
+   - Script checks destination doesn't already exist
+   - Script warns if destination directory needs creation
 
-3. **Search for References**
-   - Use Serena's `search_for_pattern` to find all occurrences
-   - Search in specified scope or entire vault
-   - Identify both wikilinks and markdown links
-   - Track relative vs absolute path references
+3. **Preview Changes**
+   - Display files found by script with references
+   - Show total reference count
+   - Highlight potential issues before proceeding
 
-4. **Preview Changes**
-   - Display a table of files that will be modified
-   - Show before/after for each reference
-   - Calculate total number of changes
-   - Highlight potential issues (broken links, ambiguous matches)
-
-5. **Execute Rename**
-   - Rename the actual file using `Bash(mv)`
+4. **Execute Updates**
    - Update all references using `Edit` tool
+   - Handle both wikilinks and markdown links
    - Preserve file structure and formatting
-   - Maintain correct relative/absolute paths
+
+5. **Rename File**
+   - Create destination directory if needed
+   - Move file to new location using `Bash(mv)`
 
 6. **Verify & Report**
    - Confirm file was renamed successfully
    - Report number of references updated
    - List any issues encountered
-   - Suggest follow-up actions if needed
 
 ## Technical Implementation Guide
 
-### Step 1: Extract Filename Patterns
+### Step 1: Fast Script-Based Scan (RECOMMENDED)
 
-```javascript
-// From: 00-inbox/tasks/meeting-notes.md
-const oldPath = "00-inbox/tasks/meeting-notes.md";
-const oldBasename = "meeting-notes.md";  // with extension
-const oldName = "meeting-notes";         // without extension
+**Performance**: 10-20x faster than sequential Serena searches
 
-// Generate search patterns:
-// - [[meeting-notes]]
-// - [[meeting-notes.md]]
-// - [text](00-inbox/tasks/meeting-notes.md)
-// - [text](tasks/meeting-notes.md)
-// - [text](meeting-notes.md)
+```bash
+# Run the companion script
+./scripts/rename-file.sh "old-path.md" "new-path.md" "scope"
+
+# Example output (JSON to stdout):
+{
+  "success": true,
+  "old_path": "00-inbox/meeting-notes.md",
+  "new_path": "01-areas/client-meeting.md",
+  "old_name": "meeting-notes",
+  "new_name": "client-meeting",
+  "reference_count": 5,
+  "files": [
+    "00-inbox/tasks.md",
+    "01-areas/business/log.md",
+    "97-tags/mokai.md"
+  ],
+  "patterns_searched": [
+    "[[meeting-notes]]",
+    "[[meeting-notes.md]]",
+    "[text](*/meeting-notes.md)"
+  ]
+}
 ```
 
-### Step 2: Search Strategy
+**Script features**:
+- Single ripgrep pass for all patterns (wikilinks + markdown links)
+- Colored human-readable summary to stderr
+- Structured JSON output to stdout for parsing
+- Validates inputs and checks for conflicts
+
+### Step 2: Parse Script Output
 
 ```javascript
-// Use Serena search_for_pattern for each pattern
+// Execute script and parse JSON
+const result = await Bash({
+  command: `./scripts/rename-file.sh "${oldPath}" "${newPath}" "${scope}"`,
+  description: "Scan for file references using fast script"
+});
+
+const scanData = JSON.parse(result);
+
+// scanData contains:
+// - old_path, new_path
+// - old_name, new_name (without .md extension)
+// - reference_count
+// - files[] (array of files with references)
+// - patterns_searched[] (what patterns were used)
+```
+
+### Step 3: Fallback to Serena (if script unavailable)
+
+If the script doesn't exist or fails, fall back to Serena:
+
+```javascript
+// Fallback: Use Serena search_for_pattern
 mcp__serena__search_for_pattern({
   substring_pattern: "\\[\\[meeting-notes\\]\\]",
   paths_include_glob: "**/*.md",
-  output_mode: "content",
-  context_lines_before: 1,
-  context_lines_after: 1
+  output_mode: "files_with_matches"
 });
 ```
 
-### Step 3: Update References
+### Step 4: Update References in Each File
 
 ```javascript
-// For wikilinks
-Edit({
-  file_path: "00-inbox/referencing-file.md",
-  old_string: "[[meeting-notes]]",
-  new_string: "[[client-meeting-2025-10-15]]"
-});
+// For each file found by the script
+for (const filePath of scanData.files) {
+  // Read the file to find exact reference patterns
+  const content = await Read({ file_path: filePath });
 
-// For markdown links (preserve relative paths)
-Edit({
-  file_path: "01-areas/business/notes.md",
-  old_string: "[Meeting Notes](../../00-inbox/tasks/meeting-notes.md)",
-  new_string: "[Meeting Notes](../../00-inbox/tasks/client-meeting-2025-10-15.md)"
-});
+  // Update wikilinks: [[old-name]] or [[old-name.md]]
+  if (content.includes(`[[${scanData.old_name}]]`)) {
+    await Edit({
+      file_path: filePath,
+      old_string: `[[${scanData.old_name}]]`,
+      new_string: `[[${scanData.new_name}]]`
+    });
+  }
+
+  if (content.includes(`[[${scanData.old_basename}]]`)) {
+    await Edit({
+      file_path: filePath,
+      old_string: `[[${scanData.old_basename}]]`,
+      new_string: `[[${scanData.new_basename}]]`
+    });
+  }
+
+  // Update markdown links: [text](path/old-file.md)
+  // Note: Need to parse and update relative paths based on file locations
+  if (content.includes(`](`) && content.includes(scanData.old_basename)) {
+    // Use regex to find and replace markdown links
+    // Calculate correct relative path based on both file locations
+  }
+}
 ```
 
-### Step 4: Rename File
+### Step 5: Rename File
 
 ```javascript
-Bash({
-  command: 'mv "00-inbox/tasks/meeting-notes.md" "00-inbox/tasks/client-meeting-2025-10-15.md"',
-  description: "Rename file from meeting-notes.md to client-meeting-2025-10-15.md"
+// Create destination directory if needed
+const destDir = path.dirname(scanData.new_path);
+if (destDir !== path.dirname(scanData.old_path)) {
+  await Bash({
+    command: `mkdir -p "${destDir}"`,
+    description: `Create destination directory: ${destDir}`
+  });
+}
+
+// Move the file
+await Bash({
+  command: `mv "${scanData.old_path}" "${scanData.new_path}"`,
+  description: `Rename ${scanData.old_basename} to ${scanData.new_basename}`
 });
 ```
 

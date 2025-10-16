@@ -1,7 +1,8 @@
 ---
 date created: Tue, 10 7th 25, 4:00:38 am
-date modified: Tue, 10 7th 25, 4:00:51 am
-type: Youtube
+date modified: Thu, 10 16th 25, 7:09:53 am
+type:
+  - reference
 relation:
   - "[[97-tags/AI-Research|AI-Research]]"
 ---

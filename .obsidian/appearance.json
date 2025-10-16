@@ -1,12 +1,12 @@
 {
   "cssTheme": "Minimal",
   "accentColor": "#6640ff",
-  "interfaceFontFamily": "Helvetica",
-  "textFontFamily": "Helvetica Neue",
+  "interfaceFontFamily": "FK Grotesk",
+  "textFontFamily": "FK Grotesk",
   "baseFontSize": 17,
   "baseFontSizeAction": true,
   "showRibbon": true,
   "enabledCssSnippets": [
-    "fk-grotesk"
+    "remove-wikilink-underline"
   ]
 }

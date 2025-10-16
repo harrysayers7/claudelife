@@ -1,6 +1,6 @@
 ---
 date created: Mon, 09 29th 25, 4:40:52 pm
-date modified: Mon, 10 13th 25, 6:18:53 pm
+date modified: Wed, 10 15th 25, 11:56:21 am
 ---
 ## ### Mac
 
@@ -20,6 +20,7 @@ Shift x 2 : command pallete
 Open Daily Note = CMD + D
 Bookmarks: Show bookmarks: Alt + B
 F1: open file (quick switcher)
+**Highlighter:** Option + H (G5 on Keyboard)
 
 ##### Mouse clicks
 - scroll wheel press =

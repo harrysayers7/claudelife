@@ -1,6 +1,6 @@
 ---
 Done: false
-today: true
+today: false
 follow up: false
 this week: false
 back burner: false
@@ -9,6 +9,8 @@ status:
 relation:
 description:
 effort:
+ai-ignore: true
+ai-assigned: true
 ---
 https://github.com/ericbuess/claude-code-docs
 https://github.com/wshobson/agents

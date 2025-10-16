@@ -1,7 +1,7 @@
 ---
 date: "2025-10-13 17:30"
 date created: Tue, 10 14th 25, 4:45:52 pm
-date modified: Wed, 10 15th 25, 1:36:48 pm
+date modified: Thu, 10 16th 25, 3:19:44 pm
 ---
 
 # Claudelife Commands Guide
@@ -10,6 +10,7 @@ Comprehensive reference for all custom slash commands in the claudelife project.
 
 ---
 - [[#/create-command|/create-command]]
+- [[#/create-hook|/create-hook]]
 - [[#/command-update|/command-update]]
 - [[#/extract-context|/extract-context]]
 - [[#/research|/research]]
@@ -21,6 +22,10 @@ Comprehensive reference for all custom slash commands in the claudelife project.
 - [[#/tag-keyword-DR-extractor|/tag-keyword-DR-extractor]]
 - [[#/document-system|/document-system]]
 - [[#/mokhouse-project|/mokhouse-project]]
+- [[#/mokhouse-create-project|/mokhouse-create-project]]
+- [[#/mokhouse-update-status|/mokhouse-update-status]]
+- [[#/mokhouse-create-invoice|/mokhouse-create-invoice]]
+- [[#/mokhouse-mark-paid|/mokhouse-mark-paid]]
 - [[#/ingest-document|/ingest-document]]
 - [[#/extract-diary|/extract-diary]]
 - [[#/extract-insights|/extract-insights]]
@@ -36,6 +41,9 @@ Comprehensive reference for all custom slash commands in the claudelife project.
 - [[#/complete-task|/complete-task]]
 - [[#/janitor|/janitor]]
 - [[#/sort-tasks|/sort-tasks]]
+- [[#/launch-agent|/launch-agent]]
+- [[#/mokhouse-portfolio-blurb|/mokhouse-portfolio-blurb]]
+- [[#/analyze-portfolio-style|/analyze-portfolio-style]]
 
 ---
 
@@ -51,6 +59,20 @@ Use when creating new slash commands for repetitive workflows, automation tasks,
 
 **Usage**: `/create-command`
 **File**: `.claude/commands/create-command.md`
+
+---
+
+### /create-hook
+**Created**: 2025-10-16 14:35
+
+##### What it does:
+Creates production-ready Claude Code hooks with full ecosystem integration. Analyzes existing hooks/MCP servers/agents/scripts, validates configurations with Context7, suggests performance optimizations (companion scripts for 30-60x speedup), and provides comprehensive testing strategies. Supports all hook types (PreToolUse, PostToolUse, UserPromptSubmit, PostSystemCompletion) with complete documentation workflow.
+
+##### When to use it:
+Use when creating hooks for automation (auto-diary capture, security validation, workflow triggers). The command analyzes your ecosystem to suggest MCP integrations (Serena, Linear, Supabase), identifies script reuse opportunities, verifies hook syntax against official patterns, and generates testing strategies with troubleshooting guides.
+
+**Usage**: `/create-hook [optional: description]`
+**File**: `.claude/commands/create-hook.md`
 
 ---
 
@@ -168,6 +190,68 @@ Detects substantial feature completions and suggests documentation:
 
 ---
 
+### Context7 Smart Detection Hook (Automated)
+**Created**: 2025-10-16
+
+Intelligent prompt analysis hook that detects when to use Context7 MCP for up-to-date library documentation.
+
+##### How it works:
+Analyzes every prompt using multi-factor confidence scoring:
+- **Library Detection (40%)**: Identifies fast-moving frameworks (Next.js, React Query, Trigger.dev, Prisma, etc.) and complex API libraries (FastAPI, Stripe, Supabase, etc.)
+- **Version Sensitivity (30%)**: Detects "new feature", "latest", version mentions, "breaking change", "migration"
+- **Documentation Signals (30%)**: Catches "how do I", "example", "implement", "api reference", etc.
+
+##### Confidence Levels:
+- **HIGH (80%+)**: 🎯 Strong recommendation with specific usage guidance
+- **MEDIUM-HIGH (65-79%)**: 📚 Gentle suggestion to consider Context7
+- **MEDIUM (50-64%)**: 💡 Subtle hint
+- **LOW (<50%)**: No suggestion shown
+
+##### Example Triggers:
+```
+✅ HIGH: "How do I use the new Next.js after() function?"
+  → Confidence: 0.9 (library + version + doc signal)
+  → Output: "🎯 Detected next.js - Context7 highly recommended for latest docs"
+
+✅ MEDIUM-HIGH: "How does Prisma's interactive transactions API work?"
+  → Confidence: 0.7 (library + doc signal)
+  → Output: "📚 Consider using Context7 for up-to-date prisma documentation"
+
+❌ LOW: "What's the difference between async and sync in Python?"
+  → Confidence: 0.3 (generic concept, no specific library)
+  → No suggestion
+```
+
+##### Smart Filtering:
+- **Excluded**: Stable languages (JavaScript, Python, TypeScript), generic concepts, architecture discussions
+- **Prioritized**: Fast-moving frameworks, version-specific queries, API implementation questions
+- **Ignored**: Prompts already containing "context7"
+
+##### Configuration:
+**File**: `.claude/hooks/context7_detector.py`
+**Hook Type**: `UserPromptSubmit` (runs before every message)
+**Requirements**: Python 3.6+, no external dependencies
+
+##### Customization:
+Edit `context7_detector.py` to:
+- Add libraries to `FAST_MOVING_LIBS` or `COMPLEX_API_LIBS`
+- Adjust confidence thresholds in `generate_reminder()`
+- Add custom detection patterns to `VERSION_PATTERNS` or `DOCUMENTATION_SIGNALS`
+
+##### Testing:
+```bash
+# Test detection manually
+python3 .claude/hooks/context7_detector.py "How do I use Next.js after function?"
+
+# View JSON output
+python3 .claude/hooks/context7_detector.py "Implement Stripe checkout with latest API" | jq
+```
+
+**Documentation**: `.claude/hooks/README-context7-detector.md`
+**Integration**: Configured in `.claude/settings.json` under `hooks.UserPromptSubmit`
+
+---
+
 ### /obsidia
 **Created**: 2025-10-13 17:35
 
@@ -235,6 +319,69 @@ Use for MOK HOUSE music production projects, client work coordination, or music 
 
 **Usage**: `/mokhouse-project [args]`
 **File**: `.claude/commands/mokhouse/mokhouse-project.md`
+
+---
+
+## MOK HOUSE Project Lifecycle Commands
+
+### /mokhouse-create-project
+**Created**: 2025-10-16 11:45
+
+##### What it does:
+Automates MOK HOUSE project creation from client brief emails (Phase 1). Searches Gmail, fetches Google Doc briefs, creates formatted Obsidian project files with frontmatter, generates AI creative suggestions (composer-level jingle/sonic branding direction), and produces SUNO prompts (<1000 chars). Handles full brief-to-project pipeline with proper callouts, H2 headings, and Harrison's composer number (#3).
+
+##### When to use it:
+Use when client brief emails arrive from Electric Sheep Music, Panda Candy, or new customers. Creates production-ready project files with AI-powered creative direction, sound design ideas, and music generation prompts. Run once per new project brief.
+
+**Usage**: `/mokhouse-create-project "Brief context or customer name"`
+**File**: `.claude/commands/mokhouse/mokhouse-create-project.md`
+**Integration**: Gmail + Google Drive + Obsidian
+
+---
+
+### /mokhouse-update-status
+**Created**: 2025-10-16 11:52
+
+##### What it does:
+Updates MOK HOUSE project status throughout lifecycle (Phase 2). Handles status transitions (Brief Received → Submitted → PO Received → Invoiced → Complete), award decisions, and metadata updates. Uses Obsidian patch operations for fast, surgical updates to project frontmatter fields.
+
+##### When to use it:
+Use when work progresses: mark as "Submitted" after demo delivery, "PO Received" when purchase order arrives, record award decisions with fees/APRA status. Can run multiple times per project. Fast operation (<10 seconds).
+
+**Usage**: `/mokhouse-update-status "[project name] status update details"`
+**File**: `.claude/commands/mokhouse/mokhouse-update-status.md`
+**Integration**: Obsidian
+
+---
+
+### /mokhouse-create-invoice
+**Created**: 2025-10-16 12:00
+
+##### What it does:
+Creates invoices for MOK HOUSE projects across Stripe, Supabase, and Obsidian (Phase 3). Handles customer lookup/setup, GST calculation (per customer preference), duplicate detection, multi-system coordination. Requires explicit user approval before creating. Supports both existing customers (Electric Sheep, Panda Candy) and new customer onboarding with flexible payment terms.
+
+##### When to use it:
+Use when PO arrives from client. Looks up customer preferences (14-day terms, no GST for ESM/Panda Candy), presents confirmation, creates Stripe invoice (product → price → finalize), records in Supabase with relationships, updates Obsidian project. Provides payment link and dashboard URLs. Stops immediately if any step fails.
+
+**Usage**: `/mokhouse-create-invoice "[PO details, project name, customer]"`
+**File**: `.claude/commands/mokhouse/mokhouse-create-invoice.md`
+**Integration**: Stripe + Supabase + Obsidian
+**Entity**: MOK HOUSE PTY LTD (550e8400-e29b-41d4-a716-446655440002)
+
+---
+
+### /mokhouse-mark-paid
+**Created**: 2025-10-16 12:10
+
+##### What it does:
+Marks MOK HOUSE invoices as paid and completes project lifecycle (Phase 4). Updates payment status across Obsidian (paid: true, Date Paid, status: "Complete") and Supabase (paid_amount, status: "paid", paid_on). Simple, fast operation for closing completed projects.
+
+##### When to use it:
+Use when payment received from client. Identifies project by name/customer/invoice number, confirms payment date (defaults to today), updates both systems atomically. Completes project lifecycle. Takes <30 seconds.
+
+**Usage**: `/mokhouse-mark-paid "[project name or invoice details]"`
+**File**: `.claude/commands/mokhouse/mokhouse-mark-paid.md`
+**Integration**: Obsidian + Supabase
 
 ---
 
@@ -462,5 +609,51 @@ Use for batch processing of all AI-assigned tasks in your inbox. Runs unattended
 **Pre-scan**: `npm run scan-tasks` (preview eligible tasks)
 **File**: `.claude/commands/sort-tasks.md`
 **Script**: `scripts/scan-tasks.sh`
+
+---
+
+### /launch-agent
+**Created**: 2025-10-15 10:15
+
+##### What it does:
+Launches specialized Claude Code sub-agents with your task description and automatic conversation context. Streamlines agent invocation for all agent types: mokai-business-strategist, trigger-dev-expert, mcp-integration-engineer, code-reviewer, task-orchestrator, strategic-planner, general-purpose, and others. Confirms agent activation immediately.
+
+##### When to use it:
+Use when you need specialized expertise for business strategy (MOKAI), technical development (Trigger.dev, MCP), code quality, task management, or complex research. Start fresh conversations for unrelated tasks. Agent receives full context automatically - just specify agent type and task description.
+
+**Usage**: `/launch-agent <agent-type> "<task-description>"`
+**Example**: `/launch-agent mokai-business-strategist "analyze government tender opportunity"`
+**File**: `.claude/commands/launch-agent.md`
+
+---
+
+### /mokhouse-portfolio-blurb
+**Created**: 2025-10-16 15:30 | **Updated**: 2025-10-16 17:00 (50-word limit, "Harry" format)
+
+##### What it does:
+Generates professional portfolio project descriptions with AUTOMATIC SELF-LEARNING. Reads `portfolio-style-guide.md` before generating options, creates 3 tagline and description drafts (max 50 words each), tracks your selections, and AUTOMATICALLY analyzes patterns every 3 blurbs (3rd, 6th, 9th, etc.). Uses "Harry" instead of full name for personal, approachable tone. Shows analysis summary and asks permission before updating style guide.
+
+##### When to use it:
+Use after completing music production projects ready for portfolio display. Command automatically learns your preferences - after every 3 blurbs, it shows what it learned and asks if you want to update the style guide. All descriptions strictly limited to 50 words maximum. Gets smarter automatically without manual intervention.
+
+**Usage**: `/mokhouse-portfolio-blurb "[project details or link to project files]"`
+**Example**: `/mokhouse-portfolio-blurb "Just finished Repco sonic branding - 100-year campaign"`
+**File**: `.claude/commands/mokhouse-portfolio-blurb.md`
+**Style Guide**: `01-areas/business/mokhouse/website/portfolio-style-guide.md`
+
+---
+
+### /analyze-portfolio-style
+**Created**: 2025-10-16 16:15
+
+##### What it does:
+Analyzes all MOK HOUSE portfolio blurbs to detect writing patterns from your selections. Examines which tagline/description options you chose, identifies tone and word choice trends, calculates confidence scores, and updates `portfolio-style-guide.md` with discovered patterns. Requires minimum 3 blurbs with selection tracking metadata. **NOTE**: Analysis now runs automatically every 3 blurbs in `/mokhouse-portfolio-blurb`.
+
+##### When to use it:
+Use manually only if you want to analyze patterns outside the automatic 3-blurb cycle (e.g., after manually editing multiple blurbs). Use `--report-only` flag to preview without updating. Most users won't need to run this manually since `/mokhouse-portfolio-blurb` handles it automatically.
+
+**Usage**: `/analyze-portfolio-style` or `/analyze-portfolio-style --report-only`
+**File**: `.claude/commands/analyze-portfolio-style.md`
+**Updates**: `01-areas/business/mokhouse/website/portfolio-style-guide.md`
 
 ---

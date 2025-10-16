@@ -8,8 +8,10 @@ views:
     order:
       - Done
       - file.name
-      - description
       - ai-ignore
+      - description
     sort:
       - property: file.ctime
         direction: DESC
+    columnSize:
+      note.ai-ignore: 94

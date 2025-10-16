@@ -5,7 +5,7 @@ relation:
   - "[[brain dump]]"
 description: Areas to focus on for mastering mokai
 date created: Wed, 10 1st 25, 1:13:27 pm
-date modified: Thu, 10 2nd 25, 4:58:10 am
+date modified: Thu, 10 16th 25, 7:11:52 am
 ---
 Got it ✅ — if we park SaaS as a future diversification play, then your real focus now is:
 
@@ -21,7 +21,7 @@ Stay one step above technical delivery (that’s Jack’s lane)
 
 ---
 
-🔑 What You Should Master Right Now
+### 🔑 What You Should Master Right Now
 
 1. Government Procurement (IPP/APP)
 
@@ -35,7 +35,7 @@ This is your main weapon. If you know the pathways cold, you unlock revenue. Ude
 
 ---
 
-2. Operating Model & Business Architecture
+### 2. Operating Model & Business Architecture
 
 Your job is to design the machine Jack runs inside. Udemy searches:
 
@@ -47,7 +47,7 @@ Your job is to design the machine Jack runs inside. Udemy searches:
 
 ---
 
-3. Finance & Risk Oversight
+### 3. Finance & Risk Oversight
 
 Keep control of cashflow, margins, compliance obligations. Udemy searches:
 
@@ -61,7 +61,7 @@ Keep control of cashflow, margins, compliance obligations. Udemy searches:
 
 ---
 
-4. Stakeholder & Strategic Storytelling
+### 4. Stakeholder & Strategic Storytelling
 
 You’re the face of Mokai in boardrooms — not the tech lead, but the strategist. Udemy searches:
 
@@ -73,7 +73,7 @@ You’re the face of Mokai in boardrooms — not the tech lead, but the strategi
 
 ---
 
-🏹 Priority Order (short list)
+### 🏹 Priority Order (short list)
 
 If I had to cut it down to just one course each stage, here’s the sequence:
 
@@ -87,7 +87,7 @@ If I had to cut it down to just one course each stage, here’s the sequence:
 
 ---
 
-So — Jack masters ISO 27001 / ASD8 / IRAP delivery. You master IPP, operating model, finance, and positioning. That’s the clean division.
+#### So — Jack masters ISO 27001 / ASD8 / IRAP delivery. You master IPP, operating model, finance, and positioning. That’s the clean division.
 
 ---
 
