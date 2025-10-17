@@ -2,7 +2,10 @@
 type:
   - event
 category:
+when:
 relation:
-journal-date:
 archive:
+description:
+note:
+icon:
 ---

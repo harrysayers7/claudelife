@@ -4,8 +4,11 @@ relation:
   - "[[claudelife]]"
 tags:
 description: Business accountant that overseas all accounts
-type: Idea
+type:
+  - Task
 date created: Mon, 10 6th 25, 7:55:07 am
-date modified: Mon, 10 6th 25, 10:19:45 pm
+date modified: Thu, 10 16th 25, 8:37:52 pm
+ai-assigned: true
+ai-ignore:
 ---
 Need an accountant agent that overseas all accounting across all business so can help make decisions on spending etc

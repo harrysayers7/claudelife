@@ -30,7 +30,8 @@ relation: [[mokai]]
 priority: urgent, high, low (leave blank if isnt relevant i dont)
 status: inbox , next up, in progress, waiting, review, done, archive (if task no longer relevent)
 done: check box - if status is done or archive then mark this as true
-project: [project] (name of project or job - this is obviously for when we start actual jobs and would be a wikilink to a project)
+project:
+[project] (name of project or job - this is obviously for when we start actual jobs and would be a wikilink to a project)
 client: [client] - would link to a client profile
 category: let's discuss this but maybe would be learning, marketing, admin etc
 effort: [5]  - a number out of 10 of how much effort can be decimal like 1.5 if really necessary etc so I can sort tasks by effort if I want

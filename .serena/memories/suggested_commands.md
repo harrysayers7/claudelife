@@ -50,7 +50,7 @@
   - Includes script & optimization analysis
   - Suggests companion shell scripts for performance (30-60x speedup)
   - Example: `/create-command` (interactive creation process)
-  
+
 - **NEW**: `/command-update {command-name} "changes"` - Interactive command modification assistant
   - Updates existing slash commands with validation and version tracking
   - Shows diff preview before applying changes

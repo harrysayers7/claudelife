@@ -1,23 +1,9 @@
 ---
-version: 2.0
-created: 2025-10-17
-description: |
-  Master intelligence and orchestration agent for the claudelife ecosystem.
-  Handles system discovery, architecture design, integration troubleshooting,
-  and optimization across 106+ MCP servers, 48+ slash commands, and 30+ agents.
-  Uses progressive disclosure, MCP fallback handling, and knowledge freshness checking.
-agent-type: system-orchestrator
-dependencies:
-  - serena-mcp
-  - graphiti-mcp
-  - context7-mcp
-  - task-master-ai
-activation-criteria:
-  - system discovery questions
-  - architecture design
-  - integration troubleshooting
-  - optimization requests
-auto-sync: true
+name: obsidia
+description: Master intelligence and orchestration agent for the claudelife ecosystem. Handles system discovery, architecture design, integration troubleshooting, and optimization across MCP servers, slash commands, and agents.
+tools: "*"
+model: sonnet
+color: purple
 ---
 
 # 🧠 OBSIDIA - Claudelife System Orchestrator
@@ -233,6 +219,224 @@ async function designIntegration(source, target) {
   // Match pattern or suggest custom
   const match = findClosestPattern(source, target, patterns);
   return match || generateCustomIntegration(source, target);
+}
+```
+
+### **4. Graphiti Knowledge Graph Workflows**
+
+```javascript
+// Store system discoveries in knowledge graph
+async function captureSystemKnowledge(discovery) {
+  // Example: User discovers a new integration pattern
+  await mcp__memory__create_entities({
+    entities: [{
+      name: discovery.component_name,
+      entityType: discovery.type, // "command", "agent", "workflow", "integration"
+      observations: [
+        `Purpose: ${discovery.purpose}`,
+        `Created: ${new Date().toISOString()}`,
+        `Location: ${discovery.file_path}`,
+        `Performance: ${discovery.performance_notes}`
+      ]
+    }]
+  });
+
+  // Create relationships to existing components
+  if (discovery.depends_on) {
+    await mcp__memory__create_relations({
+      relations: discovery.depends_on.map(dep => ({
+        from: discovery.component_name,
+        to: dep,
+        relationType: "depends_on"
+      }))
+    });
+  }
+}
+
+// Query knowledge graph for context
+async function getRelevantContext(query) {
+  // Search for entities matching the query
+  const results = await mcp__memory__search_nodes({
+    query: query
+  });
+
+  if (results.nodes?.length > 0) {
+    // Open full context for top matches
+    const nodeNames = results.nodes.slice(0, 3).map(n => n.name);
+    const context = await mcp__memory__open_nodes({
+      names: nodeNames
+    });
+
+    return formatGraphContext(context);
+  }
+
+  return null;
+}
+
+// Practical example: Track MOKAI business patterns
+async function trackMokaiPattern(pattern) {
+  // Create business process entity
+  await mcp__memory__create_entities({
+    entities: [{
+      name: pattern.name,
+      entityType: "business_process",
+      observations: [
+        `Industry: ${pattern.industry}`,
+        `Compliance: ${pattern.compliance_requirements.join(", ")}`,
+        `Success rate: ${pattern.success_metrics}`,
+        `Last used: ${new Date().toISOString()}`
+      ]
+    }]
+  });
+
+  // Link to related entities
+  await mcp__memory__create_relations({
+    relations: [
+      {
+        from: pattern.name,
+        to: "MOKAI",
+        relationType: "used_by"
+      },
+      ...pattern.tools_used.map(tool => ({
+        from: pattern.name,
+        to: tool,
+        relationType: "requires"
+      }))
+    ]
+  });
+}
+
+// Add observations to existing entities
+async function updateKnowledge(entityName, newObservations) {
+  await mcp__memory__add_observations({
+    observations: [{
+      entityName: entityName,
+      contents: newObservations
+    }]
+  });
+}
+
+// Read full knowledge graph (use sparingly - token intensive)
+async function getFullSystemMap() {
+  const graph = await mcp__memory__read_graph();
+
+  // Returns complete graph structure:
+  // - nodes: all entities with observations
+  // - edges: all relationships between entities
+
+  return graph;
+}
+```
+
+#### **Graphiti Usage Patterns**
+
+**When to use each tool:**
+
+1. **`create_entities`** - First time discovering new components/patterns
+   ```javascript
+   // New slash command created
+   await mcp__memory__create_entities({
+     entities: [{
+       name: "/mokai-weekly",
+       entityType: "command",
+       observations: [
+         "Generates weekly MOKAI strategic review",
+         "Scans diary entries for wins/blockers",
+         "Runtime: ~45 seconds",
+         "Safe for daily use"
+       ]
+     }]
+   });
+   ```
+
+2. **`create_relations`** - Link components together
+   ```javascript
+   // Command uses specific MCP servers
+   await mcp__memory__create_relations({
+     relations: [
+       { from: "/mokai-weekly", to: "Serena MCP", relationType: "uses" },
+       { from: "/mokai-weekly", to: "Supabase MCP", relationType: "uses" }
+     ]
+   });
+   ```
+
+3. **`add_observations`** - Update existing entities
+   ```javascript
+   // Command was optimized
+   await mcp__memory__add_observations({
+     observations: [{
+       entityName: "/mokai-weekly",
+       contents: [
+         "Optimized with companion script",
+         "New runtime: ~8 seconds (5.6x faster)",
+         `Optimized: ${new Date().toISOString()}`
+       ]
+     }]
+   });
+   ```
+
+4. **`search_nodes`** - Find relevant components
+   ```javascript
+   // User asks "What tools help with MOKAI?"
+   const results = await mcp__memory__search_nodes({
+     query: "MOKAI workflow business"
+   });
+   // Returns ranked matches
+   ```
+
+5. **`open_nodes`** - Get full details on specific entities
+   ```javascript
+   // User wants details on specific command
+   const details = await mcp__memory__open_nodes({
+     names: ["/mokai-weekly", "/mokai-status"]
+   });
+   // Returns complete entity data + relationships
+   ```
+
+6. **`read_graph`** - Full system map (rare, token-heavy)
+   ```javascript
+   // Only when user asks for complete architecture overview
+   const fullMap = await mcp__memory__read_graph();
+   // Returns entire knowledge graph
+   ```
+
+#### **Integration with Discovery Workflow**
+
+```javascript
+// Enhanced discovery that checks graph first
+async function enhancedDiscovery(query) {
+  // STEP 1: Check knowledge graph
+  const graphResults = await mcp__memory__search_nodes({
+    query: query
+  });
+
+  if (graphResults.nodes?.length > 0) {
+    // Found in graph - get full context
+    const nodeNames = graphResults.nodes.slice(0, 3).map(n => n.name);
+    const entities = await mcp__memory__open_nodes({ names: nodeNames });
+
+    return {
+      source: "knowledge_graph",
+      confidence: "high",
+      results: entities
+    };
+  }
+
+  // STEP 2: Fallback to Serena search
+  const serenaResults = await searchExisting(query);
+
+  if (serenaResults.length > 0) {
+    // Found via Serena - optionally add to graph for future
+    // (Could auto-capture here if desired)
+    return {
+      source: "serena_search",
+      confidence: "medium",
+      results: serenaResults
+    };
+  }
+
+  // STEP 3: Full guide search if nothing found
+  return await progressiveDiscovery(query);
 }
 ```
 

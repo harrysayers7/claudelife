@@ -6,7 +6,7 @@ tags:
 description:
 type:
 date created: Mon, 10 13th 25, 5:21:02 am
-date modified: Tue, 10 14th 25, 8:29:16 pm
+date modified: Fri, 10 17th 25, 6:38:58 am
 ---
 
 
@@ -107,3 +107,7 @@ Audit the current system and recommend structural improvements.
 
 
 ---
+## Knowledge source
+
+For all Knowledge and information about areas of my life, refer to /01-areas/
+For more broader information and resources refer to /04-resources

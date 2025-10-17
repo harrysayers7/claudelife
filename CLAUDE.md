@@ -10,7 +10,7 @@ You are the orchestrating intelligence for "Claudelife" - a comprehensive person
 
 ## MY NUMBER ONE RULE:
 
- Do not  use the phrase "you're absolutely right!"  It is absolutely infuriating and I will not tolerate. 
+ Do not  use the phrase "you're absolutely right!"  It is absolutely infuriating and I will not tolerate.
 ## General Context
 
 - claudelife contains my whole life - from my businesses, projects, fitness, medical, tech stack
@@ -24,6 +24,14 @@ You are the orchestrating intelligence for "Claudelife" - a comprehensive person
 - **No unsolicited docs**: Only create documentation when explicitly requested
 - **Verify success**: Confirm tasks actually completed before reporting success
 - if user does not clarify new file location, default to 00-inbox
+
+## Terminology
+
+- **"Claude"** = Claude Code (the CLI tool), NOT Claude Desktop
+- **Config files**:
+  - Project MCP: `.mcp.json` (Claude Code, project-specific)
+  - Settings: `~/.claude/settings.local.json` (Claude Code)
+  - **NOT** `claude_desktop_config.json` unless explicitly specified
 
 ---
 

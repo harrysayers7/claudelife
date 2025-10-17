@@ -1,14 +1,16 @@
 ---
 date: "2025-10-13 15:15"
+date created: Mon, 10 13th 25, 3:33:34 pm
+date modified: Thu, 10 16th 25, 8:33:18 pm
 ---
 
 # MCP Server Configuration Mystery - Solved
 
-## The Problem
+### The Problem
 
 You were seeing only 4 MCP servers (archon, linear-server, notionApi, trigger) when running Claude Code from the terminal, despite having configured 15+ servers in various `.mcp.json` files. Nothing we tried - editing configs, restarting processes, clearing caches - made the other servers appear.
 
-## The Confusion
+### The Confusion
 
 Claude Code has **THREE completely separate MCP configuration systems** that don't talk to each other:
 
@@ -20,7 +22,7 @@ We kept editing the wrong files. When you ran `claude` in the terminal, it ignor
 
 The other 2 servers you saw (archon, gen-pdf-mcp) were from Anthropic's remote marketplace registry, not local configs.
 
-## What We Fixed
+### What We Fixed
 
 Added all your MCP servers to the terminal CLI registry using:
 
@@ -30,7 +32,7 @@ claude mcp add <name> <command> [args...] -e KEY=value
 
 Now the terminal shows: gpt-researcher, supabase, github, memory, gmail, context7, graphiti, notion, obsidian, trigger, linear-server, serena, gen-pdf-mcp.
 
-## Key Lesson
+### Key Lesson
 
 **Different Claude Code environments = different MCP configs**. Always use the right tool for each environment:
 - Terminal: `claude mcp add`

@@ -12,7 +12,7 @@ Comprehensive reference for all custom slash commands in the claudelife project.
 - [[#/create-command|/create-command]]
 - [[#/create-hook|/create-hook]]
 - [[#/command-update|/command-update]]
-- [[#/extract-context|/extract-context]]
+- [[#/extract-daily-content|/extract-daily-content]]
 - [[#/research|/research]]
 - [[#/rename-file|/rename-file]]
 - [[#/quick-research|/quick-research]]
@@ -27,12 +27,11 @@ Comprehensive reference for all custom slash commands in the claudelife project.
 - [[#/mokhouse-create-invoice|/mokhouse-create-invoice]]
 - [[#/mokhouse-mark-paid|/mokhouse-mark-paid]]
 - [[#/ingest-document|/ingest-document]]
-- [[#/extract-diary|/extract-diary]]
-- [[#/extract-insights|/extract-insights]]
 - [[#/challenge|/challenge]]
 - [[#/create-prd|/create-prd]]
 - [[#/move-file|/move-file]]
 - [[#/ultra-think|/ultra-think]]
+- [[#/mokai-master|/mokai-master]]
 - [[#/mokai-status|/mokai-status]]
 - [[#/mokai-wins|/mokai-wins]]
 - [[#/mokai-dump|/mokai-dump]]
@@ -44,6 +43,8 @@ Comprehensive reference for all custom slash commands in the claudelife project.
 - [[#/launch-agent|/launch-agent]]
 - [[#/mokhouse-portfolio-blurb|/mokhouse-portfolio-blurb]]
 - [[#/analyze-portfolio-style|/analyze-portfolio-style]]
+- [[#/update-graphiti-tree|/update-graphiti-tree]]
+- [[#/create-event|/create-event]]
 
 ---
 
@@ -90,17 +91,18 @@ Use when modifying existing commands to fix bugs, add features, improve clarity,
 
 ---
 
-### /extract-context
-**Created**: 2025-10-13 17:35
+### /extract-daily-content
+**Created**: 2025-10-17 10:00 | **Replaces**: /extract-diary, /extract-insights, /extract-context
 
 ##### What it does:
-Scans daily notes in `/00 - Daily`, extracts content from Context sections, and consolidates them into `/04-resources/context.md` with wiki links. Uses incremental tracking to only process new or modified files, skipping empty sections.
+Smart AI-powered extraction that analyzes daily note entries from `### 🧠 Thoughts & Notes` sections and intelligently routes them to appropriate files. Uses AI to classify entries (Diary/Insight/Context/Idea), analyzes relevance to all 24 areas in `01-areas/` (>80% confidence threshold), routes to multiple destinations with reasoning shown, requires manual approval, creates cross-links, and auto-creates diary files per area (e.g., `business/mokai/diary-mokai.md`). Only Context-type entries go to `context-*.md` files.
 
 ##### When to use it:
-Use after adding context information to daily notes to build a centralized context file for AI reference and personal knowledge management. Run periodically to keep context file up-to-date.
+Use after adding freeform notes to daily notes. AI automatically categorizes and distributes content to main files (`04-resources/`) and relevant area-specific files (`business/mokai/`, `health-fitness/gym/`, etc.). Replaces old separate extract commands with unified intelligent routing. Shows routing plan with reasoning before committing.
 
-**Usage**: `/extract-context`
-**File**: `.claude/commands/extract-context.md`
+**Usage**: `/extract-daily-content`
+**File**: `.claude/commands/extract-daily-content.md`
+**Old Commands**: Archived in `.claude/commands/archive/`
 
 ---
 
@@ -325,17 +327,17 @@ Use for MOK HOUSE music production projects, client work coordination, or music 
 ## MOK HOUSE Project Lifecycle Commands
 
 ### /mokhouse-create-project
-**Created**: 2025-10-16 11:45
+**Created**: 2025-10-16 11:45 | **Updated**: 2025-10-17 (Google Doc extraction)
 
 ##### What it does:
-Automates MOK HOUSE project creation from client brief emails (Phase 1). Searches Gmail, fetches Google Doc briefs, creates formatted Obsidian project files with frontmatter, generates AI creative suggestions (composer-level jingle/sonic branding direction), and produces SUNO prompts (<1000 chars). Handles full brief-to-project pipeline with proper callouts, H2 headings, and Harrison's composer number (#3).
+Automates MOK HOUSE project creation from client brief emails (Phase 1). Searches Gmail, **extracts Google Doc briefs using Bash + curl**, creates formatted Obsidian project files with frontmatter, generates AI creative suggestions (composer-level jingle/sonic branding direction), and produces SUNO prompts (<1000 chars). Handles full brief-to-project pipeline with proper callouts, H2 headings, and Harrison's composer number (#3).
 
 ##### When to use it:
 Use when client brief emails arrive from Electric Sheep Music, Panda Candy, or new customers. Creates production-ready project files with AI-powered creative direction, sound design ideas, and music generation prompts. Run once per new project brief.
 
 **Usage**: `/mokhouse-create-project "Brief context or customer name"`
 **File**: `.claude/commands/mokhouse/mokhouse-create-project.md`
-**Integration**: Gmail + Google Drive + Obsidian
+**Integration**: Gmail + Google Docs (curl export) + Obsidian
 
 ---
 
@@ -399,34 +401,6 @@ Use when importing external documents into claudelife vault. Automatically extra
 
 ---
 
-### /extract-diary
-**Created**: 2025-10-13 17:35
-
-##### What it does:
-Scans daily notes in `/00 - Daily`, extracts content from Diary sections, and consolidates them into `/04-resources/diary.md` with wiki links. Uses incremental tracking similar to `/extract-context`.
-
-##### When to use it:
-Use after adding diary entries to daily notes to build a centralized diary file for personal reflection and temporal analysis. Run periodically to keep diary file updated.
-
-**Usage**: `/extract-diary`
-**File**: `.claude/commands/extract-diary.md`
-
----
-
-### /extract-insights
-**Created**: 2025-10-13 17:35
-
-##### What it does:
-Scans daily notes in `/00 - Daily`, extracts content from `### 💡 Insights` sections, and consolidates them into `/01-areas/p-dev/insights.md` with wiki links. Tracks processed files to avoid re-scanning.
-
-##### When to use it:
-Use after capturing insights in daily notes to consolidate learnings into a central insights file for knowledge management and personal development tracking.
-
-**Usage**: `/extract-insights`
-**File**: `.claude/commands/extract-insights.md`
-
----
-
 ### /challenge
 **Created**: 2025-10-13 17:35
 
@@ -484,6 +458,23 @@ Use for complex decision-making, architectural design, or when facing multi-face
 ---
 
 ## MOKAI Business Management Commands
+
+### /mokai-master
+**Created**: 2025-10-17 14:30 | **Updated**: 2025-10-17 15:45 (Hybrid knowledge storage)
+
+##### What it does:
+Loads essential MOKAI business context into main conversation using hybrid lazy-smart loading (~1,200-2,500 tokens). Establishes core business model, Indigenous thresholds, service timelines, financial standards, and current focus. Queries Graphiti for recent clients/contractors/tenders if available. Maps knowledge sources (Graphiti → Serena → Operations Guide → Live Data) for intelligent querying during conversation. **NEW**: Hybrid knowledge storage - automatically captures client/contractor relationships to Graphiti (silent), suggests storing new business patterns to Serena (asks permission).
+
+##### When to use it:
+Use at the start of MOKAI-related conversations to enable intelligent business assistance without heavy sub-agents. Context persists throughout conversation. Use `--refresh` to reload current state (dashboard, Graphiti). Enables conversational MOKAI discussions for strategy, compliance, finance, or operations questions with smart routing to deeper knowledge sources. **NEW**: During conversations, automatically detects and stores discoveries - contractor rates, client requirements, tender details go to Graphiti automatically; new business processes, strategic decisions, lessons learned prompt you for Serena storage.
+
+**Usage**: `/mokai-master` or `/mokai-master --refresh`
+**File**: `.claude/commands/mokai-master.md`
+**Token Cost**: 1,200-2,500 tokens upfront, minimal per-question
+**Integration**: Graphiti (auto-storage), Serena (suggested storage), Dashboard, Operations Guide
+**Knowledge Capture**: Automatic (Graphiti) + Suggested (Serena)
+
+---
 
 ### /mokai-status
 **Created**: 2025-10-14 | **Updated**: 2025-10-14 (Inbox task scanning + Serena MCP)
@@ -628,18 +619,19 @@ Use when you need specialized expertise for business strategy (MOKAI), technical
 ---
 
 ### /mokhouse-portfolio-blurb
-**Created**: 2025-10-16 15:30 | **Updated**: 2025-10-16 17:00 (50-word limit, "Harry" format)
+**Created**: 2025-10-16 15:30 | **Updated**: 2025-10-16 18:05 (master file integration)
 
 ##### What it does:
-Generates professional portfolio project descriptions with AUTOMATIC SELF-LEARNING. Reads `portfolio-style-guide.md` before generating options, creates 3 tagline and description drafts (max 50 words each), tracks your selections, and AUTOMATICALLY analyzes patterns every 3 blurbs (3rd, 6th, 9th, etc.). Uses "Harry" instead of full name for personal, approachable tone. Shows analysis summary and asks permission before updating style guide.
+Generates professional portfolio project descriptions with AUTOMATIC SELF-LEARNING. Reads `portfolio-style-guide.md` before generating options, creates 3 tagline and description drafts (max 50 words each), tracks your selections, AUTOMATICALLY appends to master blurbs file (without credits), and analyzes patterns every 3 blurbs (3rd, 6th, 9th, etc.). Uses "Harry" instead of full name for personal, approachable tone. Shows analysis summary and asks permission before updating style guide.
 
 ##### When to use it:
-Use after completing music production projects ready for portfolio display. Command automatically learns your preferences - after every 3 blurbs, it shows what it learned and asks if you want to update the style guide. All descriptions strictly limited to 50 words maximum. Gets smarter automatically without manual intervention.
+Use after completing music production projects ready for portfolio display. Command automatically learns your preferences and maintains a master collection file (`01-blurbs-master.md`) of all blurbs without credits sections for easy website publishing. All descriptions strictly limited to 50 words maximum. Gets smarter automatically without manual intervention.
 
 **Usage**: `/mokhouse-portfolio-blurb "[project details or link to project files]"`
 **Example**: `/mokhouse-portfolio-blurb "Just finished Repco sonic branding - 100-year campaign"`
 **File**: `.claude/commands/mokhouse-portfolio-blurb.md`
 **Style Guide**: `01-areas/business/mokhouse/website/portfolio-style-guide.md`
+**Master File**: `01-areas/business/mokhouse/website/project-blurbs/01-blurbs-master.md`
 
 ---
 
@@ -655,5 +647,36 @@ Use manually only if you want to analyze patterns outside the automatic 3-blurb 
 **Usage**: `/analyze-portfolio-style` or `/analyze-portfolio-style --report-only`
 **File**: `.claude/commands/analyze-portfolio-style.md`
 **Updates**: `01-areas/business/mokhouse/website/portfolio-style-guide.md`
+
+---
+
+### /update-graphiti-tree
+**Created**: 2025-10-17 12:38
+
+##### What it does:
+Regenerates the Graphiti knowledge graph structure visualization at `04-resources/guides/graphiti-tree.md` with current state. Creates visual entity hierarchy, relationship mappings, statistics, network analysis, and growth recommendations. Includes changelog at bottom showing entities/relationships added since last update. Silently updates file without confirmation (~2-3 seconds).
+
+##### When to use it:
+Use occasionally when you want a visual snapshot of the knowledge graph structure. Shows entity type distributions, relationship patterns, isolated entities, and domain coverage. Highlights gaps like "MOKAI has no contractors" or "Only 1 client tracked." Run after adding significant entities or relationships to see updated structure.
+
+**Usage**: `/update-graphiti-tree`
+**File**: `.claude/commands/update-graphiti-tree.md`
+
+---
+
+### /create-event
+**Created**: 2025-10-17 16:30 | **Updated**: 2025-10-17 18:45
+
+##### What it does:
+Creates structured event files using the event.md template with interactive prompts for title, date, optional time, category, and validated relation tags. Auto-saves to `00-inbox/events/` with YAML-safe wikilink formatting (quoted strings). Events automatically appear in daily notes "Today's Events" table when `when` date matches today. Supports optional in-depth description in markdown body for complex events (conferences, multi-day events, detailed agendas).
+
+##### When to use it:
+Use for scheduling appointments, meetings, deadlines, or any dated event. Perfect for quick event capture with automatic daily note integration. Supports all-day events (no time), business events with relations to areas, optional notes for frontmatter, and detailed descriptions in body when needed. Created events display automatically in daily notes on the matching date.
+
+**Usage**: `/create-event`
+**File**: `.claude/commands/create-event.md`
+**Template**: `98-templates/event.md`
+**Output**: `00-inbox/events/[Event Name].md`
+**Integration**: Daily notes "Today's Events" table (DataviewJS)
 
 ---

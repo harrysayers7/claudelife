@@ -3,7 +3,7 @@ views:
     name: Table
     filters:
       or:
-        - "!event.isEmpty()"
+        - type.contains("event")
         - '!note["internal review"].isEmpty()'
     order:
       - file.name

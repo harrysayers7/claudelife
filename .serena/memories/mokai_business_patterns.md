@@ -60,7 +60,7 @@ This memory captures MOKAI-specific patterns, formats, and workflows for efficie
 **Agent-Mokai Discussion Section** (Added 2025-10-15):
 - **Purpose**: Collaborative discussion between Harrison and agent-mokai, not just implementation
 - **Engagement Style**: Agent should challenge assumptions, evaluate feasibility, provide alternatives
-- **When Agent Reads**: 
+- **When Agent Reads**:
   - User asks "did I note any ideas for you?" or similar
   - During progress/status reviews
   - Proactively during weekly/monthly reviews

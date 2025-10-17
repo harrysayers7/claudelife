@@ -5,28 +5,28 @@ tags:
 description:
 type: guide
 date created: Sun, 10 5th 25, 6:37:13 pm
-date modified: Sun, 10 5th 25, 6:45:56 pm
+date modified: Thu, 10 16th 25, 8:36:28 pm
 ---
 ##### Here's an instruction guide to implementing Claude Code Sub Agents, based on the provided video:
 
 Implementing Claude Code Sub Agents: A Detailed Guide
-This guide will walk you through setting up and utilizing Claude Code Sub Agents, focusing on best practices and common pitfalls to avoid.
+#### This guide will walk you through setting up and utilizing Claude Code Sub Agents, focusing on best practices and common pitfalls to avoid.
 1. Understanding Claude Code Sub Agents [01:23]
  * Flow of Information: It's crucial to understand how sub-agents interact. Your primary agent prompts the sub-agents, which then perform their work autonomously. Importantly, sub-agents report back to your primary agent, not directly to you, and your primary agent then reports to you [01:37]. This distinction influences how you write your sub-agent prompts.
  * System Prompt, Not User Prompt: When defining a sub-agent, you are writing its system prompt, not a user prompt [03:45]. This defines its top-level functionality and influences what information is available to it.
  * Delegation, Not Direct Prompting: You don't directly prompt your sub-agents. Instead, you write a prompt for your primary agent to delegate tasks to your sub-agents. Think of sub-agents as specialized tools for your primary agent [05:52].
 2. Anatomy of a Sub-Agent Prompt [02:18]
-A sub-agent prompt typically includes:
+### A sub-agent prompt typically includes:
  * Agent Name (Unique ID): A unique identifier for your agent [03:01].
  * Description: This is vital. It communicates to your primary agent when it should call this specific sub-agent [03:07]. Leverage this to instruct your primary agent on how to prompt the sub-agent effectively [22:15].
  * Tools: Specify the particular tools available to this sub-agent [03:14].
  * Sub-Agent Complete: A keyword indicating the sub-agent's completion [03:14].
  * Color: For visual identification in the terminal [03:14].
  * Report Format: Explicitly instruct the sub-agent on how to communicate its findings back to the primary agent [04:11]. For example, "Claude, respond to the user with this message."
-3. Avoiding Common Mistakes [03:31]
+### 3. Avoiding Common Mistakes [03:31]
  * Mistake 1: Not understanding it's a system prompt: As mentioned, what you write for a sub-agent is its system prompt, not a user prompt. This impacts how you structure the prompt and what information is available [03:45].
  * Mistake 2: Not understanding who the sub-agent reports to: Sub-agents report to the primary agent, not directly to the user [04:11]. Ensure your report format guides the sub-agent to communicate effectively with the primary agent.
-4. Problem-Solution-Technology Approach [10:47]
+### 4. Problem-Solution-Technology Approach [10:47]
 When developing agents, follow this order:
  * Problem: Identify a clear engineering problem.
  * Solution: Design a solution to that problem.

@@ -41,15 +41,15 @@ dv.table(
 
 
 ### 🗒️ Diary
--  Finished the Covermore ad, sent it off, and Glenn's pretty happy with it. 
--  Tried to do a little bit of study and highlighting of the operations guide, but I got pissed off when all the highlighting got erased and I will have to go back and do it all again. 
+-  Finished the Covermore ad, sent it off, and Glenn's pretty happy with it.
+-  Tried to do a little bit of study and highlighting of the operations guide, but I got pissed off when all the highlighting got erased and I will have to go back and do it all again.
 - FUCKING MCP'S KEEP BREAKING AND I DONT KNOW AND IM LOSING MY MIND!
 
 
 ---
 
 ### 💡 Insights
-- 
+-
 
 
 ---
