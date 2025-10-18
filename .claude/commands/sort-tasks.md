@@ -99,8 +99,9 @@ I'll help you manage your task inbox by:
 
 3. **Execute Each Task Sequentially**:
    - Read task file content (body after frontmatter)
+   - **Check for special instruction tags** (see Special Tags section below)
    - Parse and understand what needs to be done
-   - Execute the task using appropriate tools
+   - Execute the task according to detected tags
    - Verify completion before marking done
    - If successful: Update frontmatter `Done: true`
    - If failed: Log failure reason, skip, continue to next
@@ -126,6 +127,121 @@ I'll help you manage your task inbox by:
    - List failed tasks with failure reasons
    - Show deletion summary
    - Confirm git commit
+
+## Special Instruction Tags
+
+Tasks can include special tags that modify execution behavior. Tags can appear:
+- **Inline**: At the end of the instruction text (e.g., "Fix auth bug #ask")
+- **Frontmatter**: In the `tags:` field in YAML (applies to entire task body)
+
+### Supported Tags:
+
+#### `#ask` - Request Confirmation Before Implementation
+When `#ask` is detected:
+1. Parse and understand the task requirements
+2. Present implementation plan to user
+3. **Wait for explicit approval** before executing
+4. Only proceed after user confirms
+
+**Example**:
+```markdown
+---
+Done: false
+ai-assigned: true
+tags: [ask]
+---
+Refactor the database schema to add user roles
+```
+*Behavior*: Show refactoring plan, ask "Proceed with this approach?" before making changes
+
+#### `#challenge` - Critical Analysis Mode
+When `#challenge` is detected:
+1. Parse the task instruction/claim
+2. **Automatically invoke `/challenge` slash command** with the task content
+3. Present critical analysis with counterpoints
+4. After challenge complete, ask user if they want to proceed with task
+
+**Example**:
+```markdown
+---
+Done: false
+ai-assigned: true
+---
+Switch to MongoDB because it scales better #challenge
+```
+*Behavior*: Run `/challenge "Switch to MongoDB because it scales better"`, show analysis, then ask to proceed
+
+#### `#verify` - Verify Information Using Research
+When `#verify` is detected:
+1. Identify factual claims or assumptions in the task
+2. **Automatically invoke `/quick-research`** to verify information
+3. Present research findings
+4. Highlight any discrepancies between task assumptions and reality
+5. Ask user if task should be modified based on findings
+
+**Example**:
+```markdown
+---
+Done: false
+ai-assigned: true
+tags: [verify]
+---
+Implement rate limiting at 1000 req/sec since that's the industry standard
+```
+*Behavior*: Run `/quick-research "API rate limiting industry standards"`, show findings, suggest adjustments if needed
+
+### Tag Detection Logic
+
+```javascript
+// Check inline tags (end of text)
+const inlineTags = {
+  hasAsk: /\s#ask\s*$/i.test(taskBody),
+  hasChallenge: /\s#challenge\s*$/i.test(taskBody),
+  hasVerify: /\s#verify\s*$/i.test(taskBody)
+};
+
+// Check frontmatter tags
+const frontmatterTags = {
+  hasAsk: frontmatter.tags?.includes('ask'),
+  hasChallenge: frontmatter.tags?.includes('challenge'),
+  hasVerify: frontmatter.tags?.includes('verify')
+};
+
+// Combine (either location triggers behavior)
+const effectiveTags = {
+  ask: inlineTags.hasAsk || frontmatterTags.hasAsk,
+  challenge: inlineTags.hasChallenge || frontmatterTags.hasChallenge,
+  verify: inlineTags.hasVerify || frontmatterTags.hasVerify
+};
+```
+
+### Tag Priority (Multiple Tags)
+
+If multiple tags are present, execute in this order:
+1. **`#verify`** first (gather facts)
+2. **`#challenge`** second (critical analysis)
+3. **`#ask`** last (request approval)
+
+**Example**:
+```markdown
+---
+ai-assigned: true
+---
+Migrate to Supabase for better performance #verify #challenge #ask
+```
+*Execution*:
+1. Research Supabase performance vs current setup
+2. Challenge the migration assumption
+3. Present plan and ask for approval
+
+### Batch Mode Behavior
+
+When running `/sort-tasks` (batch mode), tagged tasks pause execution:
+- **`#ask`**: Pauses batch, asks for approval, resumes on confirm
+- **`#challenge`**: Pauses batch, shows analysis, asks to proceed, resumes on confirm
+- **`#verify`**: Pauses batch, shows research, asks if modifications needed, resumes
+
+If user declines a tagged task, it's skipped and batch continues with next task.
 
 ## Output Format
 

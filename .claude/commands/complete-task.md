@@ -39,8 +39,9 @@ This command executes a specific task from your `/00-inbox/tasks/` directory tha
    - Extract frontmatter metadata
    - Read task description from markdown body
    - Check if already `Done: true` (skip if so)
+   - **Check for special instruction tags** (see Special Tags section below)
 
-3. **Execute Task Directly**: Implement the task without confirmation
+3. **Execute Task Based on Tags**: Implement the task according to detected tags
    - Use Serena MCP for codebase exploration if needed
    - Follow established project patterns
    - Apply appropriate tools and techniques
@@ -135,6 +136,106 @@ By default, I'll execute tasks directly. If you want confirmation before executi
 ```
 
 Or simply state: "Confirm before executing"
+
+## Special Instruction Tags
+
+Tasks can include special tags that modify execution behavior. Tags can appear:
+- **Inline**: At the end of the instruction text (e.g., "Fix auth bug #ask")
+- **Frontmatter**: In the `tags:` field in YAML (applies to entire task body)
+
+### Supported Tags:
+
+#### `#ask` - Request Confirmation Before Implementation
+When `#ask` is detected:
+1. Parse and understand the task requirements
+2. Present implementation plan to user
+3. **Wait for explicit approval** before executing
+4. Only proceed after user confirms
+
+**Example**:
+```markdown
+---
+Done: false
+tags: [ask]
+---
+Refactor the database schema to add user roles
+```
+*Behavior*: Show refactoring plan, ask "Proceed with this approach?" before making changes
+
+#### `#challenge` - Critical Analysis Mode
+When `#challenge` is detected:
+1. Parse the task instruction/claim
+2. **Automatically invoke `/challenge` slash command** with the task content
+3. Present critical analysis with counterpoints
+4. After challenge complete, ask user if they want to proceed with task
+
+**Example**:
+```markdown
+---
+Done: false
+---
+Switch to MongoDB because it scales better #challenge
+```
+*Behavior*: Run `/challenge "Switch to MongoDB because it scales better"`, show analysis, then ask to proceed
+
+#### `#verify` - Verify Information Using Research
+When `#verify` is detected:
+1. Identify factual claims or assumptions in the task
+2. **Automatically invoke `/quick-research`** to verify information
+3. Present research findings
+4. Highlight any discrepancies between task assumptions and reality
+5. Ask user if task should be modified based on findings
+
+**Example**:
+```markdown
+---
+Done: false
+tags: [verify]
+---
+Implement rate limiting at 1000 req/sec since that's the industry standard
+```
+*Behavior*: Run `/quick-research "API rate limiting industry standards"`, show findings, suggest adjustments if needed
+
+### Tag Detection Logic
+
+```javascript
+// Check inline tags (end of text)
+const inlineTags = {
+  hasAsk: /\s#ask\s*$/i.test(taskBody),
+  hasChallenge: /\s#challenge\s*$/i.test(taskBody),
+  hasVerify: /\s#verify\s*$/i.test(taskBody)
+};
+
+// Check frontmatter tags
+const frontmatterTags = {
+  hasAsk: frontmatter.tags?.includes('ask'),
+  hasChallenge: frontmatter.tags?.includes('challenge'),
+  hasVerify: frontmatter.tags?.includes('verify')
+};
+
+// Combine (either location triggers behavior)
+const effectiveTags = {
+  ask: inlineTags.hasAsk || frontmatterTags.hasAsk,
+  challenge: inlineTags.hasChallenge || frontmatterTags.hasChallenge,
+  verify: inlineTags.hasVerify || frontmatterTags.hasVerify
+};
+```
+
+### Tag Priority (Multiple Tags)
+
+If multiple tags are present, execute in this order:
+1. **`#verify`** first (gather facts)
+2. **`#challenge`** second (critical analysis)
+3. **`#ask`** last (request approval)
+
+**Example**:
+```markdown
+Migrate to Supabase for better performance #verify #challenge #ask
+```
+*Execution*:
+1. Research Supabase performance vs current setup
+2. Challenge the migration assumption
+3. Present plan and ask for approval
 
 ## Output Format
 
