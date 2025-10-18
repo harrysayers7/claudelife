@@ -1,7 +1,9 @@
 ---
-date: "2025-10-13 17:30"
+date: 2025-10-13 17:30
 date created: Tue, 10 14th 25, 4:45:52 pm
-date modified: Thu, 10 16th 25, 3:19:44 pm
+date modified: Fri, 10 17th 25, 5:58:52 pm
+aliases:
+  - Commands
 ---
 
 # Claudelife Commands Guide
@@ -45,6 +47,12 @@ Comprehensive reference for all custom slash commands in the claudelife project.
 - [[#/analyze-portfolio-style|/analyze-portfolio-style]]
 - [[#/update-graphiti-tree|/update-graphiti-tree]]
 - [[#/create-event|/create-event]]
+- [[#/accountant|/accountant]]
+- [[#/mokai-bas|/mokai-bas]]
+- [[#/mokhouse-bas|/mokhouse-bas]]
+- [[#/rethink|/rethink]]
+- [[#/issue-create|/issue-create]]
+- [[#/issue-call|/issue-call]]
 
 ---
 
@@ -92,13 +100,13 @@ Use when modifying existing commands to fix bugs, add features, improve clarity,
 ---
 
 ### /extract-daily-content
-**Created**: 2025-10-17 10:00 | **Replaces**: /extract-diary, /extract-insights, /extract-context
+**Created**: 2025-10-17 10:00 | **Replaces**: /extract-diary, /extract-insights, /extract-context | **Updated**: 2025-10-17 (Self-learning: Extract & reformulate content)
 
 ##### What it does:
-Smart AI-powered extraction that analyzes daily note entries from `### 🧠 Thoughts & Notes` sections and intelligently routes them to appropriate files. Uses AI to classify entries (Diary/Insight/Context/Idea), analyzes relevance to all 24 areas in `01-areas/` (>80% confidence threshold), routes to multiple destinations with reasoning shown, requires manual approval, creates cross-links, and auto-creates diary files per area (e.g., `business/mokai/diary-mokai.md`). Only Context-type entries go to `context-*.md` files.
+Smart AI-powered extraction that analyzes daily note entries from `### 🧠 Notes` sections and intelligently routes them to appropriate files. Uses AI to classify entries (Diary/Insight/Context/Idea), **extracts and reformulates only topically relevant portions for each destination** (removes stream-of-consciousness, filler, personal asides), analyzes relevance to all 24 areas in `01-areas/` (>80% confidence threshold), routes to multiple destinations with custom extracted content per file, requires manual approval showing reformulated previews, creates cross-links, and auto-creates diary files per area. **Context files receive professional distilled points, not full narratives**.
 
 ##### When to use it:
-Use after adding freeform notes to daily notes. AI automatically categorizes and distributes content to main files (`04-resources/`) and relevant area-specific files (`business/mokai/`, `health-fitness/gym/`, etc.). Replaces old separate extract commands with unified intelligent routing. Shows routing plan with reasoning before committing.
+Use after adding freeform brain-dump notes to daily notes. AI automatically categorizes, extracts relevant portions, reformulates into clear professional language, and distributes to main files (`04-resources/`) and relevant area-specific files. Each destination receives only what's contextually relevant in polished format. Shows routing plan with reformulated content before committing. **Improved**: Now handles stream-of-consciousness writing style intelligently.
 
 **Usage**: `/extract-daily-content`
 **File**: `.claude/commands/extract-daily-content.md`
@@ -374,16 +382,17 @@ Use when PO arrives from client. Looks up customer preferences (14-day terms, no
 
 ### /mokhouse-mark-paid
 **Created**: 2025-10-16 12:10
+**Updated**: 2025-10-18 (Added Stripe invoice sync)
 
 ##### What it does:
-Marks MOK HOUSE invoices as paid and completes project lifecycle (Phase 4). Updates payment status across Obsidian (paid: true, Date Paid, status: "Complete") and Supabase (paid_amount, status: "paid", paid_on). Simple, fast operation for closing completed projects.
+Marks MOK HOUSE invoices as paid and completes project lifecycle (Phase 4). Updates payment status across **three systems**: Obsidian (paid: true, Date Paid, status: "Complete"), Supabase (paid_amount, status: "paid", paid_on), and **Stripe** (invoice marked as paid out-of-band). Ensures all systems stay synchronized for accurate financial reporting.
 
 ##### When to use it:
-Use when payment received from client. Identifies project by name/customer/invoice number, confirms payment date (defaults to today), updates both systems atomically. Completes project lifecycle. Takes <30 seconds.
+Use when payment received from client (bank transfer, check, etc.). Identifies project by name/customer/invoice number, confirms payment date (defaults to today), updates Obsidian, Supabase, and Stripe atomically. Maintains sync across all financial systems. Completes project lifecycle. Takes <30 seconds.
 
 **Usage**: `/mokhouse-mark-paid "[project name or invoice details]"`
 **File**: `.claude/commands/mokhouse/mokhouse-mark-paid.md`
-**Integration**: Obsidian + Supabase
+**Integration**: Obsidian + Supabase + Stripe
 
 ---
 
@@ -572,18 +581,19 @@ Use when you want to complete a specific task from your inbox immediately. Simpl
 ## Task Management Commands
 
 ### /janitor
-**Created**: 2025-10-15 04:12 | **Updated**: 2025-10-15 04:18 (scan-archive-candidates.sh integration)
+**Created**: 2025-10-15 04:12 | **Updated**: 2025-10-18 07:45 (v2.0: MOK HOUSE operations)
 
 ##### What it does:
-Maintenance command that cleans up the claudelife vault by archiving completed/archived files and purging old archives. Uses `scan-archive-candidates.sh` script for instant scanning (<1 second), moves files with `done: true` or `archive: true` to `/99-archive`, then deletes files in `/99-archive` older than 30 days. **Performance**: 30-60x faster than MCP scanning.
+Master maintenance command cleaning the entire claudelife system. **PART A (Vault)**: Uses `scan-archive-candidates.sh` for instant scanning (<1 second), archives completed files to `/99-archive`, purges files older than 30 days. **PART B (MOK HOUSE)**: Syncs Supabase invoices with Obsidian projects, flags invoices marked [paid] in Supabase but missing in Stripe, extracts delivery date updates from Kate/Glenn emails via Gmail MCP (requires confirmation), creates inbox tasks from relevant non-project MOK HOUSE emails with [[mokhouse]] relation. **Runtime**: ~20-35 seconds total.
 
 ##### When to use it:
-Use periodically (weekly/monthly) to keep the vault organized and prevent clutter. Ideal for automated maintenance of completed tasks, archived notes, and old reference materials. Use `npm run scan-archive` to preview files before running `/janitor`.
+Use periodically to maintain vault cleanliness and ensure MOK HOUSE business data stays synchronized across systems (Obsidian, Supabase, Stripe). Runs on-demand for manual control. Vault cleanup <1 second, business operations 15-30 seconds. Preview vault changes with `npm run scan-archive`. Gmail updates always require confirmation before applying. Invoice sync identifies discrepancies without modifying files. Future: Can add scheduled automation.
 
 **Usage**: `/janitor`
-**Pre-scan**: `npm run scan-archive` (preview candidates)
+**Pre-scan**: `npm run scan-archive` (vault preview only)
 **File**: `.claude/commands/janitor.md`
-**Script**: `scripts/scan-archive-candidates.sh`
+**Script**: `scripts/scan-archive-candidates.sh` (vault cleanup)
+**MCPs**: Supabase, Stripe, Gmail, Serena
 
 ---
 
@@ -665,18 +675,165 @@ Use occasionally when you want a visual snapshot of the knowledge graph structur
 ---
 
 ### /create-event
-**Created**: 2025-10-17 16:30 | **Updated**: 2025-10-17 18:45
+**Created**: 2025-10-17 16:30 | **Updated**: 2025-10-17 20:15 (checkbox format with DataviewJS parsing)
 
 ##### What it does:
-Creates structured event files using the event.md template with interactive prompts for title, date, optional time, category, and validated relation tags. Auto-saves to `00-inbox/events/` with YAML-safe wikilink formatting (quoted strings). Events automatically appear in daily notes "Today's Events" table when `when` date matches today. Supports optional in-depth description in markdown body for complex events (conferences, multi-day events, detailed agendas).
+Creates structured event files with **automatic emoji prefix detection** (21 categories) and **checkbox-based recurring event support**. Analyzes title, category, relation, and note fields to intelligently prefix events with appropriate emojis (⛰️ MOKAI, 🎹 Mok House, 🏥 Medical, 📅 Holidays, etc.). Interactive prompts for date, time, **checkbox recurrence pattern** (check one: daily/weekly/biweekly/monthly/yearly), category, and validated relation tags. **One file creates multiple occurrences** - no duplicate markdown files needed. Events auto-save to `00-inbox/events/` with YAML-safe wikilinks and appear in daily notes when they occur.
 
 ##### When to use it:
-Use for scheduling appointments, meetings, deadlines, or any dated event. Perfect for quick event capture with automatic daily note integration. Supports all-day events (no time), business events with relations to areas, optional notes for frontmatter, and detailed descriptions in body when needed. Created events display automatically in daily notes on the matching date.
+Use for scheduling any dated event - appointments, meetings, deadlines. Emoji prefixes add visual categorization automatically (e.g., "Doctor Appointment" → "🏥 Doctor Appointment"). **Perfect for recurring events** like weekly meetings, monthly invoices, yearly birthdays - one file handles all occurrences. Checkbox format eliminates typing (just check the box). Supports all-day events, business relations, optional notes, and detailed descriptions for complex events. DataviewJS automatically extracts checked pattern and generates occurrences based on recurrence pattern and end date.
 
 **Usage**: `/create-event`
 **File**: `.claude/commands/create-event.md`
+**Emoji Mappings**: `00-inbox/Calendar emojis.md` (21 categories)
 **Template**: `98-templates/event.md`
-**Output**: `00-inbox/events/[Event Name].md`
-**Integration**: Daily notes "Today's Events" table (DataviewJS)
+**Output**: `00-inbox/events/[Emoji] [Event Name].md`
+**Integration**: Daily notes "Today's Events" and "This Week's Events" tables (DataviewJS parses [x] markers for recurrence)
+**Recurrence Format**: Checkbox list - check one pattern (daily/weekly/biweekly/monthly/yearly) with optional end date
+
+---
+
+## Financial Management Commands
+
+### /accountant
+**Created**: 2025-10-17 21:30
+
+##### What it does:
+Comprehensive AI accountant providing financial intelligence across Harry's complete business ecosystem (MOKAI PTY LTD, MOK HOUSE PTY LTD, sole trader, HS Family Trust). Operates in four priority modes: cash-flow (default dashboard), budget tracking, forecasting (3/6/12 months), and tax planning with trust optimization. Always monitors GST threshold ($75K turnover), alerts at 80%, and calculates optimal trust distributions to minimize family tax. Queries real-time Supabase data via MCP, handles irregular income (APRA royalties, SAFIA), tracks personal savings burn rate, and provides Australian tax law compliance (ATO, BAS, GST, PAYG, Division 7A, franking credits).
+
+##### When to use it:
+Use for financial decision support, cash flow analysis, budget reviews, tax optimization, or GST threshold monitoring. Provides mode-specific analysis: `/accountant --mode=cash-flow` for receivables aging and burn rate, `/accountant --mode=tax-planning` for trust distribution optimization keeping individuals below $45K threshold (19% vs 32.5% bracket), `/accountant how long until savings run out?` for runway calculations. Saves all analysis to `01-areas/finance/analysis/` with professional disclaimers. **Always flags when registered tax agent (RTA) review required**.
+
+**Usage**: `/accountant [query]` or `/accountant --mode=[cash-flow|budget|forecast|tax-planning]`
+**File**: `.claude/commands/accountant.md`
+**Integration**: Supabase MCP (real-time financial data)
+**Entities**: MOK HOUSE, MOKAI, Sole Trader (Harrison Robert Sayers), HS Family Trust
+**Output**: `01-areas/finance/analysis/[mode]-[date].md`
+
+---
+
+### /mokai-bas
+**Created**: 2025-10-17 21:30
+
+##### What it does:
+Business Activity Statement (BAS) preparation for MOKAI PTY LTD with GST reconciliation, PAYG calculations, and export for tax agent lodgement. Queries Supabase for sales/purchases (GST G1-G21 calculations), contractor payments (PAYG withholding W1-W4, ABN verification at 47% if no ABN), and PAYG instalments (T1-T3 if applicable). Includes Indigenous business compliance checks (Supply Nation reporting), contractor vs employee classification, and government contract payment term analysis (Commonwealth 20-day rule). Generates comprehensive BAS summary with reconciliation checklists, supporting documentation requirements, and specialist review flags.
+
+##### When to use it:
+Use quarterly (or monthly if turnover >$20M) for BAS preparation before tax agent lodgement. Run `/mokai-bas Q2 2025` for October-December quarter, `/mokai-bas October 2025` for monthly. Calculates GST payable/refund, PAYG obligations, provides export-ready data for registered tax agent. **Note**: MOKAI will register for GST immediately when operational (government contracts). Includes prime contractor margin analysis and subcontractor PAYG compliance.
+
+**Usage**: `/mokai-bas [Q1/Q2/Q3/Q4 YYYY]` or `/mokai-bas [Month YYYY]`
+**File**: `.claude/commands/mokai-bas.md`
+**Entity**: MOKAI PTY LTD (ABN: 12345678901)
+**Integration**: Supabase MCP
+**Output**: `01-areas/business/mokai/finance/bas/mokai-bas-[period]-[date].md`
+
+---
+
+### /mokhouse-bas
+**Created**: 2025-10-17 21:30
+
+##### What it does:
+Business Activity Statement (BAS) preparation for MOK HOUSE PTY LTD with **critical GST registration status check as first step**. If not GST registered (current state), shows "BAS not required" message and provides GST threshold monitoring guidance. If registered, performs full GST reconciliation (G1-G21), tracks music industry specific deductions (APRA/SAFIR fees, studio equipment, software, collaboration costs), calculates personal savings burn rate, monitors trust ownership transfer implications, and plans future salary extraction strategy (<$45K threshold). Includes project revenue breakdown for music production tracking.
+
+##### When to use it:
+Use quarterly to check BAS requirements and GST status. Currently shows "not required" with threshold monitoring (MOK HOUSE not registered, turnover <$75K). Run `/mokhouse-bas Q2 2025` for status check and threshold progress, `/mokhouse-bas status` for quick GST registration check. When registered in future, provides full BAS preparation. Tracks income extraction planning (living off personal savings now, salary + dividends when profitable). **Always checks GST status first - no BAS if not registered**.
+
+**Usage**: `/mokhouse-bas [Q1/Q2/Q3/Q4 YYYY]` or `/mokhouse-bas status`
+**File**: `.claude/commands/mokhouse-bas.md`
+**Entity**: MOK HOUSE PTY LTD (ABN: 38690628212)
+**Integration**: Supabase MCP
+**Output**: `01-areas/business/mokhouse/finance/bas/mokhouse-bas-[period]-[date].md`
+**GST Status**: Not registered (monitor threshold at 80%)
+
+---
+
+### /rethink
+**Created**: 2025-10-18 07:45
+
+##### What it does:
+Applies creative systems thinking framework to reframe problems from first principles. Zooms out to identify higher-order contexts (2-3 system layers), challenges assumptions with alternate framings (Wild/Systemic/Elegant/Counterintuitive), imports cross-domain analogies from unrelated fields, generates 3-5 divergent solution pathways ranked by novelty × impact, and provides meta-reflection uncovering blind spots. Keeps analysis purely theoretical - doesn't limit to current tech stack. Structured output under 600 words.
+
+##### When to use it:
+Use when stuck on complex problems, making strategic decisions, or need unconventional approaches. Works in two modes: apply to current conversation (no args) or explicit problem (with args). Ideal for reframing business challenges, technical architecture, or any situation requiring lateral creativity beyond conventional solutions. Integrates with Serena to store novel patterns discovered.
+
+**Usage**: `/rethink` or `/rethink "[problem description]"`
+**File**: `.claude/commands/rethink.md`
+
+---
+
+## Issue Management System
+
+### /issue-create
+**Created**: 2025-10-18 07:00
+**Performance**: Companion script `scan-issues.sh` for 30-60x speedup
+
+##### What it does:
+Creates comprehensive issue reports with sequential IDs (001, 002, 003) for debugging Claude Code, MCP servers, hooks, scripts, and technical problems. Auto-checks Serena's memory first for known solutions before creating new issues. Captures technical context (type, category, severity, error messages, attempted solutions, related files) in YAML frontmatter. Provides category-specific debugging suggestions and stores issues in `01-areas/claude-code/issues/`. Uses companion script for fast ID generation and issue searching.
+
+##### When to use it:
+Use when encountering technical problems that aren't solved by Serena's memory or quick fixes. Categories include mcp-server, hook, script, command, database, automation, and configuration issues. Severity levels (critical/high/medium/low) help prioritize resolution. Creates structured tracking for complex debugging workflows with attempted solutions history. Only creates issue if quick troubleshooting steps fail.
+
+**Usage**: `/issue-create [optional: brief description]`
+**File**: `.claude/commands/issue-create.md`
+**Script**: `scripts/scan-issues.sh` (ID generation, searching, filtering)
+**Storage**: `01-areas/claude-code/issues/issue-{ID}-{slug}.md`
+**Template**: `98-templates/issue.md`
+
+---
+
+### /issue-call
+**Created**: 2025-10-18 07:15
+**Performance**: Uses `scan-issues.sh` for fast retrieval
+
+##### What it does:
+Retrieves and resolves tracked issues by ID. Loads issue context, provides category-specific debugging steps (MCP server, hook, script, database, automation, config), guides systematic troubleshooting, captures solutions, creates lessons learned in `04-resources/lessons-learnt/`, suggests adding solutions to relevant slash commands, and updates Serena's memory with confirmation. Supports status updates for ongoing investigations without resolving. Walks through debugging methodically with tool-specific commands.
+
+##### When to use it:
+Use to debug tracked issues systematically. Run `/issue-call {ID}` to load issue and receive tailored debugging guidance. When resolved, provides `/issue-call {ID} "solution"` to capture root cause, solution, and prevention. Creates lesson files (`YYMMDD-issue-{ID}-{description}.md`) and suggests updating commands (e.g., add hook troubleshooting to `/create-hook`). For ongoing work, use `/issue-call {ID} --status-update "notes"` to track progress.
+
+**Usage**: `/issue-call {ID}` or `/issue-call {ID} "solution"` or `/issue-call {ID} --status-update "notes"`
+**File**: `.claude/commands/issue-call.md`
+**Script**: `scripts/scan-issues.sh` (fast lookup, filtering)
+**Lessons**: `04-resources/lessons-learnt/YYMMDD-issue-{ID}-{slug}.md`
+**Integration**: Suggests updating relevant commands and Serena memory
+
+---
+
+## Companion Scripts
+
+### scan-issues.sh
+**Created**: 2025-10-18 07:00
+**Performance**: 30-60x faster than manual file operations
+
+##### What it does:
+High-performance bash script for issue management operations. Provides fast ID generation (next available 001, 002, 003), issue searching by keyword/category/severity, status filtering (unsolved/solved), specific issue retrieval, and JSON output for programmatic use. Parses YAML frontmatter efficiently using awk for rapid filtering across 100+ issue files.
+
+##### Common usage:
+```bash
+# Get next available ID
+./scripts/scan-issues.sh --next-id
+
+# Find unsolved issues
+./scripts/scan-issues.sh --unsolved
+
+# Filter by category
+./scripts/scan-issues.sh --category=hook
+
+# Filter by severity
+./scripts/scan-issues.sh --severity=critical
+
+# Search by keyword
+./scripts/scan-issues.sh --search="mcp"
+
+# Get specific issue
+./scripts/scan-issues.sh --id=023
+
+# JSON output for automation
+./scripts/scan-issues.sh --json
+```
+
+**File**: `scripts/scan-issues.sh`
+**Integration**: Used by `/issue-create` and `/issue-call` for performance
+**Output**: Human-readable or JSON format
 
 ---
