@@ -1,6 +1,6 @@
 ---
+id: MH-[XXX]
 relation:
-  - "[[mokhouse-projects]]"
 project name:
 customer:
 status:
@@ -16,7 +16,9 @@ submitted date:
 paid: false
 awarded: false
 APRA: false
-wav name: "[file name upon submission - example: 250921_Repco_3A.wav]"
+"INV #":
+type:
+  - project
 ---
 ### Brief (summary)
 

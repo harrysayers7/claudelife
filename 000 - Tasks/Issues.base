@@ -1,3 +1,11 @@
 views:
   - type: table
     name: Table
+    filters:
+      and:
+        - relation.contains(link("issue"))
+        - file.name != "Issues Base"
+        - Done != true
+    order:
+      - file.name
+      - Done

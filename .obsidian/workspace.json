@@ -93,6 +93,54 @@
             }
           },
           {
+            "id": "cae2caa414c739e8",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "mokhouse-dashboard",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokhouse/mokhouse-dashboard.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokhouse-dashboard\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":10,\"ch\":21},\"to\":{\"line\":10,\"ch\":21}},\"scroll\":9.215992647058824}"
+                },
+                {
+                  "title": "repco",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"02-projects/mokhouse/archive/repco.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"repco\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":16,\"ch\":0},\"to\":{\"line\":16,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "251017-nintendo",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"02-projects/mokhouse/036-nintendo/251017-nintendo.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"251017-nintendo\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":174,\"ch\":49},\"to\":{\"line\":174,\"ch\":49}},\"scroll\":149.1724233983287}"
+                },
+                {
+                  "title": "wa-police",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"02-projects/mokhouse/archive/wa-police.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"wa-police\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":29,\"ch\":0},\"to\":{\"line\":29,\"ch\":0}}}"
+                }
+              ]
+            },
+            "pinned": true,
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "000 - Tasks/ai-assigned.base",
+                "viewName": "Table"
+              },
+              "pinned": true,
+              "icon": "lucide-table",
+              "title": "ai-assigned"
+            }
+          },
+          {
             "id": "30de27c485b68e99",
             "type": "leaf",
             "pane-relief:history-v1": {
@@ -163,16 +211,16 @@
               "type": "webviewer",
               "state": {
                 "url": "https://www.youtube.com/watch?v=5sr0kjjZZSk",
-                "title": "(420) 3 New Context Engineering Skills for Agents - YouTube",
+                "title": "(432) 3 New Context Engineering Skills for Agents - YouTube",
                 "mode": "webview"
               },
               "pinned": true,
               "icon": "globe-2",
-              "title": "(420) 3 New Context Engineering Skills for Agents - YouTube"
+              "title": "(432) 3 New Context Engineering Skills for Agents - YouTube"
             }
           },
           {
-            "id": "e74e9b159f001029",
+            "id": "e86e71438f76f42f",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -182,40 +230,22 @@
                   "eState": "{}"
                 },
                 {
-                  "title": "Stress test",
+                  "title": "wa-police",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/Stress test.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Stress test\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":18,\"ch\":101},\"to\":{\"line\":8,\"ch\":0}}}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"02-projects/mokhouse/archive/wa-police.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"wa-police\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":29,\"ch\":0},\"to\":{\"line\":29,\"ch\":0}},\"scroll\":0}"
                 },
                 {
-                  "title": "prompt-library",
-                  "icon": "lucide-table",
-                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"04-resources/prompt-library/prompt-library.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"prompt-library\"}",
-                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                  "title": "mokhouse-dashboard",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokhouse/mokhouse-dashboard.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokhouse-dashboard\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":18.35487274760556}"
                 },
                 {
-                  "title": "Graphit or serena 4 rag",
+                  "title": "mok house workflow update",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/Graphit or serena 4 rag.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Graphit or serena 4 rag\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":18,\"ch\":0},\"to\":{\"line\":18,\"ch\":0}},\"scroll\":1.7080291970802919}"
-                },
-                {
-                  "title": "OBSIDIA",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/OBSIDIA.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"OBSIDIA\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":10,\"ch\":0},\"to\":{\"line\":112,\"ch\":65}},\"scroll\":97.80912990196079}"
-                },
-                {
-                  "title": "Obsidian agent",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/Obsidian agent.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Obsidian agent\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":16,\"ch\":6},\"to\":{\"line\":16,\"ch\":6}}}"
-                },
-                {
-                  "title": "🌤️ Fri - 17th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Fri - 17th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Fri - 17th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":13},\"to\":{\"line\":6,\"ch\":13}}}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/Janitor update.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mok house workflow update\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":27,\"ch\":110},\"to\":{\"line\":22,\"ch\":0}},\"scroll\":2.6350364963503647}"
                 },
                 {
                   "title": "ai-assigned",
@@ -224,16 +254,34 @@
                   "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
                 },
                 {
-                  "title": "🌤️ Fri - 17th Oct 25",
+                  "title": "🌤️ Sat - 18th Oct 25",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Fri - 17th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Fri - 17th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":13},\"to\":{\"line\":6,\"ch\":13}},\"scroll\":0}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Sat - 18th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Sat - 18th Oct 25\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":254,\"ch\":43},\"to\":{\"line\":254,\"ch\":43}},\"scroll\":39.25110294117647}"
                 },
                 {
-                  "title": "Google calendar mcp",
+                  "title": "Mokhouse context",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/Google calendar mcp.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Google calendar mcp\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":69,\"ch\":70},\"to\":{\"line\":69,\"ch\":34}},\"scroll\":21.2353}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/Mokhouse context.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Mokhouse context\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":21,\"ch\":110},\"to\":{\"line\":19,\"ch\":0}}}"
+                },
+                {
+                  "title": "Mok House Projects",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/Mok House Projects.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Mok House Projects\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "graphiti-tree",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"04-resources/guides/graphiti-tree.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"graphiti-tree\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}},\"scroll\":136.60198424277795}"
+                },
+                {
+                  "title": "mok house workflow update",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/Janitor update.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mok house workflow update\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":19,\"ch\":0},\"to\":{\"line\":19,\"ch\":0}},\"scroll\":0}"
                 },
                 {
                   "title": "ai-assigned",
@@ -242,52 +290,16 @@
                   "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
                 },
                 {
-                  "title": "Google calendar mcp",
+                  "title": "Issues function",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/Google calendar mcp.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Google calendar mcp\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":69,\"ch\":70},\"to\":{\"line\":69,\"ch\":34}},\"scroll\":41.420612813370475}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/Issues function.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Issues function\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":67,\"ch\":8},\"to\":{\"line\":67,\"ch\":8}},\"scroll\":14.6496}"
                 },
                 {
-                  "title": "mokmusic-clients",
+                  "title": "🌤️ Sat - 18th Oct 25",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokhouse/mokmusic/mokmusic-clients.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokmusic-clients\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":17,\"ch\":0},\"to\":{\"line\":17,\"ch\":0}}}"
-                },
-                {
-                  "title": "01-blurbs-master",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokhouse/website/project-blurbs/01-blurbs-master.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"01-blurbs-master\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":14,\"ch\":14},\"to\":{\"line\":14,\"ch\":14}},\"scroll\":1.7426470588235294}"
-                },
-                {
-                  "title": "mokmusic-clients",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokhouse/mokmusic/mokmusic-clients.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokmusic-clients\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":10},\"to\":{\"line\":6,\"ch\":2}}}"
-                },
-                {
-                  "title": "🌤️ Thu - 16th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Thu - 16th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Thu - 16th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "mokai-dashboard",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/mokai-dashboard.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokai-dashboard\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":21.5846}"
-                },
-                {
-                  "title": "mokmusic-clients",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokhouse/mokmusic/mokmusic-clients.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokmusic-clients\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":10},\"to\":{\"line\":6,\"ch\":2}}}"
-                },
-                {
-                  "title": "Change mokai dashboard task to dataviewjs",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/Change mokai dashboard task to dataviewjs.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Change mokai dashboard task to dataviewjs\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":18,\"ch\":0},\"to\":{\"line\":18,\"ch\":0}},\"scroll\":0}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Sat - 18th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Sat - 18th Oct 25\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}},\"scroll\":0.3504}"
                 },
                 {
                   "title": "ai-assigned",
@@ -296,22 +308,10 @@
                   "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
                 },
                 {
-                  "title": "Systems",
-                  "icon": "lucide-table",
-                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/Systems.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Systems\"}",
-                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
-                },
-                {
-                  "title": "📘 - OPERATIONS GUIDE",
+                  "title": "Ask instruction",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/docs/research/📘 - OPERATIONS GUIDE.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"📘 - OPERATIONS GUIDE\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":35,\"ch\":1220},\"to\":{\"line\":35,\"ch\":1083}}}"
-                },
-                {
-                  "title": "Mokai",
-                  "icon": "lucide-table",
-                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/Mokai.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Mokai\"}",
-                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/Ask instruction.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Ask instruction\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":25,\"ch\":74},\"to\":{\"line\":25,\"ch\":74}}}"
                 },
                 {
                   "title": "ai-assigned",
@@ -320,681 +320,111 @@
                   "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
                 },
                 {
-                  "title": "🌤️ Wed - 15th Oct 25",
+                  "title": "creative-thinker",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Wed - 15th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Wed - 15th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "Vault",
-                  "icon": "lucide-table",
-                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/Vault.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Vault\"}",
-                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
-                },
-                {
-                  "title": "agent assigned tasks",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/agent assigned tasks.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"agent assigned tasks\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":51,\"ch\":159},\"to\":{\"line\":51,\"ch\":159}},\"scroll\":32.11928651059086}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/creative-thinker.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"creative-thinker\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":21,\"ch\":0},\"to\":{\"line\":127,\"ch\":46}},\"scroll\":18.583941605839417}"
                 },
                 {
                   "title": "ai-assigned",
                   "icon": "lucide-table",
                   "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/ai-assigned.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"ai-assigned\"}",
-                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
-                },
-                {
-                  "title": "mokai-dashboard",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/mokai-dashboard.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokai-dashboard\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":132,\"ch\":14},\"to\":{\"line\":132,\"ch\":14}},\"scroll\":0}"
-                },
-                {
-                  "title": "CLAUDE",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"CLAUDE.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"CLAUDE\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":43,\"ch\":0},\"to\":{\"line\":28,\"ch\":0}},\"scroll\":9.2904}"
-                },
-                {
-                  "title": "mokai-tracking-system",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"07-context/systems/business-tools/mokai-tracking-system.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokai-tracking-system\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "Systems",
-                  "icon": "lucide-table",
-                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/Systems.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Systems\"}",
                   "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
                 },
                 {
                   "title": "claudelife-commands-guide",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"04-resources/guides/commands/claudelife-commands-guide.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"claudelife-commands-guide\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":101},\"to\":{\"line\":8,\"ch\":101}},\"scroll\":242.100897819581}"
+                  "eState": "{\"cursor\":{\"from\":{\"line\":675,\"ch\":0},\"to\":{\"line\":675,\"ch\":0}},\"scroll\":674.917717460996}"
+                }
+              ]
+            },
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01-areas/business/mokhouse/mokhouse-dashboard.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "mokhouse-dashboard"
+            }
+          },
+          {
+            "id": "c55ca15bc9417fe7",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
                 },
                 {
-                  "title": "CLAUDE",
+                  "title": "🌤️ Sat - 18th Oct 25",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"CLAUDE.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"CLAUDE\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":43,\"ch\":0},\"to\":{\"line\":43,\"ch\":0}},\"scroll\":9.290441176470589}"
-                },
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Sat - 18th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Sat - 18th Oct 25\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":254,\"ch\":43},\"to\":{\"line\":254,\"ch\":43}},\"scroll\":0}"
+                }
+              ]
+            },
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "000 - Tasks/ai-assigned.base",
+                "viewName": "Table"
+              },
+              "icon": "lucide-table",
+              "title": "ai-assigned"
+            }
+          },
+          {
+            "id": "fc6d176967da3d31",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
                 {
-                  "title": "Task",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/Task.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Task\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":14,\"ch\":0},\"to\":{\"line\":14,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "mokai-dashboard",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/mokai-dashboard.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokai-dashboard\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":130,\"ch\":14},\"to\":{\"line\":130,\"ch\":14}},\"scroll\":51.10294117647059}"
-                },
-                {
-                  "title": "claudelife-commands-guide",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"04-resources/guides/commands/claudelife-commands-guide.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"claudelife-commands-guide\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":130},\"to\":{\"line\":8,\"ch\":130}},\"scroll\":281.8216911764706}"
-                },
-                {
-                  "title": "CLAUDE",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"CLAUDE.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"CLAUDE\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":27,\"ch\":0},\"to\":{\"line\":27,\"ch\":0}},\"scroll\":0.04285714285714286}"
-                },
-                {
-                  "title": "mokai-dashboard",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/mokai-dashboard.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokai-dashboard\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":130,\"ch\":14},\"to\":{\"line\":130,\"ch\":14}},\"scroll\":90.8416}"
-                },
-                {
-                  "title": "2025-10-14",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/diary/2025-10-14.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"2025-10-14\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":4,\"ch\":0},\"to\":{\"line\":4,\"ch\":0}}}"
-                },
-                {
-                  "title": "2025-10-14-mokai-daily",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/diary/2025-10-14-mokai-daily.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"2025-10-14-mokai-daily\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":10,\"ch\":11},\"to\":{\"line\":10,\"ch\":11}}}"
-                },
-                {
-                  "title": "mokai-note",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/mokai-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokai-note\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "Untitled 2",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/Untitled 2.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Untitled 2\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                  "state": "{}",
+                  "eState": "{}"
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "04-resources/research/claude-code-business-workflows-2025.md",
+                "file": "01-areas/claude-code/issues/issue-001-memory-mcp-instead-of-graphiti.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "claude-code-business-workflows-2025"
+              "title": "issue-001-memory-mcp-instead-of-graphiti"
             }
           },
           {
-            "id": "8173559e1a5fd95c",
+            "id": "4805e688ce3cd002",
             "type": "leaf",
             "pane-relief:history-v1": {
-              "pos": 0,
+              "pos": 1,
               "stack": [
+                {
+                  "title": "creative-thinker",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/creative-thinker.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"creative-thinker\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":21,\"ch\":0},\"to\":{\"line\":21,\"ch\":0}}}"
+                },
                 {
                   "state": "{}",
                   "eState": "{}"
                 },
                 {
-                  "title": "🌤️ Fri - 17th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Fri - 17th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Fri - 17th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":117,\"ch\":0},\"to\":{\"line\":117,\"ch\":0}},\"scroll\":61.871875}"
-                },
-                {
-                  "title": "daily-note",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/daily-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"daily-note\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":117,\"ch\":3},\"to\":{\"line\":117,\"ch\":0}},\"scroll\":6.65979381443299}"
-                },
-                {
-                  "title": "event",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/event.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"event\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":11,\"ch\":0},\"to\":{\"line\":11,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "251017-nintendo",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"02-projects/mokhouse/251017-nintendo.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"251017-nintendo\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":22,\"ch\":0},\"to\":{\"line\":22,\"ch\":0}},\"scroll\":0.145985401459854}"
-                },
-                {
-                  "title": "🌤️ Fri - 17th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Fri - 17th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Fri - 17th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":117,\"ch\":0},\"to\":{\"line\":117,\"ch\":0}},\"scroll\":5.036496350364963}"
-                },
-                {
-                  "title": "daily-note",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/daily-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"daily-note\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":117,\"ch\":3},\"to\":{\"line\":117,\"ch\":0}},\"scroll\":40.8109681372549}"
-                },
-                {
-                  "title": "🌤️ Fri - 17th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Fri - 17th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Fri - 17th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}},\"scroll\":3.5474452554744524}"
-                },
-                {
-                  "title": "251017-nintendo",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"02-projects/mokhouse/251017-nintendo.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"251017-nintendo\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":20,\"ch\":0},\"to\":{\"line\":20,\"ch\":0}},\"scroll\":3.2116788321167884}"
-                },
-                {
-                  "title": "ESM Xmas party",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/ESM Xmas party.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"ESM Xmas party\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":12,\"ch\":0},\"to\":{\"line\":12,\"ch\":0}}}"
-                },
-                {
-                  "title": "Events",
-                  "icon": "lucide-table",
-                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/Events.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Events\"}",
-                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
-                },
-                {
-                  "title": "daily-note",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/daily-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"daily-note\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":121,\"ch\":0},\"to\":{\"line\":121,\"ch\":0}},\"scroll\":6.505841924398625}"
-                },
-                {
-                  "title": "🌤️ Fri - 17th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Fri - 17th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Fri - 17th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}},\"scroll\":2.102189781021898}"
-                },
-                {
-                  "title": "Covermore Client Feedback",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/events/Covermore Client Feedback.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Covermore Client Feedback\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":11,\"ch\":0},\"to\":{\"line\":11,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "daily-note",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/daily-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"daily-note\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":40,\"ch\":0},\"to\":{\"line\":40,\"ch\":0}},\"scroll\":5.6949}"
-                },
-                {
-                  "title": "🌤️ Fri - 17th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Fri - 17th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Fri - 17th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "get my shit togther",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/get my shit togther.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"get my shit togther\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":10,\"ch\":0},\"to\":{\"line\":10,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "🌤️ Fri - 17th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Fri - 17th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Fri - 17th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":75,\"ch\":0},\"to\":{\"line\":75,\"ch\":0}},\"scroll\":0.15328467153284672}"
-                },
-                {
-                  "title": "daily-note",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/daily-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"daily-note\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":40,\"ch\":0},\"to\":{\"line\":40,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "🌤️ Fri - 17th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Fri - 17th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Fri - 17th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":74,\"ch\":0},\"to\":{\"line\":74,\"ch\":0}}}"
-                },
-                {
-                  "title": "event",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/event.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"event\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":10,\"ch\":0},\"to\":{\"line\":10,\"ch\":0}}}"
-                },
-                {
-                  "title": "daily-note",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/daily-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"daily-note\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":75,\"ch\":0},\"to\":{\"line\":75,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "get my shit togther",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/get my shit togther.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Hello\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":10,\"ch\":0},\"to\":{\"line\":10,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "daily-note",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/daily-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"daily-note\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":75,\"ch\":0},\"to\":{\"line\":75,\"ch\":0}},\"scroll\":5.033898305084746}"
-                },
-                {
-                  "title": "🌤️ Fri - 17th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Fri - 17th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Fri - 17th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":74,\"ch\":0},\"to\":{\"line\":74,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "daily-note",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/daily-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"daily-note\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":74,\"ch\":3},\"to\":{\"line\":42,\"ch\":0}},\"scroll\":42.59979581419091}"
-                },
-                {
-                  "title": "🌤️ Fri - 17th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Fri - 17th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Fri - 17th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":74,\"ch\":0},\"to\":{\"line\":74,\"ch\":0}},\"scroll\":4.0510948905109485}"
-                },
-                {
-                  "title": "get my shit togther",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/get my shit togther.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Hello\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "🌤️ Fri - 17th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Fri - 17th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Fri - 17th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":74,\"ch\":0},\"to\":{\"line\":74,\"ch\":0}},\"scroll\":1.510948905109489}"
-                },
-                {
-                  "title": "daily-note",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/daily-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"daily-note\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":74,\"ch\":3},\"to\":{\"line\":42,\"ch\":0}},\"scroll\":15.83105860763849}"
-                },
-                {
-                  "title": "🌤️ Fri - 17th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Fri - 17th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Fri - 17th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":13},\"to\":{\"line\":6,\"ch\":13}},\"scroll\":0}"
-                },
-                {
-                  "title": "get my shit togther",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/get my shit togther.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Hello\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}}}"
-                },
-                {
-                  "title": "daily-note",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/daily-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"daily-note\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":75,\"ch\":0},\"to\":{\"line\":75,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "event",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/event.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"event\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "daily-note",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/daily-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"daily-note\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":70,\"ch\":0},\"to\":{\"line\":70,\"ch\":0}},\"scroll\":0.2711864406779661}"
-                },
-                {
-                  "title": "event",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/event.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"event\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "🌤️ Fri - 17th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Fri - 17th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Fri - 17th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":13},\"to\":{\"line\":6,\"ch\":13}},\"scroll\":0.26277372262773724}"
-                },
-                {
-                  "title": "claudelife-commands-guide",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"04-resources/guides/commands/claudelife-commands-guide.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"claudelife-commands-guide\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":297,\"ch\":0},\"to\":{\"line\":297,\"ch\":0}},\"scroll\":29.932869080779945}"
-                },
-                {
-                  "title": "graphiti-tree",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"04-resources/guides/graphiti-tree.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"graphiti-tree\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":5.098345588235294}"
-                },
-                {
-                  "title": "Architecture Discussion - Orchestration Pattern",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/Architecture Discussion - Orchestration Pattern.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Architecture Discussion - Orchestration Pattern\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":2.3728813559322033}"
-                },
-                {
-                  "title": "Split agent-mokai",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/Split agent-mokai.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Split agent-mokai\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":18,\"ch\":0},\"to\":{\"line\":18,\"ch\":0}},\"scroll\":19.263174019607842}"
-                },
-                {
-                  "title": "Graphit or serena 4 rag",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/Graphit or serena 4 rag.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Graphit or serena 4 rag\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":18,\"ch\":0},\"to\":{\"line\":18,\"ch\":0}},\"scroll\":12.087591240875913}"
-                },
-                {
-                  "title": "MCP DEBUG",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/MCP DEBUG.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"MCP DEBUG\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":158,\"ch\":0},\"to\":{\"line\":158,\"ch\":0}},\"scroll\":152.85692401960785}"
-                },
-                {
-                  "title": "ai-assigned",
-                  "icon": "lucide-table",
-                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/ai-assigned.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"ai-assigned\"}",
-                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
-                },
-                {
-                  "title": "🌤️ Thu - 16th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Thu - 16th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Thu - 16th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}}}"
-                },
-                {
-                  "title": "25-10-16 - Thu",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/25-10-16 - Thu.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"25-10-16 - Thu\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}}}"
-                },
-                {
-                  "title": "🌤️ Thu - 16th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Thu - 16th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Thu - 16th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":44,\"ch\":52},\"to\":{\"line\":44,\"ch\":52}},\"scroll\":0}"
-                },
-                {
-                  "title": "OPERATIONS GUIDE📘",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/OPERATIONS GUIDE📘.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"OPERATIONS GUIDE📘\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":22,\"ch\":1221},\"to\":{\"line\":22,\"ch\":1221}},\"scroll\":49.041207107843135}"
-                },
-                {
-                  "title": "🌤️ Thu - 16th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Thu - 16th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Thu - 16th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":62,\"ch\":0},\"to\":{\"line\":62,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "INDEX",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/INDEX.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"INDEX\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":22,\"ch\":0},\"to\":{\"line\":22,\"ch\":0}}}"
-                },
-                {
-                  "title": "🌤️ Thu - 16th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Thu - 16th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Thu - 16th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":62,\"ch\":0},\"to\":{\"line\":62,\"ch\":0}}}"
-                },
-                {
                   "title": "ASAP 🚩",
                   "icon": "lucide-table",
                   "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/ASAP 🚩.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"ASAP 🚩\"}",
-                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
-                },
-                {
-                  "title": "Revolut",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/Revolut.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Revolut\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":15,\"ch\":0},\"to\":{\"line\":15,\"ch\":0}}}"
-                },
-                {
-                  "title": "🌤️ Thu - 16th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Thu - 16th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Thu - 16th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":62,\"ch\":0},\"to\":{\"line\":62,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "Install prettier formatter",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/Install prettier formatter.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Install prettier formatter\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":17,\"ch\":0},\"to\":{\"line\":17,\"ch\":0}}}"
-                },
-                {
-                  "title": "🌤️ Thu - 16th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Thu - 16th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Thu - 16th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":62,\"ch\":0},\"to\":{\"line\":62,\"ch\":0}}}"
-                },
-                {
-                  "title": "ASAP 🚩",
-                  "icon": "lucide-table",
-                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/ASAP 🚩.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"ASAP\"}",
-                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
-                },
-                {
-                  "title": "Create index for each area",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/Create index for each area.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Create index for each area\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":17,\"ch\":0},\"to\":{\"line\":17,\"ch\":0}}}"
-                },
-                {
-                  "title": "🌤️ Thu - 16th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Thu - 16th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Thu - 16th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":62,\"ch\":0},\"to\":{\"line\":62,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "mokai-dashboard",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/mokai-dashboard.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokai-dashboard\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":158,\"ch\":14},\"to\":{\"line\":158,\"ch\":14}},\"scroll\":0}"
-                },
-                {
-                  "title": "🌤️ Thu - 16th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Thu - 16th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Thu - 16th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":62,\"ch\":0},\"to\":{\"line\":62,\"ch\":0}},\"scroll\":0.17518248175182483}"
-                },
-                {
-                  "title": "daily-note",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/daily-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"daily-note\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":62,\"ch\":2},\"to\":{\"line\":62,\"ch\":2}},\"scroll\":33.86824078122723}"
-                },
-                {
-                  "title": "🌤️ Thu - 16th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Thu - 16th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Thu - 16th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":61,\"ch\":41},\"to\":{\"line\":61,\"ch\":0}},\"scroll\":8.832579185520363}"
-                },
-                {
-                  "title": "INDEX",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/INDEX.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"INDEX\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":22,\"ch\":0},\"to\":{\"line\":22,\"ch\":0}}}"
-                },
-                {
-                  "title": "daily-note",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/daily-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"daily-note\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":62,\"ch\":0},\"to\":{\"line\":62,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "INDEX",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/INDEX.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"INDEX\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":20,\"ch\":0},\"to\":{\"line\":20,\"ch\":0}}}"
-                },
-                {
-                  "title": "index",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/index.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"index\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}}}"
-                },
-                {
-                  "title": "CLAUDE",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"CLAUDE.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"CLAUDE\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":12,\"ch\":106},\"to\":{\"line\":12,\"ch\":106}},\"scroll\":0}"
-                },
-                {
-                  "title": "🌤️ Wed - 15th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Wed - 15th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Wed - 15th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":46,\"ch\":0},\"to\":{\"line\":46,\"ch\":0}},\"scroll\":2.18978102189781}"
-                },
-                {
-                  "title": "agent-mokhouse-instructions to split 👔",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokhouse/agent-mokhouse-instructions to split 👔.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"agent-mokhouse-instructions to split 👔\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":47},\"to\":{\"line\":9,\"ch\":47}},\"scroll\":0}"
-                },
-                {
-                  "title": "mokhouse-project-management-claude",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokhouse/context/mokhouse-project-management-claude.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokhouse-project-management-claude\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":311,\"ch\":0},\"to\":{\"line\":311,\"ch\":0}},\"scroll\":310.8921568627451}"
-                },
-                {
-                  "title": "supabase-esm-instructions-claude",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokhouse/ai/supabase-esm-instructions-claude.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"supabase-esm-instructions-claude\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}}}"
-                },
-                {
-                  "title": "Notion-ESM-Instructions-claude v2",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokhouse/ai/Notion-ESM-Instructions-claude v2.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Notion-ESM-Instructions-claude v2\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "daily-note",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/daily-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"daily-note\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}},\"scroll\":0.0674}"
-                },
-                {
-                  "title": "🌤️ Wed - 15th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Wed - 15th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Wed - 15th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":37,\"ch\":2},\"to\":{\"line\":10,\"ch\":0}},\"scroll\":0.3066}"
-                },
-                {
-                  "title": "ai-assigned",
-                  "icon": "lucide-table",
-                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/ai-assigned.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"ai-assigned\"}",
-                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
-                },
-                {
-                  "title": "🌤️ Wed - 15th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Wed - 15th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Wed - 15th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":41,\"ch\":0},\"to\":{\"line\":41,\"ch\":0}},\"scroll\":0.8321167883211679}"
-                },
-                {
-                  "title": "daily-note",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/daily-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"daily-note\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":39,\"ch\":3},\"to\":{\"line\":10,\"ch\":0}},\"scroll\":0.0519}"
-                },
-                {
-                  "title": "🌤️ Wed - 15th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Wed - 15th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Wed - 15th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":24,\"ch\":2},\"to\":{\"line\":24,\"ch\":2}},\"scroll\":0.9197}"
-                },
-                {
-                  "title": "daily-note",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/daily-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"daily-note\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":46,\"ch\":0},\"to\":{\"line\":46,\"ch\":0}},\"scroll\":0.0455}"
-                },
-                {
-                  "title": "🌤️ Wed - 15th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Wed - 15th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Wed - 15th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":24,\"ch\":2},\"to\":{\"line\":24,\"ch\":2}},\"scroll\":0.9197080291970803}"
-                },
-                {
-                  "title": "Prepare for MArlon chat",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/Prepare for MArlon chat.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Prepare for MArlon chat\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":38,\"ch\":0},\"to\":{\"line\":38,\"ch\":0}},\"scroll\":31.5637}"
-                },
-                {
-                  "title": "🌤️ Wed - 15th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Wed - 15th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Wed - 15th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":24,\"ch\":2},\"to\":{\"line\":24,\"ch\":2}},\"scroll\":2.0146}"
-                },
-                {
-                  "title": "Update commands guide ",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/Update commands guide .md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Update commands guide\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":14,\"ch\":0},\"to\":{\"line\":14,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "🌤️ Wed - 15th Oct 25",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Wed - 15th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Wed - 15th Oct 25\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":24,\"ch\":2},\"to\":{\"line\":24,\"ch\":2}},\"scroll\":2.0145985401459856}"
-                },
-                {
-                  "title": "2025-10-15-mokai-daily",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/diary/2025-10-15-mokai-daily.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"2025-10-15-mokai-daily\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":46,\"ch\":2},\"to\":{\"line\":46,\"ch\":2}},\"scroll\":0}"
-                },
-                {
-                  "title": "📘 - OPERATIONS GUIDE",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/docs/research/📘 - OPERATIONS GUIDE.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"📘 - OPERATIONS GUIDE\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":72,\"ch\":521},\"to\":{\"line\":72,\"ch\":521}},\"scroll\":35.2750408496732}"
-                },
-                {
-                  "title": "Untitled Kanban 1",
-                  "icon": "lucide-trello",
-                  "state": "{\"type\":\"kanban\",\"state\":{\"file\":\"00-inbox/Untitled Kanban 1.md\",\"kanbanViewState\":{\"kanban-plugin\":\"board\",\"list-collapse\":[false,false,false]}},\"icon\":\"lucide-trello\",\"title\":\"Untitled Kanban 1\"}",
-                  "eState": "{}"
-                },
-                {
-                  "title": "ai-assigned",
-                  "icon": "lucide-table",
-                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/ai-assigned.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"ai-assigned\"}",
-                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
-                },
-                {
-                  "title": "Systems",
-                  "icon": "lucide-table",
-                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/Systems.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Systems\"}",
-                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
-                },
-                {
-                  "title": "Code",
-                  "icon": "lucide-table",
-                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/Code.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Code\"}",
                   "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
                 },
                 {
@@ -1004,39 +434,63 @@
                   "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
                 },
                 {
-                  "title": "prompt",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/prompt.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"prompt\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}}}"
+                  "title": "ai-assigned",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/ai-assigned.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"ai-assigned\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
                 },
                 {
-                  "title": "mokai-learn-note",
+                  "title": "graphiti-tree",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/mokai-learn-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokai-learn-note\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":12,\"ch\":0},\"to\":{\"line\":12,\"ch\":0}}}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"04-resources/guides/graphiti-tree.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"graphiti-tree\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}},\"scroll\":71.04227941176471}"
                 },
                 {
-                  "title": "Hooks - claude code",
+                  "title": "🌤️ Sun - 19th Oct 25",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/🧠dumps/ideas/Hooks - claude code.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Hooks - claude code\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":221,\"ch\":58},\"to\":{\"line\":221,\"ch\":58}},\"scroll\":0}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Sun - 19th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Sun - 19th Oct 25\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":256,\"ch\":0},\"to\":{\"line\":256,\"ch\":0}},\"scroll\":40.82383578431372}"
+                },
+                {
+                  "title": "Mok House Projects",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/Mok House Projects.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Mok House Projects\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "daily-note",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"98-templates/daily-note.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"daily-note\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":304,\"ch\":0},\"to\":{\"line\":304,\"ch\":0}},\"scroll\":3.7966101694915255}"
+                },
+                {
+                  "title": "🌤️ Sun - 19th Oct 25",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Sun - 19th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Sun - 19th Oct 25\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":253,\"ch\":0},\"to\":{\"line\":253,\"ch\":0}},\"scroll\":38.8890931372549}"
+                },
+                {
+                  "title": "🌤️ Sat - 18th Oct 25",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Sat - 18th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Sat - 18th Oct 25\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}},\"scroll\":0}"
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "98-templates/daily-note.md",
+                "file": "00-inbox/Accountant master.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "daily-note"
+              "title": "Accountant master"
             }
           },
           {
-            "id": "b2e813ce60b77b99",
+            "id": "7393bdd4877c66f0",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -1044,18 +498,107 @@
                 {
                   "state": "{}",
                   "eState": "{}"
+                },
+                {
+                  "title": "3-Tier-system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokhouse/docs/brain-storming/3-Tier-system.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"3-Tier-system\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":36,\"ch\":43},\"to\":{\"line\":36,\"ch\":43}},\"scroll\":0}"
+                },
+                {
+                  "title": "my-network🌐",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokhouse/my-network🌐.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"my-network🌐\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":33,\"ch\":0},\"to\":{\"line\":33,\"ch\":0}},\"scroll\":26.215686274509803}"
+                },
+                {
+                  "title": "mokhouse-dashboard",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokhouse/mokhouse-dashboard.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokhouse-dashboard\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":10,\"ch\":0},\"to\":{\"line\":10,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "Mok House Projects",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/Mok House Projects.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Mok House Projects\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "mokhouse-dashboard",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokhouse/mokhouse-dashboard.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokhouse-dashboard\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":329,\"ch\":0},\"to\":{\"line\":330,\"ch\":3}},\"scroll\":108.16213113438714}"
+                },
+                {
+                  "title": "Mok House Projects",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/Mok House Projects.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Mok House Projects\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0.29830677290836655}}}}"
+                },
+                {
+                  "title": "mokhouse-dashboard",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokhouse/mokhouse-dashboard.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokhouse-dashboard\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":329,\"ch\":0},\"to\":{\"line\":330,\"ch\":3}},\"scroll\":107.5648604776042}"
+                },
+                {
+                  "title": "💡graphiti and serna team",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/💡graphiti and serna team.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"💡graphiti and serna team\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":35,\"ch\":5},\"to\":{\"line\":35,\"ch\":5}},\"scroll\":0}"
+                },
+                {
+                  "title": "Move snippets folder to commands in claudelife ",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/Move snippets folder to commands in claudelife .md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Move snippets folder to commands in claudelife\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":19,\"ch\":0},\"to\":{\"line\":19,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "🌤️ Sun - 19th Oct 25",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Sun - 19th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Sun - 19th Oct 25\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":253,\"ch\":0},\"to\":{\"line\":253,\"ch\":0}},\"scroll\":0.2628}"
+                },
+                {
+                  "title": "ai-assigned",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/ai-assigned.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"ai-assigned\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "Shortcut name rules",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00-inbox/tasks/Shortcut name rules.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Shortcut name rules\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":19,\"ch\":0},\"to\":{\"line\":19,\"ch\":0}}}"
+                },
+                {
+                  "title": "ai-assigned",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"000 - Tasks/ai-assigned.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"ai-assigned\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "🌤️ Sun - 19th Oct 25",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Sun - 19th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Sun - 19th Oct 25\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":253,\"ch\":0},\"to\":{\"line\":253,\"ch\":0}},\"scroll\":0.26277372262773724}"
                 }
               ]
             },
             "state": {
-              "type": "full-calendar-view",
-              "state": {},
-              "icon": "calendar-glyph",
-              "title": "Calendar"
+              "type": "markdown",
+              "state": {
+                "file": "00 - Daily/🌤️ Mon - 20th Oct 25.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "🌤️ Mon - 20th Oct 25"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -1067,7 +610,7 @@
       {
         "id": "e16e878e85595b6b",
         "type": "tabs",
-        "dimension": 68.0709534368071,
+        "dimension": 65.18847006651885,
         "children": [
           {
             "id": "94da3d6eb66ccc2c",
@@ -1225,7 +768,7 @@
       {
         "id": "1a4fac9d5f39c125",
         "type": "tabs",
-        "dimension": 31.929046563192905,
+        "dimension": 34.811529933481154,
         "children": [
           {
             "id": "0b7f9f0b44202bb9",
@@ -1242,17 +785,17 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "98-templates/daily-note.md"
+                "file": "00 - Daily/🌤️ Mon - 20th Oct 25.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for daily-note"
+              "title": "File properties for 🌤️ Mon - 20th Oct 25"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 283.5
+    "width": 275.5
   },
   "right": {
     "id": "4ba4fbf600cab1d4",
@@ -1435,12 +978,12 @@
               "type": "webviewer",
               "state": {
                 "url": "https://app.shortwave.com/inbox/other",
-                "title": "Shortwave — harry@sayers1.com",
+                "title": "● Shortwave — harry@sayers1.com",
                 "mode": "webview"
               },
               "pinned": true,
               "icon": "globe-2",
-              "title": "Shortwave — harry@sayers1.com"
+              "title": "● Shortwave — harry@sayers1.com"
             }
           },
           {
@@ -1477,13 +1020,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "98-templates/daily-note.md",
+                "file": "00 - Daily/🌤️ Mon - 20th Oct 25.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of daily-note"
+              "title": "Outline of 🌤️ Mon - 20th Oct 25"
             }
           },
           {
@@ -1954,7 +1497,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 11
       }
     ],
     "direction": "horizontal",
@@ -1994,98 +1537,44 @@
       "periodic-notes:Open today": false
     }
   },
-  "floating": {
-    "id": "fcdadedbe1ee2d8e",
-    "type": "floating",
-    "children": [
-      {
-        "id": "95bc65984e818c70",
-        "type": "window",
-        "children": [
-          {
-            "id": "102948942b23ee98",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "90c89a16c0c81686",
-                "type": "leaf",
-                "pane-relief:history-v1": {
-                  "pos": 0,
-                  "stack": [
-                    {
-                      "state": "{}",
-                      "eState": "{}"
-                    },
-                    {
-                      "title": "GitHub - fullcalendar/fullcalendar: Full-sized drag & drop event calendar in JavaScript",
-                      "icon": "globe-2",
-                      "state": "{\"state\":{\"url\":\"https://obsidian-community.github.io/obsidian-full-calendar/\"},\"type\":\"webviewer\"}",
-                      "eState": "null"
-                    }
-                  ]
-                },
-                "state": {
-                  "type": "webviewer",
-                  "state": {
-                    "url": "https://github.com/fullcalendar/fullcalendar",
-                    "title": "GitHub - fullcalendar/fullcalendar: Full-sized drag & drop event calendar in JavaScript",
-                    "mode": "webview"
-                  },
-                  "icon": "globe-2",
-                  "title": "GitHub - fullcalendar/fullcalendar: Full-sized drag & drop event calendar in JavaScript"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 2048,
-        "y": 264,
-        "width": 1024,
-        "height": 800,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "8173559e1a5fd95c",
+  "active": "7393bdd4877c66f0",
   "lastOpenFiles": [
-    "00 - Daily/🌤️ Fri - 17th Oct 25.md",
-    "98-templates/daily-note.md",
-    "98-templates/event.md",
-    "01-areas/life/achievements.md",
-    "01-areas/life/Favourite Movie list.md",
-    "01-areas/life",
-    "01-areas/harry/context.md",
-    "00-inbox/weekly scan based on my insights [[insight]].md",
-    "00-inbox/Mokai-p.md",
-    "02-projects/mokhouse/251017-nintendo.md",
-    "02-projects/mokhouse/251017-nintendo.md.tmp.45303.1760671363058",
-    "02-projects/mokhouse/251017-nintendo.md.tmp.45303.1760671351193",
-    "02-projects/mokhouse/251017-nintendo.md.tmp.45303.1760671329373",
-    "00-inbox/events/Test Event - Format Check.md",
-    "00-inbox/events/Nintendo Demo - Agency Share.md",
-    "00-inbox/events/Doctor Appointment.md",
-    "00-inbox/ESM Xmas party.md",
-    "00-inbox/events/Nintendo Final Mix Due.md",
-    "00-inbox/events/Nintendo Demo - Agency Share.md.tmp.45303.1760670971995",
-    "00-inbox/events/Nintendo Demo - Internal Review.md",
-    "00-Bases/Events.base",
-    "01-areas/people/context-people.md",
-    "01-areas/harry/Favourite Movie list.md",
-    "01-areas/harry/achievements.md",
-    "01-areas/health-fitness/context-health-fitness.md",
-    "01-areas/health-fitness/context-health-fitness",
-    "01-areas/tech/context-tech.md",
-    "01-areas/harry/context-harry.md",
-    "01-areas/claude-code/context-claudecode.md",
-    "01-areas/claude-code/context-claudecode",
-    "00-inbox/events/Covermore Client Feedback.md",
-    "00-inbox/events/Client Meeting.md",
-    "00-inbox/events/Team Standup.md",
-    "00-inbox/events/Covermore Client Feedback.md.tmp.73758.1760668660150",
-    "00-inbox/events/Client Meeting.md.tmp.73758.1760668652863",
-    "00-inbox/get my shit togther.md",
+    "04-resources/guides/mcp-troubleshooting.md",
+    "04-resources/lessons-learnt/251020-issue-002-mcp-permissions.md",
+    "01-areas/claude-code/issues/issue-002-graphiti-mcp-stale-connection.md.tmp.95815.1760909803400",
+    "01-areas/claude-code/issues/issue-002-graphiti-mcp-stale-connection.md.tmp.95815.1760909749192",
+    "01-areas/business/mokhouse/docs/brain-storming/3-Tier-system.md",
+    "01-areas/business/mokhouse/docs/brain-storming/CLAUDE.md",
+    "01-areas/business/mokhouse/docs/brain-storming",
+    "01-areas/business/mokhouse/my-network🌐.md",
+    "00-inbox/tasks/Call supply nation.md",
+    "00-inbox/tasks/Director ID to Accountant.md",
+    "04-resources/network/Daniel Sant.md",
+    "04-resources/network/CLAUDE.md",
+    "98-templates/profile.md",
+    "04-resources/network",
+    "99-archive/agent-mokhouse-instructions to split 👔.md",
+    "01-areas/business/mokhouse/mokhouse-dashboard.md",
+    "01-areas/business/mokai/diary/2025-10-20-mokai-daily.md",
+    "00 - Daily/🌤️ Mon - 20th Oct 25.md",
+    "00-inbox/tasks/creative-thinker.md",
+    "00-inbox/tasks/Update the business claude.md",
+    "01-areas/business/CLAUDE.md.md",
+    "00-inbox/tasks/Self update.md",
+    "00-inbox/tasks/Buy omnara.md",
+    "01-areas/claude-code/issues/issue-002-graphiti-mcp-stale-connection.md.tmp.50679.1760858259020",
+    "01-areas/claude-code/issues/issue-002-graphiti-mcp-stale-connection.md.tmp.50679.1760858247721",
+    "04-resources/guides/commands/claudelife-commands-guide.md.tmp.48220.1760858017916",
+    "01-areas/claude-code/issues/issue-002-graphiti-mcp-stale-connection.md.tmp.25259.1760857389166",
+    "01-areas/claude-code/issues/issue-002-graphiti-mcp-stale-connection.md",
+    "01-areas/business/mokhouse/diary-mokhouse.md",
+    "97-tags/issue.md",
+    "02-projects/mokhouse/archive/250922-coopers-old-mates.md",
+    "02-projects/mokai/CLAUDE.md",
+    "02-projects/mokai",
+    "02-projects/admin/SMSF.base",
+    "00-inbox/OBSIDIA.md",
+    "02-projects/mokhouse/036-nintendo/Nintendo - EM.md",
     "Untitled.canvas",
     "finance-dashboard/public/file.svg",
     "finance-dashboard/public/window.svg",

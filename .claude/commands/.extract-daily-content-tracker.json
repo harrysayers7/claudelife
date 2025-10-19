@@ -1,0 +1,79 @@
+{
+  "last_scan": "2025-10-19T15:30:00Z",
+  "processed_files": {
+    "🌤️ Fri - 17th Oct 25.md": {
+      "extracted_at": "2025-10-17T17:00:00Z",
+      "modified_at": "2025-10-17T16:59:51Z",
+      "entries_processed": 1,
+      "routing": [
+        {
+          "entry": "Yeah, so I spent most of the day trying to set up Claude Life...",
+          "type": "diary",
+          "confidence": 0.95,
+          "destinations": [
+            "04-resources/diary.md",
+            "01-areas/business/mokai/diary-mokai.md",
+            "01-areas/tech/context-tech.md",
+            "01-areas/claude-code/context-claudecode.md"
+          ]
+        }
+      ]
+    },
+    "🌤️ Sat - 18th Oct 25.md": {
+      "extracted_at": "2025-10-19T15:30:00Z",
+      "modified_at": "2025-10-18T15:28:43Z",
+      "entries_processed": 1,
+      "routing": [
+        {
+          "entry": "Still working on building my second brain. Hanging with Jack and brie...",
+          "type": "diary",
+          "confidence": 0.95,
+          "destinations": [
+            "04-resources/diary.md",
+            "01-areas/business/mokai/diary-mokai.md"
+          ]
+        }
+      ]
+    },
+    "🌤️ Thu - 16th Oct 25.md": {
+      "extracted_at": "2025-10-19T15:30:00Z",
+      "modified_at": "2025-10-16T12:44:04Z",
+      "entries_processed": 4,
+      "routing": [
+        {
+          "entry": "BE MORE TANK Video came out!...",
+          "type": "diary",
+          "confidence": 0.98,
+          "destinations": [
+            "04-resources/diary.md",
+            "01-areas/business/mokhouse/diary-mokhouse.md"
+          ]
+        },
+        {
+          "entry": "i should build a nutritionist agent",
+          "type": "insight",
+          "confidence": 0.94,
+          "destinations": [
+            "01-areas/p-dev/insights.md"
+          ]
+        },
+        {
+          "entry": "I seem to learn and think better when im not at my desk...",
+          "type": "insight",
+          "confidence": 0.96,
+          "destinations": [
+            "01-areas/p-dev/insights.md"
+          ]
+        },
+        {
+          "entry": "wimhof makes me creative but the caveat...",
+          "type": "insight",
+          "confidence": 0.93,
+          "destinations": [
+            "01-areas/p-dev/insights.md"
+          ]
+        }
+      ]
+    }
+  }
+}

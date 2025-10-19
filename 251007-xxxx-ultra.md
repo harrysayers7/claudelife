@@ -3,26 +3,25 @@ relation:
   - "[[mokhouse-projects]]"
 project name: XXXX Ultra
 customer: Electric Sheep Music
-status:
-  - Awaiting Payment
+status: "Complete"
 demo fee: 500
 award fee: 4250
 due date: 2025-10-14
 date received: 2025-10-07
 internal review: ""
-Date Paid: ""
+Date Paid: "2025-10-17"
 PO: ""
-"Invoice #": ""
+"Invoice #": "NLOLWU0R-0007"
 submitted date: ""
-paid: false
+paid: true
 awarded: false
 APRA: false
 date created: Tue, 10 7th 25, 5:19:43 pm
-date modified: Tue, 10 7th 25, 5:51:15 pm
+date modified: Fri, 10 17th 25, 8:42:51 pm
 12 FOS: false
 invoice sent: true
 ---
-
+[[CLAUDE]]
 > [!NOTE]
 > ### Details:
 >

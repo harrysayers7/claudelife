@@ -1,0 +1,24 @@
+---
+date: {{date:YYYY-MM-DD}}
+day: {{date:dddd}}
+---
+# MOKAI Daily Note - {{date:MMM DD, YYYY}}
+
+## What I Did Today
+-
+
+## 💡 Learnings
+-
+
+## 🏆 Wins
+-
+
+## 🚨 Blockers
+-
+
+## 📝 Context/Updates
+-
+- Executed  command
+
+## 🎯 Tomorrow's Focus
+-

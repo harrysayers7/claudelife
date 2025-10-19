@@ -5,6 +5,7 @@ views:
       and:
         - relation.contains(link("mokhouse"))
         - type == "Task"
+        - Done != true
     order:
       - Done
       - file.name

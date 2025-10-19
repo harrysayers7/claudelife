@@ -1,0 +1,16 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - type.contains("Task")
+        - ASAP == true
+        - Done != true
+    order:
+      - Done
+      - file.name
+      - description
+      - ai-assigned
+      - ai-ignore
+    columnSize:
+      file.name: 241

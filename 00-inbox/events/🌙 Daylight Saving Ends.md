@@ -1,0 +1,12 @@
+---
+type:
+  - event
+category: personal
+when: 2026-04-05
+time:
+recurrence: yearly
+recurrence_end:
+relation:
+archive:
+note: Daylight Saving Time ends - Clocks back 1 hour (First Sunday in April)
+---

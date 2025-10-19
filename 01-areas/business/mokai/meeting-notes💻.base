@@ -1,0 +1,9 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - type == ["meeting-note"]
+    order:
+      - file.name
+      - archive

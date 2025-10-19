@@ -9,11 +9,13 @@ views:
         - type == "Task"
         - file.name != "task"
         - Done != true
+        - today != true
+        - '!relation.contains(link("mokai"))'
     order:
-      - Done
       - file.name
-      - today
+      - Done
       - description
+      - today
       - status
       - relation
       - file.ctime

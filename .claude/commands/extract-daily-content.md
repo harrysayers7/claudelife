@@ -1,7 +1,10 @@
 ---
 created: "2025-10-17 10:00"
-updated: "2025-10-19 11:00"
+updated: "2025-10-19 14:00"
 version_history:
+  - version: "1.2"
+    date: "2025-10-19 14:00"
+    changes: "Added smart memory detection: Automatically suggests Serena/Graphiti updates after extraction with user approval"
   - version: "1.1"
     date: "2025-10-19 11:00"
     changes: "Diary → Context transformation: Extract facts, remove narrative, bullet point format for context files"
@@ -21,6 +24,8 @@ description: |
     - Requires manual approval before committing
     - Creates cross-links between main files and area-specific files
     - Auto-creates diary files for each area as needed (diary-[area].md)
+    - SMART MEMORY DETECTION: After extraction, detects opportunities to update Serena/Graphiti
+    - Suggests memory updates with reasoning (optional, user-approved)
 
   Context files receive factual bullet points (no dates, no narrative).
   Diary files preserve original narrative with date headers.
@@ -61,6 +66,12 @@ This command uses AI to intelligently classify and route your daily notes to the
 6. **Manual approval** (y/n/edit)
 7. **Execute routing** and create cross-links with reformulated content
 8. **Update tracker** with processing details
+9. **🧠 SMART MEMORY DETECTION** (NEW):
+   - Analyze extracted content for memory system opportunities
+   - Detect Serena updates (technical patterns, workflows, commands)
+   - Detect Graphiti updates (strategic decisions, business events)
+   - Present memory suggestions with reasoning
+   - User approves which memories to update (all/selective/skip/later)
 
 ## Routing Rules
 
@@ -623,6 +634,248 @@ A successful extraction should:
 9. ✅ Maintain file integrity across all destinations
 10. ✅ Respect >80% confidence threshold for secondary routing
 
+## 🧠 Smart Memory Detection (v1.2)
+
+After successful extraction, the system analyzes content to suggest memory updates.
+
+### Detection Logic
+
+#### Serena Memory Detection
+Triggers when content indicates:
+- **Technical patterns**: New workflows, command patterns, coding conventions
+- **System changes**: Architecture updates, tool additions, infrastructure changes
+- **Process documentation**: Repeated workflows that should be automated
+
+**Keywords**: `workflow`, `pattern`, `convention`, `script`, `command`, `automation`, `process`
+
+**Example**:
+```
+Entry: "Created new workflow using Supabase triggers for invoice automation"
+
+Detection:
+  System: Serena
+  Memory: system_patterns_and_guidelines
+  Confidence: 0.87
+  Reasoning: "Technical workflow pattern with automation"
+  Update: "## Invoice Automation Pattern\n\n- Supabase triggers automate invoice processing\n- Reduces manual data entry for financial tracking"
+```
+
+#### Graphiti Detection (3 Instances)
+Triggers when content indicates:
+- **Strategic decisions**: Business direction, partnerships, major choices
+- **Business events**: Client meetings, project outcomes, financial milestones
+- **Personal insights**: Life learnings, relationship developments, health discoveries
+
+**Routing by Area**:
+- `business/mokai/*` or `business/mokhouse/*` → **graphiti-mokai** (business graph)
+- `business/accounting/*`, `business/crypto/*`, `business/SMSF/*` → **graphiti-finance** (financial graph)
+- Everything else → **graphiti-personal** (personal life graph)
+
+**Keywords**: `decided`, `strategy`, `planning`, `future of`, `direction`, `partnership`, `client`, `meeting`, `discussed with`, `learned`, `insight`, `realized`, `discovered`
+
+**Example**:
+```
+Entry: "Discussed the future direction of MOKAI with Jack and Brie over dinner"
+
+Detection:
+  System: Graphiti
+  Instance: graphiti-mokai
+  Confidence: 0.85
+  Reasoning: "Strategic business planning discussion with advisors"
+  Episode: "MOKAI strategic planning session with Jack and Brie discussing future business direction and growth opportunities"
+```
+
+### Memory Update Workflow
+
+After extraction completes successfully:
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ Extraction Complete
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Processed:
+- 1 diary entry → 04-resources/diary.md, mokai/diary-mokai.md
+- 0 insights, 0 context entries, 0 ideas
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🧠 Memory System Detection
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Potential memory updates detected:
+
+📊 Graphiti (MOKAI):
+  Episode: "MOKAI strategic planning session with Jack and Brie"
+  Confidence: 0.85
+  Reason: Strategic business discussion
+  Content: "Discussed future direction of MOKAI with advisors Jack and Brie, covering growth strategy and partnership opportunities"
+
+Would you like to update memory systems?
+  [a] Update all suggested memories
+  [s] Selective (choose which to update)
+  [n] Skip memory updates
+  [l] Later (remind me at EOD)
+
+Your choice: _
+```
+
+### User Actions
+
+#### [a] Update All
+Automatically updates all suggested memories with confidence >0.80.
+
+**Process**:
+1. Serena updates: Append to relevant memory file (`.serena/memories/*.md`)
+2. Graphiti updates: Create episode via `mcp__graphiti__add_memory`
+3. Confirm updates: "✅ Updated Serena: system_patterns_and_guidelines, ✅ Added to graphiti-mokai"
+
+#### [s] Selective Update
+Shows numbered list, user selects which to update:
+
+```
+Which memories to update? (comma-separated numbers, e.g., 1,3)
+
+1. Serena (system_patterns_and_guidelines) - Confidence: 0.87
+2. Graphiti-MOKAI (strategic planning) - Confidence: 0.85
+3. Graphiti-Personal (health insight) - Confidence: 0.78
+
+Your choice: 2
+```
+
+#### [n] Skip
+No memory updates, extraction complete.
+
+#### [l] Later (EOD Reminder)
+Queues memory updates for end-of-day batch review:
+- Saves opportunities to `.claude/commands/.memory-update-queue.json`
+- Reminder shown during next `/extract-daily-content` or EOD workflow
+
+### Detection Implementation
+
+```javascript
+function detectMemoryUpdates(routingPlan) {
+  const opportunities = [];
+
+  for (const plan of routingPlan) {
+    const entry = plan.entry;
+    const type = plan.classification.type;
+    const routing = plan.classification.routing.secondary || [];
+
+    // Serena Detection (Context entries with technical keywords)
+    if (type === 'context') {
+      const technicalKeywords = /workflow|pattern|convention|script|command|automation|process/i;
+      if (technicalKeywords.test(entry)) {
+        opportunities.push({
+          system: 'serena',
+          memory: suggestSerenaMemory(entry, routing), // e.g., "system_patterns_and_guidelines"
+          confidence: 0.85,
+          reasoning: 'Technical pattern or workflow change',
+          content: reformulateForSerena(entry)
+        });
+      }
+    }
+
+    // Graphiti Detection (Diary entries with strategic content)
+    if (type === 'diary') {
+      const strategicKeywords = /decided|strategy|planning|future of|direction|partnership|client|meeting|discussed with|learned|insight|realized|discovered/i;
+      if (strategicKeywords.test(entry)) {
+        const instance = detectGraphitiInstance(routing);
+        opportunities.push({
+          system: 'graphiti',
+          instance: instance, // 'graphiti-mokai', 'graphiti-finance', or 'graphiti-personal'
+          confidence: 0.80,
+          reasoning: 'Strategic decision or business event',
+          episode: reformulateForGraphiti(entry, instance)
+        });
+      }
+    }
+  }
+
+  return opportunities.filter(o => o.confidence >= 0.75);
+}
+
+function detectGraphitiInstance(secondaryRouting) {
+  const files = secondaryRouting.map(r => r.file);
+
+  if (files.some(f => f.includes('business/mokai') || f.includes('business/mokhouse'))) {
+    return 'graphiti-mokai';
+  }
+  if (files.some(f => f.includes('accounting') || f.includes('crypto') || f.includes('SMSF'))) {
+    return 'graphiti-finance';
+  }
+  return 'graphiti-personal';
+}
+```
+
+### Memory Update Functions
+
+```javascript
+// Serena Memory Update
+async function updateSerenaMemory(opportunity) {
+  const memoryName = opportunity.memory.name;
+  const currentMemory = await mcp__serena__read_memory({ memory_file_name: memoryName });
+
+  const timestamp = new Date().toISOString().split('T')[0];
+  const updatedContent = `${currentMemory}\n\n## ${timestamp}\n\n${opportunity.content}`;
+
+  await mcp__serena__write_memory({
+    memory_name: memoryName,
+    content: updatedContent
+  });
+
+  console.log(`✅ Updated Serena: ${memoryName}`);
+}
+
+// Graphiti Memory Update
+async function updateGraphitiMemory(opportunity) {
+  const groupIds = {
+    'graphiti-mokai': 'mokai-business',
+    'graphiti-finance': 'financial-tracking',
+    'graphiti-personal': 'personal-life'
+  };
+
+  const groupId = groupIds[opportunity.instance];
+
+  await mcp__graphiti__add_memory({
+    name: `Daily extraction - ${new Date().toISOString().split('T')[0]}`,
+    episode_body: opportunity.episode,
+    group_id: groupId,
+    source: 'text',
+    source_description: 'Daily note extraction'
+  });
+
+  console.log(`✅ Added to ${opportunity.instance}`);
+}
+```
+
+### Benefits
+
+1. **Automatic detection**: No manual memory management needed
+2. **User control**: Explicit approval before updates
+3. **Smart routing**: Content goes to correct memory system (Serena vs. Graphiti)
+4. **Context preservation**: Daily insights become permanent knowledge
+5. **Reduced friction**: One workflow for extraction + memory updates
+6. **Learning system**: Patterns improve over time
+
+### Configuration
+
+**Confidence Thresholds**:
+- Display suggestions: >0.75
+- Default approval: >0.85 (when using `[a]` all)
+
+**Graphiti Group IDs** (defined in implementation):
+- `graphiti-mokai`: "mokai-business"
+- `graphiti-finance`: "financial-tracking"
+- `graphiti-personal`: "personal-life"
+
+**Serena Memories Available**:
+- `project_structure`
+- `system_patterns_and_guidelines`
+- `suggested_commands`
+- `tech_stack`
+- `mokai_business_patterns`
+- `code_style_and_conventions`
+
 ## Troubleshooting
 
 **Issue**: AI misclassifies entries
@@ -640,6 +893,14 @@ A successful extraction should:
 **Issue**: Missing cross-links
 - **Check**: Were files created successfully?
 - **Solution**: Verify append operations, check for write errors
+
+**Issue**: Memory detection missing opportunities
+- **Check**: Does entry contain strategic/technical keywords?
+- **Solution**: Review detection keywords, adjust confidence threshold
+
+**Issue**: Wrong Graphiti instance selected
+- **Check**: Which areas were routed to?
+- **Solution**: Manually specify instance in selective mode
 
 ## Related Commands
 

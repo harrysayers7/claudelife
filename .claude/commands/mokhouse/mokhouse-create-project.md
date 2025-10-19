@@ -27,6 +27,8 @@ examples:
 
 # Create MOK HOUSE Project from Brief
 
+**Voice Transcription Note**: When Harry says "mock house" or "mok house", he means **MOK HOUSE** (all caps, two words).
+
 This command automates the complete process of creating a new MOK HOUSE music project from a client brief email, including AI-powered creative suggestions and production-ready prompts.
 
 ## Usage
@@ -177,14 +179,16 @@ From the fetched text, extract these critical details:
 
 **Use:** `mcp__claudelife-obsidian__write_note`
 
-**File naming:** `YYMMDD-[project-name-slug].md`
-**Location:** `/02-projects/mokhouse/`
+**File naming:** Use the exact `project name` field value as the filename (e.g., `Nintendo - EM.md`)
+**Location:** `/02-projects/mokhouse/` (or in a numbered subdirectory like `/02-projects/mokhouse/036-nintendo/`)
+**Important:** The filename should match the `project name` field exactly, NOT a date-prefixed slug
 
 **Frontmatter template:**
 ```yaml
 ---
 relation:
-  - "[[mokhouse-projects]]"
+  - "[[mokhouse]]"
+type: project
 project name: "[Extracted project name]"
 customer: "[Client name]"
 status: "Brief Received"
@@ -437,7 +441,7 @@ Next: Create demo, then mark as submitted
    - Duration: 15s and 30s versions
    - Platform: TV + digital
    - Due: 2025-11-15
-5. Create file: `251016-repco-automotive-q4.md`
+5. Create file: `Repco Automotive Q4.md` (using project name as filename)
 6. Generate AI suggestions for automotive-themed jingle
 7. Create SUNO prompt (verified <1000 chars)
 8. Confirm creation with summary
@@ -492,7 +496,7 @@ A successful project creation should:
 3. ✅ **Accurate brief extraction** capturing all deliverables, requirements, creative direction
 4. ✅ **High-quality AI suggestions** providing actionable creative direction for Harrison
 5. ✅ **Valid SUNO prompt** under 1000 characters with complete structure and timing
-6. ✅ **Correct file naming** following YYMMDD-project-slug.md pattern
+6. ✅ **Correct file naming** using exact project name as filename (e.g., `Nintendo - EM.md`)
 7. ✅ **Proper file location** in /02-projects/mokhouse/ directory
 8. ✅ **Harrison's composer number** correctly set as "3" in file naming template
 

@@ -7,10 +7,15 @@ views:
         - '!note["internal review"].isEmpty()'
     order:
       - file.name
+      - when
       - event
       - internal review
       - date received
       - Date Paid
+    sort:
+      - property: when
+        direction: ASC
     columnSize:
-      file.name: 224
+      file.name: 312
+      note.when: 128
       note.event: 212

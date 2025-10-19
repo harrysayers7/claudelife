@@ -3,12 +3,13 @@ views:
     name: Table
     filters:
       and:
-        - relation.contains(link("mokhouse-projects"))
-        - file.name != "mok-house-project"
+        - relation.contains(link("mokhouse"))
+        - type.contains("project")
     order:
       - project name
       - status
       - demo fee
+      - Date Paid
       - award fee
       - paid
       - "Invoice #"
@@ -17,11 +18,11 @@ views:
       - due date
       - file.name
       - awarded
-      - Date Paid
       - internal review
       - PO
       - submitted date
       - APRA
+      - id
     sort:
       - property: date received
         direction: DESC

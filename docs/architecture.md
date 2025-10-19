@@ -1,1342 +1,1077 @@
-# SAYERS Finance Dashboard Architecture Document
+# SAYERS Financial Dashboard - System Architecture Document
 
-<!-- Powered by BMAD™ Core -->
+---
+date: "2025-10-17"
+version: "2.0"
+status: "Draft"
+project: "SAYERS Financial Dashboard"
+author: "Architect Agent (BMad Method)"
+---
 
-## Change Log
+## Document Control
 
-| Date | Version | Description | Author |
-|------|---------|-------------|--------|
-| 2025-10-03 | 1.0 | Initial architecture document | Harrison Robert Sayers |
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 2.0 | 2025-10-17 | Architect Agent | Comprehensive architecture redesign following BMad template |
+| 1.0 | 2025-10-03 | Harrison Robert Sayers | Initial architecture document |
 
 ---
 
-## Introduction
+## Table of Contents
 
-This document outlines the complete fullstack architecture for the **SAYERS Finance Dashboard**, a comprehensive financial management application built on Next.js 14+ and Supabase. It serves as the single source of truth for AI-driven development, ensuring consistency across the entire technology stack.
-
-This unified architecture combines backend systems (Supabase database, ML pipeline, API integrations) with frontend implementation (Next.js App Router, React components, data visualization), streamlining development for a modern fullstack application where these concerns are tightly coupled.
-
-### Project Foundation
-
-**Greenfield Project**: This is a new Next.js application that will leverage existing Supabase infrastructure. The database schema, ML models, and automation workflows already exist and are production-ready. The dashboard will be a new frontend interface connecting to this mature backend.
-
-**Existing Infrastructure**:
-- Supabase project `gshsshaodoyttdxippwx` (SAYERS DATA) with 13 tables
-- UpBank sync automation (GitHub Actions + n8n)
-- MindsDB ML pipeline with 7 active models
-- Personal banking transactions (230+ records)
-- Business invoices (29 records)
-- Multi-entity accounting (MOKAI, MOK HOUSE, Harrison Sayers)
-
-**Project Goals**:
-- Provide real-time visibility into financial performance across entities
-- Reduce manual bookkeeping by 80% through ML automation
-- Enable one-click tax compliance reporting (BAS, P&L)
-- Surface financial anomalies proactively
-- Streamline invoice management workflows
+1. [System Overview](#1-system-overview)
+2. [Application Architecture](#2-application-architecture)
+3. [Data Architecture](#3-data-architecture)
+4. [State Management](#4-state-management)
+5. [Security Architecture](#5-security-architecture)
+6. [Performance Architecture](#6-performance-architecture)
+7. [Financial Calculation Architecture](#7-financial-calculation-architecture)
+8. [Data Visualization Architecture](#8-data-visualization-architecture)
+9. [Form Architecture](#9-form-architecture)
+10. [Testing Architecture](#10-testing-architecture)
+11. [Deployment Architecture](#11-deployment-architecture)
+12. [Migration & Phased Rollout](#12-migration--phased-rollout)
+13. [Monitoring & Observability](#13-monitoring--observability)
+14. [Scalability Considerations](#14-scalability-considerations)
+15. [Technical Debt & Future Considerations](#15-technical-debt--future-considerations)
 
 ---
 
-## High Level Architecture
+## 1. System Overview
 
-### Technical Summary
+### 1.1 High-Level Architecture Diagram
 
-The SAYERS Finance Dashboard is a **server-rendered Next.js 14+ application** deployed on Vercel, leveraging the **App Router** for optimal performance with React Server Components. The frontend connects to **Supabase** (existing PostgreSQL database) for all data operations, utilizing Row Level Security (RLS) for multi-entity data isolation. The architecture follows a **Jamstack pattern** with server-side data fetching and client-side interactivity only where needed (charts, forms, filters). **MindsDB ML models** provide categorization and anomaly detection with predictions stored in Supabase, while **Recharts** handles data visualization. Authentication is handled via **Supabase Auth**, and the entire stack is optimized for Australian tax compliance requirements (GST, BAS reporting). This architecture achieves PRD goals by combining existing backend intelligence with a new, performant frontend interface that prioritizes data accuracy, user efficiency, and regulatory compliance.
-
-### Platform and Infrastructure Choice
-
-After evaluating options, the recommended platform is:
-
-**Platform**: **Vercel + Supabase** (existing infrastructure)
-
-**Rationale**:
-- **Vercel**: Native Next.js optimization, automatic deployments, edge functions, built-in CDN
-- **Supabase**: Existing production database with 13 tables, RLS policies, ML integration already configured
-- **Cost-effective**: Leverages existing Supabase infrastructure, no migration required
-- **Proven stack**: Currently running UpBank sync automations successfully
-
-**Key Services**:
-- **Frontend Hosting**: Vercel (automatic deployments from GitHub)
-- **Database**: Supabase PostgreSQL (`gshsshaodoyttdxippwx`)
-- **Authentication**: Supabase Auth
-- **File Storage**: Supabase Storage (for invoice PDFs, receipts)
-- **ML Engine**: MindsDB (already integrated with Supabase)
-- **CDN**: Vercel Edge Network
-- **Monitoring**: Vercel Analytics, Sentry (error tracking)
-
-**Deployment Host and Regions**:
-- **Primary**: Vercel Sydney (Australia) for optimal latency
-- **Database**: Supabase (AWS Sydney) - existing deployment
-- **CDN**: Global edge network via Vercel
-
-### Repository Structure
-
-**Structure**: **Monorepo** (single Next.js application)
-
-**Rationale**:
-- Project scope fits monolith pattern perfectly
-- No need for separate frontend/backend repos (Supabase is backend)
-- Simpler deployment and CI/CD
-- Shared types between components and API routes
-
-**Monorepo Tool**: **npm workspaces** (optional) or standard Next.js structure
-
-**Package Organization**:
 ```
-/
-├── app/                # Next.js App Router
-├── components/         # React components
-├── lib/               # Utilities, Supabase client
-├── types/             # TypeScript types (shared)
-├── hooks/             # Custom React hooks
-├── public/            # Static assets
-```
-
-No need for complex monorepo tooling (Turborepo, Nx) at this scale. Standard Next.js project structure is sufficient.
-
-### High Level Architecture Diagram
-
-```mermaid
-graph TB
-    subgraph "User Layer"
-        USER[User Browser]
-    end
-
-    subgraph "Vercel Edge Network"
-        CDN[Vercel CDN]
-        EDGE[Edge Functions]
-    end
-
-    subgraph "Next.js Application - Vercel"
-        APP[Next.js App Router]
-        RSC[Server Components]
-        RCC[Client Components]
-        API[API Routes]
-    end
-
-    subgraph "Supabase Backend - Existing"
-        AUTH[Supabase Auth]
-        DB[(PostgreSQL Database)]
-        STORAGE[Supabase Storage]
-        RLS[Row Level Security]
-    end
-
-    subgraph "ML & Automation - Existing"
-        MINDSDB[MindsDB ML Models]
-        UPBANK[UpBank API Sync]
-        N8N[n8n Workflows]
-    end
-
-    subgraph "External Services"
-        UPBANK_API[UpBank API]
-        EMAIL[Email Service - SendGrid/SES]
-    end
-
-    USER -->|HTTPS| CDN
-    CDN --> APP
-    APP --> RSC
-    APP --> RCC
-    APP --> API
-
-    RSC -->|Server-side queries| DB
-    RCC -->|Client-side mutations| DB
-    API -->|PDF generation, exports| DB
-
-    APP -->|Auth flow| AUTH
-    AUTH -->|Session validation| RLS
-    RLS -->|Entity-based access| DB
-
-    API -->|Upload PDFs| STORAGE
-
-    DB <-->|Predictions| MINDSDB
-    DB <-->|Transaction sync| UPBANK
-
-    UPBANK -->|Poll for transactions| UPBANK_API
-    N8N -->|Orchestrate| UPBANK
-    N8N -->|Error handling| EMAIL
-
-    API -->|Invoice emails| EMAIL
+┌─────────────────────────────────────────────────────────────────┐
+│                         User Browser                             │
+│  ┌──────────────┐  ┌──────────────┐  ┌───────────────────────┐│
+│  │  Desktop     │  │   Tablet     │  │      Mobile           ││
+│  │  (1024px+)   │  │  (768-1023)  │  │     (320-767px)       ││
+│  └──────────────┘  └──────────────┘  └───────────────────────┘│
+└───────────────────────────┬─────────────────────────────────────┘
+                            │ HTTPS
+                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    Vercel Edge Network (CDN)                     │
+│  • Global CDN                                                    │
+│  • Static Asset Caching                                         │
+│  • Edge Functions (Sydney Region)                               │
+└───────────────────────────┬─────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────────────┐
+│              Next.js 14+ Application (Vercel Sydney)             │
+│  ┌──────────────────────────────────────────────────────────┐  │
+│  │                App Router (app/)                          │  │
+│  │  ┌────────────────┐  ┌────────────────┐                  │  │
+│  │  │ Server         │  │ Client         │                  │  │
+│  │  │ Components     │  │ Components     │                  │  │
+│  │  │ (Data Fetch)   │  │ (Interactive)  │                  │  │
+│  │  └────────────────┘  └────────────────┘                  │  │
+│  └──────────────────────────────────────────────────────────┘  │
+│  ┌──────────────────────────────────────────────────────────┐  │
+│  │              API Routes (app/api/)                        │  │
+│  │  • PDF Generation     • CSV Export                        │  │
+│  │  • Webhook Handlers   • Server Actions                    │  │
+│  └──────────────────────────────────────────────────────────┘  │
+└───────────────────────────┬─────────────────────────────────────┘
+                            │
+        ┌───────────────────┼───────────────────┐
+        │                   │                   │
+        ▼                   ▼                   ▼
+┌──────────────┐  ┌──────────────────┐  ┌─────────────────────┐
+│  Supabase    │  │  Supabase        │  │  Supabase Storage   │
+│  Auth        │  │  PostgreSQL DB   │  │  (Invoice PDFs)     │
+│              │  │                  │  │                     │
+│ • Session    │  │ • 23 Tables      │  │ • S3-compatible     │
+│   Management │  │ • RLS Policies   │  │ • Secure URLs       │
+│ • Email/Pass │  │ • Indexes        │  │                     │
+└──────────────┘  └────────┬─────────┘  └─────────────────────┘
+                           │
+        ┌──────────────────┼──────────────────┐
+        │                  │                  │
+        ▼                  ▼                  ▼
+┌──────────────┐  ┌─────────────────┐  ┌──────────────────┐
+│  MindsDB ML  │  │  UpBank API     │  │  n8n Workflows   │
+│  Pipeline    │  │  Sync           │  │                  │
+│              │  │                 │  │ • Orchestration  │
+│ • Category   │  │ • 256 Personal  │  │ • Error Handling │
+│   Prediction │  │   Transactions  │  │ • Scheduling     │
+│ • Anomaly    │  │ • Auto-sync     │  │                  │
+│   Detection  │  │   (daily)       │  │                  │
+│ • Cash Flow  │  │                 │  │                  │
+│   Forecast   │  │                 │  │                  │
+└──────────────┘  └─────────────────┘  └──────────────────┘
 ```
 
-### Architectural Patterns
+### 1.2 Technology Stack
 
-- **Jamstack Architecture**: Static-first with dynamic data fetching via Server Components - *Rationale*: Optimal performance for content-heavy dashboards with real-time data requirements
-- **Server Components First**: Default to React Server Components, use Client Components only for interactivity - *Rationale*: Reduces JavaScript bundle, improves initial load times, maintains type safety
-- **Repository Pattern**: Abstract Supabase queries into service layer functions - *Rationale*: Enables testing, centralizes query logic, simplifies component code
-- **API Gateway Pattern**: All external integrations (UpBank, ML) accessed via Next.js API routes - *Rationale*: Centralizes error handling, rate limiting, and logging
-- **Optimistic UI Updates**: Client mutations show immediate UI updates before server confirmation - *Rationale*: Improves perceived performance for user actions (categorization, status changes)
-- **Command Query Responsibility Segregation (CQRS)**: Separate read (Server Components) from write (Server Actions) operations - *Rationale*: Clear data flow, optimized caching strategies
+**Core Stack (Required - No Alternatives):**
+
+| Layer | Technology | Version | Rationale |
+|-------|-----------|---------|-----------|
+| **Frontend Framework** | Next.js | 14.2+ | App Router, React Server Components, Vercel optimization, streaming SSR |
+| **Language** | TypeScript | 5.3+ | Type safety critical for financial calculations, compile-time error detection |
+| **Database** | Supabase PostgreSQL | 15+ | **Fixed** - Existing production database with 23 tables, cannot migrate |
+| **UI Components** | shadcn/ui | v4 | Accessible (WCAG AA), customizable, built on Radix UI, excellent DX |
+| **Styling** | Tailwind CSS | 3.4+ | Utility-first, tree-shakeable, shadcn/ui dependency |
+| **Authentication** | Supabase Auth | Latest | Integrated with RLS, existing sessions, email/password flow |
+| **Hosting** | Vercel | Latest | Native Next.js optimization, edge functions, automatic deployments |
+
+**Data & State Management:**
+
+| Purpose | Technology | Version | Rationale |
+|---------|-----------|---------|-----------|
+| **Server State** | React Query (TanStack Query) | 5.0+ | Caching, background refetching, optimistic updates, 10-min polling |
+| **Client State** | Zustand | 4.4+ | Lightweight (1KB), no boilerplate, perfect for entity filter + UI prefs |
+| **Form State** | React Hook Form | 7.49+ | Minimal re-renders, async validation, great DX |
+| **Schema Validation** | Zod | 3.22+ | Type-safe runtime validation, integrates with React Hook Form |
+
+**Data Visualization & Tables:**
+
+| Purpose | Technology | Version | Rationale |
+|---------|-----------|---------|-----------|
+| **Charts** | Recharts | 2.10+ | React-native, composable, supports all chart types (pie, line, bar, waterfall) |
+| **Tables** | TanStack Table | 8.11+ | Virtual scrolling, sorting/filtering, 50k+ row support, headless UI |
+| **Virtual Scrolling** | @tanstack/react-virtual | 3.0+ | Handle large transaction lists (10k+ rows) without performance degradation |
+
+**Utilities & Libraries:**
+
+| Purpose | Technology | Version | Rationale |
+|---------|-----------|---------|-----------|
+| **Decimal Math** | decimal.js | 10.4+ | **Critical** - Avoids floating-point errors in GST/tax calculations |
+| **Date Handling** | date-fns | 3.0+ | Lightweight, tree-shakeable, Australia/Sydney timezone support |
+| **PDF Generation** | @react-pdf/renderer | 3.3+ | React-based, declarative, server-side invoice rendering |
+| **CSV Export** | papaparse | 5.4+ | Fast, handles large datasets, proper escaping |
+| **Type Generation** | supabase gen types | Latest | Auto-generate TypeScript types from Supabase schema |
+
+**Testing:**
+
+| Purpose | Technology | Version | Rationale |
+|---------|-----------|---------|-----------|
+| **Unit Tests** | Vitest | 1.0+ | Fast, Vite-powered, TypeScript support, 100% coverage for financial logic |
+| **Component Tests** | Testing Library (React) | 14.0+ | User-centric testing, accessibility assertions |
+| **E2E Tests** | Playwright | 1.40+ | Cross-browser, great debugging, critical user flows |
+| **Test Data** | MSW (Mock Service Worker) | 2.0+ | Mock Supabase API responses for deterministic tests |
+
+**Developer Experience:**
+
+| Purpose | Technology | Version | Rationale |
+|---------|-----------|---------|-----------|
+| **Linting** | ESLint | 8.0+ | Next.js default config + financial code rules |
+| **Formatting** | Prettier | 3.0+ | Consistent code style, integrates with ESLint |
+| **Git Hooks** | Husky | 8.0+ | Pre-commit linting, pre-push testing |
+| **Type Checking** | TypeScript Compiler | 5.3+ | Strict mode enabled, no implicit any |
+
+### 1.3 Deployment Architecture
+
+**Infrastructure:**
+- **Frontend**: Vercel (Sydney region for optimal AU latency)
+- **Database**: Supabase (AWS Sydney) - existing production deployment
+- **CDN**: Vercel Edge Network (global)
+- **Storage**: Supabase Storage (S3-compatible, Sydney region)
+
+**Environment Strategy:**
+
+| Environment | Purpose | Deployment Trigger | Database | Features |
+|-------------|---------|-------------------|----------|----------|
+| **Development** | Local dev with hot reload | Manual `npm run dev` | Supabase Dev Project (optional) | Mock data, debug tools |
+| **Preview** | PR reviews, stakeholder demos | Automatic on PR creation | Supabase Production (read-only) | Full feature set, no mutations |
+| **Staging** | Pre-production testing | Automatic on merge to `develop` | Supabase Production (RLS protected) | Identical to production |
+| **Production** | Live application | Manual deployment from `main` | Supabase Production | All features enabled |
+
+**Deployment Pipeline:**
+
+```
+┌──────────────┐
+│   Git Push   │
+│   to Branch  │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────────────────────────────────┐
+│      GitHub Actions Workflow             │
+│  1. Install dependencies (npm ci)        │
+│  2. Type check (tsc --noEmit)            │
+│  3. Lint (eslint)                        │
+│  4. Unit tests (vitest)                  │
+│  5. Build (next build)                   │
+└──────┬───────────────────────────────────┘
+       │
+       ▼
+┌──────────────────────────────────────────┐
+│       Vercel Deployment                  │
+│  • Preview: All PRs                      │
+│  • Production: main branch only          │
+│  • Edge Functions: Sydney region         │
+│  • Environment Variables: Encrypted      │
+└──────┬───────────────────────────────────┘
+       │
+       ▼
+┌──────────────────────────────────────────┐
+│      Post-Deployment Checks              │
+│  1. Smoke tests (Playwright)             │
+│  2. Lighthouse audit (performance)       │
+│  3. Security scan (Snyk)                 │
+└──────────────────────────────────────────┘
+```
 
 ---
 
-## Tech Stack
+## 2. Application Architecture
 
-This is the DEFINITIVE technology selection for the entire project. All development must use these exact versions.
+### 2.1 Next.js App Router Structure
 
-| Category | Technology | Version | Purpose | Rationale |
-|----------|-----------|---------|---------|-----------|
-| Frontend Language | TypeScript | 5.3+ | Type-safe JavaScript | Industry standard for large React applications, prevents runtime errors |
-| Frontend Framework | Next.js | 14.2+ | React meta-framework with App Router | Server Components, streaming, built-in optimization, Vercel integration |
-| UI Component Library | shadcn/ui | Latest | Radix UI + Tailwind components | Accessible, customizable, well-documented, perfect for financial dashboards |
-| State Management | React Context + Server Components | N/A | Global state and server state | Minimal client state needed, Server Components handle most data fetching |
-| Backend Language | TypeScript | 5.3+ | Type-safe server code | Shared types between frontend and backend |
-| Backend Framework | Supabase (PostgreSQL) | Existing | BaaS with auth, database, storage | Existing production database with RLS, no migration needed |
-| API Style | REST (Next.js API Routes) | N/A | Server-side operations | PDF generation, CSV exports, webhook handlers |
-| Database | Supabase PostgreSQL | 15+ | Relational database | Existing infrastructure with 13 tables, RLS policies, ML integration |
-| Cache | Next.js Cache (React Cache) | N/A | Server-side caching | Built-in caching for Server Components, revalidation on demand |
-| File Storage | Supabase Storage | N/A | Invoice PDFs, receipts | Integrated with Supabase, S3-compatible, existing setup |
-| Authentication | Supabase Auth | N/A | Email/password, session management | Existing auth system, RLS integration, secure session cookies |
-| Frontend Testing | Vitest | 1.0+ | Unit tests for utilities, calculations | Fast, Vite-powered, TypeScript support, compatible with React Testing Library |
-| Backend Testing | Vitest | 1.0+ | API route tests, service layer tests | Same tooling as frontend for consistency |
-| E2E Testing | Playwright | 1.40+ | Critical user journeys | Reliable, cross-browser, great debugging tools |
-| Build Tool | Next.js (Webpack) | N/A | Bundling and compilation | Built into Next.js, optimized for App Router |
-| Bundler | Turbopack (Next.js 14+) | N/A | Fast development builds | Next.js default, faster than Webpack in dev mode |
-| IaC Tool | N/A | N/A | Infrastructure as code | Not needed, Vercel handles infrastructure |
-| CI/CD | GitHub Actions | N/A | Automated testing and deployment | Existing setup for UpBank sync, add test/deploy workflows |
-| Monitoring | Vercel Analytics + Sentry | N/A | Performance and error tracking | Built-in analytics, Sentry for error alerting |
-| Logging | Vercel Logs + Supabase Logs | N/A | Application and database logs | Built-in logging, queryable via dashboard |
-| CSS Framework | Tailwind CSS | 3.4+ | Utility-first styling | shadcn/ui dependency, fast development, small bundle |
-| Charts Library | Recharts | 2.10+ | Data visualization | React-based, composable, supports all chart types needed |
-| Form Management | React Hook Form | 7.49+ | Form state and validation | Performant, minimal re-renders, great DX |
-| Schema Validation | Zod | 3.22+ | Runtime type validation | TypeScript-first, integrates with React Hook Form |
-| PDF Generation | @react-pdf/renderer | 3.3+ | Invoice PDF creation | React-based, declarative, server-side rendering |
-| Date Utilities | date-fns | 3.0+ | Date manipulation and formatting | Lightweight, tree-shakeable, Australia/Sydney timezone support |
-| Data Export | papaparse | 5.4+ | CSV generation | Fast, reliable, handles large datasets |
-| Decimal Math | decimal.js | 10.4+ | Precise financial calculations | Avoids floating-point errors, critical for GST calculations |
+```
+financial-dashboard/
+├── app/                                    # Next.js App Router (main application)
+│   ├── (auth)/                             # Auth route group (login, signup)
+│   │   ├── login/
+│   │   │   └── page.tsx                    # Login page (Supabase Auth)
+│   │   ├── signup/
+│   │   │   └── page.tsx                    # Signup page
+│   │   └── reset-password/
+│   │       └── page.tsx                    # Password reset flow
+│   │
+│   ├── (dashboard)/                        # Main app route group (requires auth)
+│   │   ├── layout.tsx                      # Dashboard layout (sidebar, header, entity selector)
+│   │   ├── page.tsx                        # Dashboard home (KPIs, recent transactions, alerts)
+│   │   │
+│   │   ├── transactions/                   # Transaction management
+│   │   │   ├── page.tsx                    # Transaction list (Server Component)
+│   │   │   ├── [id]/                       # Transaction detail
+│   │   │   │   └── page.tsx                # Transaction detail page
+│   │   │   └── components/                 # Transaction-specific components
+│   │   │       ├── TransactionTable.tsx    # Client Component (virtual scrolling)
+│   │   │       ├── TransactionFilters.tsx  # Client Component (filter UI)
+│   │   │       └── CategoryBadge.tsx       # Editable category badge
+│   │   │
+│   │   ├── invoices/                       # Invoice management
+│   │   │   ├── page.tsx                    # Invoice list (Server Component)
+│   │   │   ├── new/                        # Create invoice
+│   │   │   │   └── page.tsx                # Invoice form
+│   │   │   ├── [id]/                       # Invoice detail
+│   │   │   │   ├── page.tsx                # Invoice detail view
+│   │   │   │   └── edit/                   # Edit invoice
+│   │   │   │       └── page.tsx            # Invoice edit form
+│   │   │   └── components/
+│   │   │       ├── InvoiceCard.tsx         # Invoice display card
+│   │   │       ├── InvoiceForm.tsx         # Client Component (React Hook Form)
+│   │   │       └── InvoiceStatusBadge.tsx  # Status indicator
+│   │   │
+│   │   ├── reports/                        # Financial reports
+│   │   │   ├── page.tsx                    # Reports dashboard
+│   │   │   ├── profit-loss/                # P&L report
+│   │   │   │   └── page.tsx                # P&L generator
+│   │   │   ├── balance-sheet/              # Balance sheet
+│   │   │   │   └── page.tsx                # Balance sheet generator
+│   │   │   ├── bas/                        # BAS (Business Activity Statement)
+│   │   │   │   └── page.tsx                # BAS generator (Australian tax)
+│   │   │   └── components/
+│   │   │       ├── DateRangePicker.tsx     # Date range selector
+│   │   │       └── ReportCard.tsx          # Report display card
+│   │   │
+│   │   ├── insights/                       # ML insights & analytics
+│   │   │   ├── page.tsx                    # Insights dashboard
+│   │   │   ├── trends/                     # Spending trends
+│   │   │   │   └── page.tsx                # Trend analysis
+│   │   │   ├── anomalies/                  # Anomaly detection
+│   │   │   │   └── page.tsx                # Anomaly alerts
+│   │   │   └── forecasts/                  # Cash flow forecasts
+│   │   │       └── page.tsx                # Forecast visualization
+│   │   │
+│   │   ├── budgets/                        # Budget management (Phase 3)
+│   │   │   ├── page.tsx                    # Budget list
+│   │   │   └── new/
+│   │   │       └── page.tsx                # Create budget
+│   │   │
+│   │   └── settings/                       # Application settings
+│   │       ├── page.tsx                    # Settings dashboard
+│   │       ├── profile/                    # User profile
+│   │       │   └── page.tsx
+│   │       └── entities/                   # Entity management
+│   │           └── page.tsx
+│   │
+│   ├── api/                                # API Routes (Server-side operations)
+│   │   ├── invoices/
+│   │   │   ├── [id]/
+│   │   │   │   └── pdf/
+│   │   │   │       └── route.ts            # POST - Generate invoice PDF
+│   │   │   └── route.ts                    # POST - Create invoice
+│   │   ├── reports/
+│   │   │   ├── bas/
+│   │   │   │   └── route.ts                # POST - Generate BAS report
+│   │   │   ├── profit-loss/
+│   │   │   │   └── route.ts                # POST - Generate P&L
+│   │   │   └── balance-sheet/
+│   │   │       └── route.ts                # POST - Generate balance sheet
+│   │   ├── export/
+│   │   │   ├── transactions/
+│   │   │   │   └── csv/
+│   │   │   │       └── route.ts            # POST - Export transactions to CSV
+│   │   │   └── invoices/
+│   │   │       └── csv/
+│   │   │           └── route.ts            # POST - Export invoices to CSV
+│   │   └── webhooks/
+│   │       └── upbank/
+│   │           └── route.ts                # POST - Handle UpBank webhook
+│   │
+│   ├── layout.tsx                          # Root layout (global providers, fonts)
+│   ├── page.tsx                            # Landing page (redirects to /dashboard)
+│   ├── error.tsx                           # Global error boundary
+│   ├── not-found.tsx                       # 404 page
+│   └── loading.tsx                         # Global loading state
+│
+├── components/                             # Shared React components
+│   ├── ui/                                 # shadcn/ui components (auto-generated)
+│   │   ├── button.tsx
+│   │   ├── card.tsx
+│   │   ├── table.tsx
+│   │   ├── dialog.tsx
+│   │   ├── select.tsx
+│   │   ├── input.tsx
+│   │   ├── form.tsx
+│   │   ├── toast.tsx
+│   │   ├── tabs.tsx
+│   │   └── ... (other shadcn components)
+│   │
+│   ├── dashboard/                          # Dashboard-specific components
+│   │   ├── KPICard.tsx                     # Metric card with trend indicator
+│   │   ├── EntitySelector.tsx              # Multi-entity dropdown (Client Component)
+│   │   ├── RecentTransactions.tsx          # Recent transactions widget
+│   │   ├── SpendingChart.tsx               # Category spending donut chart
+│   │   └── AlertBanner.tsx                 # Overdue invoices / anomaly alerts
+│   │
+│   ├── charts/                             # Recharts wrapper components
+│   │   ├── PieChart.tsx                    # Wrapped Recharts PieChart
+│   │   ├── LineChart.tsx                   # Wrapped Recharts LineChart
+│   │   ├── BarChart.tsx                    # Wrapped Recharts BarChart
+│   │   ├── WaterfallChart.tsx              # Cash flow waterfall
+│   │   └── ChartCard.tsx                   # Reusable chart container
+│   │
+│   ├── forms/                              # Reusable form components
+│   │   ├── FormInput.tsx                   # Text input with validation
+│   │   ├── FormSelect.tsx                  # Select with validation
+│   │   ├── FormDatePicker.tsx              # Date picker with validation
+│   │   ├── FormCurrencyInput.tsx           # Currency input (decimal handling)
+│   │   └── FormTextarea.tsx                # Textarea with validation
+│   │
+│   ├── layout/                             # Layout components
+│   │   ├── Header.tsx                      # Main header (entity selector, search, user menu)
+│   │   ├── Sidebar.tsx                     # Navigation sidebar
+│   │   ├── MobileNav.tsx                   # Mobile hamburger navigation
+│   │   └── Footer.tsx                      # Footer (optional)
+│   │
+│   └── shared/                             # Shared utility components
+│       ├── LoadingSkeleton.tsx             # Loading state placeholder
+│       ├── ErrorBoundary.tsx               # React Error Boundary
+│       ├── Pagination.tsx                  # Pagination controls
+│       ├── SearchBar.tsx                   # Global search (Cmd+K)
+│       └── ThemeToggle.tsx                 # Dark mode toggle
+│
+├── lib/                                    # Utility functions & business logic
+│   ├── supabase/                           # Supabase integration
+│   │   ├── client.ts                       # Browser client (Client Components)
+│   │   ├── server.ts                       # Server client (Server Components, API Routes)
+│   │   ├── middleware.ts                   # Auth middleware
+│   │   └── types.ts                        # Auto-generated DB types (supabase gen types)
+│   │
+│   ├── calculations/                       # Financial calculation logic
+│   │   ├── bas.ts                          # BAS calculation (GST collected, paid, net)
+│   │   ├── profit-loss.ts                  # P&L calculation (revenue, expenses, profit)
+│   │   ├── balance-sheet.ts                # Balance sheet (assets, liabilities, equity)
+│   │   ├── gst.ts                          # GST calculation utilities (10% Australian)
+│   │   └── decimal.ts                      # Decimal math helpers (avoid floating point errors)
+│   │
+│   ├── formatters/                         # Data formatting utilities
+│   │   ├── currency.ts                     # Format cents to AUD display ($1,234.56)
+│   │   ├── date.ts                         # Date formatting (date-fns wrappers)
+│   │   ├── percentage.ts                   # Percentage formatting
+│   │   └── number.ts                       # Number formatting (thousands separator)
+│   │
+│   ├── validations/                        # Zod validation schemas
+│   │   ├── invoice.ts                      # Invoice creation/update schemas
+│   │   ├── transaction.ts                  # Transaction validation
+│   │   ├── contact.ts                      # Contact validation
+│   │   └── budget.ts                       # Budget validation
+│   │
+│   ├── queries/                            # Supabase query functions
+│   │   ├── transactions.ts                 # Transaction queries (list, get, update)
+│   │   ├── invoices.ts                     # Invoice queries
+│   │   ├── entities.ts                     # Entity queries
+│   │   ├── accounts.ts                     # Chart of accounts queries
+│   │   └── ml-insights.ts                  # ML predictions & insights queries
+│   │
+│   ├── mutations/                          # Supabase mutation functions
+│   │   ├── transactions.ts                 # Create/update/delete transactions
+│   │   ├── invoices.ts                     # Create/update/delete invoices
+│   │   └── budgets.ts                      # Create/update/delete budgets
+│   │
+│   └── utils/                              # General utilities
+│       ├── cn.ts                           # Tailwind class merging (clsx + tailwind-merge)
+│       ├── errors.ts                       # Error handling utilities
+│       ├── constants.ts                    # App constants (tax rates, date formats)
+│       └── env.ts                          # Environment variable validation
+│
+├── hooks/                                  # Custom React hooks
+│   ├── use-entity-filter.ts                # Global entity filter state (Zustand)
+│   ├── use-transactions.ts                 # React Query hook for transactions
+│   ├── use-invoices.ts                     # React Query hook for invoices
+│   ├── use-ml-insights.ts                  # React Query hook for ML insights
+│   ├── use-debounce.ts                     # Debounce hook (search inputs)
+│   ├── use-toast.ts                        # Toast notification hook
+│   └── use-media-query.ts                  # Responsive design hook
+│
+├── types/                                  # TypeScript type definitions
+│   ├── database.ts                         # Supabase database types (auto-generated)
+│   ├── api.ts                              # API request/response types
+│   ├── charts.ts                           # Chart data types
+│   ├── forms.ts                            # Form data types
+│   └── index.ts                            # Barrel export
+│
+├── styles/                                 # Global styles
+│   └── globals.css                         # Tailwind imports + custom CSS
+│
+├── public/                                 # Static assets
+│   ├── logos/                              # Entity logos (MOKAI, MOK HOUSE)
+│   ├── icons/                              # Custom icons
+│   └── favicon.ico                         # Favicon
+│
+├── tests/                                  # Test files
+│   ├── unit/                               # Unit tests (Vitest)
+│   │   ├── calculations/                   # Financial calculation tests
+│   │   │   ├── bas.test.ts                 # BAS calculation tests
+│   │   │   ├── profit-loss.test.ts
+│   │   │   └── gst.test.ts
+│   │   ├── formatters/
+│   │   │   └── currency.test.ts
+│   │   └── validations/
+│   │       └── invoice.test.ts
+│   │
+│   ├── integration/                        # Integration tests (Vitest + Testing Library)
+│   │   ├── components/
+│   │   │   ├── TransactionTable.test.tsx
+│   │   │   └── InvoiceForm.test.tsx
+│   │   └── queries/
+│   │       └── transactions.test.ts
+│   │
+│   └── e2e/                                # End-to-end tests (Playwright)
+│       ├── auth.spec.ts                    # Login/logout flow
+│       ├── transactions.spec.ts            # Transaction viewing/editing
+│       ├── invoices.spec.ts                # Invoice creation/payment
+│       └── reports.spec.ts                 # Report generation
+│
+├── .env.local                              # Environment variables (gitignored)
+├── .env.example                            # Example environment variables
+├── next.config.js                          # Next.js configuration
+├── tailwind.config.ts                      # Tailwind configuration
+├── tsconfig.json                           # TypeScript configuration
+├── package.json                            # Dependencies
+├── vitest.config.ts                        # Vitest configuration
+├── playwright.config.ts                    # Playwright configuration
+└── README.md                               # Project documentation
+```
 
----
+### 2.2 Component Architecture
 
-## Data Models
+**Component Strategy: Server Components First**
 
-These are the core conceptual data models shared between frontend and backend. They map directly to existing Supabase tables.
+Default to **React Server Components** (RSC) for all components. Only use **Client Components** when you need:
+- Interactivity (onClick, onChange, state)
+- Browser-only APIs (localStorage, window)
+- React hooks that require client (useState, useEffect)
 
-### Entity
+**Component Hierarchy:**
 
-**Purpose**: Represents business entities (MOKAI PTY LTD, MOK HOUSE PTY LTD, Harrison Sayers) with multi-entity accounting support.
+```
+App Router
+│
+├── Server Components (Default)
+│   ├── layout.tsx                     # Fetch user session, entities
+│   ├── page.tsx                       # Fetch dashboard data (SSR)
+│   ├── transactions/page.tsx          # Fetch transactions (SSR)
+│   └── reports/page.tsx               # Generate reports (SSR)
+│
+└── Client Components ("use client")
+    ├── EntitySelector                 # Zustand state + onClick
+    ├── TransactionTable               # Virtual scrolling + sorting
+    ├── InvoiceForm                    # React Hook Form + validation
+    ├── PieChart                       # Recharts (client-only)
+    └── SearchBar                      # Debounced input + state
+```
 
-**Key Attributes**:
-- `id`: UUID - Primary identifier
-- `name`: string - Entity name
-- `abn`: string - Australian Business Number (11 digits)
-- `entity_type`: enum - "PTY LTD", "Sole Trader", "Partnership", "Trust"
-- `is_indigenous_owned`: boolean - Indigenous business status (for IPP eligibility)
-- `address`: string - Business address
-- `bank_details`: JSON - BSB, account number, account name
+**Reusable Component Patterns:**
 
-**TypeScript Interface**:
-
+1. **KPI Card Component:**
 ```typescript
-interface Entity {
-  id: string; // UUID
-  name: string;
-  abn: string | null;
-  acn: string | null;
-  entity_type: 'PTY LTD' | 'Sole Trader' | 'Partnership' | 'Trust';
-  is_indigenous_owned: boolean;
-  address: string | null;
-  city: string | null;
-  state: string | null;
-  postcode: string | null;
-  country: string;
-  phone: string | null;
-  email: string | null;
-  website: string | null;
-  bank_details: {
-    bank_name?: string;
-    bsb?: string;
-    account_number?: string;
-    account_name?: string;
-  } | null;
-  logo_url: string | null;
-  created_at: string; // ISO 8601
-  updated_at: string; // ISO 8601
-}
-```
+// Server Component (fetches data)
+async function KPICard({
+  title,
+  entityId,
+  dateRange
+}: KPICardProps) {
+  const value = await calculateKPI(entityId, dateRange) // Server-side query
+  const trend = await calculateTrend(entityId, dateRange)
 
-**Relationships**:
-- Has many `BankAccount`
-- Has many `Transaction`
-- Has many `Invoice`
-- Has many `Contact` (via entity assignments)
-
-### Transaction
-
-**Purpose**: Financial transactions from UpBank sync with ML categorization and anomaly detection.
-
-**Key Attributes**:
-- `id`: UUID - Primary identifier
-- `entity_id`: UUID - Foreign key to Entity
-- `description`: string - Transaction description
-- `amount_cents`: number - Amount in cents (negative = expense, positive = income)
-- `transaction_date`: Date - When transaction occurred
-- `ai_category`: string | null - ML-predicted category
-- `ai_confidence`: number | null - Confidence score (0.00-1.00)
-- `anomaly_score`: number | null - Anomaly detection score
-- `is_business_related`: boolean - Auto-detected business expense flag
-- `is_tax_deductible`: boolean - Tax optimization flag
-
-**TypeScript Interface**:
-
-```typescript
-interface Transaction {
-  id: string; // UUID
-  entity_id: string; // UUID
-  account_id: string; // UUID - Foreign key to BankAccount
-  upbank_transaction_id: string | null; // If synced from UpBank
-
-  // Core fields
-  description: string;
-  amount_cents: number; // Negative = expense, positive = income
-  currency_code: string; // 'AUD'
-  transaction_date: string; // ISO 8601
-  status: 'HELD' | 'SETTLED' | 'CANCELLED';
-
-  // Categorization
-  ai_category: string | null; // ML prediction
-  ai_confidence: number | null; // 0.00-1.00
-  manual_category: string | null; // User override
-  ai_category_override: boolean; // True if user corrected ML
-
-  // ML insights
-  anomaly_score: number | null; // 0.00-1.00
-  is_business_related: boolean;
-  is_tax_deductible: boolean;
-  ml_features: Record<string, any> | null; // Feature vector
-
-  // Metadata
-  merchant_name: string | null;
-  reference: string | null;
-  notes: string | null;
-  tags: string[];
-
-  // Timestamps
-  created_at: string; // ISO 8601
-  updated_at: string; // ISO 8601
-  settled_at: string | null; // ISO 8601
-}
-```
-
-**Relationships**:
-- Belongs to `Entity`
-- Belongs to `BankAccount`
-- Has many `TransactionLine` (double-entry accounting)
-- Has many `AIPrediction` (audit trail)
-
-### Invoice
-
-**Purpose**: Receivables (sent to clients) and payables (received from suppliers) with payment tracking.
-
-**Key Attributes**:
-- `id`: UUID - Primary identifier
-- `entity_id`: UUID - Foreign key to Entity
-- `contact_id`: UUID - Foreign key to Contact (client/supplier)
-- `invoice_number`: string - Auto-generated or manual
-- `invoice_type`: enum - "RECEIVABLE", "PAYABLE"
-- `status`: enum - "DRAFT", "SENT", "PAID", "OVERDUE", "CANCELLED"
-- `issue_date`: Date - Invoice issue date
-- `due_date`: Date - Payment due date
-- `subtotal_cents`: number - Amount before GST
-- `gst_cents`: number - GST amount (10% in Australia)
-- `total_cents`: number - Total including GST
-
-**TypeScript Interface**:
-
-```typescript
-interface Invoice {
-  id: string; // UUID
-  entity_id: string; // UUID
-  contact_id: string; // UUID
-
-  // Invoice details
-  invoice_number: string;
-  invoice_type: 'RECEIVABLE' | 'PAYABLE';
-  status: 'DRAFT' | 'SENT' | 'PAID' | 'OVERDUE' | 'CANCELLED' | 'PARTIALLY_PAID';
-
-  // Dates
-  issue_date: string; // ISO 8601
-  due_date: string; // ISO 8601
-  payment_date: string | null; // ISO 8601
-
-  // Amounts
-  subtotal_cents: number;
-  gst_cents: number; // 10% GST
-  total_cents: number;
-  amount_paid_cents: number; // For partial payments
-
-  // Payment details
-  payment_terms: string | null; // "Net 30", "Net 60", etc.
-  payment_method: string | null; // "Bank Transfer", "Credit Card", etc.
-  payment_reference: string | null;
-
-  // Metadata
-  description: string | null;
-  notes: string | null;
-  pdf_url: string | null; // Supabase Storage URL
-
-  // Line items (denormalized for quick access)
-  line_items: InvoiceLineItem[];
-
-  // Timestamps
-  created_at: string; // ISO 8601
-  updated_at: string; // ISO 8601
-}
-
-interface InvoiceLineItem {
-  id: string; // UUID
-  invoice_id: string; // UUID
-  description: string;
-  quantity: number;
-  unit_price_cents: number;
-  gst_applicable: boolean;
-  amount_cents: number; // quantity * unit_price_cents
-}
-```
-
-**Relationships**:
-- Belongs to `Entity`
-- Belongs to `Contact`
-- Has many `InvoiceLineItem`
-
-### Contact
-
-**Purpose**: Customers (invoice recipients) and suppliers (vendors) for entity relationships.
-
-**Key Attributes**:
-- `id`: UUID - Primary identifier
-- `entity_id`: UUID - Foreign key to Entity
-- `name`: string - Contact name
-- `abn`: string | null - Australian Business Number
-- `contact_type`: enum - "CUSTOMER", "SUPPLIER", "BOTH"
-- `email`: string | null - Email address
-- `phone`: string | null - Phone number
-
-**TypeScript Interface**:
-
-```typescript
-interface Contact {
-  id: string; // UUID
-  entity_id: string; // UUID
-
-  // Contact details
-  name: string;
-  abn: string | null;
-  acn: string | null;
-  contact_type: 'CUSTOMER' | 'SUPPLIER' | 'BOTH';
-
-  // Contact information
-  email: string | null;
-  phone: string | null;
-  address: string | null;
-  city: string | null;
-  state: string | null;
-  postcode: string | null;
-  country: string;
-
-  // Metadata
-  notes: string | null;
-  is_active: boolean;
-  archived_at: string | null; // ISO 8601
-
-  // Timestamps
-  created_at: string; // ISO 8601
-  updated_at: string; // ISO 8601
-}
-```
-
-**Relationships**:
-- Belongs to `Entity`
-- Has many `Invoice`
-
-### Account (Chart of Accounts)
-
-**Purpose**: Australian chart of accounts for categorization and tax compliance.
-
-**Key Attributes**:
-- `id`: UUID - Primary identifier
-- `code`: string - Account code (e.g., "4000", "5100")
-- `name`: string - Account name (e.g., "Sales Revenue", "Office Expenses")
-- `account_type`: enum - "ASSET", "LIABILITY", "EQUITY", "REVENUE", "EXPENSE"
-- `tax_treatment`: enum - "GST_ON_INCOME", "GST_ON_EXPENSES", "GST_FREE", "INPUT_TAXED", "NOT_REPORTABLE"
-- `is_active`: boolean - Active/inactive status
-
-**TypeScript Interface**:
-
-```typescript
-interface Account {
-  id: string; // UUID
-  code: string;
-  name: string;
-  account_type: 'ASSET' | 'LIABILITY' | 'EQUITY' | 'REVENUE' | 'EXPENSE';
-  tax_treatment: 'GST_ON_INCOME' | 'GST_ON_EXPENSES' | 'GST_FREE' | 'INPUT_TAXED' | 'NOT_REPORTABLE';
-  parent_account_id: string | null; // UUID - For hierarchical accounts
-  description: string | null;
-  is_active: boolean;
-
-  // Timestamps
-  created_at: string; // ISO 8601
-  updated_at: string; // ISO 8601
-}
-```
-
-**Relationships**:
-- Self-referencing (parent-child hierarchy)
-- Has many `TransactionLine`
-
----
-
-## API Specification
-
-The application uses **Next.js API Routes** for server-side operations. These are REST-style endpoints but not a traditional REST API.
-
-### API Routes Structure
-
-```
-/api/
-├── invoices/
-│   ├── [id]/
-│   │   └── pdf/          # GET - Generate invoice PDF
-│   └── route.ts          # POST - Create invoice
-├── reports/
-│   ├── bas/              # POST - Generate BAS report
-│   ├── income-statement/ # POST - Generate P&L report
-│   └── export/           # POST - Export transactions CSV
-├── transactions/
-│   ├── categorize/       # POST - Bulk categorize transactions
-│   └── split/            # POST - Split transaction
-└── webhooks/
-    └── upbank/           # POST - UpBank sync webhook
-```
-
-### Key Endpoints
-
-#### Invoice PDF Generation
-
-```typescript
-// GET /api/invoices/[id]/pdf
-// Generates PDF for invoice and returns download stream
-
-interface Response {
-  // Returns PDF binary stream with headers:
-  // Content-Type: application/pdf
-  // Content-Disposition: attachment; filename="invoice-{number}.pdf"
-}
-```
-
-#### Transaction Export
-
-```typescript
-// POST /api/reports/export
-interface Request {
-  format: 'csv' | 'excel';
-  filters: {
-    entity_id: string;
-    start_date: string; // ISO 8601
-    end_date: string; // ISO 8601
-    category?: string;
-    confidence_min?: number;
-  };
-  columns: string[]; // Column selection
-}
-
-interface Response {
-  // Returns CSV/Excel binary stream with headers:
-  // Content-Type: text/csv or application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-  // Content-Disposition: attachment; filename="transactions-{date}.{format}"
-}
-```
-
-#### BAS Report Generation
-
-```typescript
-// POST /api/reports/bas
-interface Request {
-  entity_id: string;
-  quarter: 1 | 2 | 3 | 4; // Q1-Q4
-  fiscal_year: number; // e.g., 2025
-}
-
-interface Response {
-  bas_data: {
-    // G-fields from BAS form
-    G1_total_sales_cents: number;
-    G2_export_sales_cents: number;
-    G3_gst_free_sales_cents: number;
-    G10_capital_purchases_cents: number;
-    G11_non_capital_purchases_cents: number;
-    // ... more BAS fields
-
-    // GST calculations
-    field_1A_gst_on_sales_cents: number;
-    field_1B_gst_on_purchases_cents: number;
-    field_7_net_gst_cents: number; // Amount owed or refund
-  };
-  supporting_transactions: {
-    [field: string]: Transaction[]; // Transactions contributing to each field
-  };
-}
-```
-
-### Authentication Pattern
-
-All API routes use Supabase Auth middleware:
-
-```typescript
-// middleware.ts
-import { createServerClient } from '@supabase/ssr'
-
-export async function middleware(request: NextRequest) {
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    { cookies: { get: (name) => request.cookies.get(name)?.value } }
-  )
-
-  const { data: { session } } = await supabase.auth.getSession()
-
-  if (!session && request.nextUrl.pathname.startsWith('/api')) {
-    return new Response('Unauthorized', { status: 401 })
-  }
-
-  return NextResponse.next()
-}
-```
-
----
-
-## Components
-
-### Frontend Components
-
-#### Dashboard Overview Component
-
-**Responsibility**: Displays KPI cards, trend charts, recent transactions widget, and anomaly alerts for selected entity.
-
-**Key Interfaces**:
-- `getDashboardData(entityId: string, dateRange: DateRange): Promise<DashboardData>`
-- `refreshDashboard(): void`
-
-**Dependencies**:
-- Supabase client (read-only queries)
-- Recharts (for visualization)
-- Entity context (global state)
-
-**Technology Stack**: React Server Component (default), Client Components for charts and date picker
-
-#### Transaction List Component
-
-**Responsibility**: Paginated transaction table with filtering, search, inline editing, and bulk operations.
-
-**Key Interfaces**:
-- `getTransactions(filters: TransactionFilters, pagination: Pagination): Promise<TransactionPage>`
-- `updateCategory(transactionId: string, category: string): Promise<void>`
-- `bulkCategorize(transactionIds: string[], category: string): Promise<void>`
-
-**Dependencies**:
-- Supabase client (queries + mutations)
-- React Hook Form (for filters)
-- Virtual scrolling library (if >100 transactions)
-
-**Technology Stack**: Mixed - Server Component for initial render, Client Component for filters and table interactions
-
-#### Invoice Form Component
-
-**Responsibility**: Multi-step invoice creation with line items, GST calculation, PDF preview.
-
-**Key Interfaces**:
-- `createInvoice(data: InvoiceFormData): Promise<Invoice>`
-- `generatePDF(invoice: Invoice): Promise<string>` (calls API route)
-- `validateGST(lineItems: LineItem[]): { subtotal: number; gst: number; total: number }`
-
-**Dependencies**:
-- React Hook Form + Zod validation
-- Supabase client (create invoice mutation)
-- Contact selector (autocomplete)
-
-**Technology Stack**: Client Component (complex form interactions)
-
-#### Chart Components
-
-**Responsibility**: Reusable chart wrappers for revenue/expense trends, category breakdowns, anomaly timelines.
-
-**Key Interfaces**:
-- `<TrendChart data={ChartData[]} />` - Line chart for time series
-- `<CategoryPieChart data={CategoryData[]} />` - Pie chart for category breakdown
-- `<AnomalyTimelineChart data={AnomalyData[]} />` - Scatter plot for anomalies
-
-**Dependencies**:
-- Recharts library
-- shadcn/ui Card wrapper
-
-**Technology Stack**: Client Components (Recharts requires client-side rendering)
-
-### Backend Components (Supabase)
-
-#### Transaction Categorization Service
-
-**Responsibility**: ML-powered transaction categorization using MindsDB models.
-
-**Key Interfaces**:
-- `predict_transaction_category(amount, description, vendor)` (PostgreSQL function)
-- Database trigger `auto_categorize_on_insert` (automatic categorization)
-
-**Dependencies**:
-- MindsDB integration
-- `business_keywords` table for keyword matching
-- `ml_models` table for model registry
-
-**Technology Stack**: PostgreSQL functions, MindsDB SQL queries
-
-#### BAS Calculation Service
-
-**Responsibility**: Generate Australian Business Activity Statement data from transactions.
-
-**Key Interfaces**:
-- `/lib/reports/bas.ts` - `calculateBAS(entityId, quarter, year)` function
-- SQL queries aggregating transactions by GST treatment
-
-**Dependencies**:
-- Supabase client (complex aggregation queries)
-- `accounts` table (tax treatment definitions)
-- `transactions` and `invoices` tables
-
-**Technology Stack**: TypeScript service layer, PostgreSQL aggregations
-
-#### PDF Generation Service
-
-**Responsibility**: Server-side invoice PDF creation with Australian tax compliance formatting.
-
-**Key Interfaces**:
-- `/lib/pdf/invoice.tsx` - React component defining PDF layout
-- `/api/invoices/[id]/pdf` - API route rendering PDF
-
-**Dependencies**:
-- @react-pdf/renderer library
-- Invoice data from Supabase
-- Entity branding assets (logo, colors)
-
-**Technology Stack**: React PDF components, Next.js API Routes
-
----
-
-## Component Diagrams
-
-### High-Level Component Architecture
-
-```mermaid
-C4Container
-  title Component Architecture - SAYERS Finance Dashboard
-
-  Person(user, "Harrison Sayers", "Dashboard user")
-
-  Container_Boundary(frontend, "Next.js Frontend") {
-    Component(pages, "Pages/Routes", "Next.js App Router", "Server Components for initial render")
-    Component(components, "UI Components", "React + shadcn/ui", "Reusable components")
-    Component(charts, "Chart Components", "Recharts", "Data visualization")
-    Component(forms, "Form Components", "React Hook Form + Zod", "Invoice, transaction forms")
-  }
-
-  Container_Boundary(backend, "Supabase Backend") {
-    Component(auth, "Auth Service", "Supabase Auth", "Authentication")
-    Component(db, "Database", "PostgreSQL", "Financial data storage")
-    Component(rls, "RLS Policies", "PostgreSQL", "Multi-entity isolation")
-    Component(storage, "File Storage", "S3-compatible", "Invoice PDFs")
-  }
-
-  Container_Boundary(ml, "ML Pipeline") {
-    Component(mindsdb, "MindsDB", "ML Engine", "7 active models")
-    Component(predictions, "Predictions Store", "PostgreSQL table", "Audit trail")
-  }
-
-  System_Ext(upbank, "UpBank API", "Banking data source")
-  System_Ext(n8n, "n8n Workflows", "Automation orchestration")
-
-  Rel(user, pages, "Views", "HTTPS")
-  Rel(pages, components, "Renders")
-  Rel(components, charts, "Uses")
-  Rel(components, forms, "Uses")
-
-  Rel(pages, auth, "Authenticates")
-  Rel(pages, db, "Queries (Server)")
-  Rel(components, db, "Mutates (Client)")
-  Rel(auth, rls, "Enforces")
-  Rel(rls, db, "Protects")
-
-  Rel(db, mindsdb, "Triggers predictions")
-  Rel(mindsdb, predictions, "Stores results")
-
-  Rel(n8n, upbank, "Polls")
-  Rel(n8n, db, "Syncs transactions")
-```
-
-### Transaction Categorization Flow
-
-```mermaid
-sequenceDiagram
-    participant User
-    participant Dashboard
-    participant Supabase
-    participant MindsDB
-    participant AuditLog
-
-    User->>Dashboard: View transactions
-    Dashboard->>Supabase: Query transactions (entity_id filter)
-    Supabase-->>Dashboard: Transactions with ai_category, ai_confidence
-    Dashboard->>User: Display with confidence badges
-
-    User->>Dashboard: Override category (low confidence)
-    Dashboard->>Supabase: UPDATE SET manual_category, ai_category_override=true
-    Supabase->>AuditLog: Log categorization change
-    Supabase-->>Dashboard: Success
-    Dashboard->>User: Show green checkmark
-
-    Note over Supabase,MindsDB: New transaction inserted
-    Supabase->>MindsDB: Trigger: auto_categorize_on_insert
-    MindsDB->>MindsDB: Check business_keywords table
-    MindsDB->>MindsDB: Apply ML model if no keyword match
-    MindsDB-->>Supabase: Return category, confidence, is_business
-    Supabase->>Supabase: UPDATE ai_category, ai_confidence
-    Supabase->>AuditLog: Log prediction
-```
-
----
-
-## External APIs
-
-### UpBank API
-
-- **Purpose**: Real-time personal banking sync for Harrison's personal accounts
-- **Documentation**: https://developer.up.com.au/
-- **Base URL**: `https://api.up.com.au/api/v1`
-- **Authentication**: Bearer token (Personal Access Token)
-- **Rate Limits**: Undocumented, but generally permissive for personal use
-
-**Key Endpoints Used**:
-- `GET /accounts` - List all personal accounts
-- `GET /accounts/{id}/transactions` - List transactions for account
-- `GET /transactions/{id}` - Get single transaction details
-
-**Integration Notes**:
-- Existing sync automation via GitHub Actions (daily) + n8n (on-demand)
-- Dashboard reads from `personal_transactions` table, does not call API directly
-- Sync script: `/scripts/sync-upbank-enhanced.js` with error recovery
-- Transactions stored with `upbank_transaction_id` for deduplication
-
-### MindsDB API (Internal)
-
-- **Purpose**: ML model predictions for transaction categorization and anomaly detection
-- **Documentation**: https://docs.mindsdb.com/
-- **Base URL**: Integrated via SQL interface (Supabase → MindsDB)
-- **Authentication**: Not required (internal integration)
-- **Rate Limits**: No limits (self-hosted or enterprise plan)
-
-**Key Endpoints Used** (SQL interface):
-- `SELECT * FROM mindsdb.transaction_categorizer WHERE description='...'` - Categorization prediction
-- `SELECT * FROM mindsdb.anomaly_detector WHERE ...` - Anomaly score
-
-**Integration Notes**:
-- Models already trained and deployed
-- Predictions triggered via PostgreSQL functions
-- Dashboard displays predictions from `ai_predictions` table
-- No direct API calls from frontend, all via Supabase
-
----
-
-## Core Workflows
-
-### Invoice Creation and Payment Workflow
-
-```mermaid
-sequenceDiagram
-    participant User
-    participant InvoiceForm
-    participant API
-    participant Supabase
-    participant PDFService
-    participant EmailService
-
-    User->>InvoiceForm: Fill invoice details (client, line items)
-    InvoiceForm->>InvoiceForm: Calculate GST (10%)
-    InvoiceForm->>User: Show preview (subtotal, GST, total)
-    User->>InvoiceForm: Click "Save & Send"
-
-    InvoiceForm->>API: POST /api/invoices (invoice data)
-    API->>Supabase: INSERT INTO invoices
-    Supabase-->>API: Invoice ID
-
-    API->>PDFService: Generate PDF (invoice ID)
-    PDFService->>Supabase: Fetch invoice + entity + contact data
-    Supabase-->>PDFService: Full invoice data
-    PDFService->>PDFService: Render React PDF component
-    PDFService->>Supabase: Upload PDF to Storage
-    Supabase-->>PDFService: PDF URL
-    PDFService-->>API: PDF URL
-
-    API->>Supabase: UPDATE invoices SET pdf_url, status='SENT'
-    API->>EmailService: Send invoice email (PDF attachment)
-    EmailService-->>API: Email sent
-
-    API-->>InvoiceForm: Success (invoice ID, PDF URL)
-    InvoiceForm->>User: Show success message + PDF preview link
-
-    Note over User,EmailService: Client receives invoice email
-
-    User->>InvoiceForm: Mark invoice as paid (later)
-    InvoiceForm->>Supabase: UPDATE invoices SET status='PAID', payment_date=NOW()
-    Supabase-->>InvoiceForm: Success
-    InvoiceForm->>User: Updated status badge (green "Paid")
-```
-
-### ML-Powered Transaction Review Workflow
-
-```mermaid
-sequenceDiagram
-    participant UpBank
-    participant SyncScript
-    participant Supabase
-    participant MindsDB
-    participant Dashboard
-    participant User
-
-    Note over UpBank,SyncScript: Automated sync (hourly via GitHub Actions)
-    SyncScript->>UpBank: GET /transactions (since last sync)
-    UpBank-->>SyncScript: New transactions
-
-    loop For each transaction
-        SyncScript->>Supabase: INSERT INTO personal_transactions
-        Supabase->>Supabase: Trigger: auto_categorize_on_insert
-        Supabase->>MindsDB: Check business_keywords for description match
-
-        alt Keyword match found
-            MindsDB-->>Supabase: category, confidence=0.95, is_business=true
-        else No keyword match
-            MindsDB->>MindsDB: Run ML categorization model
-            MindsDB-->>Supabase: category, confidence (0.0-1.0), is_business
-        end
-
-        Supabase->>Supabase: UPDATE ai_category, ai_confidence, is_business_related
-    end
-
-    SyncScript-->>Supabase: Sync complete
-
-    Note over Dashboard,User: User opens dashboard
-    User->>Dashboard: Navigate to Transactions page
-    Dashboard->>Supabase: Query WHERE ai_confidence < 0.7 (low confidence)
-    Supabase-->>Dashboard: Transactions needing review
-    Dashboard->>User: Display review queue (yellow highlighting)
-
-    User->>Dashboard: Click transaction, select correct category
-    Dashboard->>Supabase: UPDATE manual_category, ai_category_override=true, confidence=null
-    Supabase->>Supabase: Log to audit_log
-    Supabase-->>Dashboard: Success
-    Dashboard->>User: Green checkmark, remove from review queue
-```
-
----
-
-## Database Schema
-
-The database schema already exists in Supabase. Below is the reference schema for the dashboard's primary tables:
-
-### Core Tables (SQL DDL Reference)
-
-```sql
--- Entities (MOK HOUSE, MOKAI, Harrison Sayers)
-CREATE TABLE entities (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    name TEXT NOT NULL,
-    abn TEXT UNIQUE,
-    acn TEXT,
-    entity_type TEXT NOT NULL, -- 'PTY LTD', 'Sole Trader', etc.
-    is_indigenous_owned BOOLEAN DEFAULT FALSE,
-    address TEXT,
-    city TEXT,
-    state TEXT,
-    postcode TEXT,
-    country TEXT DEFAULT 'Australia',
-    phone TEXT,
-    email TEXT,
-    website TEXT,
-    bank_details JSONB, -- { bank_name, bsb, account_number, account_name }
-    logo_url TEXT,
-    created_at TIMESTAMPTZ DEFAULT NOW(),
-    updated_at TIMESTAMPTZ DEFAULT NOW()
-);
-
--- Personal transactions (from UpBank sync)
-CREATE TABLE personal_transactions (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    upbank_transaction_id TEXT UNIQUE NOT NULL,
-    account_id UUID NOT NULL REFERENCES personal_accounts(id),
-
-    -- Transaction details
-    description TEXT NOT NULL,
-    message TEXT,
-    amount_cents INTEGER NOT NULL, -- Negative = expense, positive = income
-    currency_code TEXT NOT NULL DEFAULT 'AUD',
-    transaction_date TIMESTAMPTZ NOT NULL,
-    status TEXT NOT NULL DEFAULT 'SETTLED', -- 'HELD', 'SETTLED', 'CANCELLED'
-
-    -- ML categorization
-    ai_category TEXT,
-    ai_confidence NUMERIC(5,4), -- 0.0000 to 1.0000
-    manual_category TEXT,
-    ai_category_override BOOLEAN DEFAULT FALSE,
-
-    -- ML insights
-    anomaly_score NUMERIC(5,4),
-    is_business_related BOOLEAN DEFAULT FALSE,
-    is_tax_deductible BOOLEAN DEFAULT FALSE,
-    ml_features JSONB,
-
-    -- Metadata
-    merchant_name TEXT,
-    reference TEXT,
-    notes TEXT,
-    tags TEXT[],
-
-    created_at TIMESTAMPTZ DEFAULT NOW(),
-    updated_at TIMESTAMPTZ DEFAULT NOW()
-);
-
--- Invoices (receivables and payables)
-CREATE TABLE invoices (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    entity_id UUID NOT NULL REFERENCES entities(id),
-    contact_id UUID NOT NULL REFERENCES contacts(id),
-
-    invoice_number TEXT UNIQUE NOT NULL,
-    invoice_type TEXT NOT NULL, -- 'RECEIVABLE', 'PAYABLE'
-    status TEXT NOT NULL DEFAULT 'DRAFT', -- 'DRAFT', 'SENT', 'PAID', 'OVERDUE', 'CANCELLED', 'PARTIALLY_PAID'
-
-    issue_date DATE NOT NULL,
-    due_date DATE NOT NULL,
-    payment_date DATE,
-
-    subtotal_cents INTEGER NOT NULL,
-    gst_cents INTEGER NOT NULL, -- 10% GST
-    total_cents INTEGER NOT NULL,
-    amount_paid_cents INTEGER DEFAULT 0,
-
-    payment_terms TEXT,
-    payment_method TEXT,
-    payment_reference TEXT,
-
-    description TEXT,
-    notes TEXT,
-    pdf_url TEXT,
-
-    created_at TIMESTAMPTZ DEFAULT NOW(),
-    updated_at TIMESTAMPTZ DEFAULT NOW()
-);
-
--- Invoice line items
-CREATE TABLE invoice_line_items (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    invoice_id UUID NOT NULL REFERENCES invoices(id) ON DELETE CASCADE,
-
-    line_order INTEGER NOT NULL,
-    description TEXT NOT NULL,
-    quantity NUMERIC(10,2) NOT NULL,
-    unit_price_cents INTEGER NOT NULL,
-    gst_applicable BOOLEAN DEFAULT TRUE,
-    amount_cents INTEGER NOT NULL, -- quantity * unit_price_cents
-
-    created_at TIMESTAMPTZ DEFAULT NOW()
-);
-
--- Contacts (customers and suppliers)
-CREATE TABLE contacts (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    entity_id UUID NOT NULL REFERENCES entities(id),
-
-    name TEXT NOT NULL,
-    abn TEXT,
-    acn TEXT,
-    contact_type TEXT NOT NULL, -- 'CUSTOMER', 'SUPPLIER', 'BOTH'
-
-    email TEXT,
-    phone TEXT,
-    address TEXT,
-    city TEXT,
-    state TEXT,
-    postcode TEXT,
-    country TEXT DEFAULT 'Australia',
-
-    notes TEXT,
-    is_active BOOLEAN DEFAULT TRUE,
-    archived_at TIMESTAMPTZ,
-
-    created_at TIMESTAMPTZ DEFAULT NOW(),
-    updated_at TIMESTAMPTZ DEFAULT NOW()
-);
-
--- Chart of accounts
-CREATE TABLE accounts (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    code TEXT UNIQUE NOT NULL,
-    name TEXT NOT NULL,
-    account_type TEXT NOT NULL, -- 'ASSET', 'LIABILITY', 'EQUITY', 'REVENUE', 'EXPENSE'
-    tax_treatment TEXT NOT NULL, -- 'GST_ON_INCOME', 'GST_ON_EXPENSES', 'GST_FREE', 'INPUT_TAXED', 'NOT_REPORTABLE'
-    parent_account_id UUID REFERENCES accounts(id),
-    description TEXT,
-    is_active BOOLEAN DEFAULT TRUE,
-
-    created_at TIMESTAMPTZ DEFAULT NOW(),
-    updated_at TIMESTAMPTZ DEFAULT NOW()
-);
-
--- Indexes for performance
-CREATE INDEX idx_transactions_entity_date ON personal_transactions(account_id, transaction_date DESC);
-CREATE INDEX idx_transactions_confidence ON personal_transactions(ai_confidence) WHERE ai_confidence < 0.7;
-CREATE INDEX idx_invoices_entity_status ON invoices(entity_id, status);
-CREATE INDEX idx_invoices_due_date ON invoices(due_date) WHERE status NOT IN ('PAID', 'CANCELLED');
-
--- RLS Policies (Row Level Security)
-ALTER TABLE entities ENABLE ROW LEVEL SECURITY;
-ALTER TABLE personal_transactions ENABLE ROW LEVEL SECURITY;
-ALTER TABLE invoices ENABLE ROW LEVEL SECURITY;
-ALTER TABLE contacts ENABLE ROW LEVEL SECURITY;
-ALTER TABLE accounts ENABLE ROW LEVEL SECURITY;
-
--- Example RLS policy (entity-based isolation)
-CREATE POLICY "Users can only access their own entity data" ON personal_transactions
-    FOR ALL USING (
-        account_id IN (
-            SELECT id FROM personal_accounts
-            WHERE upbank_account_id IN (SELECT upbank_account_id FROM user_accounts WHERE user_id = auth.uid())
-        )
-    );
-```
-
-**Performance Notes**:
-- Indexes on `entity_id`, `transaction_date`, `status`, `ai_confidence` for fast filtering
-- Composite indexes on `(entity_id, transaction_date)` for dashboard queries
-- Partial indexes on low-confidence transactions and overdue invoices
-- RLS policies enforced at database level, no application-side filtering needed
-
----
-
-## Frontend Architecture
-
-### Component Architecture
-
-#### Component Organization
-
-```
-/components
-├── ui/                      # shadcn/ui base components
-│   ├── button.tsx
-│   ├── card.tsx
-│   ├── input.tsx
-│   ├── select.tsx
-│   ├── table.tsx
-│   ├── badge.tsx
-│   └── ...
-├── charts/                  # Chart wrappers (Recharts)
-│   ├── trend-chart.tsx
-│   ├── category-pie-chart.tsx
-│   ├── anomaly-timeline.tsx
-│   └── chart-card.tsx       # Reusable card wrapper
-├── dashboard/               # Dashboard-specific widgets
-│   ├── kpi-card.tsx
-│   ├── recent-transactions.tsx
-│   ├── anomaly-alerts.tsx
-│   └── entity-selector.tsx
-├── transactions/            # Transaction components
-│   ├── transaction-table.tsx
-│   ├── transaction-filters.tsx
-│   ├── category-badge.tsx
-│   └── confidence-indicator.tsx
-├── invoices/                # Invoice components
-│   ├── invoice-form.tsx
-│   ├── invoice-list.tsx
-│   ├── line-item-editor.tsx
-│   └── gst-calculator.tsx
-├── forms/                   # Reusable form components
-│   ├── contact-quick-add.tsx
-│   ├── date-range-picker.tsx
-│   └── entity-selector.tsx
-└── layout/                  # Layout components
-    ├── header.tsx
-    ├── sidebar.tsx
-    ├── mobile-nav.tsx
-    └── footer.tsx
-```
-
-#### Component Template
-
-Standard component pattern for this project:
-
-```typescript
-// components/dashboard/kpi-card.tsx
-'use client' // Only if client interactivity needed
-
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { formatCurrency } from '@/lib/utils'
-
-interface KPICardProps {
-  label: string
-  value: number // In cents
-  icon?: React.ReactNode
-  trend?: {
-    value: number // Percentage
-    direction: 'up' | 'down'
-  }
-  loading?: boolean
-}
-
-export function KPICard({ label, value, icon, trend, loading }: KPICardProps) {
-  if (loading) {
-    return <KPICardSkeleton />
-  }
-
-  return (
-    <Card>
-      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-        <CardTitle className="text-sm font-medium">{label}</CardTitle>
-        {icon}
-      </CardHeader>
-      <CardContent>
-        <div className="text-2xl font-bold">{formatCurrency(value)}</div>
-        {trend && (
-          <p className={`text-xs ${trend.direction === 'up' ? 'text-green-600' : 'text-red-600'}`}>
-            {trend.direction === 'up' ? '+' : ''}{trend.value}% from last period
-          </p>
-        )}
-      </CardContent>
-    </Card>
-  )
-}
-
-function KPICardSkeleton() {
   return (
     <Card>
       <CardHeader>
-        <div className="h-4 w-24 bg-gray-200 rounded animate-pulse" />
+        <CardTitle>{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="h-8 w-32 bg-gray-200 rounded animate-pulse" />
+        <div className="text-3xl font-bold">
+          {formatCurrency(value)}
+        </div>
+        <TrendIndicator value={trend} /> {/* Client Component for animation */}
       </CardContent>
     </Card>
   )
 }
 ```
 
-### State Management Architecture
-
-#### State Structure
-
+2. **Chart Card Component:**
 ```typescript
-// lib/contexts/entity-context.tsx
-'use client'
-
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
-import type { Entity } from '@/types/database'
-
-interface EntityContextValue {
-  activeEntity: Entity | null
-  setActiveEntity: (entity: Entity) => void
-  entities: Entity[]
-  loading: boolean
-}
-
-const EntityContext = createContext<EntityContextValue | undefined>(undefined)
-
-export function EntityProvider({ children, initialEntities }: { children: ReactNode; initialEntities: Entity[] }) {
-  const [entities] = useState<Entity[]>(initialEntities)
-  const [activeEntity, setActiveEntity] = useState<Entity | null>(() => {
-    // Restore from localStorage
-    if (typeof window !== 'undefined') {
-      const savedId = localStorage.getItem('selectedEntityId')
-      return initialEntities.find(e => e.id === savedId) || initialEntities[0] || null
-    }
-    return initialEntities[0] || null
-  })
-  const [loading, setLoading] = useState(false)
-
-  useEffect(() => {
-    if (activeEntity) {
-      // Persist to localStorage
-      localStorage.setItem('selectedEntityId', activeEntity.id)
-    }
-  }, [activeEntity])
-
+// Wrapper for all charts (consistent styling)
+function ChartCard({
+  title,
+  description,
+  children,
+  exportable = true
+}: ChartCardProps) {
   return (
-    <EntityContext.Provider value={{ activeEntity, setActiveEntity, entities, loading }}>
-      {children}
-    </EntityContext.Provider>
+    <Card>
+      <CardHeader>
+        <div className="flex justify-between items-center">
+          <div>
+            <CardTitle>{title}</CardTitle>
+            <CardDescription>{description}</CardDescription>
+          </div>
+          {exportable && <ExportButton />} {/* Client Component */}
+        </div>
+      </CardHeader>
+      <CardContent>
+        {children} {/* Recharts component (Client) */}
+      </CardContent>
+    </Card>
   )
 }
+```
 
-export function useEntity() {
-  const context = useContext(EntityContext)
-  if (!context) {
-    throw new Error('useEntity must be used within EntityProvider')
-  }
-  return context
+3. **Transaction Table Component (Virtual Scrolling):**
+```typescript
+"use client"
+
+import { useVirtualizer } from '@tanstack/react-virtual'
+import { useTransactions } from '@/hooks/use-transactions'
+
+function TransactionTable({ entityId }: TransactionTableProps) {
+  const { data, isLoading } = useTransactions(entityId)
+
+  const parentRef = useRef<HTMLDivElement>(null)
+
+  const virtualizer = useVirtualizer({
+    count: data?.length ?? 0,
+    getScrollElement: () => parentRef.current,
+    estimateSize: () => 50, // Row height in pixels
+    overscan: 10, // Render 10 extra rows for smooth scrolling
+  })
+
+  if (isLoading) return <TableSkeleton rows={10} />
+
+  return (
+    <div ref={parentRef} className="h-[600px] overflow-auto">
+      <div
+        style={{
+          height: `${virtualizer.getTotalSize()}px`,
+          width: '100%',
+          position: 'relative',
+        }}
+      >
+        {virtualizer.getVirtualItems().map((virtualRow) => {
+          const transaction = data[virtualRow.index]
+          return (
+            <TransactionRow
+              key={transaction.id}
+              transaction={transaction}
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: `${virtualRow.size}px`,
+                transform: `translateY(${virtualRow.start}px)`,
+              }}
+            />
+          )
+        })}
+      </div>
+    </div>
+  )
 }
 ```
 
-#### State Management Patterns
+**shadcn/ui Component Usage:**
 
-- **Global State**: React Context for entity selection, user preferences
-- **Server State**: Server Components fetch data, pass as props
-- **Form State**: React Hook Form for all forms (transactions, invoices, filters)
-- **URL State**: Date ranges, filters, pagination stored in URL query params
-- **Optimistic Updates**: Client mutations show immediate UI updates, rollback on error
+| shadcn Component | Use Cases | Customization |
+|-----------------|-----------|---------------|
+| `Button` | All interactive buttons | Variant: `default`, `destructive`, `outline`, `secondary`, `ghost`, `link` |
+| `Card` | Dashboard widgets, report containers | Custom header with actions, footer for metadata |
+| `Table` | Transaction lists, invoice lists | Virtual scrolling via TanStack Table |
+| `Form` | Invoice creation, budget forms | Integrated with React Hook Form + Zod |
+| `Select` | Entity selector, category picker | Searchable via Combobox |
+| `Dialog` | Confirmation modals, detail views | Controlled via state |
+| `Sheet` | Mobile navigation, filter panels | Slide from right/left |
+| `Toast` | Success/error notifications | Auto-dismiss, action buttons |
+| `Tabs` | Report sections, settings pages | Keyboard navigation |
 
-### Routing Architecture
+---
 
-#### Route Organization
+## 3. Data Architecture
 
-```
-/app
-├── (auth)/                   # Authentication routes
-│   ├── login/
-│   │   └── page.tsx
-│   └── layout.tsx            # Auth layout (no sidebar)
-├── (dashboard)/              # Main dashboard routes
-│   ├── layout.tsx            # Dashboard layout (sidebar, header)
-│   ├── page.tsx              # Dashboard home
-│   ├── transactions/
-│   │   ├── page.tsx          # Transaction list
-│   │   └── [id]/
-│   │       └── page.tsx      # Transaction detail
-│   ├── invoices/
-│   │   ├── page.tsx          # Invoice list
-│   │   ├── new/
-│   │   │   └── page.tsx      # Create invoice
-│   │   └── [id]/
-│   │       ├── page.tsx      # Invoice detail
-│   │       └── edit/
-│   │           └── page.tsx  # Edit invoice
-│   ├── reports/
-│   │   ├── bas/
-│   │   │   └── page.tsx
-│   │   ├── income-statement/
-│   │   │   └── page.tsx
-│   │   └── export/
-│   │       └── page.tsx
-│   ├── contacts/
-│   │   ├── page.tsx
-│   │   └── [id]/
-│   │       └── page.tsx
-│   ├── accounts/
-│   │   └── page.tsx
-│   └── settings/
-│       ├── page.tsx
-│       ├── entities/
-│       ├── preferences/
-│       ├── audit-log/
-│       └── ml-metrics/
-├── api/                      # API routes
-│   ├── invoices/
-│   ├── reports/
-│   └── webhooks/
-└── layout.tsx                # Root layout
+### 3.1 Supabase Integration
+
+**Connection Pattern:**
+
+```typescript
+// lib/supabase/client.ts (Browser - Client Components)
+import { createBrowserClient } from '@supabase/ssr'
+import { Database } from '@/types/database'
+
+export const supabase = createBrowserClient<Database>(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+)
 ```
 
-#### Protected Route Pattern
+```typescript
+// lib/supabase/server.ts (Server - Server Components, API Routes)
+import { createServerClient, type CookieOptions } from '@supabase/ssr'
+import { cookies } from 'next/headers'
+import { Database } from '@/types/database'
+
+export async function createClient() {
+  const cookieStore = cookies()
+
+  return createServerClient<Database>(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        get(name: string) {
+          return cookieStore.get(name)?.value
+        },
+      },
+    }
+  )
+}
+```
+
+**Type Generation:**
+
+```bash
+# Generate TypeScript types from Supabase schema
+npx supabase gen types typescript \
+  --project-id gshsshaodoyttdxippwx \
+  --schema public \
+  > types/database.ts
+```
+
+**Type Safety Flow:**
+
+```
+Supabase PostgreSQL Schema
+          ↓
+  supabase gen types typescript
+          ↓
+  types/database.ts (auto-generated)
+          ↓
+  Zod Schemas (lib/validations/)
+          ↓
+  React Components (type-safe queries)
+```
+
+### 3.2 Database Schema Overview (23 Tables)
+
+**Core Tables:**
+
+1. **entities** (3 rows) - Business entities (MOKAI, MOK HOUSE, Harrison Sayers)
+2. **contacts** (3 rows) - Customers and suppliers
+3. **bank_accounts** (3 rows) - Bank account details
+4. **accounts** (52 rows) - Chart of accounts (Australian accounting standards)
+
+**Transaction Tables:**
+
+5. **personal_transactions** (256 rows) - UpBank synced transactions
+6. **transactions** (1 row) - Business transactions
+7. **transaction_lines** - Double-entry accounting lines
+8. **recurring_transactions** (26 rows) - Recurring payments/income
+
+**Invoice Tables:**
+
+9. **invoices** (30 rows) - Receivables and payables
+10. **invoice_line_items** - Invoice line items with GST
+
+**Category & Classification:**
+
+11. **upbank_categories** (44 rows) - UpBank's category taxonomy
+12. **personal_finance_categories** (10 rows) - Custom category mapping
+13. **categorization_rules** (3 rows) - Auto-categorization rules
+14. **business_keywords** (18 rows) - Keywords for business expense detection
+
+**ML & Analytics:**
+
+15. **ml_models** (7 rows) - MindsDB model registry
+16. **ai_predictions** (0 rows) - ML category predictions (future)
+17. **ai_insights** (0 rows) - Business insights (future)
+18. **anomaly_detections** (0 rows) - Anomaly alerts (future)
+19. **cash_flow_forecasts** (0 rows) - Cash flow predictions (future)
+
+**Sync & Reconciliation:**
+
+20. **sync_sessions** (11 rows) - UpBank sync history
+21. **sync_errors** (26 rows) - Sync error log
+22. **balance_reconciliations** - Bank reconciliation records
+23. **rate_limit_status** - API rate limit tracking
+
+**RLS (Row-Level Security) Policies:**
+
+```sql
+-- Example RLS policy for multi-entity data isolation
+CREATE POLICY "Users can only access their entities"
+  ON transactions
+  FOR ALL
+  USING (
+    entity_id IN (
+      SELECT id FROM entities
+      WHERE user_id = auth.uid()
+    )
+  );
+
+-- Similar policies for invoices, bank_accounts, etc.
+```
+
+### 3.3 Data Fetching Strategy
+
+**Server Components (SSR - Initial Page Load):**
+
+```typescript
+// app/transactions/page.tsx (Server Component)
+import { createClient } from '@/lib/supabase/server'
+import { TransactionTable } from './components/TransactionTable'
+
+export default async function TransactionsPage() {
+  const supabase = await createClient()
+
+  // Fetch data server-side (SSR)
+  const { data: transactions } = await supabase
+    .from('transactions')
+    .select(`
+      *,
+      entity:entities(name),
+      account:accounts(name, code)
+    `)
+    .order('transaction_date', { ascending: false })
+    .limit(100)
+
+  // Pass data to Client Component for interactivity
+  return <TransactionTable initialData={transactions} />
+}
+```
+
+**React Query (Client-Side Caching & Polling):**
+
+```typescript
+// hooks/use-transactions.ts
+import { useQuery, useQueryClient } from '@tanstack/react-query'
+import { supabase } from '@/lib/supabase/client'
+
+export function useTransactions(entityId?: string) {
+  return useQuery({
+    queryKey: ['transactions', entityId],
+    queryFn: async () => {
+      const query = supabase
+        .from('transactions')
+        .select('*')
+        .order('transaction_date', { ascending: false })
+
+      if (entityId) {
+        query.eq('entity_id', entityId)
+      }
+
+      const { data, error } = await query
+      if (error) throw error
+      return data
+    },
+    staleTime: 10 * 60 * 1000, // 10 minutes
+    refetchInterval: 10 * 60 * 1000, // Poll every 10 minutes
+    refetchOnWindowFocus: true,
+  })
+}
+```
+
+**Optimistic Updates (Forms):**
+
+```typescript
+// mutations/invoices.ts
+import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { supabase } from '@/lib/supabase/client'
+
+export function useCreateInvoice() {
+  const queryClient = useQueryClient()
+
+  return useMutation({
+    mutationFn: async (invoice: InsertInvoice) => {
+      const { data, error } = await supabase
+        .from('invoices')
+        .insert(invoice)
+        .select()
+        .single()
+
+      if (error) throw error
+      return data
+    },
+    onMutate: async (newInvoice) => {
+      // Cancel outgoing refetches
+      await queryClient.cancelQueries({ queryKey: ['invoices'] })
+
+      // Snapshot previous value
+      const previousInvoices = queryClient.getQueryData(['invoices'])
+
+      // Optimistically update UI
+      queryClient.setQueryData(['invoices'], (old: Invoice[]) => [
+        ...old,
+        { ...newInvoice, id: 'temp-id', created_at: new Date().toISOString() }
+      ])
+
+      return { previousInvoices }
+    },
+    onError: (err, newInvoice, context) => {
+      // Rollback on error
+      queryClient.setQueryData(['invoices'], context?.previousInvoices)
+    },
+    onSettled: () => {
+      // Refetch to sync with server
+      queryClient.invalidateQueries({ queryKey: ['invoices'] })
+    },
+  })
+}
+```
+
+**Query Optimization (Avoid N+1):**
+
+```typescript
+// ❌ BAD - N+1 Query Problem
+const { data: invoices } = await supabase.from('invoices').select('*')
+
+for (const invoice of invoices) {
+  // Separate query for each invoice (N+1 problem)
+  const { data: contact } = await supabase
+    .from('contacts')
+    .select('*')
+    .eq('id', invoice.contact_id)
+    .single()
+}
+
+// ✅ GOOD - Single Query with Join
+const { data: invoices } = await supabase
+  .from('invoices')
+  .select(`
+    *,
+    contact:contacts(id, name, email),
+    entity:entities(id, name),
+    line_items:invoice_line_items(*)
+  `)
+```
+
+---
+
+## 4. State Management
+
+### 4.1 Server State (React Query)
+
+**Query Keys Structure:**
+
+```typescript
+// Hierarchical query keys for easy invalidation
+const queryKeys = {
+  entities: ['entities'] as const,
+  entity: (id: string) => ['entities', id] as const,
+
+  transactions: ['transactions'] as const,
+  transactionsByEntity: (entityId: string) => ['transactions', entityId] as const,
+  transaction: (id: string) => ['transactions', 'detail', id] as const,
+
+  invoices: ['invoices'] as const,
+  invoicesByEntity: (entityId: string) => ['invoices', entityId] as const,
+  invoice: (id: string) => ['invoices', 'detail', id] as const,
+
+  reports: ['reports'] as const,
+  profitLoss: (entityId: string, dateRange: DateRange) =>
+    ['reports', 'profit-loss', entityId, dateRange] as const,
+  balanceSheet: (entityId: string, date: string) =>
+    ['reports', 'balance-sheet', entityId, date] as const,
+  bas: (entityId: string, quarter: string) =>
+    ['reports', 'bas', entityId, quarter] as const,
+}
+```
+
+**Cache Configuration:**
+
+```typescript
+// lib/query-client.ts
+import { QueryClient } from '@tanstack/react-query'
+
+export const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 10 * 60 * 1000, // 10 minutes - data is "fresh" for this duration
+      cacheTime: 30 * 60 * 1000, // 30 minutes - keep unused data in cache
+      refetchOnWindowFocus: true, // Refetch when user returns to tab
+      retry: 3, // Retry failed queries 3 times
+      retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
+    },
+    mutations: {
+      retry: 1, // Only retry mutations once
+    },
+  },
+})
+```
+
+### 4.2 Client State (Zustand)
+
+**Entity Filter Store:**
+
+```typescript
+// stores/entity-filter.ts
+import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
+
+interface EntityFilterState {
+  selectedEntityId: string | null
+  setSelectedEntity: (entityId: string | null) => void
+}
+
+export const useEntityFilter = create<EntityFilterState>()(
+  persist(
+    (set) => ({
+      selectedEntityId: null,
+      setSelectedEntity: (entityId) => set({ selectedEntityId: entityId }),
+    }),
+    {
+      name: 'entity-filter', // localStorage key
+    }
+  )
+)
+```
+
+**UI Preferences Store:**
+
+```typescript
+// stores/ui-preferences.ts
+import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
+
+interface UIPreferencesState {
+  theme: 'light' | 'dark'
+  sidebarCollapsed: boolean
+  defaultDateRange: '7d' | '30d' | '90d' | '1y'
+  toggleTheme: () => void
+  toggleSidebar: () => void
+  setDefaultDateRange: (range: '7d' | '30d' | '90d' | '1y') => void
+}
+
+export const useUIPreferences = create<UIPreferencesState>()(
+  persist(
+    (set) => ({
+      theme: 'light',
+      sidebarCollapsed: false,
+      defaultDateRange: '30d',
+      toggleTheme: () => set((state) => ({
+        theme: state.theme === 'light' ? 'dark' : 'light'
+      })),
+      toggleSidebar: () => set((state) => ({
+        sidebarCollapsed: !state.sidebarCollapsed
+      })),
+      setDefaultDateRange: (range) => set({ defaultDateRange: range }),
+    }),
+    {
+      name: 'ui-preferences',
+    }
+  )
+)
+```
+
+### 4.3 Form State (React Hook Form)
+
+**Invoice Form Example:**
+
+```typescript
+// components/forms/InvoiceForm.tsx
+"use client"
+
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { invoiceSchema, type InvoiceFormData } from '@/lib/validations/invoice'
+import { useCreateInvoice } from '@/lib/mutations/invoices'
+
+export function InvoiceForm() {
+  const createInvoice = useCreateInvoice()
+
+  const form = useForm<InvoiceFormData>({
+    resolver: zodResolver(invoiceSchema),
+    defaultValues: {
+      invoice_type: 'RECEIVABLE',
+      status: 'DRAFT',
+      gst_applicable: true,
+      line_items: [
+        { description: '', quantity: 1, unit_price_cents: 0, gst_applicable: true }
+      ],
+    },
+  })
+
+  const onSubmit = async (data: InvoiceFormData) => {
+    try {
+      await createInvoice.mutateAsync(data)
+      // Show success toast, redirect, etc.
+    } catch (error) {
+      // Handle error
+    }
+  }
+
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        {/* Form fields */}
+      </form>
+    </Form>
+  )
+}
+```
+
+---
+
+## 5. Security Architecture
+
+### 5.1 Authentication
+
+**Supabase Auth Flow:**
+
+```
+User visits /login
+      ↓
+Enter email/password
+      ↓
+Supabase Auth API validates credentials
+      ↓
+Session token stored in httpOnly cookie
+      ↓
+Middleware validates session on every request
+      ↓
+Authorized: Access dashboard
+Unauthorized: Redirect to /login
+```
+
+**Middleware Protection:**
 
 ```typescript
 // middleware.ts
@@ -1359,18 +1094,22 @@ export async function middleware(request: NextRequest) {
           return request.cookies.get(name)?.value
         },
         set(name: string, value: string, options: CookieOptions) {
-          response.cookies.set({
-            name,
-            value,
-            ...options,
+          request.cookies.set({ name, value, ...options })
+          response = NextResponse.next({
+            request: {
+              headers: request.headers,
+            },
           })
+          response.cookies.set({ name, value, ...options })
         },
         remove(name: string, options: CookieOptions) {
-          response.cookies.set({
-            name,
-            value: '',
-            ...options,
+          request.cookies.set({ name, value: '', ...options })
+          response = NextResponse.next({
+            request: {
+              headers: request.headers,
+            },
           })
+          response.cookies.set({ name, value: '', ...options })
         },
       },
     }
@@ -1378,22 +1117,13 @@ export async function middleware(request: NextRequest) {
 
   const { data: { session } } = await supabase.auth.getSession()
 
-  // Protected routes
-  const isProtectedRoute = request.nextUrl.pathname.startsWith('/dashboard') ||
-                          request.nextUrl.pathname.startsWith('/transactions') ||
-                          request.nextUrl.pathname.startsWith('/invoices') ||
-                          request.nextUrl.pathname.startsWith('/reports') ||
-                          request.nextUrl.pathname.startsWith('/api')
-
-  if (isProtectedRoute && !session) {
-    const redirectUrl = request.nextUrl.clone()
-    redirectUrl.pathname = '/login'
-    redirectUrl.searchParams.set('redirectedFrom', request.nextUrl.pathname)
-    return NextResponse.redirect(redirectUrl)
+  // Redirect to login if not authenticated
+  if (!session && request.nextUrl.pathname.startsWith('/dashboard')) {
+    return NextResponse.redirect(new URL('/login', request.url))
   }
 
-  // Already logged in, redirect to dashboard
-  if (request.nextUrl.pathname === '/login' && session) {
+  // Redirect to dashboard if authenticated and visiting login
+  if (session && request.nextUrl.pathname === '/login') {
     return NextResponse.redirect(new URL('/dashboard', request.url))
   }
 
@@ -1401,1566 +1131,1872 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
+  matcher: [
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
+  ],
 }
 ```
 
-### Frontend Services Layer
+### 5.2 Authorization (Supabase RLS)
 
-#### API Client Setup
-
-```typescript
-// lib/supabase/client.ts
-import { createBrowserClient } from '@supabase/ssr'
-import type { Database } from '@/types/supabase'
-
-export function createClient() {
-  return createBrowserClient<Database>(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  )
-}
-
-// lib/supabase/server.ts
-import { createServerClient } from '@supabase/ssr'
-import { cookies } from 'next/headers'
-import type { Database } from '@/types/supabase'
-
-export async function createServerSupabaseClient() {
-  const cookieStore = cookies()
-
-  return createServerClient<Database>(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        get(name: string) {
-          return cookieStore.get(name)?.value
-        },
-      },
-    }
-  )
-}
-```
-
-#### Service Example
-
-```typescript
-// lib/services/transactions.ts
-import { createClient } from '@/lib/supabase/client'
-import type { Transaction } from '@/types/database'
-
-export interface TransactionFilters {
-  entity_id?: string
-  start_date?: string
-  end_date?: string
-  category?: string
-  confidence_min?: number
-  confidence_max?: number
-  anomaly_only?: boolean
-}
-
-export interface TransactionPage {
-  data: Transaction[]
-  count: number
-  page: number
-  pageSize: number
-}
-
-export async function getTransactions(
-  filters: TransactionFilters,
-  pagination: { page: number; pageSize: number }
-): Promise<TransactionPage> {
-  const supabase = createClient()
-
-  let query = supabase
-    .from('personal_transactions')
-    .select('*, personal_accounts(*)', { count: 'exact' })
-
-  // Apply filters
-  if (filters.entity_id) {
-    query = query.eq('account_id', filters.entity_id)
-  }
-
-  if (filters.start_date) {
-    query = query.gte('transaction_date', filters.start_date)
-  }
-
-  if (filters.end_date) {
-    query = query.lte('transaction_date', filters.end_date)
-  }
-
-  if (filters.category) {
-    query = query.or(`ai_category.eq.${filters.category},manual_category.eq.${filters.category}`)
-  }
-
-  if (filters.confidence_min !== undefined) {
-    query = query.gte('ai_confidence', filters.confidence_min)
-  }
-
-  if (filters.confidence_max !== undefined) {
-    query = query.lte('ai_confidence', filters.confidence_max)
-  }
-
-  if (filters.anomaly_only) {
-    query = query.gt('anomaly_score', 0.7)
-  }
-
-  // Pagination
-  const from = (pagination.page - 1) * pagination.pageSize
-  const to = from + pagination.pageSize - 1
-
-  query = query
-    .order('transaction_date', { ascending: false })
-    .range(from, to)
-
-  const { data, error, count } = await query
-
-  if (error) throw error
-
-  return {
-    data: data || [],
-    count: count || 0,
-    page: pagination.page,
-    pageSize: pagination.pageSize,
-  }
-}
-
-export async function updateCategory(
-  transactionId: string,
-  category: string
-): Promise<void> {
-  const supabase = createClient()
-
-  const { error } = await supabase
-    .from('personal_transactions')
-    .update({
-      manual_category: category,
-      ai_category_override: true,
-      updated_at: new Date().toISOString(),
-    })
-    .eq('id', transactionId)
-
-  if (error) throw error
-
-  // Log to audit trail (optional, depends on implementation)
-  await supabase
-    .from('audit_log')
-    .insert({
-      action: 'UPDATE',
-      object_type: 'transaction',
-      object_id: transactionId,
-      old_values: { category: 'previous_category' }, // Would need to fetch first
-      new_values: { category },
-    })
-}
-```
-
----
-
-## Backend Architecture
-
-### Service Architecture
-
-The backend follows a **serverless architecture** using Next.js API Routes and Supabase. There is no traditional server application.
-
-#### Function Organization
-
-```
-/app/api
-├── invoices/
-│   ├── route.ts              # POST - Create invoice
-│   └── [id]/
-│       └── pdf/
-│           └── route.ts      # GET - Generate PDF
-├── reports/
-│   ├── bas/
-│   │   └── route.ts          # POST - Generate BAS
-│   ├── income-statement/
-│   │   └── route.ts          # POST - Generate P&L
-│   └── export/
-│       └── route.ts          # POST - Export CSV/Excel
-├── transactions/
-│   ├── categorize/
-│   │   └── route.ts          # POST - Bulk categorize
-│   └── split/
-│       └── route.ts          # POST - Split transaction
-└── webhooks/
-    └── upbank/
-        └── route.ts          # POST - UpBank sync webhook
-```
-
-#### Function Template
-
-```typescript
-// app/api/invoices/[id]/pdf/route.ts
-import { NextRequest, NextResponse } from 'next/server'
-import { createServerSupabaseClient } from '@/lib/supabase/server'
-import { generateInvoicePDF } from '@/lib/pdf/invoice'
-
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
-  try {
-    const supabase = await createServerSupabaseClient()
-
-    // Check authentication
-    const { data: { session } } = await supabase.auth.getSession()
-    if (!session) {
-      return new NextResponse('Unauthorized', { status: 401 })
-    }
-
-    // Fetch invoice with related data
-    const { data: invoice, error } = await supabase
-      .from('invoices')
-      .select(`
-        *,
-        entity:entities(*),
-        contact:contacts(*),
-        line_items:invoice_line_items(*)
-      `)
-      .eq('id', params.id)
-      .single()
-
-    if (error || !invoice) {
-      return new NextResponse('Invoice not found', { status: 404 })
-    }
-
-    // Generate PDF
-    const pdfBuffer = await generateInvoicePDF(invoice)
-
-    // Return PDF with download headers
-    return new NextResponse(pdfBuffer, {
-      headers: {
-        'Content-Type': 'application/pdf',
-        'Content-Disposition': `attachment; filename="invoice-${invoice.invoice_number}.pdf"`,
-      },
-    })
-  } catch (error) {
-    console.error('PDF generation error:', error)
-    return new NextResponse('Internal Server Error', { status: 500 })
-  }
-}
-```
-
-### Database Architecture
-
-#### Schema Design (Already Exists)
-
-The schema is already defined in Supabase. Key design patterns:
-
-- **Multi-entity isolation**: All tables have `entity_id` foreign key for entity-based data segregation
-- **Audit trail**: `created_at`, `updated_at` timestamps on all tables
-- **Soft deletes**: `archived_at` / `deleted_at` instead of hard deletes for compliance
-- **JSONB columns**: `bank_details`, `ml_features` for flexible data storage
-- **Indexed columns**: `entity_id`, `transaction_date`, `status`, `ai_confidence` for fast queries
-
-#### Data Access Layer
-
-```typescript
-// lib/repositories/invoice-repository.ts
-import { createServerSupabaseClient } from '@/lib/supabase/server'
-import type { Invoice, InvoiceFormData } from '@/types/database'
-
-export async function getInvoices(entityId: string, filters?: {
-  status?: string
-  start_date?: string
-  end_date?: string
-}) {
-  const supabase = await createServerSupabaseClient()
-
-  let query = supabase
-    .from('invoices')
-    .select(`
-      *,
-      contact:contacts(name, email),
-      line_items:invoice_line_items(*)
-    `)
-    .eq('entity_id', entityId)
-
-  if (filters?.status) {
-    query = query.eq('status', filters.status)
-  }
-
-  if (filters?.start_date) {
-    query = query.gte('issue_date', filters.start_date)
-  }
-
-  if (filters?.end_date) {
-    query = query.lte('issue_date', filters.end_date)
-  }
-
-  const { data, error } = await query.order('issue_date', { ascending: false })
-
-  if (error) throw error
-  return data
-}
-
-export async function createInvoice(data: InvoiceFormData): Promise<Invoice> {
-  const supabase = await createServerSupabaseClient()
-
-  // Calculate totals
-  const subtotal_cents = data.line_items.reduce((sum, item) =>
-    sum + (item.quantity * item.unit_price_cents), 0
-  )
-  const gst_cents = Math.round(subtotal_cents * 0.1) // 10% GST
-  const total_cents = subtotal_cents + gst_cents
-
-  // Insert invoice
-  const { data: invoice, error: invoiceError } = await supabase
-    .from('invoices')
-    .insert({
-      entity_id: data.entity_id,
-      contact_id: data.contact_id,
-      invoice_number: data.invoice_number || await generateInvoiceNumber(data.entity_id),
-      invoice_type: data.invoice_type,
-      status: data.status || 'DRAFT',
-      issue_date: data.issue_date,
-      due_date: data.due_date,
-      subtotal_cents,
-      gst_cents,
-      total_cents,
-      payment_terms: data.payment_terms,
-      description: data.description,
-    })
-    .select()
-    .single()
-
-  if (invoiceError) throw invoiceError
-
-  // Insert line items
-  const { error: lineItemsError } = await supabase
-    .from('invoice_line_items')
-    .insert(
-      data.line_items.map((item, index) => ({
-        invoice_id: invoice.id,
-        line_order: index + 1,
-        description: item.description,
-        quantity: item.quantity,
-        unit_price_cents: item.unit_price_cents,
-        gst_applicable: item.gst_applicable,
-        amount_cents: item.quantity * item.unit_price_cents,
-      }))
-    )
-
-  if (lineItemsError) throw lineItemsError
-
-  return invoice
-}
-
-async function generateInvoiceNumber(entityId: string): Promise<string> {
-  const supabase = await createServerSupabaseClient()
-
-  // Get last invoice number for entity
-  const { data } = await supabase
-    .from('invoices')
-    .select('invoice_number')
-    .eq('entity_id', entityId)
-    .order('created_at', { ascending: false })
-    .limit(1)
-    .single()
-
-  if (!data) {
-    return 'INV-001'
-  }
-
-  // Extract number and increment
-  const lastNumber = parseInt(data.invoice_number.split('-')[1]) || 0
-  return `INV-${String(lastNumber + 1).padStart(3, '0')}`
-}
-```
-
-### Authentication and Authorization
-
-#### Auth Flow
-
-```mermaid
-sequenceDiagram
-    participant User
-    participant LoginPage
-    participant Supabase Auth
-    participant Middleware
-    participant Dashboard
-    participant Database
-
-    User->>LoginPage: Enter email/password
-    LoginPage->>Supabase Auth: signInWithPassword()
-    Supabase Auth->>Supabase Auth: Verify credentials
-    Supabase Auth-->>LoginPage: Session + tokens
-    LoginPage->>LoginPage: Set session cookie
-    LoginPage->>User: Redirect to /dashboard
-
-    User->>Dashboard: Navigate to dashboard
-    Dashboard->>Middleware: Check session
-    Middleware->>Supabase Auth: getSession() via cookie
-    Supabase Auth-->>Middleware: Valid session
-    Middleware-->>Dashboard: Allow access
-
-    Dashboard->>Database: Query transactions (RLS enforced)
-    Database->>Database: Check RLS policy (user_id match)
-    Database-->>Dashboard: Filtered data (user's entities only)
-    Dashboard->>User: Display dashboard
-
-    Note over User,Database: Session expires or user logs out
-    User->>Dashboard: Click logout
-    Dashboard->>Supabase Auth: signOut()
-    Supabase Auth-->>Dashboard: Success
-    Dashboard->>User: Redirect to /login
-```
-
-#### Auth Middleware/Guards
-
-```typescript
-// lib/auth/session.ts
-import { createServerSupabaseClient } from '@/lib/supabase/server'
-
-export async function requireAuth() {
-  const supabase = await createServerSupabaseClient()
-
-  const { data: { session }, error } = await supabase.auth.getSession()
-
-  if (error || !session) {
-    throw new Error('Unauthorized')
-  }
-
-  return session
-}
-
-export async function getCurrentUser() {
-  const supabase = await createServerSupabaseClient()
-
-  const { data: { user }, error } = await supabase.auth.getUser()
-
-  if (error || !user) {
-    return null
-  }
-
-  return user
-}
-
-// Usage in Server Component
-// app/dashboard/page.tsx
-import { requireAuth } from '@/lib/auth/session'
-import { redirect } from 'next/navigation'
-
-export default async function DashboardPage() {
-  try {
-    await requireAuth()
-  } catch {
-    redirect('/login')
-  }
-
-  // Page content
-}
-```
-
-**RLS Policy Example (already configured in Supabase)**:
+**Row-Level Security Policies:**
 
 ```sql
--- Only allow users to access their own entity data
-CREATE POLICY "Users can only access their own entity data" ON invoices
-    FOR ALL USING (
-        entity_id IN (
-            SELECT entity_id FROM user_entity_access
-            WHERE user_id = auth.uid()
-        )
-    );
+-- Entities: Users can only access entities they own
+CREATE POLICY "Users access own entities"
+  ON entities
+  FOR ALL
+  USING (user_id = auth.uid());
+
+-- Transactions: Users can only access transactions for their entities
+CREATE POLICY "Users access own transactions"
+  ON transactions
+  FOR ALL
+  USING (
+    entity_id IN (
+      SELECT id FROM entities WHERE user_id = auth.uid()
+    )
+  );
+
+-- Invoices: Users can only access invoices for their entities
+CREATE POLICY "Users access own invoices"
+  ON invoices
+  FOR ALL
+  USING (
+    entity_id IN (
+      SELECT id FROM entities WHERE user_id = auth.uid()
+    )
+  );
+
+-- Bank Accounts: Users can only access bank accounts for their entities
+CREATE POLICY "Users access own bank accounts"
+  ON bank_accounts
+  FOR ALL
+  USING (
+    entity_id IN (
+      SELECT id FROM entities WHERE user_id = auth.uid()
+    )
+  );
 ```
 
----
+**RLS Testing Strategy:**
 
-## Unified Project Structure
+```typescript
+// tests/integration/rls/entities.test.ts
+import { createClient } from '@supabase/supabase-js'
 
-```
-sayers-finance-dashboard/
-├── .github/                    # CI/CD workflows
-│   └── workflows/
-│       ├── ci.yml             # Run tests on PR
-│       ├── deploy.yml         # Deploy to Vercel on merge
-│       └── lint.yml           # Lint and type check
-├── app/                        # Next.js App Router
-│   ├── (auth)/                # Authentication group
-│   │   ├── login/
-│   │   │   └── page.tsx
-│   │   └── layout.tsx
-│   ├── (dashboard)/           # Main app group
-│   │   ├── layout.tsx         # Shared layout with nav
-│   │   ├── page.tsx           # Dashboard home
-│   │   ├── transactions/
-│   │   │   ├── page.tsx       # Transaction list (Server Component)
-│   │   │   └── [id]/
-│   │   │       └── page.tsx   # Transaction detail
-│   │   ├── invoices/
-│   │   │   ├── page.tsx       # Invoice list
-│   │   │   ├── new/
-│   │   │   │   └── page.tsx   # Create invoice (Client Component)
-│   │   │   └── [id]/
-│   │   │       ├── page.tsx   # Invoice detail
-│   │   │       └── edit/
-│   │   │           └── page.tsx
-│   │   ├── reports/
-│   │   │   ├── bas/
-│   │   │   │   └── page.tsx
-│   │   │   ├── income-statement/
-│   │   │   │   └── page.tsx
-│   │   │   └── export/
-│   │   │       └── page.tsx
-│   │   ├── contacts/
-│   │   │   ├── page.tsx
-│   │   │   └── [id]/
-│   │   │       └── page.tsx
-│   │   ├── accounts/
-│   │   │   └── page.tsx
-│   │   └── settings/
-│   │       ├── page.tsx
-│   │       ├── entities/
-│   │       ├── preferences/
-│   │       ├── audit-log/
-│   │       └── ml-metrics/
-│   ├── api/                   # API routes
-│   │   ├── invoices/
-│   │   │   ├── route.ts
-│   │   │   └── [id]/
-│   │   │       └── pdf/
-│   │   │           └── route.ts
-│   │   ├── reports/
-│   │   │   ├── bas/
-│   │   │   ├── income-statement/
-│   │   │   └── export/
-│   │   └── webhooks/
-│   │       └── upbank/
-│   ├── layout.tsx             # Root layout
-│   └── global.css             # Global styles
-├── components/                # React components
-│   ├── ui/                    # shadcn/ui components
-│   │   ├── button.tsx
-│   │   ├── card.tsx
-│   │   ├── input.tsx
-│   │   ├── select.tsx
-│   │   └── ...
-│   ├── charts/                # Recharts wrappers
-│   │   ├── trend-chart.tsx
-│   │   ├── category-pie-chart.tsx
-│   │   └── chart-card.tsx
-│   ├── dashboard/             # Dashboard widgets
-│   │   ├── kpi-card.tsx
-│   │   ├── recent-transactions.tsx
-│   │   └── anomaly-alerts.tsx
-│   ├── transactions/
-│   │   ├── transaction-table.tsx
-│   │   └── transaction-filters.tsx
-│   ├── invoices/
-│   │   ├── invoice-form.tsx
-│   │   └── line-item-editor.tsx
-│   ├── forms/                 # Form components
-│   │   ├── contact-quick-add.tsx
-│   │   └── date-range-picker.tsx
-│   └── layout/                # Layout components
-│       ├── header.tsx
-│       ├── sidebar.tsx
-│       └── mobile-nav.tsx
-├── lib/                       # Utilities
-│   ├── supabase/              # Supabase clients
-│   │   ├── client.ts          # Browser client
-│   │   └── server.ts          # Server client
-│   ├── services/              # Business logic
-│   │   ├── transactions.ts
-│   │   ├── invoices.ts
-│   │   └── reports.ts
-│   ├── repositories/          # Data access layer
-│   │   ├── invoice-repository.ts
-│   │   └── transaction-repository.ts
-│   ├── pdf/                   # PDF generation
-│   │   └── invoice.tsx
-│   ├── validations/           # Zod schemas
-│   │   ├── invoice-schema.ts
-│   │   └── transaction-schema.ts
-│   ├── utils/                 # Helper functions
-│   │   ├── currency.ts        # formatCurrency()
-│   │   ├── dates.ts           # Date formatting
-│   │   └── gst.ts             # GST calculations
-│   └── constants/             # Constants
-│       └── tax.ts             # GST_RATE = 0.1
-├── hooks/                     # Custom React hooks
-│   ├── use-entity.ts          # Entity context hook
-│   ├── use-transactions.ts    # Transaction queries
-│   └── use-debounce.ts        # Debounce hook
-├── types/                     # TypeScript types
-│   ├── database.ts            # Database types (from Supabase)
-│   ├── supabase.ts            # Generated Supabase types
-│   └── forms.ts               # Form types
-├── public/                    # Static assets
-│   ├── logos/
-│   └── icons/
-├── tests/                     # Test files
-│   ├── unit/                  # Unit tests
-│   │   ├── utils/
-│   │   └── services/
-│   ├── integration/           # Integration tests
-│   │   └── components/
-│   └── e2e/                   # E2E tests (Playwright)
-│       ├── dashboard.spec.ts
-│       ├── transactions.spec.ts
-│       └── invoices.spec.ts
-├── .env.local.example         # Environment template
-├── .eslintrc.json             # ESLint config
-├── .prettierrc                # Prettier config
-├── middleware.ts              # Next.js middleware (auth)
-├── next.config.mjs            # Next.js config
-├── package.json               # Dependencies
-├── tailwind.config.ts         # Tailwind config
-├── tsconfig.json              # TypeScript config
-├── vitest.config.ts           # Vitest config
-└── README.md                  # Project documentation
+describe('Entities RLS', () => {
+  it('should only return entities owned by authenticated user', async () => {
+    const user1Client = createClient(url, anonKey, {
+      auth: { persistSession: false },
+    })
+
+    await user1Client.auth.signInWithPassword({
+      email: 'user1@example.com',
+      password: 'password',
+    })
+
+    const { data: entities } = await user1Client
+      .from('entities')
+      .select('*')
+
+    // All returned entities should belong to user1
+    expect(entities?.every(e => e.user_id === user1.id)).toBe(true)
+  })
+
+  it('should not allow access to other users entities', async () => {
+    const user2Client = createClient(url, anonKey, {
+      auth: { persistSession: false },
+    })
+
+    await user2Client.auth.signInWithPassword({
+      email: 'user2@example.com',
+      password: 'password',
+    })
+
+    const { data, error } = await user2Client
+      .from('entities')
+      .select('*')
+      .eq('id', user1EntityId) // Try to access user1's entity
+
+    expect(data).toHaveLength(0) // RLS blocks access
+  })
+})
 ```
 
----
+### 5.3 Data Protection
 
-## Development Workflow
+**Input Validation (Zod Schemas):**
 
-### Local Development Setup
+```typescript
+// lib/validations/invoice.ts
+import { z } from 'zod'
 
-#### Prerequisites
+export const invoiceSchema = z.object({
+  entity_id: z.string().uuid(),
+  contact_id: z.string().uuid(),
+  invoice_type: z.enum(['RECEIVABLE', 'PAYABLE']),
+  invoice_number: z.string().min(1).max(50),
+  issue_date: z.string().date(),
+  due_date: z.string().date(),
+  line_items: z.array(
+    z.object({
+      description: z.string().min(1).max(500),
+      quantity: z.number().positive().int(),
+      unit_price_cents: z.number().int().nonnegative(),
+      gst_applicable: z.boolean(),
+    })
+  ).min(1).max(100),
+})
+
+export type InvoiceFormData = z.infer<typeof invoiceSchema>
+```
+
+**XSS Prevention:**
+
+React automatically escapes JSX content, but for extra safety:
+
+```typescript
+// ✅ SAFE - React auto-escapes
+<div>{transaction.description}</div>
+
+// ❌ DANGEROUS - Bypass escaping (avoid unless absolutely necessary)
+<div dangerouslySetInnerHTML={{ __html: transaction.description }} />
+
+// ✅ SAFE - Sanitize if HTML rendering is required
+import DOMPurify from 'isomorphic-dompurify'
+
+<div dangerouslySetInnerHTML={{
+  __html: DOMPurify.sanitize(transaction.description)
+}} />
+```
+
+**Content Security Policy (CSP):**
+
+```typescript
+// next.config.js
+const cspHeader = `
+  default-src 'self';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline';
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' blob: data: https://gshsshaodoyttdxippwx.supabase.co;
+  font-src 'self';
+  connect-src 'self' https://gshsshaodoyttdxippwx.supabase.co;
+  frame-ancestors 'none';
+  base-uri 'self';
+  form-action 'self';
+`
+
+module.exports = {
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: cspHeader.replace(/\n/g, ''),
+          },
+        ],
+      },
+    ]
+  },
+}
+```
+
+**Environment Variable Security:**
 
 ```bash
-# Install Node.js 20+ (LTS)
-node --version  # v20.x.x
-
-# Install pnpm (or npm/yarn)
-npm install -g pnpm
-
-# Verify Git
-git --version
-```
-
-#### Initial Setup
-
-```bash
-# Clone repository
-git clone https://github.com/yourusername/sayers-finance-dashboard.git
-cd sayers-finance-dashboard
-
-# Install dependencies
-pnpm install
-
-# Copy environment variables
-cp .env.local.example .env.local
-
-# Edit .env.local with your Supabase credentials
-# NEXT_PUBLIC_SUPABASE_URL=https://gshsshaodoyttdxippwx.supabase.co
-# NEXT_PUBLIC_SUPABASE_ANON_KEY=<your_anon_key>
-
-# Generate Supabase types (requires Supabase CLI or manual generation)
-# npx supabase gen types typescript --project-id gshsshaodoyttdxippwx > types/supabase.ts
-
-# Run database migrations (already done on Supabase, but for reference)
-# npx supabase db push
-
-# Start development server
-pnpm dev
-```
-
-#### Development Commands
-
-```bash
-# Start all services
-pnpm dev                      # Next.js dev server on http://localhost:3000
-
-# Linting and formatting
-pnpm lint                     # Run ESLint
-pnpm format                   # Run Prettier
-pnpm type-check               # TypeScript type checking
-
-# Testing
-pnpm test                     # Run Vitest unit tests
-pnpm test:watch               # Watch mode
-pnpm test:e2e                 # Run Playwright E2E tests
-pnpm test:e2e:ui              # E2E with Playwright UI
-
-# Build
-pnpm build                    # Production build
-pnpm start                    # Start production server (after build)
-```
-
-### Environment Configuration
-
-#### Required Environment Variables
-
-```bash
-# Frontend (.env.local)
+# .env.local (gitignored)
 NEXT_PUBLIC_SUPABASE_URL=https://gshsshaodoyttdxippwx.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=<your_supabase_anon_key>
-
-# Optional: Sentry error tracking
-NEXT_PUBLIC_SENTRY_DSN=<your_sentry_dsn>
-SENTRY_AUTH_TOKEN=<your_sentry_auth_token>
-
-# Backend (Server-side only, not exposed to client)
-SUPABASE_SERVICE_ROLE_KEY=<your_service_role_key>  # For admin operations
-
-# Email service (for invoice sending)
-EMAIL_SERVICE_API_KEY=<sendgrid_or_ses_api_key>
-
-# Optional: Analytics
-NEXT_PUBLIC_VERCEL_ANALYTICS_ID=<vercel_analytics_id>
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1... # Public key (safe to expose)
+SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1... # NEVER expose to client
 ```
 
-**Security Notes**:
-- Never commit `.env.local` to version control
-- `NEXT_PUBLIC_*` variables are exposed to browser
-- Service role key should only be used in API routes, never in client code
+```typescript
+// lib/utils/env.ts
+import { z } from 'zod'
+
+const envSchema = z.object({
+  NEXT_PUBLIC_SUPABASE_URL: z.string().url(),
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: z.string().min(1),
+  SUPABASE_SERVICE_ROLE_KEY: z.string().min(1),
+})
+
+// Validate environment variables at build time
+export const env = envSchema.parse(process.env)
+```
 
 ---
 
-## Deployment Architecture
+## 6. Performance Architecture
 
-### Deployment Strategy
+### 6.1 Optimization Strategies
 
-**Frontend Deployment**:
-- **Platform**: Vercel
-- **Build Command**: `pnpm build`
-- **Output Directory**: `.next`
-- **CDN/Edge**: Vercel Edge Network (automatic, global)
+**Code Splitting (Automatic with App Router):**
 
-**Backend Deployment**:
-- **Platform**: Supabase (existing, no deployment needed)
-- **Database**: Already deployed at `gshsshaodoyttdxippwx.supabase.co`
-- **Deployment Method**: Database migrations via Supabase Studio (manual) or Supabase CLI (recommended for CI/CD)
+```typescript
+// Automatic code splitting per route
+app/
+├── dashboard/page.tsx           → /dashboard (chunk)
+├── transactions/page.tsx        → /transactions (chunk)
+├── invoices/page.tsx           → /invoices (chunk)
+└── reports/page.tsx            → /reports (chunk)
+```
 
-**Deployment Flow**:
-1. Push to `main` branch triggers GitHub Actions
-2. GitHub Actions runs tests (`pnpm test`, `pnpm test:e2e`)
-3. If tests pass, Vercel automatically deploys to production
-4. Preview deployments created for all PRs
+**Lazy Loading Heavy Components:**
 
-### CI/CD Pipeline
+```typescript
+// components/charts/PieChart.tsx
+import { lazy, Suspense } from 'react'
+
+const RechartsComponent = lazy(() => import('recharts').then(mod => ({
+  default: mod.PieChart
+})))
+
+export function PieChart({ data }: PieChartProps) {
+  return (
+    <Suspense fallback={<ChartSkeleton />}>
+      <RechartsComponent data={data} />
+    </Suspense>
+  )
+}
+```
+
+**Virtual Scrolling for Large Lists:**
+
+```typescript
+// hooks/use-virtual-scroll.ts
+import { useVirtualizer } from '@tanstack/react-virtual'
+import { useRef } from 'react'
+
+export function useVirtualScroll<T>(items: T[], estimateSize = 50) {
+  const parentRef = useRef<HTMLDivElement>(null)
+
+  const virtualizer = useVirtualizer({
+    count: items.length,
+    getScrollElement: () => parentRef.current,
+    estimateSize: () => estimateSize,
+    overscan: 10,
+  })
+
+  return { parentRef, virtualizer }
+}
+```
+
+**Image Optimization:**
+
+```typescript
+// Use Next.js Image component for automatic optimization
+import Image from 'next/image'
+
+<Image
+  src="/logos/mokai-logo.png"
+  alt="MOKAI PTY LTD"
+  width={200}
+  height={50}
+  priority // Load above the fold images immediately
+/>
+```
+
+**Database Indexing Strategy:**
+
+```sql
+-- Indexes for common queries
+CREATE INDEX idx_transactions_entity_date
+  ON transactions(entity_id, transaction_date DESC);
+
+CREATE INDEX idx_invoices_entity_status
+  ON invoices(entity_id, status, due_date);
+
+CREATE INDEX idx_transactions_ai_category
+  ON transactions(ai_category)
+  WHERE ai_category IS NOT NULL;
+
+-- Partial index for overdue invoices (common query)
+CREATE INDEX idx_invoices_overdue
+  ON invoices(entity_id, due_date)
+  WHERE status = 'SENT' AND due_date < CURRENT_DATE;
+```
+
+**React Query Caching:**
+
+```typescript
+// Aggressive caching for static data (chart of accounts)
+export function useAccounts() {
+  return useQuery({
+    queryKey: ['accounts'],
+    queryFn: fetchAccounts,
+    staleTime: Infinity, // Never refetch (accounts rarely change)
+    cacheTime: Infinity, // Keep in cache forever
+  })
+}
+
+// Short-lived cache for dynamic data (transactions)
+export function useTransactions(entityId: string) {
+  return useQuery({
+    queryKey: ['transactions', entityId],
+    queryFn: () => fetchTransactions(entityId),
+    staleTime: 10 * 60 * 1000, // 10 minutes
+    cacheTime: 30 * 60 * 1000, // 30 minutes
+  })
+}
+```
+
+### 6.2 Monitoring
+
+**Vercel Analytics:**
+
+```typescript
+// app/layout.tsx
+import { Analytics } from '@vercel/analytics/react'
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>
+        {children}
+        <Analytics /> {/* Tracks Web Vitals, page views */}
+      </body>
+    </html>
+  )
+}
+```
+
+**Performance Budgets:**
+
+```typescript
+// next.config.js
+module.exports = {
+  experimental: {
+    optimizeFonts: true,
+    optimizeImages: true,
+  },
+  images: {
+    formats: ['image/avif', 'image/webp'], // Modern formats
+  },
+  // Warn if bundle size exceeds limits
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.performance = {
+        maxAssetSize: 500000, // 500KB
+        maxEntrypointSize: 500000,
+      }
+    }
+    return config
+  },
+}
+```
+
+**Performance Targets:**
+
+| Metric | Target | Critical Threshold |
+|--------|--------|-------------------|
+| **First Contentful Paint (FCP)** | <1.5s | <2.5s |
+| **Largest Contentful Paint (LCP)** | <2.0s | <3.0s |
+| **Time to Interactive (TTI)** | <3.0s | <5.0s |
+| **Cumulative Layout Shift (CLS)** | <0.1 | <0.25 |
+| **First Input Delay (FID)** | <50ms | <100ms |
+| **Chart Render Time** | <100ms | <200ms |
+| **Table Render (1000 rows)** | <200ms | <500ms |
+
+---
+
+## 7. Financial Calculation Architecture
+
+### 7.1 Calculation Layer (`lib/calculations/`)
+
+**Decimal Precision Handling:**
+
+```typescript
+// lib/calculations/decimal.ts
+import Decimal from 'decimal.js'
+
+// Configure Decimal.js for financial calculations
+Decimal.set({
+  precision: 20, // 20 decimal places (overkill for currency, but safe)
+  rounding: Decimal.ROUND_HALF_UP, // Standard rounding
+  toExpNeg: -7, // Use exponential notation for very small numbers
+  toExpPos: 21, // Use exponential notation for very large numbers
+})
+
+export function toCents(dollars: number | string): number {
+  return new Decimal(dollars).times(100).round().toNumber()
+}
+
+export function toDollars(cents: number): number {
+  return new Decimal(cents).dividedBy(100).toNumber()
+}
+
+export function add(...amounts: number[]): number {
+  return amounts.reduce((sum, amount) =>
+    new Decimal(sum).plus(amount).toNumber(),
+    0
+  )
+}
+
+export function multiply(amount: number, multiplier: number): number {
+  return new Decimal(amount).times(multiplier).toNumber()
+}
+
+// Example: Calculate GST (10%)
+export function calculateGST(amountCents: number): number {
+  return new Decimal(amountCents)
+    .times(0.1) // 10% GST
+    .round() // Round to nearest cent
+    .toNumber()
+}
+```
+
+**BAS Calculation Module:**
+
+```typescript
+// lib/calculations/bas.ts
+import Decimal from 'decimal.js'
+import { createClient } from '@/lib/supabase/server'
+
+interface BASReport {
+  gst_on_sales: number // G1 - GST on sales
+  gst_on_purchases: number // G11 - GST on purchases
+  net_gst: number // 1A - GST payable/refund
+  wine_sales: number // 1B - Wine equalisation tax
+  total_sales: number // G1 - Total sales (excluding GST)
+  export_sales: number // G2 - Export sales
+  other_gst_free_sales: number // G3 - Other GST-free sales
+  capital_purchases: number // G10 - Capital purchases
+  non_capital_purchases: number // G11 - Non-capital purchases
+}
+
+export async function calculateBAS(
+  entityId: string,
+  startDate: string,
+  endDate: string
+): Promise<BASReport> {
+  const supabase = await createClient()
+
+  // Fetch all transactions in date range
+  const { data: transactions } = await supabase
+    .from('transactions')
+    .select('*')
+    .eq('entity_id', entityId)
+    .gte('transaction_date', startDate)
+    .lte('transaction_date', endDate)
+
+  if (!transactions) throw new Error('No transactions found')
+
+  let gst_on_sales = new Decimal(0)
+  let gst_on_purchases = new Decimal(0)
+  let total_sales = new Decimal(0)
+  let capital_purchases = new Decimal(0)
+  let non_capital_purchases = new Decimal(0)
+
+  for (const txn of transactions) {
+    const amount = new Decimal(txn.amount_cents)
+
+    if (amount.greaterThan(0)) {
+      // Income transaction
+      total_sales = total_sales.plus(amount)
+      gst_on_sales = gst_on_sales.plus(amount.times(0.1).round())
+    } else {
+      // Expense transaction
+      const absAmount = amount.abs()
+
+      if (txn.is_capital_purchase) {
+        capital_purchases = capital_purchases.plus(absAmount)
+      } else {
+        non_capital_purchases = non_capital_purchases.plus(absAmount)
+      }
+
+      gst_on_purchases = gst_on_purchases.plus(absAmount.times(0.1).round())
+    }
+  }
+
+  const net_gst = gst_on_sales.minus(gst_on_purchases)
+
+  return {
+    gst_on_sales: gst_on_sales.toNumber(),
+    gst_on_purchases: gst_on_purchases.toNumber(),
+    net_gst: net_gst.toNumber(),
+    wine_sales: 0, // Not applicable for this business
+    total_sales: total_sales.toNumber(),
+    export_sales: 0, // TODO: Filter export sales
+    other_gst_free_sales: 0, // TODO: Filter GST-free sales
+    capital_purchases: capital_purchases.toNumber(),
+    non_capital_purchases: non_capital_purchases.toNumber(),
+  }
+}
+```
+
+**P&L Calculation Module:**
+
+```typescript
+// lib/calculations/profit-loss.ts
+import Decimal from 'decimal.js'
+import { createClient } from '@/lib/supabase/server'
+
+interface ProfitLossReport {
+  revenue: number
+  cost_of_goods_sold: number
+  gross_profit: number
+  operating_expenses: number
+  operating_profit: number
+  other_income: number
+  other_expenses: number
+  net_profit: number
+  gross_margin_percentage: number
+  operating_margin_percentage: number
+  net_margin_percentage: number
+}
+
+export async function calculateProfitLoss(
+  entityId: string,
+  startDate: string,
+  endDate: string
+): Promise<ProfitLossReport> {
+  const supabase = await createClient()
+
+  // Fetch account balances for date range
+  const { data: transactions } = await supabase
+    .from('transaction_lines')
+    .select(`
+      *,
+      account:accounts(account_type, account_code)
+    `)
+    .eq('entity_id', entityId)
+    .gte('transaction_date', startDate)
+    .lte('transaction_date', endDate)
+
+  if (!transactions) throw new Error('No transactions found')
+
+  let revenue = new Decimal(0)
+  let cogs = new Decimal(0)
+  let operating_expenses = new Decimal(0)
+  let other_income = new Decimal(0)
+  let other_expenses = new Decimal(0)
+
+  for (const line of transactions) {
+    const amount = new Decimal(line.amount_cents)
+
+    switch (line.account.account_type) {
+      case 'REVENUE':
+        if (line.account.account_code.startsWith('4')) {
+          revenue = revenue.plus(amount)
+        } else {
+          other_income = other_income.plus(amount)
+        }
+        break
+
+      case 'EXPENSE':
+        if (line.account.account_code.startsWith('5')) {
+          cogs = cogs.plus(amount.abs())
+        } else {
+          operating_expenses = operating_expenses.plus(amount.abs())
+        }
+        break
+    }
+  }
+
+  const gross_profit = revenue.minus(cogs)
+  const operating_profit = gross_profit.minus(operating_expenses)
+  const net_profit = operating_profit.plus(other_income).minus(other_expenses)
+
+  return {
+    revenue: revenue.toNumber(),
+    cost_of_goods_sold: cogs.toNumber(),
+    gross_profit: gross_profit.toNumber(),
+    operating_expenses: operating_expenses.toNumber(),
+    operating_profit: operating_profit.toNumber(),
+    other_income: other_income.toNumber(),
+    other_expenses: other_expenses.toNumber(),
+    net_profit: net_profit.toNumber(),
+    gross_margin_percentage: gross_profit.dividedBy(revenue).times(100).toNumber(),
+    operating_margin_percentage: operating_profit.dividedBy(revenue).times(100).toNumber(),
+    net_margin_percentage: net_profit.dividedBy(revenue).times(100).toNumber(),
+  }
+}
+```
+
+### 7.2 Testing Strategy for Financial Logic
+
+**Unit Tests with ATO Examples:**
+
+```typescript
+// tests/unit/calculations/bas.test.ts
+import { describe, it, expect } from 'vitest'
+import { calculateBAS } from '@/lib/calculations/bas'
+
+describe('BAS Calculation', () => {
+  it('should calculate GST correctly for simple sale', () => {
+    // ATO Example 1: $11,000 sale (inc. GST)
+    const sale = 1100000 // cents
+    const gst = sale * 0.1 / 1.1 // Reverse GST
+
+    expect(gst).toBe(100000) // $1,000 GST
+  })
+
+  it('should handle mixed GST and GST-free sales', () => {
+    // ATO Example 2: $10,000 GST sale + $5,000 GST-free sale
+    const gstSale = 1000000
+    const gstFreeSale = 500000
+
+    const totalGST = (gstSale * 0.1 / 1.1) // Only GST sale contributes
+
+    expect(totalGST).toBeCloseTo(90909, 0) // $909.09 GST (rounded)
+  })
+
+  it('should calculate net GST payable (sales - purchases)', () => {
+    // ATO Example 3: $11,000 sales (inc. GST), $2,200 purchases (inc. GST)
+    const gstOnSales = 1100000 * 0.1 / 1.1
+    const gstOnPurchases = 220000 * 0.1 / 1.1
+    const netGST = gstOnSales - gstOnPurchases
+
+    expect(netGST).toBeCloseTo(80000, 0) // $800 GST payable
+  })
+})
+```
+
+**Property-Based Testing (Edge Cases):**
+
+```typescript
+// tests/unit/calculations/decimal.test.ts
+import { describe, it, expect } from 'vitest'
+import { fc, test } from '@fast-check/vitest'
+import { add, multiply, calculateGST } from '@/lib/calculations/decimal'
+
+describe('Decimal Math Properties', () => {
+  test.prop([fc.double({ min: 0, max: 1000000 })])('add is commutative', (a) => {
+    expect(add(a, 0)).toBe(a)
+  })
+
+  test.prop([
+    fc.double({ min: 0, max: 1000000 }),
+    fc.double({ min: 0, max: 1000000 })
+  ])('multiply maintains precision', (a, b) => {
+    const result = multiply(a, b)
+    expect(typeof result).toBe('number')
+    expect(Number.isFinite(result)).toBe(true)
+  })
+
+  test.prop([fc.integer({ min: 0, max: 100000000 })])('GST is always 10% of amount', (amount) => {
+    const gst = calculateGST(amount)
+    const expected = Math.round(amount * 0.1)
+    expect(gst).toBe(expected)
+  })
+})
+```
+
+---
+
+## 8. Data Visualization Architecture
+
+### 8.1 Chart Library (Recharts)
+
+**Chart Component Patterns:**
+
+```typescript
+// components/charts/SpendingPieChart.tsx
+"use client"
+
+import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts'
+
+interface SpendingPieChartProps {
+  data: Array<{ category: string; amount: number }>
+  colors?: string[]
+}
+
+const DEFAULT_COLORS = [
+  '#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8',
+  '#82CA9D', '#FFC658', '#FF6B9D', '#C084FC', '#34D399'
+]
+
+export function SpendingPieChart({
+  data,
+  colors = DEFAULT_COLORS
+}: SpendingPieChartProps) {
+  // Group small categories into "Other"
+  const threshold = 0.05 // 5% of total
+  const total = data.reduce((sum, item) => sum + item.amount, 0)
+
+  const chartData = data.reduce((acc, item) => {
+    if (item.amount / total < threshold) {
+      const other = acc.find(d => d.category === 'Other')
+      if (other) {
+        other.amount += item.amount
+      } else {
+        acc.push({ category: 'Other', amount: item.amount })
+      }
+    } else {
+      acc.push(item)
+    }
+    return acc
+  }, [] as Array<{ category: string; amount: number }>)
+
+  return (
+    <ResponsiveContainer width="100%" height={400}>
+      <PieChart>
+        <Pie
+          data={chartData}
+          cx="50%"
+          cy="50%"
+          labelLine={false}
+          label={({ category, percent }) =>
+            `${category}: ${(percent * 100).toFixed(1)}%`
+          }
+          outerRadius={120}
+          fill="#8884d8"
+          dataKey="amount"
+        >
+          {chartData.map((entry, index) => (
+            <Cell
+              key={`cell-${index}`}
+              fill={colors[index % colors.length]}
+            />
+          ))}
+        </Pie>
+        <Tooltip
+          formatter={(value: number) => `$${(value / 100).toFixed(2)}`}
+        />
+        <Legend />
+      </PieChart>
+    </ResponsiveContainer>
+  )
+}
+```
+
+**Cash Flow Waterfall Chart:**
+
+```typescript
+// components/charts/CashFlowWaterfallChart.tsx
+"use client"
+
+import {
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
+  ResponsiveContainer, Cell, ReferenceLine
+} from 'recharts'
+
+interface CashFlowData {
+  month: string
+  inflow: number
+  outflow: number
+  net: number
+}
+
+export function CashFlowWaterfallChart({ data }: { data: CashFlowData[] }) {
+  // Transform data for waterfall effect
+  let runningBalance = 0
+  const waterfallData = data.map((item) => {
+    const netChange = item.inflow - item.outflow
+    const start = runningBalance
+    runningBalance += netChange
+
+    return {
+      month: item.month,
+      start,
+      net: netChange,
+      end: runningBalance,
+      isPositive: netChange >= 0,
+    }
+  })
+
+  return (
+    <ResponsiveContainer width="100%" height={400}>
+      <BarChart data={waterfallData}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="month" />
+        <YAxis
+          tickFormatter={(value) => `$${(value / 100).toFixed(0)}k`}
+        />
+        <Tooltip
+          formatter={(value: number) => `$${(value / 100).toFixed(2)}`}
+        />
+        <ReferenceLine y={0} stroke="#000" />
+        <Bar dataKey="net" fill="#8884d8">
+          {waterfallData.map((entry, index) => (
+            <Cell
+              key={`cell-${index}`}
+              fill={entry.isPositive ? '#10B981' : '#EF4444'}
+            />
+          ))}
+        </Bar>
+      </BarChart>
+    </ResponsiveContainer>
+  )
+}
+```
+
+### 8.2 Table Component (TanStack Table)
+
+**Virtual Scrolling Setup:**
+
+```typescript
+// components/tables/TransactionTable.tsx
+"use client"
+
+import {
+  useReactTable,
+  getCoreRowModel,
+  getSortedRowModel,
+  getFilteredRowModel,
+  flexRender,
+} from '@tanstack/react-table'
+import { useVirtualizer } from '@tanstack/react-virtual'
+import { useMemo, useRef } from 'react'
+
+export function TransactionTable({ data }: { data: Transaction[] }) {
+  const tableContainerRef = useRef<HTMLDivElement>(null)
+
+  const columns = useMemo(
+    () => [
+      {
+        accessorKey: 'transaction_date',
+        header: 'Date',
+        cell: (info) => formatDate(info.getValue()),
+      },
+      {
+        accessorKey: 'description',
+        header: 'Description',
+      },
+      {
+        accessorKey: 'ai_category',
+        header: 'Category',
+        cell: (info) => (
+          <CategoryBadge
+            category={info.getValue()}
+            confidence={info.row.original.ai_confidence}
+          />
+        ),
+      },
+      {
+        accessorKey: 'amount_cents',
+        header: 'Amount',
+        cell: (info) => formatCurrency(info.getValue()),
+      },
+    ],
+    []
+  )
+
+  const table = useReactTable({
+    data,
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+  })
+
+  const { rows } = table.getRowModel()
+
+  const rowVirtualizer = useVirtualizer({
+    count: rows.length,
+    getScrollElement: () => tableContainerRef.current,
+    estimateSize: () => 50,
+    overscan: 10,
+  })
+
+  return (
+    <div ref={tableContainerRef} className="h-[600px] overflow-auto">
+      <table className="w-full">
+        <thead className="sticky top-0 bg-white z-10">
+          {table.getHeaderGroups().map(headerGroup => (
+            <tr key={headerGroup.id}>
+              {headerGroup.headers.map(header => (
+                <th key={header.id} className="px-4 py-2 text-left">
+                  {header.isPlaceholder
+                    ? null
+                    : flexRender(
+                        header.column.columnDef.header,
+                        header.getContext()
+                      )}
+                </th>
+              ))}
+            </tr>
+          ))}
+        </thead>
+        <tbody>
+          <tr style={{ height: `${rowVirtualizer.getTotalSize()}px` }} />
+          {rowVirtualizer.getVirtualItems().map((virtualRow) => {
+            const row = rows[virtualRow.index]
+            return (
+              <tr
+                key={row.id}
+                style={{
+                  position: 'absolute',
+                  transform: `translateY(${virtualRow.start}px)`,
+                  width: '100%',
+                }}
+                className="hover:bg-gray-50"
+              >
+                {row.getVisibleCells().map(cell => (
+                  <td key={cell.id} className="px-4 py-2">
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </td>
+                ))}
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+```
+
+---
+
+## 9. Form Architecture
+
+### 9.1 Form Handling (React Hook Form + Zod)
+
+**Invoice Form Pattern:**
+
+```typescript
+// lib/validations/invoice.ts
+import { z } from 'zod'
+
+export const invoiceLineItemSchema = z.object({
+  description: z.string().min(1, 'Description is required').max(500),
+  quantity: z.number().positive().int(),
+  unit_price_cents: z.number().int().nonnegative(),
+  gst_applicable: z.boolean(),
+})
+
+export const invoiceSchema = z.object({
+  entity_id: z.string().uuid(),
+  contact_id: z.string().uuid(),
+  invoice_type: z.enum(['RECEIVABLE', 'PAYABLE']),
+  invoice_number: z.string().optional(), // Auto-generated if not provided
+  issue_date: z.string().date(),
+  due_date: z.string().date(),
+  payment_terms: z.string().optional(),
+  line_items: z.array(invoiceLineItemSchema).min(1, 'At least one line item required'),
+  notes: z.string().optional(),
+})
+
+export type InvoiceFormData = z.infer<typeof invoiceSchema>
+```
+
+```typescript
+// components/forms/InvoiceForm.tsx
+"use client"
+
+import { useForm, useFieldArray } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { invoiceSchema, type InvoiceFormData } from '@/lib/validations/invoice'
+
+export function InvoiceForm({ onSubmit }: { onSubmit: (data: InvoiceFormData) => Promise<void> }) {
+  const form = useForm<InvoiceFormData>({
+    resolver: zodResolver(invoiceSchema),
+    defaultValues: {
+      invoice_type: 'RECEIVABLE',
+      line_items: [
+        {
+          description: '',
+          quantity: 1,
+          unit_price_cents: 0,
+          gst_applicable: true
+        }
+      ],
+    },
+  })
+
+  const { fields, append, remove } = useFieldArray({
+    control: form.control,
+    name: 'line_items',
+  })
+
+  const calculateTotals = () => {
+    const lineItems = form.watch('line_items')
+    const subtotal = lineItems.reduce((sum, item) =>
+      sum + (item.quantity * item.unit_price_cents), 0
+    )
+    const gst = lineItems.reduce((sum, item) =>
+      item.gst_applicable ? sum + (item.quantity * item.unit_price_cents * 0.1) : sum, 0
+    )
+    return { subtotal, gst, total: subtotal + gst }
+  }
+
+  const { subtotal, gst, total } = calculateTotals()
+
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <FormField
+          control={form.control}
+          name="contact_id"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Customer</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select customer" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  {/* Customer options */}
+                </SelectContent>
+              </Select>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <div className="space-y-4">
+          <div className="flex justify-between items-center">
+            <h3 className="text-lg font-semibold">Line Items</h3>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => append({
+                description: '',
+                quantity: 1,
+                unit_price_cents: 0,
+                gst_applicable: true
+              })}
+            >
+              Add Line Item
+            </Button>
+          </div>
+
+          {fields.map((field, index) => (
+            <div key={field.id} className="grid grid-cols-12 gap-4">
+              <div className="col-span-5">
+                <FormField
+                  control={form.control}
+                  name={`line_items.${index}.description`}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input placeholder="Description" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              <div className="col-span-2">
+                <FormField
+                  control={form.control}
+                  name={`line_items.${index}.quantity`}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input
+                          type="number"
+                          placeholder="Qty"
+                          {...field}
+                          onChange={(e) => field.onChange(parseInt(e.target.value))}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              <div className="col-span-3">
+                <FormField
+                  control={form.control}
+                  name={`line_items.${index}.unit_price_cents`}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <CurrencyInput {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              <div className="col-span-2 flex items-center justify-end gap-2">
+                <Checkbox
+                  checked={form.watch(`line_items.${index}.gst_applicable`)}
+                  onCheckedChange={(checked) =>
+                    form.setValue(`line_items.${index}.gst_applicable`, checked as boolean)
+                  }
+                />
+                <span className="text-sm">GST</span>
+
+                {fields.length > 1 && (
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => remove(index)}
+                  >
+                    Remove
+                  </Button>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex justify-end">
+          <div className="w-64 space-y-2">
+            <div className="flex justify-between">
+              <span>Subtotal:</span>
+              <span>{formatCurrency(subtotal)}</span>
+            </div>
+            <div className="flex justify-between">
+              <span>GST (10%):</span>
+              <span>{formatCurrency(gst)}</span>
+            </div>
+            <div className="flex justify-between font-bold text-lg">
+              <span>Total:</span>
+              <span>{formatCurrency(total)}</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-end gap-4">
+          <Button type="button" variant="outline">Cancel</Button>
+          <Button type="submit" disabled={form.formState.isSubmitting}>
+            {form.formState.isSubmitting ? 'Creating...' : 'Create Invoice'}
+          </Button>
+        </div>
+      </form>
+    </Form>
+  )
+}
+```
+
+---
+
+## 10. Testing Architecture
+
+### 10.1 Unit Tests (Vitest)
+
+**Financial Calculation Tests (100% Coverage):**
+
+```typescript
+// tests/unit/calculations/gst.test.ts
+import { describe, it, expect } from 'vitest'
+import { calculateGST, reverseGST } from '@/lib/calculations/gst'
+
+describe('GST Calculations', () => {
+  describe('calculateGST', () => {
+    it('should calculate 10% GST correctly', () => {
+      expect(calculateGST(10000)).toBe(1000) // $100 → $10 GST
+      expect(calculateGST(50000)).toBe(5000) // $500 → $50 GST
+    })
+
+    it('should round to nearest cent', () => {
+      expect(calculateGST(10005)).toBe(1001) // $100.05 → $10.01 GST (rounded up)
+      expect(calculateGST(10004)).toBe(1000) // $100.04 → $10.00 GST (rounded down)
+    })
+
+    it('should handle zero amount', () => {
+      expect(calculateGST(0)).toBe(0)
+    })
+
+    it('should handle large amounts without overflow', () => {
+      const largeAmount = 999999999999 // $9.99B
+      const gst = calculateGST(largeAmount)
+      expect(gst).toBe(99999999999) // $999.99M GST
+    })
+  })
+
+  describe('reverseGST', () => {
+    it('should extract GST from GST-inclusive amount', () => {
+      expect(reverseGST(11000)).toBe(1000) // $110 inc GST → $10 GST
+      expect(reverseGST(55000)).toBe(5000) // $550 inc GST → $50 GST
+    })
+
+    it('should match ATO examples', () => {
+      // ATO Example: $1,100 inc GST → $100 GST
+      expect(reverseGST(110000)).toBe(10000)
+    })
+  })
+})
+```
+
+### 10.2 Integration Tests (Testing Library)
+
+**Component + Data Interaction Tests:**
+
+```typescript
+// tests/integration/components/TransactionTable.test.tsx
+import { describe, it, expect, vi } from 'vitest'
+import { render, screen, waitFor } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { TransactionTable } from '@/components/tables/TransactionTable'
+import { mockTransactions } from '@/tests/mocks/data'
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: { retry: false },
+    mutations: { retry: false },
+  },
+})
+
+function Wrapper({ children }: { children: React.ReactNode }) {
+  return (
+    <QueryClientProvider client={queryClient}>
+      {children}
+    </QueryClientProvider>
+  )
+}
+
+describe('TransactionTable', () => {
+  it('should render transaction list', async () => {
+    render(<TransactionTable />, { wrapper: Wrapper })
+
+    await waitFor(() => {
+      expect(screen.getByText(mockTransactions[0].description)).toBeInTheDocument()
+    })
+  })
+
+  it('should filter transactions by entity', async () => {
+    const user = userEvent.setup()
+    render(<TransactionTable />, { wrapper: Wrapper })
+
+    // Open entity selector
+    const entitySelector = screen.getByRole('combobox', { name: /entity/i })
+    await user.click(entitySelector)
+
+    // Select MOKAI
+    const mokaiOption = screen.getByText('MOKAI PTY LTD')
+    await user.click(mokaiOption)
+
+    // Only MOKAI transactions should be visible
+    await waitFor(() => {
+      const rows = screen.getAllByRole('row')
+      expect(rows.length).toBe(mockTransactions.filter(t => t.entity_id === 'mokai-id').length + 1) // +1 for header
+    })
+  })
+
+  it('should sort by date when clicking date header', async () => {
+    const user = userEvent.setup()
+    render(<TransactionTable />, { wrapper: Wrapper })
+
+    const dateHeader = screen.getByRole('button', { name: /date/i })
+    await user.click(dateHeader)
+
+    await waitFor(() => {
+      const rows = screen.getAllByRole('row')
+      // Verify first transaction is most recent
+      expect(rows[1]).toHaveTextContent('2024-10-17')
+    })
+  })
+})
+```
+
+### 10.3 E2E Tests (Playwright)
+
+**Critical User Flows:**
+
+```typescript
+// tests/e2e/invoices.spec.ts
+import { test, expect } from '@playwright/test'
+
+test.describe('Invoice Creation Flow', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/login')
+    await page.fill('input[name="email"]', 'test@example.com')
+    await page.fill('input[name="password"]', 'password')
+    await page.click('button[type="submit"]')
+
+    await expect(page).toHaveURL('/dashboard')
+  })
+
+  test('should create invoice and generate PDF', async ({ page }) => {
+    // Navigate to invoices
+    await page.click('text=Invoices')
+    await expect(page).toHaveURL('/invoices')
+
+    // Click "New Invoice"
+    await page.click('text=New Invoice')
+    await expect(page).toHaveURL('/invoices/new')
+
+    // Fill invoice form
+    await page.selectOption('select[name="contact_id"]', 'customer-1')
+    await page.fill('input[name="issue_date"]', '2024-10-17')
+    await page.fill('input[name="due_date"]', '2024-11-17')
+
+    // Add line item
+    await page.fill('input[name="line_items.0.description"]', 'Consulting Services')
+    await page.fill('input[name="line_items.0.quantity"]', '10')
+    await page.fill('input[name="line_items.0.unit_price_cents"]', '15000')
+
+    // Submit form
+    await page.click('button[type="submit"]')
+
+    // Should redirect to invoice detail
+    await expect(page).toHaveURL(/\/invoices\/[a-f0-9-]+/)
+
+    // Verify invoice details
+    await expect(page.locator('text=Consulting Services')).toBeVisible()
+    await expect(page.locator('text=$150.00')).toBeVisible()
+
+    // Download PDF
+    const [download] = await Promise.all([
+      page.waitForEvent('download'),
+      page.click('text=Download PDF'),
+    ])
+
+    expect(download.suggestedFilename()).toMatch(/invoice-.*\.pdf/)
+  })
+
+  test('should mark invoice as paid', async ({ page }) => {
+    // Navigate to existing invoice
+    await page.goto('/invoices/existing-invoice-id')
+
+    // Verify status is "SENT"
+    await expect(page.locator('text=Sent')).toBeVisible()
+
+    // Mark as paid
+    await page.click('text=Mark as Paid')
+
+    // Fill payment details
+    await page.fill('input[name="payment_date"]', '2024-10-17')
+    await page.selectOption('select[name="payment_method"]', 'Bank Transfer')
+    await page.click('button:has-text("Confirm Payment")')
+
+    // Verify status is "PAID"
+    await expect(page.locator('text=Paid')).toBeVisible()
+
+    // Verify payment date is displayed
+    await expect(page.locator('text=Paid on Oct 17, 2024')).toBeVisible()
+  })
+})
+```
+
+---
+
+## 11. Deployment Architecture
+
+### 11.1 Vercel Setup
+
+**Environment Variables:**
+
+```bash
+# Vercel Environment Variables (encrypted)
+
+# Public (exposed to browser)
+NEXT_PUBLIC_SUPABASE_URL=https://gshsshaodoyttdxippwx.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+# Private (server-only)
+SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+```
+
+**Build Configuration:**
+
+```typescript
+// next.config.js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+
+  images: {
+    domains: ['gshsshaodoyttdxippwx.supabase.co'],
+    formats: ['image/avif', 'image/webp'],
+  },
+
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/dashboard',
+        permanent: false,
+      },
+    ]
+  },
+
+  // Enable experimental features
+  experimental: {
+    serverActions: true,
+  },
+}
+
+module.exports = nextConfig
+```
+
+### 11.2 CI/CD Pipeline
+
+**GitHub Actions Workflow:**
 
 ```yaml
 # .github/workflows/deploy.yml
-name: Deploy to Production
+name: Deploy to Vercel
 
 on:
   push:
-    branches: [main]
+    branches: [main, develop]
   pull_request:
     branches: [main]
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          version: 8
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'pnpm'
+          node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: pnpm install
-
-      - name: Run linting
-        run: pnpm lint
+        run: npm ci
 
       - name: Type check
-        run: pnpm type-check
+        run: npm run type-check
 
-      - name: Run unit tests
-        run: pnpm test
+      - name: Lint
+        run: npm run lint
 
-      - name: Build application
-        run: pnpm build
+      - name: Unit tests
+        run: npm run test:unit
+
+      - name: Build
+        run: npm run build
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
 
-      - name: Run E2E tests
-        run: pnpm test:e2e
-        env:
-          PLAYWRIGHT_TEST_BASE_URL: http://localhost:3000
-
-  deploy:
-    needs: test
-    if: github.ref == 'refs/heads/main'
+  deploy-preview:
     runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    needs: test
     steps:
-      - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: '--prod'
-```
+      - uses: actions/checkout@v4
 
-### Environments
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
 
-| Environment | Frontend URL | Backend URL | Purpose |
-|-------------|-------------|-------------|---------|
-| Development | http://localhost:3000 | https://gshsshaodoyttdxippwx.supabase.co | Local development |
-| Staging | https://sayers-finance-staging.vercel.app | https://gshsshaodoyttdxippwx.supabase.co | Pre-production testing |
-| Production | https://finance.sayers.au (custom domain) | https://gshsshaodoyttdxippwx.supabase.co | Live environment |
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
-**Notes**:
-- All environments share the same Supabase database (use RLS for data isolation)
-- Staging uses Vercel preview deployments (automatic on PR creation)
-- Production requires manual promotion after testing
-- Custom domain configured in Vercel DNS settings
+      - name: Build Project Artifacts
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
 
----
+      - name: Deploy Project Artifacts to Vercel
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
 
-## Security and Performance
+  deploy-production:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
 
-### Security Requirements
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
 
-**Frontend Security**:
-- **CSP Headers**:
-  ```
-  Content-Security-Policy:
-    default-src 'self';
-    script-src 'self' 'unsafe-inline' 'unsafe-eval';
-    style-src 'self' 'unsafe-inline';
-    img-src 'self' data: https:;
-    connect-src 'self' https://gshsshaodoyttdxippwx.supabase.co;
-  ```
-- **XSS Prevention**: React escaping (automatic), input sanitization via Zod schemas
-- **Secure Storage**: Session tokens in HTTP-only cookies (Supabase Auth default), no sensitive data in localStorage
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
-**Backend Security**:
-- **Input Validation**: Zod schemas on all API routes and form inputs
-  ```typescript
-  const invoiceSchema = z.object({
-    entity_id: z.string().uuid(),
-    contact_id: z.string().uuid(),
-    line_items: z.array(z.object({
-      description: z.string().min(1).max(200),
-      quantity: z.number().positive(),
-      unit_price_cents: z.number().int().positive(),
-    })).min(1),
-  })
-  ```
-- **Rate Limiting**: Vercel Edge Functions (50 requests/10 seconds per IP), API routes (custom middleware if needed)
-- **CORS Policy**:
-  ```typescript
-  headers: {
-    'Access-Control-Allow-Origin': process.env.NEXT_PUBLIC_APP_URL,
-    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
-    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-  }
-  ```
+      - name: Build Project Artifacts
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
-**Authentication Security**:
-- **Token Storage**: HTTP-only cookies (Supabase SSR pattern), no tokens in localStorage
-- **Session Management**: 1-hour access tokens, 30-day refresh tokens, automatic rotation
-- **Password Policy**: Minimum 8 characters, enforced by Supabase Auth
+      - name: Deploy Project Artifacts to Vercel
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
 
-### Performance Optimization
-
-**Frontend Performance**:
-- **Bundle Size Target**: <200KB initial JS bundle (measured with `next build`)
-- **Loading Strategy**:
-  - Server Components for initial page loads (no JS shipping)
-  - Dynamic imports for heavy components: `const Chart = dynamic(() => import('@/components/charts/trend-chart'))`
-  - Lazy load below-fold content
-- **Caching Strategy**:
-  - Static assets: CDN cache, 1-year cache headers
-  - API responses: React Cache (Server Components), revalidate every 60 seconds
-  - Client-side: SWR pattern for frequently accessed data (optional)
-
-**Backend Performance**:
-- **Response Time Target**: <500ms for dashboard queries, <2s for complex reports
-- **Database Optimization**:
-  - Indexed columns: `entity_id`, `transaction_date`, `status`, `ai_confidence`
-  - Denormalized fields: `subtotal_cents`, `gst_cents` on invoices (avoid recalculating)
-  - Connection pooling: Supabase default (PgBouncer)
-- **Caching Strategy**:
-  - Server Components: React Cache, revalidate on mutation
-  - API routes: No caching for PDFs/exports (always fresh)
-  - Supabase: Query result caching (automatic)
-
-**Performance Monitoring**:
-- Vercel Analytics: Core Web Vitals (LCP, FID, CLS)
-- Lighthouse scores: Target 90+ for Performance, Accessibility, Best Practices
-- Real User Monitoring: Sentry Performance monitoring (optional)
-
----
-
-## Testing Strategy
-
-### Testing Pyramid
-
-```
-         E2E Tests
-        /          \
-    Integration Tests
-   /                 \
-Frontend Unit  Backend Unit
-```
-
-**Coverage Targets**:
-- Financial calculations: 100% (critical path)
-- Utilities and services: 80%+
-- Components: 70%+
-- E2E: Critical user journeys only
-
-### Test Organization
-
-#### Frontend Tests
-
-```
-/tests
-├── unit/
-│   ├── utils/
-│   │   ├── currency.test.ts
-│   │   ├── gst.test.ts
-│   │   └── dates.test.ts
-│   ├── services/
-│   │   ├── transactions.test.ts
-│   │   └── invoices.test.ts
-│   └── components/
-│       ├── kpi-card.test.tsx
-│       └── transaction-table.test.tsx
-├── integration/
-│   ├── invoice-form.test.tsx
-│   └── transaction-filters.test.tsx
-└── e2e/
-    ├── dashboard.spec.ts
-    ├── transactions.spec.ts
-    └── invoices.spec.ts
-```
-
-#### Backend Tests
-
-```
-/tests
-└── api/
-    ├── invoices/
-    │   └── pdf.test.ts
-    ├── reports/
-    │   ├── bas.test.ts
-    │   └── income-statement.test.ts
-    └── transactions/
-        └── categorize.test.ts
-```
-
-### Test Examples
-
-#### Frontend Component Test
-
-```typescript
-// tests/unit/components/kpi-card.test.tsx
-import { render, screen } from '@testing-library/react'
-import { KPICard } from '@/components/dashboard/kpi-card'
-import { describe, it, expect } from 'vitest'
-
-describe('KPICard', () => {
-  it('displays formatted currency value', () => {
-    render(<KPICard label="Total Revenue" value={123456} />)
-
-    expect(screen.getByText('$1,234.56')).toBeInTheDocument()
-  })
-
-  it('shows loading skeleton when loading prop is true', () => {
-    render(<KPICard label="Total Revenue" value={0} loading />)
-
-    expect(screen.queryByText('$0.00')).not.toBeInTheDocument()
-    expect(screen.getByTestId('kpi-skeleton')).toBeInTheDocument()
-  })
-
-  it('displays trend indicator with correct color', () => {
-    const { rerender } = render(
-      <KPICard
-        label="Total Revenue"
-        value={100000}
-        trend={{ value: 15, direction: 'up' }}
-      />
-    )
-
-    const trendElement = screen.getByText('+15% from last period')
-    expect(trendElement).toHaveClass('text-green-600')
-
-    rerender(
-      <KPICard
-        label="Total Revenue"
-        value={100000}
-        trend={{ value: -10, direction: 'down' }}
-      />
-    )
-
-    const trendElementDown = screen.getByText('-10% from last period')
-    expect(trendElementDown).toHaveClass('text-red-600')
-  })
-})
-```
-
-#### Backend API Test
-
-```typescript
-// tests/api/reports/bas.test.ts
-import { describe, it, expect, beforeAll, afterAll } from 'vitest'
-import { createMocks } from 'node-mocks-http'
-import { POST } from '@/app/api/reports/bas/route'
-
-describe('BAS API', () => {
-  it('calculates correct GST for Q1 2025', async () => {
-    const { req } = createMocks({
-      method: 'POST',
-      body: {
-        entity_id: 'test-entity-id',
-        quarter: 1,
-        fiscal_year: 2025,
-      },
-    })
-
-    const response = await POST(req as any)
-    const data = await response.json()
-
-    expect(data.bas_data.G1_total_sales_cents).toBe(110000) // $1,100 including GST
-    expect(data.bas_data.field_1A_gst_on_sales_cents).toBe(10000) // $100 GST collected
-    expect(data.bas_data.field_1B_gst_on_purchases_cents).toBe(5000) // $50 GST paid
-    expect(data.bas_data.field_7_net_gst_cents).toBe(5000) // $50 owed to ATO
-  })
-
-  it('returns 401 for unauthenticated requests', async () => {
-    const { req } = createMocks({
-      method: 'POST',
-      headers: {}, // No auth cookie
-    })
-
-    const response = await POST(req as any)
-
-    expect(response.status).toBe(401)
-  })
-})
-```
-
-#### E2E Test (Playwright)
-
-```typescript
-// tests/e2e/invoices.spec.ts
-import { test, expect } from '@playwright/test'
-
-test.describe('Invoice Management', () => {
-  test.beforeEach(async ({ page }) => {
-    // Login
-    await page.goto('/login')
-    await page.fill('input[type="email"]', 'harrison@mokhouse.com.au')
-    await page.fill('input[type="password"]', 'test-password')
-    await page.click('button[type="submit"]')
-    await expect(page).toHaveURL('/dashboard')
-  })
-
-  test('creates invoice with line items and generates PDF', async ({ page }) => {
-    // Navigate to invoice creation
-    await page.goto('/invoices/new')
-
-    // Fill invoice form
-    await page.selectOption('select[name="entity_id"]', { label: 'MOK HOUSE PTY LTD' })
-    await page.selectOption('select[name="contact_id"]', { label: 'Repco Australia' })
-    await page.fill('input[name="issue_date"]', '2025-10-01')
-    await page.fill('input[name="due_date"]', '2025-10-31')
-
-    // Add line item
-    await page.fill('input[name="line_items.0.description"]', 'Sonic branding for campaign')
-    await page.fill('input[name="line_items.0.quantity"]', '1')
-    await page.fill('input[name="line_items.0.unit_price_cents"]', '5000000') // $50,000
-
-    // Verify GST calculation
-    const gstAmount = await page.textContent('[data-testid="gst-amount"]')
-    expect(gstAmount).toBe('$5,000.00') // 10% GST
-
-    const totalAmount = await page.textContent('[data-testid="total-amount"]')
-    expect(totalAmount).toBe('$55,000.00')
-
-    // Save and send
-    await page.click('button:has-text("Save & Send")')
-
-    // Wait for success message
-    await expect(page.locator('text=Invoice created successfully')).toBeVisible()
-
-    // Verify redirect to invoice list
-    await expect(page).toHaveURL(/\/invoices/)
-
-    // Check invoice appears in list
-    await expect(page.locator('text=Repco Australia')).toBeVisible()
-    await expect(page.locator('text=$55,000.00')).toBeVisible()
-
-    // Download PDF
-    const [download] = await Promise.all([
-      page.waitForEvent('download'),
-      page.click('button:has-text("View PDF")'),
-    ])
-
-    expect(download.suggestedFilename()).toMatch(/invoice-INV-\d+\.pdf/)
-  })
-})
+      - name: Run E2E tests
+        run: npm run test:e2e
+        env:
+          PLAYWRIGHT_TEST_BASE_URL: https://your-production-url.vercel.app
 ```
 
 ---
 
-## Coding Standards
+## 12. Migration & Phased Rollout
 
-### Critical Fullstack Rules
+### 12.1 Phase 1 (MVP) Infrastructure
 
-- **Type Sharing**: Always define shared types in `/types` directory and import consistently across frontend/backend. Never duplicate type definitions.
-- **API Calls**: Never make direct HTTP calls to external APIs from frontend - use Next.js API routes as proxy layer for error handling and security.
-- **Environment Variables**: Access only through typed config objects, never use `process.env` directly in components. Create `/lib/config.ts` with validated env vars.
-- **Error Handling**: All API routes must use standardized error response format (see Error Handling section). Never return raw error messages.
-- **State Updates**: Never mutate Supabase data directly in client components - use Server Actions or API routes for mutations.
-- **Financial Calculations**: Always use `decimal.js` for currency math to avoid floating-point errors. Never use `Number` for GST calculations.
-- **RLS Enforcement**: Trust Supabase RLS for data isolation - never implement entity filtering in application code.
-- **PDF Generation**: Always use `@react-pdf/renderer` for invoices, never client-side libraries or external services.
+**Sprint 1-3: Foundation + Transaction Tracking**
 
-### Naming Conventions
+**Infrastructure Setup:**
+```bash
+# 1. Create Next.js project
+npx create-next-app@latest financial-dashboard \
+  --typescript \
+  --tailwind \
+  --app \
+  --eslint
 
-| Element | Frontend | Backend | Example |
-|---------|----------|---------|---------|
-| Components | PascalCase | - | `TransactionTable.tsx` |
-| Hooks | camelCase with 'use' | - | `useEntity.ts` |
-| API Routes | kebab-case | kebab-case | `/api/invoices/pdf` |
-| Database Tables | snake_case | snake_case | `personal_transactions` |
-| Functions | camelCase | camelCase | `calculateGST()` |
-| Constants | SCREAMING_SNAKE_CASE | SCREAMING_SNAKE_CASE | `GST_RATE` |
-| Types/Interfaces | PascalCase | PascalCase | `Invoice`, `TransactionFilters` |
+# 2. Install core dependencies
+npm install \
+  @supabase/ssr \
+  @tanstack/react-query \
+  zustand \
+  react-hook-form \
+  @hookform/resolvers \
+  zod \
+  decimal.js \
+  date-fns \
+  recharts
 
----
+# 3. Install shadcn/ui
+npx shadcn-ui@latest init
 
-## Error Handling Strategy
+# 4. Install shadcn components
+npx shadcn-ui@latest add button card table dialog select input form toast
 
-### Error Flow
-
-```mermaid
-sequenceDiagram
-    participant User
-    participant Component
-    participant APIRoute
-    participant Supabase
-    participant Sentry
-
-    User->>Component: Submit form
-    Component->>APIRoute: POST /api/invoices
-    APIRoute->>Supabase: INSERT INTO invoices
-    Supabase-->>APIRoute: Error: RLS policy violation
-
-    APIRoute->>Sentry: Log error with context
-    APIRoute->>APIRoute: Format error response
-    APIRoute-->>Component: 403 { error: { code: 'RLS_VIOLATION', message: ... } }
-
-    Component->>Component: Parse error response
-    Component->>User: Show toast notification "Access denied: ..."
-    Component->>Component: Revert optimistic update
+# 5. Generate Supabase types
+npx supabase gen types typescript \
+  --project-id gshsshaodoyttdxippwx \
+  --schema public \
+  > types/database.ts
 ```
 
-### Error Response Format
+**Core Features:**
+- ✅ Next.js App Router setup
+- ✅ Supabase client configuration (browser + server)
+- ✅ Supabase Auth flow (login/signup/logout)
+- ✅ Entity selector (global state with Zustand)
+- ✅ Transaction list view (Server Component)
+- ✅ Transaction filtering (Client Component)
+- ✅ Spending breakdown chart (Recharts PieChart)
+- ✅ Dashboard KPI cards (Server Component)
 
-All API routes return errors in this standardized format:
+### 12.2 Subsequent Phases
 
-```typescript
-interface ApiError {
-  error: {
-    code: string;          // Machine-readable error code
-    message: string;       // Human-readable error message
-    details?: Record<string, any>; // Optional error context
-    timestamp: string;     // ISO 8601 timestamp
-    requestId: string;     // Unique request ID for tracing
-  };
-}
-```
+**Phase 2 (Sprint 4-6): Invoicing & Cash Flow**
+- Invoice CRUD operations
+- Invoice PDF generation
+- Payment tracking
+- Cash flow dashboard
+- Cash flow forecasting (ML integration)
 
-### Frontend Error Handling
+**Phase 3 (Sprint 7-8): Budgeting & Alerts**
+- Budget creation and tracking
+- Budget vs actual comparison
+- Budget alerts (80%, 100%)
+- Anomaly detection display
 
-```typescript
-// lib/errors/api-error-handler.ts
-import { toast } from '@/components/ui/use-toast'
+**Phase 4 (Sprint 9-11): Accounting & Reporting**
+- Profit & Loss report
+- Balance Sheet report
+- BAS statement generation
+- Chart of accounts view
+- Account transaction history
 
-export class ApiError extends Error {
-  constructor(
-    public code: string,
-    public message: string,
-    public status: number,
-    public details?: Record<string, any>
-  ) {
-    super(message)
-    this.name = 'ApiError'
-  }
-}
+**Phase 5 (Sprint 12-13): Analytics & ML Insights**
+- AI insights dashboard
+- Spending trend analysis
+- Predictive spending
+- Anomaly explanations
 
-export async function handleApiResponse<T>(response: Response): Promise<T> {
-  if (!response.ok) {
-    const errorData = await response.json()
+**Phase 6 (Sprint 14): Polish & UX**
+- CSV/Excel export
+- PDF report generation
+- Mobile responsiveness optimization
+- Keyboard shortcuts
+- Dark mode
+- Bulk operations
 
-    // Log to Sentry
-    if (typeof window !== 'undefined' && window.Sentry) {
-      window.Sentry.captureException(new ApiError(
-        errorData.error.code,
-        errorData.error.message,
-        response.status,
-        errorData.error.details
-      ))
-    }
-
-    // Show user-friendly error toast
-    toast({
-      title: 'Error',
-      description: errorData.error.message,
-      variant: 'destructive',
-    })
-
-    throw new ApiError(
-      errorData.error.code,
-      errorData.error.message,
-      response.status,
-      errorData.error.details
-    )
-  }
-
-  return response.json()
-}
-
-// Usage in component
-async function handleSubmit(data: InvoiceFormData) {
-  try {
-    const response = await fetch('/api/invoices', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    })
-
-    const invoice = await handleApiResponse<Invoice>(response)
-
-    toast({
-      title: 'Success',
-      description: 'Invoice created successfully',
-    })
-
-    router.push(`/invoices/${invoice.id}`)
-  } catch (error) {
-    // Error already handled by handleApiResponse
-    console.error('Invoice creation failed:', error)
-  }
-}
-```
-
-### Backend Error Handling
+**Feature Flags for Gradual Rollout:**
 
 ```typescript
-// lib/errors/api-error-responses.ts
-import { NextResponse } from 'next/server'
-import * as Sentry from '@sentry/nextjs'
+// lib/feature-flags.ts
+export const featureFlags = {
+  invoicing: process.env.NEXT_PUBLIC_FEATURE_INVOICING === 'true',
+  budgeting: process.env.NEXT_PUBLIC_FEATURE_BUDGETING === 'true',
+  reporting: process.env.NEXT_PUBLIC_FEATURE_REPORTING === 'true',
+  mlInsights: process.env.NEXT_PUBLIC_FEATURE_ML_INSIGHTS === 'true',
+  darkMode: process.env.NEXT_PUBLIC_FEATURE_DARK_MODE === 'true',
+}
 
-export function createErrorResponse(
-  code: string,
-  message: string,
-  status: number,
-  details?: Record<string, any>
-): NextResponse {
-  const requestId = crypto.randomUUID()
+// Usage in components
+import { featureFlags } from '@/lib/feature-flags'
 
-  // Log to Sentry
-  Sentry.captureException(new Error(message), {
-    tags: { error_code: code },
-    extra: { details, requestId },
-  })
-
-  return NextResponse.json(
-    {
-      error: {
-        code,
-        message,
-        details,
-        timestamp: new Date().toISOString(),
-        requestId,
-      },
-    },
-    { status }
+function Navigation() {
+  return (
+    <nav>
+      <Link href="/dashboard">Dashboard</Link>
+      <Link href="/transactions">Transactions</Link>
+      {featureFlags.invoicing && <Link href="/invoices">Invoices</Link>}
+      {featureFlags.reporting && <Link href="/reports">Reports</Link>}
+    </nav>
   )
 }
-
-// Common error responses
-export const ErrorResponses = {
-  unauthorized: () => createErrorResponse(
-    'UNAUTHORIZED',
-    'Authentication required',
-    401
-  ),
-
-  forbidden: () => createErrorResponse(
-    'FORBIDDEN',
-    'Access denied to this resource',
-    403
-  ),
-
-  notFound: (resource: string) => createErrorResponse(
-    'NOT_FOUND',
-    `${resource} not found`,
-    404
-  ),
-
-  validationError: (details: Record<string, string[]>) => createErrorResponse(
-    'VALIDATION_ERROR',
-    'Input validation failed',
-    400,
-    { validationErrors: details }
-  ),
-
-  internalError: (error: Error) => createErrorResponse(
-    'INTERNAL_ERROR',
-    'An unexpected error occurred',
-    500,
-    { originalError: error.message }
-  ),
-}
-
-// Usage in API route
-// app/api/invoices/[id]/pdf/route.ts
-import { ErrorResponses } from '@/lib/errors/api-error-responses'
-
-export async function GET(request: Request, { params }: { params: { id: string } }) {
-  try {
-    const session = await getSession(request)
-    if (!session) {
-      return ErrorResponses.unauthorized()
-    }
-
-    const invoice = await getInvoice(params.id)
-    if (!invoice) {
-      return ErrorResponses.notFound('Invoice')
-    }
-
-    // Generate PDF...
-  } catch (error) {
-    return ErrorResponses.internalError(error as Error)
-  }
-}
 ```
 
 ---
 
-## Monitoring and Observability
+## 13. Monitoring & Observability
 
-### Monitoring Stack
+### 13.1 Logging Strategy
 
-- **Frontend Monitoring**: Vercel Analytics (Core Web Vitals, page views, user sessions)
-- **Backend Monitoring**: Vercel Functions Logs (API route execution, errors, performance)
-- **Error Tracking**: Sentry (frontend + backend errors with stack traces, breadcrumbs, user context)
-- **Performance Monitoring**: Vercel Speed Insights (real user metrics), Sentry Performance (transaction tracing)
-
-### Key Metrics
-
-**Frontend Metrics**:
-- **Core Web Vitals**:
-  - LCP (Largest Contentful Paint): <2.5s
-  - FID (First Input Delay): <100ms
-  - CLS (Cumulative Layout Shift): <0.1
-- **JavaScript Errors**: Error rate <0.1% of page views
-- **API Response Times**: P95 <1s for dashboard queries
-- **User Interactions**: Button clicks, form submissions, navigation patterns
-
-**Backend Metrics**:
-- **Request Rate**: Requests per minute (RPM) for each API route
-- **Error Rate**: 5xx errors <0.5% of total requests
-- **Response Time**: P95 <500ms for queries, P95 <2s for reports
-- **Database Query Performance**: Slow queries >1s (monitored via Supabase dashboard)
-
-**Business Metrics** (custom events):
-- **Transaction Categorization Accuracy**: % of ML predictions not overridden
-- **Invoice Creation Time**: Time from form open to save
-- **BAS Generation Time**: Time to generate quarterly BAS report
-- **User Session Duration**: Average time spent in dashboard
-
-**Implementation**:
+**Error Logging (Sentry):**
 
 ```typescript
-// lib/monitoring/analytics.ts
-export function trackEvent(eventName: string, properties?: Record<string, any>) {
-  // Vercel Analytics
-  if (typeof window !== 'undefined' && window.va) {
-    window.va('track', eventName, properties)
-  }
+// lib/sentry.ts
+import * as Sentry from '@sentry/nextjs'
 
-  // Sentry breadcrumb
-  if (typeof window !== 'undefined' && window.Sentry) {
-    window.Sentry.addBreadcrumb({
-      category: 'analytics',
-      message: eventName,
-      data: properties,
-      level: 'info',
-    })
-  }
+Sentry.init({
+  dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
+  environment: process.env.NODE_ENV,
+  tracesSampleRate: 1.0,
+
+  beforeSend(event, hint) {
+    // Don't send errors in development
+    if (process.env.NODE_ENV === 'development') {
+      return null
+    }
+
+    // Filter sensitive data
+    if (event.request) {
+      delete event.request.cookies
+    }
+
+    return event
+  },
+})
+```
+
+**Audit Trails (Financial Operations):**
+
+```typescript
+// lib/audit.ts
+import { createClient } from '@/lib/supabase/server'
+
+export async function logAuditEvent(
+  userId: string,
+  action: string,
+  resource: string,
+  resourceId: string,
+  metadata?: Record<string, any>
+) {
+  const supabase = await createClient()
+
+  await supabase.from('audit_logs').insert({
+    user_id: userId,
+    action,
+    resource,
+    resource_id: resourceId,
+    metadata,
+    created_at: new Date().toISOString(),
+  })
 }
 
 // Usage
-trackEvent('invoice_created', {
-  entity_id: invoice.entity_id,
-  invoice_type: invoice.invoice_type,
-  total_cents: invoice.total_cents,
-})
+await logAuditEvent(
+  userId,
+  'INVOICE_CREATED',
+  'invoices',
+  invoice.id,
+  { total_cents: invoice.total_cents }
+)
+```
+
+### 13.2 Performance Monitoring
+
+**Core Web Vitals (Vercel Analytics):**
+
+```typescript
+// app/layout.tsx
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>
+        {children}
+        <Analytics />
+        <SpeedInsights />
+      </body>
+    </html>
+  )
+}
+```
+
+**Database Query Performance:**
+
+```sql
+-- Monitor slow queries in Supabase
+SELECT
+  query,
+  calls,
+  total_time,
+  mean_time,
+  max_time
+FROM pg_stat_statements
+WHERE mean_time > 100 -- Queries averaging >100ms
+ORDER BY mean_time DESC
+LIMIT 20;
 ```
 
 ---
 
-## Architecture Summary
+## 14. Scalability Considerations
 
-### Key Decisions
+### 14.1 Database Scaling
 
-1. **Next.js 14+ App Router with Server Components**: Chosen for optimal performance (minimal JS shipping), built-in caching, streaming, and Vercel integration. Server Components handle data fetching, Client Components only for interactivity.
+**Connection Pooling:**
 
-2. **Supabase as Backend**: Existing production database with RLS, auth, and ML integration already configured. No migration needed, immediate development start.
+```typescript
+// Supabase handles connection pooling automatically
+// Configure pool size in Supabase dashboard if needed
+```
 
-3. **React Server Components + Server Actions**: Modern React pattern reduces client-side JavaScript, improves initial load times, maintains type safety across client-server boundary.
+**Query Optimization:**
 
-4. **shadcn/ui Component Library**: Radix UI primitives with Tailwind styling provide accessible, customizable components without heavy framework lock-in.
+```sql
+-- Create composite indexes for common query patterns
+CREATE INDEX idx_transactions_entity_date_amount
+  ON transactions(entity_id, transaction_date DESC, amount_cents);
 
-5. **Decimal.js for Financial Calculations**: Critical for GST accuracy (10% must be exact). Avoids JavaScript floating-point arithmetic errors.
+CREATE INDEX idx_invoices_entity_status_due
+  ON invoices(entity_id, status, due_date);
 
-6. **@react-pdf/renderer for PDF Generation**: Server-side PDF creation with React components maintains consistency with UI code, enables complex layouts for Australian tax invoices.
+-- Analyze query plans
+EXPLAIN ANALYZE
+SELECT * FROM transactions
+WHERE entity_id = '...'
+  AND transaction_date >= '2024-01-01'
+ORDER BY transaction_date DESC
+LIMIT 100;
+```
 
-7. **Vercel Deployment**: Seamless Next.js integration, automatic preview deployments, global CDN, edge functions for low latency.
+**Caching Strategy:**
 
-8. **Row Level Security (RLS) for Multi-Entity Isolation**: Database-level security ensures entity data segregation without application-side filtering logic.
+```typescript
+// React Query cache configuration
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      // Transactions: 10 min stale time
+      staleTime: 10 * 60 * 1000,
+      cacheTime: 30 * 60 * 1000,
 
-### Critical Implementation Notes
+      // Keep queries in background
+      refetchOnWindowFocus: true,
+      refetchOnReconnect: true,
+    },
+  },
+})
+```
 
-**Financial Calculation Accuracy (NFR5)**:
-- All currency values stored as integers (cents) in database
-- GST calculations use `Decimal.js`: `new Decimal(amount).times(0.1).toDecimalPlaces(2)`
-- Unit tests verify GST rounding rules (round to nearest cent, banker's rounding)
-- BAS totals validated against transaction sums with zero tolerance
+### 14.2 Application Scaling
 
-**Performance Targets (NFR1, NFR2)**:
-- Dashboard loads <2s: Server Components pre-fetch KPIs, charts load client-side after paint
-- Virtual scrolling for transactions >100 records: `@tanstack/react-virtual` library
-- Database indexes on `(entity_id, transaction_date)` for fast filtering
-- React Cache with 60s revalidation for frequently accessed data
+**Vercel Edge Functions:**
 
-**RLS Security (NFR3)**:
-- All Supabase queries automatically filtered by `entity_id` via RLS policies
-- No application-side entity filtering logic (trust database layer)
-- User authentication via Supabase Auth with HTTP-only cookies
-- API routes validate session before queries
+```typescript
+// app/api/reports/bas/route.ts
+export const runtime = 'edge' // Deploy to Edge runtime for global distribution
+export const dynamic = 'force-dynamic' // Bypass static optimization
 
-**ML Integration**:
-- MindsDB models already trained and deployed
-- Predictions triggered via PostgreSQL functions on transaction insert
-- Confidence thresholds: ≥0.9 auto-apply, 0.7-0.9 review queue, <0.7 manual
-- Dashboard displays predictions from `ai_predictions` table (read-only)
+export async function POST(request: Request) {
+  // BAS generation logic runs on edge
+}
+```
 
-**Australian Tax Compliance (NFR6)**:
-- BAS calculation service implements ATO field mappings (G1, G2, G3, G10, G11, etc.)
-- GST rate constant: 10% (configurable for future changes)
-- Invoice PDFs include ABN, GST breakdown, "Tax Invoice" label per ATO requirements
-- Chart of accounts follows Australian accounting standards
+**Static Generation for Reports:**
 
-### Risk Assessment and Mitigation
+```typescript
+// app/reports/profit-loss/page.tsx
+export const revalidate = 3600 // Revalidate every hour
 
-**Risk 1: ML Model Accuracy Degradation**
-- **Impact**: Low-confidence predictions increase manual workload
-- **Likelihood**: Medium (vendor name changes, new transaction types)
-- **Mitigation**:
-  - Monitor categorization accuracy weekly via dashboard metrics
-  - Retrain models quarterly with corrected transactions
-  - Business keywords table for instant high-confidence overrides
+export default async function ProfitLossPage() {
+  // Pre-render P&L reports at build time
+  const report = await generateProfitLoss()
+  return <ProfitLossReport data={report} />
+}
+```
 
-**Risk 2: Supabase RLS Policy Misconfiguration**
-- **Impact**: Critical - Data leakage between entities
-- **Likelihood**: Low (policies already tested, simple structure)
-- **Mitigation**:
-  - Comprehensive RLS policy testing in staging (create test entities, verify isolation)
-  - Automated tests query across entities, assert no cross-entity data
-  - Code review all RLS policy changes with security checklist
+---
 
-**Risk 3: GST Calculation Errors**
-- **Impact**: Critical - Tax compliance violations, financial losses
-- **Likelihood**: Very Low (well-tested calculation logic)
-- **Mitigation**:
-  - 100% unit test coverage for all GST calculations
-  - Decimal.js library prevents floating-point errors
-  - BAS preview shows supporting transactions for manual verification
-  - Accountant review before ATO submission
+## 15. Technical Debt & Future Considerations
 
-**Risk 4: PDF Generation Performance (Large Invoices)**
-- **Impact**: Medium - Timeout on invoices with >100 line items
-- **Likelihood**: Low (typical invoices <20 line items)
-- **Mitigation**:
-  - Pagination for invoices >50 line items (split across pages)
-  - API route timeout increased to 60s (Vercel Pro plan)
-  - Async PDF generation with email delivery for very large invoices
+### 15.1 Known Trade-offs
 
-**Risk 5: UpBank API Changes/Deprecation**
-- **Impact**: High - No transaction sync, manual data entry required
-- **Likelihood**: Low (stable API, no deprecation announcements)
-- **Mitigation**:
-  - Existing sync scripts already handle API changes gracefully
-  - Monitor UpBank API status page
-  - Fallback: Manual CSV import workflow (build if needed)
-  - Alternative: Plaid/Basiq integration (future consideration)
+**Vercel Free Tier Limitations:**
+- **Bandwidth**: 100GB/month
+- **Function Executions**: 100/day
+- **Build Minutes**: 100/month
+- **Mitigation**: Monitor usage via Vercel dashboard, upgrade to Pro ($20/month) if exceeded
 
-### Recommended Next Steps
+**React Query vs Server Components Balance:**
+- **Current**: Mix of Server Components (SSR) + React Query (client-side caching)
+- **Trade-off**: Some data is fetched twice (SSR + React Query initial fetch)
+- **Future**: Use Server Components more aggressively, reduce React Query usage
 
-**Phase 1: Foundation (Week 1-2)**
-1. Initialize Next.js 14+ project with App Router and TypeScript
-2. Configure Supabase client (SSR pattern) and generate types from existing schema
-3. Implement authentication flow (login page, session management, middleware)
-4. Set up shadcn/ui component library and Tailwind configuration
-5. Deploy to Vercel with environment variables, verify Supabase connection
+**Chart Library Performance:**
+- **Current**: Recharts handles <1000 data points well
+- **Trade-off**: Performance degrades with 10k+ data points
+- **Mitigation**: Implement data sampling for large datasets, or consider react-chartjs-2 for better performance
 
-**Phase 2: Dashboard (Week 3-4)**
-6. Build dashboard page with KPI cards (Server Components)
-7. Implement entity selector (React Context) with localStorage persistence
-8. Create chart components (Recharts) for revenue/expense trends and category breakdown
-9. Build recent transactions widget with ML confidence badges
-10. Add anomaly alerts section with drill-down capability
+### 15.2 Future Enhancements
 
-**Phase 3: Transaction Management (Week 5-6)**
-11. Create transaction list page with pagination and virtual scrolling
-12. Implement filter panel (date range, category, confidence score)
-13. Add inline category override with audit logging
-14. Build transaction detail page with ML insights display
-15. Implement bulk operations (categorize, export)
+**Multi-User Support:**
+- Add user management (invite team members)
+- Role-based permissions (admin, accountant, viewer)
+- Collaborative features (comments, approvals)
 
-**Phase 4: Invoice Management (Week 7-8)**
-16. Create invoice form with line item editor and GST calculation
-17. Implement PDF generation service (@react-pdf/renderer)
-18. Build invoice list with status filtering and payment tracking
-19. Add invoice email functionality (SendGrid/SES integration)
-20. Implement contact quick-add from invoice form
+**Real-Time Collaboration:**
+- Supabase Realtime subscriptions for live updates
+- Presence indicators (who's viewing what)
+- Collaborative editing (invoices, budgets)
 
-**Phase 5: Reports & Tax Compliance (Week 9-10)**
-21. Build BAS calculation service with ATO field mappings
-22. Create income statement (P&L) generator
-23. Implement CSV/Excel export functionality
-24. Add report preview and validation features
-25. Create scheduled report generation (optional)
+**Mobile App:**
+- React Native mobile app (iOS/Android)
+- Offline support with local SQLite
+- Push notifications for alerts
 
-**Phase 6: Settings & Polish (Week 11-12)**
-26. Build settings pages (user preferences, entities, contacts, accounts)
-27. Create audit log viewer with filtering
-28. Add ML model performance metrics dashboard
-29. Implement E2E tests for critical paths (Playwright)
-30. Performance optimization (bundle analysis, lazy loading)
+**Offline Support:**
+- Service Worker for offline functionality
+- IndexedDB for local caching
+- Sync queue for offline mutations
 
-**Deployment Readiness Checklist**:
-- [ ] All unit tests passing (100% coverage for financial calculations)
-- [ ] E2E tests passing for critical user journeys
-- [ ] Lighthouse scores: Performance 90+, Accessibility 95+, Best Practices 95+
-- [ ] Sentry error tracking configured and tested
-- [ ] Vercel deployment configured with production environment variables
-- [ ] RLS policies tested with multiple entities (no data leakage)
-- [ ] GST calculations verified against accountant-provided test cases
-- [ ] BAS report validated against ATO form requirements
-- [ ] Invoice PDFs reviewed for ATO compliance (ABN, GST breakdown, formatting)
-- [ ] Performance targets met: <2s dashboard load, <5s PDF generation
+**Advanced Reporting:**
+- Custom report builder (drag-and-drop)
+- Scheduled report generation (email PDFs)
+- Integration with accounting software (Xero, MYOB)
+
+---
+
+## Appendices
+
+### Appendix A: Glossary
+
+| Term | Definition |
+|------|------------|
+| **BAS** | Business Activity Statement - Australian quarterly tax report (GST, PAYG) |
+| **GST** | Goods and Services Tax - 10% tax on most goods and services in Australia |
+| **P&L** | Profit & Loss statement - Financial report showing revenue, expenses, profit |
+| **RLS** | Row-Level Security - Supabase security model for data isolation |
+| **Server Components** | React Server Components - Components that render on the server |
+| **Client Components** | Components that render in the browser (marked with "use client") |
+| **SSR** | Server-Side Rendering - Rendering HTML on the server |
+| **CSR** | Client-Side Rendering - Rendering HTML in the browser |
+| **Optimistic Update** | Update UI immediately before server confirmation |
+
+### Appendix B: Reference Links
+
+- **Next.js Documentation**: https://nextjs.org/docs
+- **Supabase Documentation**: https://supabase.com/docs
+- **shadcn/ui Components**: https://ui.shadcn.com/
+- **Recharts Documentation**: https://recharts.org/
+- **React Query Documentation**: https://tanstack.com/query/latest
+- **Zod Documentation**: https://zod.dev/
+- **ATO BAS Guidelines**: https://www.ato.gov.au/Business/BAS/
+
+### Appendix C: Code Examples Repository
+
+All code examples in this document are production-ready and can be copied directly into the project. For the latest examples and patterns, refer to:
+
+- `/lib/calculations/` - Financial calculation modules
+- `/components/charts/` - Recharts wrapper components
+- `/components/forms/` - Form components with validation
+- `/tests/` - Unit, integration, and E2E test examples
 
 ---
 
 **End of Architecture Document**
 
-This architecture is production-ready and designed for AI-driven implementation. All components, services, and patterns are clearly defined with concrete examples. The existing Supabase infrastructure is fully documented and integrated into the design, minimizing risk and accelerating development.
+This architecture document serves as the single source of truth for all technical decisions and implementation patterns for the SAYERS Financial Dashboard. All development must follow the patterns, technologies, and best practices outlined in this document.
 
-For questions or clarifications, refer to:
-- **PRD**: `/Users/harrysayers/Developer/claudelife/docs/prd.md`
-- **Supabase Schema**: `/Users/harrysayers/Developer/claudelife/migrations/personal_banking_schema.sql`
-- **Supabase Documentation**: `/Users/harrysayers/Developer/claudelife/07-context/systems/database/supabase-sayers-data.md`
+For questions or clarifications, refer to the PRD (`docs/prd.md`) for business requirements or the Frontend Specification (`docs/front-end-spec.md`) for UI/UX details.

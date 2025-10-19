@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 .claude/hooks/context7_detector.py"
+            "command": "python3 /Users/harrysayers/Developer/claudelife/.claude/hooks/context7_detector.py"
           }
         ]
       }
@@ -16,11 +16,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": ".claude/hooks/post-tool-memory-sync-trigger.sh"
+            "command": "/Users/harrysayers/Developer/claudelife/.claude/hooks/post-tool-memory-sync-trigger.sh"
           },
           {
             "type": "command",
-            "command": ".claude/hooks/post-tool-auto-diary-capture.sh"
+            "command": "/Users/harrysayers/Developer/claudelife/.claude/hooks/post-tool-auto-diary-capture.sh"
           }
         ]
       },
@@ -29,11 +29,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": ".claude/hooks/post-tool-memory-sync-trigger.sh"
+            "command": "/Users/harrysayers/Developer/claudelife/.claude/hooks/post-tool-memory-sync-trigger.sh"
           },
           {
             "type": "command",
-            "command": ".claude/hooks/post-tool-auto-diary-capture.sh"
+            "command": "/Users/harrysayers/Developer/claudelife/.claude/hooks/post-tool-auto-diary-capture.sh"
           }
         ]
       },
@@ -42,7 +42,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": ".claude/hooks/post-tool-auto-diary-capture.sh"
+            "command": "/Users/harrysayers/Developer/claudelife/.claude/hooks/post-tool-auto-diary-capture.sh"
           }
         ]
       }

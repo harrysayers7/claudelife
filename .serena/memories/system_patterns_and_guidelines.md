@@ -1,235 +1,342 @@
 # System Patterns and Guidelines
 
-## Architecture Patterns
+## MCP Server Configuration Pattern
 
-### OBSIDIA Orchestrator Pattern (NEW - October 2025)
-- **Purpose**: Master intelligence agent for claudelife ecosystem discovery and architecture design
-- **Agent file**: `.claude/agents/obsidia.md`
-- **Activation**: Via `/launch-agent obsidia "<query>"`
-- **Use cases**:
-  - System discovery: "What can claudelife do for X?"
-  - Architecture design: "How should I build a new command/agent/hook?"
-  - Integration troubleshooting: "Why isn't my MCP server loading?"
-  - System optimization: "Can this command be faster with a script?"
-- **DO NOT use for**:
-  - Task execution (use task-executor or specialized agents)
-  - Direct data operations (use domain commands)
-  - Business strategy (use mokai-business-strategist)
-- **Pattern**: OBSIDIA discovers → Specialized agent executes
-- **Key features**:
-  - Knowledge freshness checking (warns if 7+ days old)
-  - Progressive discovery (token-efficient lazy loading)
-  - Dynamic file path resolution (never hardcoded paths)
-  - MCP fallback handling (Serena → Grep → manual)
-  - Code sample verification via Context7
-- **MCP dependencies**: Serena, Graphiti, Context7, Task Master
-- **Response format**: Direct answer first, progressive disclosure for details
+### Configuration Scopes and Files
 
-### Context File Pattern (NEW - October 2025)
-- **Standardized context files**: Each business/area subfolder contains `context-{name}.md`
-- **Consistent frontmatter**:
-  ```yaml
-  type: [context]
-  relation: ["[[name]]", "[[alternative-name]]"]
-  date created: [timestamp]
-  date modified: [timestamp]
-  ```
-- **Knowledge graph integration**: Relations enable vault-wide connections
-- **Coverage**: Applied across business (8 entities), health-fitness (3 areas), p-dev (3 areas), tech (3 areas)
-- **Total**: 17+ context files for comprehensive area coverage
-- **Purpose**: Centralized context for each area accessible to AI and knowledge graph
+Claude Code supports **multiple MCP configuration scopes** with the following precedence (highest to lowest):
 
-### Command Documentation Pattern (NEW - October 2025)
-- **Centralized guide**: `/04-resources/guides/commands/claudelife-commands-guide.md`
-- **Required format**:
-  ```markdown
-  ### /command-name
-  **Created**: YYYY-MM-DD HH:MM
+1. **Local scope** (`~/.claude.json`) - **Highest precedence**
+   - Managed by Claude CLI commands
+   - Per-machine configuration
+   - Overrides project and user scopes
 
-  ##### What it does:
-  [2-3 sentences, max 50 words]
+2. **Project scope** (`.mcp.json` in project root) - **Middle precedence**
+   - Project-specific MCP servers
+   - Committed to version control (or gitignored for sensitive configs)
+   - Valid and supported by Claude Code
 
-  ##### When to use it:
-  [2-3 sentences, max 50 words]
+3. **User scope** (`~/.mcp.json`) - **Lowest precedence**
+   - Global user configuration
+   - Available across all projects
 
-  **Usage**: `/command-name [args]`
-  **File**: `.claude/commands/command-name.md`
-  ```
-- **Automatic documentation**: `/create-command` enforces post-creation documentation
-- **Coverage**: 48+ commands documented with clear use cases and functionality
-- **Discovery**: Single source of truth for all available commands
+### Enabling MCP Servers
 
-### Command Update Workflow Pattern (NEW - October 2025)
-- **Version tracking**: All command modifications tracked in frontmatter `version_history`
-- **Diff preview**: Show before/after changes before applying
-- **Validation suite**:
-  - Frontmatter YAML syntax validation
-  - Command structure integrity checks
-  - Broken link detection (file paths in examples)
-  - Code block syntax validation
-- **Auto-documentation sync**: Changes automatically update `claudelife-commands-guide.md`
-- **Memory sync flagging**: Identifies when Serena memory needs updating
-- **Change categories**:
-  - **Minor edits**: Typos, grammar, clarifications (patch version)
-  - **Feature additions**: New options, script integration (minor version)
-  - **Major restructuring**: Purpose/workflow changes (major version)
-- **Workflow**: Load → Analyze → Preview diff → Validate → Apply → Sync docs → Flag memory
-- **Command**: `/command-update {command-name} "description of changes"`
-- **Safety**: Always shows diff before applying, git commit with descriptive message
+MCP servers configured in `.mcp.json` or `~/.mcp.json` must also be listed in `~/.claude/settings.local.json`:
 
-### MCP Server Configuration Pattern (CRITICAL - October 2025)
-**LESSON LEARNED: Claude Code uses ~/.claude.json NOT .mcp.json**
+```json
+{
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "serena",
+    "graphiti",
+    "task-master-ai"
+  ]
+}
+```
 
-- **Correct config location**: `~/.claude.json` (managed by CLI)
-- **NEVER manually edit**: Use `claude mcp add` CLI exclusively
-- **Wrong file trap**: `.mcp.json` exists but is NOT used by Claude Code
-- **Verification command**: `claude mcp list` shows actual loaded servers
-- **Configuration format in ~/.claude.json**:
-  ```json
-  {
-    "server-name": {
-      "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "package@latest"],
-      "env": {"API_KEY": "value"}
-    }
-  }
-  ```
-- **Add servers via CLI**:
-  ```bash
-  claude mcp add --transport stdio <name> --env KEY=val -- command args
-  ```
-- **Common mistake**: Editing `~/.mcp.json` or `.mcp.json` won't affect Claude Code
-- **Debug workflow**:
-  1. `claude mcp list` - see what's actually loaded
-  2. `claude mcp get <name>` - check specific server config
-  3. `~/Library/Logs/Claude/mcp-server-<name>.log` - view connection logs
-- **Context7 integration**: Use Context7 MCP to research MCP documentation before configuring
-- **Hook automation**: UserPromptSubmit hook detects library questions and suggests Context7
+**Important**: Even with `enableAllProjectMcpServers: true`, servers in `~/.mcp.json` must be explicitly enabled in `enabledMcpjsonServers`.
 
-### Context Engineering
-- **Domain pack system**: Business, Technical, and Automation packs (~15K each)
-- **Smart loading**: Keyword-triggered context loading to optimize token usage
-- **Active entity tracking**: 7-day retention window in `active-entities.json`
-- **Graduated loading**: Essential (10K) → mentioned entities (30K) → full context (50K max)
+### CLI Management (Recommended)
 
-### Claude Code Hooks System
-- **Post-tool execution hooks**: Monitor tool executions for data changes
-- **UserPromptSubmit hooks**: Analyze user prompts before processing (e.g., Context7 detector)
-- **Memory sync automation**: Auto-detect when Serena's memory needs updating
-- **Pattern-based triggers**: Match tool names/arguments to detect critical changes
-- **Hook configuration**: Defined in `.claude/settings.local.json`
-- **Hook scripts**: Executable Python/bash scripts in `.claude/hooks/`
-- **Primary hooks**:
-  - `context7_detector.py` - Detects library documentation needs, suggests Context7 MCP
-  - `cache-mokai-inbox.sh` - Auto-updates MOKAI inbox cache on file changes
+Use Claude CLI for managing MCP servers:
 
-### Research Workflow Pattern
-- **COSTAR framework**: Context, Objective, Style, Tone, Audience, Response optimization
-- **Deep research integration**: GPT Researcher MCP for comprehensive web research
-- **Automatic vault storage**: Research saved to `/00-inbox/research/` with metadata
-- **RAG optimization**: Keyword and tag extraction following tag-keyword-DR-extractor rules
-- **Template-based**: Uses `98-templates/research.md` for consistent structure
-- **Metadata extraction**:
-  - Keywords: 5-7 specific terms for semantic search
-  - Tags: 3-5 tags prioritizing existing vault connections
-  - Sources: 3-5 most authoritative references
-  - Category: Research domain area
-  - Description: 1-2 sentence summary
+```bash
+# List all configured MCP servers
+claude mcp list
 
-### Automation Patterns
-- **Error recovery**: Checkpoint-based resumable sync operations
-- **Fallback mechanisms**: Multiple retry strategies with exponential backoff
-- **State management**: Database-backed state for long-running operations
-- **Monitoring**: Health checks and dashboard monitoring
+# Get details of specific server
+claude mcp get <server-name>
 
-### Database Design
-- **Supabase as source of truth**: Project ID `gshsshaodoyttdxippwx`
-- **FK relationships**: Proper foreign keys for data integrity
-- **Context sync**: Bidirectional sync between database and local files
-- **Schema migrations**: SQL files in `migrations/` directory
+# Add new MCP server
+claude mcp add <server-name> \
+  --command "/path/to/command" \
+  --arg "arg1" --arg "arg2" \
+  --env KEY=value \
+  --scope local  # or project, user
 
-## Development Guidelines
+# Remove MCP server
+claude mcp remove <server-name> -s local
 
-### Security First
-- **Never hardcode secrets**: Use environment variables
-- **Pre-commit scanning**: Automated with gitleaks and trufflehog
-- **Exclusion patterns**: Configure `.trufflehog.yaml` and `.gitleaks.toml`
-- **Regular audits**: System health checks include security validation
+# Test MCP server connection
+claude mcp test <server-name>
+```
 
-### Token Optimization
-- **Context budgets**: Typical 23K, max 50K tokens
-- **Lazy loading**: Load context only when keywords detected
-- **Compression**: Summarize older context when approaching limits
-- **Smart caching**: MCP servers maintain independent caches
+### Debugging MCP Servers
 
-### Memory Management
-- **Serena memory files**: Located in `.serena/memories/`
-- **Update triggers**: Changes to critical data sources (Supabase, MOKAI docs, MCP config, slash commands, new agents)
-- **Automated reminders**: Hooks notify when memory update recommended
-- **Update command**: `/update-serena-memory` refreshes Serena's context
-- **Memory categories**: project_overview, tech_stack, suggested_commands, system_patterns, etc.
+When MCP server doesn't appear in available resources:
 
-### Error Handling
-- **Categorized errors**: Transient, permanent, rate-limit handling
-- **Retry logic**: Exponential backoff with jitter
-- **State preservation**: Checkpoint progress for resumability
-- **User notification**: Clear error messages with recovery suggestions
+1. **Check connection status**:
+   ```bash
+   claude mcp list  # Look for ✓ Connected or ✗ Failed
+   ```
 
-### Testing Approach
-- **Manual verification**: Test scripts before automation
-- **Incremental rollout**: Test in dev before production
-- **Monitoring**: Track success rates and error patterns
-- **Rollback ready**: Maintain previous versions for quick reversion
+2. **Verify configuration**:
+   ```bash
+   claude mcp get <server-name>
+   ```
 
-### Slash Command Development
-- **Template-based creation**: Use `/create-command` for structured command design
-- **Frontmatter required**: YAML metadata with created date, description, examples
-- **Prompt engineering**: Apply COSTAR or similar frameworks for complex commands
-- **Interactive workflows**: Ask clarifying questions before execution
-- **Serena integration**: Commands that modify codebase should trigger memory updates
-- **Post-creation documentation**: Automatically document in commands guide with "What it does" / "When to use it" format
-- **Version control**: Use `/command-update` for modifications to maintain version history
-- **Change validation**: All updates validated (structure, YAML, links, code syntax) before applying
-- **Documentation sync**: Command updates automatically sync to `claudelife-commands-guide.md`
+3. **Check logs**:
+   ```bash
+   # Logs location: ~/Library/Logs/Claude/mcp-server-<name>.log
+   tail -n 50 ~/Library/Logs/Claude/mcp-server-<name>.log
+   ```
 
-### Agent Development
-- **Use OBSIDIA for design**: Run `/launch-agent obsidia "design agent for X"` before creating
-- **Activation criteria**: Clearly define when agent should be used vs others
-- **MCP dependencies**: Document required MCP servers in frontmatter
-- **Integration with /launch-agent**: Add to valid agent types list
-- **Specialized vs general**: Create narrow, expert agents (not duplicates of general-purpose)
+4. **Test server manually**:
+   ```bash
+   # Run the command directly to verify it starts
+   /path/to/command --transport stdio
+   ```
 
-## Design Patterns in Use
+5. **Check for scope conflicts**:
+   - If server exists in multiple scopes, CLI commands may fail
+   - Remove from specific scope: `claude mcp remove <name> -s <scope>`
+   - Verify with `claude mcp list` after removal
 
-### Research & Knowledge Management
-- **COSTAR optimization**: Transform simple queries into comprehensive research prompts
-- **Prompt engineering**: Apply proven frameworks (COSTAR, CLEAR, QUEST) for quality
-- **Automatic vault integration**: All research saved with proper metadata
-- **RAG-ready metadata**: Keywords and tags optimized for semantic search
-- **Source credibility**: Prioritize recent, authoritative sources
-- **Structured output**: Consistent format with executive summary, analysis, recommendations
+6. **Restart Claude Code**:
+   ```bash
+   # After configuration changes
+   exit  # or Ctrl+D
+   claude  # restart
+   ```
 
-### ML Pipeline Pattern
-- **Confidence scoring**: Auto (>0.9), review (0.7-0.9), manual (<0.7)
-- **Real-time classification**: During data sync operations
-- **Anomaly detection**: Severity-based routing
-- **Feedback loops**: Improve models based on corrections
+### Common Issues
 
-### Business Rule Automation
-- **Keyword matching**: Automatic expense categorization
-- **Formula translation**: Notion formulas → JavaScript
-- **Tax flagging**: Automatic deductibility detection
-- **Workflow integration**: Direct accounting system updates
+**Server shows "✗ Failed to connect"**:
+- Check server logs for connection errors
+- Verify dependencies are running (e.g., Neo4j for Graphiti)
+- Ensure environment variables are correct
+- Remove and re-add server via CLI
 
-### Hook-Based Automation
-- **Event-driven updates**: React to tool executions automatically
-- **Context freshness**: Maintain up-to-date agent knowledge
-- **Pattern detection**: Smart triggers based on tool patterns
-- **User prompts**: Non-intrusive reminders for manual actions
+**"Server exists in multiple scopes"**:
+- Specify scope when removing: `claude mcp remove <name> -s local`
+- Check all scopes: local (`~/.claude.json`), project (`.mcp.json`), user (`~/.mcp.json`)
 
-### Knowledge Organization (PARA Method)
-- **Context files**: Each area/subfolder has dedicated context file
-- **Consistent structure**: Standardized frontmatter across all context files
-- **Relation links**: Enable knowledge graph connections
-- **Area coverage**: Business entities, health areas, personal dev, technical domains
+**Server configured but not available**:
+- Verify server is in `enabledMcpjsonServers` in `~/.claude/settings.local.json`
+- Restart Claude Code after configuration changes
+- Check server logs for startup errors
+
+**Server connects but tools don't appear** (ListMcpResourcesTool returns empty array):
+- **Root cause**: Missing wildcard permission in `.claude/settings.local.json`
+- **Check first**: Does `allowedTools` contain `mcp__{server-name}__*`?
+- **Solution**: Add wildcard permission matching exact server name
+- **Common mistake**: Having similar server permissions (e.g., `mcp__graphiti-personal__*`) but not the base server permission
+- **Verification order**:
+  1. Check `enabledMcpjsonServers` contains server name
+  2. Check `allowedTools` has `mcp__{server-name}__*` wildcard
+  3. Verify exact name match between `.mcp.json` and permission entry
+  4. Only then check debug logs for connection issues
+
+### Example: Graphiti MCP Server
+
+```bash
+# Add Graphiti MCP server via CLI
+claude mcp add graphiti \
+  --command "/opt/homebrew/bin/uv" \
+  --arg "run" \
+  --arg "--directory" \
+  --arg "/Users/harrysayers/Developer/claudelife/graphiti_mcp_server" \
+  --arg "graphiti_mcp_server.py" \
+  --arg "--transport" \
+  --arg "stdio" \
+  --env NEO4J_URI=bolt://localhost:7687 \
+  --env NEO4J_USER=neo4j \
+  --env NEO4J_PASSWORD=neo4j \
+  --env OPENAI_API_KEY=sk-proj-... \
+  --env MODEL_NAME=gpt-4o-mini \
+  --env GRAPHITI_TELEMETRY_ENABLED=false \
+  --scope local
+
+# Verify connection
+claude mcp get graphiti
+# Should show: ✓ Connected
+
+# Test tools are accessible
+# After restart, use ListMcpResourcesTool or check available tools
+```
+
+### MCP Server Directory Structure
+
+MCP servers can be:
+- **NPM packages**: Installed globally or run via `npx`
+- **Python scripts**: Run via `python`, `uv`, or virtual environments
+- **Local executables**: Any binary that implements stdio transport
+
+Example local Python MCP server:
+```
+/Users/harrysayers/Developer/claudelife/graphiti_mcp_server/
+├── graphiti_mcp_server.py  # Main server implementation
+├── pyproject.toml           # Python dependencies
+└── .venv/                   # Virtual environment (if using venv)
+```
+
+### Best Practices
+
+1. **Use CLI for management**: Preferred over manual JSON editing
+2. **Specify scope explicitly**: Avoid conflicts between local/project/user configs
+3. **Check logs first**: Most connection issues visible in logs
+4. **Test manually**: Run server command directly to verify it works
+5. **Restart after changes**: Claude Code requires restart to pick up config changes
+6. **Document environment variables**: Keep track of required env vars for each server
+7. **Use project scope for team sharing**: Commit `.mcp.json` for team-wide MCP servers
+8. **Use local scope for personal tools**: Keep personal MCP servers in local config
+
+### Learned 2025-10-18
+
+- `.mcp.json` IS valid for project scope (contrary to earlier belief)
+- Configuration hierarchy: local > project > user
+- CLI is recommended for managing MCP servers to avoid scope conflicts
+- Stale logs can be misleading - always verify current connection status
+- Multiple scopes can cause "server exists" errors - specify scope explicitly
+- Environment variables must be passed to CLI with `--env KEY=value` format
+
+## Claude Code uses Serena MCP for context-aware file operations
+
+When exploring codebases or searching for patterns, Claude Code should use Serena's symbolic tools first:
+- `get_symbols_overview` - Get high-level view of file structure
+- `find_symbol` - Find specific symbols by name path
+- `search_for_pattern` - Search for patterns across codebase
+- `find_referencing_symbols` - Understand symbol relationships
+
+Only use `Read` tool after understanding structure via Serena.
+
+## Sensitive Data Management
+
+Never commit sensitive data to git. Always use environment variables for:
+- API keys and secrets
+- Database credentials
+- Authentication tokens
+- Personal information
+
+### Detection and Prevention
+
+Tools configured for pre-commit scanning:
+- **gitleaks**: Detects hardcoded secrets, API keys, credentials
+- **trufflehog**: Finds sensitive data patterns, authentication tokens
+- **bandit**: Python security linter for code vulnerabilities
+
+### Git Hooks
+
+Pre-commit hook (`.git/hooks/pre-commit`) runs automatically before each commit:
+```bash
+#!/bin/bash
+# Runs gitleaks, trufflehog, and bandit security scans
+# Prevents commit if sensitive data detected
+```
+
+### GitHub Actions
+
+CI/CD workflow (`.github/workflows/security-audit.yml`) runs on push:
+- Secret scanning with gitleaks and trufflehog
+- Dependency vulnerability scanning with pip-audit
+- Python security analysis with bandit
+- Blocks merges if security issues found
+
+### Manual Scanning
+
+```bash
+# Scan current changes for secrets
+gitleaks detect --verbose --no-git
+
+# Scan entire git history
+trufflehog git file://. --only-verified
+
+# Scan Python code for vulnerabilities
+bandit -r . -ll
+```
+
+### Remediation
+
+If sensitive data is committed:
+1. **Immediately rotate/revoke** the exposed credential
+2. **Remove from history**: Use `git filter-branch` or BFG Repo-Cleaner
+3. **Force push** to update remote (coordinate with team)
+4. **Update secrets management**: Move to environment variables
+
+### Environment Variable Pattern
+
+Always reference sensitive data from environment:
+
+```python
+# ❌ WRONG - Hardcoded secret
+api_key = "sk-proj-xxxxx"  # Example - don't do this
+
+# ✅ CORRECT - From environment
+import os
+api_key = os.getenv("OPENAI_API_KEY")
+```
+
+```typescript
+// ❌ WRONG - Hardcoded secret
+const apiKey = "sk-proj-xxxxx";  // Example - don't do this
+
+// ✅ CORRECT - From environment
+const apiKey = process.env.OPENAI_API_KEY;
+```
+
+### Pre-commit Configuration
+
+Install pre-commit hooks:
+```bash
+# Install pre-commit framework
+pip install pre-commit
+
+# Install hooks
+pre-commit install
+
+# Run manually
+pre-commit run --all-files
+```
+
+Configuration in `.pre-commit-config.yaml`:
+```yaml
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    hooks:
+      - id: gitleaks
+  
+  - repo: https://github.com/trufflesecurity/trufflehog
+    hooks:
+      - id: trufflehog
+  
+  - repo: https://github.com/PyCQA/bandit
+    hooks:
+      - id: bandit
+```
+
+Learned: 2025-10-18 - Comprehensive security scanning prevents accidental exposure of sensitive data in git commits and CI/CD pipelines.
+
+## MCP Server Setup Automation
+
+### Available Commands
+
+**`/mcp-setup-checklist {server-name}`** - Interactive MCP server setup
+- Guides through complete configuration (config, enable, permissions)
+- Validates each step before proceeding
+- Generates exact CLI commands or manual config entries
+- Tests connection and tool accessibility
+- Provides targeted troubleshooting if steps fail
+
+**Verification mode**: `/mcp-setup-checklist {server-name} --verify`
+- Runs after Claude Code restart to verify setup
+- Tests connection status and tool exposure
+- Quick health check for existing servers
+
+### Setup Checklist (Manual)
+
+When adding MCP server without the command:
+
+1. ✅ Add config to `.mcp.json` or via `claude mcp add`
+2. ✅ Add to `enabledMcpjsonServers` in `~/.claude/settings.local.json`
+3. ✅ **Add `mcp__{server-name}__*` to `allowedTools`** (commonly missed!)
+4. ✅ Restart Claude Code
+5. ✅ Verify with `ListMcpResourcesTool({ server: "{name}" })`
+
+### Related Resources
+
+- Command: `.claude/commands/mcp-setup-checklist.md`
+- Troubleshooting: `04-resources/guides/mcp-troubleshooting.md`
+- Lesson: `04-resources/lessons-learnt/251020-issue-002-mcp-permissions.md`
+
+Learned: 2025-10-20 - Interactive setup command prevents missing critical steps (especially permissions) when adding MCP servers.

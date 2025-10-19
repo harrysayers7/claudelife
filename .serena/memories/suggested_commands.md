@@ -67,6 +67,38 @@
   - Example: `/command-update --list` (show all available commands)
   - Use when modifying existing commands to ensure proper validation and documentation sync
 
+### Issue Tracking System
+- `/issue-create [description]` - Create tracked issue reports with sequential IDs in `01-areas/claude-code/issues/`
+  - Auto-checks Serena's memory for known solutions before creating issues
+  - Generates sequential IDs (001, 002, 003) with YAML frontmatter
+  - Captures: type, category, severity, error messages, attempted solutions, related files
+  - Categories: mcp-server, hook, script, command, database, automation, configuration
+  - Severity: critical, high, medium, low
+  - Uses `scan-issues.sh` script for fast ID generation (30-60x faster)
+  - Example: `/issue-create "Serena MCP won't connect after config change"`
+  - Use for tracking bugs, technical problems, or complex debugging sessions
+
+- `/issue-call {ID}` - Retrieve and resolve tracked issues
+  - Loads issue context, provides category-specific debugging steps
+  - Guides systematic troubleshooting with tool-specific commands
+  - Creates lesson learned files in `04-resources/lessons-learnt/` upon resolution
+  - Suggests updating relevant slash commands with solutions
+  - Updates Serena's memory with confirmation
+  - Supports status updates: `/issue-call {ID} --status-update "notes"`
+  - Example: `/issue-call 001` (load and debug)
+  - Example: `/issue-call 001 "solution notes"` (mark resolved)
+  - Use when debugging tracked issues or documenting solutions
+
+- **NEW**: `/issue-update {ID}` - Update tracked issues with comprehensive debugging context before restarting Claude Code
+  - Analyzes conversation to extract: attempted solutions, error messages, file changes, code modifications, observations, current theories
+  - Updates issue frontmatter with new attempted solutions
+  - Appends timestamped progress log entries with full context
+  - Preserves complete LLM continuation context: next steps, ruled-out approaches, design decisions
+  - Uses `scan-issues.sh` for fast issue retrieval
+  - Example: `/issue-update 001` (updates issue #001 with latest context)
+  - Use **before restarting Claude Code** when mid-debugging to preserve all context for seamless continuation
+  - Complements `/issue-call --status-update` with comprehensive conversation analysis
+
 ### Task Management Commands
 - `/complete-task "[task-filename.md or description]"` - Execute specific task from `/00-inbox/tasks/`
   - Uses Serena MCP for codebase exploration when needed
@@ -149,6 +181,41 @@ npm run scan-archive:json
 - Quick status check of archivable files
 - Used internally by `/janitor` for performance
 
+### Issue Scanning Script
+**Script**: `./scripts/scan-issues.sh`
+**Purpose**: Instantly filter and manage tracked issues
+**Performance**: 30-60x faster than manual file operations (100+ issues in <1 second)
+
+**Usage**:
+```bash
+# Get next available issue ID
+./scripts/scan-issues.sh --next-id
+
+# Find unsolved issues
+./scripts/scan-issues.sh --unsolved
+
+# Filter by category
+./scripts/scan-issues.sh --category=mcp-server
+
+# Filter by severity
+./scripts/scan-issues.sh --severity=critical
+
+# Search by keyword
+./scripts/scan-issues.sh --search="supabase"
+
+# Get specific issue
+./scripts/scan-issues.sh --id=023
+
+# JSON output for programmatic use
+./scripts/scan-issues.sh --json
+```
+
+**Benefits**:
+- Fast ID generation for new issues
+- Quick filtering by status, category, severity
+- Keyword search across issue titles and descriptions
+- Used internally by `/issue-create`, `/issue-call`, `/issue-update` for performance
+
 ### Task Frontmatter Flags
 Tasks in `/00-inbox/tasks/` support these frontmatter properties:
 - `ai-assigned: true` - Task will be executed by `/sort-tasks` command
@@ -209,6 +276,28 @@ Tasks in `/00-inbox/tasks/` support these frontmatter properties:
   - Example: `/mokhouse-portfolio-blurb "[[Project Brief - Nike Commercial]]"`
   - Use after completing music production projects ready for portfolio display
 
+### Creative Thinking & Problem Solving
+- **NEW**: `/rethink` or `/rethink "[problem description]"` - Universal creative rethink framework using systems thinking
+  - **Without args**: Applies framework to current conversation context automatically
+  - **With args**: Analyzes explicit problem statement provided
+  - **Framework steps**:
+    1. 🛰️ **Zoom Out**: Identifies 2-3 higher-order system layers shaping the problem
+    2. 🧩 **Break the Frame**: Challenges 3+ assumptions with alternate framings (Wild/Systemic/Elegant/Counterintuitive)
+    3. 🔗 **Cross-Domain Analogies**: Imports 1-2 structural insights from unrelated fields
+    4. 🚀 **Divergent Pathways**: Generates 3-5 solution paths ranked by novelty × impact (1-5 scale)
+    5. 🪞 **Meta-Reflection**: Uncovers blind spots, overturned assumptions, new questions
+  - **Output**: Structured markdown under 600 words with exact headers
+  - **Philosophy**: Keeps purely theoretical/creative - doesn't limit to existing tech stack
+  - **Serena integration**: Automatically stores novel patterns discovered
+  - Example: `/rethink` (applies to current discussion)
+  - Example: `/rethink "How to scale consulting without hiring more people"`
+  - Example: `/rethink "Why isn't our automation reducing manual work?"`
+  - Use for: Complex strategic decisions, reframing stuck problems, unconventional solution discovery
+  - Perfect for: Business strategy, technical architecture, workflow optimization, creative challenges
+
+- `/ultra-think` - Deep multi-dimensional analysis mode for complex problems
+- `/challenge` - Critical argument analysis and stress-testing
+
 ### System Documentation
 - `/report:document-system` - Generate comprehensive system documentation with automatic categorization
 
@@ -231,10 +320,6 @@ Tasks in `/00-inbox/tasks/` support these frontmatter properties:
   - Essential for maintaining link integrity during vault reorganization
 
 - `/move-file` - Move files with automatic reference updates across codebase
-
-### Analysis & Problem Solving
-- `/ultra-think` - Deep multi-dimensional analysis mode for complex problems
-- `/challenge` - Critical argument analysis and stress-testing
 
 ### Product & Project Management
 - `/create-prd` - Create Product Requirements Documents

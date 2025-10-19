@@ -53,6 +53,8 @@ Comprehensive reference for all custom slash commands in the claudelife project.
 - [[#/rethink|/rethink]]
 - [[#/issue-create|/issue-create]]
 - [[#/issue-call|/issue-call]]
+- [[#/issue-update|/issue-update]]
+- [[#/mcp-setup-checklist|/mcp-setup-checklist]]
 
 ---
 
@@ -100,17 +102,18 @@ Use when modifying existing commands to fix bugs, add features, improve clarity,
 ---
 
 ### /extract-daily-content
-**Created**: 2025-10-17 10:00 | **Replaces**: /extract-diary, /extract-insights, /extract-context | **Updated**: 2025-10-19 (v1.1: Diary → Context transformation)
+**Created**: 2025-10-17 10:00 | **Replaces**: /extract-diary, /extract-insights, /extract-context | **Updated**: 2025-10-19 14:00 (v1.2: Smart memory detection)
 
 ##### What it does:
-Smart AI-powered extraction that transforms diary narratives into contextual knowledge. Uses AI to classify entries (Diary/Insight/Context/Idea), **transforms diary entries into third-person factual statements for context files** (removes dates, pronouns, feelings), analyzes relevance to all 24 areas (>80% confidence), routes to multiple destinations with **custom factual extraction per context file**, creates cross-links to source + related context files, and auto-creates diary files per area. **Context files: bullet points (no date headers). Diary files: preserve narrative with date headers**.
+Smart AI-powered extraction that transforms diary narratives into contextual knowledge and **automatically suggests memory updates**. Uses AI to classify entries (Diary/Insight/Context/Idea), transforms diary entries into third-person factual statements for context files (removes dates, pronouns, feelings), analyzes relevance to all 24 areas (>80% confidence), routes to multiple destinations with custom factual extraction per context file, creates cross-links to source + related context files, auto-creates diary files per area, and **detects Serena/Graphiti memory update opportunities** with user approval. Context files: bullet points (no date headers). Diary files: preserve narrative with date headers.
 
 ##### When to use it:
-Use after adding notes to daily entries. AI extracts contextual facts from diary narratives and routes them appropriately. Example: "Today I built a Supabase database for MOKAI" → Tech context: "Supabase: Financial tracking database", MOKAI context: "Financial tracking system: Supabase database for invoice management". Same entry becomes different factual statements per area. Shows routing plan before committing.
+Use after adding notes to daily entries. AI extracts contextual facts from diary narratives, routes them appropriately, and suggests memory updates. Example: "Today I built a Supabase database for MOKAI" → Tech context: "Supabase: Financial tracking database", MOKAI context: "Financial tracking system: Supabase database", **+ Serena memory suggestion** (tech stack pattern). After extraction, choose to update all/selective/skip/later for suggested memories. Shows routing plan and memory suggestions before committing.
 
 **Usage**: `/extract-daily-content`
 **File**: `.claude/commands/extract-daily-content.md`
 **Old Commands**: Archived in `.claude/commands/archive/`
+**Memory Systems**: Detects Serena (technical patterns) + Graphiti (strategic events) updates automatically
 
 ---
 
@@ -799,6 +802,20 @@ Use to debug tracked issues systematically. Run `/issue-call {ID}` to load issue
 
 ---
 
+### /issue-update
+**Created**: 2025-10-19 11:50
+
+##### What it does:
+Updates tracked issues with comprehensive mid-debugging context before restarting Claude Code. Analyzes conversation to extract attempted solutions, error messages, file changes, code modifications, observations, and current theories. Updates issue frontmatter with new attempted solutions and appends timestamped progress log entries. Preserves complete LLM continuation context including next steps, ruled-out approaches, and design decisions. Uses `scan-issues.sh` for fast issue retrieval.
+
+##### When to use it:
+Use before restarting Claude Code when actively debugging an issue. Captures everything attempted since last update (commands executed, errors encountered, files modified, theories developed) so the next LLM session has full context to continue debugging seamlessly. Unlike `/issue-call --status-update`, this command comprehensively analyzes the entire conversation for context extraction.
+
+**Usage**: `/issue-update {ID}`
+**File**: `.claude/commands/issue-update.md`
+
+---
+
 ## Companion Scripts
 
 ### scan-issues.sh
@@ -835,5 +852,28 @@ High-performance bash script for issue management operations. Provides fast ID g
 **File**: `scripts/scan-issues.sh`
 **Integration**: Used by `/issue-create` and `/issue-call` for performance
 **Output**: Human-readable or JSON format
+
+---
+
+## MCP Server Management
+
+### /mcp-setup-checklist
+**Created**: 2025-10-20 08:50
+**Updated**: 2025-10-20 (Self-learning: Comprehensive setup automation from Issue #002)
+
+##### What it does:
+Interactive MCP server setup assistant ensuring complete configuration. Guides through server configuration (`.mcp.json` or CLI), enables in `settings.local.json`, adds wildcard permissions (`mcp__{server}__*` to `allowedTools`), verifies connection status, and tests tool accessibility. Provides step-by-step validation with targeted troubleshooting at each checkpoint. Generates exact commands for CLI-based setup or manual config entries. Supports verification mode to check existing setups.
+
+##### When to use it:
+Use when adding new MCP servers (Graphiti, Serena, Supabase, etc.) to avoid missing critical steps like permissions. Prevents common mistakes: forgetting wildcard permission (issue #002), wrong scope conflicts, missing from `enabledMcpjsonServers`. Run with server name for new setup or `--verify` flag to validate existing server after restart. Integrates with troubleshooting guide for step-specific debugging if issues occur.
+
+**Usage**: `/mcp-setup-checklist {server-name}` or `/mcp-setup-checklist {server-name} --verify`
+**File**: `.claude/commands/mcp-setup-checklist.md`
+**Troubleshooting**: `04-resources/guides/mcp-troubleshooting.md`
+**Lesson Source**: Issue #002 - Missing permissions caused 15hr debugging session
+
+**Examples**:
+- `/mcp-setup-checklist graphiti` - Setup Graphiti MCP server
+- `/mcp-setup-checklist serena --verify` - Verify Serena is working after restart
 
 ---

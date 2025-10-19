@@ -1,6 +1,6 @@
 ---
 Done: false
-today: true
+today: false
 follow up: false
 type: Task
 status:
@@ -12,4 +12,5 @@ category:
 effort:
   - "9"
 description:
+ASAP: true
 ---
