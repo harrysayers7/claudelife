@@ -100,13 +100,13 @@ Use when modifying existing commands to fix bugs, add features, improve clarity,
 ---
 
 ### /extract-daily-content
-**Created**: 2025-10-17 10:00 | **Replaces**: /extract-diary, /extract-insights, /extract-context | **Updated**: 2025-10-17 (Self-learning: Extract & reformulate content)
+**Created**: 2025-10-17 10:00 | **Replaces**: /extract-diary, /extract-insights, /extract-context | **Updated**: 2025-10-19 (v1.1: Diary → Context transformation)
 
 ##### What it does:
-Smart AI-powered extraction that analyzes daily note entries from `### 🧠 Notes` sections and intelligently routes them to appropriate files. Uses AI to classify entries (Diary/Insight/Context/Idea), **extracts and reformulates only topically relevant portions for each destination** (removes stream-of-consciousness, filler, personal asides), analyzes relevance to all 24 areas in `01-areas/` (>80% confidence threshold), routes to multiple destinations with custom extracted content per file, requires manual approval showing reformulated previews, creates cross-links, and auto-creates diary files per area. **Context files receive professional distilled points, not full narratives**.
+Smart AI-powered extraction that transforms diary narratives into contextual knowledge. Uses AI to classify entries (Diary/Insight/Context/Idea), **transforms diary entries into third-person factual statements for context files** (removes dates, pronouns, feelings), analyzes relevance to all 24 areas (>80% confidence), routes to multiple destinations with **custom factual extraction per context file**, creates cross-links to source + related context files, and auto-creates diary files per area. **Context files: bullet points (no date headers). Diary files: preserve narrative with date headers**.
 
 ##### When to use it:
-Use after adding freeform brain-dump notes to daily notes. AI automatically categorizes, extracts relevant portions, reformulates into clear professional language, and distributes to main files (`04-resources/`) and relevant area-specific files. Each destination receives only what's contextually relevant in polished format. Shows routing plan with reformulated content before committing. **Improved**: Now handles stream-of-consciousness writing style intelligently.
+Use after adding notes to daily entries. AI extracts contextual facts from diary narratives and routes them appropriately. Example: "Today I built a Supabase database for MOKAI" → Tech context: "Supabase: Financial tracking database", MOKAI context: "Financial tracking system: Supabase database for invoice management". Same entry becomes different factual statements per area. Shows routing plan before committing.
 
 **Usage**: `/extract-daily-content`
 **File**: `.claude/commands/extract-daily-content.md`
