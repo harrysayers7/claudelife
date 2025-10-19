@@ -1,7 +1,7 @@
 ---
 date: 2025-10-13 17:30
 date created: Tue, 10 14th 25, 4:45:52 pm
-date modified: Fri, 10 17th 25, 5:58:52 pm
+date modified: Mon, 10 20th 25, 6:30:00 am
 aliases:
   - Commands
 ---
@@ -45,7 +45,8 @@ Comprehensive reference for all custom slash commands in the claudelife project.
 - [[#/launch-agent|/launch-agent]]
 - [[#/mokhouse-portfolio-blurb|/mokhouse-portfolio-blurb]]
 - [[#/analyze-portfolio-style|/analyze-portfolio-style]]
-- [[#/update-graphiti-tree|/update-graphiti-tree]]
+- [[#/graphiti-tree|/graphiti-tree]]
+- [[#/graphiti-add|/graphiti-add]]
 - [[#/create-event|/create-event]]
 - [[#/accountant|/accountant]]
 - [[#/mokai-bas|/mokai-bas]]
@@ -55,6 +56,7 @@ Comprehensive reference for all custom slash commands in the claudelife project.
 - [[#/issue-call|/issue-call]]
 - [[#/issue-update|/issue-update]]
 - [[#/mcp-setup-checklist|/mcp-setup-checklist]]
+- [[#/network-add|/network-add]]
 
 ---
 
@@ -663,7 +665,7 @@ Use manually only if you want to analyze patterns outside the automatic 3-blurb 
 
 ---
 
-### /update-graphiti-tree
+### /graphiti-tree
 **Created**: 2025-10-17 12:38
 
 ##### What it does:
@@ -672,8 +674,30 @@ Regenerates the Graphiti knowledge graph structure visualization at `04-resource
 ##### When to use it:
 Use occasionally when you want a visual snapshot of the knowledge graph structure. Shows entity type distributions, relationship patterns, isolated entities, and domain coverage. Highlights gaps like "MOKAI has no contractors" or "Only 1 client tracked." Run after adding significant entities or relationships to see updated structure.
 
-**Usage**: `/update-graphiti-tree`
-**File**: `.claude/commands/update-graphiti-tree.md`
+**Usage**: `/graphiti-tree`
+**File**: `.claude/commands/graphiti-tree.md`
+
+---
+
+### /graphiti-add
+**Created**: 2025-10-20
+
+##### What it does:
+Intelligently adds memories to Graphiti knowledge graph with automatic categorization and routing. Analyzes input to determine memory type (person, conversation, event, insight, decision, learning), routes to correct instance (mokai-business, financial-tracking, personal-life), and formats as appropriate source type (text, message, JSON). Extracts entities and relationships automatically. Shows preview before adding with type/instance/source confirmation.
+
+##### When to use it:
+Use when you want to manually capture important information into the knowledge graph - meetings with people, business decisions, technical learnings, strategic insights, or conversations. Complements `/extract-daily-content` (automatic) with manual control. Perfect for real-time capture: "Just met Sarah Chen, TechCorp CTO, interested in IRAP" → auto-creates person entity with company relationship.
+
+**Usage**: `/graphiti-add [content]` or `/graphiti-add` (analyzes conversation context)
+**Examples**:
+- `/graphiti-add Met Sarah Chen, CTO at TechCorp, interested in IRAP services`
+- `/graphiti-add Decided to pivot MOKAI to full tech consultancy`
+- `/graphiti-add Learned Prisma works better with PgBouncer in transaction mode`
+
+**File**: `.claude/commands/graphiti-add.md`
+**Instance Routing**: MOKAI/MOK HOUSE → graphiti-mokai | Accounting/Crypto → graphiti-finance | Other → graphiti-personal
+**Source Types**: JSON (structured person data), Message (conversations), Text (default)
+**Integration**: Use with `/graphiti-tree` to visualize new entities
 
 ---
 
@@ -875,5 +899,24 @@ Use when adding new MCP servers (Graphiti, Serena, Supabase, etc.) to avoid miss
 **Examples**:
 - `/mcp-setup-checklist graphiti` - Setup Graphiti MCP server
 - `/mcp-setup-checklist serena --verify` - Verify Serena is working after restart
+
+---
+
+## Network Management
+
+### /network-add
+**Created**: 2025-10-20 06:30
+**Updated**: 2025-10-20 07:15 (Added Graphiti integration)
+
+##### What it does:
+Creates structured network profiles for people and businesses in `04-resources/network/` and automatically adds them to Graphiti memory. Generates markdown files with YAML frontmatter (entity type, relationship strength, contact info, capabilities, AI context notes) and syncs to the knowledge graph for AI-powered network reasoning. Follows the profile.md template for consistent metadata.
+
+##### When to use it:
+Use when adding new contacts (business partners, clients, collaborators, vendors) to your network system. Captures relationship context, expertise, and strategic notes in both markdown (manual reference) and Graphiti (AI reasoning). Enables AI to suggest collaborations, map network connections, and reason about partnership opportunities automatically.
+
+**Usage**: `/network-add "brief description"`
+**File**: `.claude/commands/network-add.md`
+**Template**: `98-templates/profile.md`
+**Example**: `04-resources/network/Daniel Sant.md`
 
 ---
