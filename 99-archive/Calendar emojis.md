@@ -18,7 +18,7 @@ date modified: Fri, 10 17th 25, 2:34:21 pm
 🏦 - accounting related
 🎂 - someones birthday
 🔴 - Important date if specified
-🚘 - Car Registration due. 
+🚘 - Car Registration due.
 📅 -  For key dates like holiday, i.e. Christmas, Halloween, King's birthday,
 🔆 -  Daylight savings dates in australia
 

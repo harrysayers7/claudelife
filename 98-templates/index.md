@@ -8,13 +8,12 @@ relation:
 
 ---
 
-## 📚 Core Resources  
+## 📚 Core Resources
 Reference material, templates, systems, or key docs for this area:
 
 
 
 ---
 
-## 🪄 Quick Links  
+## 🪄 Quick Links
 Useful navigational links for this area:
-

@@ -266,5 +266,3 @@ Claude Code caches MCP server connections. To force reload:
 3. Debug Supabase server manual startup
 4. Restart Claude Code after token updates
 5. Run verification tests
-
-

@@ -121,7 +121,7 @@ HIGH COMPLIANCE FOCUS
         │   │  MOK HOUSE   │  ← You live here
         │   │ (Infrastructure)│
         │   └──────────────┘
-        │          
+        │
         │   Supply Nation
         │   Certifiers
         │
@@ -212,4 +212,3 @@ You're building a **platform business**, not a services business.
 *The compliance-certified creative infrastructure that makes Indigenous procurement frictionless for buyers and profitable for suppliers—capturing margin on transactions while guaranteeing quality and compliance at scale.*
 
 You're not competing with agencies. You're replacing the broken procurement process itself.
-

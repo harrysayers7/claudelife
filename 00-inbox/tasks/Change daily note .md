@@ -17,4 +17,4 @@ priority:
 agent:
 ---
  note to more  juts adding diary, thoughts, ideas etc as  sections so ai can extract which is which
-An d i can just ad freely 
+An d i can just ad freely

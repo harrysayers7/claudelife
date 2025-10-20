@@ -22,11 +22,11 @@ Here are the setup and usage instructions for **@takumi0706/google-calendar-mcp*
 
 ### Installation
 
-- **Quick Start:**  
+- **Quick Start:**
   ```
   npm install -g @takumi0706/google-calendar-mcp
   ```
-  or run directly:  
+  or run directly:
   ```
   npx @takumi0706/google-calendar-mcp@latest
   ```
@@ -34,11 +34,11 @@ Here are the setup and usage instructions for **@takumi0706/google-calendar-mcp*
 
 ### Prerequisites
 
-1. **Google Cloud Project:**  
+1. **Google Cloud Project:**
    - Create a Google Cloud Project and enable the Google Calendar API.
    - Set up OAuth2 credentials in your Google Cloud Console.
 
-2. **Environment Variables:**  
+2. **Environment Variables:**
    - Create a `.env` file with:
      ```
      GOOGLE_CLIENT_ID=your_client_id
@@ -76,9 +76,9 @@ Here are the setup and usage instructions for **@takumi0706/google-calendar-mcp*
 
 ### Authentication
 
-- **OAuth2:**  
+- **OAuth2:**
   Secure authentication flow for linking your Google account.
-- **Manual Mode:**  
+- **Manual Mode:**
   If running where `localhost` is not accessible, set `USE_MANUAL_AUTH=true` and enter the code shown by Google manually.
 
 ### Tools Provided

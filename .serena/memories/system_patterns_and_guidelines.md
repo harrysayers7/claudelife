@@ -295,11 +295,11 @@ repos:
   - repo: https://github.com/gitleaks/gitleaks
     hooks:
       - id: gitleaks
-  
+
   - repo: https://github.com/trufflesecurity/trufflehog
     hooks:
       - id: trufflehog
-  
+
   - repo: https://github.com/PyCQA/bandit
     hooks:
       - id: bandit

@@ -13,7 +13,7 @@ date modified: Sun, 10 19th 25, 9:34:21 pm
 ## Subdomain Functions
 
 **`/mokai/`** → Cybersecurity consultancy operations
-**`/mokhouse/`** → Creative/music business operations  
+**`/mokhouse/`** → Creative/music business operations
 **`/safia/`** → Band business & royalty management
 **`/soletrader/`** → Personal commercial work
 **`/accounting/`** → Cross-entity financial oversight & tax strategy

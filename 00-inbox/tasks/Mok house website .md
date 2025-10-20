@@ -18,5 +18,3 @@ Copy
 Photos
 Each project description
 [[01-blurbs-master]]
-
-

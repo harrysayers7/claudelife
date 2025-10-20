@@ -650,7 +650,7 @@ All systems updated successfully!
 
 **Stripe:** Stop immediately if error, don't continue to next steps.
 
-**Supabase:** 
+**Supabase:**
 - Warn about duplicates before proceeding
 - Log insert errors clearly
 - Contact lookup failures → trigger customer setup
@@ -813,7 +813,7 @@ This system provides a complete project management solution from brief receipt t
 ## Key Changes in v3.0:
 
 ✅ **Dynamic customer handling** - looks up from Supabase instead of hardcoding
-✅ **Customer setup workflow** - guides through adding new customers  
+✅ **Customer setup workflow** - guides through adding new customers
 ✅ **Flexible GST logic** - handles both GST/no-GST scenarios per customer
 ✅ **Template selection** - uses customer-specific Stripe templates
 ✅ **Contact database** - maintains known customers with preferences

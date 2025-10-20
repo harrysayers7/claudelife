@@ -1,7 +1,7 @@
 ---
 type: daily note
 date created: Tue, 09 30th 25, 11:44:55 am
-date modified: Mon, 10 20th 25, 5:50:40 am
+date modified: Mon, 10 20th 25, 9:36:09 am
 event:
 ---
 ## Daily Note
@@ -292,9 +292,9 @@ if (activeProjects.length > 0) {
 ---
 
 ### 🧠 Notes
-. If I explore the idea of MOK HOUSE becoming a contractor that connect buyers to creatives for Live music events, sound designers, sonic branding, 
+. If I explore the idea of MOK HOUSE becoming a contractor that connect buyers to creatives for Live music events, sound designers, sonic branding,
 
-Could even hand off contracts to Kell as a subcontractor so mok house takes the margin and kell gets the bulk. 
+Could even hand off contracts to Kell as a subcontractor so mok house takes the margin and kell gets the bulk.
 Could hand off video or photo work to Brayden or jimmy at crux media.
 Explore the idea of working with SAFIA's booking agent - Dan Sant at Cult artists and open the door for his business to more work using my indigenous ticket
 
@@ -307,4 +307,4 @@ I need to create a network file that shows all the people in the music industry 
 - [[01-areas/business/mokai/INDEX|Mokai]]
 - [[claudelife-commands-guide|Commands]]
 - [[mokhouse-dashboard|MOK HOUSE HQ]]
-- 
+-

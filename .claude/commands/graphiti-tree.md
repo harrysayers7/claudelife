@@ -10,17 +10,17 @@ description: |
     - Changelog showing recent additions since last update
   Use this whenever you want a visual snapshot of the knowledge graph structure without exposing actual knowledge content.
 examples:
-  - /update-graphiti-tree
+  - /graphiti-tree
 ---
 
-# Update Graphiti Tree
+# Graphiti Tree
 
 This command regenerates the Graphiti knowledge graph structure visualization with current state, providing a visual representation of entities, relationships, and highlighting areas for growth.
 
 ## Usage
 
 ```bash
-/update-graphiti-tree
+/graphiti-tree
 ```
 
 ## Process

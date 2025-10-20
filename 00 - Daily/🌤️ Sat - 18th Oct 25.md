@@ -258,6 +258,6 @@ Still working on building my second brain. Hanging with Jack and brie today. Goi
 ## Index
 
 - [[01-areas/business/mokai/INDEX|Mokai]]
-- 
+-
 
 -

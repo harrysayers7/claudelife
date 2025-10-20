@@ -1,6 +1,6 @@
 ---
 date created: Sat, 10 18th 25, 7:30:00 pm
-date modified: Mon, 10 20th 25, 6:06:18 am
+date modified: Mon, 10 20th 25, 9:36:09 am
 type: dashboard
 relation:
   - "[[mokhouse]]"
@@ -503,4 +503,3 @@ if (tasks.length === 0) {
 *This dashboard is auto-generated from project files in `02-projects/mokhouse/`. Update project metadata to reflect changes here.*
 
 **Voice Note Correction**: When transcription shows "mock house" or "mok house", the correct spelling is **MOK HOUSE** (all caps, two words).
-

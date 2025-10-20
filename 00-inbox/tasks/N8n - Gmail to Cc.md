@@ -1,8 +1,8 @@
 ---
 Done: false
-today: true
+today: false
 follow up: false
-this week: false
+this week: true
 back burner: false
 ASAP: false
 type: Task
@@ -20,7 +20,7 @@ title: N8n - Gmail to Cc
 date created: Sat, 10 18th 25, 4:47:49 am
 date modified: Sat, 10 18th 25, 4:48:40 am
 ---
-I want to automate the /mokhouse-create-project command - help me discuss this 
+I want to automate the /mokhouse-create-project command - help me discuss this
 
 
 ### From ChatGPT:
@@ -68,7 +68,7 @@ class WebhookHandler(BaseHTTPRequestHandler):
         content_length = int(self.headers['Content-Length'])
         body = self.rfile.read(content_length)
         data = json.loads(body)
-        
+
         # Optional: match extra criteria here
         subject = data.get("subject", "")
         if "Invoice" in subject:
@@ -139,4 +139,3 @@ claude code run /Users/harrysayers/Developer/claudelife/agents/trigger-email.cl 
 If you want, I can generate a ready-to-run version of that webhook script tailored to your slash command (with args, logging, etc.).
 
 👉 Can you paste one example of a slash command you’d want triggered (the exact claude code ... command)? Then I’ll give you a complete runnable setup.
-

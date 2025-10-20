@@ -19,9 +19,9 @@ ai-ask: false
 priority:
 agent:
 ---
-So it can work inside the new accountant slash command that we created. 
+So it can work inside the new accountant slash command that we created.
 
-I'm super skeptical of this fix that Claude made. I'm just listing it below so we remember. 
+I'm super skeptical of this fix that Claude made. I'm just listing it below so we remember.
 
   Summary: Fixed Graphiti MCP
 

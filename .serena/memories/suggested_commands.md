@@ -67,6 +67,18 @@
   - Example: `/command-update --list` (show all available commands)
   - Use when modifying existing commands to ensure proper validation and documentation sync
 
+### Network Management
+- **NEW**: `/network-add "brief description"` - Create structured network profiles for people and businesses
+  - Generates markdown files in `04-resources/network/` with complete YAML frontmatter
+  - Interactive process gathers: name, entity type (person/business), relationship context, contact info, capabilities, strategic notes
+  - Follows `98-templates/profile.md` template structure
+  - Automatically creates sections: Summary, Relationship & Relevance, Capabilities/Expertise, Links & References, AI Context Notes
+  - Properly formats frontmatter with: type, entity_type, name, relation (wikilinks to related entities), category, location, tags, relationship (to_me, strength), contact_info, aliases, date metadata
+  - Integrates into relational network map for AI-assisted collaboration brainstorming
+  - Example: `/network-add "Sarah Chen from Flux Studios, creative director I met at design conference"`
+  - Example: `/network-add "ComplianceHub - SaaS vendor for cybersecurity compliance tracking"`
+  - Use when adding new contacts (business partners, clients, collaborators, vendors) to enable AI reasoning about collaboration opportunities
+
 ### Issue Tracking System
 - `/issue-create [description]` - Create tracked issue reports with sequential IDs in `01-areas/claude-code/issues/`
   - Auto-checks Serena's memory for known solutions before creating issues
@@ -125,103 +137,6 @@
   - Use periodically (weekly/monthly) to keep vault organized
   - Preview with `npm run scan-archive` before executing
   - Example: `/janitor` (no arguments required)
-
-### Task Scanning Script
-**Script**: `./scripts/scan-tasks.sh`
-**Purpose**: Instantly filter and categorize ai-assigned tasks
-**Performance**: 30-60x faster than manual file reading (100+ tasks in <1 second)
-
-**Usage**:
-```bash
-# Human-readable output
-./scripts/scan-tasks.sh
-npm run scan-tasks
-
-# JSON output for programmatic use
-./scripts/scan-tasks.sh --json
-npm run scan-tasks:json
-```
-
-**Output Categories**:
-- ✅ **Eligible tasks**: `ai-assigned: true`, `Done: false`, no `ai-ignore`
-- ⊘ **Ignored tasks**: `ai-ignore: true` (reserved for future)
-- ✓ **Completed tasks**: `Done: true`
-
-**Benefits**:
-- Fast pre-scan before running `/sort-tasks`
-- Programmatic integration via JSON output
-- Quick status check of pending work
-- Used internally by `/sort-tasks` for performance
-
-### Archive Scanning Script
-**Script**: `./scripts/scan-archive-candidates.sh`
-**Purpose**: Instantly identify files eligible for archiving
-**Performance**: 30-60x faster than MCP scanning (100+ files in <1 second)
-
-**Usage**:
-```bash
-# Human-readable output
-./scripts/scan-archive-candidates.sh
-npm run scan-archive
-
-# JSON output for programmatic use
-./scripts/scan-archive-candidates.sh --json
-npm run scan-archive:json
-```
-
-**Output Categories**:
-- 📦 **Archive candidates**: Files to move to `/99-archive`
-  - ✓ Files with `done: true` or `Done: true`
-  - 📁 Files with `archive: true`
-- 🗑️ **Old archive files**: Files in `/99-archive` older than 30 days with modification dates
-
-**Benefits**:
-- Fast pre-scan before running `/janitor`
-- Programmatic integration via JSON output
-- Quick status check of archivable files
-- Used internally by `/janitor` for performance
-
-### Issue Scanning Script
-**Script**: `./scripts/scan-issues.sh`
-**Purpose**: Instantly filter and manage tracked issues
-**Performance**: 30-60x faster than manual file operations (100+ issues in <1 second)
-
-**Usage**:
-```bash
-# Get next available issue ID
-./scripts/scan-issues.sh --next-id
-
-# Find unsolved issues
-./scripts/scan-issues.sh --unsolved
-
-# Filter by category
-./scripts/scan-issues.sh --category=mcp-server
-
-# Filter by severity
-./scripts/scan-issues.sh --severity=critical
-
-# Search by keyword
-./scripts/scan-issues.sh --search="supabase"
-
-# Get specific issue
-./scripts/scan-issues.sh --id=023
-
-# JSON output for programmatic use
-./scripts/scan-issues.sh --json
-```
-
-**Benefits**:
-- Fast ID generation for new issues
-- Quick filtering by status, category, severity
-- Keyword search across issue titles and descriptions
-- Used internally by `/issue-create`, `/issue-call`, `/issue-update` for performance
-
-### Task Frontmatter Flags
-Tasks in `/00-inbox/tasks/` support these frontmatter properties:
-- `ai-assigned: true` - Task will be executed by `/sort-tasks` command
-- `ai-ignore: true` - Task will be skipped by `/sort-tasks` (future work, not ready)
-- `Done: true` - Task is completed and marked done
-- If `ai-ignore` is missing, defaults to `false` (task is not ignored)
 
 ### Research & Knowledge Management
 - `/research $ARGUMENTS` - Conduct deep research using GPT Researcher MCP with COSTAR framework optimization
@@ -331,46 +246,6 @@ Tasks in `/00-inbox/tasks/` support these frontmatter properties:
 - `git push` - Push to remote
 - `/git:commit "message"` - Quick add, commit, and status check via slash command
 - Pre-commit hooks automatically run security scans (gitleaks, trufflehog)
-
-## Memory Sync Automation
-
-### Post-Commit Hook (Automatic)
-The `post-commit-serena-sync.sh` hook automatically runs after every git commit and detects when Serena's memory needs updating:
-
-**Triggers on changes to:**
-- **Slash commands**: `.claude/commands/` - New or modified commands
-- **MCP configuration**: `.mcp.json` - New MCP servers or config changes
-- **Package dependencies**: `package.json` - New npm scripts or dependencies
-- **Project structure**: `.claude/agents/`, `07-context/`, `.serena/` - Structural changes
-
-**Output when triggered:**
-```
-🔄 Serena Memory Sync Trigger
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📝 Slash commands modified
-   Files: .claude/commands/mokai-status.md
-🔌 MCP configuration changed
-   File: .mcp.json
-
-💡 Recommendation: Update Serena's memory to reflect these changes
-   Run: /update-serena-memory
-```
-
-**Features:**
-- ✅ Non-blocking (commit always succeeds)
-- ✅ Intelligent detection (only triggers on relevant changes)
-- ✅ Color-coded output shows what changed
-- ✅ Works alongside other hooks (Graphiti)
-
-**Location:** `.claude/hooks/post-commit-serena-sync.sh`
-**Dispatcher:** `.git/hooks/post-commit` (runs all post-commit hooks)
-
-### Manual Sync (On-Demand)
-For immediate sync or when hook doesn't catch changes:
-- **Supabase changes**: Updates to `invoices`, `entities`, `contacts` tables
-- **Obsidian changes**: Edits to MOKAI docs in `01-areas/business/mokai/`
-
-Run `/update-serena-memory` manually when needed.
 
 ## Common System Commands (macOS)
 - `ls` - List directory contents

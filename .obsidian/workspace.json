@@ -500,6 +500,30 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "🌤️ Mon - 20th Oct 25",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Mon - 20th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Mon - 20th Oct 25\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "CLAUDE",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"04-resources/network/CLAUDE.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"CLAUDE\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":14,\"ch\":0},\"to\":{\"line\":14,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "Daniel Sant",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"04-resources/network/Daniel Sant.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Daniel Sant\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":22,\"ch\":0},\"to\":{\"line\":22,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "🌤️ Mon - 20th Oct 25",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Mon - 20th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Mon - 20th Oct 25\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}},\"scroll\":0}"
+                },
+                {
                   "title": "3-Tier-system",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokhouse/docs/brain-storming/3-Tier-system.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"3-Tier-system\"}",
@@ -588,13 +612,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00 - Daily/🌤️ Mon - 20th Oct 25.md",
+                "file": "00-inbox/tasks/supabase-table-business-context.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "🌤️ Mon - 20th Oct 25"
+              "title": "supabase-table-business-context"
             }
           }
         ],
@@ -785,10 +809,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "00 - Daily/🌤️ Mon - 20th Oct 25.md"
+                "file": "00-inbox/tasks/supabase-table-business-context.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for 🌤️ Mon - 20th Oct 25"
+              "title": "File properties for supabase-table-business-context"
             }
           }
         ]
@@ -978,12 +1002,12 @@
               "type": "webviewer",
               "state": {
                 "url": "https://app.shortwave.com/inbox/other",
-                "title": "● Shortwave — harry@sayers1.com",
+                "title": "Shortwave — harry@sayers1.com",
                 "mode": "webview"
               },
               "pinned": true,
               "icon": "globe-2",
-              "title": "● Shortwave — harry@sayers1.com"
+              "title": "Shortwave — harry@sayers1.com"
             }
           },
           {
@@ -1020,13 +1044,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00 - Daily/🌤️ Mon - 20th Oct 25.md",
+                "file": "00-inbox/tasks/supabase-table-business-context.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 🌤️ Mon - 20th Oct 25"
+              "title": "Outline of supabase-table-business-context"
             }
           },
           {
@@ -1539,42 +1563,42 @@
   },
   "active": "7393bdd4877c66f0",
   "lastOpenFiles": [
-    "04-resources/guides/mcp-troubleshooting.md",
-    "04-resources/lessons-learnt/251020-issue-002-mcp-permissions.md",
-    "01-areas/claude-code/issues/issue-002-graphiti-mcp-stale-connection.md.tmp.95815.1760909803400",
-    "01-areas/claude-code/issues/issue-002-graphiti-mcp-stale-connection.md.tmp.95815.1760909749192",
-    "01-areas/business/mokhouse/docs/brain-storming/3-Tier-system.md",
-    "01-areas/business/mokhouse/docs/brain-storming/CLAUDE.md",
-    "01-areas/business/mokhouse/docs/brain-storming",
-    "01-areas/business/mokhouse/my-network🌐.md",
-    "00-inbox/tasks/Call supply nation.md",
-    "00-inbox/tasks/Director ID to Accountant.md",
-    "04-resources/network/Daniel Sant.md",
-    "04-resources/network/CLAUDE.md",
-    "98-templates/profile.md",
-    "04-resources/network",
-    "99-archive/agent-mokhouse-instructions to split 👔.md",
-    "01-areas/business/mokhouse/mokhouse-dashboard.md",
-    "01-areas/business/mokai/diary/2025-10-20-mokai-daily.md",
+    "04-resources/vault/README.md",
+    "04-resources/vault/README.md.tmp.38883.1760925195484",
+    "04-resources/vault/personal",
+    "04-resources/vault/mokhouse",
+    "04-resources/vault/mokai",
+    "04-resources/guides/commands/claudelife-commands-guide.md.tmp.38883.1760925166580",
+    "98-templates/vault.md",
+    "01-areas/business/mokhouse/MH-COMPANY-DETAILS.md",
+    "01-areas/business/mokhouse/info/Bank-details.md",
+    "01-areas/business/mokhouse/info",
+    "00-inbox/tasks/Collapsed month view calendar in daily note.md",
+    "00-inbox/tasks/Deep research MOK HOUSE model.md",
+    "00-inbox/tasks/week-task-dataview.md",
+    "00-inbox/tasks/Create this week dataview on daily note.md",
+    "00-inbox/tasks/Supply Nation ✔️ ✅️ .md",
     "00 - Daily/🌤️ Mon - 20th Oct 25.md",
-    "00-inbox/tasks/creative-thinker.md",
-    "00-inbox/tasks/Update the business claude.md",
-    "01-areas/business/CLAUDE.md.md",
-    "00-inbox/tasks/Self update.md",
+    "00-inbox/tasks/supabase-table-business-context.md",
+    "00-inbox/tasks/supabase-table-business-context.md.tmp.42651.1760914547330",
+    "04-resources/network/CLAUDE.md",
+    "04-resources/guides/commands/claudelife-commands-guide.md.tmp.42651.1760912976144",
+    "04-resources/network/Chris Paget.md",
+    "04-resources/guides/commands/claudelife-commands-guide.md.tmp.8971.1760911336391",
+    "04-resources/guides/commands/claudelife-commands-guide.md.tmp.8971.1760911329002",
+    "04-resources/network/Daniel Sant.md",
+    "00-inbox/tasks/GWM Vid.md",
     "00-inbox/tasks/Buy omnara.md",
-    "01-areas/claude-code/issues/issue-002-graphiti-mcp-stale-connection.md.tmp.50679.1760858259020",
-    "01-areas/claude-code/issues/issue-002-graphiti-mcp-stale-connection.md.tmp.50679.1760858247721",
-    "04-resources/guides/commands/claudelife-commands-guide.md.tmp.48220.1760858017916",
-    "01-areas/claude-code/issues/issue-002-graphiti-mcp-stale-connection.md.tmp.25259.1760857389166",
-    "01-areas/claude-code/issues/issue-002-graphiti-mcp-stale-connection.md",
-    "01-areas/business/mokhouse/diary-mokhouse.md",
+    "00-inbox/tasks/Update the business claude.md",
     "97-tags/issue.md",
     "02-projects/mokhouse/archive/250922-coopers-old-mates.md",
     "02-projects/mokai/CLAUDE.md",
-    "02-projects/mokai",
-    "02-projects/admin/SMSF.base",
     "00-inbox/OBSIDIA.md",
-    "02-projects/mokhouse/036-nintendo/Nintendo - EM.md",
+    "04-resources/guides/mcp-troubleshooting.md",
+    "04-resources/lessons-learnt/251020-issue-002-mcp-permissions.md",
+    "01-areas/business/mokhouse/docs/brain-storming/3-Tier-system.md",
+    "01-areas/business/mokhouse/docs/brain-storming/CLAUDE.md",
+    "01-areas/business/mokhouse/my-network🌐.md",
     "Untitled.canvas",
     "finance-dashboard/public/file.svg",
     "finance-dashboard/public/window.svg",

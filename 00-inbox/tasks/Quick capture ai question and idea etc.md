@@ -16,4 +16,4 @@ ai-ask: false
 priority:
 agent:
 ---
-Add as task 
+Add as task

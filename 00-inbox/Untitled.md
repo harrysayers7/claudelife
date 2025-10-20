@@ -258,7 +258,7 @@ if (upcomingOccurrences.length > 0) {
 - [[01-areas/business/mokai/INDEX|Mokai]]
 - [[claudelife-commands-guide|Commands]]
 - [[mokhouse-dashboard|MOK HOUSE HQ]]
-- 
+-
 
 ```const today = dv.date('today').toFormat('yyyy-MM-dd');
 const todayDate = dv.date('today');
@@ -331,5 +331,3 @@ if (events.length > 0) {
 } else {
   dv.paragraph("*No events scheduled for today*");
 }```
-
-

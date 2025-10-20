@@ -11,7 +11,7 @@
 
 ### Logbook Method
 - **Calculation**: Actual vehicle costs × business use %
-- **Requirements**: 
+- **Requirements**:
   - 12-week representative logbook
   - Records of all vehicle expenses
   - Odometer readings at start/end of year
@@ -50,7 +50,7 @@
   - Floor area calculation (office m² / total m²)
   - Time-based calculation if not dedicated space
 - **Best for**: Dedicated home office, high usage
-- **Harry's case**: 
+- **Harry's case**:
   - Works from home >50%
   - Dedicated office space
   - Pays utilities (electricity, internet)
@@ -62,10 +62,10 @@
 - **Simplified depreciation**: Small business entities
   - Instant asset write-off (check current threshold)
   - Depreciation pool for assets >threshold
-- **General depreciation**: 
+- **General depreciation**:
   - Effective life method (ATO schedule)
   - Diminishing value or prime cost
-- **Harry's musical instruments**: 
+- **Harry's musical instruments**:
   - Multiple instruments eligible for depreciation
   - Estimate ~$1,000+/year depending on values
 

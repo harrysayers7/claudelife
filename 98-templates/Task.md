@@ -16,4 +16,5 @@ ai-ask: false
 priority:
 agent:
 slash-command:
+urgent: false
 ---

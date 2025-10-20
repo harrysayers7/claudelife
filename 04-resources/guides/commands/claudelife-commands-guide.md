@@ -56,7 +56,9 @@ Comprehensive reference for all custom slash commands in the claudelife project.
 - [[#/issue-call|/issue-call]]
 - [[#/issue-update|/issue-update]]
 - [[#/mcp-setup-checklist|/mcp-setup-checklist]]
+- [[#/master-supabase|/master-supabase]]
 - [[#/network-add|/network-add]]
+- [[#/vault-add|/vault-add]]
 
 ---
 
@@ -902,6 +904,23 @@ Use when adding new MCP servers (Graphiti, Serena, Supabase, etc.) to avoid miss
 
 ---
 
+### /master-supabase
+**Created**: 2025-10-20 06:15
+**Updated**: 2025-10-20 06:30 (Live data - no caching)
+
+##### What it does:
+Loads LIVE Supabase context for SAYERS DATA project (gshsshaodoyttdxippwx) every time it runs. Verifies MCP connection, loads current database state, runs health checks (security/performance advisors), and identifies optimization opportunities. **Always fetches fresh data** to avoid staleness when schema changes - no caching. Supports `--deep` for full schema dump and `--check-health` for optimization-only analysis.
+
+##### When to use it:
+Use at start of Supabase-related work to prime Claude with current database structure, purpose, and health status. Loads fresh data in 2-3 seconds (overview) or 10-15 seconds (--deep). Run `--check-health` periodically to detect performance issues, security gaps, or data inconsistencies. Always reflects latest schema changes and migrations.
+
+**Usage**: `/master-supabase [--deep] [--check-health]`
+**File**: `.claude/commands/master-supabase.md`
+**Integration**: Supabase MCP (9 tools), Context docs (purpose, schema, ML pipeline)
+**Speed**: 2-3 seconds (overview) | 5-10 seconds (health check) | 10-15 seconds (--deep)
+
+---
+
 ## Network Management
 
 ### /network-add
@@ -918,5 +937,22 @@ Use when adding new contacts (business partners, clients, collaborators, vendors
 **File**: `.claude/commands/network-add.md`
 **Template**: `98-templates/profile.md`
 **Example**: `04-resources/network/Daniel Sant.md`
+
+---
+
+### /vault-add
+**Created**: 2025-10-20 07:20
+
+##### What it does:
+Creates secure vault entries for frequently-referenced information in `04-resources/vault/{entity}/`. Stores both reference info (bank details, ABN, ID numbers) and sensitive credentials (API keys, passwords, tokens) with automatic .gitignore protection. Generates structured markdown with YAML frontmatter (type: vault, entity relation, sensitivity level, category). Supports flexible input: quick description, structured data, or conversation context reference.
+
+##### When to use it:
+Use when storing information you frequently search for: bank account details, tax identifiers (ABN/ACN), API credentials, passwords, license keys, insurance policy numbers. Organizes by entity (MOKAI/MOK HOUSE/Personal) for easy filtering. Automatically protects sensitive items with .gitignore while keeping reference info accessible. Eliminates hunting through emails, dashboards, or documents for critical details.
+
+**Usage**: `/vault-add "description or structured data"`
+**File**: `.claude/commands/vault-add.md`
+**Template**: `98-templates/vault.md`
+**Storage**: `04-resources/vault/{mokai|mokhouse|personal}/`
+**Security**: Auto-.gitignore for `sensitive: true` items
 
 ---

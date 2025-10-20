@@ -12,13 +12,12 @@ date modified: Thu, 10 16th 25, 8:46:48 am
 
 ---
 
-## 📚 Core Resources  
+## 📚 Core Resources
 Reference material, templates, systems, or key docs for this area:
 
 
 
 ---
 
-## 🪄 Quick Links  
+## 🪄 Quick Links
 Useful navigational links for this area:
-

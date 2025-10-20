@@ -23,4 +23,3 @@ date modified: Wed, 10 15th 25, 11:11:59 am
 **Brand fit:** Cover-more brings everything together - multiple types of coverage, multiple scenarios, one answer. The build creates momentum. By the time all voices hit, it feels inevitable. The whistle seals it - casual, confident, like walking away knowing you're sorted.
 
 **Bottom line:** Protection that surrounds you, punctuated by a melody you can't forget.
-

@@ -77,7 +77,7 @@ USER QUERY ARRIVES
 
 ```yaml
 Step 1 (Graphiti):
-  Query: "Show relationship between cold-exposure and creative-output 
+  Query: "Show relationship between cold-exposure and creative-output
           entities over last 90 days"
   Result: Correlation exists - 73% of high-output days followed cold swims
 
@@ -156,7 +156,7 @@ Here's what I should do when you ask me something:
 ```
 Is this about:
 → Code/automation mechanics? (Serena territory)
-→ Temporal/relational patterns? (Graphiti territory)  
+→ Temporal/relational patterns? (Graphiti territory)
 → Content/semantic search? (Project Knowledge territory)
 → External data? (Supabase/Drive/Web territory)
 ```
@@ -169,8 +169,8 @@ Tool Combo:
 1. Graphiti → Check temporal changes in productivity-related entities
 2. Project Knowledge Search → Find recent notes mentioning productivity
 3. Supabase → Pull cold exposure frequency data
-4. Me → Synthesize: "Your productivity increased 23% since you started 
-   daily cold swims in October. Notes show better focus. Want me to 
+4. Me → Synthesize: "Your productivity increased 23% since you started
+   daily cold swims in October. Notes show better focus. Want me to
    analyze the mechanism?"
 ```
 
@@ -190,7 +190,7 @@ After answering your question:
 
 **My process:**
 1. **Graphiti:** Query entities tagged with "productivity" + "October 2024"
-2. **Project Knowledge Search:** Find daily notes from October  
+2. **Project Knowledge Search:** Find daily notes from October
 3. **Supabase:** Pull habit tracking data (cold exposure, exercise)
 4. **Synthesis:** "October showed 31% productivity increase. Graphiti shows this correlates with increased cold exposure (18 swims vs 9 in September). Notes mention improved morning focus. Supabase confirms you exercised 6 days/week vs 4 in September."
 
@@ -225,13 +225,13 @@ Since they're already installed, let's **audit their current usage**:
 
 Ask me these to test the system:
 
-1. **"Serena: Show me the structure of my ClaudeLife codebase"**  
+1. **"Serena: Show me the structure of my ClaudeLife codebase"**
    *(Tests if Serena is properly analyzing your project)*
 
-2. **"Graphiti: What entities exist related to 'cold exposure'?"**  
+2. **"Graphiti: What entities exist related to 'cold exposure'?"**
    *(Tests if Graphiti has ingested your vault notes)*
 
-3. **"Show me connections between my morning routine and creative output over the last 60 days"**  
+3. **"Show me connections between my morning routine and creative output over the last 60 days"**
    *(Tests if I can orchestrate Graphiti + Project Knowledge Search together)*
 
 ---

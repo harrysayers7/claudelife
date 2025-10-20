@@ -15,19 +15,19 @@ container.style.cssText = "min-height: 100vh; background: linear-gradient(135deg
 // ═══════════════════════════════════════════════════════════
 
 const now = new Date();
-const dateStr = now.toLocaleDateString('en-US', { 
-  weekday: 'long', 
-  year: 'numeric', 
-  month: 'long', 
-  day: 'numeric' 
+const dateStr = now.toLocaleDateString('en-US', {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
 });
-const timeStr = now.toLocaleTimeString('en-US', { 
-  hour: '2-digit', 
-  minute: '2-digit' 
+const timeStr = now.toLocaleTimeString('en-US', {
+  hour: '2-digit',
+  minute: '2-digit'
 });
 
 dv.header(1, "⚡ OBSIDIA COMMAND");
-dv.el('div', dateStr, { 
+dv.el('div', dateStr, {
   cls: 'obsidia-subtitle',
   attr: { style: 'color: #888; font-size: 0.9rem; margin: 0.5rem 0 2rem 0;' }
 });
@@ -41,15 +41,15 @@ dv.el('div', timeStr + ' • AEDT • South Coast NSW', {
 // ═══════════════════════════════════════════════════════════
 
 const taskSection = dv.el('div', '', {
-  attr: { 
+  attr: {
     style: "background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);"
   }
 });
 
 const taskHeader = dv.el('div', '', {
   container: taskSection,
-  attr: { 
-    style: 'display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;' 
+  attr: {
+    style: 'display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;'
   }
 });
 
@@ -75,14 +75,14 @@ dv.el('div', completedCount + "/" + (totalTasks + completedCount), {
 const progressPercent = totalTasks > 0 ? (completedCount / (totalTasks + completedCount)) * 100 : 0;
 const progressBar = dv.el('div', '', {
   container: taskSection,
-  attr: { 
+  attr: {
     style: "width: 100%; height: 4px; background: rgba(255, 255, 255, 0.1); border-radius: 2px; margin-bottom: 1.5rem; overflow: hidden;"
   }
 });
 
 dv.el('div', '', {
   container: progressBar,
-  attr: { 
+  attr: {
     style: "width: " + progressPercent + "%; height: 100%; background: linear-gradient(90deg, #00d4ff 0%, #7c3aed 100%); transition: width 0.3s ease;"
   }
 });
@@ -92,7 +92,7 @@ if (tasks.length > 0) {
   for (const task of tasks.values) {
     const taskCard = dv.el('div', '', {
       container: taskSection,
-      attr: { 
+      attr: {
         style: "display: flex; align-items: center; gap: 1rem; padding: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.05); margin-bottom: 0.75rem; cursor: pointer; transition: all 0.2s ease;"
       }
     });
@@ -100,7 +100,7 @@ if (tasks.length > 0) {
     // Checkbox
     const checkbox = dv.el('input', '', {
       container: taskCard,
-      attr: { 
+      attr: {
         type: 'checkbox',
         style: 'width: 20px; height: 20px; cursor: pointer; accent-color: #00d4ff;'
       }
@@ -153,7 +153,7 @@ if (tasks.length > 0) {
 // ═══════════════════════════════════════════════════════════
 
 const todaySection = dv.el('div', '', {
-  attr: { 
+  attr: {
     style: "background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);"
   }
 });
@@ -222,7 +222,7 @@ if (todayEvents.length > 0) {
   for (const event of todayEvents.values) {
     const eventCard = dv.el('div', '', {
       container: todaySection,
-      attr: { 
+      attr: {
         style: "padding: 1rem; background: rgba(124, 58, 237, 0.05); border-radius: 12px; border: 1px solid rgba(124, 58, 237, 0.2); border-left: 3px solid #7c3aed; margin-bottom: 0.75rem;"
       }
     });
@@ -230,8 +230,8 @@ if (todayEvents.length > 0) {
     if (event.time) {
       dv.el('div', '🕐 ' + event.time, {
         container: eventCard,
-        attr: { 
-          style: 'font-size: 0.9rem; font-weight: 600; color: #7c3aed; margin-bottom: 0.5rem;' 
+        attr: {
+          style: 'font-size: 0.9rem; font-weight: 600; color: #7c3aed; margin-bottom: 0.5rem;'
         }
       });
     }
@@ -260,7 +260,7 @@ if (todayEvents.length > 0) {
 // ═══════════════════════════════════════════════════════════
 
 const weekSection = dv.el('div', '', {
-  attr: { 
+  attr: {
     style: "background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);"
   }
 });
@@ -293,14 +293,14 @@ if (upcomingOccurrences.length > 0) {
   for (const occ of upcomingOccurrences) {
     const weekCard = dv.el('div', '', {
       container: weekSection,
-      attr: { 
+      attr: {
         style: "padding: 1rem; background: rgba(0, 212, 255, 0.03); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); margin-bottom: 0.75rem;"
       }
     });
 
     dv.el('div', occ.date.toFormat('EEE, MMM dd'), {
       container: weekCard,
-      attr: { 
+      attr: {
         style: "font-size: 0.8rem; color: #00d4ff; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;"
       }
     });
@@ -336,14 +336,14 @@ if (upcomingOccurrences.length > 0) {
 // ═══════════════════════════════════════════════════════════
 
 const footer = dv.el('div', '', {
-  attr: { 
+  attr: {
     style: "margin-top: 2rem; padding: 1.5rem; background: rgba(255, 255, 255, 0.02); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.05);"
   }
 });
 
 dv.el('div', 'QUICK ACCESS', {
   container: footer,
-  attr: { 
+  attr: {
     style: "font-size: 0.8rem; color: #666; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;"
   }
 });
@@ -362,7 +362,7 @@ const links = [
 for (const link of links) {
   const linkEl = dv.el('a', link.name, {
     container: quickLinks,
-    attr: { 
+    attr: {
       href: link.path,
       style: "padding: 0.5rem 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; font-size: 0.85rem; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none; color: inherit; transition: all 0.2s ease;"
     }
@@ -379,7 +379,7 @@ for (const link of links) {
 }
 ```
 
-```dataviewjs 
+```dataviewjs
 // ESM Project Dashboard - Optimized for Mobile & Desktop
 // Path: 02-projects/mokhouse (adjust if needed)
 
@@ -489,18 +489,18 @@ dv.el("div", `
 // Alerts Section
 if (overdue.length > 0 || awaitingPO.length > 0) {
   dv.header(3, "⚠️ Attention Required");
-  
+
   if (overdue.length > 0) {
     dv.el("div", `<div style="color: var(--text-error); font-weight: 600; margin-bottom: 8px;">🔴 Overdue Projects (${overdue.length})</div>`);
-    dv.list(overdue.map(p => 
+    dv.list(overdue.map(p =>
       `${p.link} - **${p.daysLate} days late** (${p.status})`
     ));
     dv.el("br", "");
   }
-  
+
   if (awaitingPO.length > 0) {
     dv.el("div", `<div style="color: var(--text-warning); font-weight: 600; margin-bottom: 8px;">🟡 Awaiting PO (${awaitingPO.length})</div>`);
-    dv.list(awaitingPO.map(p => 
+    dv.list(awaitingPO.map(p =>
       `${p.link} - Submitted ${p.submitted || "recently"}`
     ));
     dv.el("br", "");
@@ -517,8 +517,8 @@ dv.table(
 // Quick Stats Footer
 dv.el("div", `
 <div style="margin-top: 24px; padding: 12px; background: var(--background-secondary); border-radius: 8px; font-size: 0.85em; color: var(--text-muted);">
-  <strong>Total Projects:</strong> ${projects.length} | 
-  <strong>Demo Fees Paid:</strong> $${paidDemo.toLocaleString()} | 
+  <strong>Total Projects:</strong> ${projects.length} |
+  <strong>Demo Fees Paid:</strong> $${paidDemo.toLocaleString()} |
   <strong>Award Fees Paid:</strong> $${paidAward.toLocaleString()}
 </div>
 `);
@@ -634,18 +634,18 @@ dv.el("div", `
 // Alerts Section
 if (overdue.length > 0 || awaitingPO.length > 0) {
   dv.header(3, "⚠️ Attention Required");
-  
+
   if (overdue.length > 0) {
     dv.el("div", `<div style="color: var(--text-error); font-weight: 600; margin-bottom: 8px;">🔴 Overdue Projects (${overdue.length})</div>`);
-    dv.list(overdue.map(p => 
+    dv.list(overdue.map(p =>
       `${p.link} - **${p.daysLate} days late** (${p.status})`
     ));
     dv.el("br", "");
   }
-  
+
   if (awaitingPO.length > 0) {
     dv.el("div", `<div style="color: var(--text-warning); font-weight: 600; margin-bottom: 8px;">🟡 Awaiting PO (${awaitingPO.length})</div>`);
-    dv.list(awaitingPO.map(p => 
+    dv.list(awaitingPO.map(p =>
       `${p.link} - Submitted ${p.submitted || "recently"}`
     ));
     dv.el("br", "");
@@ -662,8 +662,8 @@ dv.table(
 // Quick Stats Footer
 dv.el("div", `
 <div style="margin-top: 24px; padding: 12px; background: var(--background-secondary); border-radius: 8px; font-size: 0.85em; color: var(--text-muted);">
-  <strong>Total Projects:</strong> ${projects.length} | 
-  <strong>Demo Fees Paid:</strong> $${paidDemo.toLocaleString()} | 
+  <strong>Total Projects:</strong> ${projects.length} |
+  <strong>Demo Fees Paid:</strong> $${paidDemo.toLocaleString()} |
   <strong>Award Fees Paid:</strong> $${paidAward.toLocaleString()}
 </div>
 `);
@@ -793,18 +793,18 @@ dv.el("div", `
 // Alerts Section
 if (overdue.length > 0 || awaitingPO.length > 0) {
   dv.header(3, "⚠️ Attention Required");
-  
+
   if (overdue.length > 0) {
     dv.el("div", `<div style="color: var(--text-error); font-weight: 600; margin-bottom: 8px;">🔴 Overdue Projects (${overdue.length})</div>`);
-    dv.list(overdue.map(p => 
+    dv.list(overdue.map(p =>
       `${p.link} - **${p.daysLate} days late** (${p.status})`
     ));
     dv.el("br", "");
   }
-  
+
   if (awaitingPO.length > 0) {
     dv.el("div", `<div style="color: var(--text-warning); font-weight: 600; margin-bottom: 8px;">🟡 Awaiting PO (${awaitingPO.length})</div>`);
-    dv.list(awaitingPO.map(p => 
+    dv.list(awaitingPO.map(p =>
       `${p.link} - Submitted ${p.submitted || "recently"}`
     ));
     dv.el("br", "");
@@ -821,8 +821,8 @@ dv.table(
 // Quick Stats Footer
 dv.el("div", `
 <div style="margin-top: 24px; padding: 12px; background: var(--background-secondary); border-radius: 8px; font-size: 0.85em; color: var(--text-muted);">
-  <strong>Total Projects:</strong> ${projects.length} | 
-  <strong>Demo Fees Paid:</strong> $${paidDemo.toLocaleString()} | 
+  <strong>Total Projects:</strong> ${projects.length} |
+  <strong>Demo Fees Paid:</strong> $${paidDemo.toLocaleString()} |
   <strong>Award Fees Paid:</strong> $${paidAward.toLocaleString()}
 </div>
 `);

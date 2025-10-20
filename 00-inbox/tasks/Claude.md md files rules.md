@@ -21,8 +21,8 @@ Always include the following in every yaml:
 type: ie context
 title: title
 relation: ie mokhouse mokai safia etc using wikilinks
-But only if it absolutely relates to an area in 01-areas 
-tags: 
+But only if it absolutely relates to an area in 01-areas
+tags:
 
 For type property only use the following types:
 
@@ -41,4 +41,4 @@ For type property only use the following types:
 - index
 - vault
 - tool
-- 
+-

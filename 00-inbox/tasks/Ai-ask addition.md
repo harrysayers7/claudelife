@@ -16,4 +16,4 @@ ai-ask: false
 priority:
 agent:
 ---
-If true. Claude should clarify with me with before implementing 
+If true. Claude should clarify with me with before implementing

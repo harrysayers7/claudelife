@@ -15,8 +15,8 @@ date modified: Mon, 10 20th 25, 6:45:52 am
 
 # 🧑‍🤝‍🧑 People & Businesses – Context Layer
 
-This folder is a **relational map of my network**.  
-It includes individuals I know personally, work with, or collaborate with, as well as businesses I’m involved with or connected to.  
+This folder is a **relational map of my network**.
+It includes individuals I know personally, work with, or collaborate with, as well as businesses I’m involved with or connected to.
 
 Each `.md` file serves as a **profile card** for that entity, detailing their background, my relationship to them, and any relevant context that could influence creative or strategic decisions.
 

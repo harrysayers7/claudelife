@@ -47,7 +47,7 @@
 ### PAYG Instalments
 - **Triggered when**: Previous year tax >$1,000 (individuals) or $500 (others)
 - **Frequency**: Quarterly for most, monthly for large businesses
-- **Methods**: 
+- **Methods**:
   - Instalment rate (ATO calculates)
   - Instalment amount (fixed)
   - Varied amount (if income fluctuates)

@@ -46,7 +46,7 @@ Graphiti becomes **meaningfully better** when you need:
 ### 1. **Multi-Dimensional Context**
 ```
 Serena: "User discussed authentication on 2024-10-15"
-Graphiti: 
+Graphiti:
   - User → works_on → Project_X
   - Project_X → uses → NextAuth
   - NextAuth → requires → PostgreSQL
@@ -68,7 +68,7 @@ Session 3: "Using Supabase for auth"
 
 Graphiti automatically merges:
   (React_App)-[:USES]->(Supabase_Auth)
-  
+
 Serena stores 3 separate memories with no connection
 ```
 
@@ -138,15 +138,15 @@ def extract_context(tool_output, event_type):
     """Pull relevant entities from the text"""
     # This is where you'd use Claude or an NLP model
     # For now, simple regex extraction
-    
+
     if event_type == "project_creation":
         project_name = re.search(r"project[:\s]+(\w+)", tool_output, re.I)
         return {"entity_type": "project", "name": project_name.group(1) if project_name else "unknown"}
-    
+
     elif event_type == "tool_adoption":
         tool_name = re.search(r"(?:using|switched to|adopted)\s+([A-Z]\w+)", tool_output, re.I)
         return {"entity_type": "tool", "name": tool_name.group(1) if tool_name else "unknown"}
-    
+
     # Add more extraction logic per event type
     return {}
 ```
@@ -163,9 +163,9 @@ import os
 
 def extract_structured_knowledge(raw_text):
     """Use Claude to convert conversation text into graph entities"""
-    
+
     client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
-    
+
     prompt = f"""Extract structured knowledge from this coding session output:
 
 {raw_text}
@@ -182,7 +182,7 @@ Return JSON with this schema:
   "relationships": [
     {{
       "from": "entity1",
-      "to": "entity2", 
+      "to": "entity2",
       "type": "uses|part_of|depends_on|solves|created_for",
       "properties": {{"context": "why this connection exists"}}
     }}
@@ -203,7 +203,7 @@ Only extract meaningful, persistent knowledge — not transient debugging steps.
         max_tokens=2000,
         messages=[{"role": "user", "content": prompt}]
     )
-    
+
     return json.loads(message.content[0].text)
 ```
 
@@ -223,12 +223,12 @@ AUTH_TOKEN = os.getenv("GRAPHITI_TOKEN")
 
 def store_knowledge(structured_data):
     """Store extracted entities and relationships in Graphiti"""
-    
+
     headers = {
         "Authorization": f"Bearer {AUTH_TOKEN}",
         "Content-Type": "application/json"
     }
-    
+
     # First, create/update entities
     entity_ids = {}
     for entity in structured_data.get("entities", []):
@@ -241,14 +241,14 @@ def store_knowledge(structured_data):
                 "source": "claude_code"
             }
         }
-        
+
         # Check if entity exists first (merge instead of duplicate)
         search_response = requests.post(
             f"{GRAPHITI_URL}/search",
             headers=headers,
             json={"query": entity["name"], "entity_type": entity["type"], "limit": 1}
         )
-        
+
         if search_response.ok and search_response.json().get("nodes"):
             # Update existing entity
             entity_id = search_response.json()["nodes"][0]["id"]
@@ -265,9 +265,9 @@ def store_knowledge(structured_data):
                 json=payload
             )
             entity_id = response.json().get("id")
-        
+
         entity_ids[entity["name"]] = entity_id
-    
+
     # Then create relationships
     for rel in structured_data.get("relationships", []):
         if rel["from"] in entity_ids and rel["to"] in entity_ids:
@@ -280,13 +280,13 @@ def store_knowledge(structured_data):
                     "created_at": datetime.now().isoformat()
                 }
             }
-            
+
             requests.post(
                 f"{GRAPHITI_URL}/edges",
                 headers=headers,
                 json=edge_payload
             )
-    
+
     print(f"✓ Stored {len(structured_data['entities'])} entities, {len(structured_data['relationships'])} relationships")
 ```
 
@@ -305,16 +305,16 @@ AUTH_TOKEN = os.getenv("GRAPHITI_TOKEN")
 
 def retrieve_relevant_context(current_activity_description):
     """Query Graphiti for contextually relevant knowledge"""
-    
+
     headers = {
         "Authorization": f"Bearer {AUTH_TOKEN}",
         "Content-Type": "application/json"
     }
-    
+
     # Step 1: Extract key terms from current activity
     # (In production, use Claude for this)
     key_terms = extract_key_terms(current_activity_description)
-    
+
     # Step 2: Multi-hop graph query
     query = {
         "start_nodes": key_terms,
@@ -322,20 +322,20 @@ def retrieve_relevant_context(current_activity_description):
         "edge_types": ["uses", "part_of", "related_to", "depends_on"],
         "entity_types": ["project", "tool", "concept", "problem"]
     }
-    
+
     response = requests.post(
         f"{GRAPHITI_URL}/traverse",
         headers=headers,
         json=query
     )
-    
+
     if response.ok:
         graph_data = response.json()
-        
+
         # Format as context for Claude
         context_summary = format_graph_context(graph_data)
         return context_summary
-    
+
     return None
 
 def extract_key_terms(text):
@@ -348,20 +348,20 @@ def extract_key_terms(text):
 def format_graph_context(graph_data):
     """Convert graph response into readable context"""
     context = "## Relevant Knowledge\n\n"
-    
+
     for node in graph_data.get("nodes", []):
         context += f"**{node['name']}** ({node['entity_type']})\n"
         if node.get("properties"):
             context += f"  - {json.dumps(node['properties'], indent=2)}\n"
-    
+
     context += "\n## Relationships\n"
     for edge in graph_data.get("edges", []):
         context += f"- {edge['from']} → {edge['type']} → {edge['to']}\n"
-    
+
     return context
 
 TECH_KEYWORDS = {
-    "react", "python", "obsidian", "supabase", "claude", 
+    "react", "python", "obsidian", "supabase", "claude",
     "graphiti", "api", "database", "authentication", "ableton"
 }
 ```

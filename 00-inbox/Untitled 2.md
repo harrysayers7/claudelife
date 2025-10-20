@@ -76,7 +76,7 @@ dv.el("div", `
 <div style="display: flex; gap: 12px; overflow-x: auto; padding-bottom: 20px; margin-bottom: 20px;">
   ${statusColumns.map(col => {
     const projects = projectsByStatus[col.name] || [];
-    
+
     return `
     <div style="min-width: 280px; max-width: 320px; flex-shrink: 0;">
       <div style="background: var(--background-secondary); border-radius: 8px; padding: 12px; margin-bottom: 8px;">
@@ -89,7 +89,7 @@ dv.el("div", `
           </div>
         </div>
       </div>
-      
+
       <div style="display: flex; flex-direction: column; gap: 8px;">
         ${projects.length === 0 ? `
           <div style="background: var(--background-secondary); border-radius: 6px; padding: 16px; text-align: center; color: var(--text-muted); font-size: 0.85em;">
@@ -99,7 +99,7 @@ dv.el("div", `
           const isOverdue = p["due date"] && dv.date(p["due date"]) < today;
           const dueDate = p["due date"] ? dv.date(p["due date"]).toFormat("MMM dd") : null;
           const fee = p["demo fee"] || p["award fee"] || null;
-          
+
           return `
           <div style="background: var(--background-primary-alt); border: 1px solid var(--background-modifier-border); border-radius: 6px; padding: 10px; cursor: pointer; transition: all 0.2s;">
             <div style="font-weight: 500; font-size: 0.9em; margin-bottom: 6px; line-height: 1.3;">
@@ -107,7 +107,7 @@ dv.el("div", `
                 ${p["project name"]}
               </a>
             </div>
-            
+
             <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 0.75em; color: var(--text-muted);">
               ${fee ? `<span style="background: var(--background-modifier-border); padding: 2px 6px; border-radius: 4px;">$${fee}</span>` : ''}
               ${dueDate ? `
@@ -134,14 +134,14 @@ const needsInvoice = allProjects.filter(p => p.PO && p.status === "PO Received")
 
 if (awaitingPO.length > 0 || needsInvoice.length > 0) {
   dv.header(3, "⚡ Quick Actions");
-  
+
   if (awaitingPO.length > 0) {
     dv.el("div", `<div style="background: #FEF3C7; border-left: 3px solid #F59E0B; padding: 12px; border-radius: 6px; margin-bottom: 12px;">
       <div style="font-weight: 600; margin-bottom: 6px;">📤 ${awaitingPO.length} project(s) awaiting PO</div>
       ${awaitingPO.map(p => `<div style="font-size: 0.9em; margin-left: 8px;">• ${p.file.link}</div>`).join('')}
     </div>`);
   }
-  
+
   if (needsInvoice.length > 0) {
     dv.el("div", `<div style="background: #DBEAFE; border-left: 3px solid #3B82F6; padding: 12px; border-radius: 6px; margin-bottom: 12px;">
       <div style="font-weight: 600; margin-bottom: 6px;">💰 ${needsInvoice.length} project(s) ready to invoice</div>

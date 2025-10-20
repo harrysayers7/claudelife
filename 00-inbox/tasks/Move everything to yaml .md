@@ -118,5 +118,3 @@ Store richer text in a details: key if you still want full sentences — YAML ca
 
 
 ---
-
-

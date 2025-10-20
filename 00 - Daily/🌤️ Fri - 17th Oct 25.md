@@ -118,7 +118,7 @@ if (upcomingEvents.length > 0) {
 
 ### 🧠 Notes
 
- Yeah, so I spent most of the day trying to set up Claude Life. I added a bunch of new features. I feel like I probably shouldn't have spent all day doing it and maybe should have studied a bit, but what can you do?  Trying to build a Supabase UI.  I spoke to Jack earlier today. We're going to have a meeting next week with our mokai accountant and go over how we should set up the trust. He did recommend a particular structuring as we may need to ensure we're heavily protected because we'll be dealing with such big sums of money. 
+ Yeah, so I spent most of the day trying to set up Claude Life. I added a bunch of new features. I feel like I probably shouldn't have spent all day doing it and maybe should have studied a bit, but what can you do?  Trying to build a Supabase UI.  I spoke to Jack earlier today. We're going to have a meeting next week with our mokai accountant and go over how we should set up the trust. He did recommend a particular structuring as we may need to ensure we're heavily protected because we'll be dealing with such big sums of money.
 ## Index
 
 - [[01-areas/business/mokai/INDEX|Mokai]]

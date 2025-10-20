@@ -15,4 +15,4 @@ ai-ignore: false
 priority:
 agent:
 ---
-Obviously, Claude Code doesn't know some things that might be sensitive, so we need to list them. 
+Obviously, Claude Code doesn't know some things that might be sensitive, so we need to list them.

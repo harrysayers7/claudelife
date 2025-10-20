@@ -426,4 +426,3 @@ In summary, evaluation is multi-faceted: a mix of quantitative performance metri
 ---
 
 Sources: The design choices above are informed by best practices and data from crypto launchpads and Neo Tokyo’s community: for instance, institutional research rubrics weighing tokenomics and team heavily, common crypto investment red flags, the success metrics of Seedify’s IDOs (average ROIs and top performers like THE P33L at 33×), and the context of Citizen Capital’s approach within Neo Tokyo. This ensures the agent’s framework is grounded in real-world crypto investment experience and quantitative outcomes.
-

@@ -38,19 +38,19 @@ Optional sixth agent for larger automation setups:
 
 ### How They Interact
 - The **main Claude (or an Orchestrator agent)** delegates based on intent detection:
-  - Strategic inquiries → Strategist  
-  - Financial metrics → Controller  
-  - Compliance/tender specifics → Compliance or Engagement Manager  
-  - Routine or operational summaries → Operations Coordinator  
+  - Strategic inquiries → Strategist
+  - Financial metrics → Controller
+  - Compliance/tender specifics → Compliance or Engagement Manager
+  - Routine or operational summaries → Operations Coordinator
 - Each sub-agent summarizes its result back into a common “MOKAI Dashboard Update” format for context continuity[2][3].
 
 ### Why Five Is Optimal
-- Mirrors real business departments (strategy, finance, compliance, delivery, operations).  
-- Preserves clear context isolation and reduces prompt length.  
-- Enables targeted system prompt tuning and tool permissions per area.  
+- Mirrors real business departments (strategy, finance, compliance, delivery, operations).
+- Preserves clear context isolation and reduces prompt length.
+- Enables targeted system prompt tuning and tool permissions per area.
 - Allows parallel agent orchestration for complex tasks like tender analysis (e.g., Accountant + Compliance + Strategist working together).
 
-In summary:  
+In summary:
 The **ideal split is 5 sub-agents**, with a **central orchestrator** coordinating their interactions. This setup maximizes modularity, minimizes context conflicts, and scales seamlessly with future automation or command expansion.
 
 Citations:

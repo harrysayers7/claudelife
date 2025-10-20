@@ -19,7 +19,7 @@ priority:
 agent:
 slash-command:
 date created: Mon, 10 20th 25, 5:50:12 am
-date modified: Mon, 10 20th 25, 8:16:40 am
+date modified: Mon, 10 20th 25, 8:26:12 am
 tags:
 ---
 This file is intended to show my network in the creative industry but more so in the music industry
@@ -58,12 +58,11 @@ https://themarkagency.com.au/
 ### Electric Sheep Music
 
 
-### artist from the industry 
+### artist from the industry
 
 
 
 ### Chris Paget
 * Production Management * Technical Management & Directior * Tour Management & Logistics * Event & Project Management
 
-Chris was SAFIA's tour manager for many years and we established a strong friendship 
-
+Chris was SAFIA's tour manager for many years and we established a strong friendship
