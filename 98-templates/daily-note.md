@@ -296,6 +296,85 @@ if (activeProjects.length > 0) {
 
 
 
+<details>
+<summary>📅 Monthly Calendar</summary>
+
+```dataviewjs
+// Get current date
+const now = dv.date('today');
+const currentMonth = now.month;
+const currentYear = now.year;
+const today = now.day;
+
+// Get first day of month and total days
+const firstDay = dv.date(`${currentYear}-${String(currentMonth).padStart(2, '0')}-01`);
+const lastDay = firstDay.plus({ months: 1 }).minus({ days: 1 });
+const daysInMonth = lastDay.day;
+const startDayOfWeek = firstDay.weekday; // 1 = Monday, 7 = Sunday
+
+// Month name
+const monthName = firstDay.toFormat('MMMM yyyy');
+
+// Create calendar HTML
+let calendarHTML = `
+<div style="font-family: monospace; text-align: center; margin: 20px 0;">
+  <h3>${monthName}</h3>
+  <table style="width: 100%; border-collapse: collapse; margin: 10px auto;">
+    <thead>
+      <tr style="background-color: var(--background-modifier-border);">
+        <th style="padding: 8px; text-align: center;">Mon</th>
+        <th style="padding: 8px; text-align: center;">Tue</th>
+        <th style="padding: 8px; text-align: center;">Wed</th>
+        <th style="padding: 8px; text-align: center;">Thu</th>
+        <th style="padding: 8px; text-align: center;">Fri</th>
+        <th style="padding: 8px; text-align: center;">Sat</th>
+        <th style="padding: 8px; text-align: center;">Sun</th>
+      </tr>
+    </thead>
+    <tbody>
+`;
+
+let dayCounter = 1;
+let currentWeek = [];
+
+// Fill first week with empty cells before month starts
+for (let i = 1; i < startDayOfWeek; i++) {
+  currentWeek.push('<td style="padding: 8px;"></td>');
+}
+
+// Fill in the days of the month
+for (let day = 1; day <= daysInMonth; day++) {
+  const isToday = day === today;
+  const cellStyle = isToday
+    ? 'padding: 8px; text-align: center; background-color: var(--interactive-accent); color: var(--text-on-accent); font-weight: bold; border-radius: 4px;'
+    : 'padding: 8px; text-align: center;';
+
+  currentWeek.push(`<td style="${cellStyle}">${day}</td>`);
+
+  // End of week (Sunday) or last day of month
+  if (currentWeek.length === 7 || day === daysInMonth) {
+    // Fill remaining cells in last week
+    while (currentWeek.length < 7) {
+      currentWeek.push('<td style="padding: 8px;"></td>');
+    }
+
+    calendarHTML += '<tr>' + currentWeek.join('') + '</tr>';
+    currentWeek = [];
+  }
+}
+
+calendarHTML += `
+    </tbody>
+  </table>
+</div>
+`;
+
+// Render the calendar
+dv.el('div', calendarHTML);
+```
+
+</details>
+
 ## Index
 
 - [[01-areas/business/mokai/INDEX|Mokai]]

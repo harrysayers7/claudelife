@@ -1,5 +1,5 @@
 ---
-Done: false
+Done: true
 today: true
 follow up: false
 this week: false
@@ -18,3 +18,6 @@ agent:
 slash-command:
 urgent: false
 ---
+Add a collapsable monthly view calendar in the daily note template in 98-templates. Using DataView JS, if that's possible. i
+
+Place this below the notes above the index section.
