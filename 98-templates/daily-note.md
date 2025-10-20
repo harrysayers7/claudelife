@@ -296,79 +296,118 @@ if (activeProjects.length > 0) {
 
 
 
->[!info]- 📅 Monthly Calendar
+>[!info]- 📅 This Month's Events
 >```dataviewjs
->// Get current date
->const now = dv.date('today');
->const currentMonth = now.month;
->const currentYear = now.year;
->const today = now.day;
+>// Get today's date and date 30 days from now
+>const today = dv.date('today');
+>const nextMonth = today.plus({ days: 30 });
 >
->// Get first day of month and total days
->const firstDay = dv.date(`${currentYear}-${String(currentMonth).padStart(2, '0')}-01`);
->const lastDay = firstDay.plus({ months: 1 }).minus({ days: 1 });
->const daysInMonth = lastDay.day;
->const startDayOfWeek = firstDay.weekday; // 1 = Monday, 7 = Sunday
+>// Helper function to check if event occurs on a specific date
+>function occursOn(event, checkDate) {
+>  const startDate = dv.date(event.when);
+>  if (!startDate) return false;
 >
->// Month name
->const monthName = firstDay.toFormat('MMMM yyyy');
+>  const checkDateStr = checkDate.toFormat('yyyy-MM-dd');
+>  const startDateStr = startDate.toFormat('yyyy-MM-dd');
 >
->// Create calendar HTML
->let calendarHTML = `
-><div style="font-family: monospace; text-align: center; margin: 20px 0;">
->  <h3>${monthName}</h3>
->  <table style="width: 100%; border-collapse: collapse; margin: 10px auto;">
->    <thead>
->      <tr style="background-color: var(--background-modifier-border);">
->        <th style="padding: 8px; text-align: center;">Mon</th>
->        <th style="padding: 8px; text-align: center;">Tue</th>
->        <th style="padding: 8px; text-align: center;">Wed</th>
->        <th style="padding: 8px; text-align: center;">Thu</th>
->        <th style="padding: 8px; text-align: center;">Fri</th>
->        <th style="padding: 8px; text-align: center;">Sat</th>
->        <th style="padding: 8px; text-align: center;">Sun</th>
->      </tr>
->    </thead>
->    <tbody>
->`;
->
->let dayCounter = 1;
->let currentWeek = [];
->
->// Fill first week with empty cells before month starts
->for (let i = 1; i < startDayOfWeek; i++) {
->  currentWeek.push('<td style="padding: 8px;"></td>');
->}
->
->// Fill in the days of the month
->for (let day = 1; day <= daysInMonth; day++) {
->  const isToday = day === today;
->  const cellStyle = isToday
->    ? 'padding: 8px; text-align: center; background-color: var(--interactive-accent); color: var(--text-on-accent); font-weight: bold; border-radius: 4px;'
->    : 'padding: 8px; text-align: center;';
->
->  currentWeek.push(`<td style="${cellStyle}">${day}</td>`);
->
->  // End of week (Sunday) or last day of month
->  if (currentWeek.length === 7 || day === daysInMonth) {
->    // Fill remaining cells in last week
->    while (currentWeek.length < 7) {
->      currentWeek.push('<td style="padding: 8px;"></td>');
+>  // Extract recurrence pattern from checkbox list
+>  let recurrencePattern = null;
+>  if (event.recurrence) {
+>    if (Array.isArray(event.recurrence)) {
+>      // Checkbox list format: find the checked item
+>      for (let item of event.recurrence) {
+>        const itemStr = String(item).trim();
+>        if (itemStr.match(/^\[x\]/i)) {
+>          // Extract pattern after [x] checkbox
+>          recurrencePattern = itemStr.replace(/^\[x\]\s*/i, '').trim().toLowerCase();
+>          break;
+>        }
+>      }
+>    } else {
+>      // String format (backwards compatibility)
+>      recurrencePattern = String(event.recurrence).toLowerCase();
 >    }
+>  }
 >
->    calendarHTML += '<tr>' + currentWeek.join('') + '</tr>';
->    currentWeek = [];
+>  // Non-recurring: direct date match
+>  if (!recurrencePattern) {
+>    return startDateStr === checkDateStr;
+>  }
+>
+>  // Recurring: check if date falls on recurrence pattern
+>  if (checkDate < startDate) return false;
+>
+>  if (event.recurrence_end) {
+>    const endDate = dv.date(event.recurrence_end);
+>    if (checkDate > endDate) return false;
+>  }
+>
+>  const daysDiff = Math.floor((checkDate - startDate) / (1000 * 60 * 60 * 24));
+>
+>  switch(recurrencePattern) {
+>    case 'daily':
+>      return true;
+>    case 'weekly':
+>      return daysDiff % 7 === 0;
+>    case 'biweekly':
+>      return daysDiff % 14 === 0;
+>    case 'monthly':
+>      return startDate.day === checkDate.day;
+>    case 'yearly':
+>      return startDate.month === checkDate.month && startDate.day === checkDate.day;
+>    default:
+>      return false;
 >  }
 >}
 >
->calendarHTML += `
->    </tbody>
->  </table>
-></div>
->`;
+>// Filter for event files
+>const allEvents = dv.pages()
+>  .where(p => {
+>    if (!p.type) return false;
+>    const typeStr = Array.isArray(p.type) ? p.type.join(' ') : String(p.type);
+>    return typeStr.toLowerCase().includes("event");
+>  })
+>  .where(p => p.when);
 >
->// Render the calendar
->dv.el('div', calendarHTML);
+>// Generate occurrences for the next 30 days
+>const upcomingOccurrences = [];
+>for (let i = 1; i <= 30; i++) {
+>  const checkDate = today.plus({ days: i });
+>
+>  allEvents.forEach(event => {
+>    if (occursOn(event, checkDate)) {
+>      upcomingOccurrences.push({
+>        event: event,
+>        date: checkDate
+>      });
+>    }
+>  });
+>}
+>
+>// Sort by date, then time
+>upcomingOccurrences.sort((a, b) => {
+>  const dateDiff = a.date - b.date;
+>  if (dateDiff !== 0) return dateDiff;
+>
+>  const aTime = a.event.time || "";
+>  const bTime = b.event.time || "";
+>  return aTime.localeCompare(bTime);
+>});
+>
+>// Display upcoming events table
+>if (upcomingOccurrences.length > 0) {
+>  dv.table(
+>    ["Event", "Date", "Time", "Note"],
+>    upcomingOccurrences.map(occ => [
+>      occ.event.file.link,
+>      occ.date.toFormat('EEE, MMM dd'), // "Mon, Oct 21"
+>      occ.event.time || "",
+>      occ.event.note || ""
+>    ])
+>  );
+>} else {
+>  dv.paragraph("*No events scheduled for the next 30 days*");
+>}
 >```
 
 ## Index
