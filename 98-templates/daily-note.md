@@ -132,6 +132,39 @@ if (events.length > 0) {
   dv.paragraph("*No events scheduled for today*");
 }
 ```
+---
+## 📋 This Week's Tasks
+
+```dataviewjs
+// Get tasks for this week that aren't done
+const pages = dv.pages()
+  .where(p => p["this week"] && !p.Done)
+  .sort(p => p.file.ctime, 'desc');
+
+// Create table with checkbox in first column
+dv.table(
+  ["✓", "Task", "Description"],
+  pages.map(p => {
+    const checkbox = dv.el('input', '', {
+      attr: { type: 'checkbox' },
+      cls: 'task-checkbox'
+    });
+
+    checkbox.onclick = async () => {
+      const file = app.vault.getAbstractFileByPath(p.file.path);
+      await app.fileManager.processFrontMatter(file, (fm) => {
+        fm.Done = true;
+      });
+    };
+
+    return [
+      checkbox,
+      p.file.link,
+      p.description || ""
+    ];
+  })
+);
+```
 
 ## 📆 This Week's Events
 
