@@ -1,7 +1,11 @@
 ---
+tags: [resources, guides, documentation]
+relation:
+  - "[[resources]]"
+  - "[[resources]]"
 date: 2025-10-13 17:30
 date created: Tue, 10 14th 25, 4:45:52 pm
-date modified: Mon, 10 20th 25, 6:30:00 am
+date modified: Mon, 10 20th 25, 2:30:00 pm
 aliases:
   - Commands
 ---
@@ -23,6 +27,7 @@ Comprehensive reference for all custom slash commands in the claudelife project.
 - [[#/bmad|/bmad]]
 - [[#/tag-keyword-DR-extractor|/tag-keyword-DR-extractor]]
 - [[#/document-system|/document-system]]
+- [[#/mokhouse-master|/mokhouse-master]]
 - [[#/mokhouse-project|/mokhouse-project]]
 - [[#/mokhouse-create-project|/mokhouse-create-project]]
 - [[#/mokhouse-update-status|/mokhouse-update-status]]
@@ -59,6 +64,7 @@ Comprehensive reference for all custom slash commands in the claudelife project.
 - [[#/master-supabase|/master-supabase]]
 - [[#/network-add|/network-add]]
 - [[#/vault-add|/vault-add]]
+- [[#/create-skill|/create-skill]]
 
 ---
 
@@ -322,6 +328,21 @@ Use after completing major features, MCP servers, automations, or integration pr
 
 **Usage**: `/document-system "[system name]" [--path=custom/path] [--update]`
 **File**: `.claude/commands/report/document-system.md`
+
+---
+
+### /mokhouse-master
+**Created**: 2025-10-18 19:30 | **Updated**: 2025-10-20 (Two-tier model)
+
+##### What it does:
+Loads essential MOK HOUSE business context into the conversation for intelligent creative business assistance. Establishes two-tier business model (Direct Delivery + Marketplace Facilitation), queries Graphiti for client/project data, reads dashboard for financials, and maps knowledge sources for smart routing. Enables automatic knowledge capture during conversations. **Updated Oct 2025**: Now reflects strategic shift to creative compliance infrastructure with 15-20% facilitation model.
+
+##### When to use it:
+Use at start of MOK HOUSE sessions for business discussions, client work, financial planning, or strategic decisions. Loads Tier 1 (premium creative delivery) and Tier 2 (contractor facilitation network) context. Run `--refresh` to update current state after wins/payments.
+
+**Usage**: `/mokhouse-master` or `/mokhouse-master --refresh`
+**File**: `.claude/commands/mokhouse-master.md`
+**Business Model**: Two-tier revenue (Direct 60-80% margin, Facilitation 15-20% margin)
 
 ---
 
@@ -942,17 +963,35 @@ Use when adding new contacts (business partners, clients, collaborators, vendors
 
 ### /vault-add
 **Created**: 2025-10-20 07:20
+**Updated**: 2025-10-20 11:50
 
 ##### What it does:
-Creates secure vault entries for frequently-referenced information in `04-resources/vault/{entity}/`. Stores both reference info (bank details, ABN, ID numbers) and sensitive credentials (API keys, passwords, tokens) with automatic .gitignore protection. Generates structured markdown with YAML frontmatter (type: vault, entity relation, sensitivity level, category). Supports flexible input: quick description, structured data, or conversation context reference.
+Creates secure vault entries with queryable structured data in `04-resources/vault/{entity}/`. Stores reference info (bank details, ABN, ID numbers) and sensitive credentials (API keys, passwords, tokens) with automatic .gitignore protection. Generates entity-specific filenames (e.g., "MOK HOUSE Bank Account.md") and YAML frontmatter with structured data fields (abn, acn, account_number, bsb, etc.) for Obsidian Dataview/database views. Supports flexible input: quick description, structured data, or conversation context.
 
 ##### When to use it:
-Use when storing information you frequently search for: bank account details, tax identifiers (ABN/ACN), API credentials, passwords, license keys, insurance policy numbers. Organizes by entity (MOKAI/MOK HOUSE/Personal) for easy filtering. Automatically protects sensitive items with .gitignore while keeping reference info accessible. Eliminates hunting through emails, dashboards, or documents for critical details.
+Use when storing frequently-searched information: bank account details, tax identifiers (ABN/ACN), API credentials, passwords, license keys. Creates queryable vault entries with structured frontmatter data for database views. Ensures entity-specific filenames for clarity across multiple businesses. Automatically protects sensitive items with .gitignore while keeping reference info accessible and queryable.
 
 **Usage**: `/vault-add "description or structured data"`
 **File**: `.claude/commands/vault-add.md`
 **Template**: `98-templates/vault.md`
 **Storage**: `04-resources/vault/{mokai|mokhouse|personal}/`
+**Naming**: Entity-specific (e.g., "MOK HOUSE Tax Identifiers.md")
 **Security**: Auto-.gitignore for `sensitive: true` items
+
+---
+
+### /create-skill
+**Created**: 2025-10-21 17:45
+
+##### What it does:
+Interactive skill creation wizard for Claude Code Skills. Guides you through defining skill metadata (name max 64 chars, description max 1024 chars with trigger words), structuring SKILL.md with progressive disclosure patterns, organizing reference files, creating executable scripts with error handling, and implementing workflows with feedback loops. Ensures skills follow Anthropic best practices: concise instructions, appropriate degrees of freedom (high/medium/low), third-person descriptions, and proper file organization. Outputs production-ready skill directories with YAML frontmatter and structured markdown.
+
+##### When to use it:
+Use when creating new Claude Code Skills for automation, complex workflows, or specialized tasks. The wizard ensures proper skill architecture with progressive disclosure (core instructions + optional detail levels), workflow patterns with checklists, feedback loops (validate → fix → repeat), and testing strategies. Creates skills that are discoverable, maintainable, and follow official Anthropic guidelines. Supports template-based patterns, conditional workflows, and script integration.
+
+**Usage**: `/create-skill "description"` or `/create-skill` (interactive)
+**File**: `.claude/commands/create-skill.md`
+**Reference**: `04-resources/research/SKILLz.md` (Anthropic documentation)
+**Output**: `.claude/skills/{skill-name}/` (SKILL.md + optional reference.md + scripts/)
 
 ---
