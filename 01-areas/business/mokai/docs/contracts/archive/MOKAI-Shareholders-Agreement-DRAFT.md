@@ -1,4 +1,6 @@
 ---
+relation:
+  - "[[mokai]]"
 tags:
   - mokai
   - contracts

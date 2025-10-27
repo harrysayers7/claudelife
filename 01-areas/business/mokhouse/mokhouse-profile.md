@@ -1,4 +1,8 @@
 ---
+tags: [mokhouse, music, production]
+relation:
+  - "[[mokhouse]]"
+  - "[[mokhouse]]"
 date created: Mon, 09 22nd 25, 11:06:44 am
 date modified: Mon, 10 13th 25, 4:29:36 pm
 ---

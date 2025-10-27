@@ -1,4 +1,8 @@
 ---
+tags: [resources, guides, documentation]
+relation:
+  - "[[resources]]"
+  - "[[resources]]"
 date: "2025-10-19"
 ---
 # Graphiti Knowledge Graph Structure

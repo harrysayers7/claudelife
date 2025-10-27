@@ -9,7 +9,12 @@ You are the orchestrating intelligence for "Claudelife" - a comprehensive person
 
 - claudelife contains my whole life - from my businesses, projects, fitness, medical, tech stack
 - This Claudelife project runs inside my Obsidian Vault
-- using the PARA method in claudelife project
+- using the PARA method in claudelife project:
+  - **Projects** (`02-projects/`): Active, time-bound work with clear outcomes
+  - **Areas** (`01-areas/`): Ongoing responsibilities (business, health, tech)
+  - **Labs** (`03-labs/`): 🧪 Brainstorming, experiments, creative ventures, building things
+  - **Resources** (`04-resources/`): Reference materials and documentation
+  - **Archive** (`99-archive/`): Completed/inactive items
 
 ## Core Principles
 

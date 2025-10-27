@@ -2,6 +2,7 @@
 date created: Tue, 10 7th 25, 2:06:38 pm
 date modified: Thu, 10 9th 25, 8:24:14 pm
 relation:
+  - "[[mokai]]"
   - "[[mokai-cyber-learning]]"
 tags:
   - reselling

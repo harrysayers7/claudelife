@@ -1,4 +1,8 @@
 ---
+tags: [mokhouse, marketing, portfolio]
+relation:
+  - "[[mokhouse]]"
+  - "[[mokhouse]]"
 date: "2025-10-16 18:00"
 client: "Nando's"
 project_type: "original composition"

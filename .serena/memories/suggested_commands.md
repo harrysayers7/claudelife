@@ -10,6 +10,25 @@
 - Slash command purposes (`/mokai-status`, `/mokai-weekly`, `/mokai-insights`, `/mokai-dump`)
 - Tracking system concepts (same-day re-reading, deduplication, fuzzy matching)
 
+## Claude Code Skills
+
+### brainstorming
+**Location**: `.claude/skills/brainstorming/SKILL.md`
+**Source**: [obra/superpowers](https://github.com/obra/superpowers/tree/main/skills/brainstorming)
+
+Transform rough ideas into fully-formed designs through structured Socratic questioning.
+
+**When to use**:
+- Before writing code or implementation plans
+- When exploring different architectural approaches
+- When you need to validate a design incrementally
+
+**Invoke with**: `Skill({ command: "brainstorming" })`
+
+**Process**: Understanding → Exploration (2-3 approaches) → Design Presentation → Documentation → Worktree Setup → Planning Handoff
+
+**See**: `/04-resources/guides/skills/claudelife-skills-guide.md` for full documentation
+
 ## Task Management
 - `task-master list` - View all tasks with status
 - `task-master next` - Get next available task to work on
@@ -184,7 +203,7 @@
   - Creates 3 catchy tagline options and 3 complete project description drafts (technical, creative, impact angles)
   - Interactive refinement with multiple options before finalizing
   - Saves to `01-areas/business/mokhouse/website/project-blurbs/[project-name]-blurb.md`
-  - Automatically logs creation in `context-mokhouse.md` with date, client, and file link
+  - Automatically logs creation in `CLAUDE.md` with date, client, and file link
   - Maintains third-person perspective and impact-focused tone
   - Includes properly formatted "Appreciation" credits section
   - Example: `/mokhouse-portfolio-blurb "Just finished Repco sonic branding - 100-year campaign"`

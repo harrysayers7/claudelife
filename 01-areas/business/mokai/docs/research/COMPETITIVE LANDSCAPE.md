@@ -3,6 +3,7 @@ type:
   - reference
 relation:
   - "[[mokai]]"
+  - "[[mokai]]"
 tags:
   - cybersecurity
   - government

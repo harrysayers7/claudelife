@@ -1,6 +1,8 @@
 ---
+tags: [mokai, business]
 type: index
 relation:
+  - "[[mokai]]"
 aliases:
   - Mokai
 date created: Thu, 10 16th 25, 8:43:07 am

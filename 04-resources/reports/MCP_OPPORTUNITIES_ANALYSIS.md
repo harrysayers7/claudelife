@@ -15,6 +15,10 @@ This document analyzes the claudelife repository to identify FastMCP API opportu
 - **mindsdb** (port 47334) - ML inference engine for predictions
 
 ---
+tags: [resources, reference]
+relation:
+  - "[[resources]]"
+  - "[[resources]]"
 
 ## Opportunity Inventory
 

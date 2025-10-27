@@ -4,6 +4,10 @@
 > Your complete financial database for tracking invoices, payments, and business operations across multiple entities (Harrison Sayers, MOKAI, Mok House) with automated categorization and ML-powered insights.
 
 ---
+tags: [resources, guides, documentation]
+relation:
+  - "[[resources]]"
+  - "[[resources]]"
 
 ## Quick Overview
 

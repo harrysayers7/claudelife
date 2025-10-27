@@ -4,7 +4,7 @@ relation:
 type: project
 project name: Nintendo - EM
 customer: Electric Sheep Music
-status: Brief Received
+status: Submitted
 demo fee: 650
 award fee: 3250
 due date: 2025-10-30
@@ -13,7 +13,7 @@ internal review: 2025-10-22
 Date Paid: ""
 PO: ""
 "Invoice #": ""
-submitted date: ""
+submitted date: 2025-10-22
 paid: false
 awarded: false
 APRA: false

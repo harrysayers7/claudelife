@@ -1,6 +1,8 @@
 ---
+type: context
 date: 2025-09-30T06:23:00
 relation:
+  - "[[tech]]"
   - "[[97-tags/context]]"
   - "[[memory]]"
 tags:

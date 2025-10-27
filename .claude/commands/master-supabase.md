@@ -68,12 +68,15 @@ I'll read existing documentation to understand the **why** behind your Supabase 
 ```javascript
 // Read purpose documentation
 Read("context/finance/database/supabase-purpose.md")
-Read("context/finance/database/supabase-schema.md")
+Read("context/finance/database/supabase-table-business-map.md")
 Read("context/finance/database/supabase-ml-pipeline.md")
 ```
 
 This tells me:
 - What data domains are stored (financial, business entities, etc.)
+- **Business context for each table** (which invoices are MOK HOUSE vs Harrison, what personal_transactions represents)
+- Entity UUID mapping (Harrison, MOK HOUSE, MOKAI with their ABNs)
+- Project attribution (DiDi, Repco, Nintendo projects)
 - How data flows through the system (UpBank sync → Supabase → ML processing)
 - Integration points (n8n workflows, FastAPI endpoints, Notion sync)
 
@@ -320,7 +323,7 @@ After this command, you should be able to say:
 ## Related Resources
 
 - Supabase documentation: `context/finance/database/supabase-purpose.md`
-- Schema overview: `context/finance/database/supabase-schema.md`
+- Table business context: `context/finance/database/supabase-table-business-map.md`
 - ML pipeline: `context/finance/database/supabase-ml-pipeline.md`
 - MCP configuration: `.mcp.json` (server: supabase)
 - Sync scripts: `scripts/sync-supabase-context.js`, `scripts/sync-supabase-notion.py`

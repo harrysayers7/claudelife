@@ -1,4 +1,7 @@
 ---
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 type: flash-card
 tags:
   - financial-business-development-flashcards

@@ -15,6 +15,10 @@ Automation delivery (n8n/Make) and foundations for future SaaS
 
 
 ---
+tags: [mokai, learning, business-development]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 
 Beginner
 

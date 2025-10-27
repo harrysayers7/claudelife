@@ -2,6 +2,7 @@
 type: Research Prompt
 relation:
   - "[[mokai]]"
+  - "[[mokai]]"
 tags:
   - research-prompt
   - contractor-network

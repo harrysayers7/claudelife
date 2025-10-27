@@ -314,6 +314,10 @@ This memory system implements the restructuring specified in Linear issue SAY-84
 **Linear update**: Memory system complete, ready for production use.
 
 ---
+tags: [resources, guides, documentation]
+relation:
+  - "[[resources]]"
+  - "[[resources]]"
 
 **Last Updated**: 2025-09-24
 **Maintenance Schedule**: Weekly (Sunday 2 AM)

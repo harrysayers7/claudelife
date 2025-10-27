@@ -5,7 +5,7 @@ relation:
   - "[[resources]]"
 date: 2025-10-13 17:30
 date created: Tue, 10 14th 25, 4:45:52 pm
-date modified: Mon, 10 20th 25, 2:30:00 pm
+date modified: Tue, 10 21st 25, 9:38:24 pm
 aliases:
   - Commands
 ---
@@ -609,18 +609,18 @@ Use when you want to complete a specific task from your inbox immediately. Simpl
 ## Task Management Commands
 
 ### /janitor
-**Created**: 2025-10-15 04:12 | **Updated**: 2025-10-18 07:45 (v2.0: MOK HOUSE operations)
+**Created**: 2025-10-15 04:12 | **Updated**: 2025-10-22 06:30 (v3.1: INDEX.md maintenance)
 
 ##### What it does:
-Master maintenance command cleaning the entire claudelife system. **PART A (Vault)**: Uses `scan-archive-candidates.sh` for instant scanning (<1 second), archives completed files to `/99-archive`, purges files older than 30 days. **PART B (MOK HOUSE)**: Syncs Supabase invoices with Obsidian projects, flags invoices marked [paid] in Supabase but missing in Stripe, extracts delivery date updates from Kate/Glenn emails via Gmail MCP (requires confirmation), creates inbox tasks from relevant non-project MOK HOUSE emails with [[mokhouse]] relation. **Runtime**: ~20-35 seconds total.
+Master maintenance command cleaning the entire claudelife system. **PART A (Vault)**: Uses `scan-archive-candidates.sh` for instant scanning (<1 second), archives completed files to `/99-archive`, purges files older than 30 days. **PART B (MOK HOUSE)**: Syncs Supabase invoices with Obsidian projects, flags invoices marked [paid] in Supabase but missing in Stripe, extracts delivery date updates from Kate/Glenn emails via Gmail MCP (requires confirmation), creates inbox tasks from relevant non-project MOK HOUSE emails with [[mokhouse]] relation. **PART C (Frontmatter)**: Validates relations/tags in 01-areas/, 02-projects/, 03-labs/, 04-resources/, infers intelligent tags from content, fixes malformed frontmatter. **NEW - Phase 9.8 (INDEX.md)**: Recursively scans for INDEX.md files across all PARA directories, detects outdated indexes (structure changes, file count mismatches), regenerates with current directory structure while preserving custom sections. **Runtime**: ~30-50 seconds total.
 
 ##### When to use it:
-Use periodically to maintain vault cleanliness and ensure MOK HOUSE business data stays synchronized across systems (Obsidian, Supabase, Stripe). Runs on-demand for manual control. Vault cleanup <1 second, business operations 15-30 seconds. Preview vault changes with `npm run scan-archive`. Gmail updates always require confirmation before applying. Invoice sync identifies discrepancies without modifying files. Future: Can add scheduled automation.
+Use periodically to maintain vault cleanliness, ensure MOK HOUSE business data stays synchronized across systems (Obsidian, Supabase, Stripe), validate frontmatter consistency, and keep INDEX.md files up-to-date with directory changes. Runs on-demand for manual control. Preview vault changes with `npm run scan-archive` or frontmatter issues with `npm run scan-frontmatter`. Gmail updates and INDEX.md regeneration always require confirmation before applying. Invoice sync identifies discrepancies without modifying files. INDEX.md maintenance automatically detects structure changes and suggests regeneration.
 
 **Usage**: `/janitor`
-**Pre-scan**: `npm run scan-archive` (vault preview only)
+**Pre-scan**: `npm run scan-archive` (vault preview), `npm run scan-frontmatter` (frontmatter preview)
 **File**: `.claude/commands/janitor.md`
-**Script**: `scripts/scan-archive-candidates.sh` (vault cleanup)
+**Scripts**: `scripts/scan-archive-candidates.sh`, `scripts/scan-frontmatter-issues.sh`
 **MCPs**: Supabase, Stripe, Gmail, Serena
 
 ---
@@ -725,21 +725,21 @@ Use when you want to manually capture important information into the knowledge g
 ---
 
 ### /create-event
-**Created**: 2025-10-17 16:30 | **Updated**: 2025-10-17 20:15 (checkbox format with DataviewJS parsing)
+**Created**: 2025-10-17 16:30 | **Updated**: 2025-10-25 10:30 (all-at-once prompt format)
 
 ##### What it does:
-Creates structured event files with **automatic emoji prefix detection** (21 categories) and **checkbox-based recurring event support**. Analyzes title, category, relation, and note fields to intelligently prefix events with appropriate emojis (⛰️ MOKAI, 🎹 Mok House, 🏥 Medical, 📅 Holidays, etc.). Interactive prompts for date, time, **checkbox recurrence pattern** (check one: daily/weekly/biweekly/monthly/yearly), category, and validated relation tags. **One file creates multiple occurrences** - no duplicate markdown files needed. Events auto-save to `00-inbox/events/` with YAML-safe wikilinks and appear in daily notes when they occur.
+Creates structured event files with **automatic emoji prefix detection** (21 categories) and **recurring event support**. Asks for all event details at once (title, date, time, recurrence, category, relation, note, description) in a single prompt. Analyzes fields to intelligently prefix events with appropriate emojis (⛰️ MOKAI, 🎹 Mok House, 🏥 Medical, 📅 Holidays, etc.). **One file creates multiple occurrences** - no duplicate markdown files needed. Events auto-save to `00-inbox/events/` with YAML-safe wikilinks and appear in daily notes when they occur.
 
 ##### When to use it:
-Use for scheduling any dated event - appointments, meetings, deadlines. Emoji prefixes add visual categorization automatically (e.g., "Doctor Appointment" → "🏥 Doctor Appointment"). **Perfect for recurring events** like weekly meetings, monthly invoices, yearly birthdays - one file handles all occurrences. Checkbox format eliminates typing (just check the box). Supports all-day events, business relations, optional notes, and detailed descriptions for complex events. DataviewJS automatically extracts checked pattern and generates occurrences based on recurrence pattern and end date.
+Use for scheduling any dated event - appointments, meetings, deadlines. Emoji prefixes add visual categorization automatically (e.g., "Doctor Appointment" → "🏥 Doctor Appointment"). **Perfect for recurring events** like weekly meetings, monthly invoices, yearly birthdays - one file handles all occurrences. All-at-once prompt format saves time by gathering all details in a single ask. Supports all-day events, business relations, optional notes, and detailed descriptions for complex events. Validates relation tags against existing areas.
 
-**Usage**: `/create-event`
+**Usage**: `/create-event` (asks all questions at once)
 **File**: `.claude/commands/create-event.md`
 **Emoji Mappings**: `00-inbox/Calendar emojis.md` (21 categories)
 **Template**: `98-templates/event.md`
 **Output**: `00-inbox/events/[Emoji] [Event Name].md`
-**Integration**: Daily notes "Today's Events" and "This Week's Events" tables (DataviewJS parses [x] markers for recurrence)
-**Recurrence Format**: Checkbox list - check one pattern (daily/weekly/biweekly/monthly/yearly) with optional end date
+**Integration**: Daily notes "Today's Events" and "This Week's Events" tables (DataviewJS calculates recurrence)
+**Recurrence Format**: String values (daily, weekly, biweekly, monthly, yearly) with optional end date
 
 ---
 

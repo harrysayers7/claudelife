@@ -3,6 +3,7 @@ tags:
 description:
 date: 2025-09-29 15:54
 relation:
+  - "[[mokai]]"
   - "[[mokai-contracts]]"
   - "[[mokai]]"
   - "[[contracts]]"

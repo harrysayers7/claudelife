@@ -1,4 +1,8 @@
 ---
+tags: [resources, reference]
+relation:
+  - "[[resources]]"
+  - "[[resources]]"
 date: "2025-10-20 08:45"
 issue-id: issue-002
 category: mcp-server

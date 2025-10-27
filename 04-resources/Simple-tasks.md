@@ -2,6 +2,10 @@ Here’s a clear summary of How to Take Smart Notes by Sönke Ahrens:
 
 
 ---
+tags: [resources, reference]
+relation:
+  - "[[resources]]"
+  - "[[resources]]"
 
 🎯 Core Idea
 

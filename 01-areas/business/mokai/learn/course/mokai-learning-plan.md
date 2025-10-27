@@ -1,4 +1,8 @@
 ---
+tags: [mokai, learning, business-development]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 aliases:
 ---
 # Mokai Technologies Mastery Learning Plan

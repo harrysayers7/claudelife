@@ -25,6 +25,7 @@ claudelife/
 │   ├── business/mokhouse/   # MOK HOUSE music production
 │   └── p-dev/               # Personal development
 ├── 02-projects/             # Time-bound projects with defined outcomes
+├── 03-labs/                 # 🧪 Experiments, brainstorming, creative ventures
 ├── 04-resources/            # Reference materials and documentation
 ├── 07-context/              # System context and technical docs
 ├── 98-templates/            # Note templates (daily-note, burn-note, etc.)

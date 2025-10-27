@@ -1,6 +1,10 @@
 # MOK Music – Division Profile
 
 ---
+tags: [mokhouse, music, production]
+relation:
+  - "[[mokhouse]]"
+  - "[[mokhouse]]"
 
 ## Business Identity
 

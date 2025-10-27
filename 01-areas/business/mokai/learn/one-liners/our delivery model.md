@@ -2,6 +2,7 @@
 type: reference
 relation:
   - "[[mokai]]"
+  - "[[mokai]]"
   - "[[mokai-cyber-learning]]"
 tags:
   - vocab

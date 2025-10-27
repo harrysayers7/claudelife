@@ -12,10 +12,112 @@
     "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/$50,000 Invoice.md"
   },
   {
-    "title": "Reply Jack today",
-    "done": true,
+    "title": "Open Bank Account",
+    "done": false,
     "priority": "",
-    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/Reply Jack today.md"
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/tasks-mokai/Open Bank Account.md"
+  },
+  {
+    "title": "$50,000 Invoice",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/tasks-mokai/$50,000 Invoice.md"
+  },
+  {
+    "title": "Reply Jack today",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/tasks-mokai/Reply Jack today.md"
+  },
+  {
+    "title": "Supply Nation application",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/tasks-mokai/Supply Nation application.md"
+  },
+  {
+    "title": "Remove section 11 of SHA",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/tasks-mokai/Remove section 11 of SHA.md"
+  },
+  {
+    "title": "Heading formatting (ai-assigned)",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/tasks-mokai/Heading formatting (ai-assigned).md"
+  },
+  {
+    "title": "Add descriptions and keywords to DR",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/tasks-mokai/Add descriptions and keywords to DR.md"
+  },
+  {
+    "title": "Ask jack to see subcontractor contracts",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/tasks-mokai/Ask jack to see subcontractor contracts.md"
+  },
+  {
+    "title": "Follow Up with Justin",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/tasks-mokai/Follow Up with Justin.md"
+  },
+  {
+    "title": "Sign Partnership Agreement",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/tasks-mokai/Sign Partnership Agreement.md"
+  },
+  {
+    "title": "Linkdin Profile update",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/tasks-mokai/Linkdin Profile update.md"
+  },
+  {
+    "title": "reformat SHA",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/tasks-mokai/reformat SHA.md"
+  },
+  {
+    "title": "Add instructions to agent-mokai",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/tasks-mokai/Add instructions to agent-mokai.md"
+  },
+  {
+    "title": "Design a ai assistant based on [operations guide]",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/tasks-mokai/Design a ai assistant based on [operations guide].md"
+  },
+  {
+    "title": "Add exa ai instruct to instructions box",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/tasks-mokai/Add exa ai instruct to instructions box.md"
+  },
+  {
+    "title": "Photos for website",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/tasks-mokai/Photos for website.md"
+  },
+  {
+    "title": "IBA Loans",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/tasks-mokai/IBA Loans.md"
+  },
+  {
+    "title": "Moaki vocabulary idea",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/tasks-mokai/Moaki vocabulary idea.md"
   },
   {
     "title": "Supply Nation application",
@@ -24,22 +126,34 @@
     "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/Supply Nation application.md"
   },
   {
-    "title": "Remove section 11 of SHA",
-    "done": true,
+    "title": "Mokai SKILL",
+    "done": false,
     "priority": "",
-    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/Remove section 11 of SHA.md"
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/Mokai SKILL.md"
   },
   {
-    "title": "Add descriptions and keywords to DR",
-    "done": true,
+    "title": "Research Supply Nation multi-business registration best practices",
+    "done": false,
     "priority": "",
-    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/Add descriptions and keywords to DR.md"
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/Research Supply Nation multi-business registration best practices.md"
   },
   {
-    "title": "Fast Api task",
-    "done": true,
+    "title": "Questionaire",
+    "done": false,
     "priority": "",
-    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/Fast Api task.md"
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/Questionaire.md"
+  },
+  {
+    "title": "Mh amd mk additions",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/Mh amd mk additions.md"
+  },
+  {
+    "title": "Duplicate relation",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/Duplicate relation.md"
   },
   {
     "title": "Ask jack to see subcontractor contracts",
@@ -54,10 +168,10 @@
     "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/Heading formatting .md"
   },
   {
-    "title": "Follow Up with Justin",
+    "title": "💡graphiti and serna team",
     "done": false,
     "priority": "",
-    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/Follow Up with Justin.md"
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/💡graphiti and serna team.md"
   },
   {
     "title": "Sign Partnership Agreement",
@@ -66,34 +180,16 @@
     "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/Sign Partnership Agreement.md"
   },
   {
+    "title": "Ideas 16 oct",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/Ideas 16 oct.md"
+  },
+  {
     "title": "Linkdin Profile update",
     "done": false,
     "priority": "",
     "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/Linkdin Profile update.md"
-  },
-  {
-    "title": "reformat SHA",
-    "done": true,
-    "priority": "",
-    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/reformat SHA.md"
-  },
-  {
-    "title": "Add instructions to agent-mokai",
-    "done": true,
-    "priority": "",
-    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/Add instructions to agent-mokai.md"
-  },
-  {
-    "title": "Design a ai assistant based on [operations guide]",
-    "done": true,
-    "priority": "",
-    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/Design a ai assistant based on [operations guide].md"
-  },
-  {
-    "title": "Add exa ai instruct to instructions box",
-    "done": true,
-    "priority": "",
-    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/Add exa ai instruct to instructions box.md"
   },
   {
     "title": "Photos for website",
@@ -108,9 +204,21 @@
     "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/IBA Loans.md"
   },
   {
+    "title": "Split agent-mokai",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/Split agent-mokai.md"
+  },
+  {
     "title": "Moaki vocabulary idea",
     "done": false,
     "priority": "",
     "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/Moaki vocabulary idea.md"
+  },
+  {
+    "title": "Claude.md md files rules",
+    "done": false,
+    "priority": "",
+    "path": "/Users/harrysayers/Developer/claudelife/00-inbox/tasks/Claude.md md files rules.md"
   }
 ]

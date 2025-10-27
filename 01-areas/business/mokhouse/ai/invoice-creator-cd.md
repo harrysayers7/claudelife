@@ -1,7 +1,9 @@
 ---
+tags: [mokhouse, AI, automation]
 date created: Fri, 10 3rd 25, 2:30:00 pm
 date modified: Fri, 10 3rd 25, 2:59:49 pm
 relation:
+  - "[[mokhouse]]"
   - "[[97-tags/Claude-desktop|Claude-desktop]]"
   - "[[ESM]]"
   - "[[mokhouse]]"

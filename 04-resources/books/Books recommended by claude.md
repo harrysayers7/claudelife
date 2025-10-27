@@ -1,5 +1,6 @@
 ---
 relation:
+  - "[[resources]]"
   - "[[mokai-cyber-learning]]"
   - "[[books]]"
   - "[[mokai]]"

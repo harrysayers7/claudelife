@@ -2,6 +2,7 @@
 type: Note
 relation:
   - "[[mokai]]"
+  - "[[mokai]]"
 tags:
   - net-profit
   - business-strategy

@@ -2,6 +2,7 @@
 type: definition
 relation:
   - "[[mokai]]"
+  - "[[mokai]]"
 tags:
   - subcontractor
   - delivery

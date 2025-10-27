@@ -1,7 +1,9 @@
 ---
+tags: [mokai, AI, automation]
 date created: Thu, 10 2nd 25, 6:24:03 pm
 date modified: Thu, 10 2nd 25, 6:52:35 pm
 relation:
+  - "[[mokai]]"
   - "[[prompt-library]]"
   - "[[mokai]]"
 ---

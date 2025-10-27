@@ -1,8 +1,10 @@
 ---
+tags: [mokhouse, music, production]
 date created: Tue, 10 7th 25, 5:54:59 pm
 date modified: Thu, 10 9th 25, 4:47:36 am
 type: prompt
 relation:
+  - "[[mokhouse]]"
   - "[[mokhouse]]"
   - "[[prompt-library]]"
   - "[[97-tags/Claude-desktop|Claude-desktop]]"
@@ -95,6 +97,7 @@ Brief Email → Google Doc → Obsidian Project → AI Suggestions → Submissio
 ```yaml
 ---
 relation:
+  - "[[mokhouse]]"
   - "[[mokhouse-projects]]"
 project name: "[Extracted project name]"
 customer: "[Client name - default: Electric Sheep Music]"

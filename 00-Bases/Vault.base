@@ -3,7 +3,7 @@ views:
     name: Table
     filters:
       and:
-        - file.folder == "04-resources/vault"
+        - type.contains("vault")
     order:
       - file.name
       - value

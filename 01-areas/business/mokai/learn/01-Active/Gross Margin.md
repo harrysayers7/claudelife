@@ -2,6 +2,7 @@
 type: reference
 relation:
   - "[[mokai]]"
+  - "[[mokai]]"
 tags: [gross-margin, contractor, markup, overhead, net-profit, business-model]
 category: learning
 description:

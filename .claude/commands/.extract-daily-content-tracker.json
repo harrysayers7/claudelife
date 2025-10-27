@@ -13,8 +13,8 @@
           "destinations": [
             "04-resources/diary.md",
             "01-areas/business/mokai/diary-mokai.md",
-            "01-areas/tech/context-tech.md",
-            "01-areas/claude-code/context-claudecode.md"
+            "01-areas/tech/CLAUDE.md",
+            "01-areas/claude-code/CLAUDE.md"
           ]
         }
       ]

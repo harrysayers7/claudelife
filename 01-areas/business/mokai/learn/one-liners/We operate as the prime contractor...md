@@ -1,6 +1,7 @@
 ---
 relation:
   - "[[mokai]]"
+  - "[[mokai]]"
 tags:
   - meeting
   - vocab

@@ -1,7 +1,9 @@
 ---
+tags: [resources, reference]
 date created: Tue, 10 7th 25, 7:12:34 pm
 date modified: Wed, 10 8th 25, 4:38:36 pm
 relation:
+  - "[[resources]]"
   - "[[prompt-library]]"
 type: prompt
 ai-role:

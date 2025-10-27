@@ -1,4 +1,7 @@
 ---
+relation:
+  - "[[resources]]"
+  - "[[resources]]"
 title: "Claude Code Can Be Your Second Brain"
 source: "https://www.youtube.com/watch?v=8V9tZwgjiRs&t=197s"
 author:

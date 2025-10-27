@@ -9,6 +9,10 @@ Understand the controls and evidence buyers expect; speak "assurance" fluently w
 Master Essential Eight maturity levels, ISO 27001 control families, and IRAP context while building practical evidence management capabilities.
 
 ---
+tags: [mokai, learning, business-development]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 
 ## Day 8: Essential Eight Maturity Model Deep Dive
 

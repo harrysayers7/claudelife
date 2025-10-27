@@ -2,8 +2,8 @@
 Done: false
 today: false
 follow up: false
-this week: true
-back burner: false
+this week: false
+back burner: true
 type: Task
 status:
 relation:

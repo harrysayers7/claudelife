@@ -1,4 +1,8 @@
 ---
+tags: [mokhouse, marketing, portfolio]
+relation:
+  - "[[mokhouse]]"
+  - "[[mokhouse]]"
 date: "2025-10-16 17:45"
 client: "Containers for Change"
 project_type: "original composition"

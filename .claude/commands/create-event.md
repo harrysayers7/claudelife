@@ -1,7 +1,10 @@
 ---
 created: "2025-10-17 16:30"
-updated: "2025-10-17 20:15"
+updated: "2025-10-25 10:30"
 version_history:
+  - version: "1.5"
+    date: "2025-10-25 10:30"
+    changes: "Changed interactive mode to ask all questions at once instead of one-by-one for faster workflow"
   - version: "1.4"
     date: "2025-10-17 20:15"
     changes: "Fixed DataviewJS checkbox parsing for recurrence - now properly extracts checked pattern from list"
@@ -21,7 +24,7 @@ description: |
   Create Event - Quickly create structured event files in your vault using the event.md template.
 
   Capabilities:
-    - Interactive prompts for event details (title, date, time, category)
+    - All-at-once interactive prompts for all event details in a single ask
     - Automatic emoji prefix based on keyword detection (21 categories)
     - Recurring event support (daily/weekly/biweekly/monthly/yearly)
     - Quick mode for minimal input (just title + when + time if needed)
@@ -56,21 +59,23 @@ This command helps you quickly create structured event files in your claudelife 
 
 ## Interactive Process
 
-When you run this command, I will:
+When you run this command, I will ask you **all questions at once** in a single prompt, then:
 
-1. Ask for the event title (this becomes the filename)
-2. Ask for the date (`when`) in YYYY-MM-DD format (becomes start date for recurring events)
-3. Ask if a time is needed (optional)
-4. **Ask if this is a recurring event** (optional)
-   - If yes: Ask for pattern (daily/weekly/biweekly/monthly/yearly)
-   - If yes: Optionally set end date (`recurrence_end`)
-5. Ask for category (optional: personal, work, health, etc.)
-6. Ask if this relates to specific areas (mokai, mokhouse, p-dev, etc.)
-7. Ask if you want to add a note (optional)
-8. Ask if you need an in-depth description in the body (optional, only when relevant)
-9. **Auto-detect emoji prefix** based on keywords in title, category, relation, and note
-10. Validate relation tags against 97-tags folder
-11. Create the event file in `00-inbox/events/` with string-based recurrence and YAML-safe wikilinks
+1. **Collect all details in one ask:**
+   - Event title (this becomes the filename)
+   - Date (`when`) in YYYY-MM-DD format
+   - Time (optional, e.g., "2:00 PM")
+   - Recurrence pattern (optional: daily/weekly/biweekly/monthly/yearly)
+   - Recurrence end date (optional, if recurring)
+   - Category (optional: personal, work, health, etc.)
+   - Relation/area (optional: mokai, mokhouse, p-dev, etc.)
+   - Note (optional: brief context)
+   - Description (optional: only if event needs detailed info)
+
+2. **Then process the data:**
+   - **Auto-detect emoji prefix** based on keywords in title, category, relation, and note
+   - Validate relation tags against 97-tags folder
+   - Create the event file in `00-inbox/events/` with string-based recurrence and YAML-safe wikilinks
 
 **IMPORTANT**: Use Serena to search through the codebase. If you get any errors using Serena, retry with different Serena tools.
 
@@ -231,7 +236,9 @@ Beyond the predefined keywords below, use judgment to select emojis that best re
 
 I'll help you create an event by:
 
-1. **Gather event details** through interactive prompts
+1. **Ask all event details at once** in a single prompt covering:
+   - Title, date, time, recurrence, category, relation, note, and optional description
+
 2. **Detect appropriate emoji** by scanning for keywords in:
    - Title field (case-insensitive)
    - Category field
@@ -239,13 +246,12 @@ I'll help you create an event by:
    - Note field
    - **Use creative judgment**: If a more specific/fitting emoji exists beyond predefined keywords, use it
    - Priority: Specific creative emoji > Predefined keyword match > No emoji
+
 3. **Validate relation tags** by checking 97-tags folder
    - If relation specified, verify it exists (e.g., `mokai.md`, `mokhouse.md`)
    - Format as YAML-safe wikilink (quoted string): `"[[mokai]]"`
-4. **Ask about description** - Only if event needs more context than `note` field
-   - Skip for simple events (appointments, meetings)
-   - Use for complex events (conferences, multi-day events, detailed agendas)
-5. **Create event file** in `00-inbox/events/` using this structure:
+
+4. **Create event file** in `00-inbox/events/` using this structure:
    ```yaml
    ---
    type:
@@ -287,18 +293,18 @@ Common area relations you can use:
 ### Minimal Event (just date)
 ```
 You: /create-event
-Me: What's the event title?
-You: Doctor Appointment
-Me: When is this event? (YYYY-MM-DD)
-You: 2025-10-20
-Me: Does this event have a specific time? (optional)
-You: [press enter to skip]
-Me: Category? (optional)
-You: health
-Me: Is this related to any areas? (mokai, mokhouse, p-dev, etc.)
-You: [press enter to skip]
-Me: Any notes to add? (optional)
-You: Bring medical records
+
+Me: Please provide the following event details (fill in what you have, leave blank to skip optional fields):
+
+Title: Doctor Appointment
+Date (YYYY-MM-DD): 2025-10-20
+Time (optional): [blank]
+Recurrence (daily/weekly/biweekly/monthly/yearly, optional): [blank]
+Recurrence End Date (optional): [blank]
+Category (optional): health
+Relation/Area (mokai, mokhouse, p-dev, etc., optional): [blank]
+Note (optional): Bring medical records
+Description (optional, for complex events only): [blank]
 ```
 
 **Output**: `00-inbox/events/🏥 Doctor Appointment.md`
@@ -319,18 +325,18 @@ note: Bring medical records
 ### Business Event with Time
 ```
 You: /create-event
-Me: What's the event title?
-You: MOKAI Strategy Meeting
-Me: When is this event? (YYYY-MM-DD)
-You: 2025-10-22
-Me: Does this event have a specific time?
-You: 2:00 PM
-Me: Category? (optional)
-You: business
-Me: Is this related to any areas?
-You: mokai
-Me: Any notes?
-You: Discuss Q1 tender pipeline
+
+Me: Please provide the following event details (fill in what you have, leave blank to skip optional fields):
+
+Title: MOKAI Strategy Meeting
+Date (YYYY-MM-DD): 2025-10-22
+Time (optional): 2:00 PM
+Recurrence (daily/weekly/biweekly/monthly/yearly, optional): [blank]
+Recurrence End Date (optional): [blank]
+Category (optional): business
+Relation/Area (mokai, mokhouse, p-dev, etc., optional): mokai
+Note (optional): Discuss Q1 tender pipeline
+Description (optional, for complex events only): [blank]
 ```
 
 **Output**: `00-inbox/events/⛰️ MOKAI Strategy Meeting.md`
@@ -351,20 +357,18 @@ note: Discuss Q1 tender pipeline
 ### All-Day Event (no time)
 ```
 You: /create-event
-Me: What's the event title?
-You: Christmas Day
-Me: When is this event? (YYYY-MM-DD)
-You: 2025-12-25
-Me: Does this event have a specific time?
-You: [press enter to skip]
-Me: Category?
-You: personal
-Me: Is this related to any areas?
-You: [press enter to skip]
-Me: Any notes?
-You: [press enter to skip]
-Me: Need an in-depth description? (optional)
-You: [press enter to skip]
+
+Me: Please provide the following event details (fill in what you have, leave blank to skip optional fields):
+
+Title: Christmas Day
+Date (YYYY-MM-DD): 2025-12-25
+Time (optional): [blank]
+Recurrence (daily/weekly/biweekly/monthly/yearly, optional): yearly
+Recurrence End Date (optional): [blank]
+Category (optional): personal
+Relation/Area (mokai, mokhouse, p-dev, etc., optional): [blank]
+Note (optional): [blank]
+Description (optional, for complex events only): [blank]
 ```
 
 **Output**: `00-inbox/events/📅 Christmas Day.md`
@@ -385,22 +389,18 @@ note:
 ### Complex Event with Description Body
 ```
 You: /create-event
-Me: What's the event title?
-You: Tech Conference 2025
-Me: When is this event? (YYYY-MM-DD)
-You: 2025-11-15
-Me: Does this event have a specific time?
-You: 9:00 AM
-Me: Category?
-You: professional development
-Me: Is this related to any areas?
-You: tech
-Me: Any notes?
-You: AI & Cloud Computing focus
-Me: Need an in-depth description? (Only if event needs detailed agenda, requirements, etc.)
-You: yes
-Me: Enter description (can be multi-line):
-You: Annual tech conference covering latest in AI, cloud infrastructure, and DevOps.
+
+Me: Please provide the following event details (fill in what you have, leave blank to skip optional fields):
+
+Title: Tech Conference 2025
+Date (YYYY-MM-DD): 2025-11-15
+Time (optional): 9:00 AM
+Recurrence (daily/weekly/biweekly/monthly/yearly, optional): [blank]
+Recurrence End Date (optional): [blank]
+Category (optional): professional development
+Relation/Area (mokai, mokhouse, p-dev, etc., optional): tech
+Note (optional): AI & Cloud Computing focus
+Description (optional, for complex events only): Annual tech conference covering latest in AI, cloud infrastructure, and DevOps.
 
 Key sessions:
 - 9:00 AM: Opening keynote on AI advancements
@@ -447,29 +447,18 @@ Requirements:
 ### Recurring Event Example
 ```
 You: /create-event
-Me: What's the event title?
-You: Weekly Team Standup
-Me: When is this event? (YYYY-MM-DD)
-You: 2025-10-20
-Me: Does this event have a specific time?
-You: 9:00 AM
-Me: Is this a recurring event? (y/n)
-You: y
-Me: Choose recurrence pattern:
-    - daily
-    - weekly
-    - biweekly
-    - monthly
-    - yearly
-You: weekly
-Me: When should recurrence end? (YYYY-MM-DD, or leave blank for no end)
-You: 2025-12-31
-Me: Category? (optional)
-You: work
-Me: Is this related to any areas?
-You: mokai
-Me: Any notes?
-You: Discuss sprint progress
+
+Me: Please provide the following event details (fill in what you have, leave blank to skip optional fields):
+
+Title: Weekly Team Standup
+Date (YYYY-MM-DD): 2025-10-20
+Time (optional): 9:00 AM
+Recurrence (daily/weekly/biweekly/monthly/yearly, optional): weekly
+Recurrence End Date (optional): 2025-12-31
+Category (optional): work
+Relation/Area (mokai, mokhouse, p-dev, etc., optional): mokai
+Note (optional): Discuss sprint progress
+Description (optional, for complex events only): [blank]
 ```
 
 **Output**: `00-inbox/events/⛰️ Weekly Team Standup.md`

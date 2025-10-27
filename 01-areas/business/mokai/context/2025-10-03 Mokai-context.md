@@ -1,5 +1,8 @@
 ---
+tags: [mokai, context, cybersecurity]
 relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
   - "[[mokai]]"
   - "[[mokai context]]"
   - "[[97-tags/context]]"

@@ -9,6 +9,10 @@ Own the end-to-end operational engine: Lead → Qualify → Scope → SOW → De
 Design and implement Mokai's complete operational framework, including workflow processes, team roles and responsibilities, quality assurance systems, and client management procedures.
 
 ---
+tags: [mokai, learning, business-development]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 
 ## Day 22: End-to-End Workflow Design
 

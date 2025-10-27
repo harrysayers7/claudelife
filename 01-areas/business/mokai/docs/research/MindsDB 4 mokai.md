@@ -2,6 +2,7 @@
 type:
   - research 
 relation:
+  - "[[mokai]]"
   - "[[97-tags/claude-code|claude-code]]"
   - "[[agents]]"
 tags:

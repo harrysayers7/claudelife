@@ -1,6 +1,7 @@
 ---
 date: "{{date}} {{time}}"
 relation:
+  - "[[resources]]"
   - "[[97-tags/claude-code|claude-code]]"
   - "[[97-tags/AI-Research]]"
   - "[[mcp]]"

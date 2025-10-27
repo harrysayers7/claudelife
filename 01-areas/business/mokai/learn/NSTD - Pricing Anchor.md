@@ -3,6 +3,7 @@ type:
   - cheatsheet
 relation:
   - "[[mokai]]"
+  - "[[mokai]]"
 tags:
   - pricing
   - negotiation

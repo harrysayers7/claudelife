@@ -1,4 +1,5 @@
 ---
+tags: [mokhouse, documentation]
 date created: Mon, 10 20th 25, 8:23:06 am
 date modified: Mon, 10 20th 25, 8:24:16 am
 ---
@@ -57,6 +58,7 @@ Raw creative ideas, client pitches, sonic concept explorations, and early-stage 
 ---
 type: brainstorm
 relation:
+  - "[[mokhouse]]"
   - "[[mokhouse]]"
 status: ideation | pitched | shelved | evolved-to-project
 created: YYYY-MM-DD

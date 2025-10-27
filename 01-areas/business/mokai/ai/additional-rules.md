@@ -1,4 +1,8 @@
 ---
+tags: [mokai, AI, automation]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 date created: Fri, 10 3rd 25, 4:48:04 am
 date modified: Fri, 10 3rd 25, 5:06:30 am
 ---

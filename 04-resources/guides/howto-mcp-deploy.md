@@ -1,6 +1,7 @@
 ---
 date: 2025-09-29 20:31
 relation:
+  - "[[resources]]"
   - "[[mcp]]"
   - "[[Instructions]]"
 tags:

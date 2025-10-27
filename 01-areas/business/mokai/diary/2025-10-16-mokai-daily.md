@@ -1,4 +1,8 @@
 ---
+tags: [mokai, diary, daily-ops]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 date: {{date:YYYY-MM-DD}}
 day: {{date:dddd}}
 ---

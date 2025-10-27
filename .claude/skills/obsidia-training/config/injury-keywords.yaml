@@ -1,0 +1,203 @@
+---
+# Injury Pattern Detection Keywords
+# Used by check_injuries.py to scan workout logs and daily notes
+
+pain_keywords:
+  severity_high:
+    keywords: ["sharp", "stabbing", "intense", "severe", "excruciating", "unbearable"]
+    alert_level: "critical"
+    action: "Stop training this body region immediately, consider medical consultation"
+
+  severity_moderate:
+    keywords: ["aching", "sore", "tender", "uncomfortable", "hurts", "painful", "throbbing"]
+    alert_level: "warning"
+    action: "Reduce load on affected area, monitor closely, consider deload"
+
+  severity_mild:
+    keywords: ["tight", "stiff", "minor discomfort", "slight pain", "tweaked"]
+    alert_level: "monitor"
+    action: "Note pattern, continue with caution, focus on form"
+
+  chronic_indicators:
+    keywords: ["still", "again", "keeps", "won't go away", "lingering", "persistent", "chronic"]
+    alert_level: "escalating"
+    action: "Pattern emerging, consider medical consultation or extended break"
+
+body_regions:
+  upper_body:
+    shoulder:
+      keywords: ["shoulder", "rotator cuff", "deltoid", "scapula"]
+      common_exercises: ["Overhead Press", "Bench Press", "Lateral Raises", "Pull-ups"]
+
+    elbow:
+      keywords: ["elbow", "forearm", "tennis elbow", "golfer's elbow"]
+      common_exercises: ["Tricep Pushdowns", "Bicep Curls", "Barbell Rows"]
+
+    wrist:
+      keywords: ["wrist", "hand", "grip"]
+      common_exercises: ["All pressing movements", "Barbell Curls", "Deadlifts"]
+
+    upper_back:
+      keywords: ["upper back", "trap", "trapezius", "rhomboid", "between shoulder blades"]
+      common_exercises: ["Deadlifts", "Barbell Rows", "Face Pulls"]
+
+    chest:
+      keywords: ["chest", "pec", "pectoral", "sternum"]
+      common_exercises: ["Bench Press", "Dumbbell Press", "Cable Flyes"]
+
+    neck:
+      keywords: ["neck", "cervical", "trap", "base of skull"]
+      common_exercises: ["Overhead Press", "Shrugs", "Poor deadlift form"]
+
+  lower_body:
+    lower_back:
+      keywords: ["lower back", "lumbar", "spine", "back pain"]
+      common_exercises: ["Deadlifts", "Squats", "Romanian Deadlifts", "Good Mornings"]
+      high_risk: true
+
+    hip:
+      keywords: ["hip", "hip flexor", "groin", "adductor", "glute"]
+      common_exercises: ["Squats", "Lunges", "Bulgarian Split Squats"]
+
+    knee:
+      keywords: ["knee", "patella", "kneecap", "IT band"]
+      common_exercises: ["Squats", "Leg Press", "Lunges", "Leg Extensions"]
+      high_risk: true
+
+    hamstring:
+      keywords: ["hamstring", "back of leg"]
+      common_exercises: ["Deadlifts", "Romanian Deadlifts", "Leg Curls"]
+
+    quad:
+      keywords: ["quad", "front of leg", "thigh"]
+      common_exercises: ["Squats", "Leg Press", "Lunges"]
+
+    calf:
+      keywords: ["calf", "achilles", "ankle"]
+      common_exercises: ["Calf Raises", "Jumping movements"]
+
+    foot:
+      keywords: ["foot", "arch", "heel", "plantar"]
+      common_exercises: ["All standing exercises"]
+
+movement_issues:
+  mobility_restrictions:
+    keywords: ["can't reach", "limited range", "restricted", "mobility issue", "inflexible"]
+    implication: "Mobility work needed, may be compensating elsewhere"
+
+  compensation_patterns:
+    keywords: ["leaning", "shifting", "uneven", "one side", "asymmetric", "compensating"]
+    implication: "Movement asymmetry detected, potential injury risk"
+
+  form_breakdown:
+    keywords: ["form broke down", "couldn't maintain", "technique suffered", "lost position"]
+    implication: "Load too heavy or fatigue compromising form"
+
+  instability:
+    keywords: ["wobbly", "unstable", "shaky", "balance issue", "core collapse"]
+    implication: "Stabilizer weakness or excessive load"
+
+temporal_patterns:
+  frequency_tracking:
+    daily_mentions:
+      threshold: 1
+      meaning: "Acute issue, likely from recent session"
+
+    weekly_mentions:
+      threshold: 3
+      meaning: "Emerging pattern, monitor closely"
+
+    biweekly_mentions:
+      threshold: 5
+      meaning: "Chronic pattern, intervention needed"
+
+  progression_indicators:
+    improving:
+      keywords: ["better", "improving", "less pain", "feeling good", "recovering"]
+      action: "Positive trend, continue current approach"
+
+    worsening:
+      keywords: ["worse", "getting worse", "more pain", "spreading", "not healing"]
+      action: "Negative trend, immediate action required"
+
+    plateaued:
+      keywords: ["same", "no change", "still there", "not improving"]
+      action: "Reassess approach, may need different intervention"
+
+correlation_tracking:
+  exercise_injury_links:
+    description: "Track which exercises correlate with pain mentions"
+    lookback_days: 7
+    significance_threshold: 3  # If exercise appears within 48h of pain mention 3+ times
+
+  volume_injury_correlation:
+    description: "Track if injury mentions increase with training volume"
+    metrics:
+      - "Weekly total sets"
+      - "Weekly XP gain rate"
+      - "Training frequency"
+
+  recovery_adequacy:
+    description: "Track if pain mentions correlate with insufficient recovery"
+    indicators:
+      - "Sleep quality < 6/10"
+      - "Energy < 6/10"
+      - "Rest days < 2 per week"
+
+alert_thresholds:
+  immediate_alert:
+    conditions:
+      - "severity_high keyword detected"
+      - "Same body region mentioned 3+ days in a row"
+      - "Pain during warm-up (not just work sets)"
+      - "Pain affecting daily activities (mentioned in daily notes)"
+
+  warning_alert:
+    conditions:
+      - "severity_moderate keyword detected"
+      - "Same body region mentioned 5+ times in 2 weeks"
+      - "Form breakdown noted on primary exercise"
+      - "Volume spike >20% in past week"
+
+  monitor_alert:
+    conditions:
+      - "severity_mild keyword detected"
+      - "New body region mentioned"
+      - "Compensation patterns noted"
+
+injury_prevention_rules:
+  volume_management:
+    weekly_increase_limit: 10  # Max 10% increase in total volume per week
+    deload_frequency: 6  # Deload every 6 weeks
+
+  exercise_variety:
+    rotation_frequency: 4  # Rotate accessory exercises every 4 weeks
+    avoid_daily_same_pattern: true  # Don't train same movement pattern 2 days in a row
+
+  recovery_minimums:
+    rest_days_per_week: 2
+    sleep_hours_target: 8
+    between_session_gap_hours: 24  # Minimum rest between sessions
+
+output_formats:
+  injury_report:
+    sections:
+      - "Active pain mentions (this week)"
+      - "Body region frequency map"
+      - "Trending issues (last 14 days)"
+      - "Exercise-pain correlations"
+      - "Recommendations"
+
+  weekly_health_score:
+    factors:
+      - "Pain mentions (-10 points per mention)"
+      - "Good recovery indicators (+5 points each)"
+      - "Form quality average (scaled to 100)"
+      - "Volume progression (optimal = 100, too fast/slow = penalty)"
+
+notes:
+  - "Case-insensitive matching for all keywords"
+  - "Scan both workout logs and daily note entries"
+  - "Weight recent mentions more heavily (7 days = 1.0x, 14 days = 0.7x, 21 days = 0.4x)"
+  - "Consider context: 'no pain' should not trigger alert"
+  - "Track both subjective pain mentions and objective performance drops"

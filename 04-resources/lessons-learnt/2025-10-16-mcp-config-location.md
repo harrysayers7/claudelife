@@ -1,4 +1,7 @@
 ---
+relation:
+  - "[[resources]]"
+  - "[[resources]]"
 date: "2025-10-16"
 category: MCP Configuration
 severity: Critical

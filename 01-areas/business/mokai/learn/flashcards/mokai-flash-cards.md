@@ -1,4 +1,7 @@
 ---
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 tags:
   - mokai-flash-cards
 date created: Fri, 10 10th 25, 3:05:28 pm

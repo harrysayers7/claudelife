@@ -4,6 +4,7 @@ type:
   - agent
 relation:
   - "[[mokai]]"
+  - "[[mokai]]"
   - "[[mokai-cyber-learning]]"
 category:
   - learning

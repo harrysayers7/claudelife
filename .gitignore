@@ -21,6 +21,7 @@ CLAUDE.local.md
 
 # Learning and tracking files (may contain sensitive context)
 .claude/commands/.learning-log.json
+.claude/.tag-library.json
 
 # Editor/IDE workspace files
 .obsidian/

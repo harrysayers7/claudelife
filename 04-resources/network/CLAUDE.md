@@ -1,4 +1,8 @@
 ---
+tags: [resources, network, contacts]
+relation:
+  - "[[resources]]"
+  - "[[resources]]"
 purpose: Provide AI with a structured understanding of my personal and professional network.
 ai_usage:
   - Used as background context when brainstorming collaborations, business ideas, or outreach strategies.

@@ -1,4 +1,8 @@
 ---
+tags: [mokhouse, diary, daily-ops]
+relation:
+  - "[[mokhouse]]"
+  - "[[mokhouse]]"
 type: diary
 area: mokhouse
 date created: "2025-10-19 15:30"

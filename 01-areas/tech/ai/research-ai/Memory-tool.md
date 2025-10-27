@@ -1,6 +1,7 @@
 ---
 date: 2025-09-30 05:21
 relation:
+  - "[[tech]]"
   - "[[97-tags/context]]"
   - "[[memory]]"
 tags:

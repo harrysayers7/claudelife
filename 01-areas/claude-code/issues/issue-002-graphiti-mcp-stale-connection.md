@@ -7,6 +7,7 @@ aliases:
 id: issue-002
 category: mcp-server
 relation:
+  - "[[claude-code]]"
 complete: true
 solved: true
 lesson: 04-resources/lessons-learnt/251020-issue-002-mcp-permissions.md

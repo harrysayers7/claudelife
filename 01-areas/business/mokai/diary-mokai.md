@@ -1,4 +1,8 @@
 ---
+tags: [mokai, business]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 type: diary
 area: mokai
 date created: "2025-10-17 17:00"

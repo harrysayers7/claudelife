@@ -87,7 +87,7 @@ This command uses AI to intelligently classify and route your daily notes to the
 
 ### 3. Context Entries
 - **Primary**: `04-resources/context.md` (always)
-- **Secondary** (if >80% confidence): Matching `context-*.md` files
+- **Secondary** (if >80% confidence): Matching `CLAUDE.md` files
   - Must be Context-type to route to context files
   - Can go to multiple context files
 
@@ -100,37 +100,37 @@ This command uses AI to intelligently classify and route your daily notes to the
 The AI will check relevance against all these areas:
 
 **Business** (8):
-- `business/mokai/context-mokai.md`
-- `business/mokhouse/context-mokhouse.md`
-- `business/accounting/context-accounting.md`
-- `business/crypto/context-crypto.md`
-- `business/soletrader/context-soletrader.md`
-- `business/SMSF/context-smsf.md`
-- `business/safia/context-safia.md`
-- `business/trust/context-trust.md`
+- `business/mokai/CLAUDE.md`
+- `business/mokhouse/CLAUDE.md`
+- `business/accounting/CLAUDE.md`
+- `business/crypto/CLAUDE.md`
+- `business/soletrader/CLAUDE.md`
+- `business/SMSF/CLAUDE.md`
+- `business/safia/CLAUDE.md`
+- `business/trust/CLAUDE.md`
 
 **Personal Development** (3):
-- `p-dev/learning/context-learning.md`
-- `p-dev/mindset/context-mindset.md`
-- `p-dev/psychedelics/context-psychedelics.md`
+- `p-dev/learning/CLAUDE.md`
+- `p-dev/mindset/CLAUDE.md`
+- `p-dev/psychedelics/CLAUDE.md`
 
 **Health & Fitness** (4):
-- `health-fitness/context-health-fitness.md`
-- `health-fitness/diet/context-diet.md`
-- `health-fitness/medical/context-medical.md`
-- `health-fitness/gym/context-gym.md`
+- `health-fitness/CLAUDE.md`
+- `health-fitness/diet/CLAUDE.md`
+- `health-fitness/medical/CLAUDE.md`
+- `health-fitness/gym/CLAUDE.md`
 
 **Tech** (5):
-- `tech/context-tech.md`
-- `tech/ableton/context-ableton.md`
-- `tech/mac/context-mac.md`
-- `tech/ai/context-ai.md`
-- `tech/ai/research-ai/context-engineering/context-engineering.md`
+- `tech/CLAUDE.md`
+- `tech/ableton/CLAUDE.md`
+- `tech/mac/CLAUDE.md`
+- `tech/ai/CLAUDE.md`
+- `tech/ai/research-ai/context-engineering/CLAUDE.md`
 
 **Other** (3):
-- `claude-code/context-claudecode.md`
-- `harry/context-harry.md`
-- `people/context-people.md`
+- `claude-code/CLAUDE.md`
+- `harry/CLAUDE.md`
+- `people/CLAUDE.md`
 
 ## AI Classification Examples
 
@@ -147,12 +147,12 @@ The AI will check relevance against all these areas:
     "primary": "04-resources/context.md",
     "secondary": [
       {
-        "file": "business/mokai/context-mokai.md",
+        "file": "business/mokai/CLAUDE.md",
         "confidence": 0.98,
         "reasoning": "Direct MOKAI business strategy reference"
       },
       {
-        "file": "harry/context-harry.md",
+        "file": "harry/CLAUDE.md",
         "confidence": 0.87,
         "reasoning": "Personal Indigenous identity context"
       }
@@ -216,25 +216,25 @@ The AI will check relevance against all these areas:
     },
     "secondary": [
       {
-        "file": "business/SMSF/context-smsf.md",
+        "file": "business/SMSF/CLAUDE.md",
         "confidence": 0.96,
         "reasoning": "SMSF investment strategy",
         "content": "- Investment approach: Crypto assets via SMSF contributions with ATO documentation\n  *From:* [[04-resources/diary#25-10-19 - Sun]]\n  *Related:* [[business/crypto/context-crypto]], [[business/accounting/context-accounting]]",
-        "relatedContextFiles": ["business/crypto/context-crypto.md", "business/accounting/context-accounting.md"]
+        "relatedContextFiles": ["business/crypto/CLAUDE.md", "business/accounting/CLAUDE.md"]
       },
       {
-        "file": "business/crypto/context-crypto.md",
+        "file": "business/crypto/CLAUDE.md",
         "confidence": 0.92,
         "reasoning": "Crypto investment approach",
         "content": "- Crypto investment method: SMSF contributions with proper ATO compliance\n  *From:* [[04-resources/diary#25-10-19 - Sun]]\n  *Related:* [[business/SMSF/context-smsf]], [[business/accounting/context-accounting]]",
-        "relatedContextFiles": ["business/SMSF/context-smsf.md", "business/accounting/context-accounting.md"]
+        "relatedContextFiles": ["business/SMSF/CLAUDE.md", "business/accounting/CLAUDE.md"]
       },
       {
-        "file": "business/accounting/context-accounting.md",
+        "file": "business/accounting/CLAUDE.md",
         "confidence": 0.84,
         "reasoning": "ATO compliance requirement",
         "content": "- ATO compliance: Documentation required for SMSF crypto investments\n  *From:* [[04-resources/diary#25-10-19 - Sun]]\n  *Related:* [[business/SMSF/context-smsf]], [[business/crypto/context-crypto]]",
-        "relatedContextFiles": ["business/SMSF/context-smsf.md", "business/crypto/context-crypto.md"]
+        "relatedContextFiles": ["business/SMSF/CLAUDE.md", "business/crypto/CLAUDE.md"]
       }
     ]
   }
@@ -258,18 +258,18 @@ The AI will check relevance against all these areas:
     },
     "secondary": [
       {
-        "file": "tech/context-tech.md",
+        "file": "tech/CLAUDE.md",
         "confidence": 0.94,
         "reasoning": "Database technology stack",
         "content": "- Supabase: Financial tracking database with auth\n  *From:* [[04-resources/diary#25-10-19 - Sun]]\n  *Related:* [[business/mokai/context-mokai]]",
-        "relatedContextFiles": ["business/mokai/context-mokai.md"]
+        "relatedContextFiles": ["business/mokai/CLAUDE.md"]
       },
       {
-        "file": "business/mokai/context-mokai.md",
+        "file": "business/mokai/CLAUDE.md",
         "confidence": 0.91,
         "reasoning": "MOKAI financial infrastructure",
         "content": "- Financial tracking system: Supabase database for invoice management\n  *From:* [[04-resources/diary#25-10-19 - Sun]]\n  *Related:* [[tech/context-tech]]",
-        "relatedContextFiles": ["tech/context-tech.md"]
+        "relatedContextFiles": ["tech/CLAUDE.md"]
       }
     ]
   }
@@ -294,9 +294,9 @@ Entry 1: "MOKAI uses Indigenous procurement..."
 
   Primary: 04-resources/context.md
   Secondary:
-    ✓ business/mokai/context-mokai.md (98%)
+    ✓ business/mokai/CLAUDE.md (98%)
       → Direct MOKAI business strategy reference
-    ✓ harry/context-harry.md (87%)
+    ✓ harry/CLAUDE.md (87%)
       → Personal Indigenous identity context
 
 Entry 2: "Finished mixing Nintendo track..."
@@ -344,7 +344,7 @@ MOKAI uses Indigenous procurement advantage for direct government access under I
 
 ### In Area Context Files
 
-**Context file format** (`business/mokai/context-mokai.md`):
+**Context file format** (`business/mokai/CLAUDE.md`):
 ```markdown
 - Accountant recommended trust structure for MOKAI financial protection
   *From:* [[04-resources/diary#25-10-17 - Fri]]
@@ -415,8 +415,8 @@ Had productive meeting with MOKAI client about IRAP assessment
           "confidence": 0.96,
           "destinations": [
             "04-resources/context.md",
-            "business/mokai/context-mokai.md",
-            "harry/context-harry.md"
+            "business/mokai/CLAUDE.md",
+            "harry/CLAUDE.md"
           ]
         },
         {
@@ -503,7 +503,7 @@ Task:
    - Include date headers (## [[YYYY-MM-DD - Day]])
 
 Rules:
-- Only Context-type entries go to context-*.md files
+- Only Context-type entries go to CLAUDE.md files
 - Diary entries can go to diary-*.md files
 - Insights only go to insights.md (never context files)
 - Be precise with confidence scores
@@ -522,7 +522,7 @@ Output JSON format:
     },
     "secondary": [
       {
-        "file": "area/context-area.md",
+        "file": "area/CLAUDE.md",
         "confidence": 0.96,
         "reasoning": "Why this area is relevant",
         "content": "Factual bullet point with cross-links",
@@ -536,14 +536,14 @@ Example for "Today I built a Supabase database for MOKAI financial tracking":
 {
   "secondary": [
     {
-      "file": "tech/context-tech.md",
+      "file": "tech/CLAUDE.md",
       "content": "- Supabase: Financial tracking database\n  *From:* [[04-resources/diary#25-10-19 - Sun]]\n  *Related:* [[business/mokai/context-mokai]]",
-      "relatedContextFiles": ["business/mokai/context-mokai.md"]
+      "relatedContextFiles": ["business/mokai/CLAUDE.md"]
     },
     {
-      "file": "business/mokai/context-mokai.md",
+      "file": "business/mokai/CLAUDE.md",
       "content": "- Financial tracking system: Supabase database for invoice management\n  *From:* [[04-resources/diary#25-10-19 - Sun]]\n  *Related:* [[tech/context-tech]]",
-      "relatedContextFiles": ["tech/context-tech.md"]
+      "relatedContextFiles": ["tech/CLAUDE.md"]
     }
   ]
 }
@@ -615,7 +615,7 @@ saveTracker(trackerPath, tracker);
 - **No clear classification**: Ask user for manual classification
 - **Low confidence (<60%)**: Flag for review
 - **Conflicting areas**: Show all matches, let user decide
-- **New context areas**: Automatically detect new `context-*.md` files
+- **New context areas**: Automatically detect new `CLAUDE.md` files
 - **Malformed entries**: Parse gracefully, flag issues
 - **Duplicate content**: Check if entry already exists in destination
 
@@ -933,7 +933,7 @@ find 01-areas -name "diary-*.md" -type f
 ### Check Context File Coverage
 
 ```bash
-find 01-areas -name "context-*.md" -type f | wc -l
+find 01-areas -name "CLAUDE.md" -type f | wc -l
 ```
 
 ---

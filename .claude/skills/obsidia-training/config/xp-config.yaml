@@ -1,0 +1,190 @@
+---
+xp_calculation:
+  base_formula: "weight_kg * reps_completed"
+  description: "Base XP is calculated by multiplying the weight lifted (in kg) by reps completed"
+
+  multipliers:
+    # RPE-based multipliers (BODY RECOMP OPTIMIZED)
+    rpe_9_plus:
+      value: 0.95
+      description: "RPE 9-10 discouraged during body recomp (overtraining risk in calorie deficit)"
+      condition: "rpe >= 9"
+      reason: "High RPE during fat loss increases cortisol and recovery demands"
+
+    rpe_8:
+      value: 1.1
+      description: "RPE 8 is IDEAL for body recomp - gets 10% bonus"
+      condition: "rpe == 8"
+      reason: "Sweet spot: enough stimulus for muscle retention, manageable fatigue"
+
+    rpe_7:
+      value: 1.05
+      description: "RPE 7 is good for volume/accessory work - gets 5% bonus"
+      condition: "rpe == 7"
+
+    rpe_below_7:
+      value: 0.9
+      description: "Below RPE 7 gets 10% penalty (insufficient stimulus)"
+      condition: "rpe < 7"
+
+    # Form quality multipliers (BODY RECOMP OPTIMIZED)
+    form_excellent:
+      value: 1.15
+      description: "Excellent form (9-10/10) gets 15% bonus - CRITICAL for body recomp"
+      condition: "form >= 9"
+      reason: "Perfect form = better muscle activation = more muscle retention during fat loss"
+
+    form_good:
+      value: 1.0
+      description: "Good form (7-8/10), no bonus/penalty"
+      condition: "form >= 7 AND form < 9"
+
+    form_poor:
+      value: 0.75
+      description: "Poor form (<7/10) gets 25% penalty - injury risk increases in deficit"
+      condition: "form < 7"
+      reason: "Poor recovery + poor form = high injury risk during body recomp"
+
+    # Exercise type multipliers
+    primary_exercise:
+      value: 1.3
+      description: "Primary/compound exercises get 30% bonus"
+      applies_to: "exercises marked as primary: true"
+
+    accessory_exercise:
+      value: 1.0
+      description: "Accessory exercises, no bonus/penalty"
+      applies_to: "exercises marked as primary: false"
+
+    # Achievement multipliers
+    first_time_exercise:
+      value: 1.5
+      description: "First time performing exercise gets 50% bonus"
+      trigger: "achievement: first_time"
+
+    pr_achieved:
+      value: 2.0
+      description: "Personal record gets 100% bonus"
+      trigger: "achievement: pr"
+
+    all_sets_hit_target:
+      value: 1.1
+      description: "Hitting target reps on all sets gets 10% bonus"
+      trigger: "achievement: all_sets_complete"
+
+  level_system:
+    xp_per_level: 10000
+    description: "Every 10,000 XP = 1 level gained"
+
+    level_milestones:
+      5:
+        title: "Novice Lifter"
+        reward: "Unlock advanced exercise variations"
+      10:
+        title: "Intermediate Lifter"
+        reward: "Unlock periodization templates"
+      15:
+        title: "Advanced Lifter"
+        reward: "Unlock custom program builder"
+      20:
+        title: "Elite Lifter"
+        reward: "Unlock competition prep protocols"
+
+calculation_examples:
+  example_1:
+    description: "IDEAL BODY RECOMP SET - Primary exercise, RPE 8, excellent form"
+    exercise: "Bench Press"
+    weight_kg: 62.5
+    reps: 8
+    rpe: 8
+    form: 9
+    primary: true
+    calculation: |
+      Base XP = 62.5 * 8 = 500
+      RPE multiplier = 1.1 (rpe 8 - IDEAL for body recomp)
+      Form multiplier = 1.15 (form 9/10 - excellent)
+      Primary multiplier = 1.3
+      Total XP = 500 * 1.1 * 1.15 * 1.3 = 823 XP
+      Note: This is the PERFECT body recomp set - RPE 8 + excellent form
+
+  example_2:
+    description: "ACCESSORY WORK - Good form, RPE 7, no bonuses"
+    exercise: "Lateral Raises"
+    weight_kg: 10
+    reps: 15
+    rpe: 7
+    form: 8
+    primary: false
+    calculation: |
+      Base XP = 10 * 15 = 150
+      RPE multiplier = 1.05 (rpe 7 - good for accessories)
+      Form multiplier = 1.0 (form 8/10 - good)
+      Accessory multiplier = 1.0
+      Total XP = 150 * 1.05 * 1.0 * 1.0 = 158 XP
+
+  example_3:
+    description: "OVERTRAINING EXAMPLE - RPE 9+, form suffers"
+    exercise: "Leg Press"
+    weight_kg: 120
+    reps: 10
+    rpe: 9
+    form: 7
+    primary: true
+    calculation: |
+      Base XP = 120 * 10 = 1200
+      RPE multiplier = 0.95 (rpe 9 - PENALIZED during body recomp)
+      Form multiplier = 1.0 (form 7/10)
+      Primary multiplier = 1.3
+      Total XP = 1200 * 0.95 * 1.0 * 1.3 = 1482 XP
+      Note: Lower XP than RPE 8 would give - AVOID RPE 9+ during fat loss
+
+streaks_and_bonuses:
+  # BODY RECOMP CONSISTENCY BONUSES (3-day program optimized)
+  three_session_week:
+    description: "Complete all 3 planned sessions in a week (ABC rotation)"
+    bonus_xp: 750
+    condition: "completed_sessions == 3 in current week"
+    reason: "3x/week consistency is KEY for body recomp success"
+
+  four_week_consistency:
+    description: "Train 3 sessions/week for 4 consecutive weeks (12 total sessions)"
+    bonus_xp: 2000
+    condition: "3 sessions per week for 4 straight weeks"
+    reason: "Consistent training = sustained calorie burn + muscle retention"
+
+  perfect_form_week:
+    description: "Average form quality 9+ for entire week"
+    bonus_xp: 1000
+    condition: "average_form >= 9 for all sessions in week"
+    reason: "Form excellence during deficit = injury prevention + muscle activation"
+
+  rpe_discipline_week:
+    description: "Hit RPE 7-8 targets on 90%+ of sets for entire week"
+    bonus_xp: 500
+    condition: "90% of sets within RPE 7-8 range"
+    reason: "Avoid overtraining (RPE 9+) and undertraining (RPE <7) during body recomp"
+
+  cardio_consistency:
+    description: "Complete pre-workout cardio on all 3 training days"
+    bonus_xp: 300
+    condition: "20-30 min incline treadmill on all training days"
+    reason: "Cardio consistency accelerates fat loss without impacting recovery"
+
+xp_display:
+  show_per_set: true
+  show_per_exercise: true
+  show_session_total: true
+  show_weekly_total: true
+  show_level_progress: true
+  show_next_milestone: true
+
+notes:
+  - "XP multipliers stack multiplicatively (multiply together)"
+  - "Round final XP to nearest integer"
+  - "BODY RECOMP PHILOSOPHY: RPE 8 + excellent form > chasing heavy weight"
+  - "RPE 9+ gets PENALIZED during body recomp (recovery demands too high in calorie deficit)"
+  - "Form excellence (9-10/10) gets 15% bonus - critical for muscle retention during fat loss"
+  - "Consistency bonuses optimized for 3-day ABC rotation (not generic 4-day program)"
+  - "Achievement bonuses only apply to the specific set/exercise where earned"
+  - "Weekly bonuses added as lump sum at end of week"
+  - "Pre-workout cardio (20-30 min incline treadmill) tracked for cardio_consistency bonus"

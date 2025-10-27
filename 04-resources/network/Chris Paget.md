@@ -3,6 +3,7 @@ type: profile
 entity_type: person
 name: Chris Paget
 relation:
+  - "[[resources]]"
   - "[[mokhouse]]"
   - "[[safia]]"
 category: production-management

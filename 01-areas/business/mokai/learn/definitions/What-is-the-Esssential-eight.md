@@ -1,6 +1,7 @@
 ---
 date: "{{date}} {{time}}"
 relation:
+  - "[[mokai]]"
   - "[[mokai-cyber-learning]]"
   - "[[essential-8]]"
 tags:

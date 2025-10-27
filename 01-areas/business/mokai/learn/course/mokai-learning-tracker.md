@@ -8,6 +8,10 @@
 - **Overall Progress**: [ ]%
 
 ---
+tags: [mokai, learning, business-development]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 
 ## PHASE 1: FOUNDATIONS (Days 1-30)
 

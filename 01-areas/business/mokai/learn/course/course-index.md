@@ -7,6 +7,10 @@
 **Outcome**: World-class Mokai co-founder/operator competency
 
 ---
+tags: [mokai, learning, business-development]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 
 ## PHASE 1: FOUNDATIONS (Weeks 1-4, Days 1-30)
 

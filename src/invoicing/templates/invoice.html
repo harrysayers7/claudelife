@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invoice MH-001 - Test</title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #000;
+      line-height: 1.5;
+      background: white;
+      padding: 20px;
+    }
+
+    .invoice-container {
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 65px 60px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 45px;
+      padding-bottom: 28px;
+      border-bottom: 2px solid #000;
+    }
+
+    .company-name {
+      font-size: 70px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+
+    .abn-line {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 18px;
+    }
+
+    .invoice-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 18px;
+    }
+
+    .invoice-title {
+      font-size: 33px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .invoice-number {
+      font-size: 23px;
+      color: #999;
+    }
+
+    .meta-info {
+      display: flex;
+      justify-content: flex-end;
+      gap: 60px;
+      margin-top: 15px;
+      font-size: 15px;
+    }
+
+    .meta-item {
+      text-align: right;
+    }
+
+    .meta-label {
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .meta-value {
+      color: #999;
+      font-size: 15px;
+    }
+
+    /* Separator */
+    hr {
+      border: none;
+      border-top: 1px solid #000;
+      margin: 25px 0;
+    }
+
+    /* Bill To Section */
+    .bill-to {
+      margin-bottom: 28px;
+    }
+
+    .bill-to-label {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .bill-to-content {
+      font-size: 13px;
+      color: #000;
+      line-height: 1.6;
+    }
+
+    .bill-to-content strong {
+      font-weight: bold;
+    }
+
+    /* Line Items Section */
+    .line-items-header {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 16px;
+      display: grid;
+      grid-template-columns: 2fr 0.5fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    .line-items-header-label {
+      color: #000;
+    }
+
+    .line-items {
+      margin-bottom: 12px;
+    }
+
+    .line-item {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 6px;
+      display: grid;
+      grid-template-columns: 2fr 0.5fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    /* Totals */
+    .totals-section {
+      margin: 8px 0;
+      text-align: right;
+    }
+
+    .totals {
+      display: inline-block;
+      min-width: 250px;
+    }
+
+    .grand-total {
+      font-size: 28px;
+      font-weight: bold;
+      color: #000;
+      margin-top: 12px;
+    }
+
+    /* Payment Section */
+    .payment-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin: 12px 0;
+      padding: 12px 0;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+    }
+
+    .payment-col {
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .payment-col h3 {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .payment-col .detail {
+      color: #999;
+      font-size: 11px;
+      margin-bottom: 3px;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      font-size: 8px;
+      color: #999;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid #000;
+    }
+
+    @media print {
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .invoice-container {
+        max-width: 100%;
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="invoice-container">
+    <!-- Header -->
+    <div class="header">
+      <div class="company-name">[MOK HOUSE]</div>
+      <div class="abn-line"><strong>[ABN]:</strong> <span style="color: #999;">38 690 628 212</span></div>
+
+      <div class="invoice-header-row">
+        <div>
+          <div class="invoice-title">INVOICE <span class="invoice-number">MH-{{invoice_number}}</span></div>
+        </div>
+      </div>
+
+      <div class="meta-info">
+        <div class="meta-item">
+          <div class="meta-label">PO</div>
+          <div class="meta-value">{{po_number}}</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">DATE</div>
+          <div class="meta-value">{{invoice_date}}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bill To -->
+    <div class="bill-to">
+      <div class="bill-to-label">[BILL TO]</div>
+      <div class="bill-to-content">
+        <strong>{{client_name}}</strong><br/>
+        {{client_address}}
+      </div>
+    </div>
+
+    <!-- Line Items -->
+    <div class="line-items-header">
+      <div class="line-items-header-label">[DESCRIPTION]</div>
+      <div class="line-items-header-label">[QTY]</div>
+      <div class="line-items-header-label">[UNIT PRICE]</div>
+      <div class="line-items-header-label">[TOTAL]</div>
+    </div>
+
+    <div class="line-items">
+      <div class="line-item">
+        <div>{{project_name}} - {{fee_type}}</div>
+        <div>{{quantity}}</div>
+        <div>${{unit_price}}</div>
+        <div>${{total}}</div>
+      </div>
+
+    </div>
+
+    <hr />
+
+    <!-- Totals -->
+    <div class="totals-section">
+      <div class="totals">
+        <div style="font-size: 14px; margin-bottom: 10px;">
+          <strong>Subtotal:</strong> <span style="color: #999;">${{subtotal}}</span>
+        </div>
+        <div style="font-size: 14px; margin-bottom: 10px;">
+          <strong>GST (10%):</strong> <span style="color: #999;">${{gst}}</span>
+        </div>
+        <div class="grand-total">${{grand_total}}</div>
+      </div>
+    </div>
+
+    <!-- Payment Section -->
+    <div class="payment-section">
+      <div class="payment-col">
+        <h3>[PAYMENT]</h3>
+        <div class="detail"><strong>Account Name:</strong> MOK HOUSE PTY LTD</div>
+        <div class="detail"><strong>BSB:</strong> 013-943</div>
+        <div class="detail"><strong>Account Number:</strong> 612281562</div>
+      </div>
+
+      <div class="payment-col">
+        <h3>Contact</h3>
+        <div class="detail">For any questions please contact us at:</div>
+        <div class="detail" style="color: #000; font-weight: bold;">hello@mokhouse.com.au</div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>Generated on 25-10-2025 | Thank you for your business</p>
+    </div>
+  </div>
+</body>
+</html>

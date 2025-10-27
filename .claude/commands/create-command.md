@@ -1,3 +1,13 @@
+---
+created: "2025-10-21 17:00"
+description: |
+  Interactive command creation wizard that helps you design effective slash commands for claudelife workflows. Guides you through defining purpose, inputs, outputs, and technical requirements. Analyzes existing scripts for optimization opportunities, suggests companion script creation for performance (30-60x speedups), and ensures commands follow best practices with proper frontmatter, examples, and documentation.
+examples:
+  - /create-command "automate daily note extraction"
+  - /create-command "analyze MOKAI project patterns"
+  - /create-command "sync Supabase with vault entries"
+---
+
 # Create Command
 
 This command helps you create effective, structured command files for your `.claude/commands/` folder by applying proven prompt engineering techniques specifically tailored to your claudelife project's needs.

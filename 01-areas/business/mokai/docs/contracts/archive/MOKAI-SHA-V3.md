@@ -1,4 +1,5 @@
 ---
+tags: [mokai, legal, contracts]
 date created: Tue, 10 7th 25, 2:30:51 pm
 date modified: Tue, 10 7th 25, 2:48:04 pm
 relation:

@@ -1,0 +1,391 @@
+---
+program_info:
+  name: "Body Recomposition - 3-Day Full Body"
+  phase: "Muscle Building + Fat Loss"
+  start_date: "2025-10-21"
+  duration_weeks: 8
+  current_week: 1
+  goal: "Build muscle while losing fat (body recomposition)"
+  notes: "Flexible 3-day ABC rotation - 20-30 min cardio warmup + 30-40 min lifting = 60 min total"
+  cardio_protocol:
+    type: "Incline treadmill walking"
+    speed: "4.8 km/h"
+    incline: 9
+    duration_min: "20-30"
+    timing: "Pre-workout (before lifting)"
+    purpose: "Warmup + fat loss, acts as extended cardio warmup before strength work"
+    note: "Good for body recomp - cardio first won't significantly impact lifting performance at this intensity"
+
+schedule:
+  weekly_frequency: 3
+  rotation: "ABC"  # Day A → Day B → Day C, repeat
+  rest_days_between: 1  # Minimum 1 rest day between sessions
+
+  flexible_scheduling:
+    description: "Pick any 3 non-consecutive days that work for you each week"
+    ideal_pattern: [1, 3, 5]  # Mon, Wed, Fri
+    alternative_1: [2, 4, 6]  # Tue, Thu, Sat
+    alternative_2: [1, 4, 6]  # Mon, Thu, Sat
+    rule: "Just maintain ABC sequence on whatever days you train"
+
+workouts:
+  day_a:
+    name: "Push Focus + Legs"
+    focus: "Chest, Shoulders, Triceps, Quads"
+    target_duration_min: 35
+    time_efficiency_note: "Reduced rest periods, superset accessories to fit 60-min total with cardio"
+    exercises:
+      - name: "Barbell Bench Press"
+        sets: 4
+        reps: "6-8"
+        rpe_target: 8
+        primary: true
+        rest_seconds: 120  # Reduced from 180 for time efficiency
+        starting_weight: "60-62.5kg"
+        progression: "Add 1-2 reps per week until hit 4x8, then add 2.5kg and drop to 4x6"
+        form_cues:
+          - "Retract scapula, chest up"
+          - "Bar to mid-chest"
+          - "Drive through feet"
+
+      - name: "Incline Dumbbell Press"
+        sets: 3
+        reps: "8-10"
+        rpe_target: 8
+        primary: false
+        rest_seconds: 90  # Reduced from 120
+        starting_weight: "20kg dumbbells"
+        progression: "Add 1 rep per week until 3x10, then increase by 2kg per dumbbell"
+        form_cues:
+          - "30-45 degree incline"
+          - "Full ROM, feel the stretch"
+          - "Control the descent"
+
+      - name: "Dumbbell Shoulder Press (Seated)"
+        sets: 3
+        reps: "8-10"
+        rpe_target: 8
+        primary: false
+        rest_seconds: 90  # Reduced from 120
+        starting_weight: "15-17kg dumbbells"
+        progression: "Add 1 rep per week until 3x10, then increase by 1-2kg per dumbbell"
+        back_safe: true
+        notes: "Seated version protects lower back compared to standing"
+
+      - name: "Leg Press"
+        sets: 4
+        reps: "10-12"
+        rpe_target: 8
+        primary: true
+        rest_seconds: 120  # Reduced from 150
+        starting_weight: "100-120kg"
+        progression: "Add 1-2 reps per week until 4x12, then add 10kg"
+        back_safe: true
+        notes: "Replaces squats - no spinal compression"
+        form_cues:
+          - "Full ROM without lower back rounding"
+          - "Knees track over toes"
+          - "Controlled eccentric"
+
+      - name: "Lateral Raises"
+        sets: 3
+        reps: "12-15"
+        rpe_target: 7
+        primary: false
+        rest_seconds: 45  # Reduced from 60
+        superset_with: "Tricep Pushdowns"  # Time efficiency
+        progression: "Add 1-2 reps before increasing weight"
+        form_cues:
+          - "Slight forward lean"
+          - "Lead with elbows"
+          - "Raise to shoulder height"
+
+      - name: "Tricep Pushdowns (Cable)"
+        sets: 3
+        reps: "12-15"
+        rpe_target: 7
+        primary: false
+        rest_seconds: 45  # Reduced from 60
+        superset_with: "Lateral Raises"  # Saves ~3 min total
+        progression: "Add 1-2 reps before increasing weight"
+
+  day_b:
+    name: "Pull Focus + Legs"
+    focus: "Back, Biceps, Hamstrings, Posterior Chain"
+    target_duration_min: 35
+    time_efficiency_note: "Reduced rest periods, superset accessories to fit 60-min total with cardio"
+    exercises:
+      - name: "Lat Pulldown (Wide Grip)"
+        sets: 4
+        reps: "8-10"
+        rpe_target: 8
+        primary: true
+        rest_seconds: 90  # Reduced from 120
+        starting_weight: "50-55kg"
+        progression: "Add 1-2 reps per week until 4x10, then add 5kg"
+        back_safe: true
+        notes: "Replaces pull-ups - less core bracing needed"
+        form_cues:
+          - "Pull to upper chest"
+          - "Retract scapula"
+          - "Control the ascent"
+
+      - name: "Chest-Supported Row (Machine)"
+        sets: 4
+        reps: "10-12"
+        rpe_target: 8
+        primary: true
+        rest_seconds: 90  # Reduced from 120
+        progression: "Add 1-2 reps per week until 4x12, then add 5kg"
+        back_safe: true
+        notes: "Chest support protects lower back - no stress like bent-over rows"
+        form_cues:
+          - "Chest firmly against pad"
+          - "Pull elbows back"
+          - "Squeeze shoulder blades"
+
+      - name: "Seated Cable Row"
+        sets: 3
+        reps: "10-12"
+        rpe_target: 8
+        primary: false
+        rest_seconds: 75  # Reduced from 90
+        progression: "Add 1-2 reps per week until 3x12, then add 5kg"
+        back_safe: true
+        notes: "Seated position protects lower back"
+
+      - name: "Leg Curl (Lying or Seated)"
+        sets: 4
+        reps: "10-12"
+        rpe_target: 8
+        primary: false
+        rest_seconds: 75  # Reduced from 90
+        progression: "Add 1-2 reps per week until 4x12, then add 5kg"
+        back_safe: true
+        notes: "Replaces Romanian Deadlifts - hamstrings without lower back stress"
+
+      - name: "Face Pulls (Cable)"
+        sets: 3
+        reps: "15-20"
+        rpe_target: 7
+        primary: false
+        rest_seconds: 45  # Reduced from 60
+        superset_with: "Bicep Curls"  # Time efficiency
+        progression: "Add reps before weight"
+        back_safe: true
+        notes: "Critical for upper back health and shoulder stability"
+        form_cues:
+          - "Pull to face level"
+          - "External rotation at end"
+          - "High rep, feel the burn"
+
+      - name: "Bicep Curls (Dumbbell or Cable)"
+        sets: 3
+        reps: "10-12"
+        rpe_target: 8
+        primary: false
+        rest_seconds: 45  # Reduced from 60
+        superset_with: "Face Pulls"  # Saves ~2 min total
+        progression: "Add 1-2 reps before increasing weight"
+
+  day_c:
+    name: "Full Body Hypertrophy"
+    focus: "Everything - Higher Reps, Pump Focus, Metabolic Stress"
+    target_duration_min: 30
+    time_efficiency_note: "Shortest day - circuit-style training, minimal rest to fit 60-min total with cardio"
+    notes: "Lighter day - prioritize muscle contraction over load, can be done quickly"
+    exercises:
+      - name: "Dumbbell Bench Press (Flat)"
+        sets: 3
+        reps: "10-12"
+        rpe_target: 7
+        primary: false
+        rest_seconds: 60  # Reduced from 90
+        progression: "Focus on time under tension, not just weight"
+        notes: "Lighter than Day A bench - feel the muscle work"
+
+      - name: "Cable Flyes (Mid or High)"
+        sets: 3
+        reps: "12-15"
+        rpe_target: 7
+        primary: false
+        rest_seconds: 45  # Reduced from 60
+        progression: "Add reps, focus on squeeze"
+        notes: "Chest pump and stretch"
+
+      - name: "Lat Pulldown (Underhand Grip)"
+        sets: 3
+        reps: "12-15"
+        rpe_target: 7
+        primary: false
+        rest_seconds: 60  # Reduced from 90
+        progression: "Different grip than Day B for variety"
+        notes: "More bicep involvement than wide grip"
+
+      - name: "Leg Press"
+        sets: 3
+        reps: "15-20"
+        rpe_target: 7
+        primary: false
+        rest_seconds: 90  # Reduced from 120
+        starting_weight: "80-100kg (lighter than Day A)"
+        progression: "High reps for metabolic stress"
+        back_safe: true
+        notes: "Leg volume without heavy load - great for fat loss"
+
+      - name: "Leg Extension (Machine)"
+        sets: 3
+        reps: "12-15"
+        rpe_target: 8
+        primary: false
+        rest_seconds: 45  # Reduced from 60
+        superset_with: "Cable Crunches"  # Final superset for efficiency
+        progression: "Focus on quad squeeze at top"
+        notes: "Isolation work for quads"
+
+      - name: "Cable Crunches or Ab Machine"
+        sets: 3
+        reps: "15-20"
+        rpe_target: 7
+        primary: false
+        rest_seconds: 45  # Reduced from 60
+        superset_with: "Leg Extension"  # Saves ~2 min
+        progression: "Add weight slowly"
+        back_safe: true
+        notes: "Core work without spinal flexion under heavy load"
+
+recovery_protocols:
+  deload_frequency_weeks: 6
+  deload_volume: 0.6  # 60% of normal volume (reduce sets)
+  deload_intensity: 0.85  # 85% of normal weight
+  deload_note: "Take a deload week every 6 weeks - same exercises, fewer sets, lighter weight"
+
+  rest_day_activities:
+    - "Light walking 20-30 min (helps fat loss without impacting recovery)"
+    - "Stretching/yoga 15 min"
+    - "Foam rolling 10 min (especially upper back)"
+
+  warmup_cardio:
+    description: "Pre-workout cardio warmup (already part of your routine)"
+    protocol: "20-30 min incline treadmill walking at 4.8 km/h, incline 9"
+    purpose: "Extended warmup + fat loss without impacting lifting performance"
+    timing: "BEFORE lifting, part of 60-min total gym time"
+    note: "This intensity won't negatively impact strength work - acts as active warmup"
+
+adaptation_rules:
+  low_energy_threshold: 6  # /10
+  poor_sleep_threshold: 6  # /10
+  high_stress_threshold: 7  # /10
+  back_pain_threshold: "Moderate"
+
+  adaptations:
+    tired_but_ok:
+      condition: "energy < 7 AND sleep > 5"
+      action: "Reduce volume by 1 set per exercise, keep weight/RPE same"
+      example: "4x6-8 bench becomes 3x6-8"
+
+    very_tired:
+      condition: "energy < 6 OR sleep < 5"
+      action: "Do Day C instead of planned day (lighter pump work)"
+      rationale: "Something is better than nothing, Day C is easiest to recover from"
+
+    high_stress:
+      condition: "stress > 7"
+      action: "Drop RPE to 6-7, focus on movement quality over load"
+      example: "RPE 8 becomes RPE 6-7, reduce weight if needed"
+
+    back_discomfort:
+      condition: "back soreness >= Moderate OR pain keywords detected"
+      action: "Skip all leg exercises, do upper body only + light core work"
+      safety: "Do NOT push through back pain - modify or skip"
+      example:
+        day_a: "Do Bench, Incline DB, Shoulder Press, Lateral Raises, Triceps only"
+        day_b: "Do Lat Pulldown, Chest Row, Cable Row, Face Pulls, Biceps only"
+        day_c: "Do upper body exercises only, skip leg press/extension"
+
+    missed_session:
+      condition: "Can't make planned training day"
+      action: "Just do next workout in ABC sequence when you can - no make-up needed"
+      example: "Missed Day A on Monday? Do Day A on Thursday instead"
+      rationale: "3-day program is forgiving, consistency over perfection"
+
+progression_strategy:
+  method: "Rep Progression (Double Progression)"
+  description: "Add reps before adding weight - safer and more sustainable"
+
+  steps:
+    step_1: "Start at bottom of rep range with challenging weight (RPE 7-8)"
+    step_2: "Add 1-2 reps per week per set until you hit top of range"
+    step_3: "When ALL sets hit top range, increase weight and drop back to bottom reps"
+    step_4: "Repeat cycle"
+
+  examples:
+    bench_press:
+      week_1: "60kg: 6, 6, 6, 6 (RPE 8)"
+      week_2: "60kg: 7, 7, 6, 6 (RPE 8)"
+      week_3: "60kg: 8, 8, 7, 7 (RPE 8)"
+      week_4: "62.5kg: 6, 6, 6, 6 (RPE 8) ← weight increased"
+
+    leg_press:
+      week_1: "100kg: 10, 10, 10, 10 (RPE 8)"
+      week_2: "100kg: 11, 11, 10, 10 (RPE 8)"
+      week_3: "100kg: 12, 12, 11, 11 (RPE 8)"
+      week_4: "110kg: 10, 10, 10, 10 (RPE 8) ← weight increased"
+
+  realistic_targets_week_8:
+    bench_press: "67.5-70kg (from 60-62.5kg)"
+    incline_db_press: "24-26kg dumbbells (from 20kg)"
+    db_shoulder_press: "18-20kg dumbbells (from 15-17kg)"
+    leg_press: "140-160kg (from 100-120kg)"
+    lat_pulldown: "60-65kg (from 50-55kg)"
+    chest_supported_row: "50-55kg (from estimated 40-45kg)"
+
+body_recomposition_notes:
+  nutrition_reminder: "Body recomp requires calorie deficit + high protein"
+  protein_target: "1.8-2.2g per kg bodyweight"
+  calorie_approach: "Small deficit (10-20% below maintenance)"
+
+  training_emphasis:
+    - "Progressive overload is KEY - must get stronger to build muscle"
+    - "RPE 7-8 is sweet spot - enough stimulus without excessive fatigue"
+    - "Consistency > Intensity - 3x/week every week beats 5x/week inconsistently"
+    - "Leg work is critical - biggest calorie burn and muscle mass"
+
+  recovery_priority:
+    - "Sleep 7-9 hours for fat loss + muscle retention"
+    - "Manage stress - high cortisol kills body recomp"
+    - "Don't add extra cardio unless recovery is good"
+
+back_safety_protocol:
+  excluded_exercises:
+    - "Back Squats (replaced with Leg Press)"
+    - "Deadlifts (replaced with Leg Curl + Chest-Supported Rows)"
+    - "Bent-Over Barbell Rows (replaced with Chest-Supported Rows)"
+    - "Standing Overhead Press (replaced with Seated Dumbbell Press)"
+    - "Good Mornings, Hyperextensions (not needed with leg curl)"
+
+  included_for_back_health:
+    - "Face Pulls (4 sets total per week for upper back)"
+    - "Chest-Supported Rows (no lower back stress)"
+    - "Cable Crunches (core without spinal flexion under load)"
+
+  warning_signs:
+    immediate_stop:
+      - "Sharp pain in lower back"
+      - "Radiating pain down legs"
+      - "Numbness or tingling"
+
+    modify_session:
+      - "Dull ache in lower back"
+      - "Stiffness after leg exercises"
+      - "Pain when bending over"
+
+    action: "Switch to 'back_discomfort' adaptation - upper body only"
+
+notes:
+  - "RPE Scale: 6 = 4 reps in reserve, 7 = 3 RIR, 8 = 2 RIR, 9 = 1 RIR"
+  - "Primary exercises (marked primary: true) get 1.3x XP multiplier"
+  - "Form quality 9-10/10 gets 1.15x XP bonus for body recomp focus"
+  - "Consistency bonus: 3 sessions/week for 4 straight weeks = 1000 bonus XP"
+  - "This is a FLEXIBLE program - life happens, just maintain ABC sequence"
+  - "Back safety is priority #1 - never push through back pain"

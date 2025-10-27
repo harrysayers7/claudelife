@@ -29,5 +29,9 @@
 **Integrations**
 
 ---
+tags: [resources, guides, documentation]
+relation:
+  - "[[resources]]"
+  - "[[resources]]"
 
 *Last updated: 2025-09-24*

@@ -1,4 +1,8 @@
 ---
+tags: [mokai, business]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 date: "2025-10-14"
 ---
 # Phase 1: Foundation (Next 30 Days)

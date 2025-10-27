@@ -2,6 +2,7 @@
 date created: Fri, 10 3rd 25, 11:45:04 am
 date modified: Thu, 10 9th 25, 2:17:18 pm
 relation:
+  - "[[mokai]]"
   - "[[mokai-cyber-learning]]"
 tags:
   - cybersecurity

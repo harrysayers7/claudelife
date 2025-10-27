@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invoice MH-001</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #000;
+      line-height: 1.5;
+      background: white;
+    }
+
+    .invoice-container {
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 40px;
+      background: white;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+      padding-bottom: 30px;
+      border-bottom: 2px solid #000;
+    }
+
+    .company-name {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    .invoice-title {
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 20px;
+      letter-spacing: 1px;
+    }
+
+    /* Meta Info */
+    .meta-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-bottom: 40px;
+      font-size: 11px;
+    }
+
+    .meta-item {
+      text-align: left;
+    }
+
+    .meta-label {
+      font-weight: bold;
+      font-size: 10px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .meta-value {
+      font-size: 11px;
+    }
+
+    /* Bill To Section */
+    .bill-to {
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-weight: bold;
+      font-size: 11px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .bill-to-content {
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    /* Line Items Table */
+    .line-items {
+      margin-bottom: 30px;
+    }
+
+    .items-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10px;
+      margin-bottom: 20px;
+    }
+
+    .items-table thead {
+      background: #f5f5f5;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+    }
+
+    .items-table th {
+      padding: 10px 8px;
+      text-align: left;
+      font-weight: bold;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .items-table th.amount {
+      text-align: right;
+      padding-right: 15px;
+    }
+
+    .items-table tbody tr {
+      border-bottom: 1px solid #eee;
+    }
+
+    .items-table tbody tr:last-child {
+      border-bottom: 1px solid #000;
+    }
+
+    .items-table td {
+      padding: 10px 8px;
+      vertical-align: top;
+      font-size: 10px;
+    }
+
+    .items-table td.amount {
+      text-align: right;
+      padding-right: 15px;
+      font-weight: 500;
+    }
+
+    .items-table td.qty {
+      text-align: center;
+    }
+
+    /* Totals */
+    .totals-section {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 40px;
+    }
+
+    .totals {
+      width: 250px;
+      border-top: 1px solid #000;
+      padding-top: 10px;
+    }
+
+    .total-row {
+      display: grid;
+      grid-template-columns: 1fr 80px;
+      gap: 15px;
+      font-size: 10px;
+      margin-bottom: 6px;
+      align-items: center;
+    }
+
+    .total-label {
+      text-align: left;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 10px;
+    }
+
+    .total-amount {
+      text-align: right;
+      font-weight: bold;
+    }
+
+    .total-row.grand-total {
+      border-top: 1px solid #000;
+      padding-top: 8px;
+      margin-top: 8px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* Payment Section */
+    .payment-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      padding: 30px 0;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+      margin-bottom: 30px;
+    }
+
+    .payment-col {
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .payment-col h3 {
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .payment-col h4 {
+      font-size: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 10px;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .payment-col p {
+      margin: 0 0 3px 0;
+      font-size: 10px;
+    }
+
+    .bank-detail {
+      margin-bottom: 2px;
+      font-size: 10px;
+    }
+
+    /* Footer */
+    .footer {
+      padding-top: 20px;
+      font-size: 8px;
+      color: #666;
+      text-align: center;
+      border-top: 1px solid #000;
+      line-height: 1.5;
+    }
+
+    @media print {
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .invoice-container {
+        max-width: 100%;
+        margin: 0;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="invoice-container">
+    <!-- Header -->
+    <div class="header">
+      <div class="company-name">MOK HOUSE</div>
+      <div class="invoice-title">INVOICE</div>
+    </div>
+
+    <!-- Meta Info -->
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Date</div>
+        <div class="meta-value">25-10-2025</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Invoice Number</div>
+        <div class="meta-value">#MH-001</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Due Date</div>
+        <div class="meta-value">01-11-2025</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">PO Number</div>
+        <div class="meta-value">0404</div>
+      </div>
+    </div>
+
+    <!-- Bill To -->
+    <div class="bill-to">
+      <div class="section-title">Bill To</div>
+      <div class="bill-to-content">
+        <strong>Repco Australia</strong><br/>
+        Unit 5, 123 Business Park, Sydney NSW 2000<br/>
+        ABN: 12 345 678 901
+      </div>
+    </div>
+
+    <!-- Line Items -->
+    <div class="line-items">
+      <table class="items-table">
+        <thead>
+          <tr>
+            <th style="width: 50%;">Description</th>
+            <th class="qty" style="width: 10%;">Qty</th>
+            <th class="amount" style="width: 15%;">Unit Price</th>
+            <th class="amount" style="width: 10%;">Tax %</th>
+            <th class="amount" style="width: 15%;">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>REPCO - Bathurst 500 Campaign Design &amp; Production</td>
+            <td class="qty">1</td>
+            <td class="amount">$2000.00</td>
+            <td class="amount">10%</td>
+            <td class="amount">$2000.00</td>
+          </tr>
+          <tr>
+            <td>Additional Creative Services - Revisions &amp; Consultation</td>
+            <td class="qty">2</td>
+            <td class="amount">$500.00</td>
+            <td class="amount">10%</td>
+            <td class="amount">$1000.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Totals -->
+    <div class="totals-section">
+      <div class="totals">
+        <div class="total-row">
+          <div class="total-label">Subtotal</div>
+          <div class="total-amount">$3000.00</div>
+        </div>
+        <div class="total-row">
+          <div class="total-label">GST (10%)</div>
+          <div class="total-amount">$300.00</div>
+        </div>
+        <div class="total-row grand-total">
+          <div class="total-label">Total</div>
+          <div class="total-amount">$3300.00</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Payment Section -->
+    <div class="payment-section">
+      <div class="payment-col">
+        <h3>Payment Details</h3>
+        <h4>Bank Transfer</h4>
+          <div class="bank-detail"><strong>Account:</strong> MOK HOUSE PTY LTD</div>
+          <div class="bank-detail"><strong>BSB:</strong> 013-943</div>
+          <div class="bank-detail"><strong>Account Number:</strong> 612281562</div>
+        <h4>Payment Terms</h4>
+        <p>Due within 7 days of invoice date</p>
+      </div>
+
+      <div class="payment-col">
+        <h3>Contact Information</h3>
+        <h4>Mok House</h4>
+        <p><strong>Email:</strong> hello@mokhouse.com.au</p>
+        <p><strong>ABN:</strong> 38 690 628 212</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>Generated on 25-10-2025 | Thank you for your business</p>
+    </div>
+  </div>
+</body>
+</html>

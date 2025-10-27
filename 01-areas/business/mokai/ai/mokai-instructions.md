@@ -29,6 +29,10 @@ Mokai Technologies Pty Ltd is an Indigenous-owned (51%) cybersecurity consultanc
 - **Lower Margin, Higher Volume**: 10-15% margin vs services 20-40%, but faster transactions
 
 ---
+tags: [mokai, AI, automation]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 
 ## Core Services
 

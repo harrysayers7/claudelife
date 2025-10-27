@@ -17,16 +17,27 @@
     "scan-tasks": "bash scripts/scan-tasks.sh",
     "scan-tasks:json": "bash scripts/scan-tasks.sh --json",
     "scan-archive": "bash scripts/scan-archive-candidates.sh",
-    "scan-archive:json": "bash scripts/scan-archive-candidates.sh --json"
+    "scan-archive:json": "bash scripts/scan-archive-candidates.sh --json",
+    "scan-frontmatter": "bash scripts/scan-frontmatter-issues.sh",
+    "scan-frontmatter:json": "bash scripts/scan-frontmatter-issues.sh",
+    "build-tag-library": "bash scripts/build-tag-library.sh",
+    "test:invoices": "ts-node src/invoicing/test-pdf-generation.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",
+    "@types/handlebars": "^4.0.40",
     "dotenv": "^17.2.2",
     "googleapis": "^160.0.0",
+    "handlebars": "^4.7.8",
     "imap": "^0.8.19",
     "node-fetch": "^2.7.0",
     "nodemailer": "^7.0.6",
     "playwright": "^1.55.1",
+    "puppeteer": "^24.26.1",
     "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
   }
 }

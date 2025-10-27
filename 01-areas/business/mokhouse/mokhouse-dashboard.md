@@ -1,8 +1,10 @@
 ---
+tags: [mokhouse, music, production]
 date created: Sat, 10 18th 25, 7:30:00 pm
-date modified: Mon, 10 20th 25, 9:36:09 am
+date modified: Mon, 10 20th 25, 2:20:47 pm
 type: dashboard
 relation:
+  - "[[mokhouse]]"
   - "[[mokhouse]]"
 aliases:
   - MOK HOUSE HQ

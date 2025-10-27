@@ -1,4 +1,8 @@
 ---
+tags: [mokai, diary, daily-ops]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 date: 2025-10-19
 day: Sunday
 ---

@@ -26,6 +26,10 @@
   - Original script available as `sync-upbank-legacy`
 
 ---
+tags: [resources, reference]
+relation:
+  - "[[resources]]"
+  - "[[resources]]"
 
 ### **Key Features**
 

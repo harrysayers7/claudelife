@@ -6,7 +6,7 @@ views:
         - relation.contains(link("mokhouse"))
         - type.contains("project")
     order:
-      - project name
+      - file.name
       - status
       - demo fee
       - Date Paid
@@ -15,8 +15,8 @@ views:
       - "Invoice #"
       - invoice sent
       - date received
+      - project name
       - due date
-      - file.name
       - awarded
       - internal review
       - PO

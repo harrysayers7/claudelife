@@ -34,6 +34,10 @@ This document analyzes the FastAPI MCP configuration and identifies logical bund
 - **gmail** - Email automation
 
 ---
+tags: [resources, reference]
+relation:
+  - "[[resources]]"
+  - "[[resources]]"
 
 ## Recommended MCP Bundles
 

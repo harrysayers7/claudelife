@@ -9,6 +9,10 @@ Explain Mokai's value proposition, understand why Indigenous ownership matters i
 Master the fundamentals of Indigenous procurement, cybersecurity frameworks, and Mokai's competitive positioning in government markets.
 
 ---
+tags: [mokai, learning, business-development]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 
 ## Day 1: Indigenous Procurement Landscape
 

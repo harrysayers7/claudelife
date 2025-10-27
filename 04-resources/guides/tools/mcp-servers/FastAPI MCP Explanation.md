@@ -1,5 +1,6 @@
 ---
 relation:
+  - "[[resources]]"
   - "[[mcp]]"
   - "[[97-tags/AI-Research]]"
 tags:

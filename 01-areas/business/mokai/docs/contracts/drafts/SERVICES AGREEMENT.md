@@ -1,4 +1,8 @@
 ---
+tags: [mokai, legal, contracts]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 description:
 date: "2025-09-29 15:59"
 ---

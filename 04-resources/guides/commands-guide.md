@@ -4,6 +4,10 @@
 > Complete reference for all available slash commands in your claudelife setup, organized by category with usage examples and when to use each one.
 
 ---
+tags: [resources, guides, documentation]
+relation:
+  - "[[resources]]"
+  - "[[resources]]"
 
 ## 📚 Popular Commands
 

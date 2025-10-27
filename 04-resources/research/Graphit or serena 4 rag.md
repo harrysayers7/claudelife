@@ -1,4 +1,5 @@
 ---
+tags: [resources, research]
 Done: false
 today: false
 follow up: false
@@ -9,6 +10,7 @@ type:
   - research 
 status:
 relation:
+  - "[[resources]]"
 description:
 effort:
 ai-assigned: false

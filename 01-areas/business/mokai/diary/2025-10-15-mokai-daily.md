@@ -1,4 +1,8 @@
 ---
+tags: [mokai, diary, daily-ops]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 journal: Mokai Daily 🟣
 journal-date: 2025-10-15
 date created: Wed, 10 15th 25, 2:15:36 pm

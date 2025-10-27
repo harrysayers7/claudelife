@@ -1,4 +1,5 @@
 ---
+tags: [mokhouse, documentation]
 Done: false
 today: false
 follow up: false
@@ -8,6 +9,7 @@ ASAP: false
 type: Task
 status:
 relation:
+  - "[[mokhouse]]"
   - "[[mokhouse]]"
 description:
 effort:

@@ -1,5 +1,6 @@
 ---
 relation:
+  - "[[mokai]]"
   - "[[deep-research]]"
   - "[[mokai-cyber-learning]]"
   - "[[mokai]]"

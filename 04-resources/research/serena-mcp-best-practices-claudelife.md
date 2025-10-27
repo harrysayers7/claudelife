@@ -1,4 +1,7 @@
 ---
+relation:
+  - "[[resources]]"
+  - "[[resources]]"
 date: "2025-10-14 17:45"
 tags: [serena, mcp, best-practices, git-hooks, automation]
 research_type: quick-research

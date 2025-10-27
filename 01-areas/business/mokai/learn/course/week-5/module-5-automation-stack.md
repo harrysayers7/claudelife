@@ -9,6 +9,10 @@ Implement Mokai's default technology stack and automate the paper trail from lea
 Build comprehensive automation using n8n workflows, Notion CRM, Xero financial management, Airwallex payments, and integrated documentation systems.
 
 ---
+tags: [mokai, learning, business-development]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 
 ## Day 31: n8n Platform Setup and Basic Workflows
 

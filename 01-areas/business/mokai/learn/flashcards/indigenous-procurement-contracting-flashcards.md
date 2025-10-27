@@ -1,4 +1,7 @@
 ---
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 type: flash-card
 tags:
   - indigenous-procurement-contracting-flashcards

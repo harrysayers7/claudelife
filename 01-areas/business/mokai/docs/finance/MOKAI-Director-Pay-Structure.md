@@ -13,6 +13,10 @@
 - Paid monthly/fortnightly like any normal wage.
 
 ---
+tags: [mokai, business]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 
 ## 2. **Desk Hire (Home Office Stipend)**
 

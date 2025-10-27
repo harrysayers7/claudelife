@@ -1,4 +1,8 @@
 ---
+tags: [mokhouse, marketing, portfolio]
+relation:
+  - "[[mokhouse]]"
+  - "[[mokhouse]]"
 date: "2025-10-16 16:45"
 client: "GWM"
 project_type: "original composition"

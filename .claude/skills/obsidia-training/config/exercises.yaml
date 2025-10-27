@@ -1,0 +1,335 @@
+---
+# Exercise Library for OBSIDIA Training System
+# Organized by movement pattern and muscle group
+
+upper_push:
+  chest_primary:
+    - name: "Barbell Bench Press"
+      muscle_groups: ["chest", "triceps", "front_delts"]
+      equipment: ["barbell", "bench"]
+      difficulty: "intermediate"
+      form_cues:
+        - "Retract scapula, chest up"
+        - "Bar touches mid-chest"
+        - "Drive through feet"
+        - "Elbows 45-degree angle"
+
+    - name: "Incline Barbell Bench Press"
+      muscle_groups: ["upper_chest", "front_delts", "triceps"]
+      equipment: ["barbell", "incline_bench"]
+      difficulty: "intermediate"
+      form_cues:
+        - "30-45 degree incline"
+        - "Bar to upper chest"
+        - "Keep shoulders back"
+
+    - name: "Dumbbell Bench Press"
+      muscle_groups: ["chest", "triceps", "front_delts"]
+      equipment: ["dumbbells", "bench"]
+      difficulty: "beginner"
+      form_cues:
+        - "Dumbbells at chest level"
+        - "Full ROM, stretch at bottom"
+        - "Press up and slightly together"
+
+  shoulder_primary:
+    - name: "Overhead Press (Barbell)"
+      muscle_groups: ["front_delts", "side_delts", "triceps"]
+      equipment: ["barbell"]
+      difficulty: "intermediate"
+      form_cues:
+        - "Bar starts at collarbone"
+        - "Press straight up"
+        - "Squeeze glutes for stability"
+        - "Full lockout overhead"
+
+    - name: "Dumbbell Shoulder Press"
+      muscle_groups: ["front_delts", "side_delts", "triceps"]
+      equipment: ["dumbbells", "bench"]
+      difficulty: "beginner"
+      form_cues:
+        - "Dumbbells at shoulder height"
+        - "Press up and slightly together"
+        - "Control the descent"
+
+  accessory_chest:
+    - name: "Incline Dumbbell Press"
+      muscle_groups: ["upper_chest", "front_delts"]
+      equipment: ["dumbbells", "incline_bench"]
+      difficulty: "beginner"
+
+    - name: "Cable Flyes"
+      muscle_groups: ["chest"]
+      equipment: ["cable_machine"]
+      difficulty: "beginner"
+      form_cues:
+        - "Slight bend in elbows"
+        - "Stretch at the end"
+        - "Squeeze in the middle"
+
+  accessory_shoulders:
+    - name: "Lateral Raises"
+      muscle_groups: ["side_delts"]
+      equipment: ["dumbbells"]
+      difficulty: "beginner"
+      form_cues:
+        - "Slight forward lean"
+        - "Lead with elbows"
+        - "Raise to shoulder height"
+
+    - name: "Face Pulls"
+      muscle_groups: ["rear_delts", "upper_back"]
+      equipment: ["cable_machine", "rope"]
+      difficulty: "beginner"
+      form_cues:
+        - "Pull to face level"
+        - "External rotation at end"
+        - "Squeeze shoulder blades"
+
+  accessory_triceps:
+    - name: "Tricep Pushdowns"
+      muscle_groups: ["triceps"]
+      equipment: ["cable_machine"]
+      difficulty: "beginner"
+      form_cues:
+        - "Elbows tucked"
+        - "Full extension"
+        - "Control the return"
+
+    - name: "Overhead Tricep Extension"
+      muscle_groups: ["triceps"]
+      equipment: ["dumbbell", "cable_machine"]
+      difficulty: "beginner"
+
+upper_pull:
+  back_primary:
+    - name: "Deadlift"
+      muscle_groups: ["lower_back", "hamstrings", "glutes", "upper_back"]
+      equipment: ["barbell"]
+      difficulty: "advanced"
+      form_cues:
+        - "Neutral spine throughout"
+        - "Bar against shins"
+        - "Push through floor"
+        - "Hip hinge, not squat"
+
+    - name: "Barbell Rows"
+      muscle_groups: ["lats", "middle_back", "biceps"]
+      equipment: ["barbell"]
+      difficulty: "intermediate"
+      form_cues:
+        - "Hinge at hips, chest up"
+        - "Pull to lower chest"
+        - "Squeeze shoulder blades"
+        - "Control the negative"
+
+    - name: "Pull-ups"
+      muscle_groups: ["lats", "biceps", "upper_back"]
+      equipment: ["pull_up_bar"]
+      difficulty: "intermediate"
+      form_cues:
+        - "Full hang at bottom"
+        - "Pull chest to bar"
+        - "Control the descent"
+        - "Engage lats, not just arms"
+
+    - name: "Lat Pulldown"
+      muscle_groups: ["lats", "biceps"]
+      equipment: ["cable_machine"]
+      difficulty: "beginner"
+      form_cues:
+        - "Slight lean back"
+        - "Pull to upper chest"
+        - "Squeeze at bottom"
+
+  accessory_back:
+    - name: "Dumbbell Rows"
+      muscle_groups: ["lats", "middle_back", "biceps"]
+      equipment: ["dumbbell", "bench"]
+      difficulty: "beginner"
+
+    - name: "Seated Cable Rows"
+      muscle_groups: ["middle_back", "lats", "biceps"]
+      equipment: ["cable_machine"]
+      difficulty: "beginner"
+      form_cues:
+        - "Chest up, shoulders back"
+        - "Pull to lower chest"
+        - "Squeeze shoulder blades"
+
+  accessory_biceps:
+    - name: "Bicep Curls (Barbell)"
+      muscle_groups: ["biceps"]
+      equipment: ["barbell"]
+      difficulty: "beginner"
+      form_cues:
+        - "Elbows tucked"
+        - "Full ROM"
+        - "Control the negative"
+
+    - name: "Hammer Curls"
+      muscle_groups: ["biceps", "forearms"]
+      equipment: ["dumbbells"]
+      difficulty: "beginner"
+
+lower_push:
+  quad_primary:
+    - name: "Back Squat"
+      muscle_groups: ["quads", "glutes", "hamstrings"]
+      equipment: ["barbell", "squat_rack"]
+      difficulty: "intermediate"
+      form_cues:
+        - "Chest up, core braced"
+        - "Break at hips and knees together"
+        - "Knees track over toes"
+        - "Hit depth (hip crease below knee)"
+        - "Drive through midfoot"
+
+    - name: "Front Squat"
+      muscle_groups: ["quads", "core"]
+      equipment: ["barbell", "squat_rack"]
+      difficulty: "advanced"
+      form_cues:
+        - "Elbows high"
+        - "Chest vertical"
+        - "More upright than back squat"
+
+    - name: "Leg Press"
+      muscle_groups: ["quads", "glutes"]
+      equipment: ["leg_press_machine"]
+      difficulty: "beginner"
+      form_cues:
+        - "Feet hip-width"
+        - "Full ROM without butt lifting"
+        - "Push through heels"
+
+  accessory_quads:
+    - name: "Walking Lunges"
+      muscle_groups: ["quads", "glutes"]
+      equipment: ["dumbbells"]
+      difficulty: "beginner"
+      form_cues:
+        - "Long stride"
+        - "Back knee almost touches ground"
+        - "Torso upright"
+
+    - name: "Bulgarian Split Squat"
+      muscle_groups: ["quads", "glutes"]
+      equipment: ["dumbbells", "bench"]
+      difficulty: "intermediate"
+      form_cues:
+        - "Front foot flat"
+        - "Drop straight down"
+        - "Knee tracks over toes"
+
+  accessory_calves:
+    - name: "Calf Raises (Standing)"
+      muscle_groups: ["calves"]
+      equipment: ["calf_raise_machine", "dumbbells"]
+      difficulty: "beginner"
+      form_cues:
+        - "Full stretch at bottom"
+        - "Full contraction at top"
+        - "Pause at peak"
+
+lower_pull:
+  hamstring_primary:
+    - name: "Romanian Deadlift"
+      muscle_groups: ["hamstrings", "glutes", "lower_back"]
+      equipment: ["barbell"]
+      difficulty: "intermediate"
+      form_cues:
+        - "Soft knees, hip hinge"
+        - "Bar close to legs"
+        - "Feel stretch in hamstrings"
+        - "Neutral spine"
+
+    - name: "Leg Curl"
+      muscle_groups: ["hamstrings"]
+      equipment: ["leg_curl_machine"]
+      difficulty: "beginner"
+      form_cues:
+        - "Hips down on pad"
+        - "Full ROM"
+        - "Squeeze at peak contraction"
+
+  glute_primary:
+    - name: "Hip Thrust (Barbell)"
+      muscle_groups: ["glutes", "hamstrings"]
+      equipment: ["barbell", "bench"]
+      difficulty: "intermediate"
+      form_cues:
+        - "Upper back on bench"
+        - "Chin tucked"
+        - "Squeeze glutes at top"
+        - "Full hip extension"
+
+    - name: "Glute Bridges (Barbell)"
+      muscle_groups: ["glutes", "hamstrings"]
+      equipment: ["barbell"]
+      difficulty: "beginner"
+      form_cues:
+        - "Feet flat, knees bent"
+        - "Drive through heels"
+        - "Squeeze at top"
+
+  accessory_posterior:
+    - name: "Hyperextensions"
+      muscle_groups: ["lower_back", "glutes", "hamstrings"]
+      equipment: ["hyperextension_bench"]
+      difficulty: "beginner"
+      form_cues:
+        - "Control the descent"
+        - "Don't hyperextend"
+        - "Engage glutes and hamstrings"
+
+    - name: "Good Mornings"
+      muscle_groups: ["hamstrings", "lower_back"]
+      equipment: ["barbell"]
+      difficulty: "intermediate"
+      form_cues:
+        - "Soft knees"
+        - "Hip hinge"
+        - "Feel stretch in hamstrings"
+
+exercise_selection_guidelines:
+  primary_exercises:
+    definition: "Compound movements that recruit multiple muscle groups"
+    characteristics:
+      - "Heavy loads (5-10 rep range typical)"
+      - "Longer rest periods (2-4 min)"
+      - "Highest XP multipliers"
+      - "Core of progressive overload strategy"
+    examples: ["Squat", "Deadlift", "Bench Press", "Overhead Press", "Barbell Rows"]
+
+  accessory_exercises:
+    definition: "Isolation or supplementary movements"
+    characteristics:
+      - "Moderate to light loads (10-20 rep range)"
+      - "Shorter rest periods (60-90 sec)"
+      - "Focus on muscle building and imbalance correction"
+      - "Less neurologically demanding"
+    examples: ["Bicep Curls", "Lateral Raises", "Leg Curls", "Tricep Pushdowns"]
+
+substitution_matrix:
+  "Barbell Bench Press":
+    alternatives: ["Dumbbell Bench Press", "Incline Barbell Bench Press"]
+    reason: "Equipment availability, injury, variety"
+
+  "Back Squat":
+    alternatives: ["Front Squat", "Leg Press", "Bulgarian Split Squat"]
+    reason: "Mobility issues, lower back strain, equipment"
+
+  "Deadlift":
+    alternatives: ["Romanian Deadlift", "Trap Bar Deadlift"]
+    reason: "Recovery needs, technical difficulty"
+
+  "Pull-ups":
+    alternatives: ["Lat Pulldown", "Assisted Pull-ups"]
+    reason: "Strength level, fatigue"
+
+notes:
+  - "Form cues are prioritized by importance (first = most critical)"
+  - "Difficulty ratings: beginner (minimal technique), intermediate (moderate technique), advanced (high technique demand)"
+  - "Equipment alternatives listed where applicable"
+  - "Muscle group tags enable tracking body region balance"

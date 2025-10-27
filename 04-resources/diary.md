@@ -5,6 +5,10 @@ Went for a moring walk at narrawallee
 Drove to Canberra to see friends for long weekend
 
 ---
+tags: [resources, reference]
+relation:
+  - "[[resources]]"
+  - "[[resources]]"
 
 ### [[25-10-07 - Tue]]
 

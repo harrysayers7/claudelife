@@ -1,7 +1,9 @@
 ---
+tags: [mokhouse, marketing, portfolio]
 date: 2025-10-16 18:05
 description: Master collection of all MOK HOUSE portfolio blurbs (without credits)
 relation:
+  - "[[mokhouse]]"
   - "[[mokhouse]]"
 date created: Thu, 10 16th 25, 4:52:24 pm
 date modified: Thu, 10 16th 25, 4:56:03 pm

@@ -1,5 +1,6 @@
 ---
 relation:
+  - "[[mokai]]"
   - "[[mokai-cyber-learning]]"
   - "[[mokai-pricing]]"
 tags:

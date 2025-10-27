@@ -1,8 +1,10 @@
 ---
+tags: [mokai, AI, automation]
 date created: Thu, 10 2nd 25, 3:17:24 pm
 date modified: Thu, 10 9th 25, 5:08:49 pm
 description:
 relation:
+  - "[[mokai]]"
 ---
 
 # Mokai Technologies - System Instructions

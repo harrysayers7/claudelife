@@ -1,4 +1,8 @@
 ---
+tags: [mokai, learning, business-development]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 date created: Thu, 10 9th 25, 5:50:07 pm
 date modified: Sun, 10 12th 25, 6:50:35 am
 ai-prioritise:

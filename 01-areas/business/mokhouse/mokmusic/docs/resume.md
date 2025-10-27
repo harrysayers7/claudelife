@@ -1,4 +1,7 @@
 ---
+relation:
+  - "[[mokhouse]]"
+  - "[[mokhouse]]"
 tags:
   - mokhouse
 title: Resume

@@ -1,7 +1,15 @@
 ---
 created: "2025-10-20 07:20"
+updated: "2025-10-20 11:50"
+version_history:
+  - version: "1.1"
+    date: "2025-10-20 11:50"
+    changes: "Added entity-specific filename requirement and structured frontmatter data for Dataview queries (ABN, ACN, account numbers, BSB, etc.)"
+  - version: "1.0"
+    date: "2025-10-20 07:20"
+    changes: "Initial creation"
 description: |
-  Creates secure vault entries for frequently-referenced information like bank details, API keys, passwords, ID numbers, tax info, and company credentials. Generates structured markdown files with YAML frontmatter (type: vault, entity relation, sensitivity level, category). Stores in entity-specific folders (04-resources/vault/{entity}/) and automatically manages .gitignore for sensitive items. Supports both reference info (bank accounts, ABN) and credentials (API keys, passwords) with appropriate security warnings.
+  Creates secure vault entries for frequently-referenced information like bank details, API keys, passwords, ID numbers, tax info, and company credentials. Generates structured markdown files with YAML frontmatter including queryable data fields (ABN, ACN, account_number, bsb, api_key, etc.) for Obsidian Dataview/database views. Uses entity-specific filenames (e.g., "MOK HOUSE Bank Account.md" not "Bank Account.md"). Stores in entity-specific folders (04-resources/vault/{entity}/) and automatically manages .gitignore for sensitive items.
 examples:
   - /vault-add "MOKAI Commonwealth Bank business account details"
   - /vault-add "Supabase API keys for production database"
@@ -87,7 +95,7 @@ I'll help you create a vault entry by:
    - License keys (software licenses, certifications)
    - Insurance details (policy numbers, provider info)
 
-2. **Structuring YAML frontmatter**:
+2. **Structuring YAML frontmatter with queryable data fields**:
    ```yaml
    type: vault
    entity_type: bank | api | tax | license | password | id-number | insurance
@@ -98,9 +106,39 @@ I'll help you create a vault entry by:
    tags: [searchable, keywords, for, filtering]
    last_verified: YYYY-MM-DD  # When info was last confirmed current
    expiry_date: YYYY-MM-DD    # For licenses, credentials that expire
+
+   # Structured data fields for Dataview queries (include ALL relevant fields):
+   # For bank accounts:
+   account_name: "MOKAI PTY LTD"
+   bsb: "013943"
+   account_number: "612281562"
+   bank_name: "ANZ"
+   swift_code: "CTBAAU2S" | null
+
+   # For tax info:
+   abn: "12345678901"
+   acn: "123456789"
+   company_name: "MOKAI PTY LTD"
+   gst_registered: true | false | null
+
+   # For API credentials:
+   api_key: "[REDACTED]" | null
+   project_id: "abc123xyz"
+   api_url: "https://api.example.com"
+
+   # For company info:
+   registered_address: "15 Lake View Dr, Burrill Lake NSW 2539"
+   registered_state: "NSW"
+   registered_postcode: "2539"
+
+   # Common fields:
+   entity_country: "Australia"
+
    date created: Day, MM DD YY, HH:MM:SS am/pm
    date modified: Day, MM DD YY, HH:MM:SS am/pm
    ```
+
+   **CRITICAL**: Include ALL relevant data fields in frontmatter for database views. Use `null` for missing/optional fields.
 
 3. **Creating structured content sections**:
    - **Details**: Key-value pairs for the actual information
@@ -129,11 +167,13 @@ I'll help you create a vault entry by:
 
 ### Frontmatter Structure
 
+**IMPORTANT**: Include ALL relevant structured data fields for Dataview queries.
+
 ```yaml
 ---
 type: vault                           # Always "vault"
 entity_type: api                      # Type of vault item
-name: Supabase Production API         # Human-readable name
+name: MOKAI Supabase Production API   # MUST include entity name
 relation:                             # Entity associations
   - "[[mokai]]"
 category: api-key                     # Category for filtering
@@ -142,6 +182,14 @@ tags: [database, api, production, supabase]
 last_verified: 2025-10-20            # When last confirmed working
 expiry_date:                         # Optional expiry date
 source: Supabase Dashboard           # Where info came from
+
+# Queryable data fields (example for API):
+project_id: "abc123xyz"
+api_url: "https://abc123xyz.supabase.co"
+database_host: "db.abc123xyz.supabase.co"
+database_port: 5432
+entity_country: Australia
+
 date created: Mon, 10 20th 25, 7:20:00 am
 date modified: Mon, 10 20th 25, 7:20:00 am
 ---
@@ -151,6 +199,33 @@ date modified: Mon, 10 20th 25, 7:20:00 am
 
 #### Bank Account Vault Entry
 ```markdown
+---
+type: vault
+entity_type: bank
+name: MOKAI Commonwealth Bank Account
+relation:
+  - "[[mokai]]"
+category: bank-details
+sensitive: false
+tags: [bank, commonwealth, business-account, mokai, australia]
+last_verified: 2025-10-20
+source: Bank statement
+
+# Queryable data fields:
+account_name: "MOKAI PTY LTD"
+bsb: "123456"
+account_number: "12345678"
+bank_name: "Commonwealth Bank"
+bank_full_name: "Commonwealth Bank of Australia"
+account_type: "Business Transaction Account"
+swift_code: "CTBAAU2S"
+branch: "Sydney CBD"
+entity_country: "Australia"
+
+date created: Mon, 10 20th 25, 7:20:00 am
+date modified: Mon, 10 20th 25, 7:20:00 am
+---
+
 # MOKAI Commonwealth Bank Account
 
 ## 📋 Account Details
@@ -208,6 +283,34 @@ Used for MOKAI production database. Connected services:
 
 #### Tax Information Vault Entry
 ```markdown
+---
+type: vault
+entity_type: tax
+name: MOKAI Tax Identifiers
+relation:
+  - "[[mokai]]"
+category: tax-info
+sensitive: false
+tags: [tax, abn, acn, mokai, gst, australia]
+last_verified: 2025-10-20
+source: ABR Lookup
+
+# Queryable data fields:
+abn: "12345678901"
+acn: "123456789"
+tfn: "123456789"
+company_name: "MOKAI PTY LTD"
+trading_name: "MOKAI"
+gst_registered: true
+gst_registration_date: 2024-01-15
+entity_type_legal: "Australian Proprietary Company"
+entity_country: "Australia"
+financial_year_end: "June 30"
+
+date created: Mon, 10 20th 25, 7:20:00 am
+date modified: Mon, 10 20th 25, 7:20:00 am
+---
+
 # MOKAI PTY LTD Tax Identifiers
 
 ## 📋 Tax Details
@@ -231,18 +334,28 @@ Financial year: July 1 - June 30
 
 ### File Naming Convention
 
+**CRITICAL RULE**: Filenames MUST include entity name for uniqueness and clarity.
+
 ```javascript
-// Format: Entity-specific folders with descriptive names
+// Format: Entity-specific folders with ENTITY-PREFIXED filenames
 const entityFolder = `04-resources/vault/${entity.toLowerCase()}/`;
-const fileName = `${itemName}.md`;  // Human-readable name
+const fileName = `${entityName} ${itemType}.md`;  // MUST include entity name
 const filePath = `${entityFolder}${fileName}`;
 
-// Examples:
-// 04-resources/vault/mokai/Commonwealth Bank Account.md
-// 04-resources/vault/mokai/Supabase Production API.md
-// 04-resources/vault/mokhouse/Stripe API Keys.md
-// 04-resources/vault/personal/Passport Details.md
+// ✅ CORRECT Examples (entity name in filename):
+// 04-resources/vault/mokai/MOKAI Commonwealth Bank Account.md
+// 04-resources/vault/mokai/MOKAI Supabase Production API.md
+// 04-resources/vault/mokhouse/MOK HOUSE Tax Identifiers.md
+// 04-resources/vault/mokhouse/MOK HOUSE Bank Account.md
+// 04-resources/vault/personal/Harry Passport Details.md
+
+// ❌ INCORRECT Examples (no entity name):
+// 04-resources/vault/mokai/Commonwealth Bank Account.md  // Which entity?
+// 04-resources/vault/mokhouse/Tax Identifiers.md         // Ambiguous!
+// 04-resources/vault/mokhouse/Bank Account.md            // Not specific!
 ```
+
+**Why**: Generic names like "Bank Account.md" or "Tax Identifiers.md" are ambiguous when you have multiple entities. Entity-specific names make it clear at a glance which business/entity the vault item belongs to.
 
 ### .gitignore Management
 
@@ -448,7 +561,7 @@ Connected services:
 
 **Input**: `/vault-add "ABN and ACN for MOK HOUSE PTY LTD"`
 
-**Output File** (`04-resources/vault/mokhouse/Tax Identifiers.md`):
+**Output File** (`04-resources/vault/mokhouse/MOK HOUSE Tax Identifiers.md`):
 ```markdown
 ---
 type: vault
@@ -458,9 +571,20 @@ relation:
   - "[[mokhouse]]"
 category: tax-info
 sensitive: false
-tags: [tax, abn, acn, mokhouse, registration]
+tags: [tax, abn, acn, mokhouse, registration, australia]
 last_verified: 2025-10-20
 source: ABR Lookup
+
+# Queryable data fields:
+abn: "38690628212"
+acn: "690628212"
+company_name: "MOK HOUSE PTY LTD"
+trading_name: "MOK HOUSE"
+company_commencement: 2025-09-03
+gst_registered: null
+entity_type_legal: "Australian Proprietary Company"
+entity_country: "Australia"
+
 date created: Mon, 10 20th 25, 7:35:00 am
 date modified: Mon, 10 20th 25, 7:35:00 am
 ---
@@ -468,19 +592,21 @@ date modified: Mon, 10 20th 25, 7:35:00 am
 # MOK HOUSE PTY LTD Tax Identifiers
 
 ## 📋 Tax Details
-- **ABN**: 12 345 678 901
-- **ACN**: 123 456 789
-- **GST Registered**: Yes
+- **ABN**: 38 690 628 212
+- **ACN**: 690 628 212
+- **GST Registered**: [To be determined]
 - **Business Name**: MOK HOUSE PTY LTD
 - **Entity Type**: Australian Proprietary Company
+- **Company Commencement**: 3rd September 2025
 
 ## 🔗 Related Information
-- **ABR Lookup**: https://abr.business.gov.au/ABN/View?abn=12345678901
+- **ABR Lookup**: https://abr.business.gov.au/ABN/View?abn=38690628212
 - **ASIC**: https://connectonline.asic.gov.au
 
 ## 📝 Notes
 Trading name: MOK HOUSE
-GST quarterly reporting required
+Recently established company (September 2025)
+GST registration status to be confirmed
 ```
 
 ## Evaluation Criteria
@@ -492,25 +618,33 @@ A successful vault entry should:
    - Entity relation clearly defined
    - Sensitivity level accurately set
    - Appropriate category and tags
+   - **ALL relevant structured data fields included** (ABN, ACN, account_number, bsb, etc.)
+   - Use `null` for optional/missing fields (enables Dataview filtering)
 
-2. **Proper security handling**:
+2. **Entity-specific filename**:
+   - ✅ Filename MUST include entity name (e.g., "MOK HOUSE Bank Account.md")
+   - ❌ NEVER use generic names (e.g., "Bank Account.md", "Tax Identifiers.md")
+   - Ensures uniqueness and clarity across multiple entities
+
+3. **Proper security handling**:
    - Sensitive items added to .gitignore
    - Security warnings included for credentials
    - No accidental commits of secrets
 
-3. **Clear organization**:
+4. **Clear organization**:
    - Stored in correct entity folder
-   - Descriptive file name
+   - Entity-specific filename for uniqueness
    - Searchable by entity, tags, or keywords
 
-4. **Structured content**:
+5. **Structured content**:
    - Details section with all relevant information
    - Access/usage instructions where applicable
    - Related information and notes
 
-5. **Practical usability**:
+6. **Practical usability**:
    - Easy to find via search
    - All necessary info in one place
+   - Queryable via Dataview/database views
    - Clear instructions for use
 
 ## Related Resources

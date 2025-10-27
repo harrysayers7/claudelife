@@ -1,4 +1,8 @@
 ---
+tags: [mokai, business]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 date: "2025-10-14"
 ---
 # Phase 2-3: Future Plan (Reference Only)

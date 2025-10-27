@@ -3,6 +3,7 @@ type:
   - Task
 relation:
   - "[[mokai]]"
+  - "[[mokai]]"
 tags:
   - business-strategy
   - risk-analysis

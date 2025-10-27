@@ -7,6 +7,7 @@ aliases:
 id: issue-001
 category: mcp-server
 relation:
+  - "[[claude-code]]"
 complete: true
 solved: true
 lesson:

@@ -1,6 +1,7 @@
 ---
 relation:
   - "[[mokai]]"
+  - "[[mokai]]"
   - "[[prompt-library]]"
   - "[[mokai-accounting]]"
 tags:

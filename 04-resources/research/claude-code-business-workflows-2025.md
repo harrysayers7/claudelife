@@ -1,4 +1,7 @@
 ---
+relation:
+  - "[[resources]]"
+  - "[[resources]]"
 date: "2025-10-14 18:10"
 tags: [claude-code, business-automation, obsidian, mcp, workflows, research]
 research_type: quick-research

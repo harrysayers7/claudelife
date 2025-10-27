@@ -2,6 +2,8 @@
 type: reference
 relation:
   - "[[mokai]]"
+  - "[[mokai]]"
+  - "[[mokai]]"
 tags:
 category: context
 description:

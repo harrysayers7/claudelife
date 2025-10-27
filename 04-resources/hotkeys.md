@@ -1,4 +1,8 @@
 ---
+tags: [resources, reference]
+relation:
+  - "[[resources]]"
+  - "[[resources]]"
 date created: Mon, 09 29th 25, 4:40:52 pm
 date modified: Wed, 10 15th 25, 11:56:21 am
 ---

@@ -1,4 +1,8 @@
 ---
+tags: [mokai, business]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 date created: Mon, 09 22nd 25, 11:05:22 am
 date modified: Fri, 10 10th 25, 3:15:31 am
 ---

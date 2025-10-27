@@ -1,6 +1,7 @@
 ---
 relation:
   - "[[mokai]]"
+  - "[[mokai]]"
 date created: Wed, 10 1st 25, 8:28:18 pm
 date modified: Fri, 10 10th 25, 11:28:29 am
 category:

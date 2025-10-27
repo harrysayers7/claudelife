@@ -1,5 +1,6 @@
 ---
 relation:
+  - "[[p-dev]]"
   - "[[books]]"
   - "[[p-dev]]"
 tags:

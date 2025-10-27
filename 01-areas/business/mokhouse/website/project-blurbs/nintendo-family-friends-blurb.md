@@ -1,4 +1,8 @@
 ---
+tags: [mokhouse, marketing, portfolio]
+relation:
+  - "[[mokhouse]]"
+  - "[[mokhouse]]"
 date: "2025-10-16 17:05"
 client: "Nintendo"
 project_type: "original composition"

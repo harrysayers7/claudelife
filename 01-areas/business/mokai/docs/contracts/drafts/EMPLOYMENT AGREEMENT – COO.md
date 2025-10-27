@@ -124,6 +124,10 @@ The COO is responsible for developing and implementing the Company’s Indigenou
 **[[kell]] [[mokai]]**
 
 ---
+tags: [mokai, legal, contracts]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 
 **Important Disclaimer:** This is preparatory guidance only and does not constitute formal legal or accounting advice. Please have qualified Australian counsel review before execution.
 

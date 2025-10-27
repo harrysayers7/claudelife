@@ -1,4 +1,8 @@
 ---
+tags: [resources, guides, documentation]
+relation:
+  - "[[resources]]"
+  - "[[resources]]"
 date created: Tue, 10 7th 25, 5:34:55 am
 date modified: Tue, 10 7th 25, 5:36:32 am
 ---

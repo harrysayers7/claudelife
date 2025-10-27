@@ -10,6 +10,7 @@ type:
 status:
 relation:
   - "[[mokhouse]]"
+  - "[[mokhouse]]"
 description:
 effort:
 ai-assigned: false

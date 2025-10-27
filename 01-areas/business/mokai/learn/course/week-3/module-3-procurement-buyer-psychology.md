@@ -9,6 +9,10 @@ Navigate IPP pathways (including Exemption 16), understand APP basics, and map t
 Master Indigenous procurement mechanisms, decode government buyer psychology, and develop strategic outreach approaches for both direct agency engagement and prime contractor partnerships.
 
 ---
+tags: [mokai, learning, business-development]
+relation:
+  - "[[mokai]]"
+  - "[[mokai]]"
 
 ## Day 15: Indigenous Procurement Policy (IPP) Deep Dive
 

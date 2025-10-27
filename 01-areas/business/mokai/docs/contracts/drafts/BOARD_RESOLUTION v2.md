@@ -4,6 +4,7 @@ description:
 date: 2025-09-29 15:09
 relation:
   - "[[mokai]]"
+  - "[[mokai]]"
   - "[[mokai-contracts]]"
   - "[[contracts]]"
 ---

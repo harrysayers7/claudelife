@@ -3,6 +3,10 @@
 I am very loyal to my wife and am always there for her
 
 ---
+tags: [resources, reference]
+relation:
+  - "[[resources]]"
+  - "[[resources]]"
 
 ### [[25-10-09 - Thu]]
 

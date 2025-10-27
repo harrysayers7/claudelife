@@ -2,6 +2,7 @@
 type: reference
 relation:
   - "[[mokai]]"
+  - "[[mokai]]"
 tags:
 category: learning
 description:

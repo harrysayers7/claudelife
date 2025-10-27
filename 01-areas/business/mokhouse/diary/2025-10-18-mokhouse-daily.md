@@ -1,7 +1,9 @@
 ---
+tags: [mokhouse, diary, daily-ops]
 date: "2025-10-18"
 type: mokhouse-diary
 relation:
+  - "[[mokhouse]]"
   - "[[mokhouse]]"
 ---
 
