@@ -1,16 +1,25 @@
 ---
 created: "2025-10-16 12:10"
+updated: "2025-10-27 14:35"
+version: "1.1"
+version_history:
+  - version: "1.1"
+    date: "2025-10-27 14:35"
+    changes: "Updated status values to match Supabase constraint: 'sent' → 'paid'; Updated examples and status transitions to use new constraint values"
+  - version: "1.0"
+    date: "2025-10-16 12:10"
+    changes: "Initial command creation"
 description: |
   Marks MOK HOUSE invoices as paid and completes project lifecycle. Updates payment status across
   Obsidian project files, Supabase invoice records, and Stripe invoices. Automatically sets
-  completion status and tracks payment dates. Maintains sync across all systems for accurate
+  completion status ('paid') and tracks payment dates. Maintains sync across all systems for accurate
   financial reporting.
 
   Outputs:
     - Updated Obsidian project with paid status and date
     - Updated Supabase invoice record with payment info
     - Updated Stripe invoice marked as paid (out-of-band)
-    - Project status set to "Complete"
+    - Project status set to 'paid'
     - Confirmation of payment recorded across all systems
 examples:
   - /mokhouse-mark-paid "Repco project payment received today"
@@ -121,7 +130,7 @@ Update frontmatter:
 ```yaml
 paid: true
 Date Paid: "YYYY-MM-DD"
-status: "Complete"
+status: "paid"
 ```
 
 ### Step 5: Update Supabase Invoice Record
@@ -219,7 +228,7 @@ OBSIDIAN UPDATES
 ────────────────────────────
 ✓ paid: false → true
 ✓ Date Paid: [YYYY-MM-DD]
-✓ status: Invoiced → Complete
+✓ status: sent → paid
 
 SUPABASE UPDATES
 ────────────────────────────
@@ -270,7 +279,7 @@ OBSIDIAN UPDATES
 ────────────────────────────
 ✓ paid: false → true
 ✓ Date Paid: [YYYY-MM-DD]
-✓ status: Invoiced → Complete
+✓ status: sent → paid
 
 SUPABASE UPDATES
 ────────────────────────────
@@ -306,12 +315,12 @@ All systems synchronized ✓
 3. Read current state:
    - Invoice #: INV-1234
    - Amount: $1500
-   - Status: "Invoiced"
+   - Status: "sent"
 4. Ask: "When was payment received?" → User: "today"
 5. Update Obsidian:
    - paid: true
    - Date Paid: "2025-10-16"
-   - status: "Complete"
+   - status: "paid"
 6. Update Supabase invoice INV-1234:
    - paid_amount: 1500
    - status: "paid"
@@ -368,14 +377,14 @@ All systems synchronized ✓
 
 ### Before Payment:
 ```yaml
-status: "Invoiced"
+status: "sent"
 paid: false
 Date Paid: ""
 ```
 
 ### After Payment:
 ```yaml
-status: "Complete"
+status: "paid"
 paid: true
 Date Paid: "YYYY-MM-DD"
 ```
@@ -398,7 +407,7 @@ paid_on: 'YYYY-MM-DD'
 
 **Project not found:**
 - Try alternate search terms
-- List recent "Invoiced" projects
+- List recent "sent" status projects
 - Ask user to clarify project name
 
 **No invoice number in project:**
@@ -465,13 +474,13 @@ A successful payment recording should:
 1. ✅ **Correct project identified** from user description
 2. ✅ **Invoice verified** to exist before marking paid
 3. ✅ **Proper date format** (YYYY-MM-DD) in all systems
-4. ✅ **Obsidian updated** with paid: true, Date Paid, status: "Complete"
+4. ✅ **Obsidian updated** with paid: true, Date Paid, status: "paid"
 5. ✅ **Supabase updated** with paid_amount, status: "paid", paid_on
 6. ✅ **Stripe updated** with invoice marked as paid (out-of-band)
 7. ✅ **Correct amount** including both demo and award fees if applicable
 8. ✅ **Clear confirmation** showing all system updates
 9. ✅ **All systems synchronized** (Stripe, Supabase, Obsidian)
-10. ✅ **Project lifecycle completed** with "Complete" status
+10. ✅ **Project lifecycle completed** with "paid" status
 
 ## Related Commands
 
@@ -492,7 +501,7 @@ A successful payment recording should:
 
 ---
 
-**Version:** 1.0
+**Version:** 1.1
 **Integration:** Obsidian + Supabase
 **File Location:** `/02-projects/mokhouse/`
 **Entity:** MOK HOUSE PTY LTD (550e8400-e29b-41d4-a716-446655440002)

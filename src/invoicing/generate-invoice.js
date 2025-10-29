@@ -18,19 +18,19 @@ Handlebars.registerHelper("format_currency", function (amount) {
 
 // Invoice data
 const invoiceData = {
-  invoice_number: "TEST-001",
-  invoice_date: "25-10-2025",
-  po_number: "0896",
-  client_name: "Electric Sheep Music Pty Ltd",
-  client_address: "Unit 5, 123 Business Park, Sydney NSW 2000",
-  project_name: "Music Composition",
-  fee_type: "Track Setup & Production",
+  invoice_number: "TEST-003",
+  invoice_date: new Date().toLocaleDateString("en-AU", { day: "2-digit", month: "2-digit", year: "numeric" }).replace(/\//g, "-"),
+  po_number: "TEST-PO-002",
+  client_name: "Harrison Sayers (Speed Test)",
+  client_address: "Sydney, NSW",
+  project_name: "Performance Test Invoice",
+  fee_type: "Speed Test Service",
   quantity: 1,
-  unit_price: "1000.00",
-  total: "1000.00",
-  subtotal: "1000.00",
-  gst: "100.00",
-  grand_total: "1100.00",
+  unit_price: "750.00",
+  total: "750.00",
+  subtotal: "750.00",
+  gst: "75.00",
+  grand_total: "825.00",
 };
 
 // Load and compile template

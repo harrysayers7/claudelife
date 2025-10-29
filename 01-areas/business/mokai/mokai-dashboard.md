@@ -9,20 +9,22 @@ date modified: Thu, 10 16th 25, 4:22:08 pm
 ---
 # MOKAI Mission Control
 
-**Last Updated**: 2025-10-16
-**Current Phase**: Phase 1 - Foundation (Pre-Launch)
-**Primary Goal**: Master business fundamentals while waiting for legal setup
+**Last Updated**: 2025-10-28
+**Current Phase**: Phase 1 - Foundation → **Week 3** (Legal documents in progress!)
+**Primary Goal**: Legal setup finalizing + Week 3 business operations prep
 
 ---
 
-## 🎯 This Week's Focus (Week 1: Oct 14-20)
-#### **Operations Guide Mastery Week 1**
-1. [ ] Read Indigenous Business & Procurement section (1 hour)
-2. [ ] Read Prime Contractor Management section (1 hour)
-3. [ ] Do daily flashcard review (15 min/day)
-4. [ ] Write summary: "How MOKAI makes money" in own words
+## 🎯 This Week's Focus (Week 3: Oct 28 - Nov 3)
+#### **Business Operations Prep + Legal Finalization**
+1. [ ] Research business bank accounts (compare 3 options)
+2. [ ] Understand Xero setup (watch tutorials)
+3. [ ] Map out cash flow: Client pays Net 30 → We pay contractor Net 14
+4. [ ] Create simple spreadsheet: Revenue - Contractor Cost - Overhead = Profit
+5. [ ] Ask Jack: How many contractors in network?
+6. [ ] Review Jack's NDA/subcontractor agreement templates
 
-**Daily Time**: 5-7 hours available (allocate 2 hours/day to learning)
+**BREAKING**: ABN/ACN expected THIS WEEK from accountant James Donnellan!
 
 ---
 
@@ -177,12 +179,13 @@ if (tasks.length === 0) {
 
 ## 📊 Current Status (REALITY CHECK)
 
-### Legal & Structure (⏸️ WAITING ON JACK'S FAMILY TRUST)
-- **MOKAI Registration**: Not yet (waiting on Jack's trust setup)
+### Legal & Structure (🚀 IN PROGRESS!)
+- **MOKAI Registration**: **ABN/ACN expected THIS WEEK** via James Donnellan (Bonsella Accounting)
 - **Ownership**: Harry 51% / Jack 49% / Kelly COO
-- **Supply Nation**: Will apply once ABN/ACN secured
-- **Insurance**: Not yet (will get quotes once registered)
-- **Contracts Ready**: Jack has templates for NDAs/subcontractor agreements
+- **Constitution & SHA**: Bonsella drafting with Indigenous control provisions
+- **Accountant**: James Donnellan at Bonsella Accounting (handling all registration)
+- **Supply Nation**: Will apply immediately once ABN/ACN secured
+- **Insurance**: Get quotes next (wait for ABN/ACN)
 
 ### Team Status
 - **Harry**: Learning mode - 5-7 hrs/day available
@@ -201,15 +204,15 @@ if (tasks.length === 0) {
 - **Flashcards**: Set up in Obsidian ✅
 
 ### Blockers 🚨
-- **Obsidian syncing issues** (Oct 15) - Highlighted sections in Operations Guide got erased, frustrating workflow
-- **Jack's family trust setup** (blocking ABN/ACN registration)
-- **Haven't started structured Operations Guide reading yet** (only partial highlighting on Oct 15)
+- **Operations Guide progress** - Still haven't started structured reading (Week 1-2 tasks incomplete)
+- **Week 3 focus shift** - Legal progress is great, but need to get back to learning fundamentals
 
 ---
 
 ## 🏆 Recent Wins
+- ✅ Secured accountant James Donnellan (Bonsella) - handling registration & contracts, ABN/ACN expected this week! (Oct 28)
+- ✅ Team alignment meeting with Jack, Kelly, and Bri - identified Bri's government procurement expertise (Oct 19)
 - ✅ Implemented auto-diary capture hook for automatic logging (Oct 15)
-- ✅ Created a few good workflows to make work run better (Oct 15)
 - ✅ Created MOKAI dashboard system
 - ✅ Clarified ownership split (51% Indigenous)
 - ✅ Kelly's website almost done

@@ -2,10 +2,11 @@
 relation:
   - "[[mokhouse]]"
 type: project
+project_id: MH-033
 project name: Nintendo - EM
 customer: Electric Sheep Music
 status: Submitted
-demo fee: 650
+demo fee: 0
 award fee: 3250
 due date: 2025-10-30
 date received: 2025-10-17
@@ -15,7 +16,7 @@ PO: ""
 "Invoice #": ""
 submitted date: 2025-10-22
 paid: false
-awarded: false
+awarded: true
 APRA: false
 12 FOS: false
 date created: Fri, 10 17th 25, 2:22:43 pm

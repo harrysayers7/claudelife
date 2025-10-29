@@ -872,6 +872,18 @@
                   "title": "🌤️ Mon - 27th Oct 25",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Mon - 27th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Mon - 27th Oct 25\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":449,\"ch\":29},\"to\":{\"line\":449,\"ch\":29}},\"scroll\":282.2827818627451}"
+                },
+                {
+                  "title": "Mok House Projects",
+                  "icon": "lucide-table",
+                  "state": "{\"type\":\"bases\",\"state\":{\"file\":\"00-Bases/Mok House Projects.base\",\"viewName\":\"Table\"},\"icon\":\"lucide-table\",\"title\":\"Mok House Projects\"}",
+                  "eState": "{\"views\":{\"Table\":{\"scroll\":{\"top\":0,\"left\":0}}}}"
+                },
+                {
+                  "title": "🌤️ Mon - 27th Oct 25",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Mon - 27th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Mon - 27th Oct 25\"}",
                   "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}},\"scroll\":7.5306372549019605}"
                 },
                 {
@@ -889,17 +901,139 @@
               ]
             },
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "00-Bases/Mok House Projects.base",
-                "viewName": "Table"
+                "file": "01-areas/business/mokhouse/mokhouse-dashboard.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
               },
-              "icon": "lucide-table",
-              "title": "Mok House Projects"
+              "icon": "lucide-file",
+              "title": "mokhouse-dashboard"
+            }
+          },
+          {
+            "id": "0fc8c259a55c4a24",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "🌤️ Tue - 28th Oct 25",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"00 - Daily/🌤️ Tue - 28th Oct 25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"🌤️ Tue - 28th Oct 25\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}},\"scroll\":6.087972508591065}"
+                },
+                {
+                  "title": "Director ID",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"04-resources/vault/Director ID.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"Director ID\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":11,\"ch\":0},\"to\":{\"line\":11,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "mokai-profile",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/mokai-profile.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokai-profile\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":57,\"ch\":98},\"to\":{\"line\":57,\"ch\":98}},\"scroll\":36.7891364902507}"
+                },
+                {
+                  "title": "diary-mokai",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/diary-mokai.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"diary-mokai\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}},\"scroll\":13.8042}"
+                },
+                {
+                  "title": "CLAUDE",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/CLAUDE.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"CLAUDE\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "diary-mokai",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/diary-mokai.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"diary-mokai\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}},\"scroll\":13.804227941176471}"
+                },
+                {
+                  "title": "CLAUDE",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/CLAUDE.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"CLAUDE\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "mokai-shareholders-agreement-analysis",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/docs/mokai-shareholders-agreement-analysis.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokai-shareholders-agreement-analysis\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":12,\"ch\":42},\"to\":{\"line\":12,\"ch\":42}}}"
+                },
+                {
+                  "title": "accountant-meeting-prep-2025-10-25",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/docs/accountant-meeting-prep-2025-10-25.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"accountant-meeting-prep-2025-10-25\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":153,\"ch\":0},\"to\":{\"line\":153,\"ch\":0}},\"scroll\":8}"
+                },
+                {
+                  "title": "mokai-dashboard",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/mokai-dashboard.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"mokai-dashboard\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}},\"scroll\":5.1216}"
+                },
+                {
+                  "title": "MOKAI-SHA-V3",
+                  "icon": "lucide-file-text",
+                  "state": "{\"type\":\"pdf\",\"state\":{\"file\":\"01-areas/business/mokai/docs/contracts/under-review/MOKAI-SHA-V3.pdf\"},\"icon\":\"lucide-file-text\",\"title\":\"MOKAI-SHA-V3\"}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "IMPORTANT",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"01-areas/business/mokai/docs/contracts/IMPORTANT.md\",\"mode\":\"source\",\"source\":false,\"backlinks\":false},\"icon\":\"lucide-file\",\"title\":\"IMPORTANT\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00-inbox/tasks/N8n - Gmail to Cc.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "N8n - Gmail to Cc"
+            }
+          },
+          {
+            "id": "b1fd7e55a6217772",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "98-templates/daily-note.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "daily-note"
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -979,6 +1113,25 @@
               "icon": "clock",
               "title": "Recent Files"
             }
+          },
+          {
+            "id": "bc5f1fec67af6d4e",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "journal-calendar",
+              "state": {},
+              "icon": "calendar-days",
+              "title": "Calendar"
+            }
           }
         ]
       },
@@ -1002,10 +1155,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "00-Bases/Mok House Projects.base"
+                "file": "98-templates/daily-note.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Mok House Projects"
+              "title": "File properties for daily-note"
             }
           }
         ]
@@ -1726,7 +1879,7 @@
             }
           }
         ],
-        "currentTab": 11
+        "currentTab": 13
       }
     ],
     "direction": "horizontal",
@@ -1766,12 +1919,30 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "a5750f45d35c9ff7",
+  "active": "b1fd7e55a6217772",
   "lastOpenFiles": [
-    "00 - Daily/🌤️ Mon - 27th Oct 25.md",
-    "00-inbox/tasks/GWM Vid.md",
     "01-areas/business/mokhouse/mokhouse-dashboard.md",
+    "00 - Daily/🌤️ Wed - 29th Oct 25.md",
+    "00-inbox/tasks/Have Claude Code ask me questions about my life.md",
+    "00-inbox/tasks/N8n - Gmail to Cc.md",
+    "00 - Daily/🌤️ Tue - 28th Oct 25.md",
+    "04-resources/vault/Director ID.md",
+    "01-areas/business/mokai/mokai-profile.md",
+    "01-areas/business/mokai/diary-mokai.md",
+    "01-areas/business/mokai/CLAUDE.md",
+    "01-areas/business/mokai/docs/mokai-shareholders-agreement-analysis.md",
+    "01-areas/business/mokai/docs/accountant-meeting-prep-2025-10-25.md",
+    "01-areas/business/mokai/mokai-dashboard.md",
+    "01-areas/business/mokai/docs/contracts/under-review/MOKAI-SHA-V3.pdf",
+    "01-areas/business/mokai/mokai-dashboard.md.tmp.12505.1761618639693",
+    "01-areas/business/mokai/mokai-dashboard.md.tmp.12505.1761618630090",
+    "01-areas/business/mokai/diary/2025-10-28-mokai-daily.md",
+    "01-areas/business/mokai/docs/contracts/IMPORTANT.md",
+    "00-inbox/tasks/Pro Mode Mac.md",
+    "02-projects/mokhouse/036-nintendo/Nintendo - EM.md",
+    "00 - Daily/🌤️ Mon - 27th Oct 25.md",
     "00-Bases/Mok House Projects.base",
+    "00-inbox/tasks/GWM Vid.md",
     "00-inbox/OPERATIONS GUIDE📘.md",
     "00-inbox/tasks/Supply Nation ✔️ ✅️ .md",
     "03-labs/CLAUDE.md",
@@ -1786,24 +1957,6 @@
     "node_modules/puppeteer-core/src/bidi/core/core.ts",
     "node_modules/puppeteer-core/src/bidi/core/UserPrompt.ts",
     "node_modules/puppeteer-core/src/bidi/core/UserContext.ts",
-    "node_modules/puppeteer-core/src/bidi/core/Session.ts",
-    "node_modules/puppeteer-core/src/bidi/core/Request.ts",
-    "node_modules/puppeteer-core/src/bidi/core/Realm.ts",
-    "node_modules/puppeteer-core/src/bidi/core/README.md",
-    "node_modules/puppeteer-core/src/templates/README.md",
-    "node_modules/puppeteer-core/src/injected/README.md",
-    "node_modules/chromium-bidi/README.md",
-    "node_modules/ast-types/README.md",
-    "node_modules/devtools-protocol/README.md",
-    "node_modules/bare-fs/README.md",
-    "node_modules/tar-fs/README.md",
-    "node_modules/socks/README.md",
-    "node_modules/proxy-agent/README.md",
-    "node_modules/mitt/README.md",
-    "node_modules/socks/docs/examples/javascript/connectExample.md",
-    "node_modules/socks/docs/examples/javascript/bindExample.md",
-    "node_modules/socks/docs/examples/javascript/associateExample.md",
-    "node_modules/socks/docs/examples/typescript/connectExample.md",
     "Untitled.canvas",
     "finance-dashboard/public/file.svg",
     "finance-dashboard/public/window.svg",

@@ -1,15 +1,27 @@
 ---
 created: "2025-10-16 12:00"
+updated: "2025-10-27 14:30"
+version_history:
+  - version: "1.2"
+    date: "2025-10-27 14:30"
+    changes: "Updated Step 2 Obsidian status from 'PO Received' to 'awaiting PO' to match expanded status constraint; Clarified that Step 7 updates existing project record with 'sent' status"
+  - version: "1.1"
+    date: "2025-10-27 12:00"
+    changes: "Changed Step 7 from INSERT to UPDATE: now updates existing project record (created by mokhouse-create-project) with invoice details; Added project_id lookup before update; Integrated with Supabase start_date column; Updated evaluation criteria"
+  - version: "1.0"
+    date: "2025-10-16 12:00"
+    changes: "Initial command creation"
 description: |
   Creates invoices for MOK HOUSE projects across Stripe, Supabase, and Obsidian systems. Handles
   customer lookup/setup, GST calculation, duplicate detection, and multi-system coordination.
-  Requires explicit user approval before creating invoices. Supports both existing and new customers
-  with flexible GST handling and payment terms.
+  Requires explicit user approval before creating invoices. Updates existing project record
+  (created by /mokhouse-create-project) with invoice details. Supports both existing and new
+  customers with flexible GST handling and payment terms.
 
   Outputs:
     - Stripe invoice with product, price, and finalization
-    - Supabase invoice record linked to customer and entity
-    - Updated Obsidian project file with invoice number
+    - Supabase project record UPDATE with invoice details (contact_id, invoice_number, amounts)
+    - Updated Obsidian project file with invoice number and status
     - Payment link and dashboard URLs
     - Complete success report across all systems
 examples:
@@ -182,7 +194,7 @@ INSERT INTO contacts (
 
 Update project file:
 ```yaml
-status: "PO Received"
+status: "awaiting PO"
 PO: "[PO number without prefix]"
 customer: "[Customer name]"
 ```
@@ -399,65 +411,63 @@ Returns:
 - Do NOT create Supabase/Obsidian records
 - Offer retry options
 
-### Step 7: Record Invoice in Supabase
+### Step 7: Record Invoice in Supabase (UPDATE existing project)
 
 **Use:** `mcp__supabase__execute_sql`
 
 **Only execute AFTER Stripe finalization succeeds.**
 
+**IMPORTANT:** This step UPDATES the existing project record (created in `/mokhouse-create-project`) with invoice details. The project_id must already exist in the invoices table.
+
+**First, lookup the existing project record:**
+
 ```sql
-INSERT INTO invoices (
-  entity_id,
-  contact_id,
-  invoice_type,
-  invoice_number,
-  invoice_date,
-  due_date,
-  subtotal_amount,
-  gst_amount,
-  total_amount,
-  paid_amount,
-  status,
-  currency,
-  purchase_order_number,
-  description,
-  project,
-  client,
-  billed_to,
-  project_id
-) VALUES (
-  '550e8400-e29b-41d4-a716-446655440002', -- MOK HOUSE entity
-  '[Contact ID from customer lookup]',
-  'receivable',
-  '[Invoice number from Stripe]',
-  '[Today YYYY-MM-DD]',
-  '[Due date YYYY-MM-DD]',
-  [Subtotal],
-  [GST amount],
-  [Total],
-  0.0,
-  'sent',
-  'AUD',
-  '[PO number without prefix]',
-  '[Project description]',
-  '[Project name]',
-  '[Customer legal name]',
-  '[Customer display name]',
-  '[Generated project ID, e.g., MH-018]'
-) RETURNING id
+SELECT id, project_id FROM public.invoices
+WHERE entity_id = '550e8400-e29b-41d4-a716-446655440002'
+AND project_id = '[Project ID from command argument, e.g., MH-018]'
+AND contact_id IS NULL  -- Project records have NULL contact_id
+LIMIT 1;
 ```
 
-Store invoice record ID.
+**Then UPDATE with invoice details:**
+
+```sql
+UPDATE public.invoices
+SET
+  contact_id = '[Contact ID from customer lookup]',
+  invoice_type = 'receivable',
+  invoice_number = '[Invoice number from Stripe]',
+  invoice_date = '[Today YYYY-MM-DD]',
+  due_date = '[Due date YYYY-MM-DD]',
+  subtotal_amount = [Subtotal],
+  gst_amount = [GST amount],
+  total_amount = [Total],
+  paid_amount = 0.0,
+  status = 'sent',
+  currency = 'AUD',
+  purchase_order_number = '[PO number without prefix]',
+  description = '[Project description]',
+  project = '[Project name]',
+  client = '[Customer legal name]',
+  billed_to = '[Customer display name]'
+WHERE
+  entity_id = '550e8400-e29b-41d4-a716-446655440002'
+  AND project_id = '[Project ID, e.g., MH-018]'
+RETURNING id, project_id, invoice_number
+```
+
+**Store returned:**
+- `invoice_record_id` (the updated project record)
+- Confirm `project_id` and `invoice_number` match expectations
 
 ### Step 8: Update Obsidian Project
 
 **Use:** `mcp__claudelife-obsidian__patch_content`
 
-Update project frontmatter:
+Update project frontmatter (project_id already exists from `/mokhouse-create-project`):
 ```yaml
 status: "Invoiced"
 "Invoice #": "[Invoice number from Stripe]"
-project_id: "[Generated project ID, e.g., MH-018]"
 demo_fee: [Demo fee amount]
 award_fee: [Award fee amount or 0]
 won_project: [true/false]
@@ -500,7 +510,7 @@ https://dashboard.stripe.com/invoices/[invoice_id]
 SUPABASE
 ────────────────────────────
 ✓ Contact: [contact ID] ([customer name])
-✓ Invoice Recorded: [invoice record ID]
+✓ Project Updated: [project ID, e.g., MH-018] ([invoice record ID])
 
 OBSIDIAN
 ────────────────────────────
@@ -677,11 +687,12 @@ A successful invoice creation should:
 3. ✅ **Proper GST calculation** based on customer preference
 4. ✅ **User confirmation obtained** before any creation
 5. ✅ **Stripe invoice complete** with all 6 steps successful
-6. ✅ **Supabase record created** with correct relationships
-7. ✅ **Obsidian project updated** with invoice number
-8. ✅ **Complete report provided** with all system links
-9. ✅ **Proper error handling** if any step fails
-10. ✅ **No orphaned records** if workflow stops mid-way
+6. ✅ **Existing project record found** by project_id (created in `/mokhouse-create-project`)
+7. ✅ **Supabase project updated** with invoice details via UPDATE (not INSERT)
+8. ✅ **Obsidian project updated** with invoice number and status
+9. ✅ **Complete report provided** with all system links
+10. ✅ **Proper error handling** if any step fails
+11. ✅ **No orphaned records** if workflow stops mid-way
 
 ## Related Commands
 

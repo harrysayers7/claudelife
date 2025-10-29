@@ -363,64 +363,67 @@ Use for MOK HOUSE music production projects, client work coordination, or music 
 ## MOK HOUSE Project Lifecycle Commands
 
 ### /mokhouse-create-project
-**Created**: 2025-10-16 11:45 | **Updated**: 2025-10-17 (Google Doc extraction)
+**Created**: 2025-10-16 11:45 | **Updated**: 2025-10-27 14:30 (v1.3 - Status constraint)
 
 ##### What it does:
-Automates MOK HOUSE project creation from client brief emails (Phase 1). Searches Gmail, **extracts Google Doc briefs using Bash + curl**, creates formatted Obsidian project files with frontmatter, generates AI creative suggestions (composer-level jingle/sonic branding direction), and produces SUNO prompts (<1000 chars). Handles full brief-to-project pipeline with proper callouts, H2 headings, and Harrison's composer number (#3).
+Automates MOK HOUSE project creation from client brief emails (Phase 1). Searches Gmail, **extracts Google Doc briefs using Bash + curl**, creates formatted Obsidian project files with frontmatter, generates AI creative suggestions (composer-level jingle/sonic branding direction), produces SUNO prompts (<1000 chars), **generates unique project_id (MH-###)**, and **registers project in Supabase invoices table** with project name, client, start_date, and initial status `'submitted'`. Handles full brief-to-project pipeline with proper callouts, H2 headings, and Harrison's composer number (#3).
 
 ##### When to use it:
-Use when client brief emails arrive from Electric Sheep Music, Panda Candy, or new customers. Creates production-ready project files with AI-powered creative direction, sound design ideas, and music generation prompts. Run once per new project brief.
+Use when client brief emails arrive from Electric Sheep Music, Panda Candy, or new customers. Creates production-ready project files with AI-powered creative direction, sound design ideas, music generation prompts, and database registration. Run once per new project brief. **Required before** `/mokhouse-create-invoice`.
 
+**Project Status Lifecycle**: `submitted` → `awaiting PO` → `sent` → `paid`
 **Usage**: `/mokhouse-create-project "Brief context or customer name"`
 **File**: `.claude/commands/mokhouse/mokhouse-create-project.md`
-**Integration**: Gmail + Google Docs (curl export) + Obsidian
+**Integration**: Gmail + Google Docs (curl export) + Obsidian + **Supabase (invoices table)**
 
 ---
 
 ### /mokhouse-update-status
-**Created**: 2025-10-16 11:52
+**Created**: 2025-10-16 11:52 | **Updated**: 2025-10-27 14:30 (Status constraint)
 
 ##### What it does:
-Updates MOK HOUSE project status throughout lifecycle (Phase 2). Handles status transitions (Brief Received → Submitted → PO Received → Invoiced → Complete), award decisions, and metadata updates. Uses Obsidian patch operations for fast, surgical updates to project frontmatter fields.
+Updates MOK HOUSE project status in Obsidian throughout lifecycle (Phase 2). Handles status transitions: `submitted` → `awaiting PO` → `sent` → `paid`, award decisions, and metadata updates. Uses Obsidian patch operations for fast, surgical updates to project frontmatter fields.
 
 ##### When to use it:
-Use when work progresses: mark as "Submitted" after demo delivery, "PO Received" when purchase order arrives, record award decisions with fees/APRA status. Can run multiple times per project. Fast operation (<10 seconds).
+Use when work progresses: mark as "awaiting PO" after demo delivery, update status when purchase order arrives, record award decisions with fees/APRA status. Can run multiple times per project. Fast operation (<10 seconds).
 
+**Valid Status Values**: `submitted`, `awaiting PO`, `sent`, `paid`
 **Usage**: `/mokhouse-update-status "[project name] status update details"`
 **File**: `.claude/commands/mokhouse/mokhouse-update-status.md`
 **Integration**: Obsidian
+**Note**: Updates Obsidian frontmatter only; Supabase status is managed by `/mokhouse-create-invoice` (sets to 'sent') and `/mokhouse-mark-paid` (sets to 'paid')
 
 ---
 
 ### /mokhouse-create-invoice
-**Created**: 2025-10-16 12:00
+**Created**: 2025-10-16 12:00 | **Updated**: 2025-10-27 (Supabase UPDATE integration)
 
 ##### What it does:
-Creates invoices for MOK HOUSE projects across Stripe, Supabase, and Obsidian (Phase 3). Handles customer lookup/setup, GST calculation (per customer preference), duplicate detection, multi-system coordination. Requires explicit user approval before creating. Supports both existing customers (Electric Sheep, Panda Candy) and new customer onboarding with flexible payment terms.
+Creates invoices for MOK HOUSE projects across Stripe, Supabase, and Obsidian (Phase 3). Handles customer lookup/setup, GST calculation (per customer preference), duplicate detection, multi-system coordination. Requires explicit user approval before creating. **Updates existing project record** (created by `/mokhouse-create-project`) with invoice details. Supports both existing customers (Electric Sheep, Panda Candy) and new customer onboarding with flexible payment terms.
 
 ##### When to use it:
-Use when PO arrives from client. Looks up customer preferences (14-day terms, no GST for ESM/Panda Candy), presents confirmation, creates Stripe invoice (product → price → finalize), records in Supabase with relationships, updates Obsidian project. Provides payment link and dashboard URLs. Stops immediately if any step fails.
+Use when PO arrives from client. Looks up customer preferences (14-day terms, no GST for ESM/Panda Candy), presents confirmation, creates Stripe invoice (product → price → finalize), **updates project record in Supabase** (adds contact_id, invoice_number, amounts), updates Obsidian project. Provides payment link and dashboard URLs. Stops immediately if any step fails. **Requires** `/mokhouse-create-project` to have been run first.
 
 **Usage**: `/mokhouse-create-invoice "[PO details, project name, customer]"`
 **File**: `.claude/commands/mokhouse/mokhouse-create-invoice.md`
-**Integration**: Stripe + Supabase + Obsidian
+**Integration**: Stripe + **Supabase (UPDATE projects)** + Obsidian
 **Entity**: MOK HOUSE PTY LTD (550e8400-e29b-41d4-a716-446655440002)
+**Dependency**: Requires project_id from `/mokhouse-create-project`
 
 ---
 
 ### /mokhouse-mark-paid
-**Created**: 2025-10-16 12:10
-**Updated**: 2025-10-18 (Added Stripe invoice sync)
-
+**Created**: 2025-10-16 12:10 | **Updated**: 2025-10-27 14:30 (Status constraint)
 ##### What it does:
-Marks MOK HOUSE invoices as paid and completes project lifecycle (Phase 4). Updates payment status across **three systems**: Obsidian (paid: true, Date Paid, status: "Complete"), Supabase (paid_amount, status: "paid", paid_on), and **Stripe** (invoice marked as paid out-of-band). Ensures all systems stay synchronized for accurate financial reporting.
+Marks MOK HOUSE invoices as paid and completes project lifecycle (Phase 4). Updates payment status across **three systems**: Obsidian (paid: true, Date Paid, status: "Paid"), Supabase (paid_amount, status: `'paid'`, paid_on), and **Stripe** (invoice marked as paid out-of-band). Ensures all systems stay synchronized for accurate financial reporting.
 
 ##### When to use it:
-Use when payment received from client (bank transfer, check, etc.). Identifies project by name/customer/invoice number, confirms payment date (defaults to today), updates Obsidian, Supabase, and Stripe atomically. Maintains sync across all financial systems. Completes project lifecycle. Takes <30 seconds.
+Use when payment received from client (bank transfer, check, etc.). Identifies project by name/customer/invoice number, confirms payment date (defaults to today), updates Obsidian, Supabase, and Stripe atomically. Maintains sync across all financial systems. Completes project lifecycle (transitions to final `'paid'` status). Takes <30 seconds.
 
+**Final Status**: Both Obsidian and Supabase set to reflect paid status
 **Usage**: `/mokhouse-mark-paid "[project name or invoice details]"`
 **File**: `.claude/commands/mokhouse/mokhouse-mark-paid.md`
-**Integration**: Obsidian + Supabase + Stripe
+**Integration**: Obsidian + Supabase (status = 'paid') + Stripe
 
 ---
 

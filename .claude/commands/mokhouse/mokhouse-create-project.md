@@ -1,7 +1,13 @@
 ---
 created: "2025-10-16 11:45"
-updated: "2025-10-17 14:30"
+updated: "2025-10-27 14:30"
 version_history:
+  - version: "1.3"
+    date: "2025-10-27 14:30"
+    changes: "Updated Supabase INSERT to use 'project' column (not 'project_name'); Changed initial status from 'Brief Received' to 'submitted' to match expanded status constraint"
+  - version: "1.2"
+    date: "2025-10-27 12:00"
+    changes: "Added Step 9 to insert project record into Supabase invoices table with project_id generation; Updated Obsidian frontmatter to include project_id; Integrated with mokhouse-create-invoice workflow"
   - version: "1.1"
     date: "2025-10-17 14:30"
     changes: "Added explicit Google Doc extraction instructions using Bash + curl (Step 3b)"
@@ -11,14 +17,16 @@ version_history:
 description: |
   Automates MOK HOUSE project creation from client brief emails. Searches Gmail for brief emails,
   extracts Google Doc links, fetches brief content using Bash + curl, creates formatted Obsidian
-  project files with complete frontmatter, generates AI creative suggestions, and creates SUNO
-  prompts (<1000 chars).
+  project files with complete frontmatter, generates AI creative suggestions, creates SUNO
+  prompts (<1000 chars), and registers project in Supabase invoices table.
 
   Outputs:
-    - Formatted project file in /02-projects/mokhouse/ with proper callouts and structure
+    - Formatted project file in /02-projects/mokhouse/ with proper callouts, structure, and project_id
     - AI-generated creative direction, melody suggestions, and sound design ideas
     - SUNO AI prompt optimized for music generation (character-limited)
     - Complete project metadata with due dates, customer info, and deliverables
+    - Project record in Supabase with project_id (MH-###), client, project_name, and start_date
+    - Ready for invoice creation via /mokhouse-create-invoice
 examples:
   - /mokhouse-create-project "I received a brief email for a new Repco project from Electric Sheep"
   - /mokhouse-create-project "Create project from the latest Panda Candy brief in Gmail"
@@ -99,6 +107,11 @@ Before running, prepare:
    - Rough timeline or urgency
 
 ## Process
+
+**Phase Overview:**
+1. **Steps 1-8:** Create brief, generate creative content, build Obsidian file
+2. **Step 9:** Insert project record into Supabase invoices table (creates project_id)
+3. **Step 10:** Success summary
 
 ### Step 1: Identify Brief Email
 
@@ -378,22 +391,70 @@ Add these sections:
 	- [link] <if required>
 ```
 
-### Step 9: Provide Success Summary
+### Step 9: Insert Project into Supabase
+
+**Use:** `mcp__supabase__execute_sql`
+
+**Generate project ID:**
+```sql
+SELECT COALESCE(MAX(CAST(SUBSTRING(project_id, 4) AS INTEGER)), 0) + 1 as next_id
+FROM public.invoices
+WHERE entity_id = '550e8400-e29b-41d4-a716-446655440002'
+AND project_id IS NOT NULL
+AND project_id LIKE 'MH-%';
+```
+
+Format as: `MH-[###]` (e.g., "MH-001", "MH-018")
+
+**Insert project record:**
+
+```sql
+INSERT INTO public.invoices (
+  entity_id,
+  project_id,
+  project,
+  client,
+  start_date,
+  status
+) VALUES (
+  '550e8400-e29b-41d4-a716-446655440002',
+  '[Generated project ID, e.g., MH-001]',
+  '[Extracted project name]',
+  '[Client name]',
+  '[Today YYYY-MM-DD]',
+  'submitted'
+) RETURNING id, project_id
+```
+
+**Store the returned:**
+- `invoice_record_id` (for reference in later steps)
+- `project_id` (MH-###) - this should be added to the Obsidian file frontmatter as well
+
+**Update Obsidian frontmatter with project_id:**
+
+Add to the YAML frontmatter:
+```yaml
+project_id: "[Generated project ID, e.g., MH-001]"
+```
+
+### Step 10: Provide Success Summary
 
 ```
 ✅ Project Created from Brief
 ────────────────────────────
 Project: [project name]
 Client: [customer]
+Project ID: [MH-###]
 Due Date: [due date]
 Brief Source: [Google Doc URL]
 File Created: [filename].md
 Location: /Users/harrysayers/Developer/claudelife/02-projects/mokhouse/
-Status: Brief Received
+Status: submitted
 
+Supabase: ✓ Project record created
 AI Suggestions: ✓ Generated
 SUNO Prompt: ✓ Generated ([X]/1000 chars)
-Next: Create demo, then mark as submitted
+Next: Create demo, then submit, then create invoice
 ────────────────────────────
 ```
 
@@ -491,7 +552,7 @@ Next: Create demo, then mark as submitted
 
 A successful project creation should:
 
-1. ✅ **Complete frontmatter** with all required fields (dates, customer, status, booleans)
+1. ✅ **Complete frontmatter** with all required fields including `project_id` (dates, customer, status, booleans)
 2. ✅ **Proper formatting** with callouts, code blocks, H2 headings, double spacing
 3. ✅ **Accurate brief extraction** capturing all deliverables, requirements, creative direction
 4. ✅ **High-quality AI suggestions** providing actionable creative direction for Harrison
@@ -499,6 +560,8 @@ A successful project creation should:
 6. ✅ **Correct file naming** using exact project name as filename (e.g., `Nintendo - EM.md`)
 7. ✅ **Proper file location** in /02-projects/mokhouse/ directory
 8. ✅ **Harrison's composer number** correctly set as "3" in file naming template
+9. ✅ **Project record created in Supabase** with project_id, project_name, client, start_date
+10. ✅ **project_id added to Obsidian frontmatter** (MH-### format)
 
 ## Related Commands
 

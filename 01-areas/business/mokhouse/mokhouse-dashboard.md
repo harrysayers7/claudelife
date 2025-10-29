@@ -83,7 +83,7 @@ for (let project of projects) {
             invoice: project["Invoice #"],
             isArchived: project.file.path.includes("archive")
         });
-    } else if (status === "Invoiced" || status === "Complete") {
+    } else if (status === "sent" || status === "paid") {
         totalOutstanding += projectTotal;
 
         // Check if invoice is overdue (submitted more than 2 weeks ago and unpaid)

@@ -450,10 +450,13 @@ if (activeProjects.length > 0) {
 - [[mokhouse-dashboard|MOK HOUSE HQ]]
 -
 
-## 📄 Recent Files (Last 30 Files)
+## 📄 Recent Files (Last 48 Hours)
 
 ```dataviewjs
-// Get 30 most recently created files from specified directories
+// Get files created in last 48 hours from specified directories
+const { Duration } = dv.luxon;
+const cutoff = dv.date('now').minus(Duration.fromObject({ hours: 48 }));
+
 const recentFiles = dv.pages()
   .where(p => {
     // Filter by directories
@@ -463,10 +466,13 @@ const recentFiles = dv.pages()
                        path.startsWith("03-labs") ||
                        path.startsWith("04-resources");
 
-    return inTargetDir;
+    if (!inTargetDir) return false;
+
+    // Check if created in last 48 hours using Dataview date comparison
+    return p.file.ctime >= cutoff;
   })
   .sort(p => p.file.ctime, 'desc')
-  .limit(30); // Limit to 30 most recent files
+  .limit(20); // Limit to 20 most recent files
 
 if (recentFiles.length > 0) {
   dv.table(

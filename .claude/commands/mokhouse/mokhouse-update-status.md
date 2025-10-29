@@ -1,9 +1,22 @@
 ---
 created: "2025-10-16 11:52"
+updated: "2025-10-28 16:45"
+version: "1.2"
+version_history:
+  - version: "1.2"
+    date: "2025-10-28 16:45"
+    changes: "Added CRITICAL RULE: Always set demo fee to $0 when marking project as awarded (demo absorbed into award fee)"
+  - version: "1.1"
+    date: "2025-10-27 14:30"
+    changes: "Updated valid status values to match Supabase constraint: 'submitted', 'awaiting PO', 'sent', 'paid'; Clarified Obsidian-only updates vs Supabase status management"
+  - version: "1.0"
+    date: "2025-10-16 11:52"
+    changes: "Initial command creation"
 description: |
-  Updates MOK HOUSE project status throughout the project lifecycle. Handles status transitions
-  from "Brief Received" → "Submitted" → "PO Received" → "Invoiced" → "Complete", plus award
-  decisions and metadata updates. Uses Obsidian patch operations for fast, surgical updates.
+  Updates MOK HOUSE project status in Obsidian throughout the project lifecycle. Handles status transitions
+  from `'submitted'` → `'awaiting PO'` → `'sent'` → `'paid'`, plus award decisions and metadata updates.
+  Uses Obsidian patch operations for fast, surgical updates. Note: Supabase status is managed by
+  `/mokhouse-create-invoice` (sets to 'sent') and `/mokhouse-mark-paid` (sets to 'paid').
 
   Outputs:
     - Updated project frontmatter with new status
@@ -12,8 +25,8 @@ description: |
     - Confirmation of changes made
 examples:
   - /mokhouse-update-status "Mark Repco project as submitted"
-  - /mokhouse-update-status "Update Nintendo campaign - awarded with $1500 fee"
-  - /mokhouse-update-status "Set Panda Candy project status to PO Received with PO-1234"
+  - /mokhouse-update-status "Update Nintendo campaign - mark as awaiting PO"
+  - /mokhouse-update-status "Panda Candy project awarded with $1500 fee"
 ---
 
 # Update MOK HOUSE Project Status
@@ -30,13 +43,13 @@ This command handles all project status updates throughout the MOK HOUSE project
 
 ## What This Command Does
 
-**Phase 2: Project Status Management**
+**Phase 2: Project Status Management (Obsidian)**
 
-Updates project metadata as work progresses through stages:
-- **Submission tracking** → When demo is delivered
-- **PO receipt** → When purchase order arrives
-- **Invoice tracking** → When invoice is created
-- **Payment completion** → When payment is received
+Updates Obsidian project metadata as work progresses through stages:
+- **Status: `'submitted'`** → When demo is delivered/project submitted
+- **Status: `'awaiting PO'`** → When waiting for purchase order
+- **Status: `'sent'`** → When invoice is sent (Supabase auto-updates this)
+- **Status: `'paid'`** → When payment is received (Supabase auto-updates this)
 - **Award decisions** → When award/no-award decision is made
 
 ## Interactive Process
@@ -48,16 +61,16 @@ When you run this command, I will:
    - Confirm project file exists in `/02-projects/mokhouse/`
 
 2. **Determine update type:**
-   - Status change (Submitted, PO Received, Invoiced, Complete)?
+   - Status change (submitted, awaiting PO, sent, paid)?
    - Award decision (awarded: true/false)?
    - Fee information (demo fee, award fee)?
    - Date updates (submitted date, date paid)?
 
 3. **Gather required information:**
-   - For "Submitted": submitted date, wav file name (if different)
-   - For "PO Received": PO number
+   - For "submitted": submitted date, wav file name (if different)
+   - For "awaiting PO": PO number
    - For "Awarded": award fee amount, APRA status
-   - For "Complete": date paid
+   - For "paid": date paid
 
 4. **Execute update:**
    - Use Obsidian patch to update specific frontmatter fields
@@ -113,28 +126,28 @@ Extract current values:
 
 Based on user request, identify which fields to update:
 
-#### Status: "Submitted"
+#### Status: "submitted"
 ```yaml
-status: "Submitted"
+status: "submitted"
 submitted date: "YYYY-MM-DD"
 wav name: "[filename if different from template]"
 ```
 
-#### Status: "PO Received"
+#### Status: "awaiting PO"
 ```yaml
-status: "PO Received"
+status: "awaiting PO"
 PO: "[PO number without prefix]"
 ```
 
-#### Status: "Invoiced"
+#### Status: "sent"
 ```yaml
-status: "Invoiced"
+status: "sent"
 "Invoice #": "[Stripe invoice number]"
 ```
 
-#### Status: "Complete"
+#### Status: "paid"
 ```yaml
-status: "Complete"
+status: "paid"
 paid: true
 Date Paid: "YYYY-MM-DD"
 ```
@@ -143,8 +156,11 @@ Date Paid: "YYYY-MM-DD"
 ```yaml
 awarded: true
 award fee: [amount]
+demo fee: 0  # IMPORTANT: Always set to 0 when awarded (demo absorbed into award fee)
 APRA: [true/false]
 ```
+
+**CRITICAL RULE**: When marking a project as `awarded: true`, **ALWAYS** set `demo fee: 0` because the demo fee is absorbed into the award fee. The invoice should only include the award fee amount.
 
 ### Step 4: Apply Updates
 
@@ -193,23 +209,23 @@ NEXT STEPS:
 ### Typical Project Lifecycle:
 
 ```
-Brief Received
+[Project created]
     ↓
   [Work on demo]
     ↓
-Submitted ← /mokhouse-update-status "mark as submitted"
+submitted ← /mokhouse-update-status "mark as submitted"
     ↓
   [Client reviews]
     ↓
-PO Received ← /mokhouse-update-status "PO received PO-1234"
+awaiting PO ← /mokhouse-update-status "awaiting PO"
     ↓
   [Create invoice]
     ↓
-Invoiced ← Automatically updated by /mokhouse-create-invoice
+sent ← Automatically updated by /mokhouse-create-invoice
     ↓
   [Await payment]
     ↓
-Complete ← /mokhouse-mark-paid (or this command)
+paid ← /mokhouse-mark-paid (or this command)
 ```
 
 ### Award Decisions (can happen anytime):
@@ -239,9 +255,9 @@ awarded: false
 
 1. Search for Repco Q4 project file
 2. Find: `251016-repco-automotive-q4.md`
-3. Read current state: status = "Brief Received"
+3. Read current state: status = "current"
 4. Update frontmatter:
-   - status: "Submitted"
+   - status: "submitted"
    - submitted date: "2025-10-16"
 5. Confirm changes
 6. Next step: "Awaiting PO from Electric Sheep Music"
@@ -260,6 +276,7 @@ awarded: false
 3. Update frontmatter:
    - awarded: true
    - award fee: 2000
+   - demo fee: 0 (absorbed into award fee)
    - APRA: true
 4. Keep existing status unchanged
 5. Confirm award recorded
@@ -276,7 +293,7 @@ awarded: false
 1. Search for "Panda Candy" + "Provider Care"
 2. Find project file
 3. Update frontmatter:
-   - status: "PO Received"
+   - status: "awaiting PO"
    - PO: "0166"
 4. Next step: "Ready to create invoice with /mokhouse-create-invoice"
 
@@ -284,29 +301,30 @@ awarded: false
 
 **User request:**
 ```
-"Repco project: submitted yesterday, awarded with $1500 demo fee, no APRA"
+"Repco project: submitted yesterday, awarded with $1500 award fee, no APRA"
 ```
 
 **Command execution:**
 
 1. Find Repco project
 2. Update multiple fields:
-   - status: "Submitted"
+   - status: "submitted"
    - submitted date: "2025-10-15"
    - awarded: true
-   - demo fee: 1500
+   - award fee: 1500
+   - demo fee: 0 (absorbed into award fee)
    - APRA: false
 3. Confirm all changes in summary
 
 ## Valid Status Values
 
-Only use these exact status strings:
+Only use these exact status strings (must match Supabase constraint):
 
-- `"Brief Received"` - Initial state when project created
-- `"Submitted"` - Demo has been delivered to client
-- `"PO Received"` - Purchase order received, ready for invoicing
-- `"Invoiced"` - Invoice created and sent (usually auto-set by invoice command)
-- `"Complete"` - Payment received, project closed
+- `"current"` - Initial state when project created (not commonly used in Obsidian)
+- `"submitted"` - Demo has been delivered to client
+- `"awaiting PO"` - Purchase order awaited, ready to update after PO received
+- `"sent"` - Invoice created and sent (auto-set by /mokhouse-create-invoice)
+- `"paid"` - Payment received, project closed (auto-set by /mokhouse-mark-paid)
 
 ## Field Reference
 
@@ -359,9 +377,9 @@ wav name: "[Actual filename if different from template]"
 - Ask user to clarify intended status
 
 **Missing required information:**
-- For "Submitted": Ask for submission date
-- For "PO Received": Ask for PO number
-- For "Complete": Ask for payment date
+- For "submitted": Ask for submission date
+- For "awaiting PO": Ask for PO number
+- For "paid": Ask for payment date
 - For "Awarded": Ask for fee amount
 
 **Patch operation failed:**

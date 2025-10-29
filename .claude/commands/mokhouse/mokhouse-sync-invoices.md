@@ -1,9 +1,18 @@
 ---
 created: "2025-10-19 17:00"
-version: "1.0"
+updated: "2025-10-27 14:36"
+version: "1.1"
+version_history:
+  - version: "1.1"
+    date: "2025-10-27 14:36"
+    changes: "Clarified that query filters for status = 'paid' per Supabase status constraint; Added version history"
+  - version: "1.0"
+    date: "2025-10-19 17:00"
+    changes: "Initial command creation"
 description: |
   Syncs paid invoice data from Supabase to MOK HOUSE dashboard for accurate 12-month average calculation.
   Updates the supabasePaidInvoices array in mokhouse-dashboard.md with latest payment data from the database.
+  Queries for invoices with status = 'paid' per Supabase status constraint.
 ---
 
 # Sync MOK HOUSE Invoice Data from Supabase
@@ -159,7 +168,7 @@ const supabasePaidInvoices = [
 
 ---
 
-**Version:** 1.0
+**Version:** 1.1
 **Integration:** Supabase + Obsidian
 **File Location:** `01-areas/business/mokhouse/mokhouse-dashboard.md`
 **Entity ID:** MOK HOUSE (`550e8400-e29b-41d4-a716-446655440002`)
